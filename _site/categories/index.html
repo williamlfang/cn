@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="" />
-    <title>我是我,是顏色不一樣的煙火! | </title>
+    <title>Categories | </title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link href="/feed/" rel="alternate" title="" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
@@ -14,7 +14,7 @@
     <div id="container">
       <div id="main" role="main">
         <header>
-        <h1>我是我,是顏色不一樣的煙火!</h1>
+        <h1>Categories</h1>
         </header>
         <nav>
         <span><a title="home page" class="" href="/">home</a></span>
@@ -29,32 +29,45 @@
         </nav>
         <article class="content">
         <section class="post">
+<div id='tag_cloud'>
+
+<a href="#Life" title="Life" rel="1">Life (1)</a>
+
+</div>
+
+
+
+
 <ul class="listing">
+
+  <li class="listing-seperator" id="Life">Life</li>
+
+  <li class="listing-item">
+  <time datetime="2005-08-17">2005-08-17</time>
+  <a href="/Life/2005/08/17/ride-to-tianjin-in-16-hours.html" title="16小时骑行——我的天津绝望之旅">16小时骑行——我的天津绝望之旅</a>
+  </li>
+
 
 </ul>
 
 
 
 
-<div id="post-pagination" class="paginator">
-
-  
-    <span class="previous disabled"><前页</span>
-  
-
-      
-      <a href="/">1</a>
-      
-
-    
-
-  
-    <span class="next disabled" >后页></span>
-  
-  (共篇)
-</div>
+<script src="/media/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script>
 
 
+<p></p>
+
+<script language="javascript">
+$.fn.tagcloud.defaults = {
+    size: {start: 1, end: 1, unit: 'em'},
+      color: {start: '#f8e0e6', end: '#ff3333'}
+};
+
+$(function () {
+    $('#tag_cloud a').tagcloud();
+});
+</script>
 
 
 </section>

@@ -1,5 +1,5 @@
 markdown: rdiscount
-permalink: /:year/:month/:title/
+
 url: http://williamlfang.github.com/cn
 author: William Fang
 pygments: true

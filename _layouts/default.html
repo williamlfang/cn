@@ -3,27 +3,14 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="{{ site.author }}" />
-    <!--   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.author }}</title>    -->
-    <title>{{ page.title }} | {{ site.author }}</title> 
+    <title>{{ page.title }} | {{ site.author }}</title>
     <link rel="shortcut icon" href="/favicon.ico">
-    <link href="/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" />
+    <link href="{{ site.url }}/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
     <link rel="stylesheet" href="/media/css/highlight.css">
-
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-1988641-2']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
   </head>
-  <body onLoad="setInterval(setTimeSpan,1000);">
+  <body>
     <div id="container">
       <div id="main" role="main">
         <header>
@@ -37,7 +24,6 @@
         <span><a title="vitae" class="" href="{{ site.url }}/vitae/">vitae</a></span>
         <span><a title="categories" class="" href="{{ site.url }}/categories/">categories</a></span>
         <span><a title="tags" class="" href="{{ site.url }}/tags/">tags</a></span>
-	<span><a title="contact" class="" href="{{ site.url }}/contact/">contact</a></span>
         <span><a title="links" class="" href="{{ site.url }}/links/">links</a></span>
         <span><a title="subscribe by RSS" class="" href="{{ site.url }}/feed/">subscribe</a></span>
         </nav>
@@ -45,12 +31,16 @@
         {{ content }}
         </article>
       </div>
-
-<footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - {{site.time | date:"%Y"}} by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">{{site.time | date:"%Y-%m-%d %H:%M:%S"}}</span></small></p>
-</footer>
-
-  </div>
-
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1988641-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </body>
 </html>

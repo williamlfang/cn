@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      本本的"转型""
+title:      本本的"转型"
 category:   
 - Tech
 tags: 
@@ -107,6 +107,7 @@ Git是一个分散化的版本管理系统(DVCS),最早是用于处理Linux的�
     git push origin gh-pages
     
     jekyll --server
+
 
 ## FAQ
 

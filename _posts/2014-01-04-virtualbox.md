@@ -64,10 +64,8 @@ description:
 ![vb14](/files/virtualbox/vb14.png)
 13. 设置"共享文件夹",以实现在主机和虚拟机之间的文件传输.
 ![vb15](/files/virtualbox/vb15.png)
-14. 最有,建立主机与虚拟机的USB共享.由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,[Entention pack](https://www.virtualbox.org/wiki/Downloads).下载完成后点击安装即可.然后重启 virtualbox.
-15. 同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:
-   'sudo addgroup wiliam vboxusers'
-   
+14. 最有,建立主机与虚拟机的USB共享.由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,[Extention pack](https://www.virtualbox.org/wiki/Downloads).下载完成后点击安装即可.然后重启 virtualbox.
+15. 同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:'sudo addgroup wiliam vboxusers'  
 16. 接着做一下设置:
    - 打开 virtualbox,在不启动虚拟机的情况下,插入usb,选择"配置"的"USB设备",点击右边的"+"来添加USB硬盘.
    - 在不拔出USB的情况下,重启主机.开机后运行虚拟机,即可在右下角看到切换USB的图标.

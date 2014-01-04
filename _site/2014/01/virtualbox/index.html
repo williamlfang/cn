@@ -117,10 +117,9 @@
 <img src="/files/virtualbox/vb14.png" alt="vb14" /></li>
 <li>设置"共享文件夹",以实现在主机和虚拟机之间的文件传输.
 <img src="/files/virtualbox/vb15.png" alt="vb15" /></li>
-<li>最有,建立主机与虚拟机的USB共享.由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,<a href="https://www.virtualbox.org/wiki/Downloads">Entention pack</a>.下载完成后点击安装即可.然后重启 virtualbox.</li>
-<li><p>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:
-'sudo addgroup wiliam vboxusers'</p></li>
-<li><p>接着做一下设置:</p></li>
+<li>最有,建立主机与虚拟机的USB共享.由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,<a href="https://www.virtualbox.org/wiki/Downloads">Extention pack</a>.下载完成后点击安装即可.然后重启 virtualbox.</li>
+<li>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:'sudo addgroup wiliam vboxusers'</li>
+<li>接着做一下设置:</li>
 <li> 打开 virtualbox,在不启动虚拟机的情况下,插入usb,选择"配置"的"USB设备",点击右边的"+"来添加USB硬盘.</li>
 <li> 在不拔出USB的情况下,重启主机.开机后运行虚拟机,即可在右下角看到切换USB的图标.</li>
 <li> 这样,以后就可以在主机与虚拟机之间任意切换USB插件了.这个对于使用网银非常便捷.
@@ -212,7 +211,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-04 20:07:38</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-04 20:09:13</span></small></p>
 </footer>
 
   </div>

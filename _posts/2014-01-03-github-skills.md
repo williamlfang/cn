@@ -10,6 +10,8 @@ tags:
 description: 
 ---
 
+### SSH 错误
+----
 *引用*:[原文连接](http://blog.csdn.net/keyboardota/article/details/7603630)
 
 > 问题:在新的电脑系统中,首次生成SSH, 系统会报下面的错误：<br>
@@ -40,3 +42,16 @@ gedit ~/.ssh/id_rsa.pub
 添加完成后再次执行git clone就可以成功克隆github上的代码库了。
 
 
+### rdiscount 安装错误
+----
+> 问题:在使用'jekyll --server'出现如下错误    <br>
+  ? [suod] gem install rdiscount    <br>
+  而如果真的这么干,却出现另外的错误提示   <br>
+  > ERROR: Error installing rdiscount:    <br>
+    ERROR: Failed to build gem native extension.
+
+> Solution:   <br>
+   - 先安装 ruby1.9.1-dev,
+    sudo apt-get install ruby1.9.1-dev
+   - 再安装 rdiscount
+    gem install rdiscount

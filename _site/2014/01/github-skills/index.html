@@ -43,6 +43,10 @@
         </nav>
         <article class="content">
         <section class="post">
+<h3>SSH 错误</h3>
+
+<hr />
+
 <p><em>引用</em>:<a href="http://blog.csdn.net/keyboardota/article/details/7603630">原文连接</a></p>
 
 <blockquote><p>问题:在新的电脑系统中,首次生成SSH, 系统会报下面的错误：<br>
@@ -74,6 +78,22 @@ gedit ~/.ssh/id_rsa.pub</p>
 <p>添加过程github会提示你输入一次你的github密码</p>
 
 <p>添加完成后再次执行git clone就可以成功克隆github上的代码库了。</p>
+
+<h3>rdiscount 安装错误</h3>
+
+<hr />
+
+<blockquote><p>问题:在使用'jekyll --server'出现如下错误    <br>
+  ? [suod] gem install rdiscount    <br>
+  而如果真的这么干,却出现另外的错误提示   <br>
+ERROR: Error installing rdiscount:    <br>
+    ERROR: Failed to build gem native extension.</p>
+
+<p>Solution:   <br>
+   - 先安装 ruby1.9.1-dev,
+    sudo apt-get install ruby1.9.1-dev
+   - 再安装 rdiscount
+    gem install rdiscount</p></blockquote>
 
 </section>
 <section class="meta">
@@ -162,7 +182,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-04 20:30:44</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-04 20:38:31</span></small></p>
 </footer>
 
   </div>

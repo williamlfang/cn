@@ -7,7 +7,7 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-04T20:30:44+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-04T20:38:31+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
     
     <item>
@@ -116,7 +116,11 @@
       <pubDate>2014-01-03T00:00:00+08:00</pubDate>
       <author>William Fang</author>
       <guid>http://williamlfang.github.com/cn/2014/01/github-skills</guid>
-      <content:encoded><![CDATA[<p><em>引用</em>:<a href="http://blog.csdn.net/keyboardota/article/details/7603630">原文连接</a></p>
+      <content:encoded><![CDATA[<h3>SSH 错误</h3>
+
+<hr />
+
+<p><em>引用</em>:<a href="http://blog.csdn.net/keyboardota/article/details/7603630">原文连接</a></p>
 
 <blockquote><p>问题:在新的电脑系统中,首次生成SSH, 系统会报下面的错误：<br>
 Permission denied (publickey). <br>
@@ -147,6 +151,22 @@ gedit ~/.ssh/id_rsa.pub</p>
 <p>添加过程github会提示你输入一次你的github密码</p>
 
 <p>添加完成后再次执行git clone就可以成功克隆github上的代码库了。</p>
+
+<h3>rdiscount 安装错误</h3>
+
+<hr />
+
+<blockquote><p>问题:在使用'jekyll --server'出现如下错误    <br>
+  ? [suod] gem install rdiscount    <br>
+  而如果真的这么干,却出现另外的错误提示   <br>
+ERROR: Error installing rdiscount:    <br>
+    ERROR: Failed to build gem native extension.</p>
+
+<p>Solution:   <br>
+   - 先安装 ruby1.9.1-dev,
+    sudo apt-get install ruby1.9.1-dev
+   - 再安装 rdiscount
+    gem install rdiscount</p></blockquote>
 ]]></content:encoded>
     </item>
     

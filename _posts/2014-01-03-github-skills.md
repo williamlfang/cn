@@ -51,7 +51,7 @@ gedit ~/.ssh/id_rsa.pub
     ERROR: Failed to build gem native extension.
 
 > Solution:   <br>
-   - 先安装 ruby1.9.1-dev,
-    sudo apt-get install ruby1.9.1-dev
-   - 再安装 rdiscount
+   - 先安装 ruby1.9.1-dev,    <br>
+    sudo apt-get install ruby1.9.1-dev     <br>
+   - 再安装 rdiscount    <br>
     gem install rdiscount

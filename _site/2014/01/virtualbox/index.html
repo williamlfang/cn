@@ -52,12 +52,20 @@
 <p>对于此类的问题,目前有两种解决方法:</p>
 
 <ol>
-<li>在 Linux 系统中安装 wine,从而可以安装大部分的软件,如QQ等.</li>
+<li><p>在 Linux 系统中安装 wine,从而可以安装大部分的软件,如QQ等.</p>
+
+<ul>
 <li>优点:占用的CPU资源少,不影响系统的运行速度</li>
-<li><p>缺点:设置麻烦,尤其是中文的设置基本是要人命的.典型的就是ireader不能运行.而且还需要相应的安装在 Linux 下的配套软件.</p></li>
-<li><p>另外一种就是我要介绍的方法:在 Linux 下使用虚拟机安装 Windows 操作系统,在其上面运行软件.</p></li>
+<li>缺点:设置麻烦,尤其是中文的设置基本是要人命的.典型的就是ireader不能运行.而且还需要相应的安装在 Linux 下的配套软件.</li>
+</ul>
+</li>
+<li><p>另外一种就是我要介绍的方法:在 Linux 下使用虚拟机安装 Windows 操作系统,在其上面运行软件.</p>
+
+<ul>
 <li>优点:一劳永逸,简单方便</li>
 <li>缺点:由于虚拟机需要固定的分配内存和硬盘空间,会大大的降低系统的运行速度.</li>
+</ul>
+</li>
 </ol>
 
 
@@ -85,15 +93,19 @@
 <li>如果不知道虚拟硬盘的文件类型,那就选择默认的"VDI",点击"下一步"继续.
 <img src="/files/virtualbox/vb06.png" alt="vb06" /></li>
 <li>分配虚拟机的硬盘大小,有两种选择
-<img src="/files/virtualbox/vb07.png" alt="vb07" /></li>
+<img src="/files/virtualbox/vb07.png" alt="vb07" />
+
+<ul>
 <li>动态分配,默认选择,前期不怎么占用硬盘,后面会随着需要而增加.比较适用于硬盘存储比较小的计算机.</li>
 <li>固定大小,这个会占用主机硬盘空间.</li>
+</ul>
+</li>
 <li>选择需要将虚拟机建立在那个文件夹下面.视个人情况而定.我一般是建立在 /home
 <img src="/files/virtualbox/vb08.png" alt="vb08" /></li>
 <li>该页面显示已经成功的建立起来一个虚拟机,在上面有对应的配置.这个可以通过设置来更改.
 <img src="/files/virtualbox/vb09.png" alt="vb09" /></li>
 <li>为了在虚拟机上面安装 Windows 系统,需要点击"设置",找到"存储"里面的"分配光驱",然后选择移动硬盘上的 Windows 7 iso.
-<img src="/files/virtualbox/vb19.png" alt="vb010" /></li>
+<img src="/files/virtualbox/vb10.png" alt="vb010" /></li>
 <li>设置完成后的页面.点击"启动"开始安装系统.
 <img src="/files/virtualbox/vb16.png" alt="vb016" /></li>
 <li>普通的 Windows 7 安装过程.
@@ -109,10 +121,10 @@
 <li>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:
 'sudo addgroup wiliam vboxusers'</li>
 <li>接着做一下设置:</li>
-<li>打开 virtualbox,在不启动虚拟机的情况下,插入usb,选择"配置"的"USB设备",点击右边的"+"来添加USB硬盘.</li>
-<li>在不拔出USB的情况下,重启主机.开机后运行虚拟机,即可在右下角看到切换USB的图标.
+<li> 打开 virtualbox,在不启动虚拟机的情况下,插入usb,选择"配置"的"USB设备",点击右边的"+"来添加USB硬盘.</li>
+<li> 在不拔出USB的情况下,重启主机.开机后运行虚拟机,即可在右下角看到切换USB的图标.
 <img src="/files/virtualbox/vb17.png" alt="vb17" /></li>
-<li>这样,以后就可以在主机与虚拟机之间任意切换USB插件了.这个对于使用网银非常便捷.
+<li> 这样,以后就可以在主机与虚拟机之间任意切换USB插件了.这个对于使用网银非常便捷.
 <img src="/files/virtualbox/vb18.png" alt="vb18" /></li>
 </ol>
 
@@ -200,7 +212,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-04 19:53:04</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-04 20:00:59</span></small></p>
 </footer>
 
   </div>

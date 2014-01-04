@@ -7,8 +7,468 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-02T20:53:23+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-04T19:42:40+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
+    
+    <item>
+      <title>在 Virutalbox 环境下安装虚拟机</title>
+      <link>http://williamlfang.github.com/cn/2014/01/virtualbox/</link>
+      <pubDate>2014-01-04T00:00:00+08:00</pubDate>
+      <author>William Fang</author>
+      <guid>http://williamlfang.github.com/cn/2014/01/virtualbox</guid>
+      <content:encoded><![CDATA[<p>我现在的系统是 Linux Mint 16 (Petra,KDE),在开源社区有提供众多的软件,基本上能够满足工作和学习的需要.不过,对于在国内环境下,有些商业软件并不提供 Linux 支持,比如,我现在使用的招行网银U盾,不能在 Linux 下读取,再比如,厦大图书馆提供的远程访问数据库iReader,只能在window操作系统下使用.</p>
+
+<h2>Linux 下安装 Windows 软件</h2>
+
+<hr />
+
+<p>对于此类的问题,目前有两种解决方法:</p>
+
+<ol>
+<li>在 Linux 系统中安装 wine,从而可以安装大部分的软件,如QQ等.</li>
+<li>优点:占用的CPU资源少,不影响系统的运行速度</li>
+<li><p>缺点:设置麻烦,尤其是中文的设置基本是要人命的.典型的就是ireader不能运行.而且还需要相应的安装在 Linux 下的配套软件.</p></li>
+<li><p>另外一种就是我要介绍的方法:在 Linux 下使用虚拟机安装 Windows 操作系统,在其上面运行软件.</p></li>
+<li>优点:一劳永逸,简单方便</li>
+<li>缺点:由于虚拟机需要固定的分配内存和硬盘空间,会大大的降低系统的运行速度.</li>
+</ol>
+
+
+<p>不过,就目前的笔记本硬件配置来看,一般的内存是4G的,处理器在i3以上,硬盘在500G.在 Linux 下利用虚拟机安装 Windows 系统基本上不会有太大的影响.就本人目前的使用情况来看,效果还是可以接受的.</p>
+
+<p>下面就简单介绍一下我的安装经验.</p>
+
+<h2>安装 Virtualbox</h2>
+
+<hr />
+
+<p>首先是从网站下载 <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a>,这个是 deb 格式的,可以直接点击安装即可.需要 \root 权限.输入密码即可.</p>
+
+<p>然后在终端输入 virtualbox 打开.</p>
+
+<ol>
+<li>点击"新建"一个虚拟机,设置虚拟机名称,并选择相应的操作系统.这个其实意义不大,主要 virtualbox 会根据相应的操作系统分配默认的内存和硬盘空间.
+<img src="/files/virtualbox/vb01.png" alt="vb01" />
+<img src="/files/virtualbox/vb02.png" alt="vb02" />
+<img src="/files/virtualbox/vb03.png" alt="vb03" /></li>
+<li>也就是上一步骤的延续,设定内存大小.建议给主机留多一些内存以加快主机的运行速度.
+<img src="/files/virtualbox/vb04.png" alt="vb04" /></li>
+<li>点击"创建"开始建立一个虚拟机.
+<img src="/files/virtualbox/vb05.png" alt="vb05" /></li>
+<li>如果不知道虚拟硬盘的文件类型,那就选择默认的"VDI",点击"下一步"继续.
+<img src="/files/virtualbox/vb06.png" alt="vb06" /></li>
+<li>分配虚拟机的硬盘大小,有两种选择
+<img src="/files/virtualbox/vb07.png" alt="vb07" /></li>
+<li>动态分配,默认选择,前期不怎么占用硬盘,后面会随着需要而增加.比较适用于硬盘存储比较小的计算机.</li>
+<li>固定大小,这个会占用主机硬盘空间.</li>
+<li>选择需要将虚拟机建立在那个文件夹下面.视个人情况而定.我一般是建立在 /home
+<img src="/files/virtualbox/vb08.png" alt="vb08" /></li>
+<li>该页面显示已经成功的建立起来一个虚拟机,在上面有对应的配置.这个可以通过设置来更改.
+<img src="/files/virtualbox/vb09.png" alt="vb09" /></li>
+<li>为了在虚拟机上面安装 Windows 系统,需要点击"设置",找到"存储"里面的"分配光驱",然后选择移动硬盘上的 Windows 7 iso.
+<img src="/files/virtualbox/vb19.png" alt="vb010" /></li>
+<li>设置完成后的页面.点击"启动"开始安装系统.
+<img src="/files/virtualbox/vb16.png" alt="vb016" /></li>
+<li>普通的 Windows 7 安装过程.
+<img src="/files/virtualbox/vb11.png" alt="vb011" /></li>
+<li>成功安装系统,开始启动.
+<img src="/files/virtualbox/vb12.png" alt="vb012" />
+<img src="/files/virtualbox/vb13.png" alt="vb013" /></li>
+<li>在虚拟机上面的 Win 7 找到 Cd 光驱,点击打开安装扩展应用,期间会重启一次.进入之后可以看到整个 Win 7 的完整系统.
+<img src="/files/virtualbox/vb14.png" alt="vb14" /></li>
+<li>设置"共享文件夹",以实现在主机和虚拟机之间的文件传输.
+<img src="/files/virtualbox/vb15.png" alt="vb15" /></li>
+<li>最有,建立主机与虚拟机的USB共享.由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,<a href="https://www.virtualbox.org/wiki/Downloads">Entention pack</a>.下载完成后点击安装即可.然后重启 virtualbox.</li>
+<li>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:
+'sudo addgroup wiliam vboxusers'</li>
+<li>接着做一下设置:</li>
+<li>打开 virtualbox,在不启动虚拟机的情况下,插入usb,选择"配置"的"USB设备",点击右边的"+"来添加USB硬盘.</li>
+<li>在不拔出USB的情况下,重启主机.开机后运行虚拟机,即可在右下角看到切换USB的图标.
+<img src="/files/virtualbox/vb17.png" alt="vb17" /></li>
+<li>这样,以后就可以在主机与虚拟机之间任意切换USB插件了.这个对于使用网银非常便捷.
+<img src="/files/virtualbox/vb18.png" alt="vb18" /></li>
+</ol>
+
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Virtualbox</title>
+      <link>http://williamlfang.github.com/cn/2014/01/virtualbox/</link>
+      <pubDate>2014-01-03T00:00:00+08:00</pubDate>
+      <author>William Fang</author>
+      <guid>http://williamlfang.github.com/cn/2014/01/virtualbox</guid>
+      <content:encoded><![CDATA[<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Linux 下安装 Windows 软件</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<hr/>
+
+<p>layout:     post
+title:      在 Virutalbox 环境下安装虚拟机
+category:   </p>
+
+<ul>
+<li>Tech
+tags: </li>
+<li>Linux</li>
+<li>Virtualbox
+description: 
+&mdash;</li>
+</ul>
+
+<p>我现在的系统是 Linux Mint 16 (Petra,KDE),在开源社区有提供众多的软件,基本上能够满足工作和学习的需要.不过,对于在国内环境下,有些商业软件并不提供 Linux 支持,比如,我现在使用的招行网银U盾,不能在 Linux 下读取,再比如,厦大图书馆提供的远程访问数据库iReader,只能在window操作系统下使用.</p>
+
+<h2>Linux 下安装 Windows 软件</h2>
+
+<hr/>
+
+<p>对于此类的问题,目前有两种解决方法:</p>
+
+<ol>
+<li><p>在 Linux 系统中安装 wine,从而可以安装大部分的软件,如QQ等.</p>
+
+<ul>
+<li>优点:占用的CPU资源少,不影响系统的运行速度</li>
+<li>缺点:设置麻烦,尤其是中文的设置基本是要人命的.典型的就是ireader不能运行.而且还需要相应的安装在 Linux 下的配套软件.</li>
+</ul></li>
+<li><p>另外一种就是我要介绍的方法:在 Linux 下使用虚拟机安装 Windows 操作系统,在其上面运行软件.</p>
+
+<ul>
+<li>优点:一劳永逸,简单方便</li>
+<li>缺点:由于虚拟机需要固定的分配内存和硬盘空间,会大大的降低系统的运行速度.</li>
+</ul></li>
+</ol>
+
+<p>不过,就目前的笔记本硬件配置来看,一般的内存是4G的,处理器在i3以上,硬盘在500G.在 Linux 下利用虚拟机安装 Windows 系统基本上不会有太大的影响.就本人目前的使用情况来看,效果还是可以接受的.</p>
+
+<p>下面就简单介绍一下我的安装经验.</p>
+
+<h2>安装 Virtualbox</h2>
+
+<hr/>
+
+<p>首先是从网站下载 <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a>,这个是 deb 格式的,可以直接点击安装即可.需要 \root 权限.输入密码即可.</p>
+
+<p>然后在终端输入 virtualbox 打开.</p>
+
+<ol>
+<li>点击&quot;新建&quot;一个虚拟机,设置虚拟机名称,并选择相应的操作系统.这个其实意义不大,主要 virtualbox 会根据相应的操作系统分配默认的内存和硬盘空间.
+<img src="/files/virtualbox/vb01.png" alt="vb01"/>
+<img src="/files/virtualbox/vb02.png" alt="vb02"/>
+<img src="/files/virtualbox/vb03.png" alt="vb03"/></li>
+<li>也就是上一步骤的延续,设定内存大小.建议给主机留多一些内存以加快主机的运行速度.
+<img src="/files/virtualbox/vb04.png" alt="vb04"/></li>
+<li>点击&quot;创建&quot;开始建立一个虚拟机.
+<img src="/files/virtualbox/vb05.png" alt="vb05"/></li>
+<li>如果不知道虚拟硬盘的文件类型,那就选择默认的&quot;VDI&quot;,点击&quot;下一步&quot;继续.
+<img src="/files/virtualbox/vb06.png" alt="vb06"/></li>
+<li>分配虚拟机的硬盘大小,有两种选择
+<img src="/files/virtualbox/vb07.png" alt="vb07"/>
+
+<ul>
+<li>动态分配,默认选择,前期不怎么占用硬盘,后面会随着需要而增加.比较适用于硬盘存储比较小的计算机.</li>
+<li>固定大小,这个会占用主机硬盘空间.</li>
+</ul></li>
+<li>选择需要将虚拟机建立在那个文件夹下面.视个人情况而定.我一般是建立在 /home
+<img src="/files/virtualbox/vb08.png?raw=true" alt="vb08"/></li>
+<li>该页面显示已经成功的建立起来一个虚拟机,在上面有对应的配置.这个可以通过设置来更改.
+<img src="/files/virtualbox/vb09.png?raw=true" alt="vb09"/></li>
+<li>为了在虚拟机上面安装 Windows 系统,需要点击&quot;设置&quot;,找到&quot;存储&quot;里面的&quot;分配光驱&quot;,然后选择移动硬盘上的 Windows 7 iso.
+<img src="/files/virtualbox/vb19.png?raw=true" alt="vb010"/></li>
+<li>设置完成后的页面.点击&quot;启动&quot;开始安装系统.
+<img src="/files/virtualbox/vb16.png?raw=true" alt="vb016"/></li>
+<li>普通的 Windows 7 安装过程.
+<img src="/files/virtualbox/vb11.png?raw=true" alt="vb011"/></li>
+<li>成功安装系统,开始启动.
+<img src="/files/virtualbox/vb12.png?raw=true" alt="vb012"/>
+<img src="/files/virtualbox/vb13.png?raw=true" alt="vb013"/></li>
+<li>在虚拟机上面的 Win 7 找到 Cd 光驱,点击打开安装扩展应用,期间会重启一次.进入之后可以看到整个 Win 7 的完整系统.
+<img src="/files/virtualbox/vb14.png?raw=true" alt="vb14"/>)</li>
+<li>设置&quot;共享文件夹&quot;,以实现在主机和虚拟机之间的文件传输.
+<img src="/files/virtualbox/vb15.png?raw=true" alt="vb15"/></li>
+<li>最有,建立主机与虚拟机的USB共享.由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,<a href="https://www.virtualbox.org/wiki/Downloads">Entention pack</a>.下载完成后点击安装即可.然后重启 virtualbox.</li>
+<li>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:
+&#39;sudo addgroup wiliam vboxusers&#39;</li>
+<li>接着做一下设置:
+
+<ul>
+<li>打开 virtualbox,在不启动虚拟机的情况下,插入usb,选择&quot;配置&quot;的&quot;USB设备&quot;,点击右边的&quot;+&ldquo;来添加USB硬盘.</li>
+<li>在不拔出USB的情况下,重启主机.开机后运行虚拟机,即可在右下角看到切换USB的图标.
+<img src="/files/virtualbox/vb17.png" alt="vb17"/></li>
+<li>这样,以后就可以在主机与虚拟机之间任意切换USB插件了.这个对于使用网银非常便捷.
+<img src="/files/virtualbox/vb18.png" alt="vb18"/></li>
+</ul></li>
+</ol>
+
+</body>
+
+</html>
+
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>在 Virutalbox 环境下安装虚拟机</title>
+      <link>http://williamlfang.github.com/cn/2014/01/virtualbox/</link>
+      <pubDate>2014-01-03T00:00:00+08:00</pubDate>
+      <author>William Fang</author>
+      <guid>http://williamlfang.github.com/cn/2014/01/virtualbox</guid>
+      <content:encoded><![CDATA[<p>我现在的系统是 Linux Mint 16 (Petra,KDE),在开源社区有提供众多的软件,基本上能够满足工作和学习的需要.不过,对于在国内环境下,有些商业软件并不提供 Linux 支持,比如,我现在使用的招行网银U盾,不能在 Linux 下读取,再比如,厦大图书馆提供的远程访问数据库iReader,只能在window操作系统下使用.</p>
+
+<h2>Linux 下安装 Windows 软件</h2>
+
+<hr />
+
+<p>对于此类的问题,目前有两种解决方法:</p>
+
+<ol>
+<li>在 Linux 系统中安装 wine,从而可以安装大部分的软件,如QQ等.</li>
+<li>优点:占用的CPU资源少,不影响系统的运行速度</li>
+<li><p>缺点:设置麻烦,尤其是中文的设置基本是要人命的.典型的就是ireader不能运行.而且还需要相应的安装在 Linux 下的配套软件.</p></li>
+<li><p>另外一种就是我要介绍的方法:在 Linux 下使用虚拟机安装 Windows 操作系统,在其上面运行软件.</p></li>
+<li>优点:一劳永逸,简单方便</li>
+<li>缺点:由于虚拟机需要固定的分配内存和硬盘空间,会大大的降低系统的运行速度.</li>
+</ol>
+
+
+<p>不过,就目前的笔记本硬件配置来看,一般的内存是4G的,处理器在i3以上,硬盘在500G.在 Linux 下利用虚拟机安装 Windows 系统基本上不会有太大的影响.就本人目前的使用情况来看,效果还是可以接受的.</p>
+
+<p>下面就简单介绍一下我的安装经验.</p>
+
+<h2>安装 Virtualbox</h2>
+
+<hr />
+
+<p>首先是从网站下载 <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a>,这个是 deb 格式的,可以直接点击安装即可.需要 \root 权限.输入密码即可.</p>
+
+<p>然后在终端输入 virtualbox 打开.</p>
+
+<ol>
+<li>点击"新建"一个虚拟机,设置虚拟机名称,并选择相应的操作系统.这个其实意义不大,主要 virtualbox 会根据相应的操作系统分配默认的内存和硬盘空间.
+<img src="/files/virtualbox/vb01.png" alt="vb01" />
+<img src="/files/virtualbox/vb02.png" alt="vb02" />
+<img src="/files/virtualbox/vb03.png" alt="vb03" /></li>
+<li>也就是上一步骤的延续,设定内存大小.建议给主机留多一些内存以加快主机的运行速度.
+<img src="/files/virtualbox/vb04.png" alt="vb04" /></li>
+<li>点击"创建"开始建立一个虚拟机.
+<img src="/files/virtualbox/vb05.png" alt="vb05" /></li>
+<li>如果不知道虚拟硬盘的文件类型,那就选择默认的"VDI",点击"下一步"继续.
+<img src="/files/virtualbox/vb06.png" alt="vb06" /></li>
+<li>分配虚拟机的硬盘大小,有两种选择
+<img src="/files/virtualbox/vb07.png" alt="vb07" /></li>
+<li>动态分配,默认选择,前期不怎么占用硬盘,后面会随着需要而增加.比较适用于硬盘存储比较小的计算机.</li>
+<li>固定大小,这个会占用主机硬盘空间.</li>
+<li>选择需要将虚拟机建立在那个文件夹下面.视个人情况而定.我一般是建立在 /home
+<img src="/files/virtualbox/vb08.png?raw=true" alt="vb08" /></li>
+<li>该页面显示已经成功的建立起来一个虚拟机,在上面有对应的配置.这个可以通过设置来更改.
+<img src="/files/virtualbox/vb09.png?raw=true" alt="vb09" /></li>
+<li>为了在虚拟机上面安装 Windows 系统,需要点击"设置",找到"存储"里面的"分配光驱",然后选择移动硬盘上的 Windows 7 iso.
+<img src="/files/virtualbox/vb19.png?raw=true" alt="vb010" /></li>
+<li>设置完成后的页面.点击"启动"开始安装系统.
+<img src="/files/virtualbox/vb16.png?raw=true" alt="vb016" /></li>
+<li>普通的 Windows 7 安装过程.
+<img src="/files/virtualbox/vb11.png?raw=true" alt="vb011" /></li>
+<li>成功安装系统,开始启动.
+<img src="/files/virtualbox/vb12.png?raw=true" alt="vb012" />
+<img src="/files/virtualbox/vb13.png?raw=true" alt="vb013" /></li>
+<li>在虚拟机上面的 Win 7 找到 Cd 光驱,点击打开安装扩展应用,期间会重启一次.进入之后可以看到整个 Win 7 的完整系统.
+<img src="/files/virtualbox/vb14.png?raw=true" alt="vb14" />)</li>
+<li>设置"共享文件夹",以实现在主机和虚拟机之间的文件传输.
+<img src="/files/virtualbox/vb15.png?raw=true" alt="vb15" /></li>
+<li>最有,建立主机与虚拟机的USB共享.由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,<a href="https://www.virtualbox.org/wiki/Downloads">Entention pack</a>.下载完成后点击安装即可.然后重启 virtualbox.</li>
+<li>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:
+'sudo addgroup wiliam vboxusers'</li>
+<li>接着做一下设置:</li>
+<li>打开 virtualbox,在不启动虚拟机的情况下,插入usb,选择"配置"的"USB设备",点击右边的"+"来添加USB硬盘.</li>
+<li>在不拔出USB的情况下,重启主机.开机后运行虚拟机,即可在右下角看到切换USB的图标.
+<img src="/files/virtualbox/vb17.png" alt="vb17" /></li>
+<li>这样,以后就可以在主机与虚拟机之间任意切换USB插件了.这个对于使用网银非常便捷.
+<img src="/files/virtualbox/vb18.png" alt="vb18" /></li>
+</ol>
+
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Github 的一些设置技巧</title>
+      <link>http://williamlfang.github.com/cn/2014/01/github-skills/</link>
+      <pubDate>2014-01-03T00:00:00+08:00</pubDate>
+      <author>William Fang</author>
+      <guid>http://williamlfang.github.com/cn/2014/01/github-skills</guid>
+      <content:encoded><![CDATA[<p><em>引用</em>:<a href="http://blog.csdn.net/keyboardota/article/details/7603630">原文连接</a></p>
+
+<blockquote><p>问题:在新的电脑系统中,首次生成SSH, 系统会报下面的错误：<br>
+Permission denied (publickey). <br>
+fatal:The remote end hung up unexpectedly <br></p>
+
+<p>Solution:这时需要在本地创建SSH key，然后将生成的SSH key文件内容添加到github帐号上去。</p></blockquote>
+
+<p>创建SSH key的方法很简单，执行如下命令就可以：
+- ssh-keygen
+- 然后系统提示输入文件保存位置等信息，连续敲三次回车即可，生成的SSH key文件保存在中～/.ssh/id_rsa.pub</p>
+
+<p>然后用文本编辑工具打开该文件，我用的是gedit,所以命令是：
+gedit ~/.ssh/id_rsa.pub</p>
+
+<p>接着拷贝.ssh/id_rsa.pub文件内的所以内容，将它粘帖到github帐号管理中的添加SSH key界面中。</p>
+
+<p>打开github帐号管理中的添加SSH key界面的步骤如下：</p>
+
+<ol>
+<li>登录github</li>
+<li>点击右上方的Accounting settings图标</li>
+<li>选择 SSH key</li>
+<li>点击 Add SSH key</li>
+<li>在出现的界面中填写SSH key的名称，填一个你自己喜欢的名称即可，然后将上面拷贝的~/.ssh/id_rsa.pub文件内容粘帖到key一栏，在点击“add key”按钮就可以了。</li>
+</ol>
+
+
+<p>添加过程github会提示你输入一次你的github密码</p>
+
+<p>添加完成后再次执行git clone就可以成功克隆github上的代码库了。</p>
+]]></content:encoded>
+    </item>
     
     <item>
       <title>本本的&quot;转型&quot;</title>
@@ -256,110 +716,6 @@ jekyll --server
 <p>这是一种怎样的孤单呢。发现被曾经宠爱的文字抛弃，纵然于荒无人烟的旷野、抑或身处繁华尘世，无力叙述无法倾听。人若机械，心即冰雪。我们，终究在这旷世持久的孤独中逝去。</p>
 
 <p>原来，我们本是一群被文字宠坏的孩子。不曾珍惜，后被抛弃，终将老去。</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>逆光</title>
-      <link>http://williamlfang.github.com/cn/2012/05/ni-guang/</link>
-      <pubDate>2012-05-14T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2012/05/ni-guang</guid>
-      <content:encoded><![CDATA[<p>逆光在时间的四维里，应该是扭曲的，像午后在校园看见的卷发，很有马鞍的形状，在微积分中，是一个很完美的方程……</p>
-
-<p>在图书馆看随机过程，很多的表现，我们无法得知，布朗运动的分子，很有夏天阳光的味道，在逆光的世界里迷乱的奔走。生活呢，像在很大的一个空间里，没有方向的流走。</p>
-
-<p>一整个夏天还没开始，便要很困难的度过，考试很简单的应付，从小便有了这样的思维，可是，现实呢，是否还可以抽象的没有一点曲谱，可以抽离很多的随机然后赋予一个随机的误差，甚是自欺的话语。</p>
-
-<p>记得去年这个时候，在机房写学期总结，大学一年祭，很伤感的落幕，像一场刚刚开始的话剧，然后静静的等候开始的约定，可是在你不经意间，很多的故事已经发生，很多的人已经离开了座位，很多的时光已经不再依旧，比如，你想能够回到刚刚的那些片刻，可是不会了，逆光的世界，画面被极度的扭曲，你在这个视界看到的场景，却始终抓不到，记得以前看那些很煽情的电影，总是有擦肩而过的遗憾，或者，我站在铁轨的这边，你却是处于了时空的另一端。</p>
-
-<p>隔岸便是两个世界……</p>
-
-<p>很惊喜的发觉普鲁斯特的追忆竟然还能躺在书架上，去年狠心买了一套，后来一直被放在家里，那个高高的木架上，每次回家，总在把他们放下来，坐在阁楼的旋梯，静静的思考，而走的时候呢，爸总会说我一顿，然后很无奈的把杂七的书一点的拾起，放进木架。等待下一次的归来。人的内心，原来还有一个世界，是哥白尼的颠覆，纯粹神学的想象，却乐此不疲。在很小的阁楼，我的我的世界。</p>
-
-<p>已经不成行。</p>
-
-<p>总会有可以找到的归处，可以依靠的角落。有很多的候鸟，常年的奔波，只为找到自己的归处，石头的呢，已经在你那里了……</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>盛夏的那些事</title>
-      <link>http://williamlfang.github.com/cn/2010/08/summer-gone/</link>
-      <pubDate>2010-08-21T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2010/08/summer-gone</guid>
-      <content:encoded><![CDATA[<p>终于可以等到夏至的到来，虽然在北回归线的北方，往着一个方向，死死的看，像是一场莫大的盛典，像在迎接一个久违的老友，更像是一场祭奠的仪式，一点一点的将盛夏的那些埋进夏至的土壤，将曾经的轻狂桀骜埋进温热的地壳里，等待千万年后的生根发芽，虽然是注定的离开，依然会显得灿烂若孩童的微笑，干净的脸颊写满天空的纯，没有一丝的忧伤。</p>
-
-<p>早上起来发觉手机欠费，见鬼，很慵懒的躺在床上，想些事情，下午要考六级，o(∩_∩)o...，见鬼，想给猪头打电话，怕吵了，无奈，翻开手机的备忘录，才发觉应该是夏至了，很纳闷什么时候将这个日子偷偷的记录在备忘里，一定是莫个时刻，想像着等待一场盛大的典礼，是吗。莫名其妙的，便开始寻找一整个夏天。</p>
-
-<p>回归线的南方，依然停留着很多的朋友，很多的那些没长大的孩子，盛夏的那些事，是否还是一遍一遍的重演呢，在天亮之前回家，在暗夜里满脸泪容，不知道是谁把自己弄疼，或者是否自己弄疼的，不知道了，不知道的很多事，现在想起依然不知道……</p>
-
-<p>盛夏里，有很多的画面，一页一页的切换，像课上的放电影，老师的背景音乐很嘈杂，观众在各自逍遥，是否还能有人，安静的欣赏这样的画面呢。穿越过我的故乡的胡杨树，穿越过我的记忆的长沙堤，穿越过他们的孩子气……</p>
-
-<p>后知后觉，很多事已经淡忘，不知不觉，很多人已经不再。</p>
-
-<p>在想，南方的小县城，是否能够回不去，靠近水岸的方向，最是没有方向，白茫茫的大片，让人沉醉让人碎。</p>
-
-<p>转眼会很快的把这个夏至以往，然后喜欢在第二天开始期待下一个的夏至，永远的是石头，可是夏至呢，夏至却不会一直的停留。</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>那女孩對我說</title>
-      <link>http://williamlfang.github.com/cn/2009/11/the-girl/</link>
-      <pubDate>2009-11-04T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2009/11/the-girl</guid>
-      <content:encoded><![CDATA[<p>不知道如何開始這樣的敘述，傾訴的完成似乎早在故事的開始就已經註定，只是在這樣的結尾處偶然斷點，斷開的裂痕將自己淹沒。匍匐在黑色懸崖許久，卻發現我的人兒已不再。</p>
-
-<p>晚上開始大段大段的失眠，然後大口大口的喝冰冷的白水，冰冷到刺激到麻木，然後繼續臥倒，做一副睡眠狀。會在凌晨驚醒，驚嚇一身的汗水，有一次我夢見我們都是不相識的，可是醒來后卻發現原來彼此是相愛的。</p>
-
-<p>習慣是自然進化的均衡解，像納什的男女孩博弈，總會有一個最優的均衡，只是，習慣有時也是致命，突然轉身后發現你已不再，就像孩子返身卻找不到回家的歸路。習慣，讓我不知所措。得到越多，我卻比從前更寂寞。</p>
-
-<p>不知道故事是如何開始的，只是一切都安靜的發生著，人來人往，擦肩而過，揮手說著再見不見。有個天使在我的天空微笑，很美很燦爛，把整個的世界照的通明。似乎這更像時間序列，匆匆的卻也蘊含規律。時代的宿遷是時代的宿命，在過去與過往的彼此間隙，我們匆匆的遇見，希冀時間剛好在你我的身邊經過。流沙，我卻可以恣意的隨手塗鴉，為你寫過的詩篇，像刻在年輪的龜裂，多年不退色，多年重複的響絕在夢里。</p>
-
-<p>會偶爾記起多年前聽過的樂曲，看過的影片，相愛的人兒，擦肩的風景，一切都很美麗。普率斯特在一個暗淡的屋舍里追憶逝去的年華匆匆一片，不再守候的人兒漸漸黯然。唯一的樂園，是人們失去的樂園。生命不能承受的，是那些不好笑的玩笑，上帝想聽歌，所以將MJ帶走了，想好好的珍惜，卻發現你已離我萬里的距離。北方有佳人，傾國有傾城。</p>
-
-<p>看到一首Norman McCaig寫的詩歌，書呆子，以為世界的旋轉是書頁上飄動的精靈，以為櫻桃樹盛開了你的微笑那樣的美麗，以為愛的詞典了你會給出所有的答案。書呆會踟躕的下著涼雨的小巷等候你，書呆偶爾採摘的玫瑰是女孩的眼淚凝結的花朵。書呆，在等你的執著。</p>
-
-<p>文字是一生的故己，陪你守候的，是這些的精靈在流沙的時間里跳動的音符與旋轉的曲綫。會在桌臺上安靜的記錄這一刻想你的心跡，在下一刻抬頭卻想起了你的輪廓。麥當勞的落地窗透露出陽光很好看的燦爛，想起在飄落初雪的清晨給你的祝福。追尋意識的流淌，卻怎麼也找尋不到你的影子。</p>
-
-<p>想像著在一片莫大的原野兀自的奔跑，天圓地方的宇宙，只是朝著任何你的方向，然後像個麥哲倫一樣循環往復的追尋，故地重遊，一遍一遍，一圈一圈，直到飛蛾撲火把自己弄得很累，麥哲倫沒有看到他的理想其實在開始的那一刻已經成真，我們看到了一眼望見盡頭的幸福，卻在航行的途中迷失了方位，丟失了方向。</p>
-
-<p>第一次打開收音機聽到的是遊鴻明的一天一萬年，一下便記住了那個午後的陽光，折射在閣樓的窗臺角落，把一疊曹文軒的書曬的很暖。那個季節，我在閱讀，在開始一段傾訴的開始，草房子在海的對岸，彼岸的海邊。便是這樣的好笑，根據物理學的弦理論，我們的世界時一個十一維度的空間，偶爾這些神奇的弦交互邂逅，我們也便相識了。在某個日落的街道，在月起的屋簷，在海風吹拂的石青路，我們會看到時間是如此神奇的交錯雜織。這一刻，我的一天一萬年。</p>
-
-<p>據說有一種鳥，會飛躍大洋，千里迢迢，只爲找尋他的愛人，可是每次都有很多因為精力耗盡而永遠的沉沒在海的中心。人們叫它，荊棘鳥。或許，Darwin的進化論在這裡可以很好的解釋，可是不，這不是一個均衡的解，這個世界應該得到更好的答案。更好的答案，我一直在找尋。據說是一個偏執的人，渴望為這個世界找尋更好的答案。人們總說，這個不行那個不行，人們總說，這個不合那個不合，人們總說，這樣不好那樣不好，人們總說，這是不能那個不能。可是，沒有人告訴我們倒是什麽才是這個問題的答案。我們，有自己的答案。我們知道，這個是命運的轉盤剛好指向你我的方向，我們知道，這個是自然的開始恰好沒有早點也剛好沒有晚了在這一刻讓我遇到你，我們還知道，這是彼此的生命註定在如此複雜的維度里邂逅在一個日落的午後。</p>
-
-<p>亞當斯密一生孤單，可是他找到了那個通向自由的答案，自然自由秩序，給予人們充足的自由權，這個貌似無序社會可以達到完美的境界。沒有任何的阻力，不需要任何的附加，我們，要勇敢。同時期的美利堅大地也響徹相同的絕響，對幸福的追求。</p>
-
-<p>選擇一個自己的方向，像在故事的開始我們一同設定的前方，然後堅定的往前走，一直相信這個會是最終主人公的答案，那個他找尋許久的。想像你一直陪伴在我的身邊，一路有你，一路高歌。</p>
-
-<p>下一站，會是我們的的幸福終點站。</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>流年</title>
-      <link>http://williamlfang.github.com/cn/2009/09/liu-nian/</link>
-      <pubDate>2009-09-15T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2009/09/liu-nian</guid>
-      <content:encoded><![CDATA[<p>那天有人通知说需要写大学四年的总结。心生惶恐。</p>
-
-<p>原来，在蓦然之间，一天又三年外加莫名的一年，这样便是我的大学了。俗话说好马不吃回头草，到底我是不是好马暂且不论，至少，写总结对于我而言，正如扒开昨日的伤疤，看流年留下的年轮，痕迹累累。这不是身体的伤害，不是肢体的残缺，而是心的受难，对逝去光阴的祭奠。而唯一的乐园，是人们失去的乐园。回头或许无益补漏，反增伤感。</p>
-
-<p>现在翻开以前惯例写的终结，大学一年祭，春夏秋冬，一天又三年。现在，我该怎么给这个流年下个题目呢，像图书馆的标签，像超市的条码，像灵魂索骥的暗号，若干年，如果还有机会回顾，兴许凭借这些文字的精灵，找到昨日，窥见曾经。</p>
-
-<p>或许应该直接写上“流年”二字，每年便都循此惯例，为每个不往复的流年做一次微小的祭奠，为每次迷茫的心灵做一次虔诚的祷告。</p>
-
-<p>年华似水匆匆一瞥，多少岁月轻描淡写。</p>
-
-<p>记住的，忘记了。</p>
-
-<p>昨天下午在整理旧物，发现一本厚厚的日记本，“写给未来的自己”，这是扉页的签字。当时是怎样的心情呢，当时是怎样的情景呢，已然忘记。只是这些散落的文字顽固的附着在早已褪色泛黄的纸页上，提醒“未来的我”，那些流年已经不再了。日记的第一句话是，“你要活下去”。兴许，当时的自己对于“活下去”是什么意思甚至浑然不知晓，简单的三个字倒不如儿时的田字格简简单单，可以随意的刻画星象般的梦幻。死是一件必然的事，大凡对于确定降临的东西，心已坦诚，也就无须忧虑，而往往是那些或然的过程，满心惶恐。或许当时病了，或许只是看到某个生命的镜头，可是，当时却那么强烈的写着要活下去。</p>
-
-<p>谢谢这些散落的文字，让我记住了流年。“你要快乐，幸福”，这是接下来的话。存在于存在，基督的教义里生命是个受难的过程，存在于过程中，即使如烟花般短暂，却要更灿烂。不需要天天提醒自己，需要的，重要的，是把这个过程完好的走完，要快乐，要幸福。记住了遗忘，忘记了记忆。现在的我，想对“未来的自己”说，我现在很幸福。</p>
 ]]></content:encoded>
     </item>
     

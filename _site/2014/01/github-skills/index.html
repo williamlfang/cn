@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>Github 的一些设置技巧 | William Fang</title>    -->
+    <title>Github 的一些设置技巧 | William Fang</title> 
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1988641-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  </head>
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>Github 的一些设置技巧</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+        <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p><em>引用</em>:<a href="http://blog.csdn.net/keyboardota/article/details/7603630">原文连接</a></p>
+
+<blockquote><p>问题:在新的电脑系统中,首次生成SSH, 系统会报下面的错误：<br>
+Permission denied (publickey). <br>
+fatal:The remote end hung up unexpectedly <br></p>
+
+<p>Solution:这时需要在本地创建SSH key，然后将生成的SSH key文件内容添加到github帐号上去。</p></blockquote>
+
+<p>创建SSH key的方法很简单，执行如下命令就可以：
+- ssh-keygen
+- 然后系统提示输入文件保存位置等信息，连续敲三次回车即可，生成的SSH key文件保存在中～/.ssh/id_rsa.pub</p>
+
+<p>然后用文本编辑工具打开该文件，我用的是gedit,所以命令是：
+gedit ~/.ssh/id_rsa.pub</p>
+
+<p>接着拷贝.ssh/id_rsa.pub文件内的所以内容，将它粘帖到github帐号管理中的添加SSH key界面中。</p>
+
+<p>打开github帐号管理中的添加SSH key界面的步骤如下：</p>
+
+<ol>
+<li>登录github</li>
+<li>点击右上方的Accounting settings图标</li>
+<li>选择 SSH key</li>
+<li>点击 Add SSH key</li>
+<li>在出现的界面中填写SSH key的名称，填一个你自己喜欢的名称即可，然后将上面拷贝的~/.ssh/id_rsa.pub文件内容粘帖到key一栏，在点击“add key”按钮就可以了。</li>
+</ol>
+
+
+<p>添加过程github会提示你输入一次你的github密码</p>
+
+<p>添加完成后再次执行git clone就可以成功克隆github上的代码库了。</p>
+
+</section>
+<section class="meta">
+
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2014/01/github-jekyll/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://williamlfang.github.com/cn/2014/01/virtualbox/" class="pageNav"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2014-01-03">2014-01-03</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Tech" title="Tech">Tech</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#Github" title="Github">Github</a>&nbsp;
+  
+  <a href="/tags/#Jekyll" title="Jekyll">Jekyll</a>&nbsp;
+  
+  <a href="/tags/#SSH" title="SSH">SSH</a>&nbsp;
+  
+</span>
+
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2014/01/github-jekyll/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://williamlfang.github.com/cn/2014/01/virtualbox/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-04 19:42:40</span></small></p>
+</footer>
+
+  </div>
+
+  </body>
+</html>

@@ -75,7 +75,7 @@ description:
 > + 同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:   <br>
     sudo addgroup wiliam vboxusers  <br>
 > + 接着做一下设置:    <br>
-   - 打开 virtualbox,但事先不启动虚拟机.找到"设置"中的"USB设备",点击右边的"+"以添加USB  <br>
+   - 打开virtualbox,但事先不启动虚拟机.找到"设置"中的"USB设备",点击右边的"+"以添加USB  <br>
    - 重启主机,启动虚拟机后就可以通过右下角的USB符号添加.如果不用的话,也可以点击推出.
 
 

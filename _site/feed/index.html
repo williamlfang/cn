@@ -7,7 +7,7 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-04T20:11:44+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-04T20:23:45+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
     
     <item>
@@ -90,11 +90,21 @@
 <img src="/files/virtualbox/vb14.png" alt="vb14" /></li>
 <li>设置"共享文件夹",以实现在主机和虚拟机之间的文件传输.
 <img src="/files/virtualbox/vb15.png" alt="vb15" /></li>
-<li>最有,建立主机与虚拟机的USB共享.由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,<a href="https://www.virtualbox.org/wiki/Downloads">Extention pack</a>.下载完成后点击安装即可.然后重启 virtualbox.</li>
-<li>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:'sudo addgroup wiliam vboxusers'</li>
-<li>接着做一下设置:</li>
-<li> 优点:占用的CPU资源少,不影响系统的运行速度</li>
-<li> 缺点:设置麻烦,尤其是中文的设置基本是要人命的.典型的就是ireader不能运行.而且还需要相应的安装在 Linux 下的配套软件.</li>
+</ol>
+
+
+<h2>Virtualbox 识别 USB</h2>
+
+<hr />
+
+<p>为了能够在主机与虚拟机之间相互使用USB,还需有做如下的设置.</p>
+
+<ol>
+<li><p>由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,<a href="https://www.virtualbox.org/wiki/Downloads">Extention pack</a>.下载完成后点击安装即可.然后重启 virtualbox.</p></li>
+<li><p>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:'sudo addgroup wiliam vboxusers'</p></li>
+<li><p>接着做一下设置:</p></li>
+<li> 打开 virtualbox,但事先不启动虚拟机.找到"设置"中的"USB设备",点击右边的"+"以添加USB</li>
+<li> 重启主机,启动虚拟机后就可以通过右下角的USB符号添加.如果不用的话,也可以点击推出.</li>
 </ol>
 
 ]]></content:encoded>

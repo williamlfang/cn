@@ -43,7 +43,7 @@
         </nav>
         <article class="content">
         <section class="post">
-<p>最近由于电脑不是很稳定,装了几次系统.这个我之前也有谈过,如何从万恶的 MS 的 Windows 系统成功<a href="">转型</a>到自由软件与操作系统 Linux.经过这几次的装机经历,我也发现了这其中的一些pattern.比如,我今天要谈到的话题:</p>
+<p>最近由于电脑不是很稳定,装了几次系统.这个我之前也有谈过,如何从万恶的 MS 的 Windows 系统成功<a href="http://williamlfang.github.io/cn/2014/01/window-2-linux/">转型</a>到自由软件与操作系统 Linux.经过这几次的装机经历,我也发现了这其中的一些pattern.比如,我今天要谈到的话题:</p>
 
 <blockquote><p>谁是你的新系统的第一个软件呢?</p></blockquote>
 
@@ -108,6 +108,41 @@ http://www.twitter.com
 
 <p>有些时候,我会通过goagent联系多年失散的朋友,在fb上看看近照是不是瘦了胖了高了怎么有人还矮了呢,在tw里也会想念那些远在天边的切切私语遗忘在某个不知名的接到.他们如同失落天涯的蒲公英,飘零在荒无管制的原野.可我却一直羡慕着羡慕着,唯独恨我这落地生根了的躯干,不远不近,囚禁在这无形的地牢里,守着这有形的长城,过着无期的日子,叹一口无尽的哀怨.</p>
 
+<hr />
+
+<h3>附录:GoAgent设置说明</h3>
+
+<hr />
+
+<p>GoAgent 为在天朝上网提供了一个小小的洞眼，让被墙的我们得以窥见外面自由的世界。</p>
+
+<p>以下设置为个人经验,请谨慎借用.</p>
+
+<ol>
+<li><p>创建 <a href="https://appengine.google.com/">Google Appengine</a> 的ID.一个ID每天上限流量为1GB,最多可以申请10个账号.这样就可以保证一天内有10GB的流量可供使用,基本能够保证一天的上网需要,看个Youtube或者浏览Facebook是没问题的.如我的</p>
+
+<blockquote><p>williamfang01|williamfang02|williamfang05|williamfang06|williamfang07|williamfang08| <br/>
+williamfang09|williamfang1988|williamfang1989|williamlianfang</p></blockquote></li>
+<li><p>下载 <a href="https://developers.google.com/appengine/downloads?hl=zh-cn">Google App Engine SDK</a>,并解压到一个 <code>/Goagent/go_appengine</code> 的文件夹下面.</p></li>
+<li><p>下载 <a href="https://code.google.com/p/goagent/">GoAgent</a>,将其解压到 <code>/Goagent/go_appengine</code>.</p></li>
+<li><p>打开 <code>/Goagent/go_appengine/goagent-goagent-37d13a7/local/proxy.ini</code>,在 <code>appid</code> 中输入刚才申请的 ID 账号,保存.</p></li>
+<li><p>打开 Linux 终端机,填写ID,gmail密码,上传账号信息.</p>
+
+<blockquote><p>cd /home/william/Programs/Goagent/go_appengine/goagent-goagent-37d13a7/serve    <br>
+python uploader.zip</p></blockquote></li>
+<li><p>成功后会有提示,回车推出.</p></li>
+<li><p>现在可以到 <code>/local</code> 下打开 <code>goagent-gtk.py</code>,直接运行即可上网.也可以将其复制到桌面,以后直接双击即可.</p></li>
+<li><p>在 chrome 中的配置.</p>
+
+<blockquote><ul>
+<li>首先是通过 chrome store 安装 proxy</li>
+<li>点击设置,上传 <code>/local/SwitchyOptions.bak</code></li>
+<li>点击 chrome 的 setting, 安装证书 <code>/local/CA</code>.</li>
+</ul>
+</blockquote></li>
+</ol>
+
+
 </section>
 <section class="meta">
 
@@ -116,7 +151,7 @@ http://www.twitter.com
 <span>
 	<a  href="http://williamlfang.github.com/cn/2014/01/virtualbox/" class="pageNav"  >Previous</a>
 	&nbsp;&nbsp;&nbsp;
-	<a   class="pageNavInvalid"  >Next</a>
+	<a  href="http://williamlfang.github.com/cn/2014/01/goagent/" class="pageNav"  >Next</a>
 </span>
 <hr>
 <span class="author">
@@ -181,6 +216,8 @@ $(function(){
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             
+        url = 'http://williamlfang.github.com/cn/2014/01/goagent/';
+        
         }
         if (url) {
             window.location = url;
@@ -195,7 +232,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-05 00:18:46</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-05 01:24:11</span></small></p>
 </footer>
 
   </div>

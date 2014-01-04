@@ -70,9 +70,9 @@ description:
 16. 接着做一下设置:
    - 打开 virtualbox,在不启动虚拟机的情况下,插入usb,选择"配置"的"USB设备",点击右边的"+"来添加USB硬盘.
    - 在不拔出USB的情况下,重启主机.开机后运行虚拟机,即可在右下角看到切换USB的图标.
-  ![vb17](/files/virtualbox/vb17.png)
    - 这样,以后就可以在主机与虚拟机之间任意切换USB插件了.这个对于使用网银非常便捷.
-  ![vb18](/files/virtualbox/vb18.png)
+![vb17](/files/virtualbox/vb17.png)
+![vb18](/files/virtualbox/vb18.png)
 
 
 

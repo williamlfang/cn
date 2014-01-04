@@ -68,14 +68,14 @@ description:
 
 ## Virtualbox 识别 USB
 ----
+
 为了能够在主机与虚拟机之间相互使用USB,还需有做如下的设置.
 
-14. 由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,[Extention pack](https://www.virtualbox.org/wiki/Downloads).下载完成后点击安装即可.然后重启 virtualbox.
-
-15. 同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:'sudo addgroup wiliam vboxusers'  
-
-16. 接着做一下设置:
-   - 打开 virtualbox,但事先不启动虚拟机.找到"设置"中的"USB设备",点击右边的"+"以添加USB
+> + 由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,[Extention pack](https://www.virtualbox.org/wiki/Downloads).下载完成后点击安装即可.然后重启 virtualbox.   <br>
+> + 同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:   <br>
+    sudo addgroup wiliam vboxusers  <br>
+> + 接着做一下设置:    <br>
+   - 打开 virtualbox,但事先不启动虚拟机.找到"设置"中的"USB设备",点击右边的"+"以添加USB  <br>
    - 重启主机,启动虚拟机后就可以通过右下角的USB符号添加.如果不用的话,也可以点击推出.
 
 

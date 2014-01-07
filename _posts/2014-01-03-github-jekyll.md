@@ -126,7 +126,7 @@ fatal:The remote end hung up unexpectedly <br>
 然后用文本编辑工具打开该文件，我用的是gedit,所以命令是：
 gedit ~/.ssh/id_rsa.pub
 
-接着拷贝.ssh/id_rsa.pub文件内的所以内容，将它粘帖到github帐号管理中的添加SSH key界面中。
+接着拷贝.ssh/id_rsa.pub（或者是github.pub）文件内的所以内容，将它粘帖到github帐号管理中的添加SSH key界面中。
 
 打开github帐号管理中的添加SSH key界面的步骤如下：
 

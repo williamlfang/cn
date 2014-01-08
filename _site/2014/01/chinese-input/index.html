@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="William Fang" />
-    <!--   <title>留言 | William Fang</title>    -->
-    <title>留言 | William Fang</title> 
+    <!--   <title>Linux 中文输入法（fcitx）安装与设置 | William Fang</title>    -->
+    <title>Linux 中文输入法（fcitx）安装与设置 | William Fang</title> 
     <link rel="shortcut icon" href="/favicon.ico">
     <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
@@ -27,7 +27,7 @@
     <div id="container">
       <div id="main" role="main">
         <header>
-        <h1>留言</h1>
+        <h1>Linux 中文输入法（fcitx）安装与设置</h1>
         </header>
         <nav>
         <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
@@ -43,10 +43,85 @@
         </nav>
         <article class="content">
         <section class="post">
-<p>有啥话要对我吼两嗓子的请尽管在这里吼！吼吼！如果不愿意公开吼，可以私下吼，联系方式参见简历页。</p>
+<p>Linux （Mint，16 Petra）系统本身并没有默认安装中文输入法。为了在 Linux 操作系统下使用中文输入，需要自己添加。我倒腾了大半天的，终于明白过来这是怎么设置了。现在将全部的过程记录在下面，以备日后使用。</p>
+
+<ol>
+<li><p>首先是安装源，</p>
+
+<p> sudo add-apt-repository ppa:fcitx-team/nightly</p></li>
+<li><p>更新</p>
+
+<p> sudo apt-get update</p></li>
+<li><p>安装 fcitx，搜狗输入法，五笔（一般不用）</p>
+
+<p> sudo apt-get install fcitx fcitx-sogoupinyin fcitx-table-wubi</p></li>
+</ol>
+
+
+<p>  当然，也可以安装双拼
+    sudo apt-get install fcitx-pinyin</p>
+
+<ol>
+<li><p>这个比较重要，可以先在终端输入 fcitx，看看是不是提示没有可用的前端，则需要安装如下 <code>fcitx-frontend-gtk3</code></p>
+
+<p> sudo apt-get install fcitx-frontend-gtk3 fcitx-ui-classic</p></li>
+<li><p>打开 fcitx config，如果提示 "fcitx 的 KCModule 未被找到 缺少"，则在Terminator输入</p>
+
+<p> sudo apt-get install kde-config-fcitx</p></li>
+<li><p>在 <code>fconfig</code> 设置输入法即可使用。</p></li>
+<li><p>需要在 <code>/home</code> 文件夹下面新建/修改 <code>.xprofile</code></p></li>
+</ol>
+
+
+<blockquote><p>export LC_ALL=zh_CN.utf8        <br>
+export XMODIFIERS=@im=fcitx        <br>
+export QT_IM_MODULE=xim        <br>
+export GTK_IM_MODULE=xim        <br>
+fcitx -d        <br></p></blockquote>
 
 </section>
+<section class="meta">
 
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2014/01/goagent/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a   class="pageNavInvalid"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2014-01-08">2014-01-08</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Tech" title="Tech">Tech</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#Linux" title="Linux">Linux</a>&nbsp;
+  
+  <a href="/tags/#fcitx" title="fcitx">fcitx</a>&nbsp;
+  
+  <a href="/tags/#输入法" title="输入法">输入法</a>&nbsp;
+  
+</span>
+
+</section>
 <!-- Duoshuo Comment BEGIN -->
 	<div class="ds-thread"></div>
 	<script type="text/javascript">
@@ -62,6 +137,26 @@
 	</script>
 <!-- Duoshuo Comment END -->
 
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2014/01/goagent/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
 
 
 

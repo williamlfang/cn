@@ -7,13 +7,57 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-05T01:27:47+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-08T02:37:47-05:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
+    
+    <item>
+      <title>Linux 中文输入法（fcitx）安装与设置</title>
+      <link>http://williamlfang.github.com/cn/2014/01/chinese-input/</link>
+      <pubDate>2014-01-08T00:00:00-05:00</pubDate>
+      <author>William Fang</author>
+      <guid>http://williamlfang.github.com/cn/2014/01/chinese-input</guid>
+      <content:encoded><![CDATA[<p>Linux （Mint，16 Petra）系统本身并没有默认安装中文输入法。为了在 Linux 操作系统下使用中文输入，需要自己添加。我倒腾了大半天的，终于明白过来这是怎么设置了。现在将全部的过程记录在下面，以备日后使用。</p>
+
+<ol>
+<li><p>首先是安装源，</p>
+
+<p> sudo add-apt-repository ppa:fcitx-team/nightly</p></li>
+<li><p>更新</p>
+
+<p> sudo apt-get update</p></li>
+<li><p>安装 fcitx，搜狗输入法，五笔（一般不用）</p>
+
+<p> sudo apt-get install fcitx fcitx-sogoupinyin fcitx-table-wubi</p></li>
+</ol>
+
+
+<p>  当然，也可以安装双拼
+    sudo apt-get install fcitx-pinyin</p>
+
+<ol>
+<li><p>这个比较重要，可以先在终端输入 fcitx，看看是不是提示没有可用的前端，则需要安装如下 <code>fcitx-frontend-gtk3</code></p>
+
+<p> sudo apt-get install fcitx-frontend-gtk3 fcitx-ui-classic</p></li>
+<li><p>打开 fcitx config，如果提示 "fcitx 的 KCModule 未被找到 缺少"，则在Terminator输入</p>
+
+<p> sudo apt-get install kde-config-fcitx</p></li>
+<li><p>在 <code>fconfig</code> 设置输入法即可使用。</p></li>
+<li><p>需要在 <code>/home</code> 文件夹下面新建/修改 <code>.xprofile</code></p></li>
+</ol>
+
+
+<blockquote><p>export LC_ALL=zh_CN.utf8        <br>
+export XMODIFIERS=@im=fcitx        <br>
+export QT_IM_MODULE=xim        <br>
+export GTK_IM_MODULE=xim        <br>
+fcitx -d        <br></p></blockquote>
+]]></content:encoded>
+    </item>
     
     <item>
       <title>新系统的第一个软件</title>
       <link>http://williamlfang.github.com/cn/2014/01/goagent/</link>
-      <pubDate>2014-01-05T00:00:00+08:00</pubDate>
+      <pubDate>2014-01-05T00:00:00-05:00</pubDate>
       <author>William Fang</author>
       <guid>http://williamlfang.github.com/cn/2014/01/goagent</guid>
       <content:encoded><![CDATA[<p>最近由于电脑不是很稳定,装了几次系统.这个我之前也有谈过,如何从万恶的 MS 的 Windows 系统成功<a href="http://williamlfang.github.io/cn/2014/01/window-2-linux/">转型</a>到自由软件与操作系统 Linux.经过这几次的装机经历,我也发现了这其中的一些pattern.比如,我今天要谈到的话题:</p>
@@ -121,7 +165,7 @@ python uploader.zip</p></blockquote></li>
     <item>
       <title>在 Virutalbox 环境下安装虚拟机</title>
       <link>http://williamlfang.github.com/cn/2014/01/virtualbox/</link>
-      <pubDate>2014-01-04T00:00:00+08:00</pubDate>
+      <pubDate>2014-01-04T00:00:00-05:00</pubDate>
       <author>William Fang</author>
       <guid>http://williamlfang.github.com/cn/2014/01/virtualbox</guid>
       <content:encoded><![CDATA[<p>我现在的系统是 Linux Mint 16 (Petra,KDE),在开源社区有提供众多的软件,基本上能够满足工作和学习的需要.不过,对于在国内环境下,有些商业软件并不提供 Linux 支持,比如,我现在使用的招行网银U盾,不能在 Linux 下读取,再比如,厦大图书馆提供的远程访问数据库iReader,只能在window操作系统下使用.</p>
@@ -228,7 +272,7 @@ python uploader.zip</p></blockquote></li>
     <item>
       <title>Github 的一些设置技巧</title>
       <link>http://williamlfang.github.com/cn/2014/01/github-jekyll/</link>
-      <pubDate>2014-01-03T00:00:00+08:00</pubDate>
+      <pubDate>2014-01-03T00:00:00-05:00</pubDate>
       <author>William Fang</author>
       <guid>http://williamlfang.github.com/cn/2014/01/github-jekyll</guid>
       <content:encoded><![CDATA[<h2>Git与Github</h2>
@@ -354,7 +398,7 @@ fatal:The remote end hung up unexpectedly <br></p>
 <p>然后用文本编辑工具打开该文件，我用的是gedit,所以命令是：
 gedit ~/.ssh/id_rsa.pub</p>
 
-<p>接着拷贝.ssh/id_rsa.pub文件内的所以内容，将它粘帖到github帐号管理中的添加SSH key界面中。</p>
+<p>接着拷贝.ssh/id_rsa.pub（或者是github.pub）文件内的所以内容，将它粘帖到github帐号管理中的添加SSH key界面中。</p>
 
 <p>打开github帐号管理中的添加SSH key界面的步骤如下：</p>
 
@@ -392,7 +436,7 @@ ERROR: Error installing rdiscount:    <br>
     <item>
       <title>本本的&quot;转型&quot;</title>
       <link>http://williamlfang.github.com/cn/2014/01/window-2-linux/</link>
-      <pubDate>2014-01-02T00:00:00+08:00</pubDate>
+      <pubDate>2014-01-02T00:00:00-05:00</pubDate>
       <author>William Fang</author>
       <guid>http://williamlfang.github.com/cn/2014/01/window-2-linux</guid>
       <content:encoded><![CDATA[<h2>换系统</h2>
@@ -424,7 +468,7 @@ ERROR: Error installing rdiscount:    <br>
     <item>
       <title>2013年的最后一天</title>
       <link>http://williamlfang.github.com/cn/2013/12/final-day/</link>
-      <pubDate>2013-12-31T00:00:00+08:00</pubDate>
+      <pubDate>2013-12-31T00:00:00-05:00</pubDate>
       <author>William Fang</author>
       <guid>http://williamlfang.github.com/cn/2013/12/final-day</guid>
       <content:encoded><![CDATA[<blockquote><p>唯一的乐园,是人们失去的乐园.</p></blockquote>
@@ -436,7 +480,7 @@ ERROR: Error installing rdiscount:    <br>
     <item>
       <title>往事如烟灭</title>
       <link>http://williamlfang.github.com/cn/2013/07/old-times/</link>
-      <pubDate>2013-07-27T00:00:00+08:00</pubDate>
+      <pubDate>2013-07-27T00:00:00-04:00</pubDate>
       <author>William Fang</author>
       <guid>http://williamlfang.github.com/cn/2013/07/old-times</guid>
       <content:encoded><![CDATA[<p>闲来无事，独自坐在阳台上，夏日的夜晚，却是没风最来得受罪。只是这样闷热的天气，自己的大脑也早已狂躁。一整天在背单词，终日满脑子的符号。那些牛鬼生蛇，那些漫天星宇，那些蛛丝马迹，那些朝花夕拾，那些风霜雪月，那些年少无知，那些异想天开，都在这小小的大脑里，搅拌的晕乎，缠绕着酸楚。</p>
@@ -460,7 +504,7 @@ ERROR: Error installing rdiscount:    <br>
     <item>
       <title>生病了</title>
       <link>http://williamlfang.github.com/cn/2013/07/sicked/</link>
-      <pubDate>2013-07-17T00:00:00+08:00</pubDate>
+      <pubDate>2013-07-17T00:00:00-04:00</pubDate>
       <author>William Fang</author>
       <guid>http://williamlfang.github.com/cn/2013/07/sicked</guid>
       <content:encoded><![CDATA[<p>突然想想这段时间过的是什么样一种生活呢？
@@ -481,7 +525,7 @@ ERROR: Error installing rdiscount:    <br>
     <item>
       <title>曾厝垵后厝85号的大男孩</title>
       <link>http://williamlfang.github.com/cn/2013/07/to-be-a-man/</link>
-      <pubDate>2013-07-14T00:00:00+08:00</pubDate>
+      <pubDate>2013-07-14T00:00:00-04:00</pubDate>
       <author>William Fang</author>
       <guid>http://williamlfang.github.com/cn/2013/07/to-be-a-man</guid>
       <content:encoded><![CDATA[<blockquote><p>熟悉方莲的人，都知道他是一个可爱的多面体。他是老师眼中的好学生，是妻子眼中永远温暖的好老公，更是新任奶爸。现在他是曾厝垵后厝85号，厦门【咪豆+】体验式家庭住宿的大掌柜，能上能下，上管经营财务，下至通厕所、修水管，可谓十八般武艺样样精通。</p></blockquote>
@@ -513,7 +557,7 @@ ERROR: Error installing rdiscount:    <br>
     <item>
       <title>我们都是一群被文字宠坏的小孩</title>
       <link>http://williamlfang.github.com/cn/2012/07/loving/</link>
-      <pubDate>2012-07-02T00:00:00+08:00</pubDate>
+      <pubDate>2012-07-02T00:00:00-04:00</pubDate>
       <author>William Fang</author>
       <guid>http://williamlfang.github.com/cn/2012/07/loving</guid>
       <content:encoded><![CDATA[<p>此刻的心情，莫名其妙。</p>
@@ -531,30 +575,6 @@ ERROR: Error installing rdiscount:    <br>
 <p>这是一种怎样的孤单呢。发现被曾经宠爱的文字抛弃，纵然于荒无人烟的旷野、抑或身处繁华尘世，无力叙述无法倾听。人若机械，心即冰雪。我们，终究在这旷世持久的孤独中逝去。</p>
 
 <p>原来，我们本是一群被文字宠坏的孩子。不曾珍惜，后被抛弃，终将老去。</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>逆光</title>
-      <link>http://williamlfang.github.com/cn/2012/05/ni-guang/</link>
-      <pubDate>2012-05-14T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2012/05/ni-guang</guid>
-      <content:encoded><![CDATA[<p>逆光在时间的四维里，应该是扭曲的，像午后在校园看见的卷发，很有马鞍的形状，在微积分中，是一个很完美的方程……</p>
-
-<p>在图书馆看随机过程，很多的表现，我们无法得知，布朗运动的分子，很有夏天阳光的味道，在逆光的世界里迷乱的奔走。生活呢，像在很大的一个空间里，没有方向的流走。</p>
-
-<p>一整个夏天还没开始，便要很困难的度过，考试很简单的应付，从小便有了这样的思维，可是，现实呢，是否还可以抽象的没有一点曲谱，可以抽离很多的随机然后赋予一个随机的误差，甚是自欺的话语。</p>
-
-<p>记得去年这个时候，在机房写学期总结，大学一年祭，很伤感的落幕，像一场刚刚开始的话剧，然后静静的等候开始的约定，可是在你不经意间，很多的故事已经发生，很多的人已经离开了座位，很多的时光已经不再依旧，比如，你想能够回到刚刚的那些片刻，可是不会了，逆光的世界，画面被极度的扭曲，你在这个视界看到的场景，却始终抓不到，记得以前看那些很煽情的电影，总是有擦肩而过的遗憾，或者，我站在铁轨的这边，你却是处于了时空的另一端。</p>
-
-<p>隔岸便是两个世界……</p>
-
-<p>很惊喜的发觉普鲁斯特的追忆竟然还能躺在书架上，去年狠心买了一套，后来一直被放在家里，那个高高的木架上，每次回家，总在把他们放下来，坐在阁楼的旋梯，静静的思考，而走的时候呢，爸总会说我一顿，然后很无奈的把杂七的书一点的拾起，放进木架。等待下一次的归来。人的内心，原来还有一个世界，是哥白尼的颠覆，纯粹神学的想象，却乐此不疲。在很小的阁楼，我的我的世界。</p>
-
-<p>已经不成行。</p>
-
-<p>总会有可以找到的归处，可以依靠的角落。有很多的候鸟，常年的奔波，只为找到自己的归处，石头的呢，已经在你那里了……</p>
 ]]></content:encoded>
     </item>
     

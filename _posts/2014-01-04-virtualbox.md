@@ -36,9 +36,9 @@ description:
 然后在终端输入 virtualbox 打开.
 
 1. 点击"新建"一个虚拟机,设置虚拟机名称,并选择相应的操作系统.这个其实意义不大,主要 virtualbox 会根据相应的操作系统分配默认的内存和硬盘空间.
-![vb01](https://github.com/williamlfang/cn/blob/gh-pages/files/virtualbox/vb01.png)
-![vb02](https://github.com/williamlfang/cn/blob/gh-pages/files/virtualbox/vb02.png)
-![vb03](/files/virtualbox/vb03.png)
+![vb01](/assets/virtualbox/vb01.png)
+![vb02](/assets/virtualbox/vb02.png)
+![vb03](/assets/virtualbox/vb03.png)
 2. 也就是上一步骤的延续,设定内存大小.建议给主机留多一些内存以加快主机的运行速度.
 ![vb04](/files/virtualbox/vb04.png)
 3. 点击"创建"开始建立一个虚拟机.

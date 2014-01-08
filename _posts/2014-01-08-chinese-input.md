@@ -19,12 +19,9 @@ Linux （Mint，16 Petra）系统本身并没有默认安装中文输入法。�
 
     sudo apt-get update
 
-3. 安装 fcitx，搜狗输入法，五笔（一般不用）
+3. 安装 fcitx，搜狗输入法，五笔（一般不用），以及双拼
 
-    sudo apt-get install fcitx fcitx-sogoupinyin fcitx-table-wubi
-    
-  当然，也可以安装双拼
-    sudo apt-get install fcitx-pinyin
+    sudo apt-get install fcitx fcitx-sogoupinyin fcitx-table-wubi fcitx-pinyin
 
 4. 这个比较重要，可以先在终端输入 fcitx，看看是不是提示没有可用的前端，则需要安装如下 `fcitx-frontend-gtk3`
  

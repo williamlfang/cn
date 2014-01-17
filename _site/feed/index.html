@@ -7,7 +7,7 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-17T17:36:03+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-17T17:48:57+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
     
     <item>
@@ -37,6 +37,20 @@
 
 
 <p><code>hg</code>thi is</p>
+
+<div class="highlight"><pre><code class="r"><span class="lineno">1</span> togeojson <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>file<span class="p">,</span> writepath <span class="o">=</span> <span class="s">&quot;~&quot;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">2</span>     url <span class="o">&lt;-</span> <span class="s">&quot;http://ogre.adc4gis.com/convert&quot;</span>
+<span class="lineno">3</span>     tt <span class="o">&lt;-</span> POST<span class="p">(</span>url<span class="p">,</span> body <span class="o">=</span> list<span class="p">(</span>upload <span class="o">=</span> upload_file<span class="p">(</span>file<span class="p">)))</span>
+<span class="lineno">4</span>     out <span class="o">&lt;-</span> content<span class="p">(</span>tt<span class="p">,</span> as <span class="o">=</span> <span class="s">&quot;text&quot;</span><span class="p">)</span>
+<span class="lineno">5</span>     fileConn <span class="o">&lt;-</span> file<span class="p">(</span>writepath<span class="p">)</span>
+<span class="lineno">6</span>     writeLines<span class="p">(</span>out<span class="p">,</span> fileConn<span class="p">)</span>
+<span class="lineno">7</span>     close<span class="p">(</span>fileConn<span class="p">)</span>
+<span class="lineno">8</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+
+
 ]]></content:encoded>
     </item>
     

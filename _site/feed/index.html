@@ -7,7 +7,7 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-17T17:02:49+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-17T17:05:43+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
     
     <item>
@@ -16,13 +16,37 @@
       <pubDate>2014-01-17T00:00:00+08:00</pubDate>
       <author>William Fang</author>
       <guid>http://williamlfang.github.com/cn/2014/01/17/test</guid>
-      <content:encoded><![CDATA[<p>当然还有一些boilerplate</p>
+      <content:encoded><![CDATA[
 
-<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">row</span><span class="p">(),</span> <span class="n">index</span><span class="o">.</span><span class="n">column</span><span class="p">()</span>
-<span class="lineno">2</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">index</span><span class="o">.</span><span class="n">isValid</span><span class="p">()</span> \
-<span class="lineno">3</span>     <span class="ow">or</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">rowCount</span><span class="p">())</span> \
-<span class="lineno">4</span>     <span class="ow">or</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">columnCount</span><span class="p">()):</span>
-<span class="lineno">5</span>     <span class="k">return</span> <span class="n">QVariant</span><span class="p">()</span>
+<div class="highlight"><pre><code class="r"><span class="lineno"> 1</span> proc_name <span class="o">=</span> sorted<span class="p">(</span>self._proc_list.keys<span class="p">())[</span>row<span class="p">]</span>
+<span class="lineno"> 2</span> size <span class="o">=</span> self._proc_list<span class="p">[</span>proc_name<span class="p">]</span>
+<span class="lineno"> 3</span> <span class="kr">if</span> role <span class="o">==</span> Qt.TextAlignmentRole<span class="o">:</span>
+<span class="lineno"> 4</span>     <span class="kr">if</span> col <span class="o">==</span> <span class="m">0</span><span class="o">:</span>
+<span class="lineno"> 5</span>         <span class="kr">return</span> Qt.AlignLeft <span class="o">|</span> Qt.AlignVCenter
+<span class="lineno"> 6</span>     <span class="kr">if</span> col <span class="o">==</span> <span class="m">1</span><span class="o">:</span>
+<span class="lineno"> 7</span>         <span class="kr">return</span> Qt.AlignLeft <span class="o">|</span> Qt.AlignVCenter
+<span class="lineno"> 8</span> elif role <span class="o">==</span> Qt.DisplayRole<span class="o">:</span>
+<span class="lineno"> 9</span>     <span class="kr">if</span> col <span class="o">==</span> <span class="m">0</span><span class="o">:</span>
+<span class="lineno">10</span>         <span class="kr">return</span> QString<span class="p">(</span>proc_name<span class="p">)</span>
+<span class="lineno">11</span>     elif col <span class="o">==</span> <span class="m">1</span><span class="o">:</span>
+<span class="lineno">12</span>         <span class="kr">return</span> QVariant<span class="p">(</span>size<span class="p">)</span>
+<span class="lineno">13</span> elif role <span class="o">==</span> Qt.ForegroundRole<span class="o">:</span>
+<span class="lineno">14</span>     <span class="kr">if</span> proc_name <span class="o">==</span> self._parent.last_alloc<span class="o">:</span>
+<span class="lineno">15</span>         <span class="kr">return</span> QBrush<span class="p">(</span>Qt.blue<span class="p">)</span>
+<span class="lineno">16</span> elif role <span class="o">==</span> Qt.UserRole<span class="o">:</span>
+<span class="lineno">17</span>     <span class="kr">return</span> proc_name
+<span class="lineno">18</span> <span class="kr">return</span> QVariant<span class="p">()</span>
+</code></pre>
+</div>
+
+
+<p>当然还有一些boilerplate</p>
+
+<div class="highlight"><pre><code class="r"><span class="lineno">1</span> row<span class="p">,</span> col <span class="o">=</span> index.row<span class="p">(),</span> index.column<span class="p">()</span>
+<span class="lineno">2</span> <span class="kr">if</span> not index.isValid<span class="p">()</span> \
+<span class="lineno">3</span>     or not <span class="p">(</span><span class="m">0</span> <span class="o">&lt;=</span> row <span class="o">&lt;</span> self.rowCount<span class="p">())</span> \
+<span class="lineno">4</span>     or not <span class="p">(</span><span class="m">0</span> <span class="o">&lt;=</span> col <span class="o">&lt;</span> self.columnCount<span class="p">())</span><span class="o">:</span>
+<span class="lineno">5</span>     <span class="kr">return</span> QVariant<span class="p">()</span>
 </code></pre>
 </div>
 

@@ -1,10 +1,9 @@
 ---
 layout:     post
-title:      How to add images in Github with Markdown
+title:      Add new images.
 category:   Tech
 tags: 
-- Linux
-- pandoc
+- Github
 ---
 
 This thread will show you how to add a new images in Markdown through `relative path`.
@@ -15,8 +14,7 @@ This thread will show you how to add a new images in Markdown through `relative 
 
 3. Suppose you have created a relative path containing folder as `assets/images/btt.png`, all you need to do is to add the additional prelix `/cn` alongsie the relative file path `assets/images/btt.png`. See below as as example:
 {% highlight bash linenos %}
-![image01](/cn/asset/images/btt.png)
+![image01](/cn/assets/images/btt.png)
 {% endlight %}
 which gives
-
-![image01](/cn/asset/images/btt.png)
+![image01](/cn/assets/images/btt.png)

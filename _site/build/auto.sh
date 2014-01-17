@@ -1,13 +1,12 @@
 jekyll build
 
-git add .
+git add . -A 
 git commit -m 'update'
-git push -u origin master &
+git push -u origin gh-pages &
 
-cp _site/* ../williamlfang.github.com/cn -r
+cp _site/* ../cn -r
 
-cd ../williamlfang.github.com/cn
-git add .
+cd ../cn
+git add . -A
 git commit -m 'update'
-git push -u origin master &
-
+git push -u origin gh-pages &

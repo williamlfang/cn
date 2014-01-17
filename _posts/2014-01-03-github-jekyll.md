@@ -11,7 +11,6 @@ description:
 ---
 
 ## Git与Github
-----
 
 Git是一个分散化的版本管理系统(DVCS),最早是用于处理Linux的远程协作编程,后来开始在编程社区逐渐受到关注,在程序猿们广泛流传.而Github就相当于给Git安装了一个在线的存储系统,用于远程协同,相当于码农们的Facebook.
 
@@ -21,7 +20,6 @@ Git是一个分散化的版本管理系统(DVCS),最早是用于处理Linux的�
 
 
 ## 使用 Github 和 Jekyll 发表博客
-----
 
 以下是在 Linux 系统下的 bash 命令语句:
 
@@ -90,7 +88,6 @@ Git是一个分散化的版本管理系统(DVCS),最早是用于处理Linux的�
 
 
 ## FAQ
-----
 
 ### TCPServer Error: Address already in use
 
@@ -110,7 +107,7 @@ Solution:
 
 
 ### SSH 错误
-----
+
 *引用*:[原文连接](http://blog.csdn.net/keyboardota/article/details/7603630)
 
 > 问题:在新的电脑系统中,首次生成SSH, 系统会报下面的错误：<br>
@@ -142,7 +139,7 @@ gedit ~/.ssh/id_rsa.pub
 
 
 ### rdiscount 安装错误
-----
+
 > 问题:在使用'jekyll --server'出现如下错误    <br>
   ? [suod] gem install rdiscount    <br>
   而如果真的这么干,却出现另外的错误提示   <br>

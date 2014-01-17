@@ -154,3 +154,18 @@ gedit ~/.ssh/id_rsa.pub
     sudo apt-get install ruby1.9.1-dev     <br>
    - 再安装 rdiscount    <br>
     gem install rdiscount
+
+Image
+---
+This thread will show you how to add a new images in Markdown through `relative path`.
+
+1. Make sure that you have already set the `url` correctly as `williamlfang.github.com`.
+
+2. Now that we wanna to add new images in the website as `williamlfang.github.com/cn`, which is a `gh-pages`. Unfortunely, all the `url` links are directed to the main repo `williamlfang.github.com` instead of the `williamlfang.github.com/cn`. This is what the following to be utilized.
+
+3. Suppose you have created a relative path containing folder as `assets/images/btt.png`, all you need to do is to add the additional prelix `/cn` alongsie the relative file path `assets/images/btt.png`. See below as as example:
+{% highlight bash linenos %}
+![image01](/cn/assets/images/btt.png)
+{% endlight %}
+which gives
+![image01](/cn/assets/images/btt.png)

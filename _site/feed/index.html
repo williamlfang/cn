@@ -7,8 +7,56 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-18T01:42:49+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-18T02:49:38+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
+    
+    <item>
+      <title>WineQQ2013 可以使用</title>
+      <link>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/</link>
+      <pubDate>2014-01-18T00:00:00+08:00</pubDate>
+      <author>William Fang</author>
+      <guid>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux</guid>
+      <content:encoded><![CDATA[<h2>QQ for <code>Linux</code></h2>
+
+<p>想要在Linux操作系统下使用 <code>QQ</code> 真的得费不少劲。我之前尝试通过 <code>WINE</code> 来安装 <code>QQ2013</code>，可是最终以失败结束。</p>
+
+<ul>
+<li><p>一方面是由于目前的 <code>WINE</code> 技术还不是很好，对于一些商业软件支持力度不够，也不能完全模拟 <code>Windows</code> 系统来安装 <code>.exe</code> 的软件（如果完全取代了，怎么感觉又回到 <code>Windows</code> 时代了呢.....），期间需要不停的下载相关而不必要的软件，大费人力与（电）脑力，而且终归落得个不能使用/中文乱码的惨淡结局。</p></li>
+<li><p>另一方面，<code>Tencent</code> 公司也不会完全放弃 <code>QQ</code> 的商业价值来满足开源爱好者的，他们满眼看到的是商业利益。<code>QQ</code> 本身是一个具有黑暗魔法力量的软件，可以推送广告取得收入，可以不间断的搜索用户资料（先前有 3Q 大战及由此来），还能维护一个庞大的软件生态链。故此，虽然曾经有一段时间的 <code>QQ for Linux</code> 的美好光景，却也一去不复返。</p></li>
+</ul>
+
+
+<p>我们现在想要在 Linux 上使用 <code>QQ</code>，真可谓“斗智斗勇”，方能取得一丁点的成就。</p>
+
+<h2>虚拟机下使用 QQ</h2>
+
+<p>我之前有在一篇关于虚拟机 <a href="http://williamlfang.github.io/cn/2014/01/04/virtualbox/">virtualbox</a> 的文章中谈过可以利用虚拟机来运行 <code>Windows</code> 操作系统，并在其使用 <code>QQ</code> 等软件。可以，这也很不方便，为了使用一个软件大开虚拟机占用大量的内存，实属不值，何况对于一些老机子更是苦命。因此，我决定放弃这个既浪费资源又不讨好的想法，另辟蹊径。</p>
+
+<h2>WineQQ</h2>
+
+<p>目前，由一个叫做 “LongeneTeam” 团队给广大的用户带来了福音。他们号称开发了史上最牛叉的、能够在 Linux 系统运行的 <code>wineQQ</code>。其工作原理是：</p>
+
+<blockquote><p>通过以deb的格式将 QQ 软件、Wine基本配置、有关字体以及一些必要的配件统统打包好，这样用户可以直接点击deb文件来安装、使用 QQ。</p></blockquote>
+
+<p>目前 wineQQ 的最新版本为 <a href="http://www.longene.org/forum/viewtopic.php?t=4700">wine-1.7.9</a>。deb格式的软件可以在<a href="http://pan.baidu.com/s/1hq83fWo">这里</a>或者<a href="http://www.longene.org/download/WineQQ2013SP6-20140102-Longene.deb">这里</a>下载到。之后可以直接双击打开，经由 <code>Software Manager</code> 确认系统密码后即可安装。完成之后在找到 <code>QQ</code> 打开即可。</p>
+
+<h2>问题之门及解决之道</h2>
+
+<p>以下汇集了我在使用 wineQQ2013 过程中遇到的一些问题，以及相应的解决方法。欢迎补充。</p>
+
+<h3>64为操作系统不能运行</h3>
+
+<p>这个问题主要是由于原先只是在32位系统运行的 <code>wineQQ</code> 需要安装配件。如下：</p>
+
+<div class="highlight"><pre><code class="bash"><span class="lineno">1</span> sudo apt-get install libc6-i386 
+<span class="lineno">2</span> sudo apt-get install ia32-libs
+</code></pre>
+</div>
+
+
+
+]]></content:encoded>
+    </item>
     
     <item>
       <title>Images</title>
@@ -521,27 +569,6 @@ ERROR: Error installing rdiscount:    <br>
 <p>有过几次，在梦中，我看见她走过来，依旧穿着那件棉质衬衫，格子形状，简单明了，一眼便看到。脸上依旧是那种干净的微笑。她在仔细倾听，一个诉说。梦里，我想讲话，却不知道说什么，遇见你是我彼时的幸福，可是我不知道如果去守候这样突然的幸福。釜底抽薪是万丈深渊的痛楚，被掠夺的幸福是一去不回的秋叶，飘过眼前，飘落天边。对于一个失去玩具的孩子，唯一不敢奢望的，便是从前百般肆无忌惮的挥霍对所有的控制权。少年的我，怎么也不敢去轻易奢望这份奢侈。她的笑在眼前，我却触手不及，像在天边，中间是永远。梦里，我依旧不说话。她只是微笑，笑的干净灿烂。像是晚晴的天，酝酿了许久的剧情，像要说着，却已经落幕。</p>
 
 <p>醒来后，我说：谢谢你，给我的笑，不会忧伤。</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>生病了</title>
-      <link>http://williamlfang.github.com/cn/2013/07/17/sicked/</link>
-      <pubDate>2013-07-17T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2013/07/17/sicked</guid>
-      <content:encoded><![CDATA[<p>突然想想这段时间过的是什么样一种生活呢？
-每天没有目的的延续，像僵尸漫步的荒无人烟的旷野没有方向。我也正在这心灵的雨夜里彳亍许久。头顶竟是什么样的乌云呢。自己也是枉然。</p>
-
-<p>突然间就脆弱的病了。许久的压抑、沉积的痛楚，终于找到了释放的缺口，在这一刻换换的流淌。泪水是外在的掩饰，真正痛楚的，往往是那些心灵的创伤。对孤独的惧怕，被空虚的囹圄，身处万人的广场却愈感误解的失落，睁大眼睛得到的依旧是无尽的黑暗。这些大概惧怕伴随了个体成长，伴随了个体的成熟，也伴随了个体的衰落。</p>
-
-<p>是该感觉到自己在缓慢的衰老了。有些人的心，年轻之时昙花的过程，终日处在的，是对衰老的深深惧怕。身体机能的衰退，明显的镌刻在躯干，心里的颓废，却只有在茫茫无际里独自体觉。也许表面一脸的灿烂，一笑弧形的完美。可谁能体谅在这虚伪的镀膜背后，该死铁锈斑斑，像浸泡在海水多年的老船，祥和的停留在某个不知名的港口，外面依然的光鲜，各种的机能已经全废。</p>
-
-<p>文学是失落的自己。这种失落的挫折，在人病的时候，越发的明显。文字总是悲伤的精灵，一次提起，一次落寞。多年不再接触这些狂躁的精灵终日在耳边盘旋，却也没能逃脱旷日持久的扑杀。天涯海角，它就张在你的身影中，在你转身的瞬间，在不经意的回忆里。莽莽苍苍的，漫漫长长的，都是剪不断的藤蔓、烧不尽的烈焰。</p>
-
-<p>突然听朋友们谈到他的离去。一直不愿提起的话题，仿佛就在昨日，在眼前晃动 。转瞬即逝，转身离开，默不吭声，甚至来不及道别。病的时候，他的身边空无一人，那该是一种怎样的恐惧呢，抑或已经淡然，明明是一间注定的事件，命中如此？</p>
-
-<p>我不知道，上帝为何如此不公。折磨的，是自己身边的每个亲人，如此残忍的站在悲伤逆流成河的对面，无助无奈的看着对岸的沉寂，一点然后一片的毁灭。人于世俗，大抵不过如此：我们的相遇只是一个随机结合的可能，交接然后分别，此生不复相见。想起来过往，再见就真的不再相见了。</p>
 ]]></content:encoded>
     </item>
     

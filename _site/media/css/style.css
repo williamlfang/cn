@@ -54,7 +54,7 @@ nav a:hover{background-color:#ff0000;text-decoration:none;color:#f9f9f9;-webkit-
 .post{padding:.5em 0em;}
 h1{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.6em;color:#000;}
 h2{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.4em;color:#111;
-   margin: 20px 0px 20px; padding: 10px; border-bottom: 1px dashed;}  /* h2 的格式: solid -> dashed*/
+   margin: 20px 0px 20px; padding: 10px; border-bottom: 1px dashed #cccccc;}  /* h2 的格式: solid -> dashed*/
 h3{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.2em;color:#222;}
 h4{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1em;color:#333;}
 pre,code{font-family:Menlo,"DejaVu Sans Mono","Bitstream Vera Sans Mono","Andale Mono",Consolas,Menlo,"Andale Mono","Courier New",Monaco,monospace;font-size:11px;} /* code size = 11px*/

@@ -13,7 +13,7 @@ description:
 
 
 ## Linux 下安装 Windows 软件
-----
+
 对于此类的问题,目前有两种解决方法:
 
 1. 在 Linux 系统中安装 wine,从而可以安装大部分的软件,如QQ等.
@@ -29,7 +29,7 @@ description:
 下面就简单介绍一下我的安装经验.
 
 ## 安装 Virtualbox
-----
+
 首先是从网站下载 [Virtualbox](https://www.virtualbox.org/wiki/Downloads),这个是 deb 格式的,可以直接点击安装即可.需要 \root 权限.输入密码即可.
 
 然后在终端输入 virtualbox 打开.
@@ -68,7 +68,7 @@ description:
 
 
 ## Virtualbox 识别 USB
-----
+
 
 为了能够在主机与虚拟机之间相互使用USB,还需有做如下的设置.
 

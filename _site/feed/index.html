@@ -7,7 +7,7 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-17T17:01:30+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-17T17:02:49+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
     
     <item>
@@ -16,31 +16,7 @@
       <pubDate>2014-01-17T00:00:00+08:00</pubDate>
       <author>William Fang</author>
       <guid>http://williamlfang.github.com/cn/2014/01/17/test</guid>
-      <content:encoded><![CDATA[
-
-<div class="highlight"><pre><code class="python"><span class="lineno"> 1</span> <span class="n">proc_name</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_proc_list</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">row</span><span class="p">]</span>
-<span class="lineno"> 2</span> <span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_proc_list</span><span class="p">[</span><span class="n">proc_name</span><span class="p">]</span>
-<span class="lineno"> 3</span> <span class="k">if</span> <span class="n">role</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">TextAlignmentRole</span><span class="p">:</span>
-<span class="lineno"> 4</span>     <span class="k">if</span> <span class="n">col</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="lineno"> 5</span>         <span class="k">return</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignLeft</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignVCenter</span>
-<span class="lineno"> 6</span>     <span class="k">if</span> <span class="n">col</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="lineno"> 7</span>         <span class="k">return</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignLeft</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignVCenter</span>
-<span class="lineno"> 8</span> <span class="k">elif</span> <span class="n">role</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">DisplayRole</span><span class="p">:</span>
-<span class="lineno"> 9</span>     <span class="k">if</span> <span class="n">col</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="lineno">10</span>         <span class="k">return</span> <span class="n">QString</span><span class="p">(</span><span class="n">proc_name</span><span class="p">)</span>
-<span class="lineno">11</span>     <span class="k">elif</span> <span class="n">col</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="lineno">12</span>         <span class="k">return</span> <span class="n">QVariant</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
-<span class="lineno">13</span> <span class="k">elif</span> <span class="n">role</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">ForegroundRole</span><span class="p">:</span>
-<span class="lineno">14</span>     <span class="k">if</span> <span class="n">proc_name</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">last_alloc</span><span class="p">:</span>
-<span class="lineno">15</span>         <span class="k">return</span> <span class="n">QBrush</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">blue</span><span class="p">)</span>
-<span class="lineno">16</span> <span class="k">elif</span> <span class="n">role</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">UserRole</span><span class="p">:</span>
-<span class="lineno">17</span>     <span class="k">return</span> <span class="n">proc_name</span>
-<span class="lineno">18</span> <span class="k">return</span> <span class="n">QVariant</span><span class="p">()</span>
-</code></pre>
-</div>
-
-
-<p>当然还有一些boilerplate</p>
+      <content:encoded><![CDATA[<p>当然还有一些boilerplate</p>
 
 <div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">row</span><span class="p">(),</span> <span class="n">index</span><span class="o">.</span><span class="n">column</span><span class="p">()</span>
 <span class="lineno">2</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">index</span><span class="o">.</span><span class="n">isValid</span><span class="p">()</span> \

@@ -7,18 +7,35 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-17T23:51:08+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-17T23:57:48+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
     
     <item>
-      <title>img</title>
-      <link>http://williamlfang.github.com/cn/2014/01/17/test-img/</link>
+      <title>Linux Mint 安装 Pandoc</title>
+      <link>http://williamlfang.github.com/cn/2014/01/17/img-adding/</link>
       <pubDate>2014-01-17T00:00:00+08:00</pubDate>
       <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2014/01/17/test-img</guid>
-      <content:encoded><![CDATA[<p>This is an img:</p>
+      <guid>http://williamlfang.github.com/cn/2014/01/17/img-adding</guid>
+      <content:encoded><![CDATA[<h2>下面介绍在 Linux Mint 系统下如何安装 pandoc。</h2>
 
-<p><img src="/cn/assets/images/emacs-screenshot.png" alt="img" /></p>
+<ol>
+<li><p>如官网介绍，安装 pandoc
+ sudo apt-get install cabal-install
+ cabal update
+ cabal install pandoc</p></li>
+<li><p>添加路径，
+ sudo gedit /etc/profile
+在打开的文档最后输入
+ export PATH=/home/william/.cabal/bin:$PATH
+再到
+ cd /etc/
+ source profile</p></li>
+<li><p>再次重新
+ cabal install pandoc pandoc-citeproc</p></li>
+<li><p>查看是否安装成功
+ pandoc --version</p></li>
+</ol>
+
 ]]></content:encoded>
     </item>
     

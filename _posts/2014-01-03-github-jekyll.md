@@ -1,8 +1,6 @@
 ---
 layout:     post
 title:      Github 的一些设置技巧
-category:   
-- Tech
 tags: 
 - Github
 - Jekyll

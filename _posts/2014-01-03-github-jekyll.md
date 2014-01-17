@@ -155,8 +155,7 @@ gedit ~/.ssh/id_rsa.pub
    - 再安装 rdiscount    <br>
     gem install rdiscount
 
-Image
----
+
 This thread will show you how to add a new images in Markdown through `relative path`.
 
 1. Make sure that you have already set the `url` correctly as `williamlfang.github.com`.
@@ -168,4 +167,4 @@ This thread will show you how to add a new images in Markdown through `relative 
 ![image01](/cn/assets/images/btt.png)
 {% endlight %}
 which gives
-![image01](/cn/assets/images/btt.png)
+![image02](/cn/assets/images/btt.png)

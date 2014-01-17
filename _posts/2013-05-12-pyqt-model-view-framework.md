@@ -29,7 +29,7 @@ Qt提供了[QAbstractItemModel][]给我们作为实现自定义的model的基础
 
 [os-exp]: https://github.com/mad4alcohol/os-experiments
 
-例子来自于（操蛋的）[操作系统实习][os-exp]，最终实现效果如图 ![overview.png]({{ site.img_url }}/bbt.png)
+例子来自于（操蛋的）[操作系统实习][os-exp]，最终实现效果如图 ![overview.png](/assets/images/pyqt-model-view-framework/overview.png)
 
 说下每个地方是干什么的。用户首先输入进程名和大小，点添加之后会在上面的列表控件里面添加一项，用来显示进程相关的信息。同时会为这个进程创造一个页表对象（见源码的PageTable类），由于一个进程对应一个页表，也就是说会有多个页表对象，那么在选中上面的列表中的项目的时候，下面的页表列表控件也要切换到相应的PageTable对象上去。用户可以选择任意的页面然后点击释放按钮来释放页面。对应地，内存空间在变化的时候，位示图（图中右边的那个Table控件）也要变化。
 

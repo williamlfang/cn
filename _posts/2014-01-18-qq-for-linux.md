@@ -24,9 +24,8 @@ tags:
 > 通过以deb的格式将 QQ 软件、Wine基本配置、有关字体以及一些必要的配件统统打包好，这样用户可以直接点击deb文件来安装、使用 QQ。
 
 目前 wineQQ 的最新版本为 [wine-1.7.9](http://www.longene.org/forum/viewtopic.php?t=4700)。deb格式的软件可以在[这里](http://pan.baidu.com/s/1hq83fWo)或者[这里](http://www.longene.org/download/WineQQ2013SP6-20140102-Longene.deb)下载到。之后可以直接双击打开，经由 `Software Manager` 确认系统密码后即可安装。完成之后在找到 `QQ` 打开即可。
-{% highlight bash linenos %}
 ![wineqq2013](/cn/assets/images/QQ/qq.png)
-{% endhighlight %}
+
 
 ## 问题之门及解决之道
 以下汇集了我在使用 wineQQ2013 过程中遇到的一些问题，以及相应的解决方法。欢迎补充。

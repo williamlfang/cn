@@ -4,8 +4,6 @@ layout: page
 comments: no
 ---
 
-###联系方式：
-
 {% if site.qq %}
 QQ：[{{ site.qq }}](tencent://message/?uin={{ site.qq }})
 {% endif %}

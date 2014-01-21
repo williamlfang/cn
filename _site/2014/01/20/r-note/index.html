@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="William Fang" />
-    <!--   <title>在顺德 | William Fang</title>    -->
-    <title>在顺德 | William Fang</title> 
+    <!--   <title>WineQQ2013 可以使用 | William Fang</title>    -->
+    <title>WineQQ2013 可以使用 | William Fang</title> 
     <link rel="shortcut icon" href="/favicon.ico">
     <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
@@ -46,7 +46,7 @@
     <div id="container">
       <div id="main" role="main">
         <header>
-        <h1>在顺德</h1>
+        <h1>WineQQ2013 可以使用</h1>
         </header>
         <nav id="real_nav">
         <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
@@ -62,17 +62,46 @@
         </nav>
         <article class="content">
         <section class="post">
-<p>用这样的句式，似乎像昆德拉说生活在别处一样，很远的你便看到了她在那里，却触手不可及。这样的朦胧，在中国的古诗里，应该是众里寻他千百度吧。一样的无奈，还有些许的落寞。</p>
+<h2>QQ for <code>Linux</code></h2>
 
-<p>在顺德的办公室里，整天对着大段的数据，然后很安静的填写，刚才回来的路上跟学姐开玩笑说，这样枯燥的公式，来回于办公室与宿舍，是否会有发疯的一天呢。xls用的不是很好，努力向老师学习吧。</p>
+<p>想要在Linux操作系统下使用 <code>QQ</code> 真的得费不少劲。我之前尝试通过 <code>WINE</code> 来安装 <code>QQ2013</code>，可是最终以失败结束。</p>
 
-<p>觉得有一个挺大的误解，在学校里，老师讲授的统计学，似乎很玄乎，用于分析复杂的数据，比如时间分析的构成，可是在这里，只要能把数据统计结果输出就是万岁了，全然失望。</p>
+<ul>
+<li><p>一方面是由于目前的 <code>WINE</code> 技术还不是很好，对于一些商业软件支持力度不够，也不能完全模拟 <code>Windows</code> 系统来安装 <code>.exe</code> 的软件（如果完全取代了，怎么感觉又回到 <code>Windows</code> 时代了呢.....），期间需要不停的下载相关而不必要的软件，大费人力与（电）脑力，而且终归落得个不能使用/中文乱码的惨淡结局。</p></li>
+<li><p>另一方面，<code>Tencent</code> 公司也不会完全放弃 <code>QQ</code> 的商业价值来满足开源爱好者的，他们满眼看到的是商业利益。<code>QQ</code> 本身是一个具有黑暗魔法力量的软件，可以推送广告取得收入，可以不间断的搜索用户资料（先前有 3Q 大战及由此来），还能维护一个庞大的软件生态链。故此，虽然曾经有一段时间的 <code>QQ for Linux</code> 的美好光景，却也一去不复返。</p></li>
+</ul>
 
-<p>一天都很无聊的待着，还好带来了本本，可以上网找点东东。鬼知道呢，实习结束了还要回去准备注会的考试。</p>
 
-<p>手机一直的信号不好，真的见鬼了。猪头在北京，想起那个中午，一个往南，一个向北，像是红粉世家里，最后的结局总是很难受，其实每一步都走的很好。一定是游戏规则有错了……</p>
+<p>我们现在想要在 Linux 上使用 <code>QQ</code>，真可谓“斗智斗勇”，方能取得一丁点的成就。</p>
 
-<p>晚上很喜欢在国华的操场跑步，很安静的角落，虽然曾经很“旷野”，现在却被周围的建筑与围墙包围了，小小的，围城的世界。很累的时候，会躺在草坪上，看暗淡的天空，像要哭的样子却告诉我一脸的坚强。</p>
+<h2>虚拟机下使用 QQ</h2>
+
+<p>我之前有在一篇关于虚拟机 <a href="http://williamlfang.github.io/cn/2014/01/04/virtualbox/">virtualbox</a> 的文章中谈过可以利用虚拟机来运行 <code>Windows</code> 操作系统，并在其使用 <code>QQ</code> 等软件。可以，这也很不方便，为了使用一个软件大开虚拟机占用大量的内存，实属不值，何况对于一些老机子更是苦命。因此，我决定放弃这个既浪费资源又不讨好的想法，另辟蹊径。</p>
+
+<h2>WineQQ</h2>
+
+<p>目前，由一个叫做 “LongeneTeam” 团队给广大的用户带来了福音。他们号称开发了史上最牛叉的、能够在 Linux 系统运行的 <code>wineQQ</code>。其工作原理是：</p>
+
+<blockquote><p>通过以deb的格式将 QQ 软件、Wine基本配置、有关字体以及一些必要的配件统统打包好，这样用户可以直接点击deb文件来安装、使用 QQ。</p></blockquote>
+
+<p>目前 wineQQ 的最新版本为 <a href="http://www.longene.org/forum/viewtopic.php?t=4700">wine-1.7.9</a>。deb格式的软件可以在<a href="http://pan.baidu.com/s/1hq83fWo">这里</a>或者<a href="http://www.longene.org/download/WineQQ2013SP6-20140102-Longene.deb">这里</a>下载到。之后可以直接双击打开，经由 <code>Software Manager</code> 确认系统密码后即可安装。完成之后在找到 <code>QQ</code> 打开即可。
+<img src="/cn/assets/images/QQ/qq.png" alt="wineqq2013" /></p>
+
+<h2>问题之门及解决之道</h2>
+
+<p>以下汇集了我在使用 wineQQ2013 过程中遇到的一些问题，以及相应的解决方法。欢迎补充。</p>
+
+<h3>64位操作系统不能运行</h3>
+
+<p>这个问题主要是由于原先只是在32位系统运行的 <code>wineQQ</code> 需要安装配件。如下：</p>
+
+<div class="highlight"><pre><code class="bash"><span class="lineno">1</span> sudo apt-get install libc6-i386 
+<span class="lineno">2</span> sudo apt-get install ia32-libs
+</code></pre>
+</div>
+
+
+
 
 </section>
 <section class="meta">
@@ -80,9 +109,9 @@
 <br/>
 <br/>
 <span>
-	<a  href="http://williamlfang.github.com/cn/2008/05/31/thinking/" class="pageNav"  >Previous</a>
+	<a  href="http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/" class="pageNav"  >Previous</a>
 	&nbsp;&nbsp;&nbsp;
-	<a  href="http://williamlfang.github.com/cn/2008/08/14/year-arournd/" class="pageNav"  >Next</a>
+	<a   class="pageNavInvalid"  >Next</a>
 </span>
 <hr>
 <span class="author">
@@ -90,7 +119,7 @@
 </span>
 <span class="time">
   /
-  <time datetime="2008-07-17">2008-07-17</time>
+  <time datetime="2014-01-20">2014-01-20</time>
 </span>
 <br />
 <span class="license">
@@ -100,13 +129,17 @@
 <span class="categories">
   in categories
   
-  <a href="/categories/#Time" title="Time">Time</a>&nbsp;
+  <a href="/categories/#Tech" title="Tech">Tech</a>&nbsp;
   
 </span>
 
 
 <span class="tags">
   tagged with 
+  
+  <a href="/tags/#Linux" title="Linux">Linux</a>&nbsp;
+  
+  <a href="/tags/#QQ" title="QQ">QQ</a>&nbsp;
   
 </span>
 
@@ -134,13 +167,11 @@ $(function(){
     var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow and J
             
-        url = 'http://williamlfang.github.com/cn/2008/05/31/thinking/';
+        url = 'http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/';
         
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             
-        url = 'http://williamlfang.github.com/cn/2008/08/14/year-arournd/';
-        
         }
         if (url) {
             window.location = url;

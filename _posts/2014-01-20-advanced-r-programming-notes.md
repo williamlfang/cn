@@ -1,4 +1,11 @@
-# Advanced R Programming: Learning Notes
+---
+layout:     post
+title:      Advanced R Programming: Learning Notes
+category:   Programming
+tags: 
+- R
+- Notes
+---
 
 这个文档记录了我在学习 Hadley Wickham 即将出版的新书，『Advanced R Programming』时的一些笔记与总结，以便将来复习查阅。该书博大精深，结构严谨，涵盖面广泛，涉及几乎目前有关「R」的所有问题。从最基础的数据结构开始讲起，然后逐步渐进到如何编写针对问题的 `function`，再进阶到如何开发能够发布以供他人使用的 `package`。Wickham 本人就是在「R Community」团体中的传奇人物，开发了许多为人称道的宏包，如 `ggplot2`等。而本书真是作者在总结了近十年的 「R」软件开发后编写的一本巨著。仔细深入阅读此书必将受益匪浅，极大的提升我们使用与开发「R」的各项技能，真正从最底层去认识「R」这个当今最强大的数据处理、统计分析与图形可视化编程语言。
 

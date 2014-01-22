@@ -16,12 +16,12 @@ description:
 
 Wickham 用一张表格总结了 **R** 中的数据结构
 > R's base data structures are summarised in the table below, organised by their dimensionality and whether they're homogeneous (all contents must be of the same type) or heterogeneous (the contents can be of different types):
->
-> |    | Homogeneous   | Heterogeneous |
-> |----|---------------|---------------|
-> | 1d | Atomic vector | List          |
-> | 2d | Matrix        | Data frame    |
-> | nd | Array         |               |
+
+ |    | Homogeneous   | Heterogeneous |
+ |----|---------------|---------------|
+ | 1d | Atomic vector | List          |
+ | 2d | Matrix        | Data frame    |
+ | nd | Array         |               |
 
 需要解释的是标量（scalar）。什么是标量呢？就是一个个单独的变量，如
 

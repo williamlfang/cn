@@ -27,9 +27,36 @@ ol ul, ul ol, ul ul, ol ol {margin-left:1em;}
 pre code{margin:1em 0;font-size:11px;line-height:1.6;display:block;overflow:auto;
  padding: 5px; border: 1px solid #ddc;
 -webkit-box-shadow: 1px 1px 3px #ccc}
+
+/* curse quote  --------------------------------------------------------------- */
+blockquote {
+  background:transparent url(/blockquote_bg.gif) no-repeat scroll left top; 
+  /*color: #000000; */
+  font-style: italic; 
+  margin: 0 0 1em; 
+  min-height: 1.5em; 
+  overflow: auto;
+  padding: 30px 10px 13px 18px;
+}
+blockquote p.source {
+	color: #999999;
+	font-size: 11px;
+	font-style: normal;
+}
+blockquote cite {
+	margin: 5px 0 0;
+	display: block;
+}
+/* --------------------------------------------------------------- */
+
+/*
+
 blockquote{display:block;text-align:justify;border-left:4px solid #eeeeee;}
 blockquote{margin:1em 0em;padding-left:1.5em;}
 blockquote p{margin:0;padding:.5em 0;}
+
+*/
+
 #container{width:600px;margin:2em auto;display:block;padding:0 2em;}
 .content{font-size:16px;line-height:24px;}
 .content h1{padding:.5em 0;}
@@ -54,7 +81,8 @@ nav a:hover{background-color:#ff0000;text-decoration:none;color:#f9f9f9;-webkit-
 .post{padding:.5em 0em;}
 h1{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.6em;color:#000;}
 h2{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.4em;color:#111;
-   margin: 20px 0px 20px; padding: 10px; border-bottom: 1px dashed #cccccc;}  /* h2 的格式: solid -> dashed*/
+   margin: 20px 0px 20px; padding: 10px; border-bottom: 1px dashed #cccccc;}  
+   /*------------------------------- h2 的格式: solid -> dashed  -------*/
 h3{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.2em;color:#222;}
 h4{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1em;color:#333;}
 pre,code{font-family:Menlo,"DejaVu Sans Mono","Bitstream Vera Sans Mono","Andale Mono",Consolas,Menlo,"Andale Mono","Courier New",Monaco,monospace;font-size:11px;} /* code size = 11px*/

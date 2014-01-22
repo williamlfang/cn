@@ -30,7 +30,7 @@ pre code{margin:1em 0;font-size:11px;line-height:1.6;display:block;overflow:auto
 
 /* curse quote  --------------------------------------------------------------- */
 blockquote {
-  background:transparent url(/blockquote_bg.gif) no-repeat scroll left top; 
+  background:transparent url(blockquote_bg.gif) no-repeat scroll left top; 
   /*color: #000000; */
   font-style: italic; 
   margin: 0 0 1em; 

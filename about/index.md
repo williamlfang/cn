@@ -1,6 +1,9 @@
 ---
 layout: page
 title : About
+theme :
+  name : twitter
+group: navigation
 ---
 {% include JB/setup %}
 
@@ -12,11 +15,7 @@ title : About
 	<small>Prof. Zou</small>
 </blockquote>
 
-<p>A third year Computer Science undergraduate student at <a href="http://www.mines-nancy.univ-lorraine.fr/">École des Mines de nancy</a>.</p> 
-
-<p>Looking for a six-month internship in the domains of <b>Big Data</b>, <b>NoSQL</b>, <b>Website Development</b> and <b>Android Development</b>.</p>
-
-<p>A technologist, problem solver and quick learner.</p>
+William Fang
 
 <div class="navbar" id="timeline-navbar">
 	<div class="navbar-inner">

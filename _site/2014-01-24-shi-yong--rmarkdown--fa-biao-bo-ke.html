@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="William Fang" />
-    <!--   <title>links | William Fang</title>    -->
-    <title>links | William Fang</title> 
+    <!--   <title>使用 Rmarkdown 发表博客 | William Fang</title>    -->
+    <title>使用 Rmarkdown 发表博客 | William Fang</title> 
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -103,7 +103,7 @@
     <div id="container">
       <div id="main" role="main">
         <header>
-        <h1>links</h1>
+        <h1>使用 Rmarkdown 发表博客</h1>
         </header>
         <nav id="real_nav">
         <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
@@ -119,25 +119,62 @@
         </nav>
         <article class="content">
         <section class="post">
-<h1>个人</h1>
-
-<h1>统计</h1>
-
-<ul>
-<li><a href="http://cos.name">统计之都</a> 国内的统计学网站先驱</li>
-</ul>
+<ol>
+<li>将文件 <code>rmd.sh</code> 与 <code>rmarkdown.r</code> 需要运行 <code>.R</code> 程序的地方，这样我们以后就可以直接运行 <code>rmd.sh</code> 来自动的转化 <code>.Rmd</code> 为 <code>.md</code> 格式。</li>
+</ol>
 
 
-<h1>软件</h1>
+<p> 如果想要具体的设置，我们可以
+  - 首先在目录下建立一个 <code>image</code> 文件用于存放图片
+  - 定义图片文件的链接，<code>images.url='/cn/_post/images/'</code>，也就是将来直接发布时的图片链接。</p>
 
-<ul>
-<li><a href="http://www.r-project.org">R语言</a> 自由的统计计算和图形软件</li>
-<li><a href="http://johnmacfarlane.net/pandoc/">pandoc</a> 强大的文档转换工具</li>
-</ul>
+<ol>
+<li>需要在 <code>YAML</code> 前面写入</li>
+<li><code>published: false</code>:也没有发表</li>
+<li><code>status:    process</code>：运行 <code>rmd.sh</code> 后会自动改为 <code>published</code>。</li>
+</ol>
 
+
+<p>比如这个 <code>R</code> 代码
+<code>{r}
+x = rnorm(100)
+plot(density(x))
+</code></p>
 
 </section>
+<section class="meta">
 
+<br/>
+<br/>
+<span>
+	<a   class="pageNavInvalid"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a   class="pageNavInvalid"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime=""></time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#R" title="R">R</a>&nbsp;
+  
+  <a href="/tags/#Rmarkdown" title="Rmarkdown">Rmarkdown</a>&nbsp;
+  
+</span>
+
+</section>
 <!-- Duoshuo Comment BEGIN -->
 	<div class="ds-thread"></div>
 	<script type="text/javascript">
@@ -153,6 +190,24 @@
 	</script>
 <!-- Duoshuo Comment END -->
 
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
 
 
 

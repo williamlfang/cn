@@ -49,14 +49,14 @@ y
 > 这里科普一下有关 **R** 中的面向对象的特征。也就是说， **R** 中所有的元素都可以叫做「对象」（obgect），这不仅仅是基本的数据，如向量、data frame，还包括函数（function）、环境（environment），甚至是符号（symbols）。 **R** 处理完分析后得到的就是一个对象，我们需要哪儿元素，直接提取就可以了。比如，
 >
     
-    ```r
-    df = data.frame(x = rnorm(100, 0, 1), y = seq(from = 1, to = 100))
-    result <- lm(y ~ x, data = df)
+```r
+df = data.frame(x = rnorm(100, 0, 1), y = seq(from = 1, to = 100))
+result <- lm(y ~ x, data = df)
     
-    result
-    ```
+result
+```
     
-    ```
+```
     ## 
     ## Call:
     ## lm(formula = y ~ x, data = df)
@@ -64,18 +64,18 @@ y
     ## Coefficients:
     ## (Intercept)            x  
     ##       50.45        -2.68
-    ```
+```
 
 > 得到的结果存储在 `result` 里，这个就是一个对象，等到我们需要使用其中的「子对象」时，再从中提取即可
     
-    ```r
-    result$coeff
-    ```
+```r
+result$coeff
+```
     
-    ```
-    ## (Intercept)           x 
-    ##      50.448      -2.677
-    ```
+```
+## (Intercept)           x 
+##      50.448      -2.677
+```
 
 面向对象的编程能够提供非常灵活的数据处理结果，并且具有较高的程序维护性。这在 **R** 得到了极大的展现。
 

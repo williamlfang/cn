@@ -1,5 +1,11 @@
 #timeline-navbar {
+	/*
 	margin-top: 35px;
+	*/
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-right: -20px;
+	margin-left: 40px;
 }
 #timeline {
 	background: url(http://dummyimage.com/1x1/000000/000000.gif) top center repeat-y;

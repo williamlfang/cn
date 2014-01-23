@@ -2,15 +2,15 @@
 layout: page
 title : About
 ---
-{% include JB/setup %}
+
 
 <link href="/media/css/timeline.css" rel="stylesheet" type="text/css" media="all">
 <script type="text/javascript" src="/media/js/timeline.js"></script>
 
- <script src="/media/js/kickstart.js"></script> <!-- KICKSTART -->
- <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" /> <!-- KICKSTART -->
+<script src="/media/js/kickstart.js"></script>  
+<link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
 
-<!--
+<!--    
 <blockquote>
 	<p>In pursuit of absolute simplicity<span class="muted"> (CS)</span></p>
 	<small>Prof. Zou</small>
@@ -25,33 +25,140 @@ title : About
 -->
 				<p> 如果人生是一部电影，我愿无悔一生。</p>
 				<p> 我爱运动，喜欢玩足球。</p>
+<!-- Menu Horizontal 
+<ul class="menu">
+<li class="current"><a href="">Item 1</a></li>
+<li><a href="">Item 2</a></li>
+<li><a href=""><i class="icon-inbox"></i> Item 3</a>
+	<ul>
+	<li><a href=""><i class="icon-cog"></i> Sub Item</a></li>
+	<li><a href=""><i class="icon-envelope-alt"></i> Sub Item</a>
+		<ul>
+		<li><a href=""><i class="icon-wrench"></i> Sub Item</a></li>
+		<li><a href=""><i class="icon-camera-retro"></i> Sub Item</a></li>
+		<li><a href=""><i class="icon-coffee"></i> Sub Item</a></li>
+		<li><a href=""><i class="icon-twitter"></i> Sub Item</a></li>
+		</ul>
+	</li>
+	<li class="divider"><a href=""><i class="icon-trash"></i> li.divider</a></li>
+	</ul>
+</li>
+<li><a href="">Item 4</a></li>
+</ul>
+-->
+
+<!-- Menu Horizontal -->
 <div class="navbar" id="timeline-navbar">
 	<div class="navbar-inner">
-		<!-- 
-		<span class="brand">我的人生轨迹</span>
-		-->
+	<span class="brand">足迹</span>
+<!-- 横向 -->
+<ul class="menu"> 
+<!--  -->
+<!--  -->
+<li class="current"><a href="javascript:void(0);" data-filter="all">我这不长不短的“半辈子”</a>
+	<ul>
+		<li><a href="javascript:void(0);" data-filter="education"><i class="icon-book"></i> 教育</a></li>
+		<li><a href="javascript:void(0);" data-filter="experience"><i class="icon-globe"></i> 经历</a></li>
+		<li><a href="javascript:void(0);" data-filter="career"><i class="icon-briefcase"></i> 职场</a></li>
+	</ul>
+</li>
+
+<li><a href="">Item 2</a></li>
+<li><a href="">Item 2</a></li>
+<li><a href="">Item 4</a></li>
+
+</ul>
+
+	</div>
+</div>
+<!-- 
+<div class="navbar" id="timeline-navbar">
+	<div class="navbar-inner">
 		<ul class="nav">
 			<li class="active"><a href="javascript:void(0);" data-filter="all">我这不长不短的“半辈子”</a></li>
 			<li><a href="javascript:void(0);" data-filter="education">教育：三人行必有我师</a></li>
 			<li><a href="javascript:void(0);" data-filter="experience">经历</a></li>
 			<li><a href="javascript:void(0);" data-filter="career">职场</a></li>
-				<!--
+			
 			<li class="active"><a href="javascript:void(0);" data-filter="all">All: My Life as R-programmer</a></li>
 			<li><a href="javascript:void(0);" data-filter="education">Education</a></li>
 			<li><a href="javascript:void(0);" data-filter="experience">Experience</a></li>
 			<li><a href="javascript:void(0);" data-filter="career">Career</a></li>
-				-->
+			
 		</ul>
 	</div>
 </div>
+-->
+
+
+<!-- 
+<div class="navbar" id="timeline-navbar">
+	<div class="navbar-inner">
+		<span class="brand">Timeline</span>
+		<ul class="nav">
+			<li class="active"><a href="javascript:void(0);" data-filter="all">All</a></li>
+			<li><a href="javascript:void(0);" data-filter="education">Education</a></li>
+			<li><a href="javascript:void(0);" data-filter="experience">Experience</a></li>
+			<li><a href="javascript:void(0);" data-filter="career">Career</a></li>
+		</ul>
+	</div>
+</div>
+-->
 
 <ol id="timeline">
 	<li class="event career">
 		<p class="title">
-			<a href="http://www.linkedin.com/company/1901336?trk=tyah" target="_blank">Internship in ReportLinker.com</a>
+			<a href="" target="_blank"><i class="icon-briefcase"></i></a>
+			Internship in ReportLinker.com
+		</p>
+		<p class="subtitle">个人创业：<a href="http://www.douban.com/group/440215/" target="_blank">「咪豆+」</a></p>
+		<time>June 2013 - Present</time>
+	</li>
+
+	<li class="event education">
+		<p class="title">
+			<a href="http://wise.xmu.edu.cn/" target="_blank"><i class="icon-book"></i></a>
+			WISE, XMU, China
+		</p>
+		<p class="subtitle">经济学硕士</p>
+		<time>Septermber 2010 - May 2013</time>
+	</li>
+
+	<li class="event experience">
+		<p class="title">
+			<a href="http://wise.xmu.edu.cn/" target="_blank"><i class="icon-book"></i></a>
+			WISE, XMU, China
+		</p>
+		<p class="subtitle">助教：<a href="http://williamfang.weebly.com/advanced-macroeconomics-ii.html" target="_blank">『高级宏观经济学II』</a></p>
+		<time>Septermber 2012 - Febuary 2013</time>
+	</li>
+
+	<li class="event experience">
+		<p class="title">
+			<a href="http://wise.xmu.edu.cn/" target="_blank"><i class="icon-book"></i></a>
+			WISE, XMU, China
+		</p>
+		<p class="subtitle">助教：<a href="http://williamfang.weebly.com/" target="_blank">『金融经济学』</a></p>
+		<time>Septermber 2012 - Febuary 2013</time>
+	</li>
+
+
+	<li class="event education">
+		<p class="title">
+			<a href="www.glxy.sdu.edu.cn/" target="_blank"><i class="icon-book"></i></a>
+			SOM, SDU, China
+		</p>
+		<p class="subtitle">管理学学士</p>
+		<time>Septermber 2006 - May 2010</time>
+	</li>
+
+	<li class="event career">
+		<p class="title">
+			<a href="www.bgy.com.cn/" target="_blank"><i class="icon-briefcase"></i></a>
+			碧桂园集团，人力资源总部
 		</p>
 		<p class="subtitle">实习生</p>
-		<time>June 2013 - Present</time>
+		<time>July 2007 - September 2007</time>
 	</li>
 	<!--
 	<li class="event experience">

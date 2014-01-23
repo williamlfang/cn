@@ -177,3 +177,38 @@ color: white;
 background: #83BF73;
 }
 
+
+/* Back to top ==================================================================================*/
+a#go-top {
+  width:50px;
+  height:50px;
+  text-decoration:none;
+  opacity:0.5;
+  background: url("/assets/images/back-top.png") no-repeat scroll 0 0 transparent;
+}
+a#go-top:hover {
+  background-position: -50px 0
+}
+
+.back-to {
+  bottom: 35px;
+  overflow: hidden;
+  position: fixed;
+  right: 10px;
+  width: 110px;
+  z-index: 999;
+}
+.back-to .back-top {
+  background: url("/assets/images/back-top.png") no-repeat scroll 0 0 transparent;
+  display: block;
+  float: right;
+  height: 50px;
+  margin-left: 10px;
+  outline: 0 none;
+  text-indent: -9999em;
+  width: 50px;
+}
+.back-to .back-top:hover {
+  background-position: -50px 0
+}
+

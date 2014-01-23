@@ -5,16 +5,34 @@
     <meta name="author" content="William Fang" />
     <!--   <title>流年逝 | William Fang</title>    -->
     <title>流年逝 | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
     <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== -->
+        <!-- atom & rss feed -->
     <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
     <link rel="stylesheet" href="/media/css/highlight.css">
-
+<!--=================================================================== -->
+    <link href="/media/css/bootstrap.min.css" rel="stylesheet">
+    <!--
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!-- code hightlight -->
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
 <!-- outlier -->
     <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="/media/js/outliner.js"></script>
-
-  </head>
+<!--=================================================================== -->
   <script type="text/javascript">
     function setTimeSpan(){
       var date = new Date();
@@ -41,6 +59,30 @@
       return format;
     }
   </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 80;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+  <!--=================================================================== -->
+ </head>
 
   <body onLoad="setInterval(setTimeSpan,1000);">
     <div id="container">
@@ -142,43 +184,18 @@ $(function(){
 
 
         </article>
-      </div>
-        <!-- 返回顶部
+        <!--
          <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
             <img src="/assets/images/btt.png" />
-        </a>        
-        -->
-<!-- 返回顶部 -------------------------------------------------------------------------------->
-    $(document).ready(function () {
-        var bt = $('#toolBackTop');
-        var sw = $(document.body)[0].clientWidth;
-
-        var limitsw = (sw - 840) / 2 - 80;
-        if (limitsw > 0){
-                limitsw = parseInt(limitsw);
-                bt.css("right",limitsw);
-        }
-
-        $(window).scroll(function() {
-                var st = $(window).scrollTop();
-                if(st > 30){
-                        bt.show();
-                }else{
-                        bt.hide();
-                }
-        });
-    })
-    </script>
-  </head>
-
-    <div style="display:none;" class="back-to" id="toolBackTop">
-      <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
-    </div>
-<!-- 返回顶部 -------------------------------------------------------------------------------->
-
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-23 15:11:11</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-23 15:42:31</span></small></p>
 </footer>
 
   </div>

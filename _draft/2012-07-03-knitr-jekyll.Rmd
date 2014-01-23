@@ -4,6 +4,8 @@ title: "Blog with Knitr and Jekyll"
 description: ""
 category: r
 tags: [knitr, jekyll, tutorial]
+published: false
+status: process
 ---
 {% include JB/setup %}
 

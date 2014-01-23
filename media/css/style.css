@@ -33,11 +33,13 @@ blockquote {
   background:transparent url(blockquote_bg.gif) no-repeat scroll left top; 
   /*color: #000000; */
   font-style: italic; 
+  font-size:12px;
   margin: 0 0 1em; 
   min-height: 1.5em; 
   overflow: auto;
   padding: 30px 10px 13px 18px;
 }
+/* inline code */
 blockquote p.source {
 	color: #999999;
 	font-size: 11px;

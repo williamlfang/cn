@@ -7,7 +7,7 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-23T10:03:27+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-23T10:26:35+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
     
     <item>
@@ -513,34 +513,28 @@ x
 
 <blockquote><p>这里科普一下有关 <strong>R</strong> 中的面向对象的特征。也就是说， <strong>R</strong> 中所有的元素都可以叫做「对象」（obgect），这不仅仅是基本的数据，如向量、data frame，还包括函数（function）、环境（environment），甚至是符号（symbols）。 <strong>R</strong> 处理完分析后得到的就是一个对象，我们需要哪儿元素，直接提取就可以了。比如，</p></blockquote>
 
-<pre><code>```r
-df = data.frame(x = rnorm(100, 0, 1), y = seq(from = 1, to = 100))
+<pre><code class="r">df = data.frame(x = rnorm(100, 0, 1), y = seq(from = 1, to = 100))
 result &lt;- lm(y ~ x, data = df)
 
 result
-```
+</code></pre>
 
-```
-## 
-## Call:
-## lm(formula = y ~ x, data = df)
-## 
-## Coefficients:
-## (Intercept)            x  
-##       50.45        -2.68
-```
+<pre><code>    ## 
+    ## Call:
+    ## lm(formula = y ~ x, data = df)
+    ## 
+    ## Coefficients:
+    ## (Intercept)            x  
+    ##       50.45        -2.68
 </code></pre>
 
 <blockquote><p>得到的结果存储在 <code>result</code> 里，这个就是一个对象，等到我们需要使用其中的「子对象」时，再从中提取即可</p></blockquote>
 
-<pre><code>```r
-result$coeff
-```
+<pre><code class="r">result$coeff
+</code></pre>
 
-```
-## (Intercept)           x 
+<pre><code>## (Intercept)           x 
 ##      50.448      -2.677
-```
 </code></pre>
 
 <p>面向对象的编程能够提供非常灵活的数据处理结果，并且具有较高的程序维护性。这在 <strong>R</strong> 得到了极大的展现。</p>

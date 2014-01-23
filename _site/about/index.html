@@ -13,7 +13,8 @@
   -->
     <link rel="shortcut icon" href="/favicon.ico">
 <!--=================================================================== -->
-      <link href="/media/css/home.css" rel="stylesheet">         <!--  rel="stylesheet" -->
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -->
+    <link href="/media/css/bootstrap.css" >
         <!-- atom & rss feed -->
     <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
@@ -35,6 +36,7 @@
     
     <script type="text/javascript" src="/media/js/application.js"></script>
      -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
 <!-- go to top -->
     <script type="text/javascript" src="/media/js/go-top.js"></script>
 <!-- outlier -->
@@ -119,12 +121,20 @@
 
 
 <blockquote>
-	<p>永远的夏天<span class="muted"</span></p>
-	<small>William</small>
+
+	<div class="navbar-inner">
+		<span class="brand">我的人生轨迹</span>
+		<ul class="nav">
+			<li class="active"><a href="javascript:void(0);" data-filter="all">All</a></li>
+			<li><a href="javascript:void(0);" data-filter="education">Education</a></li>
+			<li><a href="javascript:void(0);" data-filter="experience">Experience</a></li>
+			<li><a href="javascript:void(0);" data-filter="career">Career</a></li>
+		</ul>
+			</div>
 </blockquote>
 
 
-
+<!--
 <div class="navbar" id="timeline-navbar">
 	<div class="navbar-inner">
 		<span class="brand">我的人生轨迹</span>
@@ -136,7 +146,7 @@
 		</ul>
 	</div>
 </div>
-
+-->
 <ol id="timeline">
 	<li class="event career">
 		<p class="title">
@@ -233,7 +243,7 @@
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-23 16:39:16</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-23 16:55:18</span></small></p>
 </footer>
 
   </div>

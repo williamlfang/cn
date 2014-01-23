@@ -1,14 +1,14 @@
 ---
 layout: page
 title : About
-theme :
-  name : twitter
-group: navigation
 ---
 {% include JB/setup %}
 
 <link href="/media/css/timeline.css" rel="stylesheet" type="text/css" media="all">
 <script type="text/javascript" src="/media/js/timeline.js"></script>
+
+ <script src="/media/js/kickstart.js"></script> <!-- KICKSTART -->
+ <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" /> <!-- KICKSTART -->
 
 <!--
 <blockquote>
@@ -23,17 +23,16 @@ group: navigation
 
 <p>A technologist, problem solver and quick learner.</p>
 -->
-
+				<p> 如果人生是一部电影，我愿无悔一生。</p>
+				<p> 我爱运动，喜欢玩足球。</p>
 <div class="navbar" id="timeline-navbar">
 	<div class="navbar-inner">
 		<!-- 
 		<span class="brand">我的人生轨迹</span>
 		-->
 		<ul class="nav">
-				<p> 如果人生是一部电影，我愿无悔一生。</p>
-				<p> 我爱运动，喜欢玩足球。</p>
-			<li class="active"><a href="javascript:void(0);" data-filter="all">极客人生: 我的人生轨迹</a></li>
-			<li><a href="javascript:void(0);" data-filter="education">教育</a></li>
+			<li class="active"><a href="javascript:void(0);" data-filter="all">我这不长不短的“半辈子”</a></li>
+			<li><a href="javascript:void(0);" data-filter="education">教育：三人行必有我师</a></li>
 			<li><a href="javascript:void(0);" data-filter="experience">经历</a></li>
 			<li><a href="javascript:void(0);" data-filter="career">职场</a></li>
 				<!--
@@ -47,6 +46,13 @@ group: navigation
 </div>
 
 <ol id="timeline">
+	<li class="event career">
+		<p class="title">
+			<a href="http://www.linkedin.com/company/1901336?trk=tyah" target="_blank">Internship in ReportLinker.com</a>
+		</p>
+		<p class="subtitle">实习生</p>
+		<time>June 2013 - Present</time>
+	</li>
 	<!--
 	<li class="event experience">
 		<p class="title"><i class="icon-globe"></i> Visited Vietnam & Venezuela</p>
@@ -180,6 +186,7 @@ group: navigation
 		<time>September 1999</time>
 	</li>
 -->
+<!-- =============================================================================================  
 	<li class="event career">
 		<p class="title">
 			<a href="http://www.linkedin.com/company/1901336?trk=tyah" target="_blank"><i class="icon-briefcase"></i></a>
@@ -251,4 +258,5 @@ group: navigation
 		<p class="title"><i class="icon-globe"></i>Hello World!</p>
 		<time>June 1991</time>
 	</li>
+	-->
 </ol>

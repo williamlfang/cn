@@ -39,7 +39,7 @@ blockquote {
   overflow: auto;
   padding: 30px 10px 13px 18px;
 }
-/* inline code */
+/* inline quote */
 blockquote p.source {
 	color: #999999;
 	font-size: 11px;
@@ -89,7 +89,7 @@ h3{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-siz
 h4{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1em;color:#333;}
 pre,code{font-family:Menlo,"DejaVu Sans Mono","Bitstream Vera Sans Mono","Andale Mono",Consolas,Menlo,"Andale Mono","Courier New",Monaco,monospace;font-size:11px;} 
 /*------------  code size = 11px --------------------------------------------*/
-p code{background-color:#f7f7f7; padding: 2px; margin: 2px; border-radius: 3px; border: 1px solid #ddd;}
+p code{background-color:#f7f7f7; padding: 2px; margin: 2px; border-radius: 3px; border: 1px solid #ddd;color: #d14;}
 embed,object,iframe{display:block;margin:4px auto;}
 .gist{font-size: 12px;line-height:1.6;}
 

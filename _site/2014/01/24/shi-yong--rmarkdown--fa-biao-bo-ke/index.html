@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="William Fang" />
-    <!--   <title>Till the end | William Fang</title>    -->
-    <title>Till the end | William Fang</title> 
+    <!--   <title>使用 Rmarkdown 发表博客 | William Fang</title>    -->
+    <title>使用 Rmarkdown 发表博客 | William Fang</title> 
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -103,7 +103,7 @@
     <div id="container">
       <div id="main" role="main">
         <header>
-        <h1>Till the end</h1>
+        <h1>使用 Rmarkdown 发表博客</h1>
         </header>
         <nav id="real_nav">
         <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
@@ -119,68 +119,29 @@
         </nav>
         <article class="content">
         <section class="post">
-<p>摘自网站的歌词，突然爱上这样简单的午后，伤感的歌词，纳兰氏有诗云，人生若只如初见，何事西风悲画扇，是否可以有个终点，像回归了起点，我的那些文字不再因为孤单而流浪，在偌大的荒野找不到方向。</p>
+<ol>
+<li>将文件 <code>rmd.sh</code> 与 <code>rmarkdown.r</code> 需要运行 <code>.R</code> 程序的地方，这样我们以后就可以直接运行 <code>rmd.sh</code> 来自动的转化 <code>.Rmd</code> 为 <code>.md</code> 格式。</li>
+</ol>
 
-<p>长大是一个什么样的概念呢?如果从一开始，孩子的世界唯你，到后来，开始不断的接触整个的时间序列，在这个不确定（uncertainty or ambiguity？）的旅途里，相识了陌生人，邂逅了熟悉的脸孔，与爱转角擦肩，在黄昏的街道向昨日挥手，故地重游的回到起点，孩子的世界，依旧，唯你。普鲁斯特是一个永远的孩子，终日在阴暗的角落里，承受哮喘之重，他有句话，说，唯一的乐园，是人们失去的乐园。可是，从机械论（physics）的角度说，不对，因为如若此刻的乐园已经殆尽，这等同说，此刻非现在，那么昨日的乐园，已经何去何从？</p>
 
-<p>前些天，看一个科普短片，说到宇宙与时间的源起，爱氏的广义相对论（General Relativity?）认为宇宙应该是一个有序平整的世界，而量子力学(Quantum Mechanics)却反其道而论，说构成宏观世界物质的微粒，如质子，中子，乃至更加微笑的夸克，却是在日复一日的演绎不确定的话剧。后来的玄学说（String Theory）认为有更加合理的解释，甚至物质本身也可能是由众多看不见（就目前的手段而言）玄（String）组成。如若果真此般，整个宇宙有十一个维度（dimensions）组合而成，世界，我的，你的，我们的，却原来在玄的众多运动轨迹里，交错运行着。</p>
+<p> 如果想要具体的设置，我们可以
+  - 首先在目录下建立一个 <code>image</code> 文件用于存放图片
+  - 定义图片文件的链接，<code>images.url='/cn/_post/images/'</code>，也就是将来直接发布时的图片链接。</p>
 
-<p>可是，我要告诉你，在这样的未知中，有我所确定的，说过的诺言看到的星空，转角的微笑牵手的彩虹，真理与爱。Nash获得诺贝尔做的一个演讲，说，You are the reason I am. You are all my reasons. Rene Descartes有一个有趣的哲学观点，我思，故我在。而在那个疯狂的年代，也有形似且神同的口号，人有多大胆，地有多大产。教科书告诉我们说这些是唯心学派，可是我要告诉你，我相信你在，在我的世界里。</p>
+<ol>
+<li>需要在 <code>YAML</code> 前面写入</li>
+<li><code>published: false</code>:也没有发表</li>
+<li><code>status:    process</code>：运行 <code>rmd.sh</code> 后会自动改为 <code>published</code>。</li>
+</ol>
 
-<p>时间是否有终点（the end ）呢？可是孩子终会找到归宿。它在你那，在你的方向上。</p>
 
-<blockquote><p>all these precious moments <br>
-with you by my side <br>
-must be a gift from heaven <br>
-that 's holding me all night <br>
-i don 't know how i found you <br>
-i 'm thankful that i have <br>
-now that i have a love so true <br>
-to hold , <br>
-to keep , <br>
-to share <br>
-in my heart , <br>
-i can no longer hold inside <br>
-all of the love i used to hide <br>
-i 'll always be  <br>
-with you untill the very end <br>
-in this world , <br>
-there is no place i 'd rather be <br>
-you are my life , <br>
-my soul , <br>
-my girl <br>
-and through it all <br>
-i know  <br>
-that you 've come to see  <br>
-thatyou 're the one  <br>
-till the end <br>
-all my friend around me <br>
-say you 'd be gone too soon <br>
-baby , <br>
-i 'm gonna make them see <br>
-we 've found our way  <br>
-back home <br>
-in my heart , <br>
-i can no longer  <br>
-hold inside <br>
-all of the love  <br>
-i used to hide <br>
-i 'll always be  <br>
-with you untill the very end <br>
-in this world , <br>
-there is no place  <br>
-i 'd rather be <br>
-you are my life , <br>
-my soul , <br>
-my girl <br>
-and through <br>
-it all <br>
-i know that  <br>
-you 've come to see that <br>
-you 're the one  <br>
-till the end <br>
-we 'll always be  <br>
-till the end <br></p></blockquote>
+<p>比如这个 <code>R</code> 代码</p>
+
+<pre><code>x = rnorm(100)
+plot(density(x))
+</code></pre>
+
+<p><img src="/cn/_post/images/figure/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1" /></p>
 
 </section>
 <section class="meta">
@@ -188,9 +149,9 @@ till the end <br></p></blockquote>
 <br/>
 <br/>
 <span>
-	<a  href="http://williamlfang.github.com/cn/2008/11/11/where-to-go/" class="pageNav"  >Previous</a>
+	<a  href="http://williamlfang.github.com/cn/2014/01/22/test/" class="pageNav"  >Previous</a>
 	&nbsp;&nbsp;&nbsp;
-	<a  href="http://williamlfang.github.com/cn/2009/03/14/my-love-for-you/" class="pageNav"  >Next</a>
+	<a   class="pageNavInvalid"  >Next</a>
 </span>
 <hr>
 <span class="author">
@@ -198,7 +159,7 @@ till the end <br></p></blockquote>
 </span>
 <span class="time">
   /
-  <time datetime="2009-02-20">2009-02-20</time>
+  <time datetime="2014-01-24">2014-01-24</time>
 </span>
 <br />
 <span class="license">
@@ -208,13 +169,17 @@ till the end <br></p></blockquote>
 <span class="categories">
   in categories
   
-  <a href="/categories/#Love" title="Love">Love</a>&nbsp;
+  <a href="/categories/#Tech" title="Tech">Tech</a>&nbsp;
   
 </span>
 
 
 <span class="tags">
   tagged with 
+  
+  <a href="/tags/#R" title="R">R</a>&nbsp;
+  
+  <a href="/tags/#Rmarkdown" title="Rmarkdown">Rmarkdown</a>&nbsp;
   
 </span>
 
@@ -242,13 +207,11 @@ $(function(){
     var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow and J
             
-        url = 'http://williamlfang.github.com/cn/2008/11/11/where-to-go/';
+        url = 'http://williamlfang.github.com/cn/2014/01/22/test/';
         
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             
-        url = 'http://williamlfang.github.com/cn/2009/03/14/my-love-for-you/';
-        
         }
         if (url) {
             window.location = url;

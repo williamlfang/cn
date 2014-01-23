@@ -11,7 +11,8 @@ CONFIG = {
   'themes' => File.join(SOURCE, "_includes", "themes"),
   'layouts' => File.join(SOURCE, "_layouts"),
   'posts' => File.join(SOURCE, "_posts"),
-  'post_ext' => "md",
+  'post_ext' => "Rmd",
+  ## 'post_ext' => "md",
   'theme_package_version' => "0.1.0"
 }
 
@@ -66,12 +67,12 @@ task :post do
   open(filename, 'w') do |post|
     post.puts "---"
     post.puts "layout:   post"
-    post.puts "title:    \#{title.gsub(/-/,' ')}\"
-    # post.puts "title:    \"#{title.gsub(/-/,' ')}\""
+    post.puts "title:    \"#{title.gsub(/-/,' ')}\""
     post.puts "category:  "
-    post.puts "tags:"
-    post.puts "- "
+    post.puts "tags:     []"
     post.puts 'description: '
+    post.puts "published: false"
+    post.puts "status:    process"
     post.puts "---"
     post.puts ""
     ##post.puts "{% include JB/setup %}"

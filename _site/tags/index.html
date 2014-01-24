@@ -100,7 +100,7 @@
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX", "output/HTML-CSS"],
-  tex2jax: {
+    tex2jax: {
     inlineMath: [ ['$', '$'] ],
     displayMath: [ ['$$', '$$']],
     processEscapes: true,
@@ -108,15 +108,11 @@ MathJax.Hub.Config({
   },
   messageStyle: "none",
   "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  "HTML-CSS": { minScaleAdjust: 500 }    
  });
 
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-    
+
+
  </script>
   <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
    <!-- mathjax config similar to math.stackexchange -->
@@ -208,10 +204,6 @@ MathJax.Hub.Config({
 <a href="#城南旧事" title="城南旧事" rel="1">城南旧事</a>
 
 <a href="#Rmarkdown" title="Rmarkdown" rel="1">Rmarkdown</a>
-
-<a href="#Math" title="Math" rel="1">Math</a>
-
-<a href="#LaTeX" title="LaTeX" rel="1">LaTeX</a>
 
 </div>
 
@@ -563,22 +555,6 @@ MathJax.Hub.Config({
   </li>
 
 
-  <li class="listing-seperator" id="Math">Math</li>
-
-  <li class="listing-item">
-  <time datetime="2014-01-25">2014-01-25</time>
-  <a href="http://williamlfang.github.com/cn/2014/01/25/new-post/" title="Math">Math</a>
-  </li>
-
-
-  <li class="listing-seperator" id="LaTeX">LaTeX</li>
-
-  <li class="listing-item">
-  <time datetime="2014-01-25">2014-01-25</time>
-  <a href="http://williamlfang.github.com/cn/2014/01/25/new-post/" title="Math">Math</a>
-  </li>
-
-
 </ul>
 
 <script src="/media/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script>
@@ -611,7 +587,7 @@ $(function () {
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-25 02:33:05</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-25 03:04:39</span></small></p>
 </footer>
 
   </div>

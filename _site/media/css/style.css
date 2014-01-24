@@ -36,7 +36,7 @@ ol,ul{list-style-position:inside;}
 ol ul, ul ol, ul ul, ol ol {margin-left:1em;}
 pre code{
   margin:1em 0;
-  font-size:12px;
+  /*font-size:12px;*/
   line-height:1.6;
   display:block;
   overflow:auto;
@@ -54,10 +54,10 @@ p code{background-color:#f7f7f7; padding: 2px; margin: 2px; border-radius: 3px; 
 body div.content {}
     body div.content code.has-jax {
         font: inherit;
-        font-size: 10%;
+        font-size: 100%;
         background: inherit;
         border: inherit;
-        color: #000000;
+        color: #317eac;
     }
 /* curse quote  --------------------------------------------------------------- */
 blockquote {

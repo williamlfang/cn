@@ -100,7 +100,7 @@
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX", "output/HTML-CSS"],
-  tex2jax: {
+    tex2jax: {
     inlineMath: [ ['$', '$'] ],
     displayMath: [ ['$$', '$$']],
     processEscapes: true,
@@ -108,15 +108,11 @@ MathJax.Hub.Config({
   },
   messageStyle: "none",
   "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+  "HTML-CSS": { minScaleAdjust: 500 }    
  });
 
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-    
+
+
  </script>
   <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
    <!-- mathjax config similar to math.stackexchange -->
@@ -287,7 +283,8 @@ convertRMarkdown &lt;- function(dir=getwd(), images.dir=dir, images.url='/cn/ass
   			warning("No front matter found. Will not process this file.")
   		}
   	 }
-  	 invisible()}
+  	 invisible()
+ }
 </code></pre>
 
 <h3 id="rmdsh">建立可执行文本 <code>rmd.sh</code></h3>
@@ -345,7 +342,7 @@ plot<span class="p">(</span>density<span class="p">(</span>x<span class="p">))</
 </code></pre>
 </div>
 
-<p><img src="/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/fig1.r-figures/2014-01-25-new-post/fig1.png" alt="plot of chunk fig1" /> </p>
+<p><img src="/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/fig1.png" alt="plot of chunk fig1" /> </p>
 
 
 </section>
@@ -356,7 +353,7 @@ plot<span class="p">(</span>density<span class="p">(</span>x<span class="p">))</
 <span>
 	<a  href="http://williamlfang.github.com/cn/2014/01/22/sui-yue-bu-liu--xin-ling-de-tong-nian-yong-zhu/" class="pageNav"  >Previous</a>
 	&nbsp;&nbsp;&nbsp;
-	<a  href="http://williamlfang.github.com/cn/2014/01/25/new-post/" class="pageNav"  >Next</a>
+	<a   class="pageNavInvalid"  >Next</a>
 </span>
 <hr>
 <span class="author">
@@ -417,8 +414,6 @@ $(function(){
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             
-        url = 'http://williamlfang.github.com/cn/2014/01/25/new-post/';
-        
         }
         if (url) {
             window.location = url;
@@ -441,7 +436,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-25 02:33:05</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-25 03:04:39</span></small></p>
 </footer>
 
   </div>

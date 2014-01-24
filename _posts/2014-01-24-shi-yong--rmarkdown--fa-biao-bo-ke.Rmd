@@ -121,8 +121,8 @@ status:    process
 
 文本 [`rmd.sh`](/cn/_post/rmd.sh) 可以下载，里面内容是
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-Rscript -e "source('$DIR/rmarkdown.r'); convertRMarkdown(images.dir='$DIR/images')"
+    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    Rscript -e "source('$DIR/rmarkdown.r'); convertRMarkdown(images.dir='$DIR/images')"
 
 
 ### 添加 `YAML` 标头

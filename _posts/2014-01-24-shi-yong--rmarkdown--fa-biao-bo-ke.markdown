@@ -23,7 +23,7 @@ status: publish
     x = rnorm(100)
     plot(density(x))
 
-![plot of chunk unnamed-chunk-1](/cn/images/figure/unnamed-chunk-1.png) 
+![plot of chunk unnamed-chunk-1](/cn/_posts/images/figs/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/unnamed-chunk-1.png) 
 
  
  

@@ -1,848 +1,603 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>雁起平沙的网络日志</title>
-  <meta name="author" content="ypchen">
-
-  
-  <meta name="description" content="昨天我发布了《github pages视频教程（1）》，今晚就有童鞋留言反馈，提得很好，对我今后再录视频有很大的促进。同时，我也觉得有必要解释些几点，免得大家产生误解。 一、我为什么要录这个视频 没什么特别原因，就是有几位朋友用github做博客出了点问题，我就说，那我录个视频吧。然后一想， &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://yanping.me/cn">
-  <link href="/cn/favicon.png" rel="icon">
-  <link href="/cn/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/cn/javascripts/modernizr-2.0.js"></script>
-  <script src="/cn/javascripts/ender.js"></script>
-  <script src="/cn/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/cn/atom.xml" rel="alternate" title="雁起平沙的网络日志" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-<script src="/cn/javascripts/jquery-1.7.1.min.js" type="text/javascript"></script> 
-
-  <!-- Add fancyBox main JS and CSS files -->
-  <script type="text/javascript" src="/cn/assets/fancybox/jquery.fancybox.pack.js"></script>
-  <link rel="stylesheet" type="text/css" href="/cn/assets/fancybox/jquery.fancybox.css" media="screen" />
-
-	<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      	inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-    	displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-
-
-
-
-
-
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/cn/">雁起平沙的网络日志</a></h1>
-  
-    <h2>数量金融与R</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/cn/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-
-<ul class="main-navigation">
-  <li><a href="/cn/">博客主页</a></li>
-  <li><a href="/cn/blog/archives">文章列表</a></li>
-  <li><a href="/cn/blog/categories">分类目录</a></li>
-  <li><a href="/cn/blog/categories/金融工程">金融工程</a></li>
-  <li><a href="/cn/blog/r-lang">R语言</a></li>
-  <li><a href="/cn/blog/categories/数据科学">数据科学</a></li>
-  <li><a href="/cn/blog/categories/网站设计">网站设计</a></li>
-  <li><a href="/cn/blog/about">关于本站</a></li>
-  <li><a href="/cn/blog/contact">商业合作</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>夏石 | William Fang</title>    -->
+    <title>夏石 | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
     
-      <h1 class="entry-title"><a href="/cn/blog/2013/08/12/about-github-pages-step-by-step-video/">关于Github Pages 视频教程</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-12T23:30:00+08:00" pubdate data-updated="true">Aug 12<span>th</span>, 2013</time>
-        
-         | <a href="/cn/blog/2013/08/12/about-github-pages-step-by-step-video/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>昨天我发布了《github pages视频教程（1）》，今晚就有童鞋留言反馈，提得很好，对我今后再录视频有很大的促进。同时，我也觉得有必要解释些几点，免得大家产生误解。</p>
-
-<h3 id="section">一、我为什么要录这个视频</h3>
-
-<p>没什么特别原因，就是有几位朋友用github做博客出了点问题，我就说，那我录个视频吧。然后一想，光是你们几个能看到视频还不行，估计还有很多朋友会遇到这些问题，那我就公开吧。</p>
-
-<h3 id="github">二、什么是github？它能做什么？</h3>
-
-<p>推荐大家阅读阳志平老师的<a href="www.yangzhiping.com/tech/github.html">如何高效利用GitHub</a></p>
-
-<h3 id="github-1">三、为什么要用github做博客</h3>
-
-<p>首先，准确地说，应该是用github托管博客。你注册github以后，它提供了这样一种机制，你可以在github上存放静态网站（纯html+css+js）的代码，然后，你可以通过访问一定的url地址来访问网站。而jekyll是一种基于ruby语言的轻量级静态网站生成引擎，请看我以前翻译的一篇<a href="http://yanping.me/cn/blog/2011/12/15/building-static-sites-with-jekyll/">介绍</a>。github的后台还提供jekyll的程序的服务，这样，你把未编译的jekyll博客代码push到github上，它会在后台帮你编译，你也可以本地编译之后再push。听不懂没关系，以后会讲的。</p>
-
-<p>那为什么要用github呢？这纯粹是个人喜好问题，2011年底，我想开个博客，那时候统计之都的几位博主都是wordpress的博客，我也用了几天，然后谢益辉在邮件里提到用github能搭博客，我就研究了好几个星期，完全上瘾了。你可以看看益辉当时写的一篇<a href="http://yihui.name/cn/2011/10/back-into-the-dust/">博文</a>，阐述他为什么要换到jekyll。阳志平老师也有一篇<a href="http://www.yangzhiping.com/tech/wordpress-to-jekyll.html">告别wordpress，拥抱jekyll</a>，去网上搜一下，你会发现，叫这个名字的文章还真不少。</p>
-
-<h3 id="github-pages">四、什么人适合用github pages</h3>
-
-<p>我并没有向大家推销github和jekyll的意思，这套东西真的不适合所有人。如果你跟我一样是代码控、经常用github存放代码、觉得wordpress不灵活、想通过实践学习html/css/js，那么你可以试试用github托管博客。</p>
-
-<p>两年以前，我跟大家一样，不会做网页，不懂html/css/js，之后偶尔学一点，在用中学，现在也能做出像点样子的网站了。</p>
-
-<h3 id="jekyll">五、为什么用jekyll做的网站好看的不多？</h3>
-
-<p>这是个天大的误解，网站好不好看，跟你用什么系统没关系，而是跟你的html/css/js有关，你可以把jekyll当作cms，网站样子好不好看，就要看你的设计了。很多用jekyll做博客的孩子都是程序猿，崇尚简洁，而且不会把大量时间花在设计上，也有网站设得很好的，比如 <a href="http://pizn.github.io">http://pizn.github.io</a> 。如果你能找到一个设计得很好的页面，完全可以用jekyll来做博客，当然，你也可以用wordpress做，跟系统没关系。</p>
-
-<p>在第一期视频里，我举的那个例子用的是jekyll自带的最简单的模板，虽然很难看，但是它很简单，而且该有的都有了。在讲解的时候，我可以迅速定位到关键的代码，排除那些枝枝蔓蔓的影响。</p>
-
-<h3 id="section-1">六、之后的视频教程会有什么？</h3>
-
-<p>视频课程的第一次只是讲了基本概念，教你如何把别人的网站clone到自己的github里，还没有讲如何做一个属于自己的博客主题。这将是后面课程的重点。我先从修改别人的网站代码讲起吧。</p>
-
-<h3 id="section-2">七、这个课不会教什么？</h3>
-
-<p>我们这个课是关于github pages和jekyll的，不会教html/css/js，你需要自己去学，下面有些资源</p>
-
-<ul>
-  <li><a href="http://www.w3school.com.cn/">W3schol</a></li>
-  <li><a href="http://zixue.it">自学it网</a></li>
-  <li><a href="http://wenku.baidu.com/course/list/5">百度文库课程</a></li>
-</ul>
-
-<p>当然，网上还有很多资源，不限于上面的，不过我觉得，更重要的是在实践中学习。</p>
-
-<h3 id="section-3">八、不足之处</h3>
-
-<p>第一次录视频，不太熟练，有点紧张，错了就要重来，可是，我发现越是紧张，就越会出错，那天从下午三点一直录到晚上八点，最终还是三段视频拼到一起的，重来一遍的代价太高了。我觉得应该分段录的，十几分钟一段。</p>
-
-<p>另外，我的确应该重新注册个空白帐号的，我帐号里的东西太多，会分散大家注意力。下次我会用新帐号把这次视频的后半部分重讲一遍。</p>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/cn/blog/2013/08/11/github-pages-step-by-step-video/">Github Pages 视频教程（1）</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-11T10:30:00+08:00" pubdate data-updated="true">Aug 11<span>th</span>, 2013</time>
-        
-         | <a href="/cn/blog/2013/08/11/github-pages-step-by-step-video/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p class="info">去年我写了一篇<a href="http://yanping.me/cn/blog/2012/03/18/github-pages-step-by-step/">《Github Pages极简教程》</a>，一年过去了，很多童鞋反映说在实际操作中遇到了这样那样的问题，而且github页面也改版了，jekyll也升级了，情况和当初有所不同。所以我就录了这个系列的视频，希望能对大家有所帮助。</p>
-
-<div>
-<embed src="http://static.youku.com/v/swf/qplayer.swf?winType=adshow&amp;VideoIDS=XNTk0MjYxODQ0&amp;isAutoPlay=false&amp;isShowRelatedVideo=false" wmode="transparent" width="620" align="center" border="0" height="510" />
-</div>
-
-<div style="padding-top:20px;padding-bottom:20px;line-height:25px">
-      <strong><a href="http://yanping.me/cn/blog/2013/08/11/github-pages-step-by-step-video/">Github Pages 视频教程（1）</a></strong><br />
-            长度: 49 分 58 秒<br />
-            录制: 陈堰平<br />
-            <a href="http://v.youku.com/v_show/id_XNTk0MjYxODQ0.html" target="_blank">优酷播放</a> <br />
-下载: <a href="http://pan.baidu.com/share/link?shareid=3678776452&amp;uk=3288617424" target="_blank">高清视频文件</a>　
-
-
-
-
-
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/cn/blog/2013/06/30/xccds-r-training/">【广告】上海北京两地的R语言培训</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-30T19:30:00+08:00" pubdate data-updated="true">Jun 30<span>th</span>, 2013</time>
-        
-         | <a href="/cn/blog/2013/06/30/xccds-r-training/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近北京和上海有两个R语言培训。</p>
-
-<p>我的朋友<a href="http://www.weibo.com/u/1400524015">肖凯老师</a>最近要在上海开R语言的培训班。他是资深R语言用户，“<a href="http://xccds.github.io">数据科学与R语言</a>”博客博主，第五届R语言大会演讲嘉宾，上市公司（万达信息股份有限公司）数据分析部数据分析师。R语言领域的实战专家。</p>
-
-<p>想要了解详情的请看<a href="http://ww3.sinaimg.cn/large/644c05aejw1e6iz4iuympj20c822qk13.jpg">这里</a>。</p>
-
-<p>另一个培训是SupStat推出的RHadoop的培训，想要玩大数据的童鞋可以了解一下，请看<a href="http://bbs.it-home.org/forum.php?mod=viewthread&amp;tid=1876&amp;page=1&amp;extra=#pid5270">介绍</a>，SupStat的其他培训信息请看<a href="http://ypchen.inwake.com/files/upload/supstat-courses.pdf">这里</a>。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/cn/blog/2013/05/25/software-engineers-guide-to-getting/">【译文】软件工程师如何修炼数据科学</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-25T19:30:00+08:00" pubdate data-updated="true">May 25<span>th</span>, 2013</time>
-        
-         | <a href="/cn/blog/2013/05/25/software-engineers-guide-to-getting/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p class="info">写这篇文章的是位软件工程师，本文是他的数据科学修炼历程，原文在<a href="http://www.rcasts.com/2012/12/software-engineers-guide-to-getting.html">这里</a></p>
-
-<p>很多软件攻城狮朋友问我如何学习数据科学。其实已经有不少有名的数据科学家写过这方面的文章，比如<a href="http://www.dataspora.com/2009/05/sexy-data-geeks/" target="_blank">Dataspora</a>, <a href="http://gigaom.com/data/why-becoming-a-data-scientist-might-be-easier-than-you-think" target="_blank">Gigaom</a>， <a href="http://www.quora.com/Career-Advice/How-do-I-become-a-data-scientist" target="_blank">Quora</a>和<a href="http://www.hilarymason.com/blog/getting-started-with-data-science/" target="_blank">Hilary Mason</a>。 本文讲述的是我作为一名软件工程师学习统计和数据可视化的历程。</p>
-
-<p>我是半路出家的，花了5年时间成为数据科学领域的<a href="http://en.wikipedia.org/wiki/Dreyfus_model_of_skill_acquisition" target="_blank">熟练工（proficient）</a>，在我的学习过程中包括自学 （书籍, 博客, 简单实例）、工作中做项目、课堂培训(Stanford)、教学/演讲、会议（UseR, Strata）。 下面来讲讲到目前为止我做了哪些准备，其中哪些有用，哪些没用。</p>
-
-<h2>1. 入门</h2>
-
-<h3>a) 自学(2 - 4 个月)</h3>
-
-<p><em>考察一下数据科学是否适合自己</em></p>
-
-<p>入门很关键。两年前，我和几个同事组成了学习小组，一起学习<a href="http://stats202.com/" target="_blank">Stats 202</a>的课件。 这让我很兴趣，并且从那开始接触数据分析。 学习小组的5名成员中只有2名选择在这一领域研究的更深入（<a href="http://analytical-solution.com/2012/11/05/data-science-is-not-for-everyone/" target="_blank">数据科学并不适合所有人</a>）。<br /></p>
-<ul>
-<li><b>学习基础的统计学：</b><a href="http://stats202.com/" target="_blank">Stats 202</a>的课件非常适合入门</li>
-<li><b>学习统计工具：</b> 作为一只菜鸟，我花了3个月的时间潜心学习。请看<a href="http://cran.r-project.org/" target="_blank">R</a> ，并获得了不少乐趣 <a href="http://www.rcasts.com/2011/03/why-learn-r.html" target="_blank">为什么学R</a>？</li>
-<li><b>解决问题：</b>好奇心是数据科学的关键。如果你对国家经济、犯罪率统计以及体育比赛结果有疑问，那就找找数据自己解答你的疑问吧。</li>
-<li><b>学习Unix工具：</b>我选择阅读 <a href="http://shop.oreilly.com/product/9780596802363.do" target="_blank">O'Reilly's Data Analysis with Open Source Tools (A hands-on guide for programmers and data scientists)</a></li>
-<li><b>学习SQL和脚本语言：</b> 我会Java, Ruby和SQL。Python也在我的清单上。</li>
-</ul>
-
-<p>网上有很多学习资料</p>
-
-<ul>
-<li><a href="http://www.stanford.edu/class/stats202/" target="_blank">Stats 202</a></li>
-<li><a href="http://work.caltech.edu/telecourse.html" target="_blank">Caltech Data Science course</a></li>
-<li><a href="https://www.coursera.org/category/stats" target="_blank">Coursera</a>:&nbsp;<a href="https://www.coursera.org/course/datasci" target="_blank">Introduction to Data Science</a>,&nbsp;<a href="https://www.coursera.org/course/ml" target="_blank">Machine learning</a>,&nbsp;<a href="https://www.coursera.org/course/dataanalysis" target="_blank">Data Analysis</a>,&nbsp;<a href="https://www.coursera.org/course/compdata" target="_blank">Computing for Data Analysis</a></li>
-<li><a href="http://datascienc.es/" target="_blank">University of California Berkeley - Introduction to Data Science</a></li>
-<li><a href="http://open.journalismcourses.org/" target="_blank">Knight Center for Journalism's course on Introduction to Infographics and Data Visualization</a></li>
-<li>Stats 101:&nbsp;<a href="http://www.udacity.com/overview/Course/st101/CourseRev/1" target="_blank">Udacity (Intro to Stats)</a>,&nbsp;<a href="https://www.khanacademy.org/math/probability/statistics" target="_blank">Khan academy</a>,&nbsp;<a href="http://oli.cmu.edu/courses/free-open/statistics-course-details/" target="_blank">Carnegie Mellon's stats course</a></li>
-<li><a href="http://tryr.codeschool.com/" target="_blank">Learn R</a></li>
-</ul>
-
-<h3>b) 课堂培训 (9 - 12个月)</h3>
-
-<p><em>如果你真的想学好，就参加一门正式的课程</em></p>
-
-<p>如果你很认真地想学这门技术，那么最好参加课程学习。课程的艰难程度要保证我不会松懈。斯坦福提供了很棒的入门课程，比我参加的其他为期一周的培训课程要好很多。</p>
-
-<ul>
-<li><a href="http://www.stanford.edu/class/stats202/" target="_blank">Data Mining and Analysis STATS202</a></li>
-<li><a href="http://www.stanford.edu/class/msande211/" target="_blank">Linear and Nonlinear Optimization MS&amp;E211</a></li>
-<li><a href="http://www.stanford.edu/class/cs246/" target="_blank">Mining Massive Data Sets CS246</a></li>
-<li><a href="http://www-stat.stanford.edu/~tibs/stat315a/" target="_blank">Modern Applied Statistics: Learning STATS315A</a></li>
-<li>Statistical Methods in Finance STATS240P</li>
-<li><a href="http://www.stanford.edu/class/stats315b/" target="_blank">Modern Applied Statistics: Data Mining&nbsp;STATS315B</a></li>
-</ul>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/cn/blog/2013/05/25/software-engineers-guide-to-getting/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/cn/blog/2013/05/15/the-art-of-r-programming-published/">《R语言编程艺术》即将上市</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-15T19:30:00+08:00" pubdate data-updated="true">May 15<span>th</span>, 2013</time>
-        
-         | <a href="/cn/blog/2013/05/15/the-art-of-r-programming-published/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p style="height:0">
-<a class="fancybox" style="text-decoration: none;" rel="gallery1" href="http://cos.name/wp-content/uploads/2013/05/art-of-r-big.jpg" title="The Art of R Programming">
-    <img src="http://cos.name/wp-content/uploads/2013/05/art-of-r-235x300.jpg" title="Hosted by imgur.com" style="float:right;margin:0 0 10px 20px" />
-</a>
-</p>
-
-<p>经历千辛万苦之后，<em>The Art of R Programming</em>这本书终于被我们翻译成了《R语言编程艺术》。去年五月份机械工业出版社的<a href="http://weibo.com/maywuyi">吴怡</a>编辑与统计之都洽谈翻译本书，到现在已经整整一年了。这本书与其他R语言图书有很大的不同，它是由著名计算机科学家兼统计学家Norman Matloff撰写，从编程的角度来讲解R语言，并且深入浅出，非常适合入门，也可作为有R语言使用经验的人进阶。也正由于这本书的特别之处，使得翻译过程异常艰难，好在我们还有统计之都各位大佬的支持，很多把握不准的术语都是求助于他们，在此表示感谢。我在译者序中对本书做了详细介绍。</p>
-
-<h2 id="section">译者序</h2>
-
-<p>R是一种用于统计计算和统计作图的开源软件，同时也是种编程语言，它广泛应用于企业和学术界的数据分析领域，正在成为最通用语言之一。由于近几年数据挖掘、大数据等概念的走红，R也越来越多地被人关注。截止到本文完成之日，CRAN（<a href="http://cran.r-project.org/">http://cran.r-project.org/</a>）上共有4383个包，涉及统计、化学、经济、生物、医学、心理、社会学等各个学科。不同类型的公司，比如Google、辉瑞、默克、美国银行、洲际酒店集团和壳牌公司都在使用它，同时以S语言环境为基础的R语言由于其鲜明的特色，一出现就受到了统计专业人士的青睐，成为国外大学里相当标准的统计软件。</p>
-
-<p>一直以来，国内外关于R语言的著作都是以统计学专业的视角来介绍R语言的，对R语言本身的特性讲解得并不详尽，而软件自带的官方文档又显得过于技术，不那么亲民。另一方面，很多接触R的朋友都来自非计算机专业，没有接受过编程训练，他们使用R的时候，写出来的代码通常只能算是一条条命令的集合，面对更复杂的问题，常常束手无策。记得在某届R语言大会上，有位SAS阵营的朋友说，他看到演讲者所展示的代码里只有函数调用，没有编程的东西，所以他觉得R不能算一种编程语言。其实，他错了，此时你手里这本《R语言编程艺术》，覆盖了其他大部分R语言图书没有涉及到的编程主题。这本书就如同R语言的九阳神功秘籍，当神功练成，任督二脉一旦打通，再学习针对某一领域应用的函数或包就如庖丁解牛一般。顺便提一下，据微博上的小道消息，前面提到的那位朋友最近也开始学R了。</p>
-
-<p><strong>本书的特点表现在以下几个方面：</strong></p>
-
-<ul>
-  <li>第一，对读者的统计学知识和编程水平要求并不高。与很多R语言书籍不同，这本书并不需要很深的统计学功底，它从纯语言的角度入手来讲解R。对于有一定编程经验却没什么统计学背景的人来说，读这本书会比较顺畅，读者就可以重点专注R语言的特性在数据分析方面的应用。在有的地方，作者也会提醒那些有其他语言编程经验的人应该注意R语言有什么不同之处。而对于没有编程经验又想使用R做数据分析的人来说，这本书也是学习编程的绝佳教材。</li>
-  <li>第二，专注于R语言编程。作者没有把这本书定位为菜谱式的手册，也不像有些R语言图书那样介绍完统计学某方面应用之后简单地把R语言代码摆出来。翻开这本书的目录，你几乎看不到统计学的术语。本书系统介绍了R语言的各种数据结构和编程结构、面向对象编程方法、socket网络编程、并行计算、代码调试、程序性能提升以及R语言与其他语言的接口等主题。书中也提到了不少编程的小技巧，这都是作者多年编程经验的总结。</li>
-  <li>第三，丰富的案例分析。作者Matloff教授是位计算机科学家，同时他也是位统计学家，有多年的教学经验，也做过统计学方法论的顾问。除了正文中的例子之外，本书还有44个扩展案例，很多案例源自作者亲身参与过的咨询项目。虽然本书没有讲解任何统计模型，但是扩展案例都是和数据分析相关的，比如鲍鱼数据的重编码（第二章）、寻找离群值（第三章）、文本词汇索引表（第四章）、汉语方言学习助手（第五章）等等。通过学习这些案例，读者不仅能学到R语言的每种概念如何运作，也会学到如何把这些概念组合到一起成为有用的程序。比如第十章介绍了socket网络编程之后，就用一个扩展案例讲解如何用socket实现并行计算，这为第十六章详细讲解并行计算做好了铺垫。在很多案例里，作者讨论了好几种设计方案，并比较了这几种方案的不同之处，以回答“为什么这样做？”，这对于缺少编程经验的人来说，是非常好的安排。</li>
-</ul>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/cn/blog/2013/05/15/the-art-of-r-programming-published/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/cn/blog/2013/02/13/generate-tags-with-js-in-jekyll-blog/">用js在jekyll博客中实现标签云和标签页</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-13T15:30:00+08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
-        
-         | <a href="/cn/blog/2013/02/13/generate-tags-with-js-in-jekyll-blog/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p class="info">本文主要讨论在jekyll博客中借助javascript和json，实现标签云和标签页。标签云可以用jquery.tagcloud.js插件实现，标签页则使用jQuery读取json数据文件，用地址传递参数给js函数，使用的是异步加载技术，请看<a href="http://art.yanping.me/tags/">演示页面</a>。</p>
-
-<h2 id="section">标签云</h2>
-
-<p>先做点准备工作，加载jquery。因为我的博客里还加载了其他的js库，在另外一个js库中也定义了$符号的话，那么我们在使用$符号时就发生了冲突。所以在加载jquery时还要解决$命名冲突。请看<a href="http://www.cnblogs.com/RascallySnake/archive/2010/05/07/1729417.html">这篇文章</a>，我用的办法是定义jQuery的别名：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span /></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/js/jquery-1.7.1.min.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
-</span><span class="line">  <span class="kd">var</span> <span class="nx">jq</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">();</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>下面是标签云的代码：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span /></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/js/jquery.tagcloud.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">language=</span><span class="s">&quot;javascript&quot;</span><span class="nt">&gt;</span>
-</span><span class="line">  <span class="nx">jq</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">tagcloud</span><span class="p">.</span><span class="nx">defaults</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class="line">    <span class="nx">size</span><span class="o">:</span> <span class="p">{</span>
-</span><span class="line">      <span class="nx">start</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
-</span><span class="line">      <span class="nx">end</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
-</span><span class="line">      <span class="nx">unit</span><span class="o">:</span> <span class="s1">&#39;px&#39;</span>
-</span><span class="line">    <span class="p">},</span>
-</span><span class="line">    <span class="nx">color</span><span class="o">:</span> <span class="p">{</span>
-</span><span class="line">      <span class="nx">start</span><span class="o">:</span> <span class="s1">&#39;#7CCD7C&#39;</span><span class="p">,</span>
-</span><span class="line">      <span class="nx">end</span><span class="o">:</span> <span class="s1">&#39;#CD0000&#39;</span>
-</span><span class="line">    <span class="p">}</span>
-</span><span class="line">  <span class="p">};</span>
-</span><span class="line">
-</span><span class="line">  <span class="nx">jq</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class="line">    <span class="nx">jq</span><span class="p">(</span><span class="s1">&#39;#tag_cloud a&#39;</span><span class="p">).</span><span class="nx">tagcloud</span><span class="p">();</span>
-</span><span class="line">  <span class="p">});</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="section-1">标签页</h2>
-
-<p>最初，我是在谢益辉的博客里看到的<a href="http://yihui.name/cn/tags/">用js实现标签云</a>。可以看到，这个标签页上，在标签云之后跟着各个标签的文章列表，如果我只想看到某个标签的文章列表，要怎么做呢？</p>
-
-<p>前面我写了篇文章<a href="/cn/blog/2012/10/10/asynchronous-loading-post-list-with-jekyll-and-jQuery/">《用jekyll和jQuery实现异步加载文章列表》</a>，使用jQuery异步加载文章列表。同样的，我们也可以编写个函数加载某个标签的所有文章的列表。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/cn/blog/2013/02/13/generate-tags-with-js-in-jekyll-blog/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/cn/blog/2013/02/10/get-data-from-flash/">用R获取flash中的数据</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-10T02:00:00+08:00" pubdate data-updated="true">Feb 10<span>th</span>, 2013</time>
-        
-         | <a href="/cn/blog/2013/02/10/get-data-from-flash/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p class="info">本文主要讨论如何用R语言从flash中获取数据</p>
-
-<p>某天我需要获取<a href="http://ifsfd.fudan.edu.cn/fdurmb/indexchart1.jsp">复旦人民币汇率指数</a>的数据。此前我们介绍过从网页抓取数据的两种方法</p>
-
-<ol>
-  <li>用url给服务器提交参数获取数据文件，例如<a href="/cn/blog/2012/12/09/get-dce-data/">用R获取大连商品交易所历史数据</a>这篇文章里提到的方法</li>
-  <li>解析html代码以获取数据，例如<a href="/cn/blog/2013/02/09/get-zce-data/">用R获取郑州商品交易所历史数据</a>这篇文章里提到的方法</li>
-</ol>
-
-<p>而复旦的这个网页，不提供数据文件的下载，从html中也不能解析出数据。实际上，该网页中的flash向服务器发送请求，服务器返回数据给flash并显示出图形和表格。</p>
-
-<p>用<a href="http://cos.name/cn/topic/107729">http://cos.name/cn/topic/107729</a>中<a href="http://www.road2stat.com/">Xiao Nan版主</a>介绍的办法，我用chrome看了下页面</p>
-
-<p><img src="http://i.imgur.com/OqZSfRa.png" alt="network -&gt; XHR" /></p>
-
-<p>可以看到，上图中的表是从2012年12月12日到2013年2月10日的数据，对应的数据来自<a href="http://ifsfd.fudan.edu.cn/fdurmb/data?type=0%2C1%2C2&amp;df=2012%2F12%2F12&amp;dt=2013%2F02%2F10">http://ifsfd.fudan.edu.cn/fdurmb/data?type=0%2C1%2C2&amp;df=2012%2F12%2F12&amp;dt=2013%2F02%2F10</a>，打开这个链接，可以看出这是JSON格式，用R的rjson和RJSONIO包都可以解析JSON格式的数据。</p>
-
-<p>我们来研究一下上面的这个链接，<code>df=2012%2F12%2F12&amp;dt=2013%2F02%2F10</code>规定了从开始到结束的日期，如果开始日期是YYYY年MM月DD日，结束日期是yyyy年mm月dd日，那么对应的字符串是<code>df=YYYY%2FMM%2FDD&amp;dt=yyyy%2Fmm%2Fdd</code></p>
-
-<p>那么文本开头提出的问题，可用下面的代码解决</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span> (readFudan.r)</span> <a href="/cn/downloads/code/readFudan.r">download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line"><span class="c1"># 从复旦人民币汇率指数网站读取数据 http://ifsfd.fudan.edu.cn/fdurmb/indexchart1.jsp</span>
-</span><span class="line"><span class="c1"># 更多细节请看 http://cos.name/cn/topic/109132</span>
-</span><span class="line">
-</span><span class="line">require<span class="p">(</span>RCurl<span class="p">)</span>
-</span><span class="line">require<span class="p">(</span>rjson<span class="p">)</span>
-</span><span class="line">
-</span><span class="line">fdjson <span class="o">&lt;-</span> getURL<span class="p">(</span><span class="s">&quot;http://ifsfd.fudan.edu.cn/fdurmb/data?type=0%2C1%2C2&amp;df=2012%2F12%2F12&amp;dt=2013%2F02%2F10&quot;</span><span class="p">)</span>
-</span><span class="line">fdlist <span class="o">&lt;-</span> fromJSON<span class="p">(</span>fdjson<span class="p">)</span>
-</span><span class="line">fdm <span class="o">&lt;-</span> matrix<span class="p">(</span>unlist<span class="p">(</span>fdlist<span class="p">),</span>ncol<span class="o">=</span><span class="m">4</span><span class="p">,</span>byrow<span class="o">=</span><span class="k-Variable">T</span><span class="p">)</span>
-</span><span class="line">fddf <span class="o">&lt;-</span> data.frame<span class="p">(</span>fdm<span class="p">,</span> stringsAsFactors <span class="o">=</span> <span class="k-Variable">F</span><span class="p">)</span>
-</span><span class="line">fddf<span class="p">[,</span><span class="m">2</span>:<span class="m">4</span><span class="p">]</span> <span class="o">&lt;-</span> sapply<span class="p">(</span>fddf<span class="p">[,</span><span class="m">2</span>:<span class="m">4</span><span class="p">],</span>as.numeric<span class="p">)</span>
-</span><span class="line">colnames<span class="p">(</span>fddf<span class="p">)</span> <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&quot;date&quot;</span><span class="p">,</span><span class="s">&quot;人民币名义有效汇率指数&quot;</span><span class="p">,</span><span class="s">&quot;人民币实际有效汇率指数&quot;</span><span class="p">,</span><span class="s">&quot;人民币盯住一篮子货币模拟汇率指数&quot;</span><span class="p">)</span>
-</span><span class="line">write.csv<span class="p">(</span>fddf<span class="p">,</span><span class="s">&quot;fudan.csv&quot;</span><span class="p">,</span>row.names <span class="o">=</span> <span class="k-Variable">F</span> <span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/cn/blog/page/2/">&larr; 前一页</a>
-    
-    <a href="/cn/blog/archives">文章列表</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:yanping.me/cn" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-</section><section>
-  	<h1>关于本人</h1>
- <p align="center"><img src="http://art.yanping.me/images/avatar.jpg" /></p>
-
-
-<p>资浅媒体人，堆文字的金融攻城师，不靠谱的经济分析师，IT文艺小青年，舞者中的程序猿。<a href="/cn/blog/about" >更多介绍...</a></p>
-<p>声明：所有言论仅代表个人观点，与所在单位无关。</p><p>本人主页为<a href="http://yanping.me" target="_blank">http://yanping.me</a></p>
-
-<p align="center"><a href="http://i.imgur.com/dBONa.jpg" target="_blank" title="The Certificate in Quantitative Finance (CQF) is a six-month part-time course designed for in-depth training for individuals working in, or intending to move into, derivatives, development, quantitative trading or risk management. " alt="Certificate in Quantitative Finance"><img src="/cn/images/blog/cqf.jpg" width="70%" /></a></p>
-</section>
-
-
-
-<section id="categories_tag">
-<h1>分类目录</h1>
-<span class='categories_tag'> <a href='/cn/blog/categories/github' style='font-size: 138.1818181818182%'>Github(7)</a>  <a href='/cn/blog/categories/javascript' style='font-size: 127.27272727272728%'>Javascript(5)</a>  <a href='/cn/blog/categories/jekyll' style='font-size: 154.54545454545456%'>Jekyll(10)</a>  <a href='/cn/blog/categories/latex' style='font-size: 105.45454545454545%'>Latex(1)</a>  <a href='/cn/blog/categories/markdown' style='font-size: 105.45454545454545%'>Markdown(1)</a>  <a href='/cn/blog/categories/octopress' style='font-size: 143.63636363636363%'>Octopress(8)</a>  <a href='/cn/blog/categories/r语言' style='font-size: 160.0%'>R语言(11)</a>  <a href='/cn/blog/categories/指数' style='font-size: 105.45454545454545%'>指数(1)</a>  <a href='/cn/blog/categories/数据科学' style='font-size: 105.45454545454545%'>数据科学(1)</a>  <a href='/cn/blog/categories/网站设计' style='font-size: 138.1818181818182%'>网站设计(7)</a>  <a href='/cn/blog/categories/金融工程' style='font-size: 127.27272727272728%'>金融工程(5)</a> </span>
-</section>
-
-<section>
-  <h1>近期文章</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/cn/blog/2013/08/12/about-github-pages-step-by-step-video/" title="关于Github Pages 视频教程">关于Github Pages 视频教程</a>
-      </li>
-    
-      <li class="post">
-        <a href="/cn/blog/2013/08/11/github-pages-step-by-step-video/" title="Github Pages 视频教程（1）">Github Pages 视频教程（1）</a>
-      </li>
-    
-      <li class="post">
-        <a href="/cn/blog/2013/06/30/xccds-r-training/" title="【广告】上海北京两地的R语言培训">【广告】上海北京两地的R语言培训</a>
-      </li>
-    
-      <li class="post">
-        <a href="/cn/blog/2013/05/25/software-engineers-guide-to-getting/" title="【译文】软件工程师如何修炼数据科学">【译文】软件工程师如何修炼数据科学</a>
-      </li>
-    
-      <li class="post">
-        <a href="/cn/blog/2013/05/15/the-art-of-r-programming-published/" title="《R语言编程艺术》即将上市">《R语言编程艺术》即将上市</a>
-      </li>
-    
-      <li class="post">
-        <a href="/cn/blog/2013/02/13/generate-tags-with-js-in-jekyll-blog/" title="用js在jekyll博客中实现标签云和标签页">用js在jekyll博客中实现标签云和标签页</a>
-      </li>
-    
-      <li class="post">
-        <a href="/cn/blog/2013/02/10/get-data-from-flash/" title="用R获取flash中的数据">用R获取flash中的数据</a>
-      </li>
-    
-  </ul>
-</section>
-<section id="comment_sidebar">
-<h1>近期评论</h1>
-
-<script type="text/javascript" src="http://ypchencn.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=20"></script><a href="http://disqus.com/">Powered by Disqus</a>
-
-</section>
-<section class="blogroll">
-<h1>友情链接</h1>
-<a target="_blank" href="http://yihui.name/">谢益辉</a>&nbsp;|&nbsp; <a target="_blank" href="http://loyhome.com">丽云</a>&nbsp;|&nbsp; <a target="_blank" href="http://bjt.name">刘思喆</a>&nbsp;|&nbsp; <a target="_blank" href="http://jliblog.com">李舰</a>&nbsp;|&nbsp; <a target="_blank" href="http://tracy.cos.name/cn">熊熹师姐</a>&nbsp;|&nbsp; <a target="_blank" href="http://blog.cos.name/fan/">范建宁</a>&nbsp;|&nbsp; <a target="_blank" href="http://yishuo.org">邓一硕</a>&nbsp;|&nbsp; <a target="_blank" href="http://yixuan.cos.name/cn">邱怡轩</a>&nbsp;|&nbsp; <a target="_blank" href="http://blog.cos.name/taiyun/">魏太云</a>&nbsp;|&nbsp; <a target="_blank" href="http://xccds.github.io/">肖凯</a>&nbsp;|&nbsp; <a target="_blank" href="http://demi-panda.com/">熊猫家族</a>&nbsp;|&nbsp; <a target="_blank" href="http://joegaotao.github.io/cn">高涛</a>
-</section>
-
-<section class="blogroll">
-<h1>有用的链接</h1>
-<a target="_blank" href="http://cos.name/">统计之都</a>&nbsp;|&nbsp; <a target="_blank" href="http://rucdmc.net/">人大数据挖掘中心</a>&nbsp;|&nbsp; <a target="_blank" href="http://ismartdata.com/">智数营</a>&nbsp;|&nbsp; <a target="_blank" href="http://www.guardian.co.uk/data">卫报数据新闻</a>
-</section>
-
-<section>
-<iframe width="100%" height="110" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=110&fansRow=2&ptype=1&speed=300&skin=2&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1780626537&verifier=d1d5f291&dpc=1"></iframe>
-</section>
-
-
-
-
-
-<section id="copyleft">
-<h1>版权协议</h1>
-	
-	<p align="center"> <a target="_ blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/"><img src="http://i.creativecommons.org/l/by-nc-sa/2.5/cn/88x31.png" alt="Creative Commons License"/></a></p>
-	<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/">CC2.5: 知识共享署名-非商业性使用</a>
-</section>
-<section>
-<h1>Feed订阅</h1>
-<div style="text-align: center;">
-<!-- Feedsky FEED发布代码开始 -->
-<!-- FEED自动发现标记开始 -->
-<link target="_blank" rel="alternate" href="http://feed.yanping.me" type="application/rss+xml" title="RSS 2.0"/>
-<!-- FEED自动发现标记结束 -->
-<a target="_blank" href="http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="feedsky" src="http://yanping.me/images/feed-icon.gif"/></a><br/>
-</div>
-<div style="text-align: center;">
-<a target="_blank" href="http://www.zhuaxia.com/add_channel.php?url=http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="抓虾" src="http://yanping.me/images/icon_zhuaxia.gif"/></a><a target="_blank" href="http://www.xianguo.com/subscribe.php?url=http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="鲜果" src="http://yanping.me/images/icon_xianguo.gif"/></a><br/>
-<a target="_blank" href="http://fusion.google.com/add?feedurl=http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="google reader" src="http://yanping.me/images/icon_google.gif"/></a><a target="_blank" href="http://mail.qq.com/cgi-bin/feed?u=http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="QQ邮箱" src="http://yanping.me/images/icon_qq.gif"/></a><br/>
-</div>
-</section>
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo">
-<p>
-  Copyright &copy; 2013 - ypchen -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-<script type="text/javascript">
-$(document).ready(function() {
-  $(".fancybox").fancybox({
-    openEffect  : 'none',
-    closeEffect : 'none'
-  });
-});
-</script>
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'ypchencn';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-
-
-
-
-
-
-
-
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<script type="text/javascript" src="/media/js/outliner.js"></script>
+<!--=================================================================== -->
   <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-27377274-2']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
-
-
-
-	<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
-	<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1558027" charset="utf-8"></script>
-
-
-
-
-<script type="text/javascript"
-   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-
-
-
-<script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
     
-        $(document).ready(function(){             
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
 
-            $('.entry-content a').each(function(index,element){
-                var href = $(this).attr('href');
-                if(href.indexOf('#') == 0){
-                }else if ( href.indexOf('/') == 0 || href.toLowerCase().indexOf('yanping.me')>-1 ){
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
                 }else{
-                    $(this).attr('target','_blank');
-                    $(this).addClass('external');
+                        bt.hide();
                 }
-            });
-           
-        });	
+        });
+    })
+    </script>
+  <!--=================================================================== -->
+ </head>
 
-</script>
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>夏石</h1>
+        </header>
+        <nav id="real_nav">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+        <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<ul class="listing">
+
+  
+  
+    
+    <li class="listing-seperator">2007</li>
+  
+  <li class="listing-item">
+    <time datetime="2007-11-14">2007-11-14</time>
+    <a href="http://williamlfang.github.com/cn/2007/11/14/strong/" title="最坚强">最坚强</a>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2007-07-24">2007-07-24</time>
+    <a href="http://williamlfang.github.com/cn/2007/07/24/first-year-at-uni/" title="大学一年祭">大学一年祭</a>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2007-05-25">2007-05-25</time>
+    <a href="http://williamlfang.github.com/cn/2007/05/25/healthy/" title="我希望好好的">我希望好好的</a>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2007-05-19">2007-05-19</time>
+    <a href="http://williamlfang.github.com/cn/2007/05/19/losing-my-dear-time/" title="流年逝">流年逝</a>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2007-05-19">2007-05-19</time>
+    <a href="http://williamlfang.github.com/cn/2007/05/19/always-there/" title="一直在身边">一直在身边</a>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2007-05-18">2007-05-18</time>
+    <a href="http://williamlfang.github.com/cn/2007/05/18/lonely-words/" title="流浪的文字">流浪的文字</a>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2007-05-15">2007-05-15</time>
+    <a href="http://williamlfang.github.com/cn/2007/05/15/time-flying/" title="一天又三年">一天又三年</a>
+
+</ul>
+
+<!-- #####################################################################
+<ul class="listing">
+
+  
+  
+    
+    <li class="listing-seperator">2014</li>
+  
+  <li class="listing-item">
+    <time datetime="2014-01-24">2014-01-24</time>
+    <a href="http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/" title="使用 Jekyll + knitr 发布博客">使用 Jekyll + knitr 发布博客</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2014-01-22">2014-01-22</time>
+    <a href="http://williamlfang.github.com/cn/2014/01/22/sui-yue-bu-liu--xin-ling-de-tong-nian-yong-zhu/" title="岁月不留，心灵的童年永驻">岁月不留，心灵的童年永驻</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2014-01-22">2014-01-22</time>
+    <a href="http://williamlfang.github.com/cn/2014/01/22/shu-ju-jie/" title="Data Structure">Data Structure</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2014-01-20">2014-01-20</time>
+    <a href="http://williamlfang.github.com/cn/2014/01/20/r-note/" title="Advanced R Programming">Advanced R Programming</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2014-01-18">2014-01-18</time>
+    <a href="http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/" title="WineQQ2013 可以使用">WineQQ2013 可以使用</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2014-01-18">2014-01-18</time>
+    <a href="http://williamlfang.github.com/cn/2014/01/18/img/" title="Images">Images</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2014-01-16">2014-01-16</time>
+    <a href="http://williamlfang.github.com/cn/2014/01/16/pandoc/" title="Linux Mint 安装 Pandoc">Linux Mint 安装 Pandoc</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2014-01-08">2014-01-08</time>
+    <a href="http://williamlfang.github.com/cn/2014/01/08/chinese-input/" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2014-01-05">2014-01-05</time>
+    <a href="http://williamlfang.github.com/cn/2014/01/05/goagent/" title="新系统的第一个软件">新系统的第一个软件</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2014-01-04">2014-01-04</time>
+    <a href="http://williamlfang.github.com/cn/2014/01/04/virtualbox/" title="在 Virutalbox 环境下安装虚拟机">在 Virutalbox 环境下安装虚拟机</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2014-01-03">2014-01-03</time>
+    <a href="http://williamlfang.github.com/cn/2014/01/03/github-jekyll/" title="Github 的一些设置技巧">Github 的一些设置技巧</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2014-01-02">2014-01-02</time>
+    <a href="http://williamlfang.github.com/cn/2014/01/02/window-2-linux/" title="本本的"转型"">本本的"转型"</a>
+  </li>
+
+  
+  
+    
+    <li class="listing-seperator">2013</li>
+  
+  <li class="listing-item">
+    <time datetime="2013-12-31">2013-12-31</time>
+    <a href="http://williamlfang.github.com/cn/2013/12/31/final-day/" title="2013年的最后一天">2013年的最后一天</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2013-07-27">2013-07-27</time>
+    <a href="http://williamlfang.github.com/cn/2013/07/27/old-times/" title="往事如烟灭">往事如烟灭</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2013-07-17">2013-07-17</time>
+    <a href="http://williamlfang.github.com/cn/2013/07/17/sicked/" title="生病了">生病了</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2013-07-14">2013-07-14</time>
+    <a href="http://williamlfang.github.com/cn/2013/07/14/to-be-a-man/" title="曾厝垵后厝85号的大男孩">曾厝垵后厝85号的大男孩</a>
+  </li>
+
+  
+  
+    
+    <li class="listing-seperator">2012</li>
+  
+  <li class="listing-item">
+    <time datetime="2012-07-02">2012-07-02</time>
+    <a href="http://williamlfang.github.com/cn/2012/07/02/loving/" title="我们都是一群被文字宠坏的小孩">我们都是一群被文字宠坏的小孩</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2012-05-14">2012-05-14</time>
+    <a href="http://williamlfang.github.com/cn/2012/05/14/ni-guang/" title="逆光">逆光</a>
+  </li>
+
+  
+  
+    
+    <li class="listing-seperator">2011</li>
+  
+  <li class="listing-item">
+    <time datetime="2011-01-15">2011-01-15</time>
+    <a href="http://williamlfang.github.com/cn/2011/01/15/one-semeter-ends/" title="一个学期结束了">一个学期结束了</a>
+  </li>
+
+  
+  
+    
+    <li class="listing-seperator">2010</li>
+  
+  <li class="listing-item">
+    <time datetime="2010-08-21">2010-08-21</time>
+    <a href="http://williamlfang.github.com/cn/2010/08/21/summer-gone/" title="盛夏的那些事">盛夏的那些事</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2010-06-25">2010-06-25</time>
+    <a href="http://williamlfang.github.com/cn/2010/06/25/nothing-meaningful/" title="存在的空虚">存在的空虚</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2010-05-26">2010-05-26</time>
+    <a href="http://williamlfang.github.com/cn/2010/05/26/graduation/" title="毕业啦">毕业啦</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2010-05-21">2010-05-21</time>
+    <a href="http://williamlfang.github.com/cn/2010/05/21/missing/" title="我怀念的">我怀念的</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2010-01-30">2010-01-30</time>
+    <a href="http://williamlfang.github.com/cn/2010/01/30/how-far/" title="永远有多远">永远有多远</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2010-01-17">2010-01-17</time>
+    <a href="http://williamlfang.github.com/cn/2010/01/17/only-me/" title="知我者">知我者</a>
+  </li>
+
+  
+  
+    
+    <li class="listing-seperator">2009</li>
+  
+  <li class="listing-item">
+    <time datetime="2009-11-20">2009-11-20</time>
+    <a href="http://williamlfang.github.com/cn/2009/11/20/angel/" title="Angel">Angel</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2009-11-11">2009-11-11</time>
+    <a href="http://williamlfang.github.com/cn/2009/11/11/lonely-love/" title="作品">作品</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2009-11-04">2009-11-04</time>
+    <a href="http://williamlfang.github.com/cn/2009/11/04/the-girl/" title="那女孩對我說">那女孩對我說</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2009-09-15">2009-09-15</time>
+    <a href="http://williamlfang.github.com/cn/2009/09/15/liu-nian/" title="流年">流年</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2009-03-14">2009-03-14</time>
+    <a href="http://williamlfang.github.com/cn/2009/03/14/my-love-for-you/" title="我爱主同时亦爱一位世人">我爱主同时亦爱一位世人</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2009-02-20">2009-02-20</time>
+    <a href="http://williamlfang.github.com/cn/2009/02/20/till-the-end/" title="Till the end">Till the end</a>
+  </li>
+
+  
+  
+    
+    <li class="listing-seperator">2008</li>
+  
+  <li class="listing-item">
+    <time datetime="2008-11-11">2008-11-11</time>
+    <a href="http://williamlfang.github.com/cn/2008/11/11/where-to-go/" title="在哪里">在哪里</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2008-08-14">2008-08-14</time>
+    <a href="http://williamlfang.github.com/cn/2008/08/14/year-arournd/" title="春夏秋冬">春夏秋冬</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2008-07-17">2008-07-17</time>
+    <a href="http://williamlfang.github.com/cn/2008/07/17/lost-in-shunde/" title="在顺德">在顺德</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2008-05-31">2008-05-31</time>
+    <a href="http://williamlfang.github.com/cn/2008/05/31/thinking/" title="思维的乐趣">思维的乐趣</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2008-05-28">2008-05-28</time>
+    <a href="http://williamlfang.github.com/cn/2008/05/28/confusing/" title="迷乱">迷乱</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2008-05-21">2008-05-21</time>
+    <a href="http://williamlfang.github.com/cn/2008/05/21/waiting-for-you/" title="寻找猪头的夏天">寻找猪头的夏天</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2008-03-24">2008-03-24</time>
+    <a href="http://williamlfang.github.com/cn/2008/03/24/lonely-dancing/" title="独自乱舞">独自乱舞</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2008-03-13">2008-03-13</time>
+    <a href="http://williamlfang.github.com/cn/2008/03/13/together/" title="一起的日子">一起的日子</a>
+  </li>
+
+  
+  
+    
+    <li class="listing-seperator">2007</li>
+  
+  <li class="listing-item">
+    <time datetime="2007-12-10">2007-12-10</time>
+    <a href="http://williamlfang.github.com/cn/2007/12/10/living/" title="继续生活">继续生活</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2007-11-14">2007-11-14</time>
+    <a href="http://williamlfang.github.com/cn/2007/11/14/strong/" title="最坚强">最坚强</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2007-07-24">2007-07-24</time>
+    <a href="http://williamlfang.github.com/cn/2007/07/24/first-year-at-uni/" title="大学一年祭">大学一年祭</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2007-05-25">2007-05-25</time>
+    <a href="http://williamlfang.github.com/cn/2007/05/25/healthy/" title="我希望好好的">我希望好好的</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2007-05-19">2007-05-19</time>
+    <a href="http://williamlfang.github.com/cn/2007/05/19/losing-my-dear-time/" title="流年逝">流年逝</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2007-05-19">2007-05-19</time>
+    <a href="http://williamlfang.github.com/cn/2007/05/19/always-there/" title="一直在身边">一直在身边</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2007-05-18">2007-05-18</time>
+    <a href="http://williamlfang.github.com/cn/2007/05/18/lonely-words/" title="流浪的文字">流浪的文字</a>
+  </li>
+
+  
+  
+  <li class="listing-item">
+    <time datetime="2007-05-15">2007-05-15</time>
+    <a href="http://williamlfang.github.com/cn/2007/05/15/time-flying/" title="一天又三年">一天又三年</a>
+  </li>
+
+</ul>
+    ######################################################################## -->
+
+
+<p style="line-height: 20%"> <br> </p>
+
+<!--   ==================================================================   -->
+<div id="post-pagination" class="paginator">
+
+  
+    
+    <a href="http://williamlfang.github.com/cn/page4"><<前页</a>
+    
+  
+
+      
+      <a href="http://williamlfang.github.com/cn/">1</a>
+      
+
+    
+      
+      <a href="http://williamlfang.github.com/cn/page2">2</a>
+      
+    
+      
+      <a href="http://williamlfang.github.com/cn/page3">3</a>
+      
+    
+      
+      <a href="http://williamlfang.github.com/cn/page4">4</a>
+      
+    
+      
+      <span class="current-page">5</span>
+      
+    
+
+  
+    <span class="next disabled" >后页>></span>
+  
+  (共47篇)
+</div>
+
+
+</section>
 
 
 
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
 
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-24 20:19:55</span></small></p>
+</footer>
 
+  </div>
 
-</body>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
 </html>

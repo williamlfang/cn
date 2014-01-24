@@ -12,6 +12,18 @@
 @import url(http://fonts.googleapis.com/css?family=Galdeano);
 @import url(http://fonts.googleapis.com/css?family=Electrolize);
 @import url(http://fonts.googleapis.com/css?family=Cuprum);
+
+
+/*@import url(/media/css/kickstart/kickstart-forms.css);
+@import url(/media/css/kickstart/kickstart-menus.css);
+@import url(/media/css/kickstart/kickstart-grid.css);
+@import url(/media/css/kickstart/jquery.fancybox-1.3.4.css);*/
+@import url(kickstart-slideshow.css);
+@import url(/media/css/kickstart/prettify.css);   /* 代码高亮 */
+/*@import url(/media/css/kickstart/tiptip.css); 字体
+/*@import url(/media/css/kickstart/fonts/fontawesome/css/font-awesome.min.css);
+*/
+
 body{font-size:14px;word-spacing:1px;
 	margin-left:auto;
 margin-right:auto;

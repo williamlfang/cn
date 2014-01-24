@@ -96,7 +96,7 @@
     })
     </script>
   <!--=================================================================== -->
-   <!-- mathjax config similar to math.stackexchange 
+ <!--mathjax config similar to math.stackexchange \
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX", "output/HTML-CSS"],
@@ -108,7 +108,6 @@ MathJax.Hub.Config({
   },
   messageStyle: "none",
   "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
-  "HTML-CSS": { minScaleAdjust: 110 }    
  });
  </script>
 
@@ -116,20 +115,39 @@ MathJax.Hub.Config({
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
    <!-- mathjax config similar to math.stackexchange -->
-   <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
-    });
-
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
+<style TYPE="text/css">
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+body {font-family: Palatino;}
+h1, h2 {font-family: Century Gothic; color: #3C5084;}
+h3 {font-family: Century Gothic; color: #6076B4}
+code {font-family: Inconsolata;}
+p {text-align:justify;}
+.hidden {display: none;}
+.newpage {page-break-before:always;}
+pre {padding: 10px; margin-left: 100px; margin-right: 100px; background: #EEEEEE;}
+@media print {h2 {page-break-before:always;}}
+/* TODO: use Google Web Fonts to ensure Palatino, Century Gothic and Inconsolata are installed and used */
+</style>
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
 </script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+
+<script src='https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=scm&amp;lang=hs&amp;lang=scala' type='text/javascript'></script>
 
  </head>
 

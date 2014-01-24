@@ -121,7 +121,7 @@ status: publish
   		}
   	}
   	invisible()
-  }
+    }
  
 ### 建立可执行文本 `rmd.sh`
  

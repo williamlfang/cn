@@ -57,68 +57,60 @@ status: publish
 首先是在主目录下面建立一个 `rmarkdown.r` 文件，用于执行编译功能。主要用途就是实现将当前目录下所有的带 `.Rmd` 文件转化为 `.md` 格式，从而可以实现发布。下面是其主要内容，也可以在[这里](/cn/_post/rmarkdwn.r)下载。
  
  
- #' This R script will process all R mardown files (those with in_ext file extention,
- #' .rmd by default) in the current working directory. Files with a status of
- #' 'processed' will be converted to markdown (with out_ext file extention, '.markdown'
- #' by default). It will change the published parameter to 'true' and change the
- #' status parameter to 'publish'.
- #' 
- #' @param dir the directory to process R Markdown files.
- #' @param images.dir the base directory where images will be generated.
- #' @param images.url
- #' @param out_ext the file extention to use for processed files.
- #' @param in_ext the file extention of input files to process.
- #' @param recursive should rmd files in subdirectories be processed.
- #' @return nothing.
- #' @author Jason Bryer <jason@bryer.org>
- convertRMarkdown <- function(dir=getwd(), images.dir=dir, images.url='/cn/_posts/images/',
-  						 out_ext='.markdown', in_ext='.rmd', recursive=FALSE) {
-	require(knitr, quietly=TRUE, warn.conflicts=FALSE)
-	files <- list.files(path=dir, pattern=in_ext, ignore.case=TRUE, recursive=recursive)
-	for(f in files) {
-		message(paste("Processing ", f, sep=''))
-		content <- readLines(f)
-		frontMatter <- which(substr(content, 1, 3) == '---')
-		if(length(frontMatter) >= 2 & 1 %in% frontMatter) {
-			statusLine <- which(substr(content, 1, 7) == 'status:')
-			publishedLine <- which(substr(content, 1, 10) == 'published:')
-			if(statusLine > frontMatter[1] & statusLine < frontMatter[2]) {
-				status <- unlist(strsplit(content[statusLine], ':'))[2]
-				status <- sub('[[:space:]]+$', '', status)
-				status <- sub('^[[:space:]]+', '', status)
-				if(tolower(status) == 'process') {
-					#This is a bit of a hack but if a line has zero length (i.e. a
-					#black line), it will be removed in the resulting markdown file.
-					#This will ensure that all line returns are retained.
-					content[nchar(content) == 0] <- ' '
-					message(paste('Processing ', f, sep=''))
-					content[statusLine] <- 'status: publish'
-					content[publishedLine] <- 'published: true'
-					outFile <- paste(substr(f, 1, (nchar(f)-(nchar(in_ext)))), out_ext, sep='')
-					render_markdown(strict=TRUE)
-					opts_knit$set(out.format='markdown')
-					opts_knit$set(base.dir=images.dir)
-					opts_knit$set(base.url=images.url)
-          ######################################################################
-					fig.path <- paste0("figs/", sub(".Rmd$", "", basename(files)), "/")
-					opts_chunk$set(fig.path = fig.path)
-					## opts_chunk$set(fig.cap = "center")  ## figure position
-					## render_jekyll()        ##
-          ######################################################################
-					try(knit(text=content, output=outFile), silent=FALSE)
-				} else {
-					warning(paste("Not processing ", f, ", status is '", status, 
-								  "'. Set status to 'process' to convert.", sep=''))
-				}
-			} else {
-				warning("Status not found in front matter.")
-			}
-		} else {
-			warning("No front matter found. Will not process this file.")
-		}
-	}
-	invisible()
-}
+        #' This R script will process all R mardown files (those with in_ext file extention,
+        #' .rmd by default) in the current working directory. Files with a status of
+        #' 'processed' will be converted to markdown (with out_ext file extention, '.markdown'
+        #' by default). It will change the published parameter to 'true' and change the
+        #' status parameter to 'publish'.
+        #' 
+        #' @param dir the directory to process R Markdown files.
+        #' @param out_ext the file extention to use for processed files.
+        #' @param in_ext the file extention of input files to process.
+        #' @param recursive should rmd files in subdirectories be processed.
+        #' @return nothing.
+        #' @author Jason Bryer <jason@bryer.org>
+        convertRMarkdown <- function(dir=getwd(), images.dir=dir, images.url='/images/',
+                   out_ext='.markdown', in_ext='.rmd', recursive=FALSE) {
+          require(knitr, quietly=TRUE, warn.conflicts=FALSE)
+          files <- list.files(path=dir, pattern=in_ext, ignore.case=TRUE, recursive=recursive        )
+          for(f in files) {
+            message(paste("Processing ", f, sep=''))
+            content <- readLines(f)
+            frontMatter <- which(substr(content, 1, 3) == '---')
+            if(length(frontMatter) == 2) {
+              statusLine <- which(substr(content, 1, 7) == 'status:')
+              publishedLine <- which(substr(content, 1, 10) == 'published:')
+              if(statusLine > frontMatter[1] & statusLine < frontMatter[2]) {
+                status <- unlist(strsplit(content[statusLine], ':'))[2]
+                status <- sub('[[:space:]]+$', '', status)
+                status <- sub('^[[:space:]]+', '', status)
+                if(tolower(status) == 'process') {
+                  #This is a bit of a hack but if a line has zero length (i.e. a
+                  #black line), it will be removed in the resulting markdown file.
+                  #This will ensure that all line returns are retained.
+                  content[nchar(content) == 0] <- ' '
+                  message(paste('Processing ', f, sep=''))
+                  content[statusLine] <- 'status: publish'
+                  content[publishedLine] <- 'published: true'
+                  outFile <- paste(substr(f, 1, (nchar(f)-(nchar(in_ext)))), out_ext, sep='')
+                  render_markdown(strict=TRUE)
+                  opts_knit$set(out.format='markdown')
+                  opts_knit$set(base.dir=images.dir)
+                  opts_knit$set(base.url=images.url)
+                  try(knit(text=content, output=outFile), silent=FALSE)
+                } else {
+                  warning(paste("Not processing ", f, ", status is '", status, 
+                          "'. Set status to 'process' to convert.", sep=''))
+                }
+              } else {
+                warning("Status not found in front matter.")
+              }
+            } else {
+              warning("No front matter found. Will not process this file.")
+            }
+          }
+          invisible()
+        }
  
  
 ### 建立可执行文本 `rmd.sh`
@@ -145,6 +137,7 @@ status: publish
   <p> - First, the published parameter should be set to false so that Jekyll will not attempt to process the file. The convertRMarkdown function will change this parameter to true in the resulting Markdown file. </p>
   
   <p> - The second parameter, status, must be set to process for the convertRMarkdown function to convert the file. This is useful when working a draft of a document and you wish to not have the file converted. </p>
+  
 </blockquote>
  
 ### 例子

@@ -169,15 +169,6 @@ $$
 \end{align}
 $$
  
-<div style="font-size: 500%;">    
-\[
- 
-  g\frac{d^2u}{dx^2} + L\sin u = 0
- 
-\]    
-</div>
- 
- 
 #### **R**
  
 再者，这个 `R` 代码，我们可以直接生成图片。

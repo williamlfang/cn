@@ -1,4 +1,4 @@
-markdown: rdiscount
+markdown: krawdown
 permalink: /:year/:month/:day/:title/
 url: http://williamlfang.github.com/cn
 author: William Fang

@@ -78,7 +78,7 @@ task :post do
     ##post.puts "{% include JB/setup %}"
     post.puts ""
   end
-  system("emacsclient #{filename}")
+  system("rstudio #{filename}") # 新建文章后在编辑器中打开
 end # task :post
 
 # Usage: rake page name="about.html"

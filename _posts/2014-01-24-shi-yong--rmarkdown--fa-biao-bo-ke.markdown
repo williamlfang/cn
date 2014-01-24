@@ -158,18 +158,6 @@ status: publish
  
 比如我只需要如下输入数学公式，$$S = \sum_{i=1}^k x_i$$，或者是$$a^2 + b^2 = c^2$$
  
-$$\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum_{k=0}^\infty\frac{(4k)!(1103+26390k)}{(k!)^4396^{4k}}$$
- 
-$$ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\ldots} } } } $$
- 
-$$
-\begin{align}
-\mbox{Union: } & A\cup B = \{x\mid x\in A \mbox{ or } x\in B\} \\
-\mbox{Concatenation: } & A\circ B  = \{xy\mid x\in A \mbox{ and } y\in B\} \\
-\mbox{Star: } & A^\star  = \{x_1x_2\ldots x_k \mid  k\geq 0 \mbox{ and each } x_i\in A\} \\
-\end{align}
-$$
- 
 #### **R**
  
 再者，这个 `R` 代码，我们可以直接生成图片。

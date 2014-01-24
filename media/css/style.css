@@ -54,7 +54,7 @@ p code{background-color:#f7f7f7; padding: 2px; margin: 2px; border-radius: 3px; 
 body div.content {}
     body div.content code.has-jax {
         font: inherit;
-        font-size: 500%;
+        font-size: 10%;
         background: inherit;
         border: inherit;
         color: #317eac;

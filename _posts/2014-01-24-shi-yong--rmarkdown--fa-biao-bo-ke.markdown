@@ -120,7 +120,8 @@ status: publish
   			warning("No front matter found. Will not process this file.")
   		}
   	 }
-  	 invisible()}
+  	 invisible()
+     }
  
  
  

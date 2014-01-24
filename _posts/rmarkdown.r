@@ -12,7 +12,7 @@
 #' @param recursive should rmd files in subdirectories be processed.
 #' @return nothing.
 #' @author Jason Bryer <jason@bryer.org>
-convertRMarkdown <- function(dir=getwd(), images.dir=dir, images.url='/cn/_posts/images/',
+convertRMarkdown <- function(dir=getwd(), images.dir=dir, images.url='/cn/assets/images/',
 							 out_ext='.markdown', in_ext='.rmd', recursive=FALSE) {
 	require(knitr, quietly=TRUE, warn.conflicts=FALSE)
 	files <- list.files(path=dir, pattern=in_ext, ignore.case=TRUE, recursive=recursive)
@@ -40,12 +40,14 @@ convertRMarkdown <- function(dir=getwd(), images.dir=dir, images.url='/cn/_posts
 					opts_knit$set(out.format='markdown')
 					opts_knit$set(base.dir=images.dir)
 					opts_knit$set(base.url=images.url)
-          ######################################################################
-					fig.path <- paste0("figs/", sub(".Rmd$", "", basename(files)), "/")
+					######################################################################
+					## 产生的图片存储位置 `/assets/images/r-figures/`
+					fig.path <- paste0("r-figures/", sub(".Rmd$", "", basename(files)), "/")
 					opts_chunk$set(fig.path = fig.path)
 					## opts_chunk$set(fig.cap = "center")  ## figure position
-					## render_jekyll()        ##
-          ######################################################################
+				  render_jekyll()        ##
+					######################################################################
+					
 					try(knit(text=content, output=outFile), silent=FALSE)
 				} else {
 					warning(paste("Not processing ", f, ", status is '", status, 

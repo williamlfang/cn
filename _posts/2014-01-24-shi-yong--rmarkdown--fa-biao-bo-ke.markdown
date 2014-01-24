@@ -145,10 +145,12 @@ status: publish
  
 比如这个 `R` 代码，我们可以直接生成图片。
 
-    x = rnorm(100)
-    plot(density(x))
+{% highlight r %}
+x = rnorm(100)
+plot(density(x))
+{% endhighlight %}
 
-![plot of chunk unnamed-chunk-1](/cn/_posts/images/figs/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/unnamed-chunk-1.png) 
+![plot of chunk unnamed-chunk-1](/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/unnamed-chunk-1.png) 
 
  
  

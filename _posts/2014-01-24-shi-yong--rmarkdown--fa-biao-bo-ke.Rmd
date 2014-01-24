@@ -56,22 +56,22 @@ status:    process
 
 首先是在主目录下面建立一个 `rmarkdown.r` 文件，用于执行编译功能。主要用途就是实现将当前目录下所有的带 `.Rmd` 文件转化为 `.md` 格式，从而可以实现发布。下面是其主要内容，也可以在[这里](/cn/_post/rmarkdwn.r)下载。
 
-{% highlight r linenos %}
-#' This R script will process all R mardown files (those with in_ext file extention,
-#' .rmd by default) in the current working directory. Files with a status of
-#' 'processed' will be converted to markdown (with out_ext file extention, '.markdown'
-#' by default). It will change the published parameter to 'true' and change the
-#' status parameter to 'publish'.
-#' 
-#' @param dir the directory to process R Markdown files.
-#' @param images.dir the base directory where images will be generated.
-#' @param images.url
-#' @param out_ext the file extention to use for processed files.
-#' @param in_ext the file extention of input files to process.
-#' @param recursive should rmd files in subdirectories be processed.
-#' @return nothing.
-#' @author Jason Bryer <jason@bryer.org>
-convertRMarkdown <- function(dir=getwd(), images.dir=dir, images.url='/cn/_posts/images/',
+
+ #' This R script will process all R mardown files (those with in_ext file extention,
+ #' .rmd by default) in the current working directory. Files with a status of
+ #' 'processed' will be converted to markdown (with out_ext file extention, '.markdown'
+ #' by default). It will change the published parameter to 'true' and change the
+ #' status parameter to 'publish'.
+ #' 
+ #' @param dir the directory to process R Markdown files.
+ #' @param images.dir the base directory where images will be generated.
+ #' @param images.url
+ #' @param out_ext the file extention to use for processed files.
+ #' @param in_ext the file extention of input files to process.
+ #' @param recursive should rmd files in subdirectories be processed.
+ #' @return nothing.
+ #' @author Jason Bryer <jason@bryer.org>
+ convertRMarkdown <- function(dir=getwd(), images.dir=dir, images.url='/cn/_posts/images/',
   						 out_ext='.markdown', in_ext='.rmd', recursive=FALSE) {
 	require(knitr, quietly=TRUE, warn.conflicts=FALSE)
 	files <- list.files(path=dir, pattern=in_ext, ignore.case=TRUE, recursive=recursive)
@@ -120,7 +120,6 @@ convertRMarkdown <- function(dir=getwd(), images.dir=dir, images.url='/cn/_posts
 	invisible()
 }
 
-{% endhighlight %}
 
 ### 建立可执行文本 `rmd.sh`
 

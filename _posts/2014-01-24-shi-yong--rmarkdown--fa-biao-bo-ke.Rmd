@@ -120,10 +120,10 @@ status:    process
 - 默认在 `Terminal` 运行 `rmakrdown.r` 的 `convertRmarkdown` 函数，并输出经过转化的 `.markdown` 文件。
 
 文本 [`rmd.sh`](/cn/_post/rmd.sh) 可以下载，里面内容是
-{% highlight bash linenos=table %}
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 Rscript -e "source('$DIR/rmarkdown.r'); convertRMarkdown(images.dir='$DIR/images')"
-{% endhighlight %}
+
 
 ### 添加 `YAML` 标头
  

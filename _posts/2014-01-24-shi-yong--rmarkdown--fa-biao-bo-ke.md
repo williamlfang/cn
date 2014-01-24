@@ -120,9 +120,9 @@ status:    process
   		} else {
   			warning("No front matter found. Will not process this file.")
   		}
-  	 }
-  	 invisible()
-     }
+  	}
+  	invisible()
+    }
 
 
 
@@ -160,9 +160,13 @@ status:    process
 $$\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum_{k=0}^\infty\frac{(4k)!(1103+26390k)}{(k!)^4396^{4k}}$$
 
 再者，这个 `R` 代码，我们可以直接生成图片。
-```{r fig1}
+
+```r
 x = rnorm(100)
 plot(density(x))
 ```
+
+![plot of chunk fig1](figure/fig1.png) 
+
 
 

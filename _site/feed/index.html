@@ -7,7 +7,7 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-24T14:16:22+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-24T14:19:51+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
     
     <item>
@@ -89,116 +89,61 @@
 
 <p>首先是在主目录下面建立一个 <code>rmarkdown.r</code> 文件，用于执行编译功能。主要用途就是实现将当前目录下所有的带 <code>.Rmd</code> 文件转化为 <code>.md</code> 格式，从而可以实现发布。下面是其主要内容，也可以在<a href="/cn/_post/rmarkdwn.r">这里</a>下载。</p>
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="r"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54</code></pre></div></td><td class="code"><div class="highlight"><pre>        <span class="c1">#&#39; This R script will process all R mardown files (those with in_ext file extention,</span>
-        <span class="c1">#&#39; .rmd by default) in the current working directory. Files with a status of</span>
-        <span class="c1">#&#39; &#39;processed&#39; will be converted to markdown (with out_ext file extention, &#39;.markdown&#39;</span>
-        <span class="c1">#&#39; by default). It will change the published parameter to &#39;true&#39; and change the</span>
-        <span class="c1">#&#39; status parameter to &#39;publish&#39;.</span>
-        <span class="c1">#&#39; </span>
-        <span class="c1">#&#39; @param dir the directory to process R Markdown files.</span>
-        <span class="c1">#&#39; @param out_ext the file extention to use for processed files.</span>
-        <span class="c1">#&#39; @param in_ext the file extention of input files to process.</span>
-        <span class="c1">#&#39; @param recursive should rmd files in subdirectories be processed.</span>
-        <span class="c1">#&#39; @return nothing.</span>
-        <span class="c1">#&#39; @author Jason Bryer &lt;jason@bryer.org&gt;</span>
-        convertRMarkdown <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>dir<span class="o">=</span>getwd<span class="p">(),</span> images.dir<span class="o">=</span>dir<span class="p">,</span> images.url<span class="o">=</span><span class="s">&#39;/images/&#39;</span><span class="p">,</span>
-                   out_ext<span class="o">=</span><span class="s">&#39;.markdown&#39;</span><span class="p">,</span> in_ext<span class="o">=</span><span class="s">&#39;.rmd&#39;</span><span class="p">,</span> recursive<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="p">{</span>
-          require<span class="p">(</span>knitr<span class="p">,</span> quietly<span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> warn.conflicts<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-          files <span class="o">&lt;-</span> list.files<span class="p">(</span>path<span class="o">=</span>dir<span class="p">,</span> pattern<span class="o">=</span>in_ext<span class="p">,</span> ignore.case<span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> recursive<span class="o">=</span>recursive        <span class="p">)</span>
-          <span class="kr">for</span><span class="p">(</span>f <span class="kr">in</span> files<span class="p">)</span> <span class="p">{</span>
-            message<span class="p">(</span>paste<span class="p">(</span><span class="s">&quot;Processing &quot;</span><span class="p">,</span> f<span class="p">,</span> sep<span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">))</span>
-            content <span class="o">&lt;-</span> readLines<span class="p">(</span>f<span class="p">)</span>
-            frontMatter <span class="o">&lt;-</span> which<span class="p">(</span>substr<span class="p">(</span>content<span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;---&#39;</span><span class="p">)</span>
-            <span class="kr">if</span><span class="p">(</span>length<span class="p">(</span>frontMatter<span class="p">)</span> <span class="o">==</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
-              statusLine <span class="o">&lt;-</span> which<span class="p">(</span>substr<span class="p">(</span>content<span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">7</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;status:&#39;</span><span class="p">)</span>
-              publishedLine <span class="o">&lt;-</span> which<span class="p">(</span>substr<span class="p">(</span>content<span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;published:&#39;</span><span class="p">)</span>
-              <span class="kr">if</span><span class="p">(</span>statusLine <span class="o">&gt;</span> frontMatter<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">&amp;</span> statusLine <span class="o">&lt;</span> frontMatter<span class="p">[</span><span class="m">2</span><span class="p">])</span> <span class="p">{</span>
-                status <span class="o">&lt;-</span> unlist<span class="p">(</span>strsplit<span class="p">(</span>content<span class="p">[</span>statusLine<span class="p">],</span> <span class="s">&#39;:&#39;</span><span class="p">))[</span><span class="m">2</span><span class="p">]</span>
-                status <span class="o">&lt;-</span> sub<span class="p">(</span><span class="s">&#39;[[:space:]]+$&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> status<span class="p">)</span>
-                status <span class="o">&lt;-</span> sub<span class="p">(</span><span class="s">&#39;^[[:space:]]+&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> status<span class="p">)</span>
-                <span class="kr">if</span><span class="p">(</span>tolower<span class="p">(</span>status<span class="p">)</span> <span class="o">==</span> <span class="s">&#39;process&#39;</span><span class="p">)</span> <span class="p">{</span>
-                  <span class="c1">#This is a bit of a hack but if a line has zero length (i.e. a</span>
-                  <span class="c1">#black line), it will be removed in the resulting markdown file.</span>
-                  <span class="c1">#This will ensure that all line returns are retained.</span>
-                  content<span class="p">[</span>nchar<span class="p">(</span>content<span class="p">)</span> <span class="o">==</span> <span class="m">0</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39; &#39;</span>
-                  message<span class="p">(</span>paste<span class="p">(</span><span class="s">&#39;Processing &#39;</span><span class="p">,</span> f<span class="p">,</span> sep<span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">))</span>
-                  content<span class="p">[</span>statusLine<span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;status: publish&#39;</span>
-                  content<span class="p">[</span>publishedLine<span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;published: true&#39;</span>
-                  outFile <span class="o">&lt;-</span> paste<span class="p">(</span>substr<span class="p">(</span>f<span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="p">(</span>nchar<span class="p">(</span>f<span class="p">)</span><span class="o">-</span><span class="p">(</span>nchar<span class="p">(</span>in_ext<span class="p">)))),</span> out_ext<span class="p">,</span> sep<span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
-                  render_markdown<span class="p">(</span>strict<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-                  opts_knit<span class="o">$</span>set<span class="p">(</span>out.format<span class="o">=</span><span class="s">&#39;markdown&#39;</span><span class="p">)</span>
-                  opts_knit<span class="o">$</span>set<span class="p">(</span>base.dir<span class="o">=</span>images.dir<span class="p">)</span>
-                  opts_knit<span class="o">$</span>set<span class="p">(</span>base.url<span class="o">=</span>images.url<span class="p">)</span>
-                  try<span class="p">(</span>knit<span class="p">(</span>text<span class="o">=</span>content<span class="p">,</span> output<span class="o">=</span>outFile<span class="p">),</span> silent<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-                <span class="p">}</span> <span class="kr">else</span> <span class="p">{</span>
-                  warning<span class="p">(</span>paste<span class="p">(</span><span class="s">&quot;Not processing &quot;</span><span class="p">,</span> f<span class="p">,</span> <span class="s">&quot;, status is &#39;&quot;</span><span class="p">,</span> status<span class="p">,</span> 
-                          <span class="s">&quot;&#39;. Set status to &#39;process&#39; to convert.&quot;</span><span class="p">,</span> sep<span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">))</span>
-                <span class="p">}</span>
-              <span class="p">}</span> <span class="kr">else</span> <span class="p">{</span>
-                warning<span class="p">(</span><span class="s">&quot;Status not found in front matter.&quot;</span><span class="p">)</span>
-              <span class="p">}</span>
-            <span class="p">}</span> <span class="kr">else</span> <span class="p">{</span>
-              warning<span class="p">(</span><span class="s">&quot;No front matter found. Will not process this file.&quot;</span><span class="p">)</span>
-            <span class="p">}</span>
-          <span class="p">}</span>
-          invisible<span class="p">()</span>
-        <span class="p">}</span>
-</pre></div>
-</td></tr></table>
-
+<pre><code>    #' This R script will process all R mardown files (those with in_ext file extention,
+    #' .rmd by default) in the current working directory. Files with a status of
+    #' 'processed' will be converted to markdown (with out_ext file extention, '.markdown'
+    #' by default). It will change the published parameter to 'true' and change the
+    #' status parameter to 'publish'.
+    #' 
+    #' @param dir the directory to process R Markdown files.
+    #' @param out_ext the file extention to use for processed files.
+    #' @param in_ext the file extention of input files to process.
+    #' @param recursive should rmd files in subdirectories be processed.
+    #' @return nothing.
+    #' @author Jason Bryer &lt;jason@bryer.org&gt;
+    convertRMarkdown &lt;- function(dir=getwd(), images.dir=dir, images.url='/images/',
+               out_ext='.markdown', in_ext='.rmd', recursive=FALSE) {
+      require(knitr, quietly=TRUE, warn.conflicts=FALSE)
+      files &lt;- list.files(path=dir, pattern=in_ext, ignore.case=TRUE, recursive=recursive        )
+      for(f in files) {
+        message(paste("Processing ", f, sep=''))
+        content &lt;- readLines(f)
+        frontMatter &lt;- which(substr(content, 1, 3) == '---')
+        if(length(frontMatter) == 2) {
+          statusLine &lt;- which(substr(content, 1, 7) == 'status:')
+          publishedLine &lt;- which(substr(content, 1, 10) == 'published:')
+          if(statusLine &gt; frontMatter[1] &amp; statusLine &lt; frontMatter[2]) {
+            status &lt;- unlist(strsplit(content[statusLine], ':'))[2]
+            status &lt;- sub('[[:space:]]+$', '', status)
+            status &lt;- sub('^[[:space:]]+', '', status)
+            if(tolower(status) == 'process') {
+              #This is a bit of a hack but if a line has zero length (i.e. a
+              #black line), it will be removed in the resulting markdown file.
+              #This will ensure that all line returns are retained.
+              content[nchar(content) == 0] &lt;- ' '
+              message(paste('Processing ', f, sep=''))
+              content[statusLine] &lt;- 'status: publish'
+              content[publishedLine] &lt;- 'published: true'
+              outFile &lt;- paste(substr(f, 1, (nchar(f)-(nchar(in_ext)))), out_ext, sep='')
+              render_markdown(strict=TRUE)
+              opts_knit$set(out.format='markdown')
+              opts_knit$set(base.dir=images.dir)
+              opts_knit$set(base.url=images.url)
+              try(knit(text=content, output=outFile), silent=FALSE)
+            } else {
+              warning(paste("Not processing ", f, ", status is '", status, 
+                      "'. Set status to 'process' to convert.", sep=''))
+            }
+          } else {
+            warning("Status not found in front matter.")
+          }
+        } else {
+          warning("No front matter found. Will not process this file.")
+        }
+      }
+      invisible()
+    }
+</code></pre>
 
 <h3>建立可执行文本 <code>rmd.sh</code></h3>
 
@@ -219,12 +164,9 @@ Rscript -e <span class="s2">&quot;source(&#39;$DIR/rmarkdown.r&#39;); convertRMa
 
 <p>最后，我们需要在 <code>.Rmd</code> 文件标头添加以下命令：</p>
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="r">1
-2</code></pre></div></td><td class="code"><div class="highlight"><pre>    published<span class="o">:</span> false
-    status<span class="o">:</span> process
-</pre></div>
-</td></tr></table>
-
+<pre><code>published: false
+status: process
+</code></pre>
 
 <p>这个是因为：</p>
 

@@ -51,8 +51,14 @@ pre,code{font-family:Menlo,"DejaVu Sans Mono","Bitstream Vera Sans Mono","Andale
 /* inline code ---------------------------------------------------------------------------------------------------------*/
 p code{background-color:#f7f7f7; padding: 2px; margin: 2px; border-radius: 3px; border: 1px solid #ddd;color: #317eac;font-weight:bold;}   /* inline code color*/
 /* inline code ---------------------------------------------------------------------------------------------------------*/
-
-
+body div.content {}
+    body div.content code.has-jax {
+        font: inherit;
+        font-size: 10%;
+        background: inherit;
+        border: inherit;
+        color: #000000;
+    }
 /* curse quote  --------------------------------------------------------------- */
 blockquote {
   background:transparent url(blockquote_bg.gif) no-repeat scroll left top; 

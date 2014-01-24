@@ -96,8 +96,30 @@
     })
     </script>
   <!--=================================================================== -->
-  
- 
+   <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+ });
+
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+    
+ </script>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+   <!-- mathjax config similar to math.stackexchange -->
 
  </head>
 
@@ -246,28 +268,27 @@ convertRMarkdown &lt;- function(dir=getwd(), images.dir=dir, images.url='/cn/ass
   				opts_knit$set(out.format='markdown')
 	  			opts_knit$set(base.dir=images.dir)
 		  		opts_knit$set(base.url=images.url)
-  					######################################################################
+  					##
   				## 产生的图片存储位置 `/assets/images/r-figures/`
 	  			fig.path &lt;- paste0("r-figures/", sub(".Rmd$", "", basename(files)), "/")
 		  		opts_chunk$set(fig.path = fig.path)
 			  	## opts_chunk$set(fig.cap = "center")  ## figure position
-			    render_jekyll()        ##
-				  ######################################################################
-</code></pre>
-
+			    render_jekyll()     
+				  ##
   					try(knit(text=content, output=outFile), silent=FALSE)
   				} else {
-  					warning(paste(“Not processing “, f, “, status is ‘”, status, 
-  								  “’. Set status to ‘process’ to convert.”, sep=’’))
+  					warning(paste("Not processing ", f, ", status is '", status, 
+  								  "'. Set status to 'process' to convert.", sep=''))
   				}
   			} else {
-  				warning(“Status not found in front matter.”)
+  				warning("Status not found in front matter.")
   			}
   		} else {
-  			warning(“No front matter found. Will not process this file.”)
+  			warning("No front matter found. Will not process this file.")
   		}
   	 }
   	 invisible()}
+</code></pre>
 
 <h3 id="rmdsh">建立可执行文本 <code>rmd.sh</code></h3>
 
@@ -300,9 +321,20 @@ status: process
 
 <h4 id="section-2">数学公式</h4>
 
-<p>比如我只需要如下输入数学公式，$S = \sum_{i=1}^k x_i$，或者是</p>
+<p>比如我只需要如下输入数学公式，<script type="math/tex">S = \sum_{i=1}^k x_i</script>，或者是<script type="math/tex">a^2 + b^2 = c^2</script></p>
 
 <script type="math/tex; mode=display">\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum_{k=0}^\infty\frac{(4k)!(1103+26390k)}{(k!)^4396^{4k}}</script>
+
+<script type="math/tex; mode=display"> \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\ldots} } } } </script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\mbox{Union: } & A\cup B = \{x\mid x\in A \mbox{ or } x\in B\} \\
+\mbox{Concatenation: } & A\circ B  = \{xy\mid x\in A \mbox{ and } y\in B\} \\
+\mbox{Star: } & A^\star  = \{x_1x_2\ldots x_k \mid  k\geq 0 \mbox{ and each } x_i\in A\} \\
+\end{align}
+ %]]></script>
 
 <h4 id="r"><strong>R</strong></h4>
 
@@ -313,7 +345,7 @@ plot<span class="p">(</span>density<span class="p">(</span>x<span class="p">))</
 </code></pre>
 </div>
 
-<p><img src="/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/fig1.png" alt="plot of chunk fig1" /> </p>
+<p><img src="/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/fig1.r-figures/2014-01-25-new-post/fig1.png" alt="plot of chunk fig1" /> </p>
 
 
 </section>
@@ -324,7 +356,7 @@ plot<span class="p">(</span>density<span class="p">(</span>x<span class="p">))</
 <span>
 	<a  href="http://williamlfang.github.com/cn/2014/01/22/sui-yue-bu-liu--xin-ling-de-tong-nian-yong-zhu/" class="pageNav"  >Previous</a>
 	&nbsp;&nbsp;&nbsp;
-	<a   class="pageNavInvalid"  >Next</a>
+	<a  href="http://williamlfang.github.com/cn/2014/01/25/new-post/" class="pageNav"  >Next</a>
 </span>
 <hr>
 <span class="author">
@@ -385,6 +417,8 @@ $(function(){
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             
+        url = 'http://williamlfang.github.com/cn/2014/01/25/new-post/';
+        
         }
         if (url) {
             window.location = url;
@@ -407,7 +441,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-25 00:40:35</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-25 02:33:05</span></small></p>
 </footer>
 
   </div>

@@ -96,8 +96,30 @@
     })
     </script>
   <!--=================================================================== -->
-  
- 
+   <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+ });
+
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+    
+ </script>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+   <!-- mathjax config similar to math.stackexchange -->
 
  </head>
 
@@ -127,6 +149,12 @@
   
     
     <li class="listing-seperator">2007</li>
+  
+  <li class="listing-item">
+    <time datetime="2007-12-10">2007-12-10</time>
+    <a href="http://williamlfang.github.com/cn/2007/12/10/living/" title="继续生活">继续生活</a>
+
+  
   
   <li class="listing-item">
     <time datetime="2007-11-14">2007-11-14</time>
@@ -177,6 +205,13 @@
   
     
     <li class="listing-seperator">2014</li>
+  
+  <li class="listing-item">
+    <time datetime="2014-01-25">2014-01-25</time>
+    <a href="http://williamlfang.github.com/cn/2014/01/25/new-post/" title="Math">Math</a>
+  </li>
+
+  
   
   <li class="listing-item">
     <time datetime="2014-01-24">2014-01-24</time>
@@ -566,7 +601,7 @@
   
     <span class="next disabled" >后页>></span>
   
-  (共47篇)
+  (共48篇)
 </div>
 
 
@@ -586,7 +621,7 @@
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-25 00:40:35</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-25 02:33:05</span></small></p>
 </footer>
 
   </div>

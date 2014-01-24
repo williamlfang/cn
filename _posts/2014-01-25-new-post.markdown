@@ -1,12 +1,10 @@
 ---
 layout:   post
-title:    "new post"
+title:    "Math"
 category:  
-tags:     [dfdaf]
+tags:     [Math, LaTeX]
 description: 
 published: true
 status: publish
 ---
-df 
  
-df 

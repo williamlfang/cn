@@ -7,56 +7,186 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-24T03:08:26+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-24T13:52:13+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
     
     <item>
-      <title>使用 Rmarkdown 发表博客</title>
+      <title>使用 Jekyll + knitr 发布博客</title>
       <link>http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/</link>
       <pubDate>2014-01-24T00:00:00+08:00</pubDate>
       <author>William Fang</author>
       <guid>http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke</guid>
-      <content:encoded><![CDATA[<ol>
-<li>将文件 <code>rmd.sh</code> 与 <code>rmarkdown.r</code> 需要运行 <code>.R</code> 程序的地方，这样我们以后就可以直接运行 <code>rmd.sh</code> 来自动的转化 <code>.Rmd</code> 为 <code>.md</code> 格式。</li>
-</ol>
+      <content:encoded><![CDATA[<h2>我的博客之旅</h2>
+
+<p>这些天一直都在钻研如何在博客中加入可以执行 <strong>R</strong> 程序代码的博客木板。我先前也有过写博客的经历，不过那时候使用的博客都是免费托管在其他的服务器中，一方面是缺乏可定制，大都是千篇一律的，无法满足「DIY」的需要，另一方面，也是主要的问题，这些博客网站很少有支持 <strong>LaTeX</strong> 的数学输出，对于数学环境的支持不尽人意。我也就偶尔在写一些纯文字类的随想，不曾涉及专业领域的事情。</p>
+
+<p>后来我实在忍无可忍了，觉得找一个必须是支持 <strong>LaTeX</strong> 代码的博客网站。这也就只有在 <strong>WordPress</strong> 上了。我也尝试了使用一段时间。一开始发现还真是方便，直接使用 <strong>LaTeX</strong> 代码产生数学编译环境，如此一来便可以在上面多说点专业领域的话了。可是，后来我发现在 <strong>WordPress</strong> 上管理博客与修改模板是一件多么痛苦的事情，既需要更改模板，而且每次改完了发现不是自己想要的效果，又得重新再做。如此一来，光花费在博客网站的维护时间竟然占用了多数。如此不堪重负。</p>
+
+<p>后来我开始尝试在使用  <strong>R</strong> 做统计分析，也陆陆续续的写了一些小程序。我的想法是，将 <strong>R</strong> 强大的数据分析与绘图能力与 <strong>LaTeX</strong> 超级优美的数学编辑水平结合一起，从而生成既有分析又有数据、既有文本又有图表的文档。后来发现这个想法别人早已实现，那就是 <code>Sweave</code>，支持在 <strong>LaTeX</strong> 使用 <strong>R</strong> 代码并且直接输出结果。再后来，我接着发现这个原来还有『豪华升级版』，那就是我今天要给各位介绍的 <code>knitr</code>，一个更加强大的支持 <strong>LaTeX</strong> 编译环境的软件包。</p>
+
+<p>可是，有时候我不大喜欢 <strong>LaTeX</strong> 的一点在于，永远都需要那么复杂的插入代码环境，比如，当需要使用「强调」的时候，还得非常复杂而琐碎的键入 <code>\emph{}</code>，这个让我实在崩溃，因为毕竟我很多时候都是在使用纯文本输入，只是少数地方使用数学公式表达。那么，我想要的就是，需要强调了，就键入 <em>斜体强调</em>，或者 <strong>粗体强调</strong>。如此一来，写博客就非常的轻松了。</p>
+
+<p>于是我在某个凌晨「毅然决然」的将博客编译语言再次转移阵地。这一次，我需要
+ - 简单：写博客就是写博客，随心所欲，没有多余的格式。在写作过程中，我仅仅需要关心文本，专注于表达。
+ - 支持 <strong>R</strong> 代码，能够直接产生计算结果，插入图形。
+ - 具有良好的定制特征，我可以根据个人偏好设置网页界面，并且需要很好的可持续维护性。
+ - 最后是能够记录我在不同时间段写作的备份，方便随时「倒带」。这样我就不用担心删除当下文字段落后以后就找不回来，而且最好是告诉我具体的细节。</p>
+
+<h2>Github + Jekyll + knitr + Rmarkdown</h2>
+
+<p>我就抱着这样的「苛刻要求」去找「谷哥」。出乎意料的是，竟然如此简单的就得到需要的解决方案了：</p>
+
+<blockquote><p>Github + Jekyll + Rmarkdown</p></blockquote>
+
+<p>这是一个完美的方案！完全实现了我需要的多种服务：
+- <strong>Github</strong> 用于托管代码与博客。<strong>Git</strong> 是一款优秀的版本管理软件（VCS），由现在的 <strong>Linux</strong> 开发团队在维护。而 <strong>Github</strong> 就相当于一个网罗世界优秀程序员的「Facebook」，汇集了目前几乎所有的开源项目。</p>
+
+<p>  现在，我可以通过将代码与博客托管到 <strong>Github</strong> 上，实现版本的系统检测，方便网站运行。</p>
+
+<ul>
+<li><p><strong>Jekyll</strong> 为我的博客网站提供了静态编译，将其打包为 <em>Html</em> 然后发布在托管的网站上。而且 <strong>Jekyll</strong> 提供了一系列的模板与模块，方便个人定制网站。与其他博客网站不同，经常动不动的就蹦出一个广告，<strong>Jekyll</strong> 编制的网站上面不会有多余的信息，我只陈列需要分享的内容。</p></li>
+<li><p>最后，就是 <strong>knitr</strong> 与 <strong>Rmardown</strong> 可以轻松的实现博客撰写。现在，我需要做的就是使用 <strong>Markdown</strong> 语法输入，然后在需要 <strong>R</strong> 的地方直接插入代码即可。一篇完整的博客就是我沿着自己的想法一路写到底，中间不会有其他的打扰，不要反复的插入格式命令。</p></li>
+</ul>
 
 
-<p> 如果想要具体的设置，我们可以
-  - 首先在目录下建立一个 <code>image</code> 文件用于存放图片
-  - 定义图片文件的链接，<code>images.url='/cn/_post/images/'</code>，也就是将来直接发布时的图片链接。</p>
+<h2>使用 <strong>Rmarkdown</strong></h2>
 
-<ol>
-<li>需要在 <code>YAML</code> 前面写入</li>
-<li><code>published: false</code>:也没有发表</li>
-<li><code>status:    process</code>：运行 <code>rmd.sh</code> 后会自动改为 <code>published</code>。</li>
-</ol>
+<p>下面，我介绍一下如何实现将 <strong>R</strong> 代码编译为网页 <strong>Markdown</strong> 格式。由于 <strong>Jekyll</strong> 支持将 <strong>Markdown</strong> 编译成 <strong>Html</strong> 网页，因此，我们就可以很方便的将 <strong>R</strong> 文件编译成 <strong>Html</strong> 并发布到 <strong>Github</strong> 上面了。我主要参考了 Jason Bryer 的帖子， <a href="http://jason.bryer.org/posts/2012-12-10/Markdown_Jekyll_R_for_Blogging.html">"Using (R) Markdown, Jekyll, &amp; GitHub for a Website"</a>。另外，由于这个帖子生成的图片存储在同样一个文件夹下面，有时我想找某个博客的图片时，会非常的不方便。于是我对其做了一个小小的修改，将经过 <strong>R</strong> 产生的图片放在与帖子相对应的文件夹目录下，方便查找。比如，我有一个文档，<code>2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke.Rmd</code>，那么，图片的存放目录应该是</p>
+
+<table>
+<thead>
+<tr>
+<th>-dir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-- images</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>---- figs</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>----- 2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>------ fig1.png</td>
+</tr>
+</tbody>
+</table>
 
 
-<p>比如这个 <code>R</code> 代码</p>
+<h3>建立一个 <code>rmarkdown.r</code></h3>
+
+<p>首先是在主目录下面建立一个 <code>rmarkdown.r</code> 文件，用于执行编译功能。主要用途就是实现将当前目录下所有的带 <code>.Rmd</code> 文件转化为 <code>.md</code> 格式，从而可以实现发布。下面是其主要内容，也可以在<a href="/cn/_post/rmarkdwn.r">这里</a>下载。</p>
+
+<pre><code>    #' This R script will process all R mardown files (those with in_ext file extention,
+    #' .rmd by default) in the current working directory. Files with a status of
+    #' 'processed' will be converted to markdown (with out_ext file extention, '.markdown'
+    #' by default). It will change the published parameter to 'true' and change the
+    #' status parameter to 'publish'.
+    #' 
+    #' @param dir the directory to process R Markdown files.
+    #' @param out_ext the file extention to use for processed files.
+    #' @param in_ext the file extention of input files to process.
+    #' @param recursive should rmd files in subdirectories be processed.
+    #' @return nothing.
+    #' @author Jason Bryer &lt;jason@bryer.org&gt;
+    convertRMarkdown &lt;- function(dir=getwd(), images.dir=dir, images.url='/images/',
+               out_ext='.markdown', in_ext='.rmd', recursive=FALSE) {
+      require(knitr, quietly=TRUE, warn.conflicts=FALSE)
+      files &lt;- list.files(path=dir, pattern=in_ext, ignore.case=TRUE, recursive=recursive        )
+      for(f in files) {
+        message(paste("Processing ", f, sep=''))
+        content &lt;- readLines(f)
+        frontMatter &lt;- which(substr(content, 1, 3) == '---')
+        if(length(frontMatter) == 2) {
+          statusLine &lt;- which(substr(content, 1, 7) == 'status:')
+          publishedLine &lt;- which(substr(content, 1, 10) == 'published:')
+          if(statusLine &gt; frontMatter[1] &amp; statusLine &lt; frontMatter[2]) {
+            status &lt;- unlist(strsplit(content[statusLine], ':'))[2]
+            status &lt;- sub('[[:space:]]+$', '', status)
+            status &lt;- sub('^[[:space:]]+', '', status)
+            if(tolower(status) == 'process') {
+              #This is a bit of a hack but if a line has zero length (i.e. a
+              #black line), it will be removed in the resulting markdown file.
+              #This will ensure that all line returns are retained.
+              content[nchar(content) == 0] &lt;- ' '
+              message(paste('Processing ', f, sep=''))
+              content[statusLine] &lt;- 'status: publish'
+              content[publishedLine] &lt;- 'published: true'
+              outFile &lt;- paste(substr(f, 1, (nchar(f)-(nchar(in_ext)))), out_ext, sep='')
+              render_markdown(strict=TRUE)
+              opts_knit$set(out.format='markdown')
+              opts_knit$set(base.dir=images.dir)
+              opts_knit$set(base.url=images.url)
+              try(knit(text=content, output=outFile), silent=FALSE)
+            } else {
+              warning(paste("Not processing ", f, ", status is '", status, 
+                      "'. Set status to 'process' to convert.", sep=''))
+            }
+          } else {
+            warning("Status not found in front matter.")
+          }
+        } else {
+          warning("No front matter found. Will not process this file.")
+        }
+      }
+      invisible()
+    }
+</code></pre>
+
+<h3>建立可执行文本 <code>rmd.sh</code></h3>
+
+<p>这个 <code>rmd.sh</code> 主要就是
+- 识别当前的目录，并将其赋予 <code>dir</code> 参数
+- 默认在 <code>Terminal</code> 运行 <code>rmakrdown.r</code> 的 <code>convertRmarkdown</code> 函数，并输出经过转化的 <code>.markdown</code> 文件。</p>
+
+<p>文本 <a href="/cn/_post/rmd.sh"><code>rmd.sh</code></a> 可以下载，里面内容是</p>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><code class="bash">1
+2</code></pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">DIR</span><span class="o">=</span><span class="s2">&quot;$( cd &quot;</span><span class="k">$(</span> dirname <span class="s2">&quot;${BASH_SOURCE[0]}&quot;</span> <span class="k">)</span><span class="s2">&quot; &amp;&amp; pwd )&quot;</span>
+Rscript -e <span class="s2">&quot;source(&#39;$DIR/rmarkdown.r&#39;); convertRMarkdown(images.dir=&#39;$DIR/images&#39;)&quot;</span>
+</pre></div>
+</td></tr></table>
+
+
+<h3>添加 <code>YAML</code> 标头</h3>
+
+<p>最后，我们需要在 <code>.Rmd</code> 文件标头添加以下命令：</p>
+
+<pre><code>published: false
+status: process
+</code></pre>
+
+<p>这个是因为：</p>
+
+<blockquote>
+  <p> - First, the published parameter should be set to false so that Jekyll will not attempt to process the file. The convertRMarkdown function will change this parameter to true in the resulting Markdown file. </p>
+  
+  <p> - The second parameter, status, must be set to process for the convertRMarkdown function to convert the file. This is useful when working a draft of a document and you wish to not have the file converted. </p>
+  
+</blockquote>
+
+
+<h3>例子</h3>
+
+<p>比如这个 <code>R</code> 代码，我们可以直接生成图片。</p>
 
 <pre><code>x = rnorm(100)
 plot(density(x))
 </code></pre>
 
-<p><img src="/cn/images/figure/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1" /></p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>http://williamlfang.github.com/cn/2014/01/22/test/</link>
-      <pubDate>2014-01-22T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2014/01/22/test</guid>
-      <content:encoded><![CDATA[<div class="btn-toolbar">
-  <div class="btn-group">
-    <a class="btn" href="#"><i class="icon-align-left"></i></a>
-    <a class="btn" href="#"><i class="icon-align-center"></i></a>
-    <a class="btn" href="#"><i class="icon-align-right"></i></a>
-    <a class="btn" href="#"><i class="icon-align-justify"></i></a>
-  </div>
-</div>
-
+<p><img src="/cn/_posts/images/figs/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1" /></p>
 ]]></content:encoded>
     </item>
     
@@ -1059,6 +1189,108 @@ export XMODIFIERS=@im=fcitx        <br>
 export QT_IM_MODULE=xim        <br>
 export GTK_IM_MODULE=xim        <br>
 fcitx -d        <br></p></blockquote>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>新系统的第一个软件</title>
+      <link>http://williamlfang.github.com/cn/2014/01/05/goagent/</link>
+      <pubDate>2014-01-05T00:00:00+08:00</pubDate>
+      <author>William Fang</author>
+      <guid>http://williamlfang.github.com/cn/2014/01/05/goagent</guid>
+      <content:encoded><![CDATA[<p>最近由于电脑不是很稳定,装了几次系统.这个我之前也有谈过,如何从万恶的 MS 的 Windows 系统成功<a href="http://williamlfang.github.io/cn/2014/01/window-2-linux/">转型</a>到自由软件与操作系统 Linux.经过这几次的装机经历,我也发现了这其中的一些pattern.比如,我今天要谈到的话题:</p>
+
+<blockquote><p>谁是你的新系统的第一个软件呢?</p></blockquote>
+
+<p>对于这个问题的回答,估计该是千奇百怪的吧.对于典型的程序员,可能是先装一个 git, 然后在 <em>Emacs</em> 下积极的编程.而对于一个游戏痴迷者,大概是某个武器装备吧.而对于我,在多次的装机之后,无一例外的,(竟然)!均是安装了 <a href="https://code.google.com/p/goagent/">GoAgent 科学上网神器</a>.</p>
+
+<p>关于<em>科学上网</em>,此处不必多言,如果诸君想要一窥究竟,可以在google上找找.我想说的是,为什么,这个普通的<em>翻墙</em>工具,会成为新系统的第一位"业主".</p>
+
+<h2>我的青春旁白</h2>
+
+<p>我向来愚钝,对于一些词汇,总是不能辨识.比如,这个词汇,"中国梦".我一直不曾明白过,大概也不会明白了.</p>
+
+<p>高中时,我怀疑自己有病.而且不仅仅是"我怀疑"这个初诊判断,我的老师也是这么认为的,说白日梦是一种病,得治,年轻人不要整天想着拯救世界红旗插遍美帝.可是,我当时就是这么一种精神状态,以为可以三年高考五年大学三年赶英五年超美,然后世界和平世态安定世人均等,我也可以冲着某某领导某某"长"(音,zhang,上声,意同高大上伟光正,异于短)说,这tm谁呀,我哥们.</p>
+
+<p>然后我就被老师提着耳朵连打带骂赶鸭上架赶驴赴约般拜见心理医生.我说,医生,我有病,心里的.他贼兮兮的看着我说,没症状,不是心里的,是脑子的病.专业术语曰"心理".我说,那就是呀,我有病,心里的.他说,不对,你心里的,没有病,你心理的,有病.</p>
+
+<p>我说,那我心里的到底有没有病呢.他说,你心里的没有病,可是你心理的有病.</p>
+
+<p>我们就这样争吵了一个下午.彼此都忘了最开始的症结.原来的我是会做白日梦的,原来的我是会有堂吉诃德的烦恼的维特的追忆似水流年的普鲁斯特的情人在敲打铁皮鼓的令人愉悦的忧伤的.可是那个下午过后,我像是决意要长大的奥斯卡,毅然丢弃了心爱的铁皮鼓,毅然开始乐观向上开始做一颗好的种子好的花朵好的公民.我的梦丢了,可是我的病也好了.</p>
+
+<p>这个诊断报告一直保护了我走过三年的高中.因为有了它,我有病就像我的白日梦一样就成了一个历史一个过去一个不能遗忘的以往,而我没病给我保护给我遮羞布给我得以进入那个浩浩大学给我得以存活于这个泱泱大国.</p>
+
+<p>多年后,我一直以为,梦是一种病,而且是一种叫做心理的病.对于这一点,当初还是非常学究范非常书生气的我查找了诸多名家,诸多著作.我还一副洗耳恭听卑躬屈膝的写笔记做总结.可是我满眼看到的,是有关梦的病与关于病的梦的论述,是有关身体健全心智不全躯体安康心理黯然刻画,是有关自由意志如何被独裁奸污被专断纳妾的记录.那时候,我有那么一个片段,回到过去那个有病的年代,回去那个到了要治病的年代,对着他们歇斯底里也罢痛哭流涕也罢,求求你们,放过那个孩子.他有病,可是真的不需要治.</p>
+
+<p>对于这样一种类似没病的有病,"中国梦"最直观的解释,就是大家都回青春去,重走青春路.就像当年的有病的我,大家一起在做白日梦.以前我在学校里有病,因为白日梦在当初是属于疑难杂症乱象丛生,即使我背着老师偷偷溜进学校那个仅有的半个平方的播音室里,有点科普有点可笑向全校师生介绍F的梦的解析,可是他们依然不懂.至少我得到的惩罚告诉我他们不懂.他们说,这是一种病,一种臆想的病.</p>
+
+<p>而现在,当我毅然学着当年那个书生学究的模样,想要研究"中国梦"之时,早已有伟大的教授与伟哥的叫兽在申请课题在申报遗迹.我想要试着研究者病一样的梦与梦一样的病,于是,我开始了在互联网的漫长冲浪在无人旷野的漫长流浪.</p>
+
+<h2>我的互联网空白</h2>
+
+<p>这个时代据说是"一个言论与集社自由"的好时代,我们在享受着犹如"忍者神龟"一般"龟网速"的同时,还在享受着天朝给予的各种"保护".比如,某天有个小小的病毒侵入你的电脑,WOW,我们立马就有了防火墙的提醒,并在不知不觉中将其隔离,将其粉碎.此乃一劳永逸,不再整天提醒吊胆.再比如,某天你溜了个神,觉得是不是应该看看nyt整天都在评论神马玩意.于是,冒着被病毒侵入的危险,顶着被审查的暴风,你胆颤心惊而又小心翼翼的在你那个多年前早就不曾更新换待的IE浏览器输入一下符号</p>
+
+<pre><code>http://www.nyt.com
+http://www.facebook.com
+http://www.twitter.com
+</code></pre>
+
+<p>叮咚....恭喜你,没有被电脑病毒侵入....因为有我们这个时代最伟大的软件设计--GFW的保护.你的一颗悬而又悬的心终于安定了.O(∩_∩)O哈哈~.你暗自庆幸着.原来无国外的网站竟然都一窝si的是病毒,善哉,善哉,多亏不曾打开过,多谢不曾浏览过,多喜没有腐蚀过...</p>
+
+<p>很抱歉,我也曾今是众多号称是全球最庞大群体的"你"当中的一个,我也曾今为了侥幸躲过所谓"病毒与不良信息"的腐蚀而暗地窃喜过,我也曾今在茶余饭后有事没事的诅咒过那些有事没事天天设计所以"不良信息"的"美帝",我也曾经在这有限的土地上观望这有限的雾霾幻想着无限的美梦得到无限的实现,我也曾经......</p>
+
+<p>如果人为回首过去的无知而羞愧,那么,我愿永远的停留这个状态,在这千万中可能中的一个实现.因为过去的无知,足以让我愧对先贤的智慧,愧对自我的审判.</p>
+
+<p>有一天,我也想多说的你一样,在心惊胆颤心跳提速心率不齐的情况下,打开了一个网页,也打开了一扇通往未知无限境地的危险抑或一扇引我走进更广阔苍穹的视窗.这一次,多亏那些大叔大"审"们的慷慨与仁慈,多谢在这一刻种种可能迹象中的一个处理随机过程实现的状态,一个不知天高地厚一个不通天朝美梦的孩子,在懵懵懂懂与莽莽撞撞间,如同童话里的爱丽斯之于仙界,我也来到了一个未知与未来的世界.</p>
+
+<h2>我的自由独白</h2>
+
+<p>传世纪之初,上帝说,要有人,于是世界多了亚当与夏娃.</p>
+
+<p>我自知神力不比上帝,却也斗胆在互联网之初,说,要有自由,要有万能的自由.</p>
+
+<p>可是,这个世界依然没有自由.因为他们如同一群奔跑在困境当中的野兽,争取着解放全世界,却最终挣扎着躺倒在猎人的枪口下.在有光之前,世界是黑的.在有互联网之后,自由便死光了.所有这个盛产网民的社会也盛产"黑客".</p>
+
+<p>我该感谢这些"黑客",是他们让我看到原来世界是有光的.他们是谁,我不知道.我们彼此不曾谋面,也就省了在人潮拥挤的地铁站见着面隔着口罩相互寒暄.我们从来不打招呼,我们也从来不打群架,因为这个世界有很多的问题靠暴力与强拆是解决不了问题的,有很多的自由,越是抗争,越是抗取,越是早衰,越是早死.</p>
+
+<p>后来,我也只是默默的躲进小楼,躲在小角,偶尔透过残留余光的视网膜,看看这个世界.</p>
+
+<p>有些时候,我会通过goagent联系多年失散的朋友,在fb上看看近照是不是瘦了胖了高了怎么有人还矮了呢,在tw里也会想念那些远在天边的切切私语遗忘在某个不知名的接到.他们如同失落天涯的蒲公英,飘零在荒无管制的原野.可我却一直羡慕着羡慕着,唯独恨我这落地生根了的躯干,不远不近,囚禁在这无形的地牢里,守着这有形的长城,过着无期的日子,叹一口无尽的哀怨.</p>
+
+<hr />
+
+<h3>附录:GoAgent设置说明</h3>
+
+<hr />
+
+<p>GoAgent 为在天朝上网提供了一个小小的洞眼，让被墙的我们得以窥见外面自由的世界。</p>
+
+<p>以下设置为个人经验,请谨慎借用.</p>
+
+<ol>
+<li><p>创建 <a href="https://appengine.google.com/">Google Appengine</a> 的ID.一个ID每天上限流量为1GB,最多可以申请10个账号.这样就可以保证一天内有10GB的流量可供使用,基本能够保证一天的上网需要,看个Youtube或者浏览Facebook是没问题的.如我的</p>
+
+<blockquote><p>williamfang01|williamfang02|williamfang05|williamfang06|williamfang07|williamfang08| <br/>
+williamfang09|williamfang1988|williamfang1989|williamlianfang</p></blockquote></li>
+<li><p>下载 <a href="https://developers.google.com/appengine/downloads?hl=zh-cn">Google App Engine SDK</a>,并解压到一个 <code>/Goagent/go_appengine</code> 的文件夹下面.</p></li>
+<li><p>下载 <a href="https://code.google.com/p/goagent/">GoAgent</a>,将其解压到 <code>/Goagent/go_appengine</code>.</p></li>
+<li><p>打开 <code>/Goagent/go_appengine/goagent-goagent-37d13a7/local/proxy.ini</code>,在 <code>appid</code> 中输入刚才申请的 ID 账号,保存.</p></li>
+<li><p>打开 Linux 终端机,填写ID,gmail密码,上传账号信息.</p>
+
+<blockquote><p>cd /home/william/Programs/Goagent/go_appengine/goagent-goagent-37d13a7/serve    <br>
+python uploader.zip</p></blockquote></li>
+<li><p>成功后会有提示,回车推出.</p></li>
+<li><p>现在可以到 <code>/local</code> 下打开 <code>goagent-gtk.py</code>,直接运行即可上网.也可以将其复制到桌面,以后直接双击即可.</p></li>
+<li><p>在 chrome 中的配置.</p>
+
+<blockquote><ul>
+<li>首先是通过 chrome store 安装 proxy</li>
+<li>点击设置,上传 <code>/local/SwitchyOptions.bak</code></li>
+<li>点击 chrome 的 setting, 安装证书 <code>/local/CA</code>.</li>
+</ul>
+</blockquote></li>
+</ol>
+
 ]]></content:encoded>
     </item>
     

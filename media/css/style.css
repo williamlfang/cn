@@ -24,7 +24,7 @@ p{padding:.5em 0;}
 li{padding:.2em 0;}
 ol,ul{list-style-position:inside;}
 ol ul, ul ol, ul ul, ol ol {margin-left:1em;}
-pre code{margin:1em 0;font-size:11px;line-height:1.6;display:block;overflow:auto;
+/* pre code{margin:1em 0;font-size:11px;line-height:1.6;display:block;overflow:auto;
  padding: 5px; border: 1px solid #ddc;
 -webkit-box-shadow: 1px 1px 3px #ccc}
 
@@ -33,7 +33,7 @@ blockquote {
   background:transparent url(blockquote_bg.gif) no-repeat scroll left top; 
   /*color: #000000; */
   font-style: italic; 
-  font-size:12px;
+  font-size:13px;
   margin: 0 0 1em; 
   min-height: 1.5em; 
   overflow: auto;
@@ -59,7 +59,7 @@ blockquote p{margin:0;padding:.5em 0;}
 
 */
 
-#container{width:800px;margin:2em auto;display:block;padding:0 2em;}
+#container{width:800px;margin:2em auto;display:block;padding:0 2em;}           /* 页面大小*/
 .content{font-size:16px;line-height:24px;}
 .content h1{padding:.5em 0;}
 .content img{max-width:600px;display:block;margin:10px auto;-webkit-box-shadow:#999 1px 1px 4px;-moz-box-shadow:#999 1px 1px 4px;box-shadow:#999 1px 1px 4px;}
@@ -81,18 +81,18 @@ nav{font-family:"Electrolize",sans-serif;font-size:1.1em;text-transform:uppercas
 nav a{display:block;padding:.7em 1em;color:#000000;}
 nav a:hover{background-color:#ff0000;text-decoration:none;color:#f9f9f9;-webkit-transition:color .2s linear;}
 .post{padding:.5em 0em;}
-h1{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.6em;color:#000;}
+h1{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.8em;color:#000;}
 h2{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.4em;color:#111;
-   margin: 20px 0px 20px; padding: 10px; border-bottom: 1px dashed #cccccc;}  
+   margin: 20px 0px 20px; padding: 0px; border-bottom: 1px dashed #cccccc;}  
    /*------------------------------- h2 的格式: solid -> dashed  -------*/
 h3{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.2em;color:#222;}
 h4{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1em;color:#333;}
-/* block code ---------------------------------------------------------------------------------------------------------*/
+/* block code ---------------------------------------------------------------------------------------------------------
 pre,code{font-family:Menlo,"DejaVu Sans Mono","Bitstream Vera Sans Mono","Andale Mono",Consolas,Menlo,"Andale Mono","Courier New",Monaco,monospace;font-size:11px;} 
 /* block code ---------------------------------------------------------------------------------------------------------*/
 /*------------  code size = 11px --------------------------------------------*/
 /* inline code ---------------------------------------------------------------------------------------------------------*/
-p code{background-color:#f7f7f7; padding: 2px; margin: 2px; border-radius: 3px; border: 1px solid #ddd;color: #317eac;}   /* inline code color*/
+/* p code{background-color:#f7f7f7; padding: 2px; margin: 2px; border-radius: 3px; border: 1px solid #ddd;color: #317eac;}   /* inline code color*/
 /* inline code ---------------------------------------------------------------------------------------------------------*/
 embed,object,iframe{display:block;margin:4px auto;}
 .gist{font-size: 12px;line-height:1.6;}
@@ -212,8 +212,8 @@ a#go-top:hover {
   background-position: -50px 0
 }
 
-
-/* Custom container */
+/*
+/* Custom container 
 
 .container-narrow {
   margin: 0 auto;
@@ -225,7 +225,7 @@ a#go-top:hover {
 .navbar .nav {
   float: right; }
 
-
+/*
 [class*="span"]{float:left;min-height:1px;margin-left:20px;}
 .container,.navbar-static-top .container,.navbar-fixed-top .container,.navbar-fixed-bottom .container{width:940px;}
   .nav>.disabled>a{color:#999999;}

@@ -38,7 +38,7 @@ status:    process
 
 - 最后，就是 **knitr** 与 **Rmardown** 可以轻松的实现博客撰写。现在，我需要做的就是使用 **Markdown** 语法输入，然后在需要 **R** 的地方直接插入代码即可。一篇完整的博客就是我沿着自己的想法一路写到底，中间不会有其他的打扰，不要反复的插入格式命令。
 
-## 使用 **Rmarkdown** 
+## 使用 **Rmardown** 
 
 下面，我介绍一下如何实现将 **R** 代码编译为网页 **Markdown** 格式。由于 **Jekyll** 支持将 **Markdown** 编译成 **Html** 网页，因此，我们就可以很方便的将 **R** 文件编译成 **Html** 并发布到 **Github** 上面了。我主要参考了 Jason Bryer 的帖子， ["Using (R) Markdown, Jekyll, & GitHub for a Website"](http://jason.bryer.org/posts/2012-12-10/Markdown_Jekyll_R_for_Blogging.html)。另外，由于这个帖子生成的图片存储在同样一个文件夹下面，有时我想找某个博客的图片时，会非常的不方便。于是我对其做了一个小小的修改，将经过 **R** 产生的图片放在与帖子相对应的文件夹目录下，方便查找。比如，我有一个文档，`2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke.Rmd`，那么，图片的存放目录应该是
 
@@ -151,9 +151,13 @@ status: process
 ### 例子
 
 比如这个 `R` 代码，我们可以直接生成图片。
-```{r}
+
+```r
 x = rnorm(100)
 plot(density(x))
 ```
+
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1.png) 
+
 
 

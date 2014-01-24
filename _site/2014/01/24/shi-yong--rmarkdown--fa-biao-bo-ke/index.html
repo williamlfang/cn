@@ -96,6 +96,36 @@
     })
     </script>
   <!--=================================================================== -->
+  
+        <!-- mathjax config similar to math.stackexchange begin-->
+                <script type="text/x-mathjax-config">
+                  MathJax.Hub.Config({
+                    tex2jax: {
+                      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                      processEscapes: true
+                    }
+                  });
+                </script>                
+                <script type="text/x-mathjax-config">
+                    MathJax.Hub.Config({
+                      tex2jax: {
+                        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                      }
+                    });
+                </script>                
+                <script type="text/x-mathjax-config">
+                    MathJax.Hub.Queue(function() {
+                        var all = MathJax.Hub.getAllJax(), i;
+                        for(i=0; i < all.length; i += 1) {
+                            all[i].SourceElement().parentNode.className += ' has-jax';
+                        }
+                    });
+                </script>                
+                <script type="text/javascript"
+                   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+                </script>
+                <!-- mathjax config similar to math.stackexchange end-->
+
  </head>
 
   <body onLoad="setInterval(setTimeSpan,1000);">
@@ -293,9 +323,13 @@ status: process
 
 <h3>例子</h3>
 
+<h4>数学公式</h4>
+
 <p>比如我只需要如下输入数学公式，$S = \sum_{i=1}^k x_i$，或者是</p>
 
 <p>$$\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum_{k=0}^\infty\frac{(4k)!(1103+26390k)}{(k!)<sup>4396</sup>^{4k}}$$</p>
+
+<h4><strong>R</strong></h4>
 
 <p>再者，这个 <code>R</code> 代码，我们可以直接生成图片。</p>
 
@@ -398,7 +432,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-24 23:03:38</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-25 00:19:26</span></small></p>
 </footer>
 
   </div>

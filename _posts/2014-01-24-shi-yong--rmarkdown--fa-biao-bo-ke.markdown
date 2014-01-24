@@ -56,7 +56,7 @@ status: publish
  
 首先是在主目录下面建立一个 `rmarkdown.r` 文件，用于执行编译功能。主要用途就是实现将当前目录下所有的带 `.Rmd` 文件转化为 `.md` 格式，从而可以实现发布。下面是其主要内容，也可以在[这里](/cn/_post/rmarkdwn.r)下载。
  
-{% highlight r linenos=table %}
+{% highlight r linenos %}
 #' This R script will process all R mardown files (those with in_ext file extention,
 #' .rmd by default) in the current working directory. Files with a status of
 #' 'processed' will be converted to markdown (with out_ext file extention, '.markdown'
@@ -137,7 +137,7 @@ Rscript -e "source('$DIR/rmarkdown.r'); convertRMarkdown(images.dir='$DIR/images
 ### 添加 `YAML` 标头
  
 最后，我们需要在 `.Rmd` 文件标头添加以下命令：
-{% highlight bash linenos=table %}
+{% highlight bash linenos %}
 published: true
 status: publish
 {% endhighlight %}

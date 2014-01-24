@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>可能是史上最强更新：R 2.13.0 | William Fang</title>    -->
+    <title>可能是史上最强更新：R 2.13.0 | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<script type="text/javascript" src="/media/js/outliner.js"></script>
+<!--=================================================================== -->
+  <script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+  <!--=================================================================== -->
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>可能是史上最强更新：R 2.13.0</h1>
+        </header>
+        <nav id="real_nav">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+        <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>R 2.13.0今日出炉，<a href="http://stat.ethz.ch/R-manual/R-devel/doc/html/NEWS.html">一大批更新中</a>有以下条目吸引了我的眼球：</p>
+
+<ul>
+<li><p>image() has gained a logical useRaster argument allowing it to use a bitmap raster for plotting a regular grid instead of polygons. This can be more efficient, but may not be supported by all devices. The default is FALSE.
+不知道tikzDevice能否正确处理，如果可以的话，也许可以放心使用image()了，之前由于tikz生成的image()的图形既大（因为是很多矩形）又有难看的白色网格，所以让我一直很纠结。</p></li>
+<li><p>file.copy() now (by default) copies read/write/execute permissions on files, moderated by the current setting of Sys.umask().
+这个问题貌似是我报告过的，因为roxygen拷贝configure文件的时候会把744属性丢失。</p></li>
+<li><p>New hook "before.new.plot" allows functions to be run just before advancing the frame in plot.new, which is potentially useful for custom figure layout implementations.
+这让我们可以在.Rprofile文件中设定默认的par()，免得每幅图都要par()来par()去的。</p></li>
+<li><p>Package tools has a new function compactPDF() to try to reduce the size of PDF files <em>via</em> qpdf or gs.
+这qpdf貌似也是我推荐的，主要是因为Sweave默认用PDF图形，而这些PDF图形都是没有经过压缩的，所以导致包的体积不必要地大。</p></li>
+<li><p>file.rename() now allows vector arguments (of the same length).
+省去了循环。</p></li>
+<li><p>Package compiler is now provided as a standard package.  See ?compiler::compile for information on how to use the compiler. This package implements a byte code compiler for R: by default the compiler is not used in this release.  See the ‘R Installation and Administration Manual’ for how to compile the base and recommended packages.
+也许有人在Google Reader中看到了我的分享，这是Luke Tierney十几年的工作，终于浮出了水面，此举也许能让R的运算速度加快几倍。如果自己通过make install的方式安装，可以先make bytecode，回头测试一下速度。</p></li>
+<li><p>Sweave() has options to produce PNG and JPEG figures, and to use a custom function to open a graphics device (see ?RweaveLatex).
+(Based in part on the contribution of PR#14418.)
+这是我们抱怨了无数遍的一点：Sweave不能使用除了PDF和Postscript之外的图形。在2.14.0中这个问题将进一步得到解决，到时候可以任意自定义图形设备。</p></li>
+<li><p>The default for Sweave() is to produce only PDF figures (rather than both EPS and PDF).
+我早说了，这年头有谁还会用老旧的EPS图形啊？2.14.0的时候，一段Sweave代码只会被执行一遍，这也是我期待很久的特征。</p></li>
+<li><p>If there is a field BuildVignettes in the package DESCRIPTION file with a false value, re-building the vignettes is skipped.
+此举可节省R包安装时间，尤其是有大的vignette或者其中有CRAN的环境无法编译的代码。</p></li>
+<li><p>File R.css is now installed on a per-package basis (in the package's html directory) rather than in each library tree, and this is used for all the HTML pages in the package.  This helps when installing packages with static HTML pages for use on a webserver.  It will also allow future versions of R to use different stylesheets for the packages they install.
+同样是抱怨过的问题，R默认的css太丑了，现在包的开发者终于可以自定义R.css了。</p></li>
+<li><p>The gamma argument to hsv(), rainbow(), and rgb2hsv() is deprecated and no longer has any effect.
+对我写书有一点小影响，不过我早已经更新这些函数在书中的说明。</p></li>
+</ul>
+
+
+<p>总的说来，还是compiler包看起来是最大的更新。</p>
+
+<p><strong>外一篇：一年一度的John Chambers奖</strong></p>
+
+<p>今年的Chambers奖只收到很少几件作品，最终Ian Fellows的Deducer胜出（我又剧透了），尽管我总觉得这玩意儿做得不够优雅。</p>
+
+<p>又及：当年Chambers大人捐赠的奖金只有1万刀，某大佬曾抱怨说，这钱早就花光了！不知道ASA是怎样维持的。</p>
+
+</section>
+<section class="meta">
+
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2011/04/03/tuftes-book-style/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://williamlfang.github.com/cn/2011/04/24/the-4th-chinar/" class="pageNav"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2011-04-13">2011-04-13</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#R language" title="R language">R language</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#byte code" title="byte code">byte code</a>&nbsp;
+  
+  <a href="/tags/#compiler" title="compiler">compiler</a>&nbsp;
+  
+  <a href="/tags/#R语言" title="R语言">R语言</a>&nbsp;
+  
+  <a href="/tags/#Sweave" title="Sweave">Sweave</a>&nbsp;
+  
+  <a href="/tags/#vignette" title="vignette">vignette</a>&nbsp;
+  
+  <a href="/tags/#更新" title="更新">更新</a>&nbsp;
+  
+</span>
+
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2011/04/03/tuftes-book-style/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://williamlfang.github.com/cn/2011/04/24/the-4th-chinar/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-24 19:54:26</span></small></p>
+</footer>
+
+  </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+</html>

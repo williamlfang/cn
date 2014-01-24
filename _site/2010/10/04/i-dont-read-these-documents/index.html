@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>我不看的文章或文档 | William Fang</title>    -->
+    <title>我不看的文章或文档 | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<script type="text/javascript" src="/media/js/outliner.js"></script>
+<!--=================================================================== -->
+  <script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+  <!--=================================================================== -->
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>我不看的文章或文档</h1>
+        </header>
+        <nav id="real_nav">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+        <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>翻着一个月前的邮件，瞄了瞄一个“宝洁论文奖专辑”，又是一堆因子分析。于是我来列举一下我一般不看的文章或文档：</p>
+
+<ol>
+<li><p> 用<a href="http://yihui.name/cn/tag/%e7%bb%93%e6%9e%84%e6%96%b9%e7%a8%8b%e6%a8%a1%e5%9e%8b/">结构方程模型</a>的文章：这个就不用解释了。其实还有层次分析法和灰色模型。前者简直是史上最糟糕的调查方法，那些用这种方法的人自己填一次问卷试试就知道了，收集的数据没谱之极，哪天要是有“测不准奖”（和“测不准原理”无关），第一个就颁给这个方法好了；后者我已经记不清了，总之当年给我留下很差的印象。</p></li>
+<li><p> 用因子分析的文章：如果说得愤青一点，我都怀疑是不是只有历史上第一篇关于因子分析的文章是有谱的，后面的都没谱。反正我感觉没谱，啥玩意儿都能给你整出“因子”来，对应一套社会学/心理学理论，幸甚至哉，歌以咏志。关于因子分析，几年前我看的标准是看它讲不讲因子得分，凡是讲得分的都不看，因为得分是个没谱的东西，我从来没搞明白过什么叫得分。《笑傲江湖》里独孤求败对令狐冲说“你要小心你的师父”，我也充胖子说一句“你要小心什么数据都能用的统计方法”。</p></li>
+<li><p> 基于问卷调查数据的文章：原因很简单，我就问你（不要左右看别人，就是你），<strong>你愿意填调查问卷么</strong>？（这就是为什么我倾向于做基于仪器测量的数据，而不愿做从人嘴里出来的数据，这年头还有几个人没被问卷调查折腾烦？）</p></li>
+<li><p> 用Word写的文档：也不是不看，是不愿意看。七月底有家出版社联系我审核一本R图形的书，我一看，好家伙，跟我写的内容有几分相似啊（只不过是英文的），但由于排版太差，又是Word文档，于是瞅了瞅，婉拒了；代码不用等宽字体，图片不是矢量图，乡下来的。</p></li>
+</ol>
+
+
+<p>这些标准未必有道理，只是个人选择而已。</p>
+
+<p>又及：<a href="http://yihui.name/cn/2010/09/md5-code-for-my-qq-number/">上次MD5文章</a>以来，已有3人找到了答案（其实找到了也没啥用……）。更有甚者，都从我“伪装”的Email地址中找到了我的鸡逃课（GTalk）地址。以前某周姓同学似乎说过：水陆草木之花，八卦者甚蕃。</p>
+
+</section>
+<section class="meta">
+
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2010/09/28/md5-code-for-my-qq-number/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://williamlfang.github.com/cn/2010/10/06/a-comment-on-me/" class="pageNav"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2010-10-04">2010-10-04</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Statistics" title="Statistics">Statistics</a>&nbsp;
+  
+  <a href="/categories/#Technology" title="Technology">Technology</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#Office Word" title="Office Word">Office Word</a>&nbsp;
+  
+  <a href="/tags/#因子分析" title="因子分析">因子分析</a>&nbsp;
+  
+  <a href="/tags/#层次分析法" title="层次分析法">层次分析法</a>&nbsp;
+  
+  <a href="/tags/#灰色模型" title="灰色模型">灰色模型</a>&nbsp;
+  
+  <a href="/tags/#结构方程模型" title="结构方程模型">结构方程模型</a>&nbsp;
+  
+  <a href="/tags/#问卷调查数据" title="问卷调查数据">问卷调查数据</a>&nbsp;
+  
+</span>
+
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2010/09/28/md5-code-for-my-qq-number/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://williamlfang.github.com/cn/2010/10/06/a-comment-on-me/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-24 19:54:26</span></small></p>
+</footer>
+
+  </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+</html>

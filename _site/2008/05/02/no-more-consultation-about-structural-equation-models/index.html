@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>不再接受关于结构方程模型的咨询 | William Fang</title>    -->
+    <title>不再接受关于结构方程模型的咨询 | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<script type="text/javascript" src="/media/js/outliner.js"></script>
+<!--=================================================================== -->
+  <script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+  <!--=================================================================== -->
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>不再接受关于结构方程模型的咨询</h1>
+        </header>
+        <nav id="real_nav">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+        <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>关于结构方程模型（SEM），本人决定不再接受咨询，请各位勿发邮件询问相关事宜，特此告知。我于05年底在杜老的多元统计分析课上接触到SEM，因为课上对原理讲得并不清楚（确切地说颇有误导性），加上后来查阅了国内这方面的论文，发现几乎没有一篇论文提到SEM的原理，但与此同时，却有诸多作者撰文大肆吹捧SEM，甚至将其供奉为“各种统计模型之母”（李伟明，1998），SEM在各行各业应用的论文也是铺天盖地：心理学、管理学、商学、经济学等等。带着诸多疑惑，我将SEM作为了本科毕业论文的选题，那段时间里才算弄清楚了协方差建模技术以及SEM目标函数的来龙去脉，同时也逐渐丧失了对SEM的兴趣，因为我个人难以认同这种统计建模技术（<a href="/cn/2008/01/why-i-hate-structural-equation-models/">参见此文</a>），也对其应用价值高度怀疑。</p>
+
+<p>这两年来我收到过很多询问SEM问题的邮件，现在实在是已经回答累了，主要原因是很多提问者根本没有弄清楚SEM的基本原理。不管是主观原因不想弄清楚，还是客观原因无法弄清楚，我都觉得这种事情颇为荒唐。并非我要求统计应用者对统计技术掌握得多么精通，但如果最基础的知识都不具备，如何敢跑模型，如何敢作解释？</p>
+
+<p><img src="http://i.imgur.com/Xxp7s.gif" alt="模型这么复杂，晕不晕啊？" /></p>
+
+<p>那么话说回来，什么是基础呢？</p>
+
+<ol>
+<li>结构模型和测量模型分别长什么模样；</li>
+<li>知道一点矩阵知识，可以把自己画的超复杂的圈圈框框线条用矩阵表达出来（我戏称这种图形为“意大利面条图”），矩阵中包含各种已知参数（一个协方差矩阵）和未知参数（八大矩阵），能分辨哪些已知哪些未知，相应地，知道自由度该怎样数；</li>
+<li>知道各种目标函数对应的模型假设是什么，以及假设是否可以被验证；</li>
+<li>知道拟合指标的大致公式是什么模样以及指标有什么直观意义；</li>
+<li>非常清楚统计假设检验的原理（通常情况下只可能有把握拒绝零假设，而接受零假设犯错误的概率常常是不知道的，即：P值大的时候也许存在若干个“真相”都不能被拒绝）。</li>
+</ol>
+
+
+<p>我经常被问到的问题有：请帮忙看看模型可不可以这样画、模型为什么解不出来或不可识别、模型拟合指标有些很好有些很差该怎么办、模型拟合很好是不是就可以下结论说事实就是我设想的这样、模型的系数该怎样解释等等。如果各位还有类似的问题，请务必反思以上五点基础。我相信90%的人不会再提问，而对于剩下10%的人，你们的问题超出了我的知识范围，恕我没有能力回答，抱歉。</p>
+
+</section>
+<section class="meta">
+
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2008/04/30/commercial-visa-to-germany/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://williamlfang.github.com/cn/2008/05/05/beijing-statistical-yearbook-2001-2004/" class="pageNav"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2008-05-02">2008-05-02</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Featured" title="Featured">Featured</a>&nbsp;
+  
+  <a href="/categories/#Statistics" title="Statistics">Statistics</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#假设检验" title="假设检验">假设检验</a>&nbsp;
+  
+  <a href="/tags/#再见" title="再见">再见</a>&nbsp;
+  
+  <a href="/tags/#测量模型" title="测量模型">测量模型</a>&nbsp;
+  
+  <a href="/tags/#结构方程模型" title="结构方程模型">结构方程模型</a>&nbsp;
+  
+  <a href="/tags/#结构模型" title="结构模型">结构模型</a>&nbsp;
+  
+</span>
+
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2008/04/30/commercial-visa-to-germany/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://williamlfang.github.com/cn/2008/05/05/beijing-statistical-yearbook-2001-2004/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-24 19:54:26</span></small></p>
+</footer>
+
+  </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+</html>

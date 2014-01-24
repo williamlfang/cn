@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>美国农村生活一月汇报 | William Fang</title>    -->
+    <title>美国农村生活一月汇报 | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<script type="text/javascript" src="/media/js/outliner.js"></script>
+<!--=================================================================== -->
+  <script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+  <!--=================================================================== -->
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>美国农村生活一月汇报</h1>
+        </header>
+        <nav id="real_nav">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+        <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>每天生活是如此琐碎，以至于操起键盘不知道写什么标题是好。开学差不多一个月了，学习上像回到了大二，生活上像回到了小学。选了两门课，外加一门讲座课，天天上实变函数和t检验方差分析，想当年，本小子在实变函数课上是那种会被老师叫醒的学生，可想而知，这种东西我学得很烂了，如今重学一遍，依然不得要领，可能脑子里就缺这根筋吧，总搞不清这铺天盖地的花写字母对统计的意义在哪里，老师倒是一个年轻的大牛，每年有事没事就去JASA和Annals写几篇论文，不经意就发现一群大牛的推导错误（真是牛到惊人，还这么年轻）；而方差分析课呢，老爷子人是很好，经验丰富，但就是歧视R，有事没事就说SAS is extremely powerful，本小子坐在底下心想，忍忍吧，那个年代的人都是SAS派，就别争了，如今SAS与R的优劣很明显了，老爷子有时候上课说，啊哈，你们瞧瞧，这里SAS能做，R就不能做（他就是把反过来成立的那些地方都留着不说），本小子至今还在用R+Sweave写作业，看看究竟有什么事情是R不能做的。</p>
+
+<p>刚看见<a href="http://li-and-jiang.com/blog/about-jiang/">江堂兄</a>发一篇<a href="http://li-and-jiang.com/blog/2009/09/26/cooking/">君子厨艺大全</a>，赶紧凑过去围观（要知道，本小子最近对厨艺比对任何事情都感兴趣，民以食为上帝啊），果然是厨房老手，总结出若干极具robust性能的做菜方法，看来有些东西真的是不管怎么做都会好吃的（以前我只知道蛤蜊）。本小子在来美国之前的上一次做饭差不多可以追溯到小学时期了，想当年，俺和俺弟暑假在家轮流值班，一人做饭，一人放牛，在蚊子嗡嗡飞的昏暗厨房，爬梯子取腊肉，洗了切了炒辣椒炒黄瓜炒土豆，似乎一共就这三样了，炒菜不用放油，因为猪肉已经有很多油了，那时候没有电饭锅，煮饭炒菜全靠那一大口铁锅，大锅水煮，大半熟了全捞起来沥出米汤，然后炒菜，炒完把饭放回去蒸熟，盛出来，剩下一锅锅巴中加入米汤，便是稀饭了，在煮饭的柴火灰烬中埋两个土豆或红薯，吃完饭扒出来就跟宝贝似的。如今在异国他乡的农村再拿起锅碗瓢盆，所有的场景都变了，做饭用电，再也不用守在灶膛前添火；每天吃植物油，想蒸个水蛋吧，没猪油，便放弃了，小时候一直吃着放猪油的水蛋长大，果然有依赖性。室友（香港人）是美国生活，整天汉堡度日，每次看我做饭，都摇头说，太麻烦了，太麻烦了。由于厨房基本是我的天下，没有不明真相的群众围观，所以可以放心大胆挽起袖子任它油花飞溅，我没江堂兄那么耐油，一旦油花飞溅，我就离锅一米远，行注目礼10秒钟，锅里平息了再凑上前翻炒，后来学乖了，尽量沥干水，而且当油五六成热的时候就扔花椒葱姜蒜，让它慢慢爆锅，佐料香味四溢的时候就扔肉，速速翻炒，也就不会大溅了。这一个月主食尝试了猫耳朵、纯手工饺子（花了三四个小时）、纯手工面条、烙饼（未遂）、土豆鸡蛋饼、炸薯条（原来麦当劳的薯条如此简单），各种菜就是随意搭配，牛肉猪肉鸡肉鱼和芹菜土豆生菜萝卜黄瓜茄子菜椒，其中最满意的是芹菜牛肉（深感人大食堂太糟蹋芹菜了）和红烧鸡块，总结经验如下：</p>
+
+<ol>
+<li><p> 糖的作用不一定是让菜变甜，例如红烧鸡块实现在油中放糖，能给鸡块上色，而且更好吃（不甜），因为我不太爱吃甜，所以一直对糖有误解；</p></li>
+<li><p> 纤维多的菜如芹菜棒子盖上锅盖焖一会儿就好吃多了，否则水分很快蒸发，吃着就跟嚼棉线一样（我本来从不用锅盖，前些日子去肯德基州参观考察回来学乖了）；</p></li>
+<li><p> 肉类加上面粉能保湿（面粉多加水和稀），所以肉会嫩；若有淀粉应该更好，可惜我还没找到哪里有卖淀粉的，等找到之后做鱼香肉丝；</p></li>
+<li><p> 爆锅材料一定不能糊，否则既影响美观又损失味道，最易糊的就是干尖椒，若有可能，把爆锅的材料（比如花椒）捞出来再炒菜；</p></li>
+<li><p> 煮稀饭或者煮土豆的时候，加至少两倍于你想象的水（有一次做土豆沙拉，把土豆煮粘锅了）；</p></li>
+</ol>
+
+
+<p>明日请客吃饭，答谢大家对初来乍到的本小子的照顾，所以今日去超市买了一大堆东西，看见花生，心想这下可以做宫保鸡丁了，于是买了一点回来试了试（用面粉代替了淀粉），酸酸甜甜的，好吃啊，可能就属于胡子同学说的那种做不坏的东西吧，不过花生米不脆，看来网上的教程步骤应该修改一下。</p>
+
+<p>唉，学习和生活汇报严重不成比例，敢情我是来学厨师专业的，想起老板名恰好是Cook，呃，以后回国路人问起，汝在美国做啥方向捏，答曰做饭（Cook）。</p>
+
+<p>附录（胡子同学提到的三从四德，供广大男同胞围观，我先闪了）：</p>
+
+<p>[blockquote color=green]</p>
+
+<p>三从：</p>
+
+<p>一、太太出门要跟从
+二、太太命令要服从
+三、太太说错话要盲从</p>
+
+<p>四德：</p>
+
+<p>一、太太化妆要等得
+二、太太生日要记得
+三、打骂要忍得
+四、花钱要舍得[/blockquote]</p>
+
+</section>
+<section class="meta">
+
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2009/09/15/liu-nian/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://williamlfang.github.com/cn/2009/10/03/website-exam-mooncake-rib-etc/" class="pageNav"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2009-09-27">2009-09-27</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Life" title="Life">Life</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#R语言" title="R语言">R语言</a>&nbsp;
+  
+  <a href="/tags/#SAS" title="SAS">SAS</a>&nbsp;
+  
+  <a href="/tags/#实变函数" title="实变函数">实变函数</a>&nbsp;
+  
+  <a href="/tags/#民以食为上帝" title="民以食为上帝">民以食为上帝</a>&nbsp;
+  
+</span>
+
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2009/09/15/liu-nian/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://williamlfang.github.com/cn/2009/10/03/website-exam-mooncake-rib-etc/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-24 19:54:26</span></small></p>
+</footer>
+
+  </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+</html>

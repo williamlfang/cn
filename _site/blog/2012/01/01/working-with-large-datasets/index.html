@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>用R处理大数据集 - 雁起平沙的网络日志</title>
+  <meta name="author" content="ypchen">
+
+  
+  <meta name="description" content="本文主要介绍用R语言如何实现大数据的处理">
+  <meta name="keywords" content="R语言, 大数据">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yanping.me/cn/blog/2012/01/01/working-with-large-datasets">
+  <link href="/cn/favicon.png" rel="icon">
+  <link href="/cn/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/cn/javascripts/modernizr-2.0.js"></script>
+  <script src="/cn/javascripts/ender.js"></script>
+  <script src="/cn/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/cn/atom.xml" rel="alternate" title="雁起平沙的网络日志" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script src="/cn/javascripts/jquery-1.7.1.min.js" type="text/javascript"></script> 
+
+  <!-- Add fancyBox main JS and CSS files -->
+  <script type="text/javascript" src="/cn/assets/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" type="text/css" href="/cn/assets/fancybox/jquery.fancybox.css" media="screen" />
+
+	<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      	inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    	displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/cn/">雁起平沙的网络日志</a></h1>
+  
+    <h2>数量金融与R</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/cn/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+
+<ul class="main-navigation">
+  <li><a href="/cn/">博客主页</a></li>
+  <li><a href="/cn/blog/archives">文章列表</a></li>
+  <li><a href="/cn/blog/categories">分类目录</a></li>
+  <li><a href="/cn/blog/categories/金融工程">金融工程</a></li>
+  <li><a href="/cn/blog/r-lang">R语言</a></li>
+  <li><a href="/cn/blog/categories/数据科学">数据科学</a></li>
+  <li><a href="/cn/blog/categories/网站设计">网站设计</a></li>
+  <li><a href="/cn/blog/about">关于本站</a></li>
+  <li><a href="/cn/blog/contact">商业合作</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">用R处理大数据集</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-01T15:36:00+08:00" pubdate data-updated="true">Jan 1<span>st</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><span class="info">
+本文翻译自<a href="http://www.manning.com/kabacoff/" target="_blank">R in Action</a>的附录G，如果对该书感兴趣，请自行购买或去图书馆阅读。
+</span>
+</p>
+
+<p>R会把所有的对象读存入虚拟内存中。对我们大多数用户来说，这种设计可以提高与R相互的速度，但是当分析大数据集时，这种设计会降低程序运行速度有时还会产生跟内存相关的错误。</p>
+
+<p>内存限制主要取决于R的build版（32位还是64位），而在32位的windows下，取决于操作系统的版本。以cannot allocate vectoe of size开头的出错信息表示无法分配充足的连续内存，而以cannot allocate vector of length开头的出错信息表示超越了地址限制（address limit）。在处理大数据集时，应尽量使用64位版的R。对于各种build版，向量中的元素个数最大为2147483647（请自行?Memory）。</p>
+
+<p>在处理大数据集时有三方面应该考虑：（a）提高程序的效率，保证执行速度；（b）把数据储存在外部，以解决内存限制问题；（c）使用专门的统计方法来有效处理大数据量的问题。</p>
+
+<p>下面将分别讨论。</p>
+
+<!--more-->
+
+<h3 id="section">高效编程</h3>
+<p>下面几条编程技巧来可以提高处理大数据集时的效率</p>
+
+<ul>
+  <li>尽量向量化运算。使用R内置的函数来处理向量、矩阵和list（例如函数<code>sapply</code>，<code>lapply</code>和<code>mapply</code>），尽量避免使用循环（for和while）;</li>
+  <li>使用矩阵，必要时才使用数据框，因为矩阵的开销更少；</li>
+  <li>使用<code>read.table()</code>函数族把外部数据导入数据框时，尽量显式设定<code>colClasses</code>和<code>nrows</code>选项，设定<code>comment.char = ""</code>，把不需要的列设置成NULL。这样可以减少占用的内存，同时加快处理速度。将外部数据导入矩阵时，使用<code>scan()</code>函数；</li>
+  <li>在处理全部数据前，用数据的子集测试程序，来优化程序，去掉bug；</li>
+  <li>删除临时对象和不再用的对象。调用<code>rm(list=ls())</code>可以删除内存中的所有对象。删除指定的对象可以用<code>rm(object)</code>；</li>
+  <li>在Jeromy Anglim的博客文章“R的内存管理：一些小窍门和技巧”(原文<a href="http://jeromyanglim.blogspot.com/2009/11/memory-management-in-r-few-tips-and.html">Memory Management in R: A Few Tips and Tricks </a>，被墙)中提到，使用函数<code>.ls.objects()</code>列出工作区内的对象占用的内存大小。这个函数会帮助你找到吃内存的大家伙。</li>
+  <li>profile你的程序，看看在每个函数中花的时间。你可以用<code>Rprof()</code>和<code>summaryRprof()</code>函数完成这项工作。<code>system.time()</code>函数也可以帮助你。<em>profr</em> 和 <em>prooftools</em> 包提供了若干函数来帮助分析profile的输出。</li>
+  <li>Rcpp包可以把R对象转成C++函数（原文是The Rcpp package can be used to transfer R objects to C++ functions and back when more optimized subroutines are needed. 后半句不知怎么翻译）</li>
+</ul>
+
+<p>处理大数据集，提高代码效率只能解决一部分问题。你也可以把数据存在外部存储并使用专门的统计分析方法。</p>
+
+<h3 id="section-1">把数据存储在内存之外</h3>
+<p>有几种包可以实现在内存之外存储数据。解决之道是把数据保存在外部数据库或者硬盘里的二进制文件中，然后在需要的时候部分地读取。下表描述了几种有用的包：</p>
+
+<table class="datalist">
+<tr>
+	<th><strong>包</strong></th>
+	<th><strong>描述</strong></th>
+</tr>
+<tr>
+	<td>ff</td>
+	<td>提供了一种数据结构，保存在硬盘中，但是操作起来就如同在内存中一样</td>
+</tr>
+<tr>
+	<td>bigmemory</td>
+	<td>支持大规模矩阵的创建、储存、读取和操作。矩阵被分配到共享内存或内存映射的文件中（memory-mapped files）</td>
+</tr>
+<tr>
+	<td>filehash</td>
+	<td>实现了简单的key-value数据库，在其中特征字符串key与存储在硬盘中的数据value相关联。</td>
+</tr>
+<tr>
+	<td>ncdf, ncdf4</td>
+	<td>Provides an interface to Unidata netCDF data files.
+</td>
+</tr>
+<tr>
+	<td>RODBC, RMySQL,<br /> 
+	ROracle, <br />
+	RPostgreSQL, <br />
+	RSQLite 
+	</td>
+	<td>可以用这些包读取外部关系数据库管理系统的数据</td>
+</tr>
+</table>
+<p>上面的包可以帮助克服R的内存限制。除此以外，当需要在有限时间内分析大数据集时，使用专门方法也是必须的。一些有用的方法将在下面介绍。</p>
+
+<h3 id="section-2">分析大数据集的包</h3>
+<p>R提供了几种分析大数据集的包：</p>
+
+<ul>
+  <li><em>biglm</em> 和 <em>speedglm</em> 包可以针对大数据集有效地拟合线性和广义线性模型。在处理大规模数据集时，这两个包提供了类似<code>lm()</code>和<code>glm()</code>的功能。</li>
+  <li>由 <em>bigmemory</em> 包可产生大规模矩阵，一些包可以提供分析这些大规模矩阵的函数。<em>bigannalytics</em> 包提供了k-means聚类、行统计量（column statistics）和一个对<code>biglm()</code>的封装。<em>bigtabulate</em> 包提供了<code>table()</code>、<code>split()</code>和<code>tapply()</code>的功能，<em>bigalgebra</em> 包提供了高等线性代数的函数。</li>
+  <li><em>biglars</em> 包提供了最小角回归（least-angle regression）、lasso以及针对大数据集的逐步回归，数据集因太大而不能读入到内存中，这时候要配合 <em>ff</em> 包使用。</li>
+  <li><em>Brobdingnag</em> 包可以用来处理大数字（大于2^1024）</li>
+</ul>
+
+<p>处理从GB到TB级的数据对于任何数据都是极大的挑战。如果想查看R的更多方法，请看CRAN task View: <em>High-Performance and Parallel Computing with R</em> （<a href="http://cran.r-project.org/web/view">http://cran.r-project.org/web/view</a>）。</p>
+
+<h3 id="section-3">译者注</h3>
+<p><a href="http://jliblog.com/">李舰</a>曾经在第四届R语言会议（北京会场）上做了题为《 <em>R与高性能运算</em> 》的报告，报告slides及代码请见<a href="http://cos.name/2011/05/4th-china-r-beijing-summary/">会议纪要</a></p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard"><span class="fn">ypchen</span>发布于</span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-01T15:36:00+08:00" pubdate data-updated="true">Jan 1<span>st</span>, 2012</time>
+      
+
+<span class="categories">
+	分类：
+  
+    <a class='category' href='/cn/blog/categories/r语言/'>R语言</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+ 
+	<!-- JiaThis Button BEGIN -->
+	<div id="ckepop">
+		<span class="jiathis_txt">分享到： </span>
+		<a class="jiathis_button_tools_1"></a>
+		<a class="jiathis_button_tools_2"></a>
+		<a class="jiathis_button_tools_3"></a>
+		<a class="jiathis_button_tools_4"></a>
+		<a href="http://www.jiathis.com/share?uid=1558027" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+		<a class="jiathis_counter_style"></a>
+	</div>
+	
+	<!-- JiaThis Button END -->
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/cn/blog/2011/12/26/octopress-on-windows/" title="Previous Post: Windows下安装Octopress">&laquo; Windows下安装Octopress</a>
+      
+      
+        <a class="basic-alignment right" href="/cn/blog/2012/01/06/updating-an-r-installation/" title="next Post: 如何升级R">如何升级R &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yanping.me/cn" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+</section>
+<section id="categories_tag">
+<h1>分类目录</h1>
+<span class='categories_tag'> <a href='/cn/blog/categories/github' style='font-size: 138.1818181818182%'>Github(7)</a>  <a href='/cn/blog/categories/javascript' style='font-size: 127.27272727272728%'>Javascript(5)</a>  <a href='/cn/blog/categories/jekyll' style='font-size: 154.54545454545456%'>Jekyll(10)</a>  <a href='/cn/blog/categories/latex' style='font-size: 105.45454545454545%'>Latex(1)</a>  <a href='/cn/blog/categories/markdown' style='font-size: 105.45454545454545%'>Markdown(1)</a>  <a href='/cn/blog/categories/octopress' style='font-size: 143.63636363636363%'>Octopress(8)</a>  <a href='/cn/blog/categories/r语言' style='font-size: 160.0%'>R语言(11)</a>  <a href='/cn/blog/categories/指数' style='font-size: 105.45454545454545%'>指数(1)</a>  <a href='/cn/blog/categories/数据科学' style='font-size: 105.45454545454545%'>数据科学(1)</a>  <a href='/cn/blog/categories/网站设计' style='font-size: 138.1818181818182%'>网站设计(7)</a>  <a href='/cn/blog/categories/金融工程' style='font-size: 127.27272727272728%'>金融工程(5)</a> </span>
+</section>
+
+<section>
+  <h1>近期文章</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/cn/blog/2013/08/12/about-github-pages-step-by-step-video/" title="关于Github Pages 视频教程">关于Github Pages 视频教程</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cn/blog/2013/08/11/github-pages-step-by-step-video/" title="Github Pages 视频教程（1）">Github Pages 视频教程（1）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cn/blog/2013/06/30/xccds-r-training/" title="【广告】上海北京两地的R语言培训">【广告】上海北京两地的R语言培训</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cn/blog/2013/05/25/software-engineers-guide-to-getting/" title="【译文】软件工程师如何修炼数据科学">【译文】软件工程师如何修炼数据科学</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cn/blog/2013/05/15/the-art-of-r-programming-published/" title="《R语言编程艺术》即将上市">《R语言编程艺术》即将上市</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cn/blog/2013/02/13/generate-tags-with-js-in-jekyll-blog/" title="用js在jekyll博客中实现标签云和标签页">用js在jekyll博客中实现标签云和标签页</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cn/blog/2013/02/10/get-data-from-flash/" title="用R获取flash中的数据">用R获取flash中的数据</a>
+      </li>
+    
+  </ul>
+</section>
+<section id="comment_sidebar">
+<h1>近期评论</h1>
+
+<script type="text/javascript" src="http://ypchencn.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=20"></script><a href="http://disqus.com/">Powered by Disqus</a>
+
+</section>
+<section class="blogroll">
+<h1>友情链接</h1>
+<a target="_blank" href="http://yihui.name/">谢益辉</a>&nbsp;|&nbsp; <a target="_blank" href="http://loyhome.com">丽云</a>&nbsp;|&nbsp; <a target="_blank" href="http://bjt.name">刘思喆</a>&nbsp;|&nbsp; <a target="_blank" href="http://jliblog.com">李舰</a>&nbsp;|&nbsp; <a target="_blank" href="http://tracy.cos.name/cn">熊熹师姐</a>&nbsp;|&nbsp; <a target="_blank" href="http://blog.cos.name/fan/">范建宁</a>&nbsp;|&nbsp; <a target="_blank" href="http://yishuo.org">邓一硕</a>&nbsp;|&nbsp; <a target="_blank" href="http://yixuan.cos.name/cn">邱怡轩</a>&nbsp;|&nbsp; <a target="_blank" href="http://blog.cos.name/taiyun/">魏太云</a>&nbsp;|&nbsp; <a target="_blank" href="http://xccds.github.io/">肖凯</a>&nbsp;|&nbsp; <a target="_blank" href="http://demi-panda.com/">熊猫家族</a>&nbsp;|&nbsp; <a target="_blank" href="http://joegaotao.github.io/cn">高涛</a>
+</section>
+
+<section class="blogroll">
+<h1>有用的链接</h1>
+<a target="_blank" href="http://cos.name/">统计之都</a>&nbsp;|&nbsp; <a target="_blank" href="http://rucdmc.net/">人大数据挖掘中心</a>&nbsp;|&nbsp; <a target="_blank" href="http://ismartdata.com/">智数营</a>&nbsp;|&nbsp; <a target="_blank" href="http://www.guardian.co.uk/data">卫报数据新闻</a>
+</section>
+
+<section>
+<iframe width="100%" height="110" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=110&fansRow=2&ptype=1&speed=300&skin=2&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1780626537&verifier=d1d5f291&dpc=1"></iframe>
+</section>
+
+
+
+
+
+<section id="copyleft">
+<h1>版权协议</h1>
+	
+	<p align="center"> <a target="_ blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/"><img src="http://i.creativecommons.org/l/by-nc-sa/2.5/cn/88x31.png" alt="Creative Commons License"/></a></p>
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/">CC2.5: 知识共享署名-非商业性使用</a>
+</section>
+<section>
+<h1>Feed订阅</h1>
+<div style="text-align: center;">
+<!-- Feedsky FEED发布代码开始 -->
+<!-- FEED自动发现标记开始 -->
+<link target="_blank" rel="alternate" href="http://feed.yanping.me" type="application/rss+xml" title="RSS 2.0"/>
+<!-- FEED自动发现标记结束 -->
+<a target="_blank" href="http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="feedsky" src="http://yanping.me/images/feed-icon.gif"/></a><br/>
+</div>
+<div style="text-align: center;">
+<a target="_blank" href="http://www.zhuaxia.com/add_channel.php?url=http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="抓虾" src="http://yanping.me/images/icon_zhuaxia.gif"/></a><a target="_blank" href="http://www.xianguo.com/subscribe.php?url=http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="鲜果" src="http://yanping.me/images/icon_xianguo.gif"/></a><br/>
+<a target="_blank" href="http://fusion.google.com/add?feedurl=http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="google reader" src="http://yanping.me/images/icon_google.gif"/></a><a target="_blank" href="http://mail.qq.com/cgi-bin/feed?u=http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="QQ邮箱" src="http://yanping.me/images/icon_qq.gif"/></a><br/>
+</div>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo">
+<p>
+  Copyright &copy; 2013 - ypchen -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".fancybox").fancybox({
+    openEffect  : 'none',
+    closeEffect : 'none'
+  });
+});
+</script>
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ypchencn';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://yanping.me/cn/blog/2012/01/01/working-with-large-datasets/';
+        var disqus_url = 'http://yanping.me/cn/blog/2012/01/01/working-with-large-datasets/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-27377274-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+
+
+
+	<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
+	<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1558027" charset="utf-8"></script>
+
+
+
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+<script type="text/javascript">
+    
+        $(document).ready(function(){             
+
+            $('.entry-content a').each(function(index,element){
+                var href = $(this).attr('href');
+                if(href.indexOf('#') == 0){
+                }else if ( href.indexOf('/') == 0 || href.toLowerCase().indexOf('yanping.me')>-1 ){
+                }else{
+                    $(this).attr('target','_blank');
+                    $(this).addClass('external');
+                }
+            });
+           
+        });	
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

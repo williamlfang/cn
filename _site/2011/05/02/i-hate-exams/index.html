@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>又考完试了，又可以开始学习了 | William Fang</title>    -->
+    <title>又考完试了，又可以开始学习了 | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<script type="text/javascript" src="/media/js/outliner.js"></script>
+<!--=================================================================== -->
+  <script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+  <!--=================================================================== -->
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>又考完试了，又可以开始学习了</h1>
+        </header>
+        <nav id="real_nav">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+        <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>这学期课少，正儿八经的考试只有一门基因芯片课，已于上午搞定。剩下两门课，一门是瞎混的，一门是报告，都没啥。不过呢，平心而论，N老师的考试还是挺有趣的，这家伙脑袋很灵光，从rtist身上就能隐约看到他的功力（rtist是他的弟子）。我是一看见试验设计就头大，脑子里绝对装不下超过三个因素的试验，否则就内存溢出，要是再有个交互效应或裂区，我肯定得花半个小时琢磨清楚试验的场景，在这方面我反应极其迟钝，让我写个方差分析表通常就可以要了我的命。</p>
+
+<p>好嘛，学习，学习嘛呢？论坛上说<a href="http://cos.name/cn/topic/104178">读书</a>，我一回想，也不记得过去都读了啥书，反正来了美帝就没太读书了。极其偶尔的情况下，翻一翻钱钟书，这厮挺有趣的，好几十年前的小说，照样能映出现代人的影子。又说《奇特的一生》（写柳比歇夫的），也是大几十年前的话，放在现在仍然一个样：</p>
+
+<blockquote><p>[...]但是我们出于我们的自命不凡，深信古人的时间绰绰有余。古人只有日晷、水漏、沙漏，连计算时间都不象个样子，还谈得上什么珍惜时间。按照实干家的见解，进步不就是在于替这位实干家节约时间嘛。为了节约时间，实干家下了马车坐上火车，下了火车坐上飞机。发明了电报和电话来代替书信，电视代替了剧院，拉链代替了扣子，圆珠笔代替了鹅翎。电梯、计算机、百货公司、电传打字机、电动剃刀——这一切发明，都是为了替人节省时间。然而，不知道为什么，人越来越感到时间不够用。实干家加快了速度，推广了电子计算机，把百货公司翻修成自动售货公司，采用照相制版法来印报纸。连说话都尽量说得简洁些，也不动手写了，而是利用录音机口授。但时间却越来越紧张。不仅是实干家，人人都感到时间的匮乏。没有时间看朋友；没有时间写信；没有时间照料孩子；没有时间去想；没有时间到秋天的树林里去站一会，什么也不想，光去听听飞舞的落叶飒飒作响；没有时间吟诗；没有时间去给父母上坟。小学生也好，大学生也好，老头儿也好，大家都没有时间。时间不知哪里去了，越来越少。手表再也不是奢侈品，每个人手腕上都戴的有，走得很准，校正过，还防水；人人都有一座闹钟滴滴答答走着。但是时间并没有因此而增加。时间的分配几乎同两千年以前赛纳卡时代一模一样：“我们一生的时间，大部分用于错误及种种恶行；很大一部分虚抛浪掷，无所事事。我们整个一生，几乎都没有用来干应当干的事。”</p></blockquote>
+
+<p>好玩吧？《奇特的一生》还有一个好玩之处，就是它的章标题，也许是物以稀为贵，看惯了整齐简短的标题，再看这种用句子作标题的，就会觉得新奇（当然，作者本身就把这些文字写得很好玩了）。</p>
+
+<p>我在论坛上回帖说了，我印象中最早的一本书是《金银岛》，是我小学的时候某个酷暑光着脚丫子颠儿颠儿跟在一个收旧书的大爷的自行车后面偷出来的，关于此事，若干年后我才知道孔乙己说了，读书人那不算偷，是窃。这是一本外国小说，那时候我看得津津有味（说明当时的翻译水平很高），小时候的记忆力也不错，我到现在都记得译者在那首水手歌的“箱子”上写了个脚注，说这里的箱子在英语中同时也有胸膛的意思（chest）：</p>
+
+<blockquote><p>十五个人趴着死人箱——
+唷呵呵，快来尝一瓶朗姆酒！</p></blockquote>
+
+<p>关于此事，我自然也是若干年后学了洋文才明白过来。也许是这本小说刺激了我对看书的兴趣，但村子里哪有什么书啊，所以就在别人家翻高年级的语文书看，看《渔夫和金鱼》，看《小音乐家扬科》，仅此而已。后来我姑父无数次提起当年我上他家去玩，每次坐下就开始到处找报纸，因为只有他家有订报纸；搬出一摞旧报纸，一看看半天，其实我是在看故事和笑话，他们当然认为我是在爱学习。</p>
+
+<p>又见<a href="http://li-and-jiang.com/blog/2011/05/02/huangzhuang/">江堂回归中土大唐</a>，贴杜甫一首《赠卫八处士》。我记得这首诗，主要是因为谢邦昌老师几年前在纪念张尧庭前辈的会议上诵读了它，当时我觉得挺震撼的。</p>
+
+<blockquote><p>主称会面难，一举累十觞。
+十觞亦不醉，感子故意长。
+明日隔山岳，世事两茫茫。</p></blockquote>
+
+<p>读书读书，愿读服书。近日总是看见争吵，古人肿么地，今人肿么地，文化肿么地。其实又能肿么地？读不读书或读什么书，有shong么关系呢？套用我最近分享的<a href="http://www.bullogger.com/blogs/chjguancha/archives/377904.aspx">一篇文章</a>的标题：只是欢喜随意而至。</p>
+
+</section>
+<section class="meta">
+
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2011/05/01/an-infected-hotmail-account/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://williamlfang.github.com/cn/2011/05/10/lyx-2-0-released/" class="pageNav"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2011-05-02">2011-05-02</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Featured" title="Featured">Featured</a>&nbsp;
+  
+  <a href="/categories/#Life" title="Life">Life</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#考试" title="考试">考试</a>&nbsp;
+  
+  <a href="/tags/#读书" title="读书">读书</a>&nbsp;
+  
+</span>
+
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2011/05/01/an-infected-hotmail-account/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://williamlfang.github.com/cn/2011/05/10/lyx-2-0-released/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-24 19:54:26</span></small></p>
+</footer>
+
+  </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+</html>

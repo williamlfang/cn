@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>统计计算与数学推导及逻辑分析 | William Fang</title>    -->
+    <title>统计计算与数学推导及逻辑分析 | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<script type="text/javascript" src="/media/js/outliner.js"></script>
+<!--=================================================================== -->
+  <script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+  <!--=================================================================== -->
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>统计计算与数学推导及逻辑分析</h1>
+        </header>
+        <nav id="real_nav">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+        <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>[notice type=alert]本文论点在于计算机自动化的可能性以及对长久以来的数学推导传统的疑惑，并非为了贬低经济学论文。[/notice]</p>
+
+<p>陈丽云这篇博客“<a href="http://www.loyhome.cn/928.html">真的是只大狐狸吗？对江西财经陈军昌博士的探究</a>”让我想起一个长期以来我关心的一个话题。我对陈军昌这个人本身不如我对他的摘要的兴趣大，此君提到：</p>
+
+<blockquote><p>本文预言：在不久的未来，计算机技术将会借助非线性问题的进展彻底占据经济学的主流地位。这项技术不再是简单的用于经验数据的回归预测，而将成为主流形式化逻辑。 本文作者甚至计划在将来使用纯计算机程序的形式化逻辑写作一篇经济学论文。</p></blockquote>
+
+<p>我完全相信这段预言。倒不是说我觉得这种做法是对的，只是在目前可见的范围内，我严重怀疑堆积如山的经济学论文是否还需要人的脑子，我甚至想象，给一个Sweave模板，提供几个参数（如欲选择用什么模型、生成什么样式的图形），然后把数据读进来用R跑一遍，一篇论文就自动生成了，加上LaTeX本身就显得正式，这种论文一定人模狗样的，很能忽悠人。比如：</p>
+
+<blockquote><p><code>\Sexpr{names(dat)[1]}</code> 的均值为 <code>\Sexpr{mean(dat[  ,1])}</code>，标准差为 xxx。图 <code>\ref{...}</code>为 <code>\Sexpr{figname[1]}</code>：</p></blockquote>
+
+<p>……</p>
+
+<p><code>\Sexpr{modname[1]}</code>模型显示，斜率项为<code>\Sexpr{coef(dat.lm)[2]}</code>（t 检验结果为<code>\Sexpr{ifelse{coef(summary(dat.lm))[2,4]&lt;0.05, '显著',  '不显著'}}</code>）。</p>
+
+<p>把目前主流杂志上的经济学论文遍历一下，总结一个八股规则，生成统计分析部分。至于结尾嘛，就把所有论文的结论部分分条存在一个数据库中，随机抽取5条就可以了，反正大家的结论都很NB，都对社会主义建设有重大意义。</p>
+
+<p>调侃归调侃。如果这位陈博士的论文真的能被广为接受的话，我估摸着将来大多数期刊是不是要去喝西北风了。以上是经济学界的事情，与我没啥关系，暂不多说。还是回头说统计。</p>
+
+<p>统计计算和模拟在统计界一直都是小弟，大佬仍然是搞数学的，而且似乎数学搞得越深越瞧不起做计算的。可以理解，学术跟宗教其实没有太多区别，人人都有信仰，而且只要有江湖，就一定会有名门正派和歪门邪道旁门左道之分。不过我倒是有两个有趣的例子：</p>
+
+<ol>
+<li> Andrew Gelman在他的论文<code>A Bayesian Formulation of Exploratory Data  Analysis and Goodness-of-fit Testing''中提到Efron &amp; Tibshirani的</code>An  Introduction to the Bootstrap''。论文374页说：</li>
+</ol>
+
+
+<blockquote><p>[...] This is related to the idea from the bootstrap  literature that simulation can replace mathematical analysis.</p></blockquote>
+
+<p>我没考证原书，不过我没想到两位作者能放出这样的话（也许被Gelman夸大了，也许是断章取义）。</p>
+
+<ol>
+<li> 有个人叫Julian L. Simon，他在他的书``<a href="http://www.resample.com/content/text/index.shtml">Resampling: the New  Statistics</a>''（该书可下载）序言中放出一个赌注，愿意下注$5000赌一位以传统统计理论教学方式教统计学的老师，他自己以统计模拟的方式教同一个主题，看各自的学生在解决相关的数值问题谁更快得到答案。到现在为止没有人能应接这场赌局。也许是这本书太不出名了，也许是数学真的有某些方面的弱势。</li>
+</ol>
+
+
+<p>统计计算之于传统统计学，就如同那位陈博士的想法之于传统经济学一样。人的逻辑思维未必是最有效的解决问题的方式，只不过在远古时代，人只有自己的脑子可用，所以就一直用一直用，总不肯承认除了脑子之外有其它替代方式来解决问题。不过也许若干年后，计算机的方式也会落后于时代。后之视今，犹如今之视昔。谁知道呢？</p>
+
+<p>话说回来，我觉得计算机不可能完全替代经济学论文中的逻辑分析，但是用计算机做一些常规性的自动化报告也未尝不可。</p>
+
+<p>附：本文中“经济学论文”大约可以推广到“社会科学论文”。</p>
+
+</section>
+<section class="meta">
+
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2010/04/10/no-advertisement/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://williamlfang.github.com/cn/2010/04/15/knowledge-and-common-sense/" class="pageNav"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2010-04-14">2010-04-14</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Featured" title="Featured">Featured</a>&nbsp;
+  
+  <a href="/categories/#R language" title="R language">R language</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#Sweave" title="Sweave">Sweave</a>&nbsp;
+  
+  <a href="/tags/#数学推导" title="数学推导">数学推导</a>&nbsp;
+  
+  <a href="/tags/#经济学论文" title="经济学论文">经济学论文</a>&nbsp;
+  
+  <a href="/tags/#统计模拟" title="统计模拟">统计模拟</a>&nbsp;
+  
+  <a href="/tags/#统计计算" title="统计计算">统计计算</a>&nbsp;
+  
+  <a href="/tags/#自动化" title="自动化">自动化</a>&nbsp;
+  
+  <a href="/tags/#计算机" title="计算机">计算机</a>&nbsp;
+  
+  <a href="/tags/#逻辑分析" title="逻辑分析">逻辑分析</a>&nbsp;
+  
+</span>
+
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2010/04/10/no-advertisement/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://williamlfang.github.com/cn/2010/04/15/knowledge-and-common-sense/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-24 19:54:26</span></small></p>
+</footer>
+
+  </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+</html>

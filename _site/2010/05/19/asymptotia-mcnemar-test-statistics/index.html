@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>渐近理想国：McNemar检验的两种统计量 | William Fang</title>    -->
+    <title>渐近理想国：McNemar检验的两种统计量 | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<script type="text/javascript" src="/media/js/outliner.js"></script>
+<!--=================================================================== -->
+  <script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+  <!--=================================================================== -->
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>渐近理想国：McNemar检验的两种统计量</h1>
+        </header>
+        <nav id="real_nav">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+        <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>如同经济学家不讲道德一样（学过经济学的人都知道这句话的意思），理论统计学家从某种程度上来说也不讲道德。我们常用的一些统计量通常都渐近服从某种分布（以卡方和正态为典型），看起来做理论的人对这些渐近理论都非常骄傲和自豪，我们在学习过程中也要一代一代传承下去。数学公式摆出来当然能唬人，也许唬到最后大家都为光着屁股的皇帝欢呼。坦白说，我对这些东西感到非常厌倦。</p>
+
+<p>近日来收到邮件少了，但各个问题都不太好直接回答。比如这则关于McNemar检验的问题：McNemar检验可以有两种形式的统计量，一为(b - c)2/(b + c)，一为2b<em>log(2b/(b+c)) + 2c</em>log(2c/(b+c))，其中b和c是列联表非对角线上的频数。前者是McNemar检验本身的统计量，可以根据渐近正态分布得来（然后平方得到卡方），后者是似然比统计量（不带约束的似然除以带约束的，取对数，乘2）。McNemar检验看似复杂，实际上可以简化为检验b = c，或等价于检验一个n = b+c的二项分布中，是否p = 1/2（观察到X = b或c）。现在的问题是，这两种统计量有没有优劣之分？</p>
+
+<p>作为一个懒得推公式的人，我向来喜欢用模拟回答问题，因为模拟的结果非常直截了当。我的考虑是，要看渐近统计量的优劣，那就看随着n增大，统计量和渐近分布有多接近好了。一个自然而然的想法当然是对若干统计量的观测值做分布检验了，比如KS检验。我们知道这两个统计量都是自由度为1的卡方分布，剩下的事情就是计算：</p>
+
+<pre><code>set.seed(123)
+nmax = 1000
+p = matrix(nrow = nmax, ncol = 2)
+for (n in 2:nmax) {
+    # 生成服从二项分布的随机数，分别计算两种统计量并作KS检验、记录P值
+    b = rbinom(500, n, 0.5)
+    x1 = (b - (n - b))^2/n
+    x2 = 2 * b * log(2 * b/n) + 2 * (n - b) * log(2 * (n - b)/n)
+    p[n, 1] = ks.test(x1, "pchisq", df = 1)$p.value
+    p[n, 2] = ks.test(x2, "pchisq", df = 1)$p.value
+}
+# 调整一下数据格式，画图：随着n增大，P值如何变化？
+library(ggplot2)
+d = melt(p, varnames = c("n", "method"))
+d$method = factor(d$method, labels = c("McNemar", "LRT"))
+colnames(d)[3] = "p.value"
+qplot(n, p.value, data = d, shape = method, geom = c("smooth", "point")) +
+    scale_shape_manual(values = c(2, 3))
+</code></pre>
+
+<p>[caption id="attachment_1354" align="aligncenter" width="600" caption="McNemar检验统计量与卡方分布拟合的好坏"]<a href="http://yihui.name/cn/wp-content/uploads/2010/05/McNemar-test.png"><img src="http://yihui.name/cn/wp-content/uploads/2010/05/McNemar-test.png" alt="McNemar检验统计量与卡方分布拟合的好坏" /></a>[/caption]</p>
+
+<p>实际上，两种统计量与卡方分布的接近程度几乎是一样的，对于每一个n，KS检验得到的P值都差不多，可以看见图上两种方法检验得到的P值基本上是重叠的（其实也意味着统计量的值差不多），而n过了200之后，统计量基本上和卡方分布拟合比较好，即P值较大，但这种关系并不严格。</p>
+
+<p>渐近理想国（asymptotia），来自Little (2006)在The American Statistician的文章，这词在英语词典中查不到，我将它翻译为“渐近理想国”。该文章是讲频率学派与贝叶斯学派的争论，提到人们对“渐近”的无奈：一个步履蹒跚的旅人，心想这理想国嘛时候才能到达呢？</p>
+
+<p>至少在McNemar检验中，这个问题有了一个模糊的答案。</p>
+
+</section>
+<section class="meta">
+
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2010/05/09/keep-on-eating/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://williamlfang.github.com/cn/2010/05/21/missing/" class="pageNav"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2010-05-19">2010-05-19</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Featured" title="Featured">Featured</a>&nbsp;
+  
+  <a href="/categories/#Statistics" title="Statistics">Statistics</a>&nbsp;
+  
+  <a href="/categories/#R language" title="R language">R language</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#KS检验" title="KS检验">KS检验</a>&nbsp;
+  
+  <a href="/tags/#McNemar检验" title="McNemar检验">McNemar检验</a>&nbsp;
+  
+  <a href="/tags/#列联表" title="列联表">列联表</a>&nbsp;
+  
+  <a href="/tags/#卡方统计量" title="卡方统计量">卡方统计量</a>&nbsp;
+  
+  <a href="/tags/#渐近理论" title="渐近理论">渐近理论</a>&nbsp;
+  
+  <a href="/tags/#统计模拟" title="统计模拟">统计模拟</a>&nbsp;
+  
+  <a href="/tags/#配对数据" title="配对数据">配对数据</a>&nbsp;
+  
+</span>
+
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2010/05/09/keep-on-eating/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://williamlfang.github.com/cn/2010/05/21/missing/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-24 19:54:26</span></small></p>
+</footer>
+
+  </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>暑假轨迹 | William Fang</title>    -->
+    <title>暑假轨迹 | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<script type="text/javascript" src="/media/js/outliner.js"></script>
+<!--=================================================================== -->
+  <script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+  <!--=================================================================== -->
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>暑假轨迹</h1>
+        </header>
+        <nav id="real_nav">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+        <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>很久没来堆点文字，各位客官想必已经觉得此处荒草丛生了。这个暑假东奔西跑，在自家山沟沟里没网络，所以没更新，后来在别的地方每每想操起键盘写两个字，又觉得还有很多事情要做，所以迟迟未动手。再后来，不小心来美国了，初来乍到，种种事情要应付，也就更没工夫写。如今暂时尘埃落定，特向各位客官报个平安，概括这两个月的路径如下：</p>
+
+<p>[caption id="attachment_1060" align="aligncenter" width="600" caption="洒家于暑假在地球上的轨迹"]<a href="http://yihui.name/cn/wp-content/uploads/2009/08/travel-in-summer.gif"><img src="http://yihui.name/cn/wp-content/uploads/2009/08/travel-in-summer.gif" alt="洒家于暑假在地球上的轨迹" /></a>[/caption]</p>
+
+<pre><code>library(maps)
+x = structure(list(city = c("Beijing", "Yichang",
+    "Qingdao", "Tokyo", "Seattle", "Minneapolis", "DC", "Ames"),
+    latitude = c(39.908173, 30.691967, 36.066348, 35.689488,
+        47.620973, 44.977482, 38.892091, 42.022864), longitude = c(116.397947,
+        111.286471, 120.382771, 139.691706, -122.347276, -93.264351,
+        -77.024055, -93.626792)), .Names = c("city", "latitude",
+    "longitude"), row.names = c(NA, -8L), class = "data.frame")
+library(animation)
+##saveMovie({
+    idx = c( 1, 2, 1, 3, 1, 4, 5, 6, 7, 8 )
+    for (i in 1:length(idx)) {
+        map(xlim = c(-128, 158), ylim = c(17, 54))
+        text(-48, 32, x$city[idx[i]], font = 2)
+        points(x$longitude, x$latitude, pch = 20, col = "red")
+        if (i &gt; 1)
+            arrows(x$longitude[idx[i - 1]], x$latitude[idx[i -
+                1]], x$longitude[idx[i]], x$latitude[idx[i]],
+                length = 0.1, col = "gray")
+        points(x$longitude[idx[i]], x$latitude[idx[i]], pch = 19,
+            col = "blue")
+        Sys.sleep(1)
+    }
+##}, moviename = "travel-in-summer", outdir = getwd(), para = list(mar = rep(0,
+##    4)), width = 600, height = 100)
+</code></pre>
+
+<p>细节就不多说了。俺没有相机，所以也不上照片了，八卦的客官请自行到人人网上俺某师弟的页面上以及美国统计学会的统计计算和图形部门网站上扒拉，万一不小心扒到了请自个儿偷着乐，别吱声。</p>
+
+<p>Iowa就是一片大农场，这地方，有人觉得是地狱，有人觉得是天堂。因为除了学习就是运动，没什么太多吃喝玩乐的地方。昨天俺们Dan Nordman老师说，晚上你要是觉得无聊了，不妨把讲义上的定理3拿出来证明一下，那定理还是有一定难度的（意即：可以打发足够多的时间）。</p>
+
+<p>现在的生活基本上浓缩为“上课+做饭”，每天柴米油盐，做饭比学习还用功，不亦乐乎，做了几天米饭，稀饭干饭米饭丸子炸锅巴都试遍了，又跑去整了一袋面粉回来琢磨怎么蒸馒头、下面条。</p>
+
+<p>咳咳，怎么一说做饭就没完了，虽然技术还很差。呃，可能是本次来到美帝，觉得资本主义国家的人都生活在水深火热中，只能吃面包夹生菜这么初级的食物，还是我中土大唐好啊，吃嘛嘛香。</p>
+
+<p>最后向各位关心小的的大人们表示感谢，ISU这边有几位COS会员也给我很多帮助，还有，在这里终于见到了传说中的Rtist大人，俺们COS论坛上的老辈们应该都知道这位神一般的人物，尤其是colinisstudent童鞋，多次问我有没有见到Rtist。俺刚到这里，Rtist就为俺送来了桌子椅子，还有字帖。</p>
+
+</section>
+<section class="meta">
+
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2009/06/19/how-to-build-a-website-as-a-dummy/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://williamlfang.github.com/cn/2009/09/15/liu-nian/" class="pageNav"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2009-08-28">2009-08-28</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Life" title="Life">Life</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#Ames" title="Ames">Ames</a>&nbsp;
+  
+  <a href="/tags/#Iowa" title="Iowa">Iowa</a>&nbsp;
+  
+  <a href="/tags/#Washington DC" title="Washington DC">Washington DC</a>&nbsp;
+  
+  <a href="/tags/#北京" title="北京">北京</a>&nbsp;
+  
+  <a href="/tags/#地球村" title="地球村">地球村</a>&nbsp;
+  
+  <a href="/tags/#宜昌" title="宜昌">宜昌</a>&nbsp;
+  
+  <a href="/tags/#暑假" title="暑假">暑假</a>&nbsp;
+  
+  <a href="/tags/#民以食为上帝" title="民以食为上帝">民以食为上帝</a>&nbsp;
+  
+  <a href="/tags/#青岛" title="青岛">青岛</a>&nbsp;
+  
+</span>
+
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2009/06/19/how-to-build-a-website-as-a-dummy/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://williamlfang.github.com/cn/2009/09/15/liu-nian/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-24 19:54:26</span></small></p>
+</footer>
+
+  </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+</html>

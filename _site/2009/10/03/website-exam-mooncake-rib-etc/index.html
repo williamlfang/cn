@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>学院网站、考试、月饼、排骨及其它 | William Fang</title>    -->
+    <title>学院网站、考试、月饼、排骨及其它 | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<script type="text/javascript" src="/media/js/outliner.js"></script>
+<!--=================================================================== -->
+  <script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+  <!--=================================================================== -->
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>学院网站、考试、月饼、排骨及其它</h1>
+        </header>
+        <nav id="real_nav">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+        <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>先说学院网站：听说院里又要花钱请人做网站，我一听，赶紧让小邱同志和小蒋同志快马加鞭，争取劫下这一镖，因为我能料到，请人做的网站将成为一个烂系统的概率大于95%（就像学校那个烂系统一样），我个人很是不相信那些做网站的公司。有了无敌的免费的开源的Wordpress，啥网站做不出来啊？这二位呢，任务一说就做，问题一点就通，我是满心欢喜啊，特此书面表扬（算是回答fan的问题吧）。不过我担心的是，小邱做事情太认真，太富有钻研精神了，这一镖要是劫不下来，怕是要浪费很多时间啊。我要不要跟领导旁敲侧击一下，考虑中……</p>
+
+<p>再说考试：话说这门高等概率论，部分回放了当年我经常昏睡的实变函数课堂，不知道我脑子里是不是缺根数学筋，我对纯粹抽象的东西就是上不了路，总也想不明白，历史上是怎么想到那些证明技巧的，而且花了很大的力气最后证明了一个看似很显然的结论。我只对$latex \epsilon$表示随机误差项的学科感兴趣，对$latex \epsilon$表示$latex \forall \epsilon>0$的学科实在提不起兴趣。这次期中考试自然是盯着什么简单函数什么可测空间发愣了。下周我要重新整理一下那四五十个推论，也许学这种课就是体力活，看多了做多了也就上路了。但无论如何，我还是一眼望不到究竟这些东西对统计学有什么深远的影响。我知道这样的话一定会招来长者或行家的批评，你一臭小子，懂什么？叫你打好基础，你还这么多废话。但我心中就是有个悖论：既然那些抽象的定理是正确的，为什么一代又一代的人都要从头学起，难道就没有哪一天能让某些东西成为公理么？定义一个Lebesgue积分，都要先从直线上的区间讲起，有了区间再去覆盖集合，取了下极限，集合就有了外测度，然后定义测度和可测集合，有了可测集，再定义可测函数，为了研究可测函数的积分，先定义基于可测集的简单函数的积分，然后用简单函数去夹住非负函数定义非负函数的积分，然后把一般的函数分为正部和负部，最终定义出一般函数的积分。传说Lebesgue积分比Riemann积分优越，通常的例子都是Dirichlet函数用Riemann不可积，但Lebesgue可积，而我觉得通过定义解决的问题，就如同改变了裁判一样。数学家们为什么不多给一些例子，来说明Lebesgue的伟大贡献及其积分的广泛意义？或者，生活中有Dirichlet函数么？回到统计的世界，我看到的仍然到处都是Riemann可积的函数，上哪儿找那种处处不连续的函数去？我们所知道的所有统计分布，有哪一个是变态到处处不连续的，而我们关心的样本空间的子集，又有哪一个是不可测的？呃，不废话了，看书才是正道。也许再过两个月回来看，会发现我问了一堆傻问题。</p>
+
+<p>然后是月饼：中秋节嘛，自然要整点儿月饼，于是乎，一群人杀往Lin家，本小子现在对做东西是无知者无畏，没做过，管它呢，捋起袖子，甩开膀子，拿出笔记本现查，看上十五分钟，面盆倒上二斤面，半斤糖浆，几瓢油，搅和一下，便开揉，话说月饼面还真是不好揉，因为用的是低粘度的面粉，很容易散，没怎么加水，就更干了，好不容易揉好装进袋子搁一边醒着，过了一个小时再看，完蛋鸟，面团太硬，于是乎，把面团重新打散，加点牛奶当水用，又花了半天功夫重新把面揉拢了，切成小块，本小子可是从小搓泥巴长大的，把面团搓成小圆球不在话下，刷刷就出来十八个圆滚滚的面球（无图无真相），在那边喝啤酒聊天的群众过来厨房一看，嗬，有模有样嘛，于是乎，众人围上来捏的捏，擀的擀，塞蛋黄的塞蛋黄，填豆沙的填豆沙，最后把十八个面团子压进模具，最后一哄而散打麻将去了，Yang同学见我们做工粗糙，又把一些月饼重新整容了一下，扔进烤箱，烤啊烤，刷了蜂蜜，再烤啊烤。最后拖出来一看，月饼一半白的一半黑的，白的是因为我面粉放多了，黑的是烤糊了……这异国他乡的，哪管那么多，月黑风高夜，杀人越饼时，众人各自分得黑白月饼作鸟兽散。回来再上网瞅瞅，发现也不一定那么失败——月饼烤出来要放两天让它“回油”，到时候才有好看的颜色（当然烤糊了的除外）。</p>
+
+<p>然后呢今天中午做排骨：排骨应该也是做不坏的东西。我以前没有发现蒜瓣在哪里有卖，所以只有葱姜花椒可用，后来总算发现了，买得大蒜贰颗，中午用水煮了排骨去血水，下油下蒜片下排骨下老干妈，炒得满屋飘香，室友忍不住跑出来：太香了太香了，你终于得道了，来，看我，一二，咔嚓。我便在厨房里蓬头垢面被拍了一张照片。下午去参加系里野餐，完毕去亚洲超市购得料酒一瓶，厨房的东西一天天齐备了。</p>
+
+<p>作为国庆的特别礼物，敬请各位用R的客官移步观看小邱的大作：<a href="http://cos.name/cn/topic/16743">rgl版的“我的中国心”</a>。短评：R里面只有你不知道的，没有不能实现的。</p>
+
+<p>报名参加了学校的乒乓球赛，周一晚上九点半预备赛，周日正式比赛，我看参加比赛的大多都是老外，不知是不是意味着多了几分胜算，不过也不好说，能参加比赛，水平肯定不会差，有些老外乒乓球也很强的，我是几个月没摸过乒乓球了，也没带自己的球拍。管它呢，去玩玩吧。</p>
+
+</section>
+<section class="meta">
+
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2009/09/27/september-life-in-ames/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://williamlfang.github.com/cn/2009/10/10/50000-revisions-committed-to-r/" class="pageNav"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2009-10-03">2009-10-03</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Life" title="Life">Life</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#排骨" title="排骨">排骨</a>&nbsp;
+  
+  <a href="/tags/#月饼" title="月饼">月饼</a>&nbsp;
+  
+  <a href="/tags/#民以食为上帝" title="民以食为上帝">民以食为上帝</a>&nbsp;
+  
+  <a href="/tags/#统计学院" title="统计学院">统计学院</a>&nbsp;
+  
+  <a href="/tags/#网站" title="网站">网站</a>&nbsp;
+  
+  <a href="/tags/#考试" title="考试">考试</a>&nbsp;
+  
+</span>
+
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2009/09/27/september-life-in-ames/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://williamlfang.github.com/cn/2009/10/10/50000-revisions-committed-to-r/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-24 19:54:26</span></small></p>
+</footer>
+
+  </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+</html>

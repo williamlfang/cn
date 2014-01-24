@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>用R获取郑州商品交易所历史数据 - 雁起平沙的网络日志</title>
+  <meta name="author" content="ypchen">
+
+  
+  <meta name="description" content="本文主要讨论如何用R语言从郑州商品交易所网站上获取期货合约交易数据">
+  <meta name="keywords" content="R语言, 金融数据, 金融工程">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yanping.me/cn/blog/2013/02/09/get-zce-data">
+  <link href="/cn/favicon.png" rel="icon">
+  <link href="/cn/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/cn/javascripts/modernizr-2.0.js"></script>
+  <script src="/cn/javascripts/ender.js"></script>
+  <script src="/cn/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/cn/atom.xml" rel="alternate" title="雁起平沙的网络日志" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script src="/cn/javascripts/jquery-1.7.1.min.js" type="text/javascript"></script> 
+
+  <!-- Add fancyBox main JS and CSS files -->
+  <script type="text/javascript" src="/cn/assets/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" type="text/css" href="/cn/assets/fancybox/jquery.fancybox.css" media="screen" />
+
+	<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      	inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    	displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/cn/">雁起平沙的网络日志</a></h1>
+  
+    <h2>数量金融与R</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/cn/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+
+<ul class="main-navigation">
+  <li><a href="/cn/">博客主页</a></li>
+  <li><a href="/cn/blog/archives">文章列表</a></li>
+  <li><a href="/cn/blog/categories">分类目录</a></li>
+  <li><a href="/cn/blog/categories/金融工程">金融工程</a></li>
+  <li><a href="/cn/blog/r-lang">R语言</a></li>
+  <li><a href="/cn/blog/categories/数据科学">数据科学</a></li>
+  <li><a href="/cn/blog/categories/网站设计">网站设计</a></li>
+  <li><a href="/cn/blog/about">关于本站</a></li>
+  <li><a href="/cn/blog/contact">商业合作</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">用R获取郑州商品交易所历史数据</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-09T20:00:00+08:00" pubdate data-updated="true">Feb 9<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p class="info">本文主要讨论如何用R语言从郑州商品交易所网站上获取期货合约交易数据</p>
+
+<p>郑商所网站提供了查询每日行情的<a href="http://www.czce.com.cn/portal/jysj/mrhq/A091101index_1.htm">页面</a>，它提供的数据比大商所的要复杂一些，2010年至2013年的网页格式一样，地址也是同样的形式，请看</p>
+
+<ul>
+  <li><a href="http://www.czce.com.cn/portal/exchange/2010/datadaily/20100105.htm">http://www.czce.com.cn/portal/exchange/2010/datadaily/20100105.htm</a></li>
+  <li><a href="http://www.czce.com.cn/portal/exchange/2011/datadaily/20110105.htm">http://www.czce.com.cn/portal/exchange/2011/datadaily/20110105.htm</a></li>
+  <li><a href="http://www.czce.com.cn/portal/exchange/2012/datadaily/20120104.htm">http://www.czce.com.cn/portal/exchange/2012/datadaily/20120104.htm</a></li>
+  <li><a href="http://www.czce.com.cn/portal/exchange/2013/datadaily/20130104.htm">http://www.czce.com.cn/portal/exchange/2013/datadaily/20130104.htm</a></li>
+</ul>
+
+<p>打开网页可以看到，网页提供了“打印”，“Excel”和“txt”三个选项，只要把地址后面的<code>.html</code>改为<code>.txt</code>就可以得到文本格式的数据，那么就可以逐一下载数据文件，读入数据。</p>
+
+<p>这四年的数据可以这样获取：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span /></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">getZceData <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>dates<span class="p">){</span>
+</span><span class="line">  require<span class="p">(</span>RCurl<span class="p">)</span>
+</span><span class="line">  zceDatabase <span class="o">&lt;-</span> data.frame<span class="p">()</span>
+</span><span class="line">  <span class="kr">for</span> <span class="p">(</span>date in dates<span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    str1 <span class="o">&lt;-</span> <span class="s">&quot;http://www.czce.com.cn/portal/exchange/&quot;</span>
+</span><span class="line">    str2 <span class="o">&lt;-</span> <span class="s">&quot;/datadaily/&quot;</span>
+</span><span class="line">    date <span class="o">&lt;-</span> as.character<span class="p">(</span>date<span class="p">)</span>
+</span><span class="line">    year <span class="o">&lt;-</span> substr<span class="p">(</span>date<span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+</span><span class="line">    url <span class="o">&lt;-</span> paste<span class="p">(</span>str1<span class="p">,</span> year<span class="p">,</span> str2<span class="p">,</span> date<span class="p">,</span> <span class="s">&quot;.txt&quot;</span><span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class="line">    <span class="kr">if</span> <span class="p">(</span>!url.exists<span class="p">(</span>url<span class="p">))</span> <span class="p">{</span>
+</span><span class="line">      next
+</span><span class="line">    <span class="p">}</span> <span class="kr">else</span> <span class="p">{</span>
+</span><span class="line">      colnames <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&quot;品种月份&quot;</span><span class="p">,</span> <span class="s">&quot;昨结箿&quot;</span><span class="p">,</span> <span class="s">&quot;今开盘&quot;</span><span class="p">,</span> <span class="s">&quot;最高价&quot;</span><span class="p">,</span> <span class="s">&quot;最低价&quot;</span><span class="p">,</span>
+</span><span class="line">        <span class="s">&quot;今收盘&quot;</span><span class="p">,</span> <span class="s">&quot;今结算&quot;</span><span class="p">,</span> <span class="s">&quot;涨跌1&quot;</span><span class="p">,</span> <span class="s">&quot;涨跌2&quot;</span><span class="p">,</span> <span class="s">&quot;成交量&quot;</span><span class="p">,</span> <span class="s">&quot;空盘量&quot;</span><span class="p">,</span>
+</span><span class="line">        <span class="s">&quot;增减量&quot;</span><span class="p">,</span> <span class="s">&quot;成交额&quot;</span><span class="p">,</span> <span class="s">&quot;交割结算价&quot;</span><span class="p">)</span>
+</span><span class="line">      fileName <span class="o">&lt;-</span> paste<span class="p">(</span><span class="s">&quot;zce&quot;</span><span class="p">,</span> date<span class="p">,</span> <span class="s">&quot;.txt&quot;</span><span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class="line">
+</span><span class="line">      <span class="kr">if</span> <span class="p">(</span>!file.exists<span class="p">(</span>fileName<span class="p">))</span> <span class="p">{</span>
+</span><span class="line">        download.file<span class="p">(</span>url<span class="p">,</span> fileName<span class="p">,</span> quiet <span class="o">=</span> <span class="k-Variable">T</span><span class="p">)</span>
+</span><span class="line">      <span class="p">}</span>
+</span><span class="line">      zceData <span class="o">&lt;-</span> read.table<span class="p">(</span>fileName<span class="p">,</span> header <span class="o">=</span> <span class="k-Variable">F</span><span class="p">,</span> skip <span class="o">=</span> <span class="m">1</span><span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;,&quot;</span><span class="p">,</span> col.names <span class="o">=</span> colnames<span class="p">)</span>
+</span><span class="line">      zceData <span class="o">&lt;-</span> zceData<span class="p">[(</span>zceData<span class="p">[,</span> <span class="m">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;小计&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span>zceData<span class="p">[,</span> <span class="m">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;总计&quot;</span><span class="p">),</span> <span class="p">]</span>
+</span><span class="line">      zceData<span class="p">$</span>date <span class="o">&lt;-</span> date
+</span><span class="line">      zceDatabase <span class="o">&lt;-</span> rbind<span class="p">(</span>zceDatabase<span class="p">,</span> zceData<span class="p">)</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">  <span class="p">}</span>
+</span><span class="line">  <span class="kr">return</span><span class="p">(</span>zceDatabase<span class="p">)</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>但是查询2009年及之前的数据返回的是网页形式，那就需要从网页上读取。</p>
+
+<p>看下面几个链接</p>
+
+<ul>
+  <li><a href="http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20060106.html">http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20060106.html</a></li>
+  <li><a href="http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20070104.html">http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20070104.html</a></li>
+  <li><a href="http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20080104.html">http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20080104.html</a></li>
+  <li><a href="http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20090105.html">http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20090105.html</a></li>
+</ul>
+
+<p>网页格式很统一，数据在被table标签包裹，并且是在第二个table标签中，XML包的<code>readHTMLTable</code>函数可以读取table标签中的内容，但是当网页中有汉字的时候，汉字会变成乱码，慎用！</p>
+
+<p>不过，本文的情况有点特殊，汉字只出现在table的第一行表头，以及“小计”、“总计”的行，这些行本来就是要去掉的，所以对我们没影响。</p>
+
+<p>下面只给出关键代码：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span /></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">require<span class="p">(</span>XML<span class="p">)</span>
+</span><span class="line">require<span class="p">(</span>stringr<span class="p">)</span>
+</span><span class="line">url <span class="o">&lt;-</span> <span class="s">&quot;http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20060106.html&quot;</span>
+</span><span class="line">tb <span class="o">&lt;-</span>readHTMLTable<span class="p">(</span>url<span class="p">)[[</span><span class="m">2</span><span class="p">]]</span>
+</span><span class="line">tb <span class="o">&lt;-</span> sapply<span class="p">(</span>tb<span class="p">,</span>str_trim<span class="p">)</span>
+</span><span class="line">df <span class="o">&lt;-</span>as.data.frame<span class="p">(</span>apply<span class="p">(</span>tb<span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> iconv<span class="p">(</span>x<span class="p">,</span> from <span class="o">=</span> <span class="s">&quot;gb2312&quot;</span><span class="p">,</span> to <span class="o">=</span> <span class="s">&quot;UTF-8&quot;</span><span class="p">)))</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>再把第一列为NA的行去除就行了。</p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard"><span class="fn">ypchen</span>发布于</span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-09T20:00:00+08:00" pubdate data-updated="true">Feb 9<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+	分类：
+  
+    <a class='category' href='/cn/blog/categories/r语言/'>R语言</a>, <a class='category' href='/cn/blog/categories/金融工程/'>金融工程</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+ 
+	<!-- JiaThis Button BEGIN -->
+	<div id="ckepop">
+		<span class="jiathis_txt">分享到： </span>
+		<a class="jiathis_button_tools_1"></a>
+		<a class="jiathis_button_tools_2"></a>
+		<a class="jiathis_button_tools_3"></a>
+		<a class="jiathis_button_tools_4"></a>
+		<a href="http://www.jiathis.com/share?uid=1558027" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+		<a class="jiathis_counter_style"></a>
+	</div>
+	
+	<!-- JiaThis Button END -->
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/cn/blog/2012/12/09/get-dce-data/" title="Previous Post: 用R获取大连商品交易所历史数据">&laquo; 用R获取大连商品交易所历史数据</a>
+      
+      
+        <a class="basic-alignment right" href="/cn/blog/2013/02/10/cntrade-r-version/" title="next Post: R语言版的cntrade程序">R语言版的cntrade程序 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yanping.me/cn" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+</section>
+<section id="categories_tag">
+<h1>分类目录</h1>
+<span class='categories_tag'> <a href='/cn/blog/categories/github' style='font-size: 138.1818181818182%'>Github(7)</a>  <a href='/cn/blog/categories/javascript' style='font-size: 127.27272727272728%'>Javascript(5)</a>  <a href='/cn/blog/categories/jekyll' style='font-size: 154.54545454545456%'>Jekyll(10)</a>  <a href='/cn/blog/categories/latex' style='font-size: 105.45454545454545%'>Latex(1)</a>  <a href='/cn/blog/categories/markdown' style='font-size: 105.45454545454545%'>Markdown(1)</a>  <a href='/cn/blog/categories/octopress' style='font-size: 143.63636363636363%'>Octopress(8)</a>  <a href='/cn/blog/categories/r语言' style='font-size: 160.0%'>R语言(11)</a>  <a href='/cn/blog/categories/指数' style='font-size: 105.45454545454545%'>指数(1)</a>  <a href='/cn/blog/categories/数据科学' style='font-size: 105.45454545454545%'>数据科学(1)</a>  <a href='/cn/blog/categories/网站设计' style='font-size: 138.1818181818182%'>网站设计(7)</a>  <a href='/cn/blog/categories/金融工程' style='font-size: 127.27272727272728%'>金融工程(5)</a> </span>
+</section>
+
+<section>
+  <h1>近期文章</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/cn/blog/2013/08/12/about-github-pages-step-by-step-video/" title="关于Github Pages 视频教程">关于Github Pages 视频教程</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cn/blog/2013/08/11/github-pages-step-by-step-video/" title="Github Pages 视频教程（1）">Github Pages 视频教程（1）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cn/blog/2013/06/30/xccds-r-training/" title="【广告】上海北京两地的R语言培训">【广告】上海北京两地的R语言培训</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cn/blog/2013/05/25/software-engineers-guide-to-getting/" title="【译文】软件工程师如何修炼数据科学">【译文】软件工程师如何修炼数据科学</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cn/blog/2013/05/15/the-art-of-r-programming-published/" title="《R语言编程艺术》即将上市">《R语言编程艺术》即将上市</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cn/blog/2013/02/13/generate-tags-with-js-in-jekyll-blog/" title="用js在jekyll博客中实现标签云和标签页">用js在jekyll博客中实现标签云和标签页</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cn/blog/2013/02/10/get-data-from-flash/" title="用R获取flash中的数据">用R获取flash中的数据</a>
+      </li>
+    
+  </ul>
+</section>
+<section id="comment_sidebar">
+<h1>近期评论</h1>
+
+<script type="text/javascript" src="http://ypchencn.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=20"></script><a href="http://disqus.com/">Powered by Disqus</a>
+
+</section>
+<section class="blogroll">
+<h1>友情链接</h1>
+<a target="_blank" href="http://yihui.name/">谢益辉</a>&nbsp;|&nbsp; <a target="_blank" href="http://loyhome.com">丽云</a>&nbsp;|&nbsp; <a target="_blank" href="http://bjt.name">刘思喆</a>&nbsp;|&nbsp; <a target="_blank" href="http://jliblog.com">李舰</a>&nbsp;|&nbsp; <a target="_blank" href="http://tracy.cos.name/cn">熊熹师姐</a>&nbsp;|&nbsp; <a target="_blank" href="http://blog.cos.name/fan/">范建宁</a>&nbsp;|&nbsp; <a target="_blank" href="http://yishuo.org">邓一硕</a>&nbsp;|&nbsp; <a target="_blank" href="http://yixuan.cos.name/cn">邱怡轩</a>&nbsp;|&nbsp; <a target="_blank" href="http://blog.cos.name/taiyun/">魏太云</a>&nbsp;|&nbsp; <a target="_blank" href="http://xccds.github.io/">肖凯</a>&nbsp;|&nbsp; <a target="_blank" href="http://demi-panda.com/">熊猫家族</a>&nbsp;|&nbsp; <a target="_blank" href="http://joegaotao.github.io/cn">高涛</a>
+</section>
+
+<section class="blogroll">
+<h1>有用的链接</h1>
+<a target="_blank" href="http://cos.name/">统计之都</a>&nbsp;|&nbsp; <a target="_blank" href="http://rucdmc.net/">人大数据挖掘中心</a>&nbsp;|&nbsp; <a target="_blank" href="http://ismartdata.com/">智数营</a>&nbsp;|&nbsp; <a target="_blank" href="http://www.guardian.co.uk/data">卫报数据新闻</a>
+</section>
+
+<section>
+<iframe width="100%" height="110" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=110&fansRow=2&ptype=1&speed=300&skin=2&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1780626537&verifier=d1d5f291&dpc=1"></iframe>
+</section>
+
+
+
+
+
+<section id="copyleft">
+<h1>版权协议</h1>
+	
+	<p align="center"> <a target="_ blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/"><img src="http://i.creativecommons.org/l/by-nc-sa/2.5/cn/88x31.png" alt="Creative Commons License"/></a></p>
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/">CC2.5: 知识共享署名-非商业性使用</a>
+</section>
+<section>
+<h1>Feed订阅</h1>
+<div style="text-align: center;">
+<!-- Feedsky FEED发布代码开始 -->
+<!-- FEED自动发现标记开始 -->
+<link target="_blank" rel="alternate" href="http://feed.yanping.me" type="application/rss+xml" title="RSS 2.0"/>
+<!-- FEED自动发现标记结束 -->
+<a target="_blank" href="http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="feedsky" src="http://yanping.me/images/feed-icon.gif"/></a><br/>
+</div>
+<div style="text-align: center;">
+<a target="_blank" href="http://www.zhuaxia.com/add_channel.php?url=http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="抓虾" src="http://yanping.me/images/icon_zhuaxia.gif"/></a><a target="_blank" href="http://www.xianguo.com/subscribe.php?url=http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="鲜果" src="http://yanping.me/images/icon_xianguo.gif"/></a><br/>
+<a target="_blank" href="http://fusion.google.com/add?feedurl=http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="google reader" src="http://yanping.me/images/icon_google.gif"/></a><a target="_blank" href="http://mail.qq.com/cgi-bin/feed?u=http://feed.yanping.me"><img vspace="2" border="0" style="margin-bottom: 3px;" alt="QQ邮箱" src="http://yanping.me/images/icon_qq.gif"/></a><br/>
+</div>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo">
+<p>
+  Copyright &copy; 2013 - ypchen -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".fancybox").fancybox({
+    openEffect  : 'none',
+    closeEffect : 'none'
+  });
+});
+</script>
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ypchencn';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://yanping.me/cn/blog/2013/02/09/get-zce-data/';
+        var disqus_url = 'http://yanping.me/cn/blog/2013/02/09/get-zce-data/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-27377274-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+
+
+
+	<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
+	<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1558027" charset="utf-8"></script>
+
+
+
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+<script type="text/javascript">
+    
+        $(document).ready(function(){             
+
+            $('.entry-content a').each(function(index,element){
+                var href = $(this).attr('href');
+                if(href.indexOf('#') == 0){
+                }else if ( href.indexOf('/') == 0 || href.toLowerCase().indexOf('yanping.me')>-1 ){
+                }else{
+                    $(this).attr('target','_blank');
+                    $(this).addClass('external');
+                }
+            });
+           
+        });	
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

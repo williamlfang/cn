@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类： 金融工程 | 雁起平沙的网络日志]]></title>
+  <link href="http://yanping.me/cn/blog/categories/金融工程/atom.xml" rel="self"/>
+  <link href="http://yanping.me/cn/"/>
+  <updated>2013-10-24T00:33:41+08:00</updated>
+  <id>http://yanping.me/cn/</id>
+  <author>
+    <name><![CDATA[ypchen]]></name>
+    <email><![CDATA[chen@yanping.me]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[用R获取flash中的数据]]></title>
+    <link href="http://yanping.me/cn/blog/2013/02/10/get-data-from-flash/"/>
+    <updated>2013-02-10T02:00:00+08:00</updated>
+    <id>http://yanping.me/cn/blog/2013/02/10/get-data-from-flash</id>
+    <content type="html"><![CDATA[<p class="info">本文主要讨论如何用R语言从flash中获取数据</p>
+
+<p>某天我需要获取<a href="http://ifsfd.fudan.edu.cn/fdurmb/indexchart1.jsp">复旦人民币汇率指数</a>的数据。此前我们介绍过从网页抓取数据的两种方法</p>
+
+<ol>
+  <li>用url给服务器提交参数获取数据文件，例如<a href="/blog/2012/12/09/get-dce-data/">用R获取大连商品交易所历史数据</a>这篇文章里提到的方法</li>
+  <li>解析html代码以获取数据，例如<a href="/blog/2013/02/09/get-zce-data/">用R获取郑州商品交易所历史数据</a>这篇文章里提到的方法</li>
+</ol>
+
+<p>而复旦的这个网页，不提供数据文件的下载，从html中也不能解析出数据。实际上，该网页中的flash向服务器发送请求，服务器返回数据给flash并显示出图形和表格。</p>
+
+<p>用<a href="http://cos.name/cn/topic/107729">http://cos.name/cn/topic/107729</a>中<a href="http://www.road2stat.com/">Xiao Nan版主</a>介绍的办法，我用chrome看了下页面</p>
+
+<p><img src="http://i.imgur.com/OqZSfRa.png" alt="network -&gt; XHR" /></p>
+
+<p>可以看到，上图中的表是从2012年12月12日到2013年2月10日的数据，对应的数据来自<a href="http://ifsfd.fudan.edu.cn/fdurmb/data?type=0%2C1%2C2&amp;df=2012%2F12%2F12&amp;dt=2013%2F02%2F10">http://ifsfd.fudan.edu.cn/fdurmb/data?type=0%2C1%2C2&amp;df=2012%2F12%2F12&amp;dt=2013%2F02%2F10</a>，打开这个链接，可以看出这是JSON格式，用R的rjson和RJSONIO包都可以解析JSON格式的数据。</p>
+
+<p>我们来研究一下上面的这个链接，<code>df=2012%2F12%2F12&amp;dt=2013%2F02%2F10</code>规定了从开始到结束的日期，如果开始日期是YYYY年MM月DD日，结束日期是yyyy年mm月dd日，那么对应的字符串是<code>df=YYYY%2FMM%2FDD&amp;dt=yyyy%2Fmm%2Fdd</code></p>
+
+<p>那么文本开头提出的问题，可用下面的代码解决</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (readFudan.r)</span> <a href='/downloads/code/readFudan.r'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='r'><span class='line'><span class="c1"># 从复旦人民币汇率指数网站读取数据 http://ifsfd.fudan.edu.cn/fdurmb/indexchart1.jsp</span>
+</span><span class='line'><span class="c1"># 更多细节请看 http://cos.name/cn/topic/109132</span>
+</span><span class='line'>
+</span><span class='line'>require<span class="p">(</span>RCurl<span class="p">)</span>
+</span><span class='line'>require<span class="p">(</span>rjson<span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>fdjson <span class="o">&lt;-</span> getURL<span class="p">(</span><span class="s">&quot;http://ifsfd.fudan.edu.cn/fdurmb/data?type=0%2C1%2C2&amp;df=2012%2F12%2F12&amp;dt=2013%2F02%2F10&quot;</span><span class="p">)</span>
+</span><span class='line'>fdlist <span class="o">&lt;-</span> fromJSON<span class="p">(</span>fdjson<span class="p">)</span>
+</span><span class='line'>fdm <span class="o">&lt;-</span> matrix<span class="p">(</span>unlist<span class="p">(</span>fdlist<span class="p">),</span>ncol<span class="o">=</span><span class="m">4</span><span class="p">,</span>byrow<span class="o">=</span><span class="k-Variable">T</span><span class="p">)</span>
+</span><span class='line'>fddf <span class="o">&lt;-</span> data.frame<span class="p">(</span>fdm<span class="p">,</span> stringsAsFactors <span class="o">=</span> <span class="k-Variable">F</span><span class="p">)</span>
+</span><span class='line'>fddf<span class="p">[,</span><span class="m">2</span>:<span class="m">4</span><span class="p">]</span> <span class="o">&lt;-</span> sapply<span class="p">(</span>fddf<span class="p">[,</span><span class="m">2</span>:<span class="m">4</span><span class="p">],</span>as.numeric<span class="p">)</span>
+</span><span class='line'>colnames<span class="p">(</span>fddf<span class="p">)</span> <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&quot;date&quot;</span><span class="p">,</span><span class="s">&quot;人民币名义有效汇率指数&quot;</span><span class="p">,</span><span class="s">&quot;人民币实际有效汇率指数&quot;</span><span class="p">,</span><span class="s">&quot;人民币盯住一篮子货币模拟汇率指数&quot;</span><span class="p">)</span>
+</span><span class='line'>write.csv<span class="p">(</span>fddf<span class="p">,</span><span class="s">&quot;fudan.csv&quot;</span><span class="p">,</span>row.names <span class="o">=</span> <span class="k-Variable">F</span> <span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[R语言版的cntrade程序]]></title>
+    <link href="http://yanping.me/cn/blog/2013/02/10/cntrade-r-version/"/>
+    <updated>2013-02-10T02:00:00+08:00</updated>
+    <id>http://yanping.me/cn/blog/2013/02/10/cntrade-r-version</id>
+    <content type="html"><![CDATA[<p class="info">本文展示的是R语言版的cntrade程序</p>
+
+<p>李春涛和张璇两位老师写了个<a href="http://ideas.repec.org/c/boc/bocode/s457580.html">名叫cntrade的stata程序</a>，用来从网易财经网获取沪深两市股票日度行情数据。</p>
+
+<p>我用R重写了这个程序，请看：</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (cntrade.r)</span> <a href='/downloads/code/cntrade.r'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+</pre></td><td class='code'><pre><code class='r'><span class='line'><span class="c1"># cntrade R语言版 </span>
+</span><span class='line'><span class="c1"># 作者：陈堰平（统计之都，chen@yanping.me） </span>
+</span><span class='line'><span class="c1"># 使用网易股票数据接口 原stata版的作者为：</span>
+</span><span class='line'><span class="c1">#   李春涛（中南财经政法大学，chtl@znufe.edu.cn） </span>
+</span><span class='line'><span class="c1">#   张璇（中南财经政法大学，zhangx@znufe.edu.cn） </span>
+</span><span class='line'><span class="c1"># example: </span>
+</span><span class='line'><span class="c1">#   cntrade(c(&#39;600000&#39;, &#39;000008&#39;), path =&#39;D:/stockprice&#39;, start = 20010104, end = 20120124)</span>
+</span><span class='line'>
+</span><span class='line'>cntrade <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>tickers<span class="p">,</span> path <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> start <span class="o">=</span> <span class="m">19910101</span><span class="p">,</span> end <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>  address <span class="o">&lt;-</span> <span class="s">&quot;http://quotes.money.163.com/service/chddata.html&quot;</span>
+</span><span class='line'>  field <span class="o">&lt;-</span> <span class="s">&quot;&amp;fields=TCLOSE;HIGH;LOW;TOPEN;LCLOSE;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER;TCAP;MCAP&quot;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kr">if</span> <span class="p">(</span>path <span class="o">==</span> <span class="s">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    path <span class="o">&lt;-</span> getwd<span class="p">()</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kr">if</span> <span class="p">(</span>!file.exists<span class="p">(</span>path<span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>    dir.create<span class="p">(</span>path<span class="p">)</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kr">if</span> <span class="p">(</span>substr<span class="p">(</span>path<span class="p">,</span> nchar<span class="p">(</span>path<span class="p">),</span> nchar<span class="p">(</span>path<span class="p">))</span> <span class="o">!=</span> <span class="s">&quot;/&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    path <span class="o">&lt;-</span> paste<span class="p">(</span>path<span class="p">,</span> <span class="s">&quot;/&quot;</span><span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kr">if</span> <span class="p">(</span>end <span class="o">==</span> <span class="s">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    year <span class="o">&lt;-</span> substr<span class="p">(</span>Sys.time<span class="p">(),</span> <span class="m">1</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+</span><span class='line'>    month <span class="o">&lt;-</span> substr<span class="p">(</span>Sys.time<span class="p">(),</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">)</span>
+</span><span class='line'>    day <span class="o">&lt;-</span> substr<span class="p">(</span>Sys.time<span class="p">(),</span> <span class="m">9</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
+</span><span class='line'>    end <span class="o">&lt;-</span> paste<span class="p">(</span>year<span class="p">,</span> month<span class="p">,</span> day<span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  count <span class="o">&lt;-</span> <span class="m">0</span>
+</span><span class='line'>  tickers <span class="o">&lt;-</span> as.character<span class="p">(</span>tickers<span class="p">)</span>
+</span><span class='line'>  <span class="kr">for</span> <span class="p">(</span>name in tickers<span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kr">while</span> <span class="p">(</span>nchar<span class="p">(</span>name<span class="p">)</span> <span class="o">&lt;</span> <span class="m">6</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      name <span class="o">&lt;-</span> paste<span class="p">(</span><span class="s">&quot;0&quot;</span><span class="p">,</span> name<span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kr">if</span> <span class="p">(</span>nchar<span class="p">(</span>name<span class="p">)</span> <span class="o">&gt;</span> <span class="m">6</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      warning<span class="p">(</span>paste<span class="p">(</span><span class="s">&quot;invalid stock code: &quot;</span><span class="p">,</span> name<span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">))</span>
+</span><span class='line'>      next
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kr">if</span> <span class="p">(</span>as.numeric<span class="p">(</span>name<span class="p">)</span> <span class="o">&gt;</span> <span class="m">600000</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      url <span class="o">&lt;-</span> paste<span class="p">(</span>address<span class="p">,</span> <span class="s">&quot;?code=0&quot;</span><span class="p">,</span> name<span class="p">,</span> <span class="s">&quot;&amp;start=&quot;</span><span class="p">,</span> start<span class="p">,</span> <span class="s">&quot;&amp;end=&quot;</span><span class="p">,</span> end<span class="p">,</span> field<span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">}</span> <span class="kr">else</span> <span class="p">{</span>
+</span><span class='line'>      url <span class="o">&lt;-</span> paste<span class="p">(</span>address<span class="p">,</span> <span class="s">&quot;?code=1&quot;</span><span class="p">,</span> name<span class="p">,</span> <span class="s">&quot;&amp;start=&quot;</span><span class="p">,</span> start<span class="p">,</span> <span class="s">&quot;&amp;end=&quot;</span><span class="p">,</span> end<span class="p">,</span> field<span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    destfile <span class="o">&lt;-</span> paste<span class="p">(</span>path<span class="p">,</span> name<span class="p">,</span> <span class="s">&quot;.csv&quot;</span><span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>    download.file<span class="p">(</span>url<span class="p">,</span> destfile<span class="p">,</span> quiet <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span><span class='line'>    count <span class="o">&lt;-</span> count <span class="o">+</span> <span class="m">1</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kr">if</span> <span class="p">(</span>count <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    cat<span class="p">(</span><span class="s">&quot;一个数据文件都没下载下来！\n&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">}</span> <span class="kr">else</span> <span class="p">{</span>
+</span><span class='line'>    cat<span class="p">(</span><span class="s">&quot;数据下载完成！\n&quot;</span><span class="p">)</span>
+</span><span class='line'>    cat<span class="p">(</span>paste<span class="p">(</span><span class="s">&quot;共下载&quot;</span><span class="p">,</span> count<span class="p">,</span> <span class="s">&quot;个文件\n&quot;</span><span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>调用举例</p>
+
+<p><code>r
+cntrade(c('600000', '000001', '600810'), path = "d:\temp", start = 19990101, end = 20121231)
+cntrade(c(600000, 000001, 600810))
+cntrade('000002', start = 19990101)
+cntrade(000002, end = 19990101)
+cntrade(c(2, 16))
+</code></p>
+
+<p>stata版的介绍请看<a href="http://blog.sina.com.cn/s/blog_6af14ae20101ggnz.html">http://blog.sina.com.cn/s/blog_6af14ae20101ggnz.html</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[用R获取郑州商品交易所历史数据]]></title>
+    <link href="http://yanping.me/cn/blog/2013/02/09/get-zce-data/"/>
+    <updated>2013-02-09T20:00:00+08:00</updated>
+    <id>http://yanping.me/cn/blog/2013/02/09/get-zce-data</id>
+    <content type="html"><![CDATA[<p class="info">本文主要讨论如何用R语言从郑州商品交易所网站上获取期货合约交易数据</p>
+
+<p>郑商所网站提供了查询每日行情的<a href="http://www.czce.com.cn/portal/jysj/mrhq/A091101index_1.htm">页面</a>，它提供的数据比大商所的要复杂一些，2010年至2013年的网页格式一样，地址也是同样的形式，请看</p>
+
+<ul>
+  <li><a href="http://www.czce.com.cn/portal/exchange/2010/datadaily/20100105.htm">http://www.czce.com.cn/portal/exchange/2010/datadaily/20100105.htm</a></li>
+  <li><a href="http://www.czce.com.cn/portal/exchange/2011/datadaily/20110105.htm">http://www.czce.com.cn/portal/exchange/2011/datadaily/20110105.htm</a></li>
+  <li><a href="http://www.czce.com.cn/portal/exchange/2012/datadaily/20120104.htm">http://www.czce.com.cn/portal/exchange/2012/datadaily/20120104.htm</a></li>
+  <li><a href="http://www.czce.com.cn/portal/exchange/2013/datadaily/20130104.htm">http://www.czce.com.cn/portal/exchange/2013/datadaily/20130104.htm</a></li>
+</ul>
+
+<p>打开网页可以看到，网页提供了“打印”，“Excel”和“txt”三个选项，只要把地址后面的<code>.html</code>改为<code>.txt</code>就可以得到文本格式的数据，那么就可以逐一下载数据文件，读入数据。</p>
+
+<p>这四年的数据可以这样获取：</p>
+
+<p>```r
+getZceData &lt;- function(dates){
+  require(RCurl)
+  zceDatabase &lt;- data.frame()
+  for (date in dates) {
+    str1 &lt;- “http://www.czce.com.cn/portal/exchange/”
+    str2 &lt;- “/datadaily/” 
+    date &lt;- as.character(date)
+    year &lt;- substr(date, 1, 4)
+    url &lt;- paste(str1, year, str2, date, “.txt”, sep = “”)
+    if (!url.exists(url)) {
+      next
+    } else {
+      colnames &lt;- c(“品种月份”, “昨结箿”, “今开盘”, “最高价”, “最低价”, 
+        “今收盘”, “今结算”, “涨跌1”, “涨跌2”, “成交量”, “空盘量”, 
+        “增减量”, “成交额”, “交割结算价”)
+      fileName &lt;- paste(“zce”, date, “.txt”, sep = “”)</p>
+
+<pre><code>  if (!file.exists(fileName)) {
+    download.file(url, fileName, quiet = T)
+  } 
+  zceData &lt;- read.table(fileName, header = F, skip = 1, sep = ",", col.names = colnames)
+  zceData &lt;- zceData[(zceData[, 1] != "小计") &amp; (zceData[, 1] != "总计"), ]
+  zceData$date &lt;- date
+  zceDatabase &lt;- rbind(zceDatabase, zceData) 
+}   }   return(zceDatabase) } 
+</code></pre>
+
+<p>```</p>
+
+<p>但是查询2009年及之前的数据返回的是网页形式，那就需要从网页上读取。</p>
+
+<p>看下面几个链接</p>
+
+<ul>
+  <li><a href="http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20060106.html">http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20060106.html</a></li>
+  <li><a href="http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20070104.html">http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20070104.html</a></li>
+  <li><a href="http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20080104.html">http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20080104.html</a></li>
+  <li><a href="http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20090105.html">http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20090105.html</a></li>
+</ul>
+
+<p>网页格式很统一，数据在被table标签包裹，并且是在第二个table标签中，XML包的<code>readHTMLTable</code>函数可以读取table标签中的内容，但是当网页中有汉字的时候，汉字会变成乱码，慎用！</p>
+
+<p>不过，本文的情况有点特殊，汉字只出现在table的第一行表头，以及“小计”、“总计”的行，这些行本来就是要去掉的，所以对我们没影响。</p>
+
+<p>下面只给出关键代码：</p>
+
+<p><code>r
+require(XML)
+require(stringr)
+url &lt;- "http://www.czce.com.cn/portal/exchange/jyxx/hq/hq20060106.html"
+tb &lt;-readHTMLTable(url)[[2]]
+tb &lt;- sapply(tb,str_trim)
+df &lt;-as.data.frame(apply(tb,2,function(x) iconv(x, from = "gb2312", to = "UTF-8")))
+</code></p>
+
+<p>再把第一列为NA的行去除就行了。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[用R获取大连商品交易所历史数据]]></title>
+    <link href="http://yanping.me/cn/blog/2012/12/09/get-dce-data/"/>
+    <updated>2012-12-09T20:00:00+08:00</updated>
+    <id>http://yanping.me/cn/blog/2012/12/09/get-dce-data</id>
+    <content type="html"><![CDATA[<p class="info">本文主要讨论如何用R语言从大连商品交易所网站上获取期货合约交易数据</p>
+
+<p>大商所的网站上有提供查询历史的<a href="http://www.dce.com.cn/portal/cate?cid=1261730308135">页面</a>。但是它只能对某一个品种查询某一天的报价，或者某一天所有品种的报价，如果我想批量获取交易数据，应该怎么做呢？</p>
+
+<p>首先剖析一下这个页面，用firefox的firebug查看日行情表的代码</p>
+
+<p><img src="http://i.imgur.com/PFZ4f1k.png" alt="日行情表" /></p>
+
+<p>可以看到，这个表实际上是用iframe实现的，查看页面的源文件可以查出这个iframe引用页面地址为<a href="http://www.dce.com.cn/PublicWeb/MainServlet?action=Data_service">http://www.dce.com.cn/PublicWeb/MainServlet?action=Data_service</a>。用上面的方法继续剖析这个页面，发现它引用了<a href="http://www.dce.com.cn/PublicWeb/MainServlet?action=Pu00011_search">http://www.dce.com.cn/PublicWeb/MainServlet?action=Pu00011_search</a>。</p>
+
+<!--more-->
+
+<p>先忽略无关的代码，只关注下面这部分</p>
+
+<p>```html
+&lt;form target="_blank" name="form1" action="/PublicWeb/MainServlet" method="post" onSubmit="return formcheck(this);"&gt;
+  <input type="hidden" name="action" value="Pu00011_result" />
+&lt;tr valign="top"&gt;
+&lt;td height="10"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+  &lt;tr valign="top"&gt;
+    &lt;td height="133"&gt;
+	&lt;div class="title"&gt;日 行 情 表&lt;/div&gt;
+&lt;table border="0" align="center" cellpadding="3" cellspacing="1" width="97%"&gt;</p>
+<tr>
+    <td class="nametd"> 查询日期:</td>
+    <td class="tdjian"><input name="Pu00011_Input.trade_date" type="text" size="8" maxlength="8" />
+      <img align="absmiddle" src="http://yanping.me/cn/PublicWeb/include/images/calendar/show.gif" id="Pu00011_Input.trade_date.img" onClick="swapCalendar(document.all(&quot;Pu00011_Input.trade_date&quot;))" valign="bottom" />
+    </td>
+    <td class="nametd"> 品　　种:</td>
+    <td class="tdjian"><select name="Pu00011_Input.variety">
+      &lt;option selected value="all"&gt;全部
+      <option value="a">豆一</option>
+      <option value="b">豆二</option>
+      <option value="c">玉米</option>
+      <option value="j">焦炭</option>
+      <option value="l">聚乙烯</option>
+      <option value="m">豆粕</option>
+      <option value="p">棕榈油</option>
+      <option value="v">聚氯乙烯</option>
+      <option value="y">豆油</option>
+      <option value="s">大豆</option>
+    </select></td>
+  </tr>
+<tr>
+    <td class="nametd"> <p> 行情类型:</p>      </td>
+    <td class="tdjian" colspan="3"> &lt;input name="Pu00011_Input.trade_type" type="radio" value="0" checked&gt;期货行情
+    <!--hide option
+      <input name="Pu00011_Input.trade_type" type="radio" value="1">期权行情
+     --> 
+    </td>
+  </tr>
+<p>&lt;/table&gt;
+<script language="javascript">
+ calendarImages = ["/PublicWeb/include/images/calendar/prev_year.gif", "/PublicWeb/include/images/calendar/prev_month.gif", "/PublicWeb/include/images/calendar/next_month.gif", "/PublicWeb/include/images/calendar/next_year.gif", "/PublicWeb/include/images/calendar/show.gif", "/PublicWeb/include/images/calendar/hide.gif"]
+  getCalendar(document.all("Pu00011_Input.trade_date"), '20130208');
+</script>
+&lt;table border="0" align="center" cellpadding="5" cellspacing="0"&gt;</p>
+<tr>
+    <td><input name="Submit" type="submit" class="button" value="查 询" onClick="document.form1.action.value='Pu00011_result';document.form1.target='_blank';" />&nbsp;&nbsp;<input name="Submit2" type="submit" class="downbutton" value="下载文本格式" onClick="document.form1.action.value='Pu00012_download';document.form1.target='_self';" />&nbsp;&nbsp;<input name="Submit2" type="submit" class="button" value="打 印" onClick="document.form1.action.value='Pu00011_result';document.form1.target='_blank';" /></td>
+  </tr>
+<p>&lt;/table&gt; 
+&lt;table border="0" align="center" cellpadding="1" cellspacing="0" width="97%"&gt;
+  &lt;tr align="left"&gt;
+    &lt;td width=20 valign=top&gt;注：&lt;/td&gt;
+    &lt;td&gt;
+     日行情信息 在每日“结算后”发布。历史数据始自2000-05-08。
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</p>
+
+<p>&lt;/form&gt;</p>
+
+<p>```</p>
+
+<p>要看懂上面的代码需要点网络编程的知识，请参考w3shool上关于<a href="http://www.w3school.com.cn/tags/tag_form.asp">form标签</a>、<a href="http://www.w3school.com.cn/tags/tag_select.asp">select标签</a>、<a href="http://www.w3school.com.cn/tags/tag_input.asp">input标签</a>以及<a href="http://www.w3school.com.cn/htmldom/event_onclick.asp">onClick事件</a>的介绍。</p>
+
+<p>简单地说上面代码做了以下几件事：</p>
+
+<ul>
+  <li>整段代码定义了个表单，名为form1，用于向服务器传输数据，后面用input标签和select标签来定义传递的数据</li>
+  <li>用了一个input标签和onClick事件<code>onClick='swapCalendar(document.all("Pu00011_Input.trade_date"))'</code>来设置要查询的日期<code>Pu00011_Input.trade_date</code>。</li>
+  <li>用了一个select标签来选择查询的品种<code>Pu00011_Input.variety</code></li>
+  <li>用了一个input标签来设置行情类型<code>Pu00011_Input.trade_type</code>，从代码里看，<code>Pu00011_Input.trade_type</code>的值始终是0,代表期货行情;从下面注释掉的部分代码可以看出当<code>Pu00011_Input.trade_type</code>取0时，代表的是期权行情，估计网站还没实现这个功能</li>
+  <li>然后有一排三个button属性的input标签，所以它们是按钮形式的，并且都有onClick属性，当按下按钮时，会触发javascript脚本，脚本会设置action的值，比如“下载文本格式”这个按钮，按下它会把action的值设置成<code>Pu00012_download</code></li>
+</ul>
+
+<p>form向服务器传递数据，其实可以等价于用url地址传递参数。比如日期选择了2012年12月6日，品种选择了“豆一”，点击“下载文本格式”，那么对应的地址为<a href="http://www.dce.com.cn/PublicWeb/MainServlet?Pu00011_Input.trade_date=20121206&amp;Pu00011_Input.trade_type=0&amp;Pu00011_Input.variety=a&amp;action=Pu00012_download">http://www.dce.com.cn/PublicWeb/MainServlet?Pu00011_Input.trade_date=20121206&amp;Pu00011_Input.trade_type=0&amp;Pu00011_Input.variety=a&amp;action=Pu00012_download</a></p>
+
+<p>把地址复制到地址栏，就可以下载文本格式数据了。</p>
+
+<p>那么用R来读取数据的原理就是生成所需数据的url地址，然后用R读取，再经过整理，返回最终数据框。</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (dce.r)</span> <a href='/downloads/code/dce.r'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+</pre></td><td class='code'><pre><code class='r'><span class='line'><span class="c1"># 从大连商品交易所网站抓取价格数据 数据源</span>
+</span><span class='line'><span class="c1"># http://www.dce.com.cn/PublicWeb/MainServlet?action=Pu00011_search</span>
+</span><span class='line'><span class="c1"># Pu00011_Input.trade_date ： 查询的日期 </span>
+</span><span class='line'><span class="c1"># Pu00011_Input.trade_type ： 行情类别   0为期货，1为期权（未开通） </span>
+</span><span class='line'><span class="c1"># Pu00011_Input.variety ：期货品种代码，各代码表示的期货品种： </span>
+</span><span class='line'><span class="c1">#  all : 全部 a ： 豆一 b ： 豆二 c ： 玉米 j ：焦炭 l： 聚乙烯 </span>
+</span><span class='line'><span class="c1">#  m ： 豆粕 p ： 棕榈油 v ： 聚氯乙烯 y ： 豆油 s ： 大豆</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>getDceData <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>dates<span class="p">,</span> contracts<span class="p">,</span> keep.dataFile <span class="o">=</span> <span class="k-Variable">T</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  dceDatabase <span class="o">&lt;-</span> data.frame<span class="p">()</span>
+</span><span class='line'>  <span class="kr">for</span> <span class="p">(</span>date in dates<span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kr">for</span> <span class="p">(</span>type in contracts<span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>      str1 <span class="o">&lt;-</span> <span class="s">&quot;http://www.dce.com.cn/PublicWeb/MainServlet?Pu00011_Input.trade_date=&quot;</span>
+</span><span class='line'>      str2 <span class="o">&lt;-</span> <span class="s">&quot;&amp;Pu00011_Input.trade_type=0&amp;Pu00011_Input.variety=&quot;</span>
+</span><span class='line'>      str3 <span class="o">&lt;-</span> <span class="s">&quot;&amp;action=Pu00012_download&quot;</span>
+</span><span class='line'>
+</span><span class='line'>      url <span class="o">&lt;-</span> paste<span class="p">(</span>str1<span class="p">,</span> date<span class="p">,</span> str2<span class="p">,</span> type<span class="p">,</span> str3<span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>      fileName <span class="o">&lt;-</span> paste<span class="p">(</span><span class="s">&quot;dce.&quot;</span><span class="p">,</span> type<span class="p">,</span> date<span class="p">,</span> <span class="s">&quot;.txt&quot;</span><span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>      lines <span class="o">&lt;-</span> readLines<span class="p">(</span>url<span class="p">)</span>
+</span><span class='line'>      <span class="c1"># 如果使用的是linux系统，就转换lines的编码</span>
+</span><span class='line'>      <span class="kr">if</span> <span class="p">(</span>sessionInfo<span class="p">()$</span>R.version<span class="p">$</span>os <span class="o">==</span> <span class="s">&quot;linux-gnu&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        lines <span class="o">&lt;-</span> iconv<span class="p">(</span>lines<span class="p">,</span> from <span class="o">=</span> <span class="s">&quot;gb2312&quot;</span><span class="p">,</span> to <span class="o">=</span> <span class="s">&quot;UTF-8&quot;</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>      <span class="c1"># 当输入的日期不是交易日或数据文件里合约数据为空时跳过本次循环</span>
+</span><span class='line'>      <span class="kr">if</span> <span class="p">(</span>any<span class="p">(</span>lines <span class="o">==</span> <span class="s">&quot;&lt;html&gt;&quot;</span><span class="p">)</span> <span class="o">|</span> length<span class="p">(</span>lines<span class="p">)</span> <span class="o">==</span> <span class="m">5</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        next
+</span><span class='line'>      <span class="p">}</span> <span class="kr">else</span> <span class="p">{</span>
+</span><span class='line'>        content <span class="o">&lt;-</span> lines<span class="p">[</span><span class="m">4</span>:<span class="p">(</span>length<span class="p">(</span>lines<span class="p">)</span> <span class="o">-</span> <span class="m">2</span><span class="p">)]</span>
+</span><span class='line'>        writeLines<span class="p">(</span>content<span class="p">,</span> fileName<span class="p">)</span>
+</span><span class='line'>        data <span class="o">&lt;-</span> read.table<span class="p">(</span>fileName<span class="p">,</span> header <span class="o">=</span> <span class="k-Variable">T</span><span class="p">,</span> na.strings <span class="o">=</span> <span class="s">&quot;-&quot;</span><span class="p">)</span>
+</span><span class='line'>        <span class="kr">if</span> <span class="p">(</span>!keep.dataFile<span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          file.remove<span class="p">(</span>fileName<span class="p">)</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        data<span class="p">$</span>date <span class="o">&lt;-</span> date
+</span><span class='line'>        dceDatabase <span class="o">&lt;-</span> rbind<span class="p">(</span>dceDatabase<span class="p">,</span> data<span class="p">)</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="kr">return</span><span class="p">(</span>dceDatabase<span class="p">)</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>调用举例：</p>
+
+<p><code>r
+source("dce.r")
+d1 &lt;- getDceData("20121206","a")
+d2 &lt;- getDceData(c("20121204","20121205","20121206"), c("a","b"), keep.dataFile = F)
+</code></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[下一步学习的目标]]></title>
+    <link href="http://yanping.me/cn/blog/2012/06/07/new-target/"/>
+    <updated>2012-06-07T23:58:00+08:00</updated>
+    <id>http://yanping.me/cn/blog/2012/06/07/new-target</id>
+    <content type="html"><![CDATA[<p>不给自己定太遥远的目标了，为了把R语言捡起来，为了把数量金融方面捡起来，我决定以 <em>Using SAS in Financial Research</em> 为蓝本，用R语言来实现每章的案例，来个 <em>Using R in Financial Research</em> 。涉及的案例有：</p>
+
+<ul>
+  <li>资产价格的随机游走理论：方差比率检验</li>
+  <li>谁是赢家谁是输家：使用R来检验过度反应假设</li>
+  <li>资本资产定价模型的实证检验：使用横截面方法</li>
+  <li>事件研究</li>
+  <li>价格-盈利关系的分析：关联类型研究方法</li>
+  <li>使用财务压力特征模型来预测破产</li>
+  <li>使用会计信息来预测市场绩效</li>
+  <li>交易数据的分析</li>
+</ul>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>关于最小中位数平方法（Least Median of Squares） | William Fang</title>    -->
+    <title>关于最小中位数平方法（Least Median of Squares） | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<script type="text/javascript" src="/media/js/outliner.js"></script>
+<!--=================================================================== -->
+  <script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+  <!--=================================================================== -->
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>关于最小中位数平方法（Least Median of Squares）</h1>
+        </header>
+        <nav id="real_nav">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+        <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>如果我没记错的话，Prof Lin在课堂上提到，Least Median of Squares是一个难题：它的目标是最小化误差平方的中位数。当时上课我没去考虑这个问题，晚上突然想起，这个问题不管怎么说至少可以有暴力解法，比如用BFGS等方法去优化就能算出系数了。</p>
+
+<p>但是转念一想，LMS这个东西怎么看着眼熟，打开MASS一看，原来是自己以前用过的。MASS包的lqs()可以计算各种稳健和耐抗回归，LMS是其中一种。LMS是一种稳健回归方法（下第一幅图），然而MASS的文献指出它对大量堆在中间位置上的数值敏感（下第二幅图）。</p>
+
+<p>[caption id="" align="aligncenter" width="500" caption="LMS与OLS的比较（LMS较稳健）"]<a href="http://yihui.name/cn/wp-content/uploads/1224512131_0.png"><img src="http://yihui.name/cn/wp-content/uploads/1224512131_0.png" alt="LMS与OLS的比较（LMS较稳健）" /></a>[/caption]</p>
+
+<p>图1 离群点对普通最小二乘有严重影响，LMS却没问题</p>
+
+<p>[caption id="" align="aligncenter" width="500" caption="LMS与OLS的比较（LMS对中间值敏感）"]<a href="http://yihui.name/cn/wp-content/uploads/1224512525_0.png"><img src="http://yihui.name/cn/wp-content/uploads/1224512525_0.png" alt="LMS与OLS的比较（LMS对中间值敏感）" /></a>[/caption]</p>
+
+<p>图2 大量的中间值让LMS失效，普通最小二乘却没事</p>
+
+<p><a href="http://yihui.name/cn/wp-content/uploads//1224513797_0.r">文件下载链接</a></p>
+
+<pre><code>#png("lms.png", width = 500, height = 400)
+par(mar = c(4, 4, 0.1, 0.1))
+library(MASS)
+set.seed(1)
+x = runif(50)
+set.seed(1)
+y = 2 + 3 * x + rnorm(50)
+# an outlier
+x = c(x, 2); y = c(y, 30)
+plot(x, y, pch = 20)
+abline(lqs(y ~ x, method = "lqs"), col = "blue", lty = 2)
+abline(lm(y ~ x), col = "red")
+legend("topleft", legend = c("OLS", "LMS"), col = c("red",
+    "blue"), lty = 1:2, bty = "n")
+#dev.off()
+
+#png("lms-central.png", width = 500, height = 400)
+par(mar = c(4, 4, 0.1, 0.1))
+library(MASS)
+set.seed(1)
+x = runif(50)
+set.seed(1)
+y = 2 + 3 * x + rnorm(50)
+# 500 central values
+x = c(x, jitter(rep(mean(x), 500), 3))
+y = c(y, jitter(rep(mean(y), 500), 3))
+plot(x, y, pch = 20, cex = c(rep(1, 50), rep(0.1, 500)))
+abline(lqs(y ~ x, method = "lqs"), col = "blue", lty = 2)
+abline(lm(y ~ x), col = "red")
+legend("topleft", legend = c("OLS", "LMS"), col = c("red",
+    "blue"), lty = 1:2, bty = "n")
+#dev.off()
+</code></pre>
+
+<p>应读者要求，将两幅图的数据分别附在这里。</p>
+
+<p>[notice type=download]<a href="http://yihui.name/cn/wp-content/uploads/2008/10/fig1.txt">第一幅图的数据下载</a></p>
+
+<p><a href="http://yihui.name/cn/wp-content/uploads/2008/10/fig2.txt">第二幅图的数据下载</a>[/notice]</p>
+
+</section>
+<section class="meta">
+
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2008/10/20/iplots-package-for-dynamic-graphics/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://williamlfang.github.com/cn/2008/10/21/useless-aggregated-data/" class="pageNav"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2008-10-20">2008-10-20</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Featured" title="Featured">Featured</a>&nbsp;
+  
+  <a href="/categories/#R language" title="R language">R language</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#Least Median of Squares" title="Least Median of Squares">Least Median of Squares</a>&nbsp;
+  
+  <a href="/tags/#LMS" title="LMS">LMS</a>&nbsp;
+  
+  <a href="/tags/#lqs()" title="lqs()">lqs()</a>&nbsp;
+  
+  <a href="/tags/#MASS" title="MASS">MASS</a>&nbsp;
+  
+  <a href="/tags/#OLS" title="OLS">OLS</a>&nbsp;
+  
+  <a href="/tags/#R" title="R">R</a>&nbsp;
+  
+  <a href="/tags/#普通最小二乘" title="普通最小二乘">普通最小二乘</a>&nbsp;
+  
+  <a href="/tags/#最小中位数平方法" title="最小中位数平方法">最小中位数平方法</a>&nbsp;
+  
+  <a href="/tags/#稳健回归" title="稳健回归">稳健回归</a>&nbsp;
+  
+</span>
+
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2008/10/20/iplots-package-for-dynamic-graphics/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://williamlfang.github.com/cn/2008/10/21/useless-aggregated-data/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-24 19:54:26</span></small></p>
+</footer>
+
+  </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+</html>

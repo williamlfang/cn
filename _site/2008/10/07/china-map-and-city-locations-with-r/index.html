@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>用R画中国地图并标注城市位置 | William Fang</title>    -->
+    <title>用R画中国地图并标注城市位置 | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<script type="text/javascript" src="/media/js/outliner.js"></script>
+<!--=================================================================== -->
+  <script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+  <!--=================================================================== -->
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>用R画中国地图并标注城市位置</h1>
+        </header>
+        <nav id="real_nav">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+        <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>从<a href="http://hi.baidu.com/cloud_wei/blog/item/b26cbfa9b8e601fa1e17a295.html">cloud_wei的博客</a>上看到一批数据，拿来放在R里面跑一下：</p>
+
+<div class="highlight"><pre><code class="r">par<span class="p">(</span>mar<span class="o">=</span>rep<span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">4</span><span class="p">))</span>
+dat <span class="o">=</span> read.csv<span class="p">(</span>text <span class="o">=</span> <span class="s">&quot;城市,jd,wd</span>
+<span class="s">    北 京,116.4666667,39.9</span>
+<span class="s">    上 海,121.4833333,31.23333333</span>
+<span class="s">    天 津,117.1833333,39.15</span>
+<span class="s">    重 庆,106.5333333,29.53333333</span>
+<span class="s">    哈尔滨,126.6833333,45.75</span>
+<span class="s">    长 春,125.3166667,43.86666667</span>
+<span class="s">    沈 阳,123.4,41.83333333</span>
+<span class="s">    呼和浩特,111.8,40.81666667</span>
+<span class="s">    石家庄,114.4666667,38.03333333</span>
+<span class="s">    太 原,112.5666667,37.86666667</span>
+<span class="s">    济 南,117,36.63333333</span>
+<span class="s">    郑 州,113.7,34.8</span>
+<span class="s">    西 安,108.9,34.26666667</span>
+<span class="s">    兰 州,103.8166667,36.05</span>
+<span class="s">    银 川,106.2666667,38.33333333</span>
+<span class="s">    西 宁,101.75,36.63333333</span>
+<span class="s">    乌鲁木齐,87.6,43.8</span>
+<span class="s">    合 肥,117.3,31.85</span>
+<span class="s">    南 京,118.8333333,32.03333333</span>
+<span class="s">    杭 州,120.15,30.23333333</span>
+<span class="s">    长 沙,113,28.18333333</span>
+<span class="s">    南 昌,115.8666667,28.68333333</span>
+<span class="s">    武 汉,114.35,30.61666667</span>
+<span class="s">    成 都,104.0833333,30.65</span>
+<span class="s">    贵 阳,106.7,26.58333333</span>
+<span class="s">    福 州,119.3,26.08333333</span>
+<span class="s">    台 北,121.5166667,25.05</span>
+<span class="s">    广 州,113.25,23.13333333</span>
+<span class="s">    海 口,110.3333333,20.03333333</span>
+<span class="s">    南 宁,108.3333333,22.8</span>
+<span class="s">    昆 明,102.6833333,25</span>
+<span class="s">    拉 萨,91.16666667,29.66666667</span>
+<span class="s">    香 港,114.1666667,22.3</span>
+<span class="s">    澳门,113.5,22.2&quot;</span><span class="p">)</span>
+library<span class="p">(</span>maps<span class="p">)</span>
+library<span class="p">(</span>mapdata<span class="p">)</span>
+map<span class="p">(</span><span class="s">&quot;china&quot;</span><span class="p">,</span> col <span class="o">=</span> <span class="s">&quot;darkgray&quot;</span><span class="p">,</span> ylim <span class="o">=</span> c<span class="p">(</span><span class="m">18</span><span class="p">,</span> <span class="m">54</span><span class="p">),</span> panel.first <span class="o">=</span> grid<span class="p">())</span>
+points<span class="p">(</span>dat<span class="o">$</span>jd<span class="p">,</span> dat<span class="o">$</span>wd<span class="p">,</span> pch <span class="o">=</span> <span class="m">19</span><span class="p">,</span> col <span class="o">=</span> rgb<span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.5</span><span class="p">))</span>
+text<span class="p">(</span>dat<span class="o">$</span>jd<span class="p">,</span> dat<span class="o">$</span>wd<span class="p">,</span> dat<span class="p">[,</span> <span class="m">1</span><span class="p">],</span> cex <span class="o">=</span> <span class="m">0.9</span><span class="p">,</span> col <span class="o">=</span> rgb<span class="p">(</span><span class="m">0</span><span class="p">,</span>
+    <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.7</span><span class="p">),</span> pos <span class="o">=</span> c<span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span>
+    <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
+axis<span class="p">(</span><span class="m">1</span><span class="p">,</span> lwd <span class="o">=</span> <span class="m">0</span><span class="p">);</span> axis<span class="p">(</span><span class="m">2</span><span class="p">,</span> lwd <span class="o">=</span> <span class="m">0</span><span class="p">);</span> axis<span class="p">(</span><span class="m">3</span><span class="p">,</span> lwd <span class="o">=</span> <span class="m">0</span><span class="p">);</span> axis<span class="p">(</span><span class="m">4</span><span class="p">,</span> lwd <span class="o">=</span> <span class="m">0</span><span class="p">)</span>
+</code></pre>
+</div>
+
+
+<p>效果如下：</p>
+
+<p><img src="http://i.imgur.com/LE4I8.png" alt="用R画中国地图并标注城市位置" /></p>
+
+<p>写这篇日志的目的是征人同投论文，写一些用R获取生活中的“边角料”数据并利用起来做点事情的例子。点击<a href="http://images.ruc.edu.cn/other/2008-10-07/1223373806156.zip">这里</a>下载论文。关于R会议，请随时<a href="http://cos.name/cn/topic/12064">关注通知</a>。有同写意向的请速速联系我。</p>
+
+</section>
+<section class="meta">
+
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2008/10/06/sexy-r-graphics/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://williamlfang.github.com/cn/2008/10/07/why-avoid-excel-in-statistics/" class="pageNav"  >Next</a>
+</span>
+<hr>
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2008-10-07">2008-10-07</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Featured" title="Featured">Featured</a>&nbsp;
+  
+  <a href="/categories/#R language" title="R language">R language</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#R" title="R">R</a>&nbsp;
+  
+  <a href="/tags/#中国地图" title="中国地图">中国地图</a>&nbsp;
+  
+  <a href="/tags/#地图" title="地图">地图</a>&nbsp;
+  
+  <a href="/tags/#城市" title="城市">城市</a>&nbsp;
+  
+  <a href="/tags/#数据" title="数据">数据</a>&nbsp;
+  
+</span>
+
+</section>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2008/10/06/sexy-r-graphics/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://williamlfang.github.com/cn/2008/10/07/why-avoid-excel-in-statistics/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-24 19:54:26</span></small></p>
+</footer>
+
+  </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+</html>

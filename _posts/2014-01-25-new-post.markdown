@@ -4,9 +4,9 @@ title:    "new post"
 category:  
 tags:     [dfdaf]
 description: 
-published: false
-status:    process
+published: true
+status: publish
 ---
 df 
-
+ 
 df 

@@ -78,6 +78,7 @@ task :post do
     ##post.puts "{% include JB/setup %}"
     post.puts ""
   end
+  system("emacsclient #{filename}")
 end # task :post
 
 # Usage: rake page name="about.html"

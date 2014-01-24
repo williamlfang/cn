@@ -7,7 +7,7 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-24T15:02:49+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-24T15:11:18+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
     
     <item>
@@ -153,8 +153,9 @@
 
 <p>文本 <a href="/cn/_post/rmd.sh"><code>rmd.sh</code></a> 可以下载，里面内容是</p>
 
-<p>DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &amp;&amp; pwd )"
-Rscript -e "source('$DIR/rmarkdown.r'); convertRMarkdown(images.dir='$DIR/images')"</p>
+<pre><code>DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &amp;&amp; pwd )"
+Rscript -e "source('$DIR/rmarkdown.r'); convertRMarkdown(images.dir='$DIR/images')"
+</code></pre>
 
 <h3>添加 <code>YAML</code> 标头</h3>
 

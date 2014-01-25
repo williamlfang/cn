@@ -27,7 +27,7 @@ status: publish
 ## Github + Jekyll + knitr + Rmarkdown
  
 我就抱着这样的「苛刻要求」去找「谷哥」。出乎意料的是，竟然如此简单的就得到需要的解决方案了：
-
+ 
 > Github + Jekyll + Rmarkdown
  
 这是一个完美的方案！完全实现了我需要的多种服务：
@@ -112,7 +112,7 @@ status: publish
   					try(knit(text=content, output=outFile), silent=FALSE)
   				} else {
   					warning(paste("Not processing ", f, ", status is '", status, 
-  								  "'. Set status to 'process' to convert.", sep=''))
+  								"'. Set status to 'process' to convert.", sep=''))
   				}
   			} else {
   				warning("Status not found in front matter.")
@@ -125,14 +125,13 @@ status: publish
      }
  
  
- 
 ### 建立可执行文本 `rmd.sh`
  
 这个 `rmd.sh` 也是存放在目录 `_posts`, 主要就是
  - 识别当前的目录，并将其赋予 `dir` 参数
  - 默认在 `Terminal` 运行 `rmakrdown.r` 的 `convertRmarkdown` 函数，并输出经过转化的 `.markdown` 文件。
  
-文本 [`rmd.sh`](/cn/_post/rmd.sh) 可以下载，里面内容是
+文本 `rmd.sh` 可以[下载](/cn/_post/rmd.sh)，里面内容是
  
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
     Rscript -e "source('$DIR/rmarkdown.r'); convertRMarkdown(images.dir='../assets/images')"
@@ -145,13 +144,57 @@ status: publish
     published: false
     status: process
  
- 
 这个是因为：
 <blockquote>
   <p> - First, the published parameter should be set to false so that Jekyll will not attempt to process the file. The convertRMarkdown function will change this parameter to true in the resulting Markdown file. </p>
   <p> - The second parameter, status, must be set to process for the convertRMarkdown function to convert the file. This is useful when working a draft of a document and you wish to not have the file converted. </p>
-  
 </blockquote>
+ 
+### **MathJax** 
+ 
+如果想要让 **Jekyll** 支持数学公式，我们还需要添加插件，**MathJax**，然后使用 *markdown** 的编译设置为 **kramdown**。我是这样配置的
+ 
+#### 添加 **kramdown**
+由于我先前使用的是 *rdiscount* 来编译 **mardown** 语法，不能够支持对数学公式的输出。使用的替代是 **kramdown**，一个更加强大的插件，支持 *pdf*， *html*，*LaTeX* 等格式的转化。
+- 首先是在主目录文件夹找到 `_config-yml` 打开，将 **markdown** 默认的编译设置为 **kramdown**。
+- 在 `_layout` 目录下面有 `default.html` 的页面设置，我们需要在 `<head>` 与 `</head>` 之间插入以下代码
+    <!-- mathjax config similar to math.stackexchange -->
+    <style TYPE="text/css"> /*以下为数学格式*/
+    /*  code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}*/
+    body {font-family: Palatino;}
+    h1, h2 {} /*font-family: Century Gothic; color: #3C5084;*/
+    h3 {} /*font-family: Century Gothic; color: #6076B4*/
+    /*code {font-family: Inconsolata;}*/
+    /* p {text-align:justify;} */
+    .hidden {display: none;}
+    .newpage {page-break-before:always;}
+    /*pre {padding: 10px; margin-left: 100px; margin-right: 100px; background: #EEEEEE;}*/
+    @media print {h2 {page-break-before:always;}}
+    /* TODO: use Google Web Fonts to ensure Palatino, Century Gothic and Inconsolata are       installed and used */
+    </style>
+    <!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code'   entry
+    }
+    });
+    MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+    });
+    </script>
+    <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+    <!-- CDN upload request sent in private mail to generated-toc author -->
+    <script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+    <!-- CDN upload request sent in private mail to generated-toc author -->
+   也就是在网页开启前使用 **MathJax** 进行编译，支持对数学的输出。这里，我使用单个美元符号 `$` 与 `$` 输入 **LaTeX** 代码，会在网页显示相应的 *行内公式*，而使用一对的美元符号 `$$` 与 `$$` 来输入行间数学公式。
+ 
  
 ### 例子
  
@@ -173,7 +216,7 @@ $$
  
 #### **R**
  
-再者，这个 `R` 代码，我们可以直接生成图片。no border.
+再者，这个 `R` 代码，我们可以直接生成图片。
 
 {% highlight r %}
 x = rnorm(100)
@@ -183,5 +226,4 @@ plot(density(x))
 ![plot of chunk fig1](/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/fig1.png) 
 
  
-  
-
+ 

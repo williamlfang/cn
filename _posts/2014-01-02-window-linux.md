@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      本本的"转型"
+title:      本本的转型
 category:   Tech
 tags: 
 - Linux

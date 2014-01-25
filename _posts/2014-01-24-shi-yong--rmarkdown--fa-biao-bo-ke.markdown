@@ -27,6 +27,7 @@ status: publish
 ## Github + Jekyll + knitr + Rmarkdown
  
 我就抱着这样的「苛刻要求」去找「谷哥」。出乎意料的是，竟然如此简单的就得到需要的解决方案了：
+
 > Github + Jekyll + Rmarkdown
  
 这是一个完美的方案！完全实现了我需要的多种服务：

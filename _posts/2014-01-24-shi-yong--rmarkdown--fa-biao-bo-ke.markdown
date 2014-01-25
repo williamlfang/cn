@@ -128,7 +128,9 @@ status: publish
 ### 建立可执行文本 `rmd.sh`
  
 这个 `rmd.sh` 也是存放在目录 `_posts`, 主要就是
+ 
  - 识别当前的目录，并将其赋予 `dir` 参数
+ 
  - 默认在 `Terminal` 运行 `rmakrdown.r` 的 `convertRmarkdown` 函数，并输出经过转化的 `.markdown` 文件。
  
 文本 `rmd.sh` 可以[下载](/cn/_post/rmd.sh)，里面内容是
@@ -156,6 +158,7 @@ status: publish
  
 #### 添加 **kramdown**
 由于我先前使用的是 *rdiscount* 来编译 **mardown** 语法，不能够支持对数学公式的输出。使用的替代是 **kramdown**，一个更加强大的插件，支持 *pdf*， *html*，*LaTeX* 等格式的转化。
+ 
 - 首先是在主目录文件夹找到 `_config-yml` 打开，将 **markdown** 默认的编译设置为 **kramdown**。
  
 - 在 `_layout` 目录下面有 `default.html` 的页面设置，我们需要在 `<head>` 与 `</head>` 之间插入代码

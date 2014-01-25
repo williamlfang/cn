@@ -56,7 +56,7 @@ body div.content {}
         font: inherit;
         font-size: 100%;
         background: inherit;
-        border: inherit;
+        /*border: inherit; */
     }
   /*  code.has-jax {
         font: inherit;

@@ -7,7 +7,7 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-25T03:11:27+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-25T20:55:01+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
     
     <item>
@@ -34,8 +34,11 @@
 
 <h2 id="github--jekyll--knitr--rmarkdown">Github + Jekyll + knitr + Rmarkdown</h2>
 
-<p>我就抱着这样的「苛刻要求」去找「谷哥」。出乎意料的是，竟然如此简单的就得到需要的解决方案了：
-&gt; Github + Jekyll + Rmarkdown</p>
+<p>我就抱着这样的「苛刻要求」去找「谷哥」。出乎意料的是，竟然如此简单的就得到需要的解决方案了：</p>
+
+<blockquote>
+  <p>Github + Jekyll + Rmarkdown</p>
+</blockquote>
 
 <p>这是一个完美的方案！完全实现了我需要的多种服务：</p>
 
@@ -151,7 +154,7 @@ convertRMarkdown &lt;- function(dir=getwd(), images.dir=dir, images.url='/cn/ass
   					try(knit(text=content, output=outFile), silent=FALSE)
   				} else {
   					warning(paste("Not processing ", f, ", status is '", status, 
-  								  "'. Set status to 'process' to convert.", sep=''))
+  								"'. Set status to 'process' to convert.", sep=''))
   				}
   			} else {
   				warning("Status not found in front matter.")
@@ -166,11 +169,18 @@ convertRMarkdown &lt;- function(dir=getwd(), images.dir=dir, images.url='/cn/ass
 
 <h3 id="rmdsh">建立可执行文本 <code>rmd.sh</code></h3>
 
-<p>这个 <code>rmd.sh</code> 也是存放在目录 <code>_posts</code>, 主要就是
-- 识别当前的目录，并将其赋予 <code>dir</code> 参数
-- 默认在 <code>Terminal</code> 运行 <code>rmakrdown.r</code> 的 <code>convertRmarkdown</code> 函数，并输出经过转化的 <code>.markdown</code> 文件。</p>
+<p>这个 <code>rmd.sh</code> 也是存放在目录 <code>_posts</code>, 主要就是</p>
 
-<p>文本 <a href="/cn/_post/rmd.sh"><code>rmd.sh</code></a> 可以下载，里面内容是</p>
+<ul>
+  <li>
+    <p>识别当前的目录，并将其赋予 <code>dir</code> 参数</p>
+  </li>
+  <li>
+    <p>默认在 <code>Terminal</code> 运行 <code>rmakrdown.r</code> 的 <code>convertRmarkdown</code> 函数，并输出经过转化的 <code>.markdown</code> 文件。</p>
+  </li>
+</ul>
+
+<p>文本 <code>rmd.sh</code> 可以<a href="/cn/_post/rmd.sh">下载</a>，里面内容是</p>
 
 <pre><code>DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &amp;&amp; pwd )"
 Rscript -e "source('$DIR/rmarkdown.r'); convertRMarkdown(images.dir='../assets/images')"
@@ -188,14 +198,32 @@ status: process
 <blockquote>
   <p> - First, the published parameter should be set to false so that Jekyll will not attempt to process the file. The convertRMarkdown function will change this parameter to true in the resulting Markdown file. </p>
   <p> - The second parameter, status, must be set to process for the convertRMarkdown function to convert the file. This is useful when working a draft of a document and you wish to not have the file converted. </p>
-  
 </blockquote>
+
+<h3 id="mathjax"><strong>MathJax</strong></h3>
+
+<p>如果想要让 <strong>Jekyll</strong> 支持数学公式，我们还需要添加插件，<strong>MathJax</strong>，然后使用 *markdown** 的编译设置为 <strong>kramdown</strong>。我是这样配置的</p>
+
+<h4 id="kramdown">添加 <strong>kramdown</strong></h4>
+<p>由于我先前使用的是 <em>rdiscount</em> 来编译 <strong>mardown</strong> 语法，不能够支持对数学公式的输出。使用的替代是 <strong>kramdown</strong>，一个更加强大的插件，支持 <em>pdf</em>， <em>html</em>，<em>LaTeX</em> 等格式的转化。</p>
+
+<ul>
+  <li>
+    <p>首先是在主目录文件夹找到 <code>_config-yml</code> 打开，将 <strong>markdown</strong> 默认的编译设置为 <strong>kramdown</strong>。</p>
+  </li>
+  <li>
+    <p>在 <code>_layout</code> 目录下面有 <code>default.html</code> 的页面设置，我们需要在 <code>&lt;head&gt;</code> 与 <code>&lt;/head&gt;</code> 之间插入代码
+<img src="/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/snapshot1.png" alt="snapshot1.png" /></p>
+
+    <p>也就是在网页开启前使用 <strong>MathJax</strong> 进行编译，支持对数学的输出。这里，我使用单个美元符号 <code>$</code> 与 <code>$</code> 输入 <strong>LaTeX</strong> 代码，会在网页显示相应的 <em>行内公式</em>，而使用一对的美元符号 <code>$$</code> 与 <code>$$</code> 来输入行间数学公式。</p>
+  </li>
+</ul>
 
 <h3 id="section-1">例子</h3>
 
 <h4 id="section-2">数学公式</h4>
 
-<p>比如我只需要如下输入数学公式，<script type="math/tex">S = \sum_{i=1}^k x_i</script>，或者是<script type="math/tex">a^2 + b^2 = c^2</script></p>
+<p>比如我只需要如下输入数学公式，$S = \sum_{i=1}^k x_i$，或者是<script type="math/tex">a^2 + b^2 = c^2</script></p>
 
 <script type="math/tex; mode=display">\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum_{k=0}^\infty\frac{(4k)!(1103+26390k)}{(k!)^4396^{4k}}</script>
 
@@ -225,39 +253,6 @@ plot<span class="p">(</span>density<span class="p">(</span>x<span class="p">))</
     </item>
     
     <item>
-      <title>岁月不留，心灵的童年永驻</title>
-      <link>http://williamlfang.github.com/cn/2014/01/22/sui-yue-bu-liu--xin-ling-de-tong-nian-yong-zhu/</link>
-      <pubDate>2014-01-22T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2014/01/22/sui-yue-bu-liu--xin-ling-de-tong-nian-yong-zhu</guid>
-      <content:encoded><![CDATA[<p>时间是绝对的，是自由的，不会从属于某个团体，社会，时代，个人。有时我睁着眼睛，看岁月流水哗啦啦的，桀骜不羁，独立特行，任由我这个惊讶的看客嗟叹不止。我知道，来日方长，可是逝去的时光犹如压缩的孢囊，远去多少记忆，却也只是一丁点的回味。我们常说回首岁月，可是却从来都回不到过去，留不下的是时间，留下了自己。</p>
-
-<p>以前有阅读的书籍，看过的电影，品尝的美食，游历的风景，突然哪一天就出现在你的眼前，挥之不去。比如，这个故事集：<a href="/cn/assets/files/林海音：城南旧事.pdf">「城南旧事」</a>。</p>
-
-<p>我记得先前在高中之时，便有看过。现在回想彼时的场景，却是模糊，如同久置的照片，泛着黄昏余日的幽暗。今天刚好手头无事，便在网上找到了文章，开始读起来。</p>
-
-<p>正如作者在序言说的，
-&gt; 把他们写下来吧，让实际的童年过去，心灵的童年永存下来。</p>
-
-<p>这是一个关于旧日童年的回忆录，由以下几篇短文构成，共同讲述了作者儿时在老北京度过的童年时光。</p>
-
-<ul>
-  <li>惠安馆传奇</li>
-  <li>我们看海去</li>
-  <li>兰姨娘</li>
-  <li>驴打滚儿</li>
-  <li>爸爸的花儿落了 我也不再是小孩子</li>
-</ul>
-
-<p>里面的文章有孩子的天真无邪，她都这个世界即充满好奇，蠢蠢欲动愈要一窥究竟，
-&gt; 做大人，常常有人要我做大人</p>
-
-<p>可是，当她长大之后，时间走了，人也老了，却回不到当初的童真，
-&gt; 虽然，这些人都随着我的长大没有了影子了。是跟着我失去的童年一起失去了吗？</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
       <title>Data Structure</title>
       <link>http://williamlfang.github.com/cn/2014/01/22/shu-ju-jie/</link>
       <pubDate>2014-01-22T00:00:00+08:00</pubDate>
@@ -269,14 +264,38 @@ plot<span class="p">(</span>density<span class="p">(</span>x<span class="p">))</
 
 <h2 id="section">概览</h2>
 
-<p>Wickham 用一张表格总结了 <strong>R</strong> 中的数据结构
-&gt; R’s base data structures are summarised in the table below, organised by their dimensionality and whether they’re homogeneous (all contents must be of the same type) or heterogeneous (the contents can be of different types):
-&gt;
-&gt; |    | Homogeneous   | Heterogeneous |
-&gt; |—-|—————|—————|
-&gt; | 1d | Atomic vector | List          |
-&gt; | 2d | Matrix        | Data frame    |
-&gt; | nd | Array         |               |</p>
+<p>Wickham 用一张表格总结了 <strong>R</strong> 中的数据结构</p>
+
+<blockquote>
+  <p>R’s base data structures are summarised in the table below, organised by their dimensionality and whether they’re homogeneous (all contents must be of the same type) or heterogeneous (the contents can be of different types):</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th> </th>
+        <th>Homogeneous</th>
+        <th>Heterogeneous</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1d</td>
+        <td>Atomic vector</td>
+        <td>List</td>
+      </tr>
+      <tr>
+        <td>2d</td>
+        <td>Matrix</td>
+        <td>Data frame</td>
+      </tr>
+      <tr>
+        <td>nd</td>
+        <td>Array</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
 
 <p>需要解释的是标量（scalar）。什么是标量呢？就是一个个单独的变量，如</p>
 
@@ -600,16 +619,25 @@ typeof(v)
       <guid>http://williamlfang.github.com/cn/2014/01/20/r-note</guid>
       <content:encoded><![CDATA[<p>这个文档记录了我在学习 <a href="http://had.co.nz/">Hadley Wickham</a> 即将出版的新书，<a href="http://adv-r.had.co.nz/">Advanced R Programming</a> 时的一些笔记与总结，以便将来复习查阅。该书博大精深，结构严谨，涵盖面广泛，涉及几乎目前有关「R」的所有问题。从最基础的数据结构开始讲起，然后逐步渐进到如何编写针对问题的 <code>function</code>，再进阶到如何开发能够发布以供他人使用的 <code>package</code>。Wickham 本人就是在「R Community」团体中的传奇人物，开发了许多为人称道的宏包，如 <code>ggplot2</code>等。而本书真是作者在总结了近十年的 「R」软件开发后编写的一本巨著。仔细深入阅读此书必将受益匪浅，极大的提升我们使用与开发「R」的各项技能，真正从最底层去认识「R」这个当今最强大的数据处理、统计分析与图形可视化编程语言。</p>
 
-<p>正如他自己所说的：
-&gt; I have been programming in R for over 10 years, spending a lot of time trying to figure out how the language works. Not everyone has the luxury of spending years to understand a programming language, so this book is my attempt to help you to become an effective R programmer as quickly as possible. By reading this book, you will avoid the many mistakes that I made and the many dead ends that I got stuck in, and quickly navigate your way to useful tools and techniques. Although R has its frustrating quirks, I truly believe that at its heart lies an elegant and beautiful language, well tailored for data analysis and statistics. In this book, I’ll do my best to reveal that language to you, helping you to understand powerful idioms that allow you to attack many types of problems.</p>
+<p>正如他自己所说的：</p>
+
+<blockquote>
+  <p>I have been programming in R for over 10 years, spending a lot of time trying to figure out how the language works. Not everyone has the luxury of spending years to understand a programming language, so this book is my attempt to help you to become an effective R programmer as quickly as possible. By reading this book, you will avoid the many mistakes that I made and the many dead ends that I got stuck in, and quickly navigate your way to useful tools and techniques. Although R has its frustrating quirks, I truly believe that at its heart lies an elegant and beautiful language, well tailored for data analysis and statistics. In this book, I’ll do my best to reveal that language to you, helping you to understand powerful idioms that allow you to attack many types of problems.</p>
+</blockquote>
 
 <h2 id="why-r">Why 「R」</h2>
 
-<p>对于这个问题的回答，最简短的回答是
-&gt; 多学一门编程语言总不会死吧？！！！</p>
+<p>对于这个问题的回答，最简短的回答是</p>
 
-<p>确实，在当今这个互联网与信息时代，我们的生活与工作与电脑紧密相连、形影不离，如果要想了解这个时代、这个世界，我们首先必须先了解那些控制与主宰了我们生活节奏的「电脑们」是如何「生活」的。进一步说，即那些操控了「电脑们」的<strong>「程序」</strong>是如何运行的。而所谓的「程序」，终归到底，是「程序语言」（Programming language）。前几年流行的一本「Hakers and Painters」就在序言开宗明义地说：
-&gt; Everything around us is turning into computers. Your typewriter is gone, replaced by a computer. Your phone has turned into a computer. So has your camera. Soon your Tv will. Your car was not only designed on computers, but has more processing power in it than a room-sized mainframe did in 1970. Letters, encyclopedias, newspapers, and even your local store are being replaced by the Internet.</p>
+<blockquote>
+  <p>多学一门编程语言总不会死吧？！！！</p>
+</blockquote>
+
+<p>确实，在当今这个互联网与信息时代，我们的生活与工作与电脑紧密相连、形影不离，如果要想了解这个时代、这个世界，我们首先必须先了解那些控制与主宰了我们生活节奏的「电脑们」是如何「生活」的。进一步说，即那些操控了「电脑们」的<strong>「程序」</strong>是如何运行的。而所谓的「程序」，终归到底，是「程序语言」（Programming language）。前几年流行的一本「Hakers and Painters」就在序言开宗明义地说：</p>
+
+<blockquote>
+  <p>Everything around us is turning into computers. Your typewriter is gone, replaced by a computer. Your phone has turned into a computer. So has your camera. Soon your Tv will. Your car was not only designed on computers, but has more processing power in it than a room-sized mainframe did in 1970. Letters, encyclopedias, newspapers, and even your local store are being replaced by the Internet.</p>
+</blockquote>
 
 <p>因此，我们要想了解世界，就必须先懂得这个世界在说什么（编程）「语言」。所谓「技多不压身」，多学习一门「编程语言」也促使我们从另外一个角度看世界，多一种批判的眼光，多一层思维的觉悟。何乐而不为？</p>
 
@@ -636,9 +664,15 @@ typeof(v)
   <li>
     <p>可重复（reproducable）研究指得是在现有的数据框架下，我们可以通过复制原来研究成果的代码来验证其准确性。这区别于更加广泛意义上的可复制（replecated）研究，即需要重新收集数据样本来复制结果。可重复研究允许我们在有限的经费预算约束下，极大可能的验证科学研究成果。</p>
 
-    <p>「R」正是开发可重复研究的利器，提供了像<code>knitr</code>这样优秀的软件包，使得统计分析的任何一个过程都可以通过运行代码来检验研究成果。同时，我们还可以在文章正文中「植入」程序代码，直接计算结果（面向对象，object-oriented）、绘制图形（ggplot2）、编制表格（tabular，xtable）。这省去了传统的撰写文章的麻烦与琐碎。比如，原先我们可能是在「LaTex」中写入论述，等到了需要使用图形的地方，需要事先标明<code>\includegraphic{}</code>，然后通过查找对应的图片插入。这期间被各种「烦文缛节」、各种「黑暗技巧」搞得晕头转向、不知何处。最后搞不好还弄错了文字与图形的匹配。而这些统统在<code>knitr</code>中可以自动完成，我们需要的，就是顺着思维的路线一路走下去，该说人话的时候就写人话，该使用机器语言就直接健入代码产生需要的结果或者图形。真可谓
-&gt; 「R」与「LaTex」齐飞，思想代码共一体。</p>
+    <p>「R」正是开发可重复研究的利器，提供了像<code>knitr</code>这样优秀的软件包，使得统计分析的任何一个过程都可以通过运行代码来检验研究成果。同时，我们还可以在文章正文中「植入」程序代码，直接计算结果（面向对象，object-oriented）、绘制图形（ggplot2）、编制表格（tabular，xtable）。这省去了传统的撰写文章的麻烦与琐碎。比如，原先我们可能是在「LaTex」中写入论述，等到了需要使用图形的地方，需要事先标明<code>\includegraphic{}</code>，然后通过查找对应的图片插入。这期间被各种「烦文缛节」、各种「黑暗技巧」搞得晕头转向、不知何处。最后搞不好还弄错了文字与图形的匹配。而这些统统在<code>knitr</code>中可以自动完成，我们需要的，就是顺着思维的路线一路走下去，该说人话的时候就写人话，该使用机器语言就直接健入代码产生需要的结果或者图形。真可谓</p>
   </li>
+</ul>
+
+<blockquote>
+  <p>「R」与「LaTex」齐飞，思想代码共一体。</p>
+</blockquote>
+
+<ul>
   <li>
     <p>此外，「R」还是一个<em>跨平台</em>的软件体，通吃「三界」：</p>
 
@@ -659,25 +693,32 @@ typeof(v)
 
 <p>对于这个问题，我真的不知该如何回答。如果说以上的几点理由还不够具有「杀伤力」，那在下也只能自愧功力不够、道行尚浅、修行有限。</p>
 
-<p>不过还好，大神来帮忙了：
-&gt; Of course, R is not perfect. R’s biggest challenge is that most R users are not programmers.     </p>
+<p>不过还好，大神来帮忙了：</p>
+
+<blockquote>
+  <p>Of course, R is not perfect. R’s biggest challenge is that most R users are not programmers.     </p>
+</blockquote>
 
 <p>他给出的批评无非是「double-edged sword」，所谓凡是有利有弊、一正一邪。各位看官可以到大神的网上去找找不使用「R」的「牵强附会」的理由。在下无需多言，只不过再此累赘一下，也算是个人当初的体会</p>
 
 <ul>
   <li>「R」的学习曲线太陡峭、成本太高了。也就是说，对于一个初学者来说，「R」的代码几乎可以说是「摧枯拉朽」、「灭顶之灾」的。原因有二：
     <ul>
-      <li>
-        <p>「R」掺杂了其他语言的使用，如<strong>C</strong>，<strong>Python</strong>。这旨在提高「R」的运行速度与计算能力，增强数据分析。不过这对「beginner」却造成了困扰。
-&gt; 我的建议是：既来之，则安之。一开始看不懂没关系，先试着挑-「好看」的来，然后再进一步深入学习。等到你真正需要扩展的时候，再去找些资料学习就可以了。</p>
-      </li>
-      <li>
-        <p>「R」对于编写程序没有过于严格的要求，是真正意义上的「注重结果」的编程语言。这直接造成了「恶劣影响」，导致许多的代码行都不大注重严谨，缺乏统一。看不懂别人的代码那是必须的，有时甚至都看不懂自己以前写的代码了。,,Ծ‸Ծ,,
-&gt; 推荐：多看多看多看！没见过猪跑也好歹有吃过猪肉。另外，可以看看一些「guide」，养成良好的编写程序的习惯，比如，大神的<a href="http://adv-r.had.co.nz/Style.html">建议</a>,以及<a href="http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml">Google’s R Style Guide</a></p>
-      </li>
+      <li>「R」掺杂了其他语言的使用，如<strong>C</strong>，<strong>Python</strong>。这旨在提高「R」的运行速度与计算能力，增强数据分析。不过这对「beginner」却造成了困扰。</li>
     </ul>
   </li>
 </ul>
+
+<blockquote>
+  <p>我的建议是：既来之，则安之。一开始看不懂没关系，先试着挑-「好看」的来，然后再进一步深入学习。等到你真正需要扩展的时候，再去找些资料学习就可以了。</p>
+</blockquote>
+
+<pre><code>+ 「R」对于编写程序没有过于严格的要求，是真正意义上的「注重结果」的编程语言。这直接造成了「恶劣影响」，导致许多的代码行都不大注重严谨，缺乏统一。看不懂别人的代码那是必须的，有时甚至都看不懂自己以前写的代码了。,,Ծ‸Ծ,,
+</code></pre>
+
+<blockquote>
+  <p>推荐：多看多看多看！没见过猪跑也好歹有吃过猪肉。另外，可以看看一些「guide」，养成良好的编写程序的习惯，比如，大神的<a href="http://adv-r.had.co.nz/Style.html">建议</a>,以及<a href="http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml">Google’s R Style Guide</a></p>
+</blockquote>
 ]]></content:encoded>
     </item>
     
@@ -1042,6 +1083,180 @@ GoAgent 为在天朝上网提供了一个小小的洞眼，让被墙的我们得
       </ul>
     </li>
   </ul>
+</blockquote>
+
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Github 的一些设置技巧</title>
+      <link>http://williamlfang.github.com/cn/2014/01/03/github-jekyll/</link>
+      <pubDate>2014-01-03T00:00:00+08:00</pubDate>
+      <author>William Fang</author>
+      <guid>http://williamlfang.github.com/cn/2014/01/03/github-jekyll</guid>
+      <content:encoded><![CDATA[<h2 id="gitgithub">Git与Github</h2>
+
+<p>Git是一个分散化的版本管理系统(DVCS),最早是用于处理Linux的远程协作编程,后来开始在编程社区逐渐受到关注,在程序猿们广泛流传.而Github就相当于给Git安装了一个在线的存储系统,用于远程协同,相当于码农们的Facebook.</p>
+
+<h2 id="jekyll">Jekyll</h2>
+
+<blockquote>
+  <p>Transform your plain text into static websites and blogs.</p>
+</blockquote>
+
+<h2 id="github--jekyll-">使用 Github 和 Jekyll 发表博客</h2>
+
+<p>以下是在 Linux 系统下的 bash 命令语句:</p>
+
+<h3 id="section">复制库到本地磁盘</h3>
+
+<p>从 github 将项目 (project) 复制 (fork) 到本地磁盘中,基本格式是:</p>
+
+<pre><code>git clone git@github.com:USERNAME/USERNAME.github.com.git TARGETED_FILE
+
+git clone git@github.com:USERNAME/Project_Name.git TARGETED_FILE
+</code></pre>
+
+<p>其中,TARGETED_FILE 通常是以 USERNAME.github.com.git 作为存放目录.</p>
+
+<ul>
+  <li>
+    <p>/home/william/williamlfang.github.com. </p>
+
+    <p>git clone git@github.com:williamlfang/williamlfang.github.com.git williamlfang.github.com</p>
+  </li>
+  <li>
+    <p>/home/william/cn</p>
+
+    <p>git clone git@github.com:williamlfang/cn.git cn</p>
+  </li>
+  <li>
+    <p>/home/william/en</p>
+
+    <p>git clone git@github.com:williamlfang/en.git en</p>
+  </li>
+</ul>
+
+<h3 id="section-1">更改项目文件</h3>
+
+<p>对于修改的文件,如果想要将其上传到 Github 空间存储,需要经过如下几个步骤</p>
+
+<h4 id="williamlfanggithubcom">williamlfang.github.com</h4>
+
+<pre><code>cd /home/william/williamlfang.github.com        # 指定路径
+git add . -A           # 上传全部文件 -A
+git commit -m ""       #  加上注解说明有助于日后维护:-m
+
+git remote rm origin   # 删除历史保存
+git remote add origin git@github.com:williamlfang/williamlfang.github.com.git
+git push origin master
+
+jekyll --server        # 在本地文件预览效果, 可打开: 127.0.0.1:4000
+</code></pre>
+
+<h4 id="cn">cn</h4>
+
+<pre><code>cd /home/william/cn
+git add . -A
+git commit -m ""
+
+git remote rm origin
+git remote add origin git@github.com:williamlfang/cn.git
+git push origin gh-pages
+
+jekyll --server
+</code></pre>
+
+<h4 id="en">en</h4>
+
+<pre><code>cd /home/william/en
+git add . -A
+git commit -m ""
+
+git remote rm origin
+git remote add origin git@github.com:williamlfang/en.git
+git push origin gh-pages
+
+jekyll --server
+</code></pre>
+
+<h2 id="faq">FAQ</h2>
+
+<h3 id="tcpserver-error-address-already-in-use">TCPServer Error: Address already in use</h3>
+
+<p>Solution:</p>
+
+<ol>
+  <li>
+    <p>在终端输入</p>
+
+    <p>lsof -wni tcp:4000</p>
+  </li>
+  <li>
+    <p>关闭 PID </p>
+
+    <p>kill -9 PID</p>
+  </li>
+  <li>
+    <p>重新生成</p>
+
+    <p>jekyll –server</p>
+  </li>
+</ol>
+
+<h3 id="ssh-">SSH 错误</h3>
+
+<p><em>引用</em>:<a href="http://blog.csdn.net/keyboardota/article/details/7603630">原文连接</a></p>
+
+<blockquote>
+  <p>问题:在新的电脑系统中,首次生成SSH, 系统会报下面的错误：<br />
+Permission denied (publickey). <br />
+fatal:The remote end hung up unexpectedly <br /></p>
+</blockquote>
+
+<blockquote>
+  <p>Solution:这时需要在本地创建SSH key，然后将生成的SSH key文件内容添加到github帐号上去。</p>
+</blockquote>
+
+<p>创建SSH key的方法很简单，执行如下命令就可以：
+- ssh-keygen
+- 然后系统提示输入文件保存位置等信息，连续敲三次回车即可，生成的SSH key文件保存在中～/.ssh/id_rsa.pub</p>
+
+<p>然后用文本编辑工具打开该文件，我用的是gedit,所以命令是：
+gedit ~/.ssh/id_rsa.pub</p>
+
+<p>接着拷贝.ssh/id_rsa.pub（或者是github.pub）文件内的所以内容，将它粘帖到github帐号管理中的添加SSH key界面中。</p>
+
+<p>打开github帐号管理中的添加SSH key界面的步骤如下：</p>
+
+<ol>
+  <li>登录github</li>
+  <li>点击右上方的Accounting settings图标</li>
+  <li>选择 SSH key</li>
+  <li>点击 Add SSH key</li>
+  <li>在出现的界面中填写SSH key的名称，填一个你自己喜欢的名称即可，然后将上面拷贝的~/.ssh/id_rsa.pub文件内容粘帖到key一栏，在点击“add key”按钮就可以了。</li>
+</ol>
+
+<p>添加过程github会提示你输入一次你的github密码</p>
+
+<p>添加完成后再次执行git clone就可以成功克隆github上的代码库了。</p>
+
+<h3 id="rdiscount-">rdiscount 安装错误</h3>
+
+<blockquote>
+  <p>问题:在使用’jekyll –server’出现如下错误    <br />
+  ? [suod] gem install rdiscount    <br />
+  而如果真的这么干,却出现另外的错误提示   <br />
+ERROR: Error installing rdiscount:    <br />
+    ERROR: Failed to build gem native extension.</p>
+</blockquote>
+
+<blockquote>
+  <p>Solution:   <br />
+   - 先安装 ruby1.9.1-dev,    <br />
+    sudo apt-get install ruby1.9.1-dev     <br />
+   - 再安装 rdiscount    <br />
+    gem install rdiscount</p>
 </blockquote>
 
 ]]></content:encoded>

@@ -96,7 +96,7 @@
     })
     </script>
   <!--=================================================================== -->
-   <!-- mathjax config similar to math.stackexchange -->
+ <!--mathjax config similar to math.stackexchange \
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX", "output/HTML-CSS"],
@@ -108,12 +108,48 @@ MathJax.Hub.Config({
   },
   messageStyle: "none",
   "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
-  "HTML-CSS": { minScaleAdjust: 110 }    
  });
  </script>
 
-  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
-   <!-- mathjax config similar to math.stackexchange -->
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- mathjax config similar to math.stackexchange -->
+<style TYPE="text/css"> /*以下为数学格式*/
+/* code.has-jax {font: inherit; font-size: 200%; background: inherit; border: inherit;}*/
+ body {font-family: Palatino;} */
+ h1, h2 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;} /*font-family: Century Gothic; color: #3C5084;*/
+ h3 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;} /*font-family: Century Gothic; color: #6076B4*/
+ h4 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;color: #6076B4;}
+/*code {font-family: Inconsolata;}*/
+ p {text-align:justify;} */             /* TEXT ALIGHT: */
+.hidden {display: none;}
+.newpage {page-break-before:always;}
+/*pre {padding: 10px; margin-left: 100px; margin-right: 100px; background: #EEEEEE;}*/
+@media print {h2 {page-break-before:always;}}
+/* TODO: use Google Web Fonts to ensure Palatino, Century Gothic and Inconsolata are installed and used */
+</style>
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
 
  </head>
 
@@ -139,16 +175,25 @@ MathJax.Hub.Config({
         <section class="post">
 <p>这个文档记录了我在学习 <a href="http://had.co.nz/">Hadley Wickham</a> 即将出版的新书，<a href="http://adv-r.had.co.nz/">Advanced R Programming</a> 时的一些笔记与总结，以便将来复习查阅。该书博大精深，结构严谨，涵盖面广泛，涉及几乎目前有关「R」的所有问题。从最基础的数据结构开始讲起，然后逐步渐进到如何编写针对问题的 <code>function</code>，再进阶到如何开发能够发布以供他人使用的 <code>package</code>。Wickham 本人就是在「R Community」团体中的传奇人物，开发了许多为人称道的宏包，如 <code>ggplot2</code>等。而本书真是作者在总结了近十年的 「R」软件开发后编写的一本巨著。仔细深入阅读此书必将受益匪浅，极大的提升我们使用与开发「R」的各项技能，真正从最底层去认识「R」这个当今最强大的数据处理、统计分析与图形可视化编程语言。</p>
 
-<p>正如他自己所说的：
-&gt; I have been programming in R for over 10 years, spending a lot of time trying to figure out how the language works. Not everyone has the luxury of spending years to understand a programming language, so this book is my attempt to help you to become an effective R programmer as quickly as possible. By reading this book, you will avoid the many mistakes that I made and the many dead ends that I got stuck in, and quickly navigate your way to useful tools and techniques. Although R has its frustrating quirks, I truly believe that at its heart lies an elegant and beautiful language, well tailored for data analysis and statistics. In this book, I’ll do my best to reveal that language to you, helping you to understand powerful idioms that allow you to attack many types of problems.</p>
+<p>正如他自己所说的：</p>
+
+<blockquote>
+  <p>I have been programming in R for over 10 years, spending a lot of time trying to figure out how the language works. Not everyone has the luxury of spending years to understand a programming language, so this book is my attempt to help you to become an effective R programmer as quickly as possible. By reading this book, you will avoid the many mistakes that I made and the many dead ends that I got stuck in, and quickly navigate your way to useful tools and techniques. Although R has its frustrating quirks, I truly believe that at its heart lies an elegant and beautiful language, well tailored for data analysis and statistics. In this book, I’ll do my best to reveal that language to you, helping you to understand powerful idioms that allow you to attack many types of problems.</p>
+</blockquote>
 
 <h2 id="why-r">Why 「R」</h2>
 
-<p>对于这个问题的回答，最简短的回答是
-&gt; 多学一门编程语言总不会死吧？！！！</p>
+<p>对于这个问题的回答，最简短的回答是</p>
 
-<p>确实，在当今这个互联网与信息时代，我们的生活与工作与电脑紧密相连、形影不离，如果要想了解这个时代、这个世界，我们首先必须先了解那些控制与主宰了我们生活节奏的「电脑们」是如何「生活」的。进一步说，即那些操控了「电脑们」的<strong>「程序」</strong>是如何运行的。而所谓的「程序」，终归到底，是「程序语言」（Programming language）。前几年流行的一本「Hakers and Painters」就在序言开宗明义地说：
-&gt; Everything around us is turning into computers. Your typewriter is gone, replaced by a computer. Your phone has turned into a computer. So has your camera. Soon your Tv will. Your car was not only designed on computers, but has more processing power in it than a room-sized mainframe did in 1970. Letters, encyclopedias, newspapers, and even your local store are being replaced by the Internet.</p>
+<blockquote>
+  <p>多学一门编程语言总不会死吧？！！！</p>
+</blockquote>
+
+<p>确实，在当今这个互联网与信息时代，我们的生活与工作与电脑紧密相连、形影不离，如果要想了解这个时代、这个世界，我们首先必须先了解那些控制与主宰了我们生活节奏的「电脑们」是如何「生活」的。进一步说，即那些操控了「电脑们」的<strong>「程序」</strong>是如何运行的。而所谓的「程序」，终归到底，是「程序语言」（Programming language）。前几年流行的一本「Hakers and Painters」就在序言开宗明义地说：</p>
+
+<blockquote>
+  <p>Everything around us is turning into computers. Your typewriter is gone, replaced by a computer. Your phone has turned into a computer. So has your camera. Soon your Tv will. Your car was not only designed on computers, but has more processing power in it than a room-sized mainframe did in 1970. Letters, encyclopedias, newspapers, and even your local store are being replaced by the Internet.</p>
+</blockquote>
 
 <p>因此，我们要想了解世界，就必须先懂得这个世界在说什么（编程）「语言」。所谓「技多不压身」，多学习一门「编程语言」也促使我们从另外一个角度看世界，多一种批判的眼光，多一层思维的觉悟。何乐而不为？</p>
 
@@ -175,9 +220,15 @@ MathJax.Hub.Config({
   <li>
     <p>可重复（reproducable）研究指得是在现有的数据框架下，我们可以通过复制原来研究成果的代码来验证其准确性。这区别于更加广泛意义上的可复制（replecated）研究，即需要重新收集数据样本来复制结果。可重复研究允许我们在有限的经费预算约束下，极大可能的验证科学研究成果。</p>
 
-    <p>「R」正是开发可重复研究的利器，提供了像<code>knitr</code>这样优秀的软件包，使得统计分析的任何一个过程都可以通过运行代码来检验研究成果。同时，我们还可以在文章正文中「植入」程序代码，直接计算结果（面向对象，object-oriented）、绘制图形（ggplot2）、编制表格（tabular，xtable）。这省去了传统的撰写文章的麻烦与琐碎。比如，原先我们可能是在「LaTex」中写入论述，等到了需要使用图形的地方，需要事先标明<code>\includegraphic{}</code>，然后通过查找对应的图片插入。这期间被各种「烦文缛节」、各种「黑暗技巧」搞得晕头转向、不知何处。最后搞不好还弄错了文字与图形的匹配。而这些统统在<code>knitr</code>中可以自动完成，我们需要的，就是顺着思维的路线一路走下去，该说人话的时候就写人话，该使用机器语言就直接健入代码产生需要的结果或者图形。真可谓
-&gt; 「R」与「LaTex」齐飞，思想代码共一体。</p>
+    <p>「R」正是开发可重复研究的利器，提供了像<code>knitr</code>这样优秀的软件包，使得统计分析的任何一个过程都可以通过运行代码来检验研究成果。同时，我们还可以在文章正文中「植入」程序代码，直接计算结果（面向对象，object-oriented）、绘制图形（ggplot2）、编制表格（tabular，xtable）。这省去了传统的撰写文章的麻烦与琐碎。比如，原先我们可能是在「LaTex」中写入论述，等到了需要使用图形的地方，需要事先标明<code>\includegraphic{}</code>，然后通过查找对应的图片插入。这期间被各种「烦文缛节」、各种「黑暗技巧」搞得晕头转向、不知何处。最后搞不好还弄错了文字与图形的匹配。而这些统统在<code>knitr</code>中可以自动完成，我们需要的，就是顺着思维的路线一路走下去，该说人话的时候就写人话，该使用机器语言就直接健入代码产生需要的结果或者图形。真可谓</p>
   </li>
+</ul>
+
+<blockquote>
+  <p>「R」与「LaTex」齐飞，思想代码共一体。</p>
+</blockquote>
+
+<ul>
   <li>
     <p>此外，「R」还是一个<em>跨平台</em>的软件体，通吃「三界」：</p>
 
@@ -198,25 +249,32 @@ MathJax.Hub.Config({
 
 <p>对于这个问题，我真的不知该如何回答。如果说以上的几点理由还不够具有「杀伤力」，那在下也只能自愧功力不够、道行尚浅、修行有限。</p>
 
-<p>不过还好，大神来帮忙了：
-&gt; Of course, R is not perfect. R’s biggest challenge is that most R users are not programmers.     </p>
+<p>不过还好，大神来帮忙了：</p>
+
+<blockquote>
+  <p>Of course, R is not perfect. R’s biggest challenge is that most R users are not programmers.     </p>
+</blockquote>
 
 <p>他给出的批评无非是「double-edged sword」，所谓凡是有利有弊、一正一邪。各位看官可以到大神的网上去找找不使用「R」的「牵强附会」的理由。在下无需多言，只不过再此累赘一下，也算是个人当初的体会</p>
 
 <ul>
   <li>「R」的学习曲线太陡峭、成本太高了。也就是说，对于一个初学者来说，「R」的代码几乎可以说是「摧枯拉朽」、「灭顶之灾」的。原因有二：
     <ul>
-      <li>
-        <p>「R」掺杂了其他语言的使用，如<strong>C</strong>，<strong>Python</strong>。这旨在提高「R」的运行速度与计算能力，增强数据分析。不过这对「beginner」却造成了困扰。
-&gt; 我的建议是：既来之，则安之。一开始看不懂没关系，先试着挑-「好看」的来，然后再进一步深入学习。等到你真正需要扩展的时候，再去找些资料学习就可以了。</p>
-      </li>
-      <li>
-        <p>「R」对于编写程序没有过于严格的要求，是真正意义上的「注重结果」的编程语言。这直接造成了「恶劣影响」，导致许多的代码行都不大注重严谨，缺乏统一。看不懂别人的代码那是必须的，有时甚至都看不懂自己以前写的代码了。,,Ծ‸Ծ,,
-&gt; 推荐：多看多看多看！没见过猪跑也好歹有吃过猪肉。另外，可以看看一些「guide」，养成良好的编写程序的习惯，比如，大神的<a href="http://adv-r.had.co.nz/Style.html">建议</a>,以及<a href="http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml">Google’s R Style Guide</a></p>
-      </li>
+      <li>「R」掺杂了其他语言的使用，如<strong>C</strong>，<strong>Python</strong>。这旨在提高「R」的运行速度与计算能力，增强数据分析。不过这对「beginner」却造成了困扰。</li>
     </ul>
   </li>
 </ul>
+
+<blockquote>
+  <p>我的建议是：既来之，则安之。一开始看不懂没关系，先试着挑-「好看」的来，然后再进一步深入学习。等到你真正需要扩展的时候，再去找些资料学习就可以了。</p>
+</blockquote>
+
+<pre><code>+ 「R」对于编写程序没有过于严格的要求，是真正意义上的「注重结果」的编程语言。这直接造成了「恶劣影响」，导致许多的代码行都不大注重严谨，缺乏统一。看不懂别人的代码那是必须的，有时甚至都看不懂自己以前写的代码了。,,Ծ‸Ծ,,
+</code></pre>
+
+<blockquote>
+  <p>推荐：多看多看多看！没见过猪跑也好歹有吃过猪肉。另外，可以看看一些「guide」，养成良好的编写程序的习惯，比如，大神的<a href="http://adv-r.had.co.nz/Style.html">建议</a>,以及<a href="http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml">Google’s R Style Guide</a></p>
+</blockquote>
 
 </section>
 <section class="meta">
@@ -311,7 +369,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-25 03:11:27</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-25 20:55:01</span></small></p>
 </footer>
 
   </div>

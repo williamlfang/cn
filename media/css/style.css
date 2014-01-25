@@ -69,9 +69,9 @@ p code{background-color:#f7f7f7; padding: 2px; margin: 2px; border-radius: 3px; 
 /* curse quote  --------------------------------------------------------------- */
 blockquote {
   background:transparent url(blockquote_bg.gif) no-repeat scroll left top; 
-  /*color: #000000; */
+  color: #000000; 
   font-style: italic; 
-  font-size:13px;
+  font-size:14px;
   margin: 0 0 1em; 
   min-height: 1.5em; 
   overflow: auto;
@@ -97,7 +97,7 @@ blockquote p{margin:0;padding:.5em 0;}
 
 */
 
-#container{width:800px;margin:2em auto;display:block;padding:0 2em;}           /* 页面大小*/
+#container{width:700px;margin:2em auto;display:block;padding:0 2em;}           /* 页面大小*/
 .content{font-size:16px;line-height:24px;}
 .content h1{padding:.5em 0;}
 .content img{max-width:600px;display:block;margin:10px auto;-webkit-box-shadow:#999 1px 1px 4px;-moz-box-shadow:#999 1px 1px 4px;box-shadow:#999 1px 1px 4px;}

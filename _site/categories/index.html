@@ -96,7 +96,7 @@
     })
     </script>
   <!--=================================================================== -->
-   <!-- mathjax config similar to math.stackexchange -->
+ <!--mathjax config similar to math.stackexchange \
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX", "output/HTML-CSS"],
@@ -108,12 +108,48 @@ MathJax.Hub.Config({
   },
   messageStyle: "none",
   "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
-  "HTML-CSS": { minScaleAdjust: 110 }    
  });
  </script>
 
-  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
-   <!-- mathjax config similar to math.stackexchange -->
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- mathjax config similar to math.stackexchange -->
+<style TYPE="text/css"> /*以下为数学格式*/
+/* code.has-jax {font: inherit; font-size: 200%; background: inherit; border: inherit;}*/
+ body {font-family: Palatino;} */
+ h1, h2 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;} /*font-family: Century Gothic; color: #3C5084;*/
+ h3 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;} /*font-family: Century Gothic; color: #6076B4*/
+ h4 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;color: #6076B4;}
+/*code {font-family: Inconsolata;}*/
+ p {text-align:justify;} */             /* TEXT ALIGHT: */
+.hidden {display: none;}
+.newpage {page-break-before:always;}
+/*pre {padding: 10px; margin-left: 100px; margin-right: 100px; background: #EEEEEE;}*/
+@media print {h2 {page-break-before:always;}}
+/* TODO: use Google Web Fonts to ensure Palatino, Century Gothic and Inconsolata are installed and used */
+</style>
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
 
  </head>
 
@@ -145,13 +181,11 @@ MathJax.Hub.Config({
 
 <a href="#Campus" title="Campus" rel="3">Campus (3)</a>
 
-<a href="#Personal" title="Personal" rel="9">Personal (9)</a>
+<a href="#Personal" title="Personal" rel="8">Personal (8)</a>
 
 <a href="#Life" title="Life" rel="4">Life (4)</a>
 
-<a href="#Tech" title="Tech" rel="3">Tech (3)</a>
-
-<a href="#Tech" title="Tech" rel="3">Tech (3)</a>
+<a href="#Tech" title="Tech" rel="6">Tech (6)</a>
 
 <a href="#Programming" title="Programming" rel="2">Programming (2)</a>
 
@@ -286,11 +320,6 @@ MathJax.Hub.Config({
   <li class="listing-seperator" id="Personal">Personal</li>
 
   <li class="listing-item">
-  <time datetime="2014-01-22">2014-01-22</time>
-  <a href="http://williamlfang.github.com/cn/2014/01/22/sui-yue-bu-liu--xin-ling-de-tong-nian-yong-zhu/" title="岁月不留，心灵的童年永驻">岁月不留，心灵的童年永驻</a>
-  </li>
-
-  <li class="listing-item">
   <time datetime="2011-01-15">2011-01-15</time>
   <a href="http://williamlfang.github.com/cn/2011/01/15/one-semeter-ends/" title="一个学期结束了">一个学期结束了</a>
   </li>
@@ -357,24 +386,6 @@ MathJax.Hub.Config({
   <li class="listing-seperator" id="Tech">Tech</li>
 
   <li class="listing-item">
-  <time datetime="2014-01-08">2014-01-08</time>
-  <a href="http://williamlfang.github.com/cn/2014/01/08/chinese-input/" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
-  </li>
-
-  <li class="listing-item">
-  <time datetime="2014-01-04">2014-01-04</time>
-  <a href="http://williamlfang.github.com/cn/2014/01/04/virtualbox/" title="在 Virutalbox 环境下安装虚拟机">在 Virutalbox 环境下安装虚拟机</a>
-  </li>
-
-  <li class="listing-item">
-  <time datetime="2014-01-02">2014-01-02</time>
-  &lt;a href="http://williamlfang.github.com/cn/2014/01/02/window-2-linux/" title="本本的"转型""&gt;本本的"转型"
-  </li>
-
-
-  <li class="listing-seperator" id="Tech">Tech</li>
-
-  <li class="listing-item">
   <time datetime="2014-01-24">2014-01-24</time>
   <a href="http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/" title="使用 Jekyll + knitr 发布博客">使用 Jekyll + knitr 发布博客</a>
   </li>
@@ -387,6 +398,21 @@ MathJax.Hub.Config({
   <li class="listing-item">
   <time datetime="2014-01-16">2014-01-16</time>
   <a href="http://williamlfang.github.com/cn/2014/01/16/pandoc/" title="Linux Mint 安装 Pandoc">Linux Mint 安装 Pandoc</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2014-01-08">2014-01-08</time>
+  <a href="http://williamlfang.github.com/cn/2014/01/08/chinese-input/" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2014-01-04">2014-01-04</time>
+  <a href="http://williamlfang.github.com/cn/2014/01/04/virtualbox/" title="在 Virutalbox 环境下安装虚拟机">在 Virutalbox 环境下安装虚拟机</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2014-01-02">2014-01-02</time>
+  <a href="http://williamlfang.github.com/cn/2014/01/02/window-linux/" title="本本的转型">本本的转型</a>
   </li>
 
 
@@ -435,7 +461,7 @@ $(function () {
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-25 03:11:27</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-25 20:55:01</span></small></p>
 </footer>
 
   </div>

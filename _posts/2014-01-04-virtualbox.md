@@ -1,8 +1,7 @@
 ---
 layout:     post
 title:      在 Virutalbox 环境下安装虚拟机
-category:   
-- Tech
+category:   Tech
 tags: 
 - Linux
 - Virtualbox

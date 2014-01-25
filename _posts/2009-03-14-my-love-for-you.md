@@ -1,8 +1,7 @@
 ---
 layout:     post
 title:      我爱主同时亦爱一位世人
-category:   
-- Love
+category:   Love
 tags: 
 description: 
 ---

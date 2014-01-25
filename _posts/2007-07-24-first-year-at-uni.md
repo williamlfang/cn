@@ -1,8 +1,7 @@
 ---
 layout:     post
 title:      大学一年祭
-category:   
-- Time
+category:   Time
 tags: 
 description: 
 ---

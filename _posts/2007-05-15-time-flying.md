@@ -1,10 +1,8 @@
 ---
 layout:     post
 title:      一天又三年
-category:   
-- Time
-tags: 
-- 时光
+category:   Time
+tags:       时光
 description: 
 ---
 

@@ -1,8 +1,7 @@
 ---
 layout:     post
 title:      迷乱
-category:   
-- Time
+category:   Time
 tags: 
 description: 
 ---

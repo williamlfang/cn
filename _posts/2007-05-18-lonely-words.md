@@ -1,8 +1,7 @@
 ---
 layout:     post
 title:      流浪的文字
-category:   
-- Time
+category:   Time
 tags: 
 description: 
 ---

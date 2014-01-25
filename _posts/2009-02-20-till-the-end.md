@@ -1,8 +1,7 @@
 ---
 layout:     post
 title:      Till the end
-category:   
-- Love
+category:   Love
 tags: 
 description: 
 ---

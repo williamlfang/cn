@@ -1,8 +1,7 @@
 ---
 layout:     post
 title:      盛夏的那些事
-category:   
-- Campus
+category:   Campus
 tags: 
 description: 
 ---

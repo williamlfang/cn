@@ -1,8 +1,7 @@
 ---
 layout:     post
 title:      独自乱舞
-category:   
-- Time
+category:   Time
 tags: 
 description: 
 ---

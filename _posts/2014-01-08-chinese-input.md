@@ -1,8 +1,7 @@
 ---
 layout:     post
 title:      Linux 中文输入法（fcitx）安装与设置
-category:   
-- Tech
+category:   Tech
 tags: 
 - Linux
 - fcitx

@@ -1,8 +1,7 @@
 ---
 layout:     post
 title:      本本的"转型"
-category:   
-- Tech
+category:   Tech
 tags: 
 - Linux
 - Github

@@ -157,50 +157,17 @@ status: publish
 #### 添加 **kramdown**
 由于我先前使用的是 *rdiscount* 来编译 **mardown** 语法，不能够支持对数学公式的输出。使用的替代是 **kramdown**，一个更加强大的插件，支持 *pdf*， *html*，*LaTeX* 等格式的转化。
 - 首先是在主目录文件夹找到 `_config-yml` 打开，将 **markdown** 默认的编译设置为 **kramdown**。
-- 在 `_layout` 目录下面有 `default.html` 的页面设置，我们需要在 `<head>` 与 `</head>` 之间插入以下代码
-    <!-- mathjax config similar to math.stackexchange -->
-    <style TYPE="text/css"> /*以下为数学格式*/
-    /*  code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}*/
-    body {font-family: Palatino;}
-    h1, h2 {} /*font-family: Century Gothic; color: #3C5084;*/
-    h3 {} /*font-family: Century Gothic; color: #6076B4*/
-    /*code {font-family: Inconsolata;}*/
-    /* p {text-align:justify;} */
-    .hidden {display: none;}
-    .newpage {page-break-before:always;}
-    /*pre {padding: 10px; margin-left: 100px; margin-right: 100px; background: #EEEEEE;}*/
-    @media print {h2 {page-break-before:always;}}
-    /* TODO: use Google Web Fonts to ensure Palatino, Century Gothic and Inconsolata are       installed and used */
-    </style>
-    <!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [ ['$$', '$$']],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code'   entry
-    }
-    });
-    MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-    });
-    </script>
-    <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
-    <!-- CDN upload request sent in private mail to generated-toc author -->
-    <script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
-    <!-- CDN upload request sent in private mail to generated-toc author -->
-   也就是在网页开启前使用 **MathJax** 进行编译，支持对数学的输出。这里，我使用单个美元符号 `$` 与 `$` 输入 **LaTeX** 代码，会在网页显示相应的 *行内公式*，而使用一对的美元符号 `$$` 与 `$$` 来输入行间数学公式。
  
+- 在 `_layout` 目录下面有 `default.html` 的页面设置，我们需要在 `<head>` 与 `</head>` 之间插入代码
+![snapshot1.png](/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/snapshot1.png)
+   
+   也就是在网页开启前使用 **MathJax** 进行编译，支持对数学的输出。这里，我使用单个美元符号 `$` 与 `$` 输入 **LaTeX** 代码，会在网页显示相应的 *行内公式*，而使用一对的美元符号 `$$` 与 `$$` 来输入行间数学公式。
  
 ### 例子
  
 #### 数学公式
  
-比如我只需要如下输入数学公式，$$S = \sum_{i=1}^k x_i$$，或者是$$a^2 + b^2 = c^2$$
+比如我只需要如下输入数学公式，$S = \sum_{i=1}^k x_i$，或者是$$a^2 + b^2 = c^2$$
  
 $$\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum_{k=0}^\infty\frac{(4k)!(1103+26390k)}{(k!)^4396^{4k}}$$
  

@@ -51,13 +51,13 @@ pre,code{font-family:Menlo,"DejaVu Sans Mono","Bitstream Vera Sans Mono","Andale
 /* inline code ---------------------------------------------------------------------------------------------------------*/
 p code{background-color:#f7f7f7; padding: 2px; margin: 2px; border-radius: 3px; border: 1px solid #ddd;color: #317eac;font-weight:bold;}   /* inline code color*/
 /* inline code ---------------------------------------------------------------------------------------------------------*/
-body div.content {}
+/*body div.content {}
     body div.content code.has-jax {
         font: inherit;
         font-size: 100%;
         background: inherit;
-        /*border: inherit; */
-    }
+        /*border: inherit; 
+    } */
   /*  code.has-jax {
         font: inherit;
         font-size: 100%;

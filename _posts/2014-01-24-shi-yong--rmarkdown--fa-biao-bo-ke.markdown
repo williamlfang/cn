@@ -131,9 +131,9 @@ status: publish
  
 这个 `rmd.sh` 也是存放在目录 `_posts`, 主要就是
  
- - 识别当前的目录，并将其赋予 `dir` 参数
- 
- - 默认在 `Terminal` 运行 `rmakrdown.r` 的 `convertRmarkdown` 函数，并输出经过转化的 `.markdown` 文件。
+  - 识别当前的目录，并将其赋予 `dir` 参数
+  
+  - 默认在 `Terminal` 运行 `rmakrdown.r` 的 `convertRmarkdown` 函数，并输出经过转化的 `.markdown` 文件。
  
 文本 `rmd.sh` 可以[下载](/cn/_post/rmd.sh)，里面内容是
  

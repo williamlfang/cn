@@ -131,7 +131,7 @@ status:    process
  - 识别当前的目录，并将其赋予 `dir` 参数
  - 默认在 `Terminal` 运行 `rmakrdown.r` 的 `convertRmarkdown` 函数，并输出经过转化的 `.markdown` 文件。
 
-文本 `rmd.sh` 可以[下载](/cn/_post/rmd.sh)，里面内容是
+文本 [`rmd.sh`](/cn/_post/rmd.sh) 可以下载，里面内容是
 
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
     Rscript -e "source('$DIR/rmarkdown.r'); convertRMarkdown(images.dir='../assets/images')"
@@ -144,10 +144,12 @@ status:    process
     published: false
     status: process
 
+
 这个是因为：
 <blockquote>
   <p> - First, the published parameter should be set to false so that Jekyll will not attempt to process the file. The convertRMarkdown function will change this parameter to true in the resulting Markdown file. </p>
   <p> - The second parameter, status, must be set to process for the convertRMarkdown function to convert the file. This is useful when working a draft of a document and you wish to not have the file converted. </p>
+  
 </blockquote>
 
 ### 例子
@@ -171,9 +173,13 @@ $$
 #### **R**
 
 再者，这个 `R` 代码，我们可以直接生成图片。
-```{r fig1}
+
+```r
 x = rnorm(100)
 plot(density(x))
 ```
+
+![plot of chunk fig1](figure/fig1.png) 
+
 
 

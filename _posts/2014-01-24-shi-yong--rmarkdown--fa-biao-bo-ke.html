@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>我的博客之旅</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h2>我的博客之旅</h2>
+
+<p>这些天一直都在钻研如何在博客中加入可以执行 <strong>R</strong> 程序代码的博客模板。我先前也有过写博客的经历，不过那时候使用的博客都是免费托管在其他的服务器中，一方面是缺乏可定制，大都是千篇一律的，无法满足「DIY」的需要，另一方面，也是主要的问题，这些博客网站很少有支持 <strong>LaTeX</strong> 的数学输出，对于数学环境的支持不尽人意。我也就偶尔在写一些纯文字类的随想，不曾涉及专业领域的事情。</p>
+
+<p>后来我实在忍无可忍了，觉得找一个必须是支持 <strong>LaTeX</strong> 代码的博客网站。这也就只有在 <strong>WordPress</strong> 上了。我也尝试了使用一段时间。一开始发现还真是方便，直接使用 <strong>LaTeX</strong> 代码产生数学编译环境，如此一来便可以在上面多说点专业领域的话了。可是，后来我发现在 <strong>WordPress</strong> 上管理博客与修改模板是一件多么痛苦的事情，既需要更改模板，而且每次改完了发现不是自己想要的效果，又得重新再做。如此一来，光花费在博客网站的维护时间竟然占用了多数。如此不堪重负。</p>
+
+<p>后来我开始尝试在使用  <strong>R</strong> 做统计分析，也陆陆续续的写了一些小程序。我的想法是，将 <strong>R</strong> 强大的数据分析与绘图能力与 <strong>LaTeX</strong> 超级优美的数学编辑水平结合一起，从而生成既有分析又有数据、既有文本又有图表的文档。后来发现这个想法别人早已实现，那就是 <code>Sweave</code>，支持在 <strong>LaTeX</strong> 使用 <strong>R</strong> 代码 （或者倒过来说，在 <strong>R</strong> 中使用 <strong>LaTeX</strong> 语法），并且直接输出结果。再后来，我接着发现这个原来还有『豪华升级版』，那就是我今天要给各位介绍的 <code>knitr</code>，一个更加强大的支持 <strong>LaTeX</strong> 编译环境的 <strong>R</strong> 软件包。</p>
+
+<p>可是，有时候我不大喜欢 <strong>LaTeX</strong> 的一点在于，永远都需要那么复杂的插入代码环境，比如，当需要使用「强调」的时候，还得非常复杂而琐碎的键入 <code>\emph{}</code>，这个让我实在崩溃，因为毕竟我很多时候都是在使用纯文本输入，只是少数地方使用数学公式表达。那么，我想要的就是，需要强调了，就键入 <em>斜体强调*，或者 **粗体强调</em>*。如此一来，写博客就非常的轻松了。</p>
+
+<p>于是我在某个凌晨「毅然决然」的将博客编译语言再次转移阵地。这一次，我需要</p>
+
+<ul>
+<li>简单：写博客就是写博客，随心所欲，没有多余的格式。在写作过程中，我仅仅需要关心文本，专注于思想表达。</li>
+<li>支持 <strong>R</strong> 代码，能够直接产生计算结果，插入图形。而且最好的是，别人看到这个代码还觉得不错，可以自己在电脑上重复输出结果。</li>
+<li>具有良好的定制特征，我可以根据个人偏好设置网页界面，并且需要很好的可持续维护性。</li>
+<li>最后是能够记录我在不同时间段写作的备份，方便随时「倒带」。这样我就不用担心删除当下文字段落后以后就找不回来，而且最好是告诉我具体的细节。</li>
+</ul>
+
+<h2>Github + Jekyll + knitr + Rmarkdown</h2>
+
+<p>我就抱着这样的「苛刻要求」去找「谷哥」。出乎意料的是，竟然如此简单的就得到需要的解决方案了：</p>
+
+<blockquote>
+<p>Github + Jekyll + Rmarkdown</p>
+</blockquote>
+
+<p>这是一个完美的方案！完全实现了我需要的多种服务：</p>
+
+<ul>
+<li><p><strong>Github</strong> 用于托管代码与博客。<strong>Git</strong> 是一款优秀的版本管理软件（VCS），由现在的 <strong>Linux</strong> 开发团队在维护。而 <strong>Github</strong> 就相当于一个网罗世界优秀程序员的「Facebook」，汇集了目前几乎所有的开源项目。</p>
+
+<p>现在，我可以通过将代码与博客托管到 <strong>Github</strong> 上，实现版本的系统检测，方便网站运行。</p></li>
+<li><p><strong>Jekyll</strong> 为我的博客网站提供了静态编译，将其打包为 <em>Html</em> 然后发布在托管的网站上。而且 <strong>Jekyll</strong> 提供了一系列的模板与模块，方便个人定制网站。与其他博客网站不同，经常动不动的就蹦出一个广告，<strong>Jekyll</strong> 编制的网站上面不会有多余的信息，我只陈列需要分享的内容。</p></li>
+<li><p>最后，就是 <strong>knitr</strong> 与 <strong>Rmardown</strong> 可以轻松的实现博客撰写。现在，我需要做的就是使用 <strong>Markdown</strong> 语法输入，然后在需要 <strong>R</strong> 的地方直接插入代码即可。一篇完整的博客就是我沿着自己的想法一路写到底，中间不会有其他的打扰，不要反复的插入格式命令。</p></li>
+</ul>
+
+<h2>使用 <strong>Rmarkdown</strong></h2>
+
+<p>下面，我介绍一下如何实现将 <strong>R</strong> 代码编译为网页 <strong>Markdown</strong> 格式。由于 <strong>Jekyll</strong> 支持将 <strong>Markdown</strong> 编译成 <strong>Html</strong> 网页，因此，我们就可以很方便的将 <strong>R</strong> 文件编译成 <strong>Html</strong> 并发布到 <strong>Github</strong> 上面了。我主要参考了 Jason Bryer 的帖子， <a href="http://jason.bryer.org/posts/2012-12-10/Markdown_Jekyll_R_for_Blogging.html">&ldquo;Using &reg; Markdown, Jekyll, &amp; GitHub for a Website&rdquo;</a>。另外，由于这个帖子生成的图片存储在同样一个文件夹下面，有时我想找某个博客的图片时，会非常的不方便。于是我对其做了一个小小的修改，将经过 <strong>R</strong> 产生的图片放在与帖子相对应的文件夹目录下，方便查找。比如，我有一个文档，<code>2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke.Rmd</code>，那么，图片的存放目录应该是</p>
+
+<p>|-dir
+|
+|-assets
+|
+|&ndash; images
+|
+|&mdash;- r-figures
+|
+|&mdash;&ndash; 2014-01-24-shi-yong&ndash;rmarkdown&ndash;fa-biao-bo-ke
+|
+|&mdash;&mdash; fig1.png</p>
+
+<h3>建立一个 <code>rmarkdown.r</code></h3>
+
+<p>首先是在主目录(<code>_posts</code>)下面建立一个 <code>rmarkdown.r</code> 文件，用于执行编译功能。主要用途就是实现将当前目录下所有的带 <code>.Rmd</code> 文件转化为 <code>.md</code> 格式，从而可以实现发布。下面是其主要内容，也可以在<a href="/cn/_post/rmarkdwn.r">这里</a>下载。</p>
+
+<pre><code>#&#39; This R script will process all R mardown files (those with in_ext file extention,
+#&#39; .rmd by default) in the current working directory. Files with a status of
+#&#39; &#39;processed&#39; will be converted to markdown (with out_ext file extention, &#39;.markdown&#39;
+#&#39; by default). It will change the published parameter to &#39;true&#39; and change the
+#&#39; status parameter to &#39;publish&#39;.
+#&#39; 
+#&#39; @param dir the directory to process R Markdown files.
+#&#39; @param images.dir the base directory where images will be generated.
+#&#39; @param images.url
+#&#39; @param out_ext the file extention to use for processed files.
+#&#39; @param in_ext the file extention of input files to process.
+#&#39; @param recursive should rmd files in subdirectories be processed.
+#&#39; @return nothing.
+#&#39; @author Jason Bryer &lt;jason@bryer.org&gt;
+convertRMarkdown &lt;- function(dir=getwd(), images.dir=dir, images.url=&#39;/cn/assets/images/&#39;,
+                     out_ext=&#39;.markdown&#39;, in_ext=&#39;.rmd&#39;, recursive=FALSE) {
+require(knitr, quietly=TRUE, warn.conflicts=FALSE)
+files &lt;- list.files(path=dir, pattern=in_ext, ignore.case=TRUE, recursive=recursive)
+for(f in files) {
+    message(paste(&quot;Processing &quot;, f, sep=&#39;&#39;))
+    content &lt;- readLines(f)
+    frontMatter &lt;- which(substr(content, 1, 3) == &#39;---&#39;)
+      if(length(frontMatter) &gt;= 2 &amp; 1 %in% frontMatter) {
+          statusLine &lt;- which(substr(content, 1, 7) == &#39;status:&#39;)
+        publishedLine &lt;- which(substr(content, 1, 10) == &#39;published:&#39;)
+        if(statusLine &gt; frontMatter[1] &amp; statusLine &lt; frontMatter[2]) {
+            status &lt;- unlist(strsplit(content[statusLine], &#39;:&#39;))[2]
+            status &lt;- sub(&#39;[[:space:]]+$&#39;, &#39;&#39;, status)
+            status &lt;- sub(&#39;^[[:space:]]+&#39;, &#39;&#39;, status)
+            if(tolower(status) == &#39;process&#39;) {
+                #This is a bit of a hack but if a line has zero length (i.e. a
+                #black line), it will be removed in the resulting markdown file.
+                  #This will ensure that all line returns are retained.
+                content[nchar(content) == 0] &lt;- &#39; &#39;
+                message(paste(&#39;Processing &#39;, f, sep=&#39;&#39;))
+                content[statusLine] &lt;- &#39;status: publish&#39;
+                content[publishedLine] &lt;- &#39;published: true&#39;
+                  outFile &lt;- paste(substr(f, 1, (nchar(f)-(nchar(in_ext)))), out_ext, sep=&#39;&#39;)
+                render_markdown(strict=TRUE)
+                opts_knit$set(out.format=&#39;markdown&#39;)
+                opts_knit$set(base.dir=images.dir)
+                opts_knit$set(base.url=images.url)
+                ##
+                ## 产生的图片存储位置 `/assets/images/r-figures/`
+                fig.path &lt;- paste0(&quot;r-figures/&quot;, sub(&quot;.Rmd$&quot;, &quot;&quot;, basename(files)), &quot;/&quot;)
+                opts_chunk$set(fig.path = fig.path)
+                ## opts_chunk$set(fig.cap = &quot;center&quot;)  ## figure position
+                render_jekyll()     
+                  ##
+                try(knit(text=content, output=outFile), silent=FALSE)
+            } else {
+                warning(paste(&quot;Not processing &quot;, f, &quot;, status is &#39;&quot;, status, 
+                            &quot;&#39;. Set status to &#39;process&#39; to convert.&quot;, sep=&#39;&#39;))
+            }
+        } else {
+            warning(&quot;Status not found in front matter.&quot;)
+        }
+    } else {
+        warning(&quot;No front matter found. Will not process this file.&quot;)
+    }
+ }
+ invisible()
+ }
+</code></pre>
+
+<h3>建立可执行文本 <code>rmd.sh</code></h3>
+
+<p>这个 <code>rmd.sh</code> 也是存放在目录 <code>_posts</code>, 主要就是</p>
+
+<ul>
+<li>识别当前的目录，并将其赋予 <code>dir</code> 参数</li>
+<li>默认在 <code>Terminal</code> 运行 <code>rmakrdown.r</code> 的 <code>convertRmarkdown</code> 函数，并输出经过转化的 <code>.markdown</code> 文件。</li>
+</ul>
+
+<p>文本 <a href="/cn/_post/rmd.sh"><code>rmd.sh</code></a> 可以下载，里面内容是</p>
+
+<pre><code>DIR=&quot;$( cd &quot;$( dirname &quot;${BASH_SOURCE[0]}&quot; )&quot; &amp;&amp; pwd )&quot;
+Rscript -e &quot;source(&#39;$DIR/rmarkdown.r&#39;); convertRMarkdown(images.dir=&#39;../assets/images&#39;)&quot;
+</code></pre>
+
+<h3>添加 <code>YAML</code> 标头</h3>
+
+<p>最后，我们需要在 <code>.Rmd</code> 文件标头添加以下命令：</p>
+
+<pre><code>published: false
+status: process
+</code></pre>
+
+<p>这个是因为：</p>
+
+<blockquote>
+  <p> - First, the published parameter should be set to false so that Jekyll will not attempt to process the file. The convertRMarkdown function will change this parameter to true in the resulting Markdown file. </p>
+  <p> - The second parameter, status, must be set to process for the convertRMarkdown function to convert the file. This is useful when working a draft of a document and you wish to not have the file converted. </p>
+  
+</blockquote>
+
+<h3>例子</h3>
+
+<h4>数学公式</h4>
+
+<p>比如我只需要如下输入数学公式，\[ S = \sum_{i=1}^k x_i \]，或者是\[ a^2 + b^2 = c^2 \]</p>
+
+<p>\[ \frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum_{k=0}^\infty\frac{(4k)!(1103+26390k)}{(k!)^4396^{4k}} \]</p>
+
+<p>\[  \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\ldots} } } }  \]</p>
+
+<p>\[ 
+\begin{align}
+\mbox{Union: } & A\cup B = \{x\mid x\in A \mbox{ or } x\in B\} \\
+\mbox{Concatenation: } & A\circ B  = \{xy\mid x\in A \mbox{ and } y\in B\} \\
+\mbox{Star: } & A^\star  = \{x_1x_2\ldots x_k \mid  k\geq 0 \mbox{ and each } x_i\in A\} \\
+\end{align}
+ \]</p>
+
+<h4><strong>R</strong></h4>
+
+<p>再者，这个 <code>R</code> 代码，我们可以直接生成图片。</p>
+
+<pre><code class="r">x = rnorm(100)
+plot(density(x))
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk fig1"/> </p>
+
+</body>
+
+</html>
+

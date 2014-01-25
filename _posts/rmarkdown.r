@@ -41,14 +41,11 @@ convertRMarkdown <- function(dir=getwd(), images.dir=dir, images.url='/cn/assets
 					opts_knit$set(base.dir=images.dir)
 					opts_knit$set(base.url=images.url)
 					######################################################################
-          ##
-					opts_knit$set(fig.width=5, fig.height=3)
-					######################################################################
 					## 产生的图片存储位置 `/assets/images/r-figures/`
 					fig.path <- paste0("r-figures/", sub(".Rmd$", "", basename(files)), "/")
 					opts_chunk$set(fig.path = fig.path)
 					## opts_chunk$set(fig.cap = "center")  ## figure position
-				  render_jekyll()        ##
+				 	 render_jekyll()        ##
 					######################################################################
 					
 					try(knit(text=content, output=outFile), silent=FALSE)

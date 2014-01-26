@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="William Fang" />
-    <!--   <title>Advanced R Programming:"Data Structure" | William Fang</title>    -->
-    <title>Advanced R Programming:"Data Structure" | William Fang</title> 
+    <!--   <title>Data Structure | William Fang</title>    -->
+    <title>Data Structure | William Fang</title> 
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -177,7 +177,7 @@ MathJax.Hub.Queue(function() {
     <div id="container">
       <div id="main" role="main">
         <header>
-        <h1>Advanced R Programming:"Data Structure"</h1>
+        <h1>Data Structure</h1>
         </header>
         <nav id="real_nav">
         <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
@@ -275,7 +275,7 @@ x
     ## 
     ## Coefficients:
     ## (Intercept)            x  
-    ##     50.4954      -0.0198
+    ##      50.487        0.889
     
 </code></pre>
 </div>
@@ -290,7 +290,7 @@ x
 </div>
 
 <div class="highlight"><pre><code class="text">    ## (Intercept)           x 
-    ##    50.49545    -0.01976
+    ##     50.4870      0.8888
     
 </code></pre>
 </div>
@@ -305,7 +305,7 @@ x
 </div>
 
 <div class="highlight"><pre><code class="text">## &#39;data.frame&#39;:	100 obs. of  2 variables:
-##  $ x: num  -0.0997 0.686 -1.28 -0.9233 0.1194 ...
+##  $ x: num  0.833 -1.63 2.132 -0.588 -0.3 ...
 ##  $ y: int  1 2 3 4 5 6 7 8 9 10 ...
 </code></pre>
 </div>
@@ -448,6 +448,228 @@ str<span class="p">(</span>x<span class="p">)</span>
   <li><code>rnorm()</code>:产生随机数，还有其他的分布</li>
 </ul>
 
+<div class="highlight"><pre><code class="r">    k <span class="o">&lt;-</span> rnorm<span class="p">(</span><span class="m">100</span><span class="p">)</span>  <span class="c1">#default：rnorm(no, mean = 0, sd = 1)</span>
+    
+    l <span class="o">&lt;-</span> rnorm<span class="p">(</span><span class="m">100</span><span class="p">,</span> mean <span class="o">=</span> <span class="m">2</span><span class="p">,</span> sd <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+    plot<span class="p">(</span>density<span class="p">(</span>l<span class="p">))</span>
+    
+</code></pre>
+</div>
+
+<pre><code>![plot of chunk unnamed-chunk-9](/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/unnamed-chunk-9.r-figures/2014-01-26-data-structure/unnamed-chunk-9.png) 
+</code></pre>
+
+<h4 id="section-5">类型与长度</h4>
+
+<p><code>typeof()</code> 用于查看数据类型，而 <code>length()</code> 则用于查看向量长度：如果是一维数据，则给出长度；如果是矩阵或者 <code>data.frame</code>，则给出 <code>nrow</code> 与 <code>ncol</code> 的合计。</p>
+
+<div class="highlight"><pre><code class="r">x <span class="o">&lt;-</span> rnorm<span class="p">(</span><span class="m">100</span><span class="p">)</span>
+typeof<span class="p">(</span>x<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] &quot;double&quot;
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">length<span class="p">(</span>x<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] 100
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">y <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&quot;first&quot;</span><span class="p">,</span> <span class="s">&quot;second&quot;</span><span class="p">,</span> <span class="s">&quot;third&quot;</span><span class="p">)</span>
+typeof<span class="p">(</span>y<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] &quot;character&quot;
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">length<span class="p">(</span>y<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] 3
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">z <span class="o">&lt;-</span> c<span class="p">(</span><span class="k-Variable">T</span><span class="p">,</span> <span class="k-Variable">T</span><span class="p">,</span> <span class="k-Variable">F</span><span class="p">)</span>
+typeof<span class="p">(</span>z<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] &quot;logical&quot;
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">length<span class="p">(</span>z<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] 3
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">w <span class="o">&lt;-</span> seq<span class="p">(</span>from <span class="o">=</span> <span class="m">1</span><span class="p">,</span> to <span class="o">=</span> <span class="m">10</span><span class="p">,</span> by <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+typeof<span class="p">(</span>w<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] &quot;double&quot;
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">length<span class="p">(</span>w<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] 10
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">mat <span class="o">&lt;-</span> matrix<span class="p">(</span>rnorm<span class="p">(</span><span class="m">20</span><span class="p">),</span> nrow <span class="o">=</span> <span class="m">4</span><span class="p">,</span> ncol <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+typeof<span class="p">(</span>mat<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] &quot;double&quot;
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">length<span class="p">(</span>mat<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] 20
+</code></pre>
+</div>
+
+<h3 id="list"><code>list</code>:列表</h3>
+
+<p>我们已经知道，<code>vector</code>是用于同种类型属性的数据，而<code>list</code>则适用于不同类型的数据，可以说是各种数据的一个「大火锅」。我们使用<code>list()</code>来生成数据，不是之前介绍的<code>c()</code>。</p>
+
+<div class="highlight"><pre><code class="r">u <span class="o">&lt;-</span> list<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="s">&quot;cha&quot;</span><span class="p">,</span> <span class="k-Variable">T</span><span class="p">,</span> <span class="k-Variable">F</span><span class="p">,</span> c<span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">7</span><span class="p">),</span> rep<span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span> seq<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">))</span>
+
+u
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [[1]]
+## [1] 1 2 3
+## 
+## [[2]]
+## [1] &quot;cha&quot;
+## 
+## [[3]]
+## [1] TRUE
+## 
+## [[4]]
+## [1] FALSE
+## 
+## [[5]]
+## [1] 1 4 7
+## 
+## [[6]]
+## [1] 1 1 1
+## 
+## [[7]]
+## [1] 1 2 3 4 5
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">str<span class="p">(</span>u<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## List of 7
+##  $ : int [1:3] 1 2 3
+##  $ : chr &quot;cha&quot;
+##  $ : logi TRUE
+##  $ : logi FALSE
+##  $ : num [1:3] 1 4 7
+##  $ : num [1:3] 1 1 1
+##  $ : int [1:5] 1 2 3 4 5
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">typeof<span class="p">(</span>u<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] &quot;list&quot;
+</code></pre>
+</div>
+
+<p>当然，<code>list</code>也可以跟<code>c()</code>一样实现套嵌 (Wickham称之为[recursive])</p>
+
+<div class="highlight"><pre><code class="r">v <span class="o">&lt;-</span> list<span class="p">(</span>list<span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="k-Variable">T</span><span class="p">,</span> <span class="s">&quot;nope&quot;</span><span class="p">,</span> seq<span class="p">(</span><span class="m">4</span><span class="o">:</span><span class="m">8</span><span class="p">)),</span> rep<span class="p">(</span><span class="m">3</span><span class="o">:</span><span class="m">4</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> list<span class="p">(</span><span class="k-Variable">T</span><span class="p">,</span> <span class="k-Variable">F</span><span class="p">,</span> <span class="s">&quot;yes&quot;</span><span class="p">))</span>
+v
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [[1]]
+## [[1]][[1]]
+## [1] 2
+## 
+## [[1]][[2]]
+## [1] 4
+## 
+## [[1]][[3]]
+## [1] TRUE
+## 
+## [[1]][[4]]
+## [1] &quot;nope&quot;
+## 
+## [[1]][[5]]
+## [1] 1 2 3 4 5
+## 
+## 
+## [[2]]
+## [1] 3 4 3 4
+## 
+## [[3]]
+## [[3]][[1]]
+## [1] TRUE
+## 
+## [[3]][[2]]
+## [1] FALSE
+## 
+## [[3]][[3]]
+## [1] &quot;yes&quot;
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">str<span class="p">(</span>v<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## List of 3
+##  $ :List of 5
+##   ..$ : num 2
+##   ..$ : num 4
+##   ..$ : logi TRUE
+##   ..$ : chr &quot;nope&quot;
+##   ..$ : int [1:5] 1 2 3 4 5
+##  $ : int [1:4] 3 4 3 4
+##  $ :List of 3
+##   ..$ : logi TRUE
+##   ..$ : logi FALSE
+##   ..$ : chr &quot;yes&quot;
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">typeof<span class="p">(</span>v<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] &quot;list&quot;
+</code></pre>
+</div>
+
 
 </section>
 <section class="meta">
@@ -455,7 +677,7 @@ str<span class="p">(</span>x<span class="p">)</span>
 <br/>
 <br/>
 <span>
-	<a   class="pageNavInvalid"  >Previous</a>
+	<a  href="http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/" class="pageNav"  >Previous</a>
 	&nbsp;&nbsp;&nbsp;
 	<a   class="pageNavInvalid"  >Next</a>
 </span>
@@ -465,11 +687,18 @@ str<span class="p">(</span>x<span class="p">)</span>
 </span>
 <span class="time">
   /
-  <time datetime=""></time>
+  <time datetime="2014-01-26">2014-01-26</time>
 </span>
 <br />
 <span class="license">
   Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Programming" title="Programming">Programming</a>&nbsp;
+  
 </span>
 
 
@@ -506,6 +735,8 @@ $(function(){
     var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow and J
             
+        url = 'http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/';
+        
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             

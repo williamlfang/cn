@@ -196,94 +196,90 @@ MathJax.Hub.Queue(function() {
         <section class="post">
 <p>我现在的系统是 Linux Mint 16 (Petra,KDE),在开源社区有提供众多的软件,基本上能够满足工作和学习的需要.不过,对于在国内环境下,有些商业软件并不提供 Linux 支持,比如,我现在使用的招行网银U盾,不能在 Linux 下读取,再比如,厦大图书馆提供的远程访问数据库iReader,只能在window操作系统下使用.</p>
 
-<h2>Linux 下安装 Windows 软件</h2>
+<h2 id="linux--windows-">Linux 下安装 Windows 软件</h2>
 
 <p>对于此类的问题,目前有两种解决方法:</p>
 
 <ol>
-<li><p>在 Linux 系统中安装 wine,从而可以安装大部分的软件,如QQ等.</p>
-
-<ul>
-<li>优点:占用的CPU资源少,不影响系统的运行速度</li>
-<li>缺点:设置麻烦,尤其是中文的设置基本是要人命的.典型的就是ireader不能运行.而且还需要相应的安装在 Linux 下的配套软件.</li>
-</ul>
-</li>
-<li><p>另外一种就是我要介绍的方法:在 Linux 下使用虚拟机安装 Windows 操作系统,在其上面运行软件.</p>
-
-<ul>
-<li>优点:一劳永逸,简单方便</li>
-<li>缺点:由于虚拟机需要固定的分配内存和硬盘空间,会大大的降低系统的运行速度.</li>
-</ul>
-</li>
+  <li>在 Linux 系统中安装 wine,从而可以安装大部分的软件,如QQ等.
+    <ul>
+      <li>优点:占用的CPU资源少,不影响系统的运行速度</li>
+      <li>缺点:设置麻烦,尤其是中文的设置基本是要人命的.典型的就是ireader不能运行.而且还需要相应的安装在 Linux 下的配套软件.</li>
+    </ul>
+  </li>
+  <li>另外一种就是我要介绍的方法:在 Linux 下使用虚拟机安装 Windows 操作系统,在其上面运行软件.
+    <ul>
+      <li>优点:一劳永逸,简单方便</li>
+      <li>缺点:由于虚拟机需要固定的分配内存和硬盘空间,会大大的降低系统的运行速度.</li>
+    </ul>
+  </li>
 </ol>
-
 
 <p>不过,就目前的笔记本硬件配置来看,一般的内存是4G的,处理器在i3以上,硬盘在500G.在 Linux 下利用虚拟机安装 Windows 系统基本上不会有太大的影响.就本人目前的使用情况来看,效果还是可以接受的.</p>
 
 <p>下面就简单介绍一下我的安装经验.</p>
 
-<h2>安装 Virtualbox</h2>
+<h2 id="virtualbox">安装 Virtualbox</h2>
 
 <p>首先是从网站下载 <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a>,这个是 deb 格式的,可以直接点击安装即可.需要 \root 权限.输入密码即可.</p>
 
 <p>然后在终端输入 virtualbox 打开.</p>
 
 <ol>
-<li>点击"新建"一个虚拟机,设置虚拟机名称,并选择相应的操作系统.这个其实意义不大,主要 virtualbox 会根据相应的操作系统分配默认的内存和硬盘空间.
+  <li>点击”新建”一个虚拟机,设置虚拟机名称,并选择相应的操作系统.这个其实意义不大,主要 virtualbox 会根据相应的操作系统分配默认的内存和硬盘空间.
 <img src="/assets/virtualbox/vb01.png" alt="vb01" />
 <img src="/assets/virtualbox/vb02.png" alt="vb02" />
 <img src="/assets/virtualbox/vb03.png" alt="vb03" /></li>
-<li>也就是上一步骤的延续,设定内存大小.建议给主机留多一些内存以加快主机的运行速度.
+  <li>也就是上一步骤的延续,设定内存大小.建议给主机留多一些内存以加快主机的运行速度.
 <img src="/files/virtualbox/vb04.png" alt="vb04" /></li>
-<li>点击"创建"开始建立一个虚拟机.
+  <li>点击”创建”开始建立一个虚拟机.
 <img src="/files/virtualbox/vb05.png" alt="vb05" /></li>
-<li>如果不知道虚拟硬盘的文件类型,那就选择默认的"VDI",点击"下一步"继续.
+  <li>如果不知道虚拟硬盘的文件类型,那就选择默认的”VDI”,点击”下一步”继续.
 <img src="/files/virtualbox/vb06.png" alt="vb06" /></li>
-<li>分配虚拟机的硬盘大小,有两种选择
+  <li>分配虚拟机的硬盘大小,有两种选择
 <img src="/files/virtualbox/vb07.png" alt="vb07" />
-
-<ul>
-<li>动态分配,默认选择,前期不怎么占用硬盘,后面会随着需要而增加.比较适用于硬盘存储比较小的计算机.</li>
-<li>固定大小,这个会占用主机硬盘空间.</li>
-</ul>
-</li>
-<li>选择需要将虚拟机建立在那个文件夹下面.视个人情况而定.我一般是建立在 /home
+    <ul>
+      <li>动态分配,默认选择,前期不怎么占用硬盘,后面会随着需要而增加.比较适用于硬盘存储比较小的计算机.</li>
+      <li>固定大小,这个会占用主机硬盘空间.</li>
+    </ul>
+  </li>
+  <li>选择需要将虚拟机建立在那个文件夹下面.视个人情况而定.我一般是建立在 /home
 <img src="/files/virtualbox/vb08.png" alt="vb08" /></li>
-<li>该页面显示已经成功的建立起来一个虚拟机,在上面有对应的配置.这个可以通过设置来更改.
+  <li>该页面显示已经成功的建立起来一个虚拟机,在上面有对应的配置.这个可以通过设置来更改.
 <img src="/files/virtualbox/vb09.png" alt="vb09" /></li>
-<li>为了在虚拟机上面安装 Windows 系统,需要点击"设置",找到"存储"里面的"分配光驱",然后选择移动硬盘上的 Windows 7 iso.
+  <li>为了在虚拟机上面安装 Windows 系统,需要点击”设置”,找到”存储”里面的”分配光驱”,然后选择移动硬盘上的 Windows 7 iso.
 <img src="/files/virtualbox/vb10.png" alt="vb010" /></li>
-<li>设置完成后的页面.点击"启动"开始安装系统.
+  <li>设置完成后的页面.点击”启动”开始安装系统.
 <img src="/files/virtualbox/vb16.png" alt="vb016" /></li>
-<li>普通的 Windows 7 安装过程.
+  <li>普通的 Windows 7 安装过程.
 <img src="/files/virtualbox/vb11.png" alt="vb011" /></li>
-<li>成功安装系统,开始启动.
+  <li>成功安装系统,开始启动.
 <img src="/files/virtualbox/vb12.png" alt="vb012" />
 <img src="/files/virtualbox/vb13.png" alt="vb013" /></li>
-<li>在虚拟机上面的 Win 7 找到 Cd 光驱,点击打开安装扩展应用,期间会重启一次.进入之后可以看到整个 Win 7 的完整系统.
+  <li>在虚拟机上面的 Win 7 找到 Cd 光驱,点击打开安装扩展应用,期间会重启一次.进入之后可以看到整个 Win 7 的完整系统.
 <img src="/files/virtualbox/vb14.png" alt="vb14" /></li>
-<li>设置"共享文件夹",以实现在主机和虚拟机之间的文件传输.
+  <li>设置”共享文件夹”,以实现在主机和虚拟机之间的文件传输.
 <img src="/files/virtualbox/vb15.png" alt="vb15" /></li>
 </ol>
 
-
-<h2>Virtualbox 识别 USB</h2>
+<h2 id="virtualbox--usb">Virtualbox 识别 USB</h2>
 
 <p>为了能够在主机与虚拟机之间相互使用USB,还需有做如下的设置.</p>
 
-<blockquote><ul>
-<li>由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,<a href="https://www.virtualbox.org/wiki/Downloads">Extention pack</a>.下载完成后点击安装即可.然后重启 virtualbox.   <br></li>
-<li>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:   <br>
-  sudo addgroup wiliam vboxusers  <br></li>
-<li>接着做一下设置:    <br>
-
-<ul>
-<li>打开virtualbox,但事先不启动虚拟机.找到"设置"中的"USB设备",点击右边的"+"以添加USB  <br></li>
-<li>重启主机,启动虚拟机后就可以通过右下角的USB符号添加.如果不用的话,也可以点击推出.</li>
-</ul>
-</li>
-</ul>
+<blockquote>
+  <ul>
+    <li>由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,<a href="https://www.virtualbox.org/wiki/Downloads">Extention pack</a>.下载完成后点击安装即可.然后重启 virtualbox.   <br /></li>
+    <li>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:   <br />
+  sudo addgroup wiliam vboxusers  <br /></li>
+    <li>接着做一下设置:    <br />
+      <ul>
+        <li>打开virtualbox,但事先不启动虚拟机.找到”设置”中的”USB设备”,点击右边的”+”以添加USB  <br /></li>
+        <li>重启主机,启动虚拟机后就可以通过右下角的USB符号添加.如果不用的话,也可以点击推出.</li>
+      </ul>
+    </li>
+  </ul>
 </blockquote>
+
 
 </section>
 <section class="meta">
@@ -378,7 +374,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-27 00:20:30</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-27 00:24:46</span></small></p>
 </footer>
 
   </div>

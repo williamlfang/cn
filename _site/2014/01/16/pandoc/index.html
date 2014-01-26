@@ -194,24 +194,32 @@ MathJax.Hub.Queue(function() {
         </nav>
         <article class="content">
         <section class="post">
-<h2>下面介绍在 Linux Mint 系统下如何安装 pandoc。</h2>
+<h2 id="linux-mint--pandoc">下面介绍在 Linux Mint 系统下如何安装 pandoc。</h2>
 
 <ol>
-<li><p>如官网介绍，安装 pandoc
+  <li>
+    <p>如官网介绍，安装 pandoc
  sudo apt-get install cabal-install
  cabal update
- cabal install pandoc</p></li>
-<li><p>添加路径，
+ cabal install pandoc</p>
+  </li>
+  <li>
+    <p>添加路径，
  sudo gedit /etc/profile
-在打开的文档最后输入
+  在打开的文档最后输入
  export PATH=/home/william/.cabal/bin:$PATH
-再到
+  再到 
  cd /etc/
- source profile</p></li>
-<li><p>再次重新
- cabal install pandoc pandoc-citeproc</p></li>
-<li><p>查看是否安装成功
- pandoc --version</p></li>
+ source profile</p>
+  </li>
+  <li>
+    <p>再次重新
+ cabal install pandoc pandoc-citeproc</p>
+  </li>
+  <li>
+    <p>查看是否安装成功
+ pandoc –version</p>
+  </li>
 </ol>
 
 
@@ -308,7 +316,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-27 00:20:30</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-27 00:24:46</span></small></p>
 </footer>
 
   </div>

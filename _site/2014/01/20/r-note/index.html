@@ -137,7 +137,26 @@ MathJax.Hub.Config({
         displayMath: [ ['$$', '$$']],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
-    }
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 100      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
 });
 
 MathJax.Hub.Queue(function() {
@@ -285,7 +304,7 @@ MathJax.Hub.Queue(function() {
 <span>
 	<a  href="http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/" class="pageNav"  >Previous</a>
 	&nbsp;&nbsp;&nbsp;
-	<a  href="http://williamlfang.github.com/cn/2014/01/22/shu-ju-jie/" class="pageNav"  >Next</a>
+	<a  href="http://williamlfang.github.com/cn/2014/01/22/shu-ju-jie-gou/" class="pageNav"  >Next</a>
 </span>
 <hr>
 <span class="author">
@@ -346,7 +365,7 @@ $(function(){
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             
-        url = 'http://williamlfang.github.com/cn/2014/01/22/shu-ju-jie/';
+        url = 'http://williamlfang.github.com/cn/2014/01/22/shu-ju-jie-gou/';
         
         }
         if (url) {
@@ -370,7 +389,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-26 19:08:04</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-26 22:57:45</span></small></p>
 </footer>
 
   </div>

@@ -137,7 +137,26 @@ MathJax.Hub.Config({
         displayMath: [ ['$$', '$$']],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
-    }
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 100      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
 });
 
 MathJax.Hub.Queue(function() {
@@ -393,15 +412,14 @@ status: process
 
 <script type="math/tex; mode=display">% <![CDATA[
 
-\begin{align} \label{1}
+\begin{align} 
 \mbox{Union: } & A\cup B = \{x\mid x\in A \mbox{ or } x\in B\} \\
 \mbox{Concatenation: } & A\circ B  = \{xy\mid x\in A \mbox{ and } y\in B\} \\
 \mbox{Star: } & A^\star  = \{x_1x_2\ldots x_k \mid  k\geq 0 \mbox{ and each } x_i\in A\} \\
 \end{align}
  %]]></script>
 
-<p>方程\ref{1}.
-#### <strong>R</strong></p>
+<h4 id="r"><strong>R</strong></h4>
 
 <p>再者，这个 <code>R</code> 代码，我们可以直接生成图片。</p>
 
@@ -419,7 +437,7 @@ plot<span class="p">(</span>density<span class="p">(</span>x<span class="p">))</
 <br/>
 <br/>
 <span>
-	<a  href="http://williamlfang.github.com/cn/2014/01/22/shu-ju-jie/" class="pageNav"  >Previous</a>
+	<a  href="http://williamlfang.github.com/cn/2014/01/22/shu-ju-jie-gou/" class="pageNav"  >Previous</a>
 	&nbsp;&nbsp;&nbsp;
 	<a   class="pageNavInvalid"  >Next</a>
 </span>
@@ -477,7 +495,7 @@ $(function(){
     var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow and J
             
-        url = 'http://williamlfang.github.com/cn/2014/01/22/shu-ju-jie/';
+        url = 'http://williamlfang.github.com/cn/2014/01/22/shu-ju-jie-gou/';
         
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
@@ -504,7 +522,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-26 19:08:04</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-26 22:57:45</span></small></p>
 </footer>
 
   </div>

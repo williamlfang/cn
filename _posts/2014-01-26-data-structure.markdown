@@ -72,7 +72,7 @@ y
     ## 
     ## Coefficients:
     ## (Intercept)            x  
-    ##      50.487        0.889
+    ##       50.60         7.52
     {% endhighlight %}
 
     
@@ -86,7 +86,7 @@ y
     
     {% highlight text %}
     ## (Intercept)           x 
-    ##     50.4870      0.8888
+    ##      50.604       7.524
     {% endhighlight %}
 
 面向对象的编程能够提供非常灵活的数据处理结果，并且具有较高的程序维护性。这在 **R** 得到了极大的展现。
@@ -102,7 +102,7 @@ str(df)
 
 {% highlight text %}
 ## 'data.frame':	100 obs. of  2 variables:
-##  $ x: num  0.833 -1.63 2.132 -0.588 -0.3 ...
+##  $ x: num  -0.2161 0.0244 -1.7202 1.6339 -0.5865 ...
 ##  $ y: int  1 2 3 4 5 6 7 8 9 10 ...
 {% endhighlight %}
 
@@ -258,7 +258,7 @@ is.vector(x)
     plot(density(l))
     {% endhighlight %}
     
-    ![plot of chunk unnamed-chunk-9](/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/unnamed-chunk-9.r-figures/2014-01-26-data-structure/unnamed-chunk-9.png) 
+    ![plot of chunk unnamed-chunk-9](/cn/assets/images/r-figures/2014-01-26-data-structure/unnamed-chunk-9.png) 
 
  
  

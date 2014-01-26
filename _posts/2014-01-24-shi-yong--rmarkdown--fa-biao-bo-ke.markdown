@@ -196,7 +196,7 @@ x = rnorm(100)
 plot(density(x))
 {% endhighlight %}
 
-![plot of chunk fig1](/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/fig1.r-figures/2014-01-26-data-structure/fig1.png) 
+![plot of chunk fig1](/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/fig1.png) 
 
  
  

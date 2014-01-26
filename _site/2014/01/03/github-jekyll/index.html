@@ -194,21 +194,19 @@ MathJax.Hub.Queue(function() {
         </nav>
         <article class="content">
         <section class="post">
-<h2 id="gitgithub">Git与Github</h2>
+<h2>Git与Github</h2>
 
 <p>Git是一个分散化的版本管理系统(DVCS),最早是用于处理Linux的远程协作编程,后来开始在编程社区逐渐受到关注,在程序猿们广泛流传.而Github就相当于给Git安装了一个在线的存储系统,用于远程协同,相当于码农们的Facebook.</p>
 
-<h2 id="jekyll">Jekyll</h2>
+<h2>Jekyll</h2>
 
-<blockquote>
-  <p>Transform your plain text into static websites and blogs.</p>
-</blockquote>
+<blockquote><p>Transform your plain text into static websites and blogs.</p></blockquote>
 
-<h2 id="github--jekyll-">使用 Github 和 Jekyll 发表博客</h2>
+<h2>使用 Github 和 Jekyll 发表博客</h2>
 
 <p>以下是在 Linux 系统下的 bash 命令语句:</p>
 
-<h3 id="section">复制库到本地磁盘</h3>
+<h3>复制库到本地磁盘</h3>
 
 <p>从 github 将项目 (project) 复制 (fork) 到本地磁盘中,基本格式是:</p>
 
@@ -220,28 +218,23 @@ git clone git@github.com:USERNAME/Project_Name.git TARGETED_FILE
 <p>其中,TARGETED_FILE 通常是以 USERNAME.github.com.git 作为存放目录.</p>
 
 <ul>
-  <li>
-    <p>/home/william/williamlfang.github.com. </p>
+<li><p>/home/william/williamlfang.github.com.</p>
 
-    <p>git clone git@github.com:williamlfang/williamlfang.github.com.git williamlfang.github.com</p>
-  </li>
-  <li>
-    <p>/home/william/cn</p>
+<p>  git clone git@github.com:williamlfang/williamlfang.github.com.git williamlfang.github.com</p></li>
+<li><p>/home/william/cn</p>
 
-    <p>git clone git@github.com:williamlfang/cn.git cn</p>
-  </li>
-  <li>
-    <p>/home/william/en</p>
+<p>  git clone git@github.com:williamlfang/cn.git cn</p></li>
+<li><p>/home/william/en</p>
 
-    <p>git clone git@github.com:williamlfang/en.git en</p>
-  </li>
+<p>  git clone git@github.com:williamlfang/en.git en</p></li>
 </ul>
 
-<h3 id="section-1">更改项目文件</h3>
+
+<h3>更改项目文件</h3>
 
 <p>对于修改的文件,如果想要将其上传到 Github 空间存储,需要经过如下几个步骤</p>
 
-<h4 id="williamlfanggithubcom">williamlfang.github.com</h4>
+<h4>williamlfang.github.com</h4>
 
 <pre><code>cd /home/william/williamlfang.github.com        # 指定路径
 git add . -A           # 上传全部文件 -A
@@ -254,7 +247,7 @@ git push origin master
 jekyll --server        # 在本地文件预览效果, 可打开: 127.0.0.1:4000
 </code></pre>
 
-<h4 id="cn">cn</h4>
+<h4>cn</h4>
 
 <pre><code>cd /home/william/cn
 git add . -A
@@ -267,7 +260,7 @@ git push origin gh-pages
 jekyll --server
 </code></pre>
 
-<h4 id="en">en</h4>
+<h4>en</h4>
 
 <pre><code>cd /home/william/en
 git add . -A
@@ -280,43 +273,34 @@ git push origin gh-pages
 jekyll --server
 </code></pre>
 
-<h2 id="faq">FAQ</h2>
+<h2>FAQ</h2>
 
-<h3 id="tcpserver-error-address-already-in-use">TCPServer Error: Address already in use</h3>
+<h3>TCPServer Error: Address already in use</h3>
 
 <p>Solution:</p>
 
 <ol>
-  <li>
-    <p>在终端输入</p>
+<li><p>在终端输入</p>
 
-    <p>lsof -wni tcp:4000</p>
-  </li>
-  <li>
-    <p>关闭 PID </p>
+<p> lsof -wni tcp:4000</p></li>
+<li><p>关闭 PID</p>
 
-    <p>kill -9 PID</p>
-  </li>
-  <li>
-    <p>重新生成</p>
+<p> kill -9 PID</p></li>
+<li><p>重新生成</p>
 
-    <p>jekyll –server</p>
-  </li>
+<p> jekyll --server</p></li>
 </ol>
 
-<h3 id="ssh-">SSH 错误</h3>
+
+<h3>SSH 错误</h3>
 
 <p><em>引用</em>:<a href="http://blog.csdn.net/keyboardota/article/details/7603630">原文连接</a></p>
 
-<blockquote>
-  <p>问题:在新的电脑系统中,首次生成SSH, 系统会报下面的错误：<br />
-Permission denied (publickey). <br />
-fatal:The remote end hung up unexpectedly <br /></p>
-</blockquote>
+<blockquote><p>问题:在新的电脑系统中,首次生成SSH, 系统会报下面的错误：<br>
+Permission denied (publickey). <br>
+fatal:The remote end hung up unexpectedly <br></p>
 
-<blockquote>
-  <p>Solution:这时需要在本地创建SSH key，然后将生成的SSH key文件内容添加到github帐号上去。</p>
-</blockquote>
+<p>Solution:这时需要在本地创建SSH key，然后将生成的SSH key文件内容添加到github帐号上去。</p></blockquote>
 
 <p>创建SSH key的方法很简单，执行如下命令就可以：
 - ssh-keygen
@@ -330,35 +314,31 @@ gedit ~/.ssh/id_rsa.pub</p>
 <p>打开github帐号管理中的添加SSH key界面的步骤如下：</p>
 
 <ol>
-  <li>登录github</li>
-  <li>点击右上方的Accounting settings图标</li>
-  <li>选择 SSH key</li>
-  <li>点击 Add SSH key</li>
-  <li>在出现的界面中填写SSH key的名称，填一个你自己喜欢的名称即可，然后将上面拷贝的~/.ssh/id_rsa.pub文件内容粘帖到key一栏，在点击“add key”按钮就可以了。</li>
+<li>登录github</li>
+<li>点击右上方的Accounting settings图标</li>
+<li>选择 SSH key</li>
+<li>点击 Add SSH key</li>
+<li>在出现的界面中填写SSH key的名称，填一个你自己喜欢的名称即可，然后将上面拷贝的~/.ssh/id_rsa.pub文件内容粘帖到key一栏，在点击“add key”按钮就可以了。</li>
 </ol>
+
 
 <p>添加过程github会提示你输入一次你的github密码</p>
 
 <p>添加完成后再次执行git clone就可以成功克隆github上的代码库了。</p>
 
-<h3 id="rdiscount-">rdiscount 安装错误</h3>
+<h3>rdiscount 安装错误</h3>
 
-<blockquote>
-  <p>问题:在使用’jekyll –server’出现如下错误    <br />
-  ? [suod] gem install rdiscount    <br />
-  而如果真的这么干,却出现另外的错误提示   <br />
-ERROR: Error installing rdiscount:    <br />
+<blockquote><p>问题:在使用'jekyll --server'出现如下错误    <br>
+  ? [suod] gem install rdiscount    <br>
+  而如果真的这么干,却出现另外的错误提示   <br>
+ERROR: Error installing rdiscount:    <br>
     ERROR: Failed to build gem native extension.</p>
-</blockquote>
 
-<blockquote>
-  <p>Solution:   <br />
-   - 先安装 ruby1.9.1-dev,    <br />
-    sudo apt-get install ruby1.9.1-dev     <br />
-   - 再安装 rdiscount    <br />
-    gem install rdiscount</p>
-</blockquote>
-
+<p>Solution:   <br>
+   - 先安装 ruby1.9.1-dev,    <br>
+    sudo apt-get install ruby1.9.1-dev     <br>
+   - 再安装 rdiscount    <br>
+    gem install rdiscount</p></blockquote>
 
 </section>
 <section class="meta">
@@ -453,7 +433,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-27 00:18:56</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-27 00:20:30</span></small></p>
 </footer>
 
   </div>

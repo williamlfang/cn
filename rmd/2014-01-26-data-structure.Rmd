@@ -110,12 +110,12 @@ is.vector(x)
      j
     ```
 - `rnorm()`:产生随机数，还有其他的分布
-    ```{r}
-    k <- rnorm(100)    #default：rnorm(no, mean = 0, sd = 1)
-         
-    l <- rnorm(100, mean = 2, sd = 5)
-    plot(density(l))
-    ```
+```{r}
+k <- rnorm(100)    #default：rnorm(no, mean = 0, sd = 1)
+     
+l <- rnorm(100, mean = 2, sd = 5)
+plot(density(l))
+```
 
 
 #### 类型与长度

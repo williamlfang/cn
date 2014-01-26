@@ -26,85 +26,53 @@ Wickham 用一张表格总结了 **R** 中的数据结构
  
 需要解释的是标量（scalar）。什么是标量呢？就是一个个单独的变量，如
 
-{% highlight r %}
-x <- 5
-y <- "scalar"
+    x <- 5
+    y <- "scalar"
+    
+    x
 
-x
-{% endhighlight %}
+    ## [1] 5
 
+    y
 
-
-{% highlight text %}
-## [1] 5
-{% endhighlight %}
-
-
-
-{% highlight r %}
-y
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] "scalar"
-{% endhighlight %}
+    ## [1] "scalar"
 
 **R** 默认地将标量识别为 1*1 的向量（vector），也就是 0-dimensional。
  
 > 这里科普一下有关 **R** 中的面向对象的特征。也就是说， **R** 中所有的元素都可以叫做「对象」（obgect），这不仅仅是基本的数据，如向量、data frame，还包括函数（function）、环境（environment），甚至是符号（symbols）。 **R** 处理完分析后得到的就是一个对象，我们需要哪儿元素，直接提取就可以了。比如，
 >
     
-    {% highlight r %}
-    df = data.frame(x = rnorm(100, 0, 1), y = seq(from = 1, to = 100))
-    result <- lm(y ~ x, data = df)
+        df = data.frame(x = rnorm(100, 0, 1), y = seq(from = 1, to = 100))
+        result <- lm(y ~ x, data = df)
+        
+        result
     
-    result
-    {% endhighlight %}
-    
-    
-    
-    {% highlight text %}
-    ## 
-    ## Call:
-    ## lm(formula = y ~ x, data = df)
-    ## 
-    ## Coefficients:
-    ## (Intercept)            x  
-    ##       51.01         4.34
-    {% endhighlight %}
+        ## 
+        ## Call:
+        ## lm(formula = y ~ x, data = df)
+        ## 
+        ## Coefficients:
+        ## (Intercept)            x  
+        ##       50.61        -3.19
 
     
 > 得到的结果存储在 `result` 里，这个就是一个对象，等到我们需要使用其中的「子对象」时，再从中提取即可
     
-    {% highlight r %}
-    result$coeff
-    {% endhighlight %}
+        result$coeff
     
-    
-    
-    {% highlight text %}
-    ## (Intercept)           x 
-    ##      51.006       4.338
-    {% endhighlight %}
+        ## (Intercept)           x 
+        ##      50.606      -3.194
 
 面向对象的编程能够提供非常灵活的数据处理结果，并且具有较高的程序维护性。这在 **R** 得到了极大的展现。
  
 ### `str()`：查看数据结构
 查看数据类型可以使用命令 `str()` 
 
-{% highlight r %}
-str(df)
-{% endhighlight %}
+    str(df)
 
-
-
-{% highlight text %}
-## 'data.frame':	100 obs. of  2 variables:
-##  $ x: num  -1.593 -0.383 -0.534 -1.511 0.137 ...
-##  $ y: int  1 2 3 4 5 6 7 8 9 10 ...
-{% endhighlight %}
+    ## 'data.frame':	100 obs. of  2 variables:
+    ##  $ x: num  0.36 1.394 -0.724 2.096 -0.509 ...
+    ##  $ y: int  1 2 3 4 5 6 7 8 9 10 ...
 
  
 ## 向量
@@ -119,28 +87,14 @@ str(df)
  
 其实，这个可以看作是一个研究变量的序列观测值。比如
 
-{% highlight r %}
-x <- c(35.6, 36.1, 35.8, 37, 36.5, 37.2, 35.8)
-str(x)
-{% endhighlight %}
+    x <- c(35.6, 36.1, 35.8, 37, 36.5, 37.2, 35.8)
+    str(x)
 
+    ##  num [1:7] 35.6 36.1 35.8 37 36.5 37.2 35.8
 
+    is.vector(x)
 
-{% highlight text %}
-##  num [1:7] 35.6 36.1 35.8 37 36.5 37.2 35.8
-{% endhighlight %}
-
-
-
-{% highlight r %}
-is.vector(x)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] TRUE
-{% endhighlight %}
+    ## [1] TRUE
 
 这个就是一个向量，可以视为一天中在七个不同时间段的气温观测。因此，我们可以利用这个向量来产生矩阵，从而实现多元变量在不同时间序列上的观测值。其实，这种数据的向量化不仅提供了对数据的直观理解，而且还能提高 **R** 的运算速度，尽量避免使用循环，优化程序。这点我们在日后会继续讨论。
  
@@ -150,115 +104,63 @@ is.vector(x)
  
 - `c()`:即「concantinate」的意思，用于生成一个向量，并且可用于嵌套
     
-    {% highlight r %}
-    a <- c(1, 2, 4, 6, 8)
-    b <- c(1, c(2, c(4, 6.8)))  # 套嵌使用
-    a == b
-    {% endhighlight %}
+        a <- c(1, 2, 4, 6, 8)
+        b <- c(1, c(2, c(4, 6.8)))  # 套嵌使用
+        a == b
     
+        ## Warning: longer object length is not a multiple of shorter object length
     
+        ## [1]  TRUE  TRUE  TRUE FALSE FALSE
     
-    {% highlight text %}
-    ## Warning: longer object length is not a multiple of shorter object length
-    {% endhighlight %}
+        
+        s <- c(1:10)  # 一个序列。相当于 seq(from = 1, to = 10, by= 1)
+        s
     
+        ##  [1]  1  2  3  4  5  6  7  8  9 10
     
-    
-    {% highlight text %}
-    ## [1]  TRUE  TRUE  TRUE FALSE FALSE
-    {% endhighlight %}
-    
-    
-    
-    {% highlight r %}
-    
-    s <- c(1:10)  # 一个序列。相当于 seq(from = 1, to = 10, by= 1)
-    s
-    {% endhighlight %}
-    
-    
-    
-    {% highlight text %}
-    ##  [1]  1  2  3  4  5  6  7  8  9 10
-    {% endhighlight %}
-    
-    
-    
-    {% highlight r %}
-    
-    int <- c(1L, 6L, 8L)  # 产生integer类
-    
-    log <- c(T, F, F, T, T)  # logical
-    
-    chr <- c("these", "are", "some", "character")
-    {% endhighlight %}
+        
+        int <- c(1L, 6L, 8L)  # 产生integer类
+        
+        log <- c(T, F, F, T, T)  # logical
+        
+        chr <- c("these", "are", "some", "character")
 
 - `seq()`:即「sequence」的意思，主要用于产生一个带有规律的序列        
     
-    {% highlight r %}
-    f <- seq(1:10)  # 默认的increament是1,相当于 c(1:10)
-    f
-    {% endhighlight %}
+        f <- seq(1:10)  # 默认的increament是1,相当于 c(1:10)
+        f
     
+        ##  [1]  1  2  3  4  5  6  7  8  9 10
     
+        
+        g <- seq(from = 1, to = 10, by = 0.5)
+        
+        g
     
-    {% highlight text %}
-    ##  [1]  1  2  3  4  5  6  7  8  9 10
-    {% endhighlight %}
-    
-    
-    
-    {% highlight r %}
-    
-    g <- seq(from = 1, to = 10, by = 0.5)
-    
-    g
-    {% endhighlight %}
-    
-    
-    
-    {% highlight text %}
-    ##  [1]  1.0  1.5  2.0  2.5  3.0  3.5  4.0  4.5  5.0  5.5  6.0  6.5  7.0  7.5
-    ## [15]  8.0  8.5  9.0  9.5 10.0
-    {% endhighlight %}
+        ##  [1]  1.0  1.5  2.0  2.5  3.0  3.5  4.0  4.5  5.0  5.5  6.0  6.5  7.0  7.5
+        ## [15]  8.0  8.5  9.0  9.5 10.0
 
 - `rep()`:即[replecate],重复某个数或者某个「序列」，可用于产生较为复杂的数据。
     
-    {% highlight r %}
-    h <- rep(5, 10)  # 单个数字的重复
-    h
-    {% endhighlight %}
+        h <- rep(5, 10)  # 单个数字的重复
+        h
     
+        ##  [1] 5 5 5 5 5 5 5 5 5 5
     
+        
+        j <- rep(c(1:3), 3)  # 重复一个序列 c(1:3)
+        j
     
-    {% highlight text %}
-    ##  [1] 5 5 5 5 5 5 5 5 5 5
-    {% endhighlight %}
-    
-    
-    
-    {% highlight r %}
-    
-    j <- rep(c(1:3), 3)  # 重复一个序列 c(1:3)
-    j
-    {% endhighlight %}
-    
-    
-    
-    {% highlight text %}
-    ## [1] 1 2 3 1 2 3 1 2 3
-    {% endhighlight %}
+        ## [1] 1 2 3 1 2 3 1 2 3
 
 - `rnorm()`:产生随机数，还有其他的分布
-
-{% highlight r %}
-k <- rnorm(100)  #default：rnorm(no, mean = 0, sd = 1)
-
-l <- rnorm(100, mean = 2, sd = 5)
-plot(density(l))
-{% endhighlight %}
-
-![plot of chunk unnamed-chunk-9](/cn/assets/images/r-figures/2014-01-26-data-structure/unnamed-chunk-9.png) 
+    
+        k <- rnorm(100)  #default：rnorm(no, mean = 0, sd = 1)
+        
+        l <- rnorm(100, mean = 2, sd = 5)
+        plot(density(l))
+    
+    ![plot of chunk unnamed-chunk-9](/cn/assets/images/r-figures/2014-01-26-data-structure/unnamed-chunk-9.png) 
 
  
  
@@ -266,275 +168,153 @@ plot(density(l))
  
 `typeof()` 用于查看数据类型，而 `length()` 则用于查看向量长度：如果是一维数据，则给出长度；如果是矩阵或者 `data.frame`，则给出 `nrow` 与 `ncol` 的合计。
 
-{% highlight r %}
-x <- rnorm(100)
-typeof(x)
-{% endhighlight %}
+    x <- rnorm(100)
+    typeof(x)
 
+    ## [1] "double"
 
+    length(x)
 
-{% highlight text %}
-## [1] "double"
-{% endhighlight %}
+    ## [1] 100
 
+    
+    y <- c("first", "second", "third")
+    typeof(y)
 
+    ## [1] "character"
 
-{% highlight r %}
-length(x)
-{% endhighlight %}
+    length(y)
 
+    ## [1] 3
 
+    
+    z <- c(T, T, F)
+    typeof(z)
 
-{% highlight text %}
-## [1] 100
-{% endhighlight %}
+    ## [1] "logical"
 
+    length(z)
 
+    ## [1] 3
 
-{% highlight r %}
+    
+    w <- seq(from = 1, to = 10, by = 1)
+    typeof(w)
 
-y <- c("first", "second", "third")
-typeof(y)
-{% endhighlight %}
+    ## [1] "double"
 
+    length(w)
 
+    ## [1] 10
 
-{% highlight text %}
-## [1] "character"
-{% endhighlight %}
+    
+    mat <- matrix(rnorm(20), nrow = 4, ncol = 5)
+    typeof(mat)
 
+    ## [1] "double"
 
+    length(mat)
 
-{% highlight r %}
-length(y)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] 3
-{% endhighlight %}
-
-
-
-{% highlight r %}
-
-z <- c(T, T, F)
-typeof(z)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] "logical"
-{% endhighlight %}
-
-
-
-{% highlight r %}
-length(z)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] 3
-{% endhighlight %}
-
-
-
-{% highlight r %}
-
-w <- seq(from = 1, to = 10, by = 1)
-typeof(w)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] "double"
-{% endhighlight %}
-
-
-
-{% highlight r %}
-length(w)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] 10
-{% endhighlight %}
-
-
-
-{% highlight r %}
-
-mat <- matrix(rnorm(20), nrow = 4, ncol = 5)
-typeof(mat)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] "double"
-{% endhighlight %}
-
-
-
-{% highlight r %}
-length(mat)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] 20
-{% endhighlight %}
+    ## [1] 20
 
  
 ### `list`:列表
  
 我们已经知道，`vector`是用于同种类型属性的数据，而`list`则适用于不同类型的数据，可以说是各种数据的一个「大火锅」。我们使用`list()`来生成数据，不是之前介绍的`c()`。
 
-{% highlight r %}
-u <- list(1:3, "cha", T, F, c(1, 4, 7), rep(1, 3), seq(1:5))
+    u <- list(1:3, "cha", T, F, c(1, 4, 7), rep(1, 3), seq(1:5))
+    
+    u
 
-u
-{% endhighlight %}
+    ## [[1]]
+    ## [1] 1 2 3
+    ## 
+    ## [[2]]
+    ## [1] "cha"
+    ## 
+    ## [[3]]
+    ## [1] TRUE
+    ## 
+    ## [[4]]
+    ## [1] FALSE
+    ## 
+    ## [[5]]
+    ## [1] 1 4 7
+    ## 
+    ## [[6]]
+    ## [1] 1 1 1
+    ## 
+    ## [[7]]
+    ## [1] 1 2 3 4 5
 
+    str(u)
 
+    ## List of 7
+    ##  $ : int [1:3] 1 2 3
+    ##  $ : chr "cha"
+    ##  $ : logi TRUE
+    ##  $ : logi FALSE
+    ##  $ : num [1:3] 1 4 7
+    ##  $ : num [1:3] 1 1 1
+    ##  $ : int [1:5] 1 2 3 4 5
 
-{% highlight text %}
-## [[1]]
-## [1] 1 2 3
-## 
-## [[2]]
-## [1] "cha"
-## 
-## [[3]]
-## [1] TRUE
-## 
-## [[4]]
-## [1] FALSE
-## 
-## [[5]]
-## [1] 1 4 7
-## 
-## [[6]]
-## [1] 1 1 1
-## 
-## [[7]]
-## [1] 1 2 3 4 5
-{% endhighlight %}
+    typeof(u)
 
-
-
-{% highlight r %}
-str(u)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## List of 7
-##  $ : int [1:3] 1 2 3
-##  $ : chr "cha"
-##  $ : logi TRUE
-##  $ : logi FALSE
-##  $ : num [1:3] 1 4 7
-##  $ : num [1:3] 1 1 1
-##  $ : int [1:5] 1 2 3 4 5
-{% endhighlight %}
-
-
-
-{% highlight r %}
-typeof(u)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] "list"
-{% endhighlight %}
+    ## [1] "list"
 
 当然，`list`也可以跟`c()`一样实现套嵌 (Wickham称之为[recursive])
 
-{% highlight r %}
-v <- list(list(2, 4, T, "nope", seq(4:8)), rep(3:4, 2), list(T, F, "yes"))
-v
-{% endhighlight %}
+    v <- list(list(2, 4, T, "nope", seq(4:8)), rep(3:4, 2), list(T, F, "yes"))
+    v
 
+    ## [[1]]
+    ## [[1]][[1]]
+    ## [1] 2
+    ## 
+    ## [[1]][[2]]
+    ## [1] 4
+    ## 
+    ## [[1]][[3]]
+    ## [1] TRUE
+    ## 
+    ## [[1]][[4]]
+    ## [1] "nope"
+    ## 
+    ## [[1]][[5]]
+    ## [1] 1 2 3 4 5
+    ## 
+    ## 
+    ## [[2]]
+    ## [1] 3 4 3 4
+    ## 
+    ## [[3]]
+    ## [[3]][[1]]
+    ## [1] TRUE
+    ## 
+    ## [[3]][[2]]
+    ## [1] FALSE
+    ## 
+    ## [[3]][[3]]
+    ## [1] "yes"
 
+    
+    str(v)
 
-{% highlight text %}
-## [[1]]
-## [[1]][[1]]
-## [1] 2
-## 
-## [[1]][[2]]
-## [1] 4
-## 
-## [[1]][[3]]
-## [1] TRUE
-## 
-## [[1]][[4]]
-## [1] "nope"
-## 
-## [[1]][[5]]
-## [1] 1 2 3 4 5
-## 
-## 
-## [[2]]
-## [1] 3 4 3 4
-## 
-## [[3]]
-## [[3]][[1]]
-## [1] TRUE
-## 
-## [[3]][[2]]
-## [1] FALSE
-## 
-## [[3]][[3]]
-## [1] "yes"
-{% endhighlight %}
+    ## List of 3
+    ##  $ :List of 5
+    ##   ..$ : num 2
+    ##   ..$ : num 4
+    ##   ..$ : logi TRUE
+    ##   ..$ : chr "nope"
+    ##   ..$ : int [1:5] 1 2 3 4 5
+    ##  $ : int [1:4] 3 4 3 4
+    ##  $ :List of 3
+    ##   ..$ : logi TRUE
+    ##   ..$ : logi FALSE
+    ##   ..$ : chr "yes"
 
+    typeof(v)
 
-
-{% highlight r %}
-
-str(v)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## List of 3
-##  $ :List of 5
-##   ..$ : num 2
-##   ..$ : num 4
-##   ..$ : logi TRUE
-##   ..$ : chr "nope"
-##   ..$ : int [1:5] 1 2 3 4 5
-##  $ : int [1:4] 3 4 3 4
-##  $ :List of 3
-##   ..$ : logi TRUE
-##   ..$ : logi FALSE
-##   ..$ : chr "yes"
-{% endhighlight %}
-
-
-
-{% highlight r %}
-typeof(v)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] "list"
-{% endhighlight %}
+    ## [1] "list"
 
  

@@ -45,7 +45,7 @@ convertRMarkdown <- function(dir=getwd(), images.dir=dir, images.url='/cn/assets
 					fig.path <- paste0("r-figures/", sub(".Rmd$", "", basename(files)), "/")
 					opts_chunk$set(fig.path = fig.path)
 					## opts_chunk$set(fig.cap = "center")  ## figure position
-						 render_jekyll()       
+					## render_jekyll()       
 					######################################################################
 					
 					try(knit(text=content, output=outFile), silent=FALSE)

@@ -1,11 +1,11 @@
 ---
 layout:   post
-title:    Advanced R Programming:"Data Structure"
-category: Programming 
-tags:
-- R
-- Note
+title:    "Data Structure"
+category: Programming
+tags:     [R, Note]
 description: 
+published: false
+status:    process
 ---
 
 这一章主要介绍了在 **R** 中最基本的元素：数据。前段时间我在网上看到一个帖子（暂时忘记在哪里找到了），强调「data science」的重心不是在前面的那个「data」，而是后面的「science」。这是因为随着互联网的深入发展，我们现在不再是缺乏数据，反而是面临着「big data」造成的「information rich」（信息冗余）的困扰。因此，今后的数据科学应当更进一步的发展新的理论与方法来解决大数据分析。
@@ -15,6 +15,7 @@ description:
 ## 概览
 
 Wickham 用一张表格总结了 **R** 中的数据结构
+
 > R's base data structures are summarised in the table below, organised by their dimensionality and whether they're homogeneous (all contents must be of the same type) or heterogeneous (the contents can be of different types):
 >
 > |    | Homogeneous   | Heterogeneous |
@@ -41,6 +42,7 @@ y
     
     result
     ```
+    
 > 得到的结果存储在 `result` 里，这个就是一个对象，等到我们需要使用其中的「子对象」时，再从中提取即可
     ```{r}
     result$coeff
@@ -159,22 +161,4 @@ v
 str(v)
 typeof(v)
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

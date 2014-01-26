@@ -200,46 +200,115 @@ MathJax.Hub.Queue(function() {
 
 <h2 id="section">概览</h2>
 
-<p>Wickham 用一张表格总结了 <strong>R</strong> 中的数据结构
-&gt; R’s base data structures are summarised in the table below, organised by their dimensionality and whether they’re homogeneous (all contents must be of the same type) or heterogeneous (the contents can be of different types):
-&gt;
-&gt; |    | Homogeneous   | Heterogeneous |
-&gt; |—-|—————|—————|
-&gt; | 1d | Atomic vector | List          |
-&gt; | 2d | Matrix        | Data frame    |
-&gt; | nd | Array         |               |</p>
+<p>Wickham 用一张表格总结了 <strong>R</strong> 中的数据结构</p>
 
-<p>需要解释的是标量（scalar）。什么是标量呢？就是一个个单独的变量，如
-```{r}
-x &lt;- 5
-y &lt;- “scalar”</p>
+<blockquote>
+  <p>R’s base data structures are summarised in the table below, organised by their dimensionality and whether they’re homogeneous (all contents must be of the same type) or heterogeneous (the contents can be of different types):</p>
 
-<p>x
-y
-```
-<strong>R</strong> 默认地将标量识别为 1*1 的向量（vector），也就是 0-dimensional。</p>
+  <table>
+    <thead>
+      <tr>
+        <th> </th>
+        <th>Homogeneous</th>
+        <th>Heterogeneous</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1d</td>
+        <td>Atomic vector</td>
+        <td>List</td>
+      </tr>
+      <tr>
+        <td>2d</td>
+        <td>Matrix</td>
+        <td>Data frame</td>
+      </tr>
+      <tr>
+        <td>nd</td>
+        <td>Array</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<p>需要解释的是标量（scalar）。什么是标量呢？就是一个个单独的变量，如</p>
+
+<div class="highlight"><pre><code class="r">x <span class="o">&lt;-</span> <span class="m">5</span>
+y <span class="o">&lt;-</span> <span class="s">&quot;scalar&quot;</span>
+
+x
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] 5
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">y
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] &quot;scalar&quot;
+</code></pre>
+</div>
+
+<p><strong>R</strong> 默认地将标量识别为 1*1 的向量（vector），也就是 0-dimensional。</p>
 
 <blockquote>
   <p>这里科普一下有关 <strong>R</strong> 中的面向对象的特征。也就是说， <strong>R</strong> 中所有的元素都可以叫做「对象」（obgect），这不仅仅是基本的数据，如向量、data frame，还包括函数（function）、环境（environment），甚至是符号（symbols）。 <strong>R</strong> 处理完分析后得到的就是一个对象，我们需要哪儿元素，直接提取就可以了。比如，</p>
 
-  <pre><code>```{r}
-df = data.frame(x = rnorm(100,0,1), y = seq(from = 1, to = 100) )
-result &lt;- lm(y~x, data =df)
-</code></pre>
 </blockquote>
 
-<pre><code>result
-``` &gt; 得到的结果存储在 `result` 里，这个就是一个对象，等到我们需要使用其中的「子对象」时，再从中提取即可
-```{r}
-result$coeff
-``` 面向对象的编程能够提供非常灵活的数据处理结果，并且具有较高的程序维护性。这在 **R** 得到了极大的展现。
+<div class="highlight"><pre><code class="r">    df <span class="o">=</span> data.frame<span class="p">(</span>x <span class="o">=</span> rnorm<span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> y <span class="o">=</span> seq<span class="p">(</span>from <span class="o">=</span> <span class="m">1</span><span class="p">,</span> to <span class="o">=</span> <span class="m">100</span><span class="p">))</span>
+    result <span class="o">&lt;-</span> lm<span class="p">(</span>y <span class="o">~</span> x<span class="p">,</span> data <span class="o">=</span> df<span class="p">)</span>
+    
+    result
+    
 </code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">    ## 
+    ## Call:
+    ## lm(formula = y ~ x, data = df)
+    ## 
+    ## Coefficients:
+    ## (Intercept)            x  
+    ##     50.4954      -0.0198
+    
+</code></pre>
+</div>
+
+<blockquote>
+  <p>得到的结果存储在 <code>result</code> 里，这个就是一个对象，等到我们需要使用其中的「子对象」时，再从中提取即可</p>
+</blockquote>
+
+<div class="highlight"><pre><code class="r">    result<span class="o">$</span>coeff
+    
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">    ## (Intercept)           x 
+    ##    50.49545    -0.01976
+    
+</code></pre>
+</div>
+
+<p>面向对象的编程能够提供非常灵活的数据处理结果，并且具有较高的程序维护性。这在 <strong>R</strong> 得到了极大的展现。</p>
 
 <h3 id="str"><code>str()</code>：查看数据结构</h3>
-<p>查看数据类型可以使用命令 <code>str()</code> 
-<code>{r}
-str(df)
-</code></p>
+<p>查看数据类型可以使用命令 <code>str()</code> </p>
+
+<div class="highlight"><pre><code class="r">str<span class="p">(</span>df<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## &#39;data.frame&#39;:	100 obs. of  2 variables:
+##  $ x: num  -0.0997 0.686 -1.28 -0.9233 0.1194 ...
+##  $ y: int  1 2 3 4 5 6 7 8 9 10 ...
+</code></pre>
+</div>
 
 <h2 id="section-1">向量</h2>
 
@@ -251,111 +320,133 @@ str(df)
 
 <h4 id="section-3">数据的向量化</h4>
 
-<p>其实，这个可以看作是一个研究变量的序列观测值。比如
-<code>{r}
-x &lt;- c(35.6, 36.1, 35.8, 37.0, 36.5, 37.2, 35.8)
-str(x)
-is.vector(x)
-</code>
-这个就是一个向量，可以视为一天中在七个不同时间段的气温观测。因此，我们可以利用这个向量来产生矩阵，从而实现多元变量在不同时间序列上的观测值。其实，这种数据的向量化不仅提供了对数据的直观理解，而且还能提高 <strong>R</strong> 的运算速度，尽量避免使用循环，优化程序。这点我们在日后会继续讨论。</p>
+<p>其实，这个可以看作是一个研究变量的序列观测值。比如</p>
+
+<div class="highlight"><pre><code class="r">x <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">35.6</span><span class="p">,</span> <span class="m">36.1</span><span class="p">,</span> <span class="m">35.8</span><span class="p">,</span> <span class="m">37</span><span class="p">,</span> <span class="m">36.5</span><span class="p">,</span> <span class="m">37.2</span><span class="p">,</span> <span class="m">35.8</span><span class="p">)</span>
+str<span class="p">(</span>x<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">##  num [1:7] 35.6 36.1 35.8 37 36.5 37.2 35.8
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">is.vector<span class="p">(</span>x<span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">## [1] TRUE
+</code></pre>
+</div>
+
+<p>这个就是一个向量，可以视为一天中在七个不同时间段的气温观测。因此，我们可以利用这个向量来产生矩阵，从而实现多元变量在不同时间序列上的观测值。其实，这种数据的向量化不仅提供了对数据的直观理解，而且还能提高 <strong>R</strong> 的运算速度，尽量避免使用循环，优化程序。这点我们在日后会继续讨论。</p>
 
 <h4 id="section-4">生成向量的方法</h4>
 
 <p>用于生成向量的命令主要有：</p>
 
 <ul>
-  <li>
-    <p><code>c()</code>:即「concantinate」的意思，用于生成一个向量，并且可用于嵌套
-  ```{r}
-  a &lt;- c(1, 2, 4, 6, 8)       <br />
-  b &lt;- c(1, c(2, c(4, 6.8)))     # 套嵌使用
-  a == b</p>
-
-    <p>s &lt;- c(1:10)        # 一个序列。相当于 seq(from = 1, to = 10, by= 1)
-  s</p>
-
-    <p>int &lt;- c(1L, 6L, 8L)    # 产生integer类</p>
-
-    <p>log &lt;- c(T, F, F, T, T) # logical</p>
-
-    <p>chr &lt;- c(“these”, “are”, “some”, “character”)
-  ```</p>
-  </li>
-  <li>
-    <p><code>seq()</code>:即「sequence」的意思，主要用于产生一个带有规律的序列      <br />
-  ```{r}
-   f &lt;- seq(1:10)     # 默认的increament是1,相当于 c(1:10)
-   f</p>
-
-    <p>g &lt;- seq(from = 1, to = 10, by = 0.5)</p>
-
-    <p>g
-  ```</p>
-  </li>
-  <li>
-    <p><code>rep()</code>:即[replecate],重复某个数或者某个「序列」，可用于产生较为复杂的数据。
-  ```{r}
-   h &lt;- rep(5, 10)        # 单个数字的重复
-   h</p>
-
-    <p>j &lt;- rep(c(1:3), 3)    # 重复一个序列 c(1:3)
-   j
-  ```</p>
-  </li>
-  <li>
-    <p><code>rnorm()</code>:产生随机数，还有其他的分布
-  ```{r}
-   k &lt;- rnorm(100)    #default：rnorm(no, mean = 0, sd = 1)</p>
-
-    <p>l &lt;- rnorm(100, mean = 2, sd = 5)
-   plot(density(l))
-  ```</p>
-  </li>
+  <li><code>c()</code>:即「concantinate」的意思，用于生成一个向量，并且可用于嵌套</li>
 </ul>
 
-<h4 id="section-5">类型与长度</h4>
+<div class="highlight"><pre><code class="r">    a <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">8</span><span class="p">)</span>
+    b <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">1</span><span class="p">,</span> c<span class="p">(</span><span class="m">2</span><span class="p">,</span> c<span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">6.8</span><span class="p">)))</span>  <span class="c1"># 套嵌使用</span>
+    a <span class="o">==</span> b
+    
+</code></pre>
+</div>
 
-<p><code>typeof()</code> 用于查看数据类型，而 <code>length()</code> 则用于查看向量长度：如果是一维数据，则给出长度；如果是矩阵或者 <code>data.frame</code>，则给出 <code>nrow</code> 与 <code>ncol</code> 的合计。
-```{r}
-x &lt;- rnorm(100)
-typeof(x)
-length(x)</p>
+<div class="highlight"><pre><code class="text">    ## Warning: longer object length is not a multiple of shorter object length
+    
+</code></pre>
+</div>
 
-<p>y &lt;- c(“first”, “second”, “third”)
-typeof(y)
-length(y)</p>
+<div class="highlight"><pre><code class="text">    ## [1]  TRUE  TRUE  TRUE FALSE FALSE
+    
+</code></pre>
+</div>
 
-<p>z &lt;- c(T, T, F)
-typeof(z)
-length(z)</p>
+<div class="highlight"><pre><code class="r">    
+    s <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>  <span class="c1"># 一个序列。相当于 seq(from = 1, to = 10, by= 1)</span>
+    s
+    
+</code></pre>
+</div>
 
-<p>w &lt;- seq(from = 1, to = 10, by = 1)
-typeof(w)
-length(w)</p>
+<div class="highlight"><pre><code class="text">    ##  [1]  1  2  3  4  5  6  7  8  9 10
+    
+</code></pre>
+</div>
 
-<p>mat &lt;- matrix(rnorm(20), nrow = 4, ncol = 5)
-typeof(mat)
-length(mat)
-```</p>
+<div class="highlight"><pre><code class="r">    
+    int <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">1L</span><span class="p">,</span> <span class="m">6L</span><span class="p">,</span> <span class="m">8L</span><span class="p">)</span>  <span class="c1"># 产生integer类</span>
+    
+    log <span class="o">&lt;-</span> c<span class="p">(</span><span class="k-Variable">T</span><span class="p">,</span> <span class="k-Variable">F</span><span class="p">,</span> <span class="k-Variable">F</span><span class="p">,</span> <span class="k-Variable">T</span><span class="p">,</span> <span class="k-Variable">T</span><span class="p">)</span>  <span class="c1"># logical</span>
+    
+    chr <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&quot;these&quot;</span><span class="p">,</span> <span class="s">&quot;are&quot;</span><span class="p">,</span> <span class="s">&quot;some&quot;</span><span class="p">,</span> <span class="s">&quot;character&quot;</span><span class="p">)</span>
+    
+</code></pre>
+</div>
 
-<h3 id="list"><code>list</code>:列表</h3>
+<ul>
+  <li><code>seq()</code>:即「sequence」的意思，主要用于产生一个带有规律的序列        </li>
+</ul>
 
-<p>我们已经知道，<code>vector</code>是用于同种类型属性的数据，而<code>list</code>则适用于不同类型的数据，可以说是各种数据的一个「大火锅」。我们使用<code>list()</code>来生成数据，不是之前介绍的<code>c()</code>。
-```{r}
-u &lt;- list(1:3, “cha”, T, F, c(1, 4, 7), rep(1, 3), seq(1:5))</p>
+<div class="highlight"><pre><code class="r">    f <span class="o">&lt;-</span> seq<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>  <span class="c1"># 默认的increament是1,相当于 c(1:10)</span>
+    f
+    
+</code></pre>
+</div>
 
-<p>u
-str(u)
-typeof(u)
-<code>
-当然，`list`也可以跟`c()`一样实现套嵌 (Wickham称之为[recursive])
-</code>{r}
-v &lt;- list(list(2,4, T, “nope”, seq(4:8)), rep(3:4, 2), list(T, F, “yes”))
-v</p>
+<div class="highlight"><pre><code class="text">    ##  [1]  1  2  3  4  5  6  7  8  9 10
+    
+</code></pre>
+</div>
 
-<p>str(v)
-typeof(v)
-```</p>
+<div class="highlight"><pre><code class="r">    
+    g <span class="o">&lt;-</span> seq<span class="p">(</span>from <span class="o">=</span> <span class="m">1</span><span class="p">,</span> to <span class="o">=</span> <span class="m">10</span><span class="p">,</span> by <span class="o">=</span> <span class="m">0.5</span><span class="p">)</span>
+    
+    g
+    
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">    ##  [1]  1.0  1.5  2.0  2.5  3.0  3.5  4.0  4.5  5.0  5.5  6.0  6.5  7.0  7.5
+    ## [15]  8.0  8.5  9.0  9.5 10.0
+    
+</code></pre>
+</div>
+
+<ul>
+  <li><code>rep()</code>:即[replecate],重复某个数或者某个「序列」，可用于产生较为复杂的数据。</li>
+</ul>
+
+<div class="highlight"><pre><code class="r">    h <span class="o">&lt;-</span> rep<span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>  <span class="c1"># 单个数字的重复</span>
+    h
+    
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">    ##  [1] 5 5 5 5 5 5 5 5 5 5
+    
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="r">    
+    j <span class="o">&lt;-</span> rep<span class="p">(</span>c<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">),</span> <span class="m">3</span><span class="p">)</span>  <span class="c1"># 重复一个序列 c(1:3)</span>
+    j
+    
+</code></pre>
+</div>
+
+<div class="highlight"><pre><code class="text">    ## [1] 1 2 3 1 2 3 1 2 3
+    
+</code></pre>
+</div>
+
+<ul>
+  <li><code>rnorm()</code>:产生随机数，还有其他的分布</li>
+</ul>
 
 
 </section>
@@ -364,9 +455,9 @@ typeof(v)
 <br/>
 <br/>
 <span>
-	<a  href="http://williamlfang.github.com/cn/2014/01/20/r-note/" class="pageNav"  >Previous</a>
+	<a   class="pageNavInvalid"  >Previous</a>
 	&nbsp;&nbsp;&nbsp;
-	<a  href="http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/" class="pageNav"  >Next</a>
+	<a   class="pageNavInvalid"  >Next</a>
 </span>
 <hr>
 <span class="author">
@@ -374,18 +465,11 @@ typeof(v)
 </span>
 <span class="time">
   /
-  <time datetime="2014-01-22">2014-01-22</time>
+  <time datetime=""></time>
 </span>
 <br />
 <span class="license">
   Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
-</span>
-
-<span class="categories">
-  in categories
-  
-  <a href="/categories/#Programming" title="Programming">Programming</a>&nbsp;
-  
 </span>
 
 
@@ -422,13 +506,9 @@ $(function(){
     var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow and J
             
-        url = 'http://williamlfang.github.com/cn/2014/01/20/r-note/';
-        
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             
-        url = 'http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/';
-        
         }
         if (url) {
             window.location = url;
@@ -451,7 +531,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-26 22:57:45</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-01-26 23:02:38</span></small></p>
 </footer>
 
   </div>

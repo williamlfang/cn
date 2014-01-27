@@ -166,15 +166,15 @@ typeof(v)
 
 因子也是一种向量类型，不过在因子里面，我们需要预先设定好水平值。换句话说，因子有两个属性特者
 
- - class（类型)：也就是 `factor`，使用命令 `class()` 来查看。
- - level (层级)：表明因子有哪些不同取值。
+- class（类型)：也就是 `factor`，使用命令 `class()` 来查看。
+- level (层级)：表明因子有哪些不同取值。
  
-```{r}
-x <- factor(c("a", "b", "b", "a"))
-x
-class(x)
-levels(x)
-```
+  ```{r}
+  x <- factor(c("a", "b", "b", "a"))
+  x
+  class(x)
+  levels(x)
+  ```
 
 ## 矩阵
 
@@ -193,7 +193,7 @@ levels(x)
 - 使用命令 `dim()` 设置
    
    ```{r}
-   mat01 <- matrix(1:10)
+   mat02 <- matrix(1:10)
    dim <- c(2, 5)
    
    mat02
@@ -203,26 +203,26 @@ levels(x)
 有时候，我们需要指定矩阵当中的行列名称，就像在 **Excel** 里面有表头一样。这样可以通过命令来完成
 
 - `colnames`：列名称。可以看作是不同的研究变量，比如在多元回归里面的不同影响因素。
-```{r}
-mat03 <- matrix(1:15, ncol = 3, nrow = 5)
-
-mat03
-
-colnames(mat03) <- c("x1", "x2", "x3")   # 三个研究变量
-
-mat03
-```
+   ```{r}
+   mat03 <- matrix(1:15, ncol = 3, nrow = 5)
+   
+   mat03
+   
+   colnames(mat03) <- c("x1", "x2", "x3")   # 三个研究变量
+   
+   mat03
+   ```
 
 - `rownams`：行名称，算作一次的截面数据。
-```{r}
-mat04 <- matrix(1:15, ncol = 5, nrow = 3)
-
-mat04
-
-rownames(mat04) <- c("obs01", "obs02", "obs03")
-
-mat04
-```
+   ```{r}
+   mat04 <- matrix(1:15, ncol = 5, nrow = 3)
+   
+   mat04
+   
+   rownames(mat04) <- c("obs01", "obs02", "obs03")
+   
+   mat04
+   ```
 
 ## Data Frames：数据框
 
@@ -266,24 +266,24 @@ str(df_cbind)
 ```
 
 - `rbind()`：行合并
-```{r}
-df <- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"))
-
-df
-
-str(df)
-
-df_rbind <- rbind(df, data.frame(x = 10, y = "j"))
-
-df_rbind
-
-str(df_rbind)
-```
+  ```{r}
+  df <- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"))
+  
+  df
+  
+  str(df)
+  
+  df_rbind <- rbind(df, data.frame(x = 10, y = "j"))
+  
+  df_rbind
+  
+  str(df_rbind)
+  ```
 
 ### 提取列向量
 
 对于一个 **data frame**，里面包含了非常多的信息。有时，我们只需要提取其中的某个列向量（也就是一个变量），那么可以使用 `$` 来实现
-``{r}
+```{r}
 df <- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"))
 
 df

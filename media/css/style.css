@@ -122,7 +122,7 @@ nav a:hover{background-color:#ff0000;text-decoration:none;color:#f9f9f9;-webkit-
 .post{padding:.5em 0em;}
 h1{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.8em;color:#000;}
 h2{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.4em;color:#111;
-   margin: 20px 0px 20px; padding: 0px; border-bottom: 1px dashed #cccccc;}  
+   margin: 30px 0px 10px; padding: 0px; border-bottom: 1px dashed #cccccc;}  
    /*------------------------------- h2 的格式: solid -> dashed  -------*/
 h3{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.2em;color:#222;}
 h4{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1em;color:#333;}

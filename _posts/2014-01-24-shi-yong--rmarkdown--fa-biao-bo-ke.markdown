@@ -191,10 +191,8 @@ $$
  
 再者，这个 `R` 代码，我们可以直接生成图片。
 
-{% highlight r %}
-x = rnorm(100)
-plot(density(x))
-{% endhighlight %}
+    x = rnorm(100)
+    plot(density(x))
 
 ![plot of chunk fig1](/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/fig1.png) 
 

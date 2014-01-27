@@ -250,20 +250,21 @@ str(df_02)
 ### 合并 **data frame**
 
 其实我们在上面介绍向量合并的时候已经接触到这个函数了，即 `cbind()` 和 `rbind()`。前者是按照列顺序进行合并，后者则是按照行顺序优先进行合并。
-- `cbind()`：列合并
-   ```{r}
-   df <- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"))
-   
-   df
-   
-   str(df)
-   
-   df_cbind <- cbind(df, data.frame(z = 5:1))
-   
-   df_cbind
 
-   str(df_cbind)
-   ```
+- `cbind()`：列合并
+  ```{r}
+  df <- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"))
+  
+  df
+  
+  str(df)
+  
+  df_cbind <- cbind(df, data.frame(z = 5:1))
+   
+  df_cbind
+
+  str(df_cbind)
+  ```
 
 - `rbind()`：行合并
   ```{r}

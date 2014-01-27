@@ -7,7 +7,7 @@
     <title>William Fang</title>
     <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
     <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-01-27T19:45:09+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-28T00:32:09+08:00</lastBuildDate>
     <webMaster>william.lian.fang@gmail.com</webMaster>
     
     <item>
@@ -87,7 +87,7 @@ y
     ## 
     ## Coefficients:
     ## (Intercept)            x  
-    ##       50.53        -0.67
+    ##       51.01         3.01
 </code></pre>
 
 <blockquote>
@@ -97,7 +97,7 @@ y
 <pre><code>    result$coeff
 
     ## (Intercept)           x 
-    ##     50.5314     -0.6701
+    ##      51.005       3.007
 </code></pre>
 
 <p>面向对象的编程能够提供非常灵活的数据处理结果，并且具有较高的程序维护性。这在 <strong>R</strong> 得到了极大的展现。</p>
@@ -108,7 +108,7 @@ y
 <pre><code>str(df)
 
 ## 'data.frame':	100 obs. of  2 variables:
-##  $ x: num  0.2481 -0.6174 0.1789 -0.3703 -0.0562 ...
+##  $ x: num  0.659 0.277 0.614 -0.655 -0.896 ...
 ##  $ y: int  1 2 3 4 5 6 7 8 9 10 ...
 </code></pre>
 
@@ -364,6 +364,294 @@ str(v)
 typeof(v)
 
 ## [1] "list"
+</code></pre>
+
+<h3 id="factors">factors:因子</h3>
+
+<p>因子也是一种向量类型，不过在因子里面，我们需要预先设定好水平值。换句话说，因子有两个属性特者</p>
+
+<ul>
+  <li>class（类型)：也就是 <code>factor</code>，使用命令 <code>class()</code> 来查看。</li>
+  <li>
+    <p>level (层级)：表明因子有哪些不同取值。</p>
+
+    <pre><code>x &lt;- factor(c("a", "b", "b", "a"))
+x
+  
+## [1] a b b a
+## Levels: a b
+  
+class(x)
+  
+## [1] "factor"
+  
+levels(x)
+  
+## [1] "a" "b"
+</code></pre>
+  </li>
+</ul>
+
+<h2 id="section-6">矩阵</h2>
+
+<p>前面我们解释过如何看待向量（vector）作为一个研究变量的观测，那么，一个有多祖向量组成的矩阵（<strong>Matrix</strong>）就可以被视为是一个多元变量的观测。每一个列向量表示一个变量，而每一个行向量则表示一次的观测结果。这样，我们便可以将其与多元统计结合在一起理解了。</p>
+
+<h3 id="section-7">创建矩阵</h3>
+
+<p>由于矩阵是一个带有二维属性的数据列表，我们在创建矩阵时需要设定矩阵的行与列数目。表示矩阵列向量数据的是命令 <code>ncol</code>, 相应的，行数目的是 <code>nrow</code>。具体的方法有</p>
+
+<ul>
+  <li>
+    <p>预先设定好行列数：</p>
+
+    <pre><code> mat01 &lt;- matrix(1:10, ncol = 2, nrow = 5)
+   
+ mat01
+   
+ ##      [,1] [,2]
+ ## [1,]    1    6
+ ## [2,]    2    7
+ ## [3,]    3    8
+ ## [4,]    4    9
+ ## [5,]    5   10
+</code></pre>
+  </li>
+  <li>
+    <p>使用命令 <code>dim()</code> 设置</p>
+
+    <pre><code> mat02 &lt;- matrix(1:10)
+ dim &lt;- c(2, 5)
+   
+ mat02
+   
+ ##       [,1]
+ ##  [1,]    1
+ ##  [2,]    2
+ ##  [3,]    3
+ ##  [4,]    4
+ ##  [5,]    5
+ ##  [6,]    6
+ ##  [7,]    7
+ ##  [8,]    8
+ ##  [9,]    9
+ ## [10,]   10
+</code></pre>
+  </li>
+</ul>
+
+<h3 id="section-8">矩阵的行列名称</h3>
+
+<p>有时候，我们需要指定矩阵当中的行列名称，就像在 <strong>Excel</strong> 里面有表头一样。这样可以通过命令来完成</p>
+
+<ul>
+  <li>
+    <p><code>colnames</code>：列名称。可以看作是不同的研究变量，比如在多元回归里面的不同影响因素。</p>
+
+    <pre><code> mat03 &lt;- matrix(1:15, ncol = 3, nrow = 5)
+   
+ mat03
+   
+ ##      [,1] [,2] [,3]
+ ## [1,]    1    6   11
+ ## [2,]    2    7   12
+ ## [3,]    3    8   13
+ ## [4,]    4    9   14
+ ## [5,]    5   10   15
+   
+   
+ colnames(mat03) &lt;- c("x1", "x2", "x3")  # 三个研究变量
+   
+ mat03
+   
+ ##      x1 x2 x3
+ ## [1,]  1  6 11
+ ## [2,]  2  7 12
+ ## [3,]  3  8 13
+ ## [4,]  4  9 14
+ ## [5,]  5 10 15
+</code></pre>
+  </li>
+  <li>
+    <p><code>rownams</code>：行名称，算作一次的截面数据。</p>
+
+    <pre><code> mat04 &lt;- matrix(1:15, ncol = 5, nrow = 3)
+   
+ mat04
+   
+ ##      [,1] [,2] [,3] [,4] [,5]
+ ## [1,]    1    4    7   10   13
+ ## [2,]    2    5    8   11   14
+ ## [3,]    3    6    9   12   15
+   
+   
+ rownames(mat04) &lt;- c("obs01", "obs02", "obs03")
+   
+ mat04
+   
+ ##       [,1] [,2] [,3] [,4] [,5]
+ ## obs01    1    4    7   10   13
+ ## obs02    2    5    8   11   14
+ ## obs03    3    6    9   12   15
+</code></pre>
+  </li>
+</ul>
+
+<h2 id="data-frames">Data Frames：数据框</h2>
+
+<p><strong>Data Frame</strong> 可以说是 <strong>R</strong> 中最重要的数据类型了，一方面，既具有向量的特征，表示同样长度的变量数据，另一方面，还保持了 <code>list</code> 中对不同类型数据的支持。这个也是我们做计量经济分析主要用到的数据结构。<strong>Data Frame</strong> 在很多的方面都与 <strong>matrix</strong> 相似，比如 <code>colnames</code>, <code>dim</code>。</p>
+
+<h3 id="dataframe">建立 dataframe</h3>
+
+<p>建立 <strong>Data Frame</strong> 的命令是 <code>data.frame</code>，要求是行数目要相同，列向量允许不同类型的数据。比如，有一个数据是这样的，第一个为姓名，第二个是性别，接着是收入，受教育年限，等等。这些都可以在 <strong>Data Frame</strong> 共存。</p>
+
+<pre><code>df &lt;- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"))
+
+df
+
+##   x y
+## 1 1 a
+## 2 2 b
+## 3 3 c
+## 4 4 d
+## 5 5 e
+
+
+str(df)
+
+## 'data.frame':	5 obs. of  2 variables:
+##  $ x: int  1 2 3 4 5
+##  $ y: Factor w/ 5 levels "a","b","c","d",..: 1 2 3 4 5
+</code></pre>
+
+<p>这里有一点需要特别注意，<strong>R</strong> 会默认在数据框里面将字符型（string)转化为因子（factor），如果不想要转化，可以通过参数 <code>stringsAsFactors = FALSE</code> 来设置。</p>
+
+<pre><code>df_02 &lt;- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"), stringsAsFactors = FALSE)
+
+df_02
+
+##   x y
+## 1 1 a
+## 2 2 b
+## 3 3 c
+## 4 4 d
+## 5 5 e
+
+
+str(df_02)
+
+## 'data.frame':	5 obs. of  2 variables:
+##  $ x: int  1 2 3 4 5
+##  $ y: chr  "a" "b" "c" "d" ...
+</code></pre>
+
+<h3 id="data-frame">合并 <strong>data frame</strong></h3>
+
+<p>其实我们在上面介绍向量合并的时候已经接触到这个函数了，即 <code>cbind()</code> 和 <code>rbind()</code>。前者是按照列顺序进行合并，后者则是按照行顺序优先进行合并。
+- <code>cbind()</code>：列合并</p>
+
+<pre><code>   df &lt;- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"))
+   
+   df
+   
+   ##   x y
+   ## 1 1 a
+   ## 2 2 b
+   ## 3 3 c
+   ## 4 4 d
+   ## 5 5 e
+   
+   
+   str(df)
+   
+   ## 'data.frame':	5 obs. of  2 variables:
+   ##  $ x: int  1 2 3 4 5
+   ##  $ y: Factor w/ 5 levels "a","b","c","d",..: 1 2 3 4 5
+   
+   
+   df_cbind &lt;- cbind(df, data.frame(z = 5:1))
+   
+   df_cbind
+   
+   ##   x y z
+   ## 1 1 a 5
+   ## 2 2 b 4
+   ## 3 3 c 3
+   ## 4 4 d 2
+   ## 5 5 e 1
+   
+   
+   str(df_cbind)
+   
+   ## 'data.frame':	5 obs. of  3 variables:
+   ##  $ x: int  1 2 3 4 5
+   ##  $ y: Factor w/ 5 levels "a","b","c","d",..: 1 2 3 4 5
+   ##  $ z: int  5 4 3 2 1
+</code></pre>
+
+<ul>
+  <li>
+    <p><code>rbind()</code>：行合并</p>
+
+    <pre><code>df &lt;- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"))
+  
+df
+  
+##   x y
+## 1 1 a
+## 2 2 b
+## 3 3 c
+## 4 4 d
+## 5 5 e
+  
+  
+str(df)
+  
+## 'data.frame':	5 obs. of  2 variables:
+##  $ x: int  1 2 3 4 5
+##  $ y: Factor w/ 5 levels "a","b","c","d",..: 1 2 3 4 5
+  
+  
+df_rbind &lt;- rbind(df, data.frame(x = 10, y = "j"))
+  
+df_rbind
+  
+##    x y
+## 1  1 a
+## 2  2 b
+## 3  3 c
+## 4  4 d
+## 5  5 e
+## 6 10 j
+  
+  
+str(df_rbind)
+  
+## 'data.frame':	6 obs. of  2 variables:
+##  $ x: num  1 2 3 4 5 10
+##  $ y: Factor w/ 6 levels "a","b","c","d",..: 1 2 3 4 5 6
+</code></pre>
+  </li>
+</ul>
+
+<h3 id="section-9">提取列向量</h3>
+
+<p>对于一个 <strong>data frame</strong>，里面包含了非常多的信息。有时，我们只需要提取其中的某个列向量（也就是一个变量），那么可以使用 <code>$</code> 来实现</p>
+
+<pre><code>df &lt;- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"))
+
+df
+
+##   x y
+## 1 1 a
+## 2 2 b
+## 3 3 c
+## 4 4 d
+## 5 5 e
+
+
+df$x
+
+## [1] 1 2 3 4 5
 </code></pre>
 
 ]]></content:encoded>

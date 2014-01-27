@@ -9,7 +9,7 @@
 }
 #timeline {
 	background: url(http://dummyimage.com/1x1/000000/000000.gif) top center repeat-y;
-	width: 650px;               
+	width: 625px;               
 	padding: 50px 0;
 	margin: 0 auto;
 	overflow: hidden;
@@ -46,15 +46,6 @@
 	margin: -10px 0 0 0;
 }
 
-#timeline li:nth-of-type(odd) {
-	float: left;
-	text-align: right;
-}
-#timeline li:nth-of-type(odd):after {
-	background-color: #000;
-	right: auto;
-	left: 100%;
-}
 
 #timeline li:nth-of-type(even) {
 	float: right;

@@ -4,15 +4,13 @@ layout: page
 comments: yes
 ---
 
-# 个人
+# 经济与金融
 
+# 统计与数据分析
 
-# 统计
+# Programming
 
-- [统计之都](http://cos.name) 国内的统计学网站先驱
+## R for Data Analysis
 
-# 软件
-
-- [R语言](http://www.r-project.org) 自由的统计计算和图形软件
-- [pandoc](http://johnmacfarlane.net/pandoc/) 强大的文档转换工具
+- [Resources to help you learn and use R](http://www.ats.ucla.edu/stat/r/)：涵盖了众多有关 **R** 的初级入门，并且有提供了翔实的具体例子可供复制、练习。
 

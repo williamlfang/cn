@@ -21,7 +21,9 @@ layout: default
 </span>
 <span class="time">
   /
-  <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time>
+  <!-- <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time> 
+  -->
+  <time datetime="{{ page.date | date:"%m-%d %H:%M:%S" }}">{{ page.date | date:"%m-%d %H:%M:%S" }}</time> 
 </span>
 <br />
 <span class="license">

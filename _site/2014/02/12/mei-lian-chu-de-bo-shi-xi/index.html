@@ -3,8 +3,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="William Fang" />
-    <!--   <title>在 Virutalbox 环境下安装虚拟机 | William Fang</title>    -->
-    <title>在 Virutalbox 环境下安装虚拟机 | William Fang</title> 
+    <!--   <title>美联储的「博士系」 | William Fang</title>    -->
+    <title>美联储的「博士系」 | William Fang</title> 
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -177,7 +177,7 @@ MathJax.Hub.Queue(function() {
     <div id="container">
       <div id="main" role="main">
         <header>
-        <h1>在 Virutalbox 环境下安装虚拟机</h1>
+        <h1>美联储的「博士系」</h1>
         </header>
         <nav id="real_nav">
         <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
@@ -194,91 +194,38 @@ MathJax.Hub.Queue(function() {
         </nav>
         <article class="content">
         <section class="post">
-<p>我现在的系统是 Linux Mint 16 (Petra,KDE),在开源社区有提供众多的软件,基本上能够满足工作和学习的需要.不过,对于在国内环境下,有些商业软件并不提供 Linux 支持,比如,我现在使用的招行网银U盾,不能在 Linux 下读取,再比如,厦大图书馆提供的远程访问数据库iReader,只能在window操作系统下使用.</p>
+<p>下午在浏览『华尔街见闻』的时候正好看到了这样一篇有意思的文章，大致介绍了美联储是如何从一个由实干家（如银行家与金融巨头）组成的俱乐部升级成由一帮<a href="http://wallstreetcn.com/node/75851">经济学博士引领的「学院派」</a>。文章写的条理比较清楚的了，从成员的学位背景出发梳理了美联储的发展历程。诸位如果感兴趣可以前去看看。我这里主要是提供一个个人的随想而已。</p>
 
-<h2 id="linux--windows-">Linux 下安装 Windows 软件</h2>
+<p>首先来一个「全家福」吧。
+<img src="/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg" alt="the fed" /></p>
 
-<p>对于此类的问题,目前有两种解决方法:</p>
-
-<ol>
-  <li>在 Linux 系统中安装 wine,从而可以安装大部分的软件,如QQ等.
-    <ul>
-      <li>优点:占用的CPU资源少,不影响系统的运行速度</li>
-      <li>缺点:设置麻烦,尤其是中文的设置基本是要人命的.典型的就是ireader不能运行.而且还需要相应的安装在 Linux 下的配套软件.</li>
-    </ul>
-  </li>
-  <li>另外一种就是我要介绍的方法:在 Linux 下使用虚拟机安装 Windows 操作系统,在其上面运行软件.
-    <ul>
-      <li>优点:一劳永逸,简单方便</li>
-      <li>缺点:由于虚拟机需要固定的分配内存和硬盘空间,会大大的降低系统的运行速度.</li>
-    </ul>
-  </li>
-</ol>
-
-<p>不过,就目前的笔记本硬件配置来看,一般的内存是4G的,处理器在i3以上,硬盘在500G.在 Linux 下利用虚拟机安装 Windows 系统基本上不会有太大的影响.就本人目前的使用情况来看,效果还是可以接受的.</p>
-
-<p>下面就简单介绍一下我的安装经验.</p>
-
-<h2 id="virtualbox">安装 Virtualbox</h2>
-
-<p>首先是从网站下载 <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a>,这个是 deb 格式的,可以直接点击安装即可.需要 \root 权限.输入密码即可.</p>
-
-<p>然后在终端输入 virtualbox 打开.</p>
-
-<ol>
-  <li>点击”新建”一个虚拟机,设置虚拟机名称,并选择相应的操作系统.这个其实意义不大,主要 virtualbox 会根据相应的操作系统分配默认的内存和硬盘空间.
-<img src="/assets/virtualbox/vb01.png" alt="vb01" />
-<img src="/assets/virtualbox/vb02.png" alt="vb02" />
-<img src="/assets/virtualbox/vb03.png" alt="vb03" /></li>
-  <li>也就是上一步骤的延续,设定内存大小.建议给主机留多一些内存以加快主机的运行速度.
-<img src="/files/virtualbox/vb04.png" alt="vb04" /></li>
-  <li>点击”创建”开始建立一个虚拟机.
-<img src="/files/virtualbox/vb05.png" alt="vb05" /></li>
-  <li>如果不知道虚拟硬盘的文件类型,那就选择默认的”VDI”,点击”下一步”继续.
-<img src="/files/virtualbox/vb06.png" alt="vb06" /></li>
-  <li>分配虚拟机的硬盘大小,有两种选择
-<img src="/files/virtualbox/vb07.png" alt="vb07" />
-    <ul>
-      <li>动态分配,默认选择,前期不怎么占用硬盘,后面会随着需要而增加.比较适用于硬盘存储比较小的计算机.</li>
-      <li>固定大小,这个会占用主机硬盘空间.</li>
-    </ul>
-  </li>
-  <li>选择需要将虚拟机建立在那个文件夹下面.视个人情况而定.我一般是建立在 /home
-<img src="/files/virtualbox/vb08.png" alt="vb08" /></li>
-  <li>该页面显示已经成功的建立起来一个虚拟机,在上面有对应的配置.这个可以通过设置来更改.
-<img src="/files/virtualbox/vb09.png" alt="vb09" /></li>
-  <li>为了在虚拟机上面安装 Windows 系统,需要点击”设置”,找到”存储”里面的”分配光驱”,然后选择移动硬盘上的 Windows 7 iso.
-<img src="/files/virtualbox/vb10.png" alt="vb010" /></li>
-  <li>设置完成后的页面.点击”启动”开始安装系统.
-<img src="/files/virtualbox/vb16.png" alt="vb016" /></li>
-  <li>普通的 Windows 7 安装过程.
-<img src="/files/virtualbox/vb11.png" alt="vb011" /></li>
-  <li>成功安装系统,开始启动.
-<img src="/files/virtualbox/vb12.png" alt="vb012" />
-<img src="/files/virtualbox/vb13.png" alt="vb013" /></li>
-  <li>在虚拟机上面的 Win 7 找到 Cd 光驱,点击打开安装扩展应用,期间会重启一次.进入之后可以看到整个 Win 7 的完整系统.
-<img src="/files/virtualbox/vb14.png" alt="vb14" /></li>
-  <li>设置”共享文件夹”,以实现在主机和虚拟机之间的文件传输.
-<img src="/files/virtualbox/vb15.png" alt="vb15" /></li>
-</ol>
-
-<h2 id="virtualbox--usb">Virtualbox 识别 USB</h2>
-
-<p>为了能够在主机与虚拟机之间相互使用USB,还需有做如下的设置.</p>
+<p>文章谈到了对美联储决策有重要影响的几位「高官」的学历背景。目前新晋美联储主席的耶伦（Yellen）拥有 Yale 经济学博士学历，其在学术界有颇有建树。而那些身处高职的几位委员会成员（<strong>FOMC</strong>）均配有经济学博士学位，如 Stanley Fischer 就是前 <strong>IMF</strong> 的首席经济学家[^1]。而如果从历史的纵向来看，这个趋势就更加明显了：沃尔克当时还只是经济学硕士，到了格林斯潘后来获得博士学位，而前人伯南克就已经是一名正式的大学（宏观）经济学教授了。Blinder 是原 <strong>FOMC</strong> 委员，他对 <strong>Fed</strong> 的历史颇有研究，宣称：</p>
 
 <blockquote>
-  <ul>
-    <li>由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,<a href="https://www.virtualbox.org/wiki/Downloads">Extention pack</a>.下载完成后点击安装即可.然后重启 virtualbox.   <br /></li>
-    <li>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:   <br />
-  sudo addgroup wiliam vboxusers  <br /></li>
-    <li>接着做一下设置:    <br />
-      <ul>
-        <li>打开virtualbox,但事先不启动虚拟机.找到”设置”中的”USB设备”,点击右边的”+”以添加USB  <br /></li>
-        <li>重启主机,启动虚拟机后就可以通过右下角的USB符号添加.如果不用的话,也可以点击推出.</li>
-      </ul>
-    </li>
-  </ul>
+  <p>我相信，当时在美联储80年的历史中，我是第四个或第五个学院派委员。不久后耶伦也来了，然后学院派就开始蜂拥而入。如今，这是一个很正常的现象，而且学院派教授更受欢迎。</p>
 </blockquote>
+
+<p>中国有古语说『物以类聚，人以群分』，这个自然界的普遍真理同样适用于经济学界。我们经常看到持有不同观点的学派之间是如何明争暗斗的，比如早些年的世纪大战——凯恩斯与哈耶克的论战，到后来由弗里德曼扛旗的货币主义学派反攻凯恩斯主义阵营。有些时候我真就觉得经济学这个大火锅里搅拌的是娱乐圈的废料，「你方唱罢我来和」，不无热闹，却全无一点增进人民福祉的实景。</p>
+
+<p>当初成立美联储的初衷是为了结束美国国内混乱的金融秩序，统一由一个中央决策机构来制定、执行货币政策。因此，当初在位掌权的一般都是一些银行家与金融巨头，大家都比较注重实干，以直觉和经验取胜，很少能寻觅到经济学院派的作风。</p>
+
+<p>物是人非，斗转星移，我们现在看到美联储的境况，清一色的由理论界与学院派占山为王，并且在将来的很长一段时间内，这样的趋势会进一步明显。这些成员一般都具有良好的经济学训练，取得正规的博士学位，而且绝大部分还有过学术研究的经历，在各自的领域都有不小的影响力。如前任伯南克，在研究经济萧条理论、商业周期、宏观经济与失业率等诸多方面颇有成就。下面这幅图揭示了在美联储长达一个世纪的演变过程中，成员学术能力的提升。</p>
+
+<p><img src="/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/position.jpg" alt="position" /></p>
+
+<p>就美联储成员在学位背景上不断更新的情况来分析，文章是这样认为的：</p>
+
+<blockquote>
+  <p>美联储拥有越来越多的博士可能是件好事。一个只有经济学博士担任高级职位的美联储将有很多局限。多元化会带来各种正面效应，单一文化则会脆弱和不健康。</p>
+</blockquote>
+
+<p>我的想法是，今后金融实务界能够更好的预测到美联储的决策机制了。在以前，美联储在公开市场的决策与操作动机基本是一个黑盒子，外界无从知晓。到了上世纪70年代，美联储才开始注重与大众的沟通，定期的发布公告向金融市场传送消息，并且在独立性方面获得了巨大的改善。可是外界在对美联储的决策进行拿捏把握上依然小心谨慎，如履薄冰。这归根到底还是因为美联储的决策机制不够开放，无法面向外面提供所有的内部信息。而真是这种信息上的不对称，导致每次在美联储关门研讨决策前后均有明显的市场波动，伤害经济的稳健。</p>
+
+<p>而现在，我们可以从美联储成员的组成结构上获得一定的「收益」。不同的经济学理论在针对同样一个经济问题时提供的解决方案千差万别，有时甚至是南辕北辙，背道而驰。因此，我们可以借助对美联储组成成员的经济理论主张上分析其未来的决策风格与指导理论，从而在一定程度上透析美联储这个神秘的机构。我的建议时，当前的市场参与者还是需要对新一届的美联储决策机构多做一些「功课」，以便深入了解其决策特征，从而更好的预测与把握美联储在今后制定的各项经济政策。</p>
+
+<p>当然，我们也可以从另外一个方面看问题。就是如果美联储的成员构成正的过于学院派，那么其在应对更加具体的金融事件上，可能不会从金融实务界的形势出发，或者干脆就忽视了那些真正需要解决问题的方案的银行家的呼声。这对美联储今后的决策有效性不得不大打折扣，甚至在某些时候反而会伤害实际经济的健康发展。纯粹由经济理论模型提出的药方往往不能够良好的「接地气」，反而挫伤实体经济的积极性。</p>
+
+<p>[^1] Fischer 也是学术界的大牛，和 Blanchard 共同著有“Lectures on Macroeconomcis”，红极一时，可谓那个时代的标准 <em>textbook</em>。</p>
 
 
 </section>
@@ -287,9 +234,9 @@ MathJax.Hub.Queue(function() {
 <br/>
 <br/>
 <span>
-	<a  href="http://williamlfang.github.com/cn/2014/01/03/github-jekyll/" class="pageNav"  >Previous</a>
+	<a  href="http://williamlfang.github.com/cn/2014/01/26/data-structure/" class="pageNav"  >Previous</a>
 	&nbsp;&nbsp;&nbsp;
-	<a  href="http://williamlfang.github.com/cn/2014/01/05/goagent/" class="pageNav"  >Next</a>
+	<a  href="http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/" class="pageNav"  >Next</a>
 </span>
 <hr> 
 
@@ -298,7 +245,7 @@ MathJax.Hub.Queue(function() {
 </span>
 <span class="time">
   /
-  <time datetime="2014-01-04">2014-01-04</time>
+  <time datetime="2014-02-12">2014-02-12</time>
 </span>
 <br />
 <span class="license">
@@ -308,7 +255,7 @@ MathJax.Hub.Queue(function() {
 <span class="categories">
   in categories
   
-  <a href="/categories/#Tech" title="Tech">Tech</a>&nbsp;
+  <a href="/categories/#经济分析" title="经济分析">经济分析</a>&nbsp;
   
 </span>
 
@@ -316,9 +263,7 @@ MathJax.Hub.Queue(function() {
 <span class="tags">
   tagged with 
   
-  <a href="/tags/#Linux" title="Linux">Linux</a>&nbsp;
-  
-  <a href="/tags/#Virtualbox" title="Virtualbox">Virtualbox</a>&nbsp;
+  <a href="/tags/#美联储 经济 博士 学院派" title="美联储 经济 博士 学院派">美联储 经济 博士 学院派</a>&nbsp;
   
 </span>
 
@@ -346,12 +291,12 @@ $(function(){
     var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow and J
             
-        url = 'http://williamlfang.github.com/cn/2014/01/03/github-jekyll/';
+        url = 'http://williamlfang.github.com/cn/2014/01/26/data-structure/';
         
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             
-        url = 'http://williamlfang.github.com/cn/2014/01/05/goagent/';
+        url = 'http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/';
         
         }
         if (url) {

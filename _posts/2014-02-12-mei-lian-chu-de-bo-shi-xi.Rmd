@@ -2,7 +2,11 @@
 layout:   post
 title:    "美联储的「博士系」"
 category: 经济分析 
-tags:     [美联储 经济 博士 学院派]
+tags:     
+- 美联储 
+- 经济 
+- 博士 
+- 学院派
 description: 
 published: false
 status:    process

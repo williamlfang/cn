@@ -51,10 +51,11 @@
 <link rel="shortcut icon" href="/assets/images/favicon.ico" />
 <link rel="icon" href="/assets/images/favicon.ico" />
 
-<link href="http://databank.u.qiniudn.com/bootstrap/global.min.css" rel="stylesheet" media="screen" />
-<link href="http://databank.u.qiniudn.com/bootstrap/responsive.min.css" rel="stylesheet" media="screen" />
-<link href="http://databank.u.qiniudn.com/map/css/jquery-jvectormap-1.2.2.css" rel="stylesheet" media="screen" />
-<link href="http://databank.u.qiniudn.com/css/jquery.montage.css" rel="stylesheet" media="screen" />
+
+<link href="/media/main/css/bootstrap/global.min.css" rel="stylesheet" media="screen" />
+<link href="/media/main/css/bootstrap/responsive.min.css" rel="stylesheet" media="screen" />
+<link href="/media/main/css/jquery-jvectormap-1.2.2.css" rel="stylesheet" media="screen" />
+<link href="/media/main/css/jquery.montage.css" rel="stylesheet" media="screen" />
 
 <script type="text/javascript" src="/media/main/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="/media/main/js/pjax.js"></script>
@@ -345,12 +346,13 @@ h1, h2, h3, h4, h5, p, span {
 }
 
 /* = Components
------------------------------------------------ */
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 .main {
 	position: relative;
 	width: 100%;	
-	background: #999 url("/assets/images/white_wall_hash.jpg") repeat;
+	background: #999 url("http://databank.qiniudn.com/images/patterns/white_wall_hash.jpg") repeat;
+	/* OR DELETE : url("http://databank.qiniudn.com/images/patterns/white_wall_hash.jpg") repeat    */
 	border-top: #E6E6E6 solid 1px;
 	-webkit-box-shadow: 0px 1px 8px 1.5px rgba(0, 0, 0, 0.35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25), 0px 5px 30px 3px rgba(0, 0, 0, 0.2) inset;
 	-moz-box-shadow:    0px 1px 8px 1.5px rgba(0, 0, 0, 0.35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25), 0px 5px 30px 3px rgba(0, 0, 0, 0.2) inset;
@@ -648,7 +650,7 @@ footer {
 	
     <div class="am-container under blur" id="am-container">
 			
-	<span class="montage-copyright">旅行摄影作品随机展示墙 <a href="javascript:;" onclick="javascript:window.location.reload()">刷新页面换一换</a> | <a href="http://www.imlongluo.com/blog/" target="_blank">&copy;2005-2013</a> <a href="http://www.imlongluo.com/blog/" target="_blank">Long Luo&reg;</a></span>
+	<span class="montage-copyright">旅行摄影作品随机展示墙 <a href="javascript:;" onclick="javascript:window.location.reload()">刷新页面换一换</a> | <a href="http://williamlfang.github.io/cn/" target="_blank">&copy;2005-2013</a> <a href="http://williamlfang.github.io/cn/" target="_blank">William Fang&reg;</a></span>
     </div>
     <div id="header-shadow" class="shadow"></div>
     <div id="handle" class="hide">
@@ -853,3 +855,4 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
 </body>
 </html>
+

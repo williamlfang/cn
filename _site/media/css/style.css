@@ -98,7 +98,7 @@ blockquote p{margin:0;padding:.5em 0;}
 
 */
 
-#container{width:680px;margin:5em auto;display:block;padding:0 2em;}           /* 页面大小*/
+#container{width:680px;margin:4em auto;display:block;padding:0 2em;}           /* 页面大小: margin 是 顶部的距离*/
 .content{font-size:16px;line-height:24px;}
 .content h1{padding:.5em 0;}
 /*

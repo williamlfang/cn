@@ -124,7 +124,8 @@ nav a{display:block;padding:.7em 1em;color:#000000;}
 nav a:hover{background-color:#ff0000;text-decoration:none;color:#f9f9f9;-webkit-transition:color .2s linear;}
 .post{padding:.5em 0em;}
 
-.post h2{display:block;margin-top:10px;padding:4px 0 4px 10px;border-top:1px dashed #91895b;border-left:3px solid #91895b;border-bottom:1px dashed #91895b;padding:5px;font-size:16px;font-family:Verdana,"BitStream vera Sans";color:#284259;}
+.post h2{display:block;margin-top:10px;padding:4px 0 4px 10px;border-top:1px dashed #91895b;border-left:3px solid #dd0000;border-bottom:1px dashed #91895b;padding:5px;font-size:16px;font-family:Verdana,"BitStream vera Sans";color:#284259;}
+.post h3{display:block;margin-top:10px;padding:4px 0 4px 10px;border-top:1px dashed #91895b;border-left:3px solid #dd0000;border-bottom:1px dashed #91895b;padding:5px;font-size:16px;font-family:Verdana,"BitStream vera Sans";color:#284259;}
 
 h1{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.8em;color:#000;}
 h2{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.4em;color:#111;

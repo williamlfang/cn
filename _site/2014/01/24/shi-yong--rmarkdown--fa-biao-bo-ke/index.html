@@ -95,6 +95,34 @@
         });
     })
     </script>
+ 
+<!-- CDN upload request sent in private mail to generated-toc author -->
+
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>使用 Jekyll + knitr 发布博客</h1>
+        </header>
+        <nav id="real_nav" style="position: fixed;">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+      <!-- <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span> -->
+       <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <!--  <span><a title="links" class="" href="http://williamlfang.github.com/cn/journey/">journey</a></span>  -->
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <head>
+  
   <!--=================================================================== -->
  <!--mathjax config similar to math.stackexchange \
 <script type="text/x-mathjax-config">
@@ -106,7 +134,7 @@ MathJax.Hub.Config({
     processEscapes: true,
     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
   },
-  messageStyle: "none",
+  messageStyle: "none",z
   "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
  });
  </script>
@@ -169,32 +197,12 @@ MathJax.Hub.Queue(function() {
 <script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
 <!-- CDN upload request sent in private mail to generated-toc author -->
 <script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
-<!-- CDN upload request sent in private mail to generated-toc author -->
 
- </head>
 
-  <body onLoad="setInterval(setTimeSpan,1000);">
-    <div id="container">
-      <div id="main" role="main">
-        <header>
-        <h1>使用 Jekyll + knitr 发布博客</h1>
-        </header>
-        <nav id="real_nav" style="position: fixed;">
-        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
-        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
-        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
-        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
-        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
-        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
-        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
-	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
-      <!-- <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span> -->
-       <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
-        <!--  <span><a title="links" class="" href="http://williamlfang.github.com/cn/journey/">journey</a></span>  -->
-        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
-        </nav>
-        <article class="content">
-        <section class="post">
+</head>
+ 
+
+<section class="post">
 <h2 id="section">我的博客之旅</h2>
 
 <p>这些天一直都在钻研如何在博客中加入可以执行 <strong>R</strong> 程序代码的博客模板。我先前也有过写博客的经历，不过那时候使用的博客都是免费托管在其他的服务器中，一方面是缺乏可定制，大都是千篇一律的，无法满足「DIY」的需要，另一方面，也是主要的问题，这些博客网站很少有支持 <strong>LaTeX</strong> 的数学输出，对于数学环境的支持不尽人意。我也就偶尔在写一些纯文字类的随想，不曾涉及专业领域的事情。</p>
@@ -394,7 +402,7 @@ status: process
     <p>首先是在主目录文件夹找到 <code>_config-yml</code> 打开，将 <strong>markdown</strong> 默认的编译设置为 <strong>kramdown</strong>。</p>
   </li>
   <li>
-    <p>在 <code>_layout</code> 目录下面有 <code>default.html</code> 的页面设置，我们需要在 <code>&lt;head&gt;</code> 与 <code>&lt;/head&gt;</code> 之间插入代码
+    <p>在 <code>_layout</code> 目录下面有 <code>post.html</code> 的页面设置，我们需要在 <code>&lt;head&gt;</code> 与 <code>&lt;/head&gt;</code> 之间插入代码
 <img src="/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/snapshot1.png" alt="snapshot1.png" /></p>
 
     <p>也就是在网页开启前使用 <strong>MathJax</strong> 进行编译，支持对数学的输出。这里，我使用单个美元符号 <code>$</code> 与 <code>$</code> 输入 <strong>LaTeX</strong> 代码，会在网页显示相应的 <em>行内公式</em>，而使用一对的美元符号 <code>$$</code> 与 <code>$$</code> 来输入行间数学公式。</p>
@@ -525,7 +533,7 @@ $(function(){
       </div>
 
 <footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-02-22 03:37:48</span></small></p>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-02-22 18:23:28</span></small></p>
 </footer>
 
   </div>

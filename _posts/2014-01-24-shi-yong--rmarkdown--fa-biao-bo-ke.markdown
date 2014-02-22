@@ -164,7 +164,7 @@ status: publish
  
 - 首先是在主目录文件夹找到 `_config-yml` 打开，将 **markdown** 默认的编译设置为 **kramdown**。
  
-- 在 `_layout` 目录下面有 `default.html` 的页面设置，我们需要在 `<head>` 与 `</head>` 之间插入代码
+- 在 `_layout` 目录下面有 `post.html` 的页面设置，我们需要在 `<head>` 与 `</head>` 之间插入代码
 ![snapshot1.png](/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/snapshot1.png)
    
    也就是在网页开启前使用 **MathJax** 进行编译，支持对数学的输出。这里，我使用单个美元符号 `$` 与 `$` 输入 **LaTeX** 代码，会在网页显示相应的 *行内公式*，而使用一对的美元符号 `$$` 与 `$$` 来输入行间数学公式。

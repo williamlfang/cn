@@ -23,7 +23,7 @@
 /*@import url(/media/css/kickstart/tiptip.css); */
 @import url(/media/css/kickstart/fonts/fontawesome/css/font-awesome.min.css);
 
-body{font-size:14px;word-spacing:1px;
+body{font-size:16px;word-spacing:1px;
 	margin-left:auto;
        margin-right:auto;
 	font-family:"Galdeano","Hiragino Sans GB","Microsoft YaHei",Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
@@ -39,13 +39,13 @@ ol,ul{list-style-position:inside;}
 ol ul, ul ol, ul ul, ol ol {margin-left:1em;}
 pre code{
   margin:1em 0;
-  font-size:12px;
+  font-size:14px;
   line-height:1.6;
   display:block;
   overflow:auto;
  padding: 5px; 
  border: 1px solid #ddc;
- background-color:#f9f9f9;  /*backgound*/
+ background-color:#49483e;  /*backgound*/
 -webkit-box-shadow: 1px 1px 3px #ccc}
 /* block code ---------------------------------------------------------------------------------------------------------*/
 pre,code{font-family:Menlo,"DejaVu Sans Mono","Bitstream Vera Sans Mono","Andale Mono",Consolas,Menlo,"Andale Mono","Courier New",Monaco,monospace;font-size:11.5px;} 
@@ -98,8 +98,8 @@ blockquote p{margin:0;padding:.5em 0;}
 
 */
 
-#container{width:680px;margin:4em auto;display:block;padding:0 2em;}           /* 页面大小: margin 是 顶部的距离*/
-.content{font-size:16px;line-height:24px;}
+#container{width:700px;margin:4em auto;display:block;padding:0 2em;}           /* 页面大小: margin 是 顶部的距离*/
+.content{font-size:18px;line-height:26px;}
 .content h1{padding:.5em 0;}
 /*
 .content img{max-width:600px;display:block;margin:10px auto;-webkit-box-shadow:#999 1px 1px 4px;-moz-box-shadow:#999 1px 1px 4px;box-shadow:#999 1px 1px 4px;}
@@ -124,9 +124,19 @@ nav a{display:block;padding:.7em 1em;color:#000000;}
 nav a:hover{background-color:#ff0000;text-decoration:none;color:#f9f9f9;-webkit-transition:color .2s linear;}
 .post{padding:.5em 0em;}
 
-.post h2{display:block;margin-top:10px;padding:4px 0 4px 10px;border-top:1px dashed #91895b;border-left:3px solid #dd0000;border-bottom:1px dashed #91895b;padding:5px;font-size:1.4em;font-family:Verdana,"BitStream vera Sans";color:#284259;}
+.post h2{display:block;margin-top:10px;padding:4px 0 4px 10px;border-top:1px dashed #91895b;border-left:3px solid #dd0000;border-bottom:1px dashed #91895b;padding:5px;
+  font-size:1.4em;font-family:Verdana,"BitStream vera Sans";color:#284259;}
 
-h1{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.8em;color:#000;}
+h1{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:2em;color:#000;
+background: -webkit-linear-gradient(top, rgba(70, 70, 70, 1) 0%,rgba(111, 111, 111, 1) 50%,rgba(10, 14, 10, 1) 51%,rgba(10, 8, 9, 1) 100%);
+-webkit-box-reflect: below -7px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.2, transparent), to(rgba(3,3,3,.1)));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+-webkit-transition: .5s;
+-moz-transition: .5s;
+transition: .5s;
+}
+
 h2{font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.4em;color:#111;
    margin: 30px 0px 10px; padding: 0px; border-bottom: 1px dashed #cccccc;}  
    /*------------------------------- h2 的格式: solid -> dashed  -------*/

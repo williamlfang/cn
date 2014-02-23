@@ -2,125 +2,409 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="William Fang" />
-    <title>Categories | William Fang</title>
+    <meta name="author" content="陈" />
+    <!--   <title>Categories | 陈</title>    -->
+    <title>Categories | 陈</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
     <link rel="shortcut icon" href="/favicon.ico">
-    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
-    <link rel="stylesheet" href="/media/css/style.css">
-    <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="陈" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://mad4alcohol.github.io/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
     <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="/media/js/outliner.js"></script>
-  </head>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<!-- <script type="text/javascript" src="/media/js/outliner.js"></script> -->
+<!--=================================================================== -->
   <script type="text/javascript">
     function setTimeSpan(){
-    	var date = new Date();
-    	timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
     }
     
     Date.prototype.format = function(format)
-		{
+    {
     var o =
-    	{
-    	    "M+" : this.getMonth()+1, //month
-    	    "d+" : this.getDate(),    //day
-    	    "h+" : this.getHours(),   //hour
-    	    "m+" : this.getMinutes(), //minute
-    	    "s+" : this.getSeconds(), //second
-    	    "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
-    	    "S" : this.getMilliseconds() //millisecond
-    	}
-    	if(/(y+)/.test(format))
-    	format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
-    	for(var k in o)
-    	if(new RegExp("("+ k +")").test(format))
-    	format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
-    	return format;
-		}
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
   </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+ 
+<!-- CDN upload request sent in private mail to generated-toc author -->
+
+ </head>
+
   <body onLoad="setInterval(setTimeSpan,1000);">
     <div id="container">
       <div id="main" role="main">
         <header>
         <h1>Categories</h1>
         </header>
-        <nav id="real_nav">
-        <span><a title="home page" class="" href="/">Home</a></span>
-        <span><a title="about" class="" href="/about/">About</a></span>
-        <span><a title="categories" class="" href="/categories/">Categories</a></span>
-        <span><a title="tags" class="" href="/tags/">Tags</a></span>
-        <!--<span><a title="links" class="" href="/links/">Links</a></span> -->
+        <nav id="real_nav" style="position: fixed;">
+        <span><a title="home page" class="" href="http://mad4alcohol.github.io/">home</a></span>
+        <span><a title="about" class="" href="http://mad4alcohol.github.io/about/">about</a></span>
+        <span><a title="publication" class="" href="http://mad4alcohol.github.io/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://mad4alcohol.github.io/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://mad4alcohol.github.io/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://mad4alcohol.github.io/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://mad4alcohol.github.io/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://mad4alcohol.github.io/contact/">contact</a></span>
+      <!-- <span><a title="links" class="" href="http://mad4alcohol.github.io/links/">links</a></span> -->
+       <span><a title="links" class="" href="http://mad4alcohol.github.io/links/">links</a></span>
+        <!--  <span><a title="links" class="" href="http://mad4alcohol.github.io/journey/">journey</a></span>  -->
+        <span><a title="subscribe by RSS" class="" href="http://mad4alcohol.github.io/feed/">subscribe</a></span>
         </nav>
         <article class="content">
         <section class="post">
-<div id="tag_cloud">
+<div id='tag_cloud'>
 
-<a href="#emacs" title="emacs" rel="2">emacs (2)</a>
+<a href="#Time" title="Time" rel="16">Time (16)</a>
 
-<a href="#summary" title="summary" rel="1">summary (1)</a>
+<a href="#Love" title="Love" rel="4">Love (4)</a>
 
-<a href="#misc" title="misc" rel="1">misc (1)</a>
+<a href="#Campus" title="Campus" rel="3">Campus (3)</a>
 
-<a href="#gui" title="gui" rel="2">gui (2)</a>
+<a href="#Personal" title="Personal" rel="9">Personal (9)</a>
 
-<a href="#python" title="python" rel="1">python (1)</a>
+<a href="#Life" title="Life" rel="4">Life (4)</a>
+
+<a href="#Tech" title="Tech" rel="6">Tech (6)</a>
+
+<a href="#Programming" title="Programming" rel="2">Programming (2)</a>
+
+<a href="#经济分析" title="经济分析" rel="1">经济分析 (1)</a>
 
 </div>
 
+
+
+
 <ul class="listing">
 
-  <li class="listing-seperator" id="emacs">emacs</li>
+  <li class="listing-seperator" id="Time">Time</li>
 
   <li class="listing-item">
-  <time datetime="2012-08-02">2012-08-02</time>
-  <a href="http://williamlfang.github.com/cn/2012/08/02/emacs-summary-cont/" title="Emacs总结（续）之YASnippet">Emacs总结（续）之YASnippet</a>
+  <time datetime="2012-07-02">2012-07-02</time>
+  <a href="http://mad4alcohol.github.io/2012/07/02/loving/" title="我们都是一群被文字宠坏的小孩">我们都是一群被文字宠坏的小孩</a>
   </li>
 
   <li class="listing-item">
-  <time datetime="2012-07-31">2012-07-31</time>
-  <a href="http://williamlfang.github.com/cn/2012/07/31/emacs-summary/" title="折腾了一天的emacs，现在来写点总结">折腾了一天的emacs，现在来写点总结</a>
-  </li>
-
-
-  <li class="listing-seperator" id="summary">summary</li>
-
-  <li class="listing-item">
-  <time datetime="2012-09-02">2012-09-02</time>
-  <a href="http://williamlfang.github.com/cn/2012/09/02/summer-summary/" title="2012年的暑假总结">2012年的暑假总结</a>
-  </li>
-
-
-  <li class="listing-seperator" id="misc">misc</li>
-
-  <li class="listing-item">
-  <time datetime="2013-05-10">2013-05-10</time>
-  <a href="http://williamlfang.github.com/cn/2013/05/10/jpeg-thoughts/" title="不规范地简述一下JPEG原理">不规范地简述一下JPEG原理</a>
-  </li>
-
-
-  <li class="listing-seperator" id="gui">gui</li>
-
-  <li class="listing-item">
-  <time datetime="2013-05-13">2013-05-13</time>
-  <a href="http://williamlfang.github.com/cn/2013/05/13/log-handler-with-qtextbrowser/" title="在PyQt中实现一个可以变色的log窗口">在PyQt中实现一个可以变色的log窗口</a>
+  <time datetime="2008-11-11">2008-11-11</time>
+  <a href="http://mad4alcohol.github.io/2008/11/11/where-to-go/" title="在哪里">在哪里</a>
   </li>
 
   <li class="listing-item">
-  <time datetime="2013-05-12">2013-05-12</time>
-  <a href="http://williamlfang.github.com/cn/2013/05/12/pyqt-model-view-framework/" title="PyQt的Model/View框架的个人总结">PyQt的Model/View框架的个人总结</a>
+  <time datetime="2008-08-14">2008-08-14</time>
+  <a href="http://mad4alcohol.github.io/2008/08/14/year-arournd/" title="春夏秋冬">春夏秋冬</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2008-07-17">2008-07-17</time>
+  <a href="http://mad4alcohol.github.io/2008/07/17/lost-in-shunde/" title="在顺德">在顺德</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2008-05-31">2008-05-31</time>
+  <a href="http://mad4alcohol.github.io/2008/05/31/thinking/" title="思维的乐趣">思维的乐趣</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2008-05-28">2008-05-28</time>
+  <a href="http://mad4alcohol.github.io/2008/05/28/confusing/" title="迷乱">迷乱</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2008-05-21">2008-05-21</time>
+  <a href="http://mad4alcohol.github.io/2008/05/21/waiting-for-you/" title="寻找猪头的夏天">寻找猪头的夏天</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2008-03-24">2008-03-24</time>
+  <a href="http://mad4alcohol.github.io/2008/03/24/lonely-dancing/" title="独自乱舞">独自乱舞</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2007-12-10">2007-12-10</time>
+  <a href="http://mad4alcohol.github.io/2007/12/10/living/" title="继续生活">继续生活</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2007-11-14">2007-11-14</time>
+  <a href="http://mad4alcohol.github.io/2007/11/14/strong/" title="最坚强">最坚强</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2007-07-24">2007-07-24</time>
+  <a href="http://mad4alcohol.github.io/2007/07/24/first-year-at-uni/" title="大学一年祭">大学一年祭</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2007-05-25">2007-05-25</time>
+  <a href="http://mad4alcohol.github.io/2007/05/25/healthy/" title="我希望好好的">我希望好好的</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2007-05-19">2007-05-19</time>
+  <a href="http://mad4alcohol.github.io/2007/05/19/losing-my-dear-time/" title="流年逝">流年逝</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2007-05-19">2007-05-19</time>
+  <a href="http://mad4alcohol.github.io/2007/05/19/always-there/" title="一直在身边">一直在身边</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2007-05-18">2007-05-18</time>
+  <a href="http://mad4alcohol.github.io/2007/05/18/lonely-words/" title="流浪的文字">流浪的文字</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2007-05-15">2007-05-15</time>
+  <a href="http://mad4alcohol.github.io/2007/05/15/time-flying/" title="一天又三年">一天又三年</a>
   </li>
 
 
-  <li class="listing-seperator" id="python">python</li>
+  <li class="listing-seperator" id="Love">Love</li>
 
   <li class="listing-item">
-  <time datetime="2013-06-26">2013-06-26</time>
-  <a href="http://williamlfang.github.com/cn/2013/06/26/brief-analysis-on-pickle-and-an-implementation-in-clojure/" title="pickle模块简介与一个简单的clojure实现">pickle模块简介与一个简单的clojure实现</a>
+  <time datetime="2009-11-04">2009-11-04</time>
+  <a href="http://mad4alcohol.github.io/2009/11/04/the-girl/" title="那女孩對我說">那女孩對我說</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2009-03-14">2009-03-14</time>
+  <a href="http://mad4alcohol.github.io/2009/03/14/my-love-for-you/" title="我爱主同时亦爱一位世人">我爱主同时亦爱一位世人</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2009-02-20">2009-02-20</time>
+  <a href="http://mad4alcohol.github.io/2009/02/20/till-the-end/" title="Till the end">Till the end</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2008-03-13">2008-03-13</time>
+  <a href="http://mad4alcohol.github.io/2008/03/13/together/" title="一起的日子">一起的日子</a>
+  </li>
+
+
+  <li class="listing-seperator" id="Campus">Campus</li>
+
+  <li class="listing-item">
+  <time datetime="2013-07-14">2013-07-14</time>
+  <a href="http://mad4alcohol.github.io/2013/07/14/to-be-a-man/" title="曾厝垵后厝85号的大男孩">曾厝垵后厝85号的大男孩</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2010-08-21">2010-08-21</time>
+  <a href="http://mad4alcohol.github.io/2010/08/21/summer-gone/" title="盛夏的那些事">盛夏的那些事</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2009-09-15">2009-09-15</time>
+  <a href="http://mad4alcohol.github.io/2009/09/15/liu-nian/" title="流年">流年</a>
+  </li>
+
+
+  <li class="listing-seperator" id="Personal">Personal</li>
+
+  <li class="listing-item">
+  <time datetime="2014-02-12">2014-02-12</time>
+  <a href="http://mad4alcohol.github.io/2014/02/12/zhu-duo-shi-qing/" title="诸多事情">诸多事情</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2011-01-15">2011-01-15</time>
+  <a href="http://mad4alcohol.github.io/2011/01/15/one-semeter-ends/" title="一个学期结束了">一个学期结束了</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2010-06-25">2010-06-25</time>
+  <a href="http://mad4alcohol.github.io/2010/06/25/nothing-meaningful/" title="存在的空虚">存在的空虚</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2010-05-26">2010-05-26</time>
+  <a href="http://mad4alcohol.github.io/2010/05/26/graduation/" title="毕业啦">毕业啦</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2010-05-21">2010-05-21</time>
+  <a href="http://mad4alcohol.github.io/2010/05/21/missing/" title="我怀念的">我怀念的</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2010-01-30">2010-01-30</time>
+  <a href="http://mad4alcohol.github.io/2010/01/30/how-far/" title="永远有多远">永远有多远</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2010-01-17">2010-01-17</time>
+  <a href="http://mad4alcohol.github.io/2010/01/17/only-me/" title="知我者">知我者</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2009-11-20">2009-11-20</time>
+  <a href="http://mad4alcohol.github.io/2009/11/20/angel/" title="Angel">Angel</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2009-11-11">2009-11-11</time>
+  <a href="http://mad4alcohol.github.io/2009/11/11/lonely-love/" title="作品">作品</a>
+  </li>
+
+
+  <li class="listing-seperator" id="Life">Life</li>
+
+  <li class="listing-item">
+  <time datetime="2013-12-31">2013-12-31</time>
+  <a href="http://mad4alcohol.github.io/2013/12/31/final-day/" title="2013年的最后一天">2013年的最后一天</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2013-07-27">2013-07-27</time>
+  <a href="http://mad4alcohol.github.io/2013/07/27/old-times/" title="往事如烟灭">往事如烟灭</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2013-07-17">2013-07-17</time>
+  <a href="http://mad4alcohol.github.io/2013/07/17/sicked/" title="生病了">生病了</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2012-05-14">2012-05-14</time>
+  <a href="http://mad4alcohol.github.io/2012/05/14/ni-guang/" title="逆光">逆光</a>
+  </li>
+
+
+  <li class="listing-seperator" id="Tech">Tech</li>
+
+  <li class="listing-item">
+  <time datetime="2014-01-24">2014-01-24</time>
+  <a href="http://mad4alcohol.github.io/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/" title="使用 Jekyll + knitr 发布博客">使用 Jekyll + knitr 发布博客</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2014-01-18">2014-01-18</time>
+  <a href="http://mad4alcohol.github.io/2014/01/18/qq-for-linux/" title="WineQQ2013 可以使用">WineQQ2013 可以使用</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2014-01-16">2014-01-16</time>
+  <a href="http://mad4alcohol.github.io/2014/01/16/pandoc/" title="Linux Mint 安装 Pandoc">Linux Mint 安装 Pandoc</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2014-01-08">2014-01-08</time>
+  <a href="http://mad4alcohol.github.io/2014/01/08/chinese-input/" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2014-01-04">2014-01-04</time>
+  <a href="http://mad4alcohol.github.io/2014/01/04/virtualbox/" title="在 Virutalbox 环境下安装虚拟机">在 Virutalbox 环境下安装虚拟机</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2014-01-02">2014-01-02</time>
+  <a href="http://mad4alcohol.github.io/2014/01/02/window-linux/" title="本本的转型">本本的转型</a>
+  </li>
+
+
+  <li class="listing-seperator" id="Programming">Programming</li>
+
+  <li class="listing-item">
+  <time datetime="2014-01-26">2014-01-26</time>
+  <a href="http://mad4alcohol.github.io/2014/01/26/data-structure/" title="Data Structure">Data Structure</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2014-01-20">2014-01-20</time>
+  <a href="http://mad4alcohol.github.io/2014/01/20/r-note/" title="Advanced R Programming">Advanced R Programming</a>
+  </li>
+
+
+  <li class="listing-seperator" id="经济分析">经济分析</li>
+
+  <li class="listing-item">
+  <time datetime="2014-02-12">2014-02-12</time>
+  <a href="http://mad4alcohol.github.io/2014/02/12/mei-lian-chu-de-bo-shi-xi/" title="美联储的「博士系」">美联储的「博士系」</a>
   </li>
 
 
 </ul>
 
+
+
+
 <script src="/media/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script>
+
+
+<p></p>
 
 <script language="javascript">
 $.fn.tagcloud.defaults = {
@@ -139,16 +423,21 @@ $(function () {
 
 
         </article>
-        <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
             <img src="/assets/images/btt.png" />
-        </a> 
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
       </div>
 
-    <footer>
-    <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a> | Copyright 2012 - 2014 by <a href="/about/">William Fang</a> | <span class="label label-info" id="timeSpan"></span></small></p>
-    </footer>
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-02-23 13:16:18</span></small></p>
+</footer>
 
-    </div>
+  </div>
 
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -160,5 +449,6 @@ $(function () {
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
+
   </body>
 </html>

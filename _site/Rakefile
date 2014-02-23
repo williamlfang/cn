@@ -1,15 +1,18 @@
+#coding:utf-8
 require "rubygems"
 require 'rake'
 require 'yaml'
 require 'time'
+require 'hz2py'		##
 
 SOURCE = "."
 CONFIG = {
-  'version' => "0.2.13",
+  'version' => "0.3.0",
   'themes' => File.join(SOURCE, "_includes", "themes"),
   'layouts' => File.join(SOURCE, "_layouts"),
   'posts' => File.join(SOURCE, "_posts"),
-  'post_ext' => "md",
+  'post_ext' => "Rmd",
+  ## 'post_ext' => "md",
   'theme_package_version' => "0.1.0"
 }
 
@@ -40,12 +43,15 @@ module JB
   end #Path
 end #JB
 
-# Usage: rake post title="A Title" [date="2012-02-09"]
+# Usage: rake post title="A Title"  date="2012-02-09" tags=[tag1,tag2]
 desc "Begin a new post in #{CONFIG['posts']}"
 task :post do
   abort("rake aborted: '#{CONFIG['posts']}' directory not found.") unless FileTest.directory?(CONFIG['posts'])
   title = ENV["title"] || "new-post"
-  slug = title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+  tags = ENV["tags"] || "[]"
+  category = ENV['category'] || ""
+  slug = Hz2py.do(title.encode('utf-8'), :join_with => '-', :to_simplified => true)
+  slug = slug.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
   begin
     date = (ENV['date'] ? Time.parse(ENV['date']) : Time.now).strftime('%Y-%m-%d')
   rescue Exception => e
@@ -56,20 +62,24 @@ task :post do
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
-  
+
+   mkdir_p File.dirname(filename)
   puts "Creating new post: #{filename}"
   open(filename, 'w') do |post|
     post.puts "---"
-    post.puts "layout: post"
-    post.puts "title: \"#{title.gsub(/-/,' ')}\""
-    post.puts "categories:"
-    post.puts "- "
-    post.puts "tags:"
-    post.puts "- "
-    post.puts ""
-    post.puts ""
+    post.puts "layout:   post"
+    post.puts "title:    \"#{title.gsub(/-/,' ')}\""
+    post.puts "category:  "
+    post.puts "tags:     []"
+    post.puts 'description: '
+    post.puts "published: false"
+    post.puts "status:    process"
     post.puts "---"
+    post.puts ""
+    ##post.puts "{% include JB/setup %}"
+    post.puts ""
   end
+  system("rstudio #{filename}") # 新建文章后在编辑器中打开
 end # task :post
 
 # Usage: rake page name="about.html"
@@ -93,6 +103,7 @@ task :page do
     post.puts "title: \"#{title}\""
     post.puts 'description: ""'
     post.puts "---"
+    post.puts "{% include JB/setup %}"
   end
 end # task :page
 
@@ -198,8 +209,8 @@ namespace :theme do
     # Mirror each file into the framework making sure to prompt if already exists.
     packaged_theme_files.each do |filename|
       file_install_path = File.join(JB::Path.base, filename)
-      if File.exist? file_install_path
-        next if ask("#{file_install_path} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
+      if File.exist? file_install_path and ask("#{file_install_path} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
+        next
       else
         mkdir_p File.dirname(file_install_path)
         cp_r File.join(packaged_theme_path, filename), file_install_path
@@ -307,3 +318,4 @@ end
 
 #Load custom rake scripts
 Dir['_rake/*.rake'].each { |r| load r }
+

@@ -1,11 +1,11 @@
 ---
-title: tags
 layout: page
+title: tags
 ---
 
 <div id='tag_cloud'>
 {% for tag in site.tags %}
-<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}: {{ tag[0] | tag_count }} </a>
+<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
 {% endfor %}
 </div>
 

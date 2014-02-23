@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="陈" />
+    <!--   <title>Angel | 陈</title>    -->
+    <title>Angel | 陈</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="陈" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://mad4alcohol.github.io/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<!-- <script type="text/javascript" src="/media/js/outliner.js"></script> -->
+<!--=================================================================== -->
+  <script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+ 
+<!-- CDN upload request sent in private mail to generated-toc author -->
+
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>Angel</h1>
+        </header>
+        <nav id="real_nav" style="position: fixed;">
+        <span><a title="home page" class="" href="http://mad4alcohol.github.io/">home</a></span>
+        <span><a title="about" class="" href="http://mad4alcohol.github.io/about/">about</a></span>
+        <span><a title="publication" class="" href="http://mad4alcohol.github.io/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://mad4alcohol.github.io/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://mad4alcohol.github.io/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://mad4alcohol.github.io/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://mad4alcohol.github.io/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://mad4alcohol.github.io/contact/">contact</a></span>
+      <!-- <span><a title="links" class="" href="http://mad4alcohol.github.io/links/">links</a></span> -->
+       <span><a title="links" class="" href="http://mad4alcohol.github.io/links/">links</a></span>
+        <!--  <span><a title="links" class="" href="http://mad4alcohol.github.io/journey/">journey</a></span>  -->
+        <span><a title="subscribe by RSS" class="" href="http://mad4alcohol.github.io/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <head>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
+<style TYPE="text/css"> /*以下为数学格式*/
+/* code.has-jax {font: inherit; font-size: 200%; background: inherit; border: inherit;}*/
+ body {font-family: "Georgia"; } /* Palatino */
+ h1, h2 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;} /*font-family: Century Gothic; color: #3C5084;*/
+ h3 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;} /*font-family: Century Gothic; color: #6076B4*/
+ h4 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;color: #6076B4;}
+/*code {font-family: Inconsolata;}*/
+ p {text-align:left;} */             /* TEXT ALIGHT: */
+.hidden {display: none;}
+.newpage {page-break-before:always;}
+/*pre {padding: 10px; margin-left: 100px; margin-right: 100px; background: #EEEEEE;}*/
+@media print {h2 {page-break-before:always;}}
+/* TODO: use Google Web Fonts to ensure Palatino, Century Gothic and Inconsolata are installed and used */
+</style>
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 100      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+<!--=================================================================== -->
+</head>
+
+<section class="post">
+<p>第一次那么具体而生动的体会这个词语的意思，意义以及意思背后的韵味，是在南方的一个雨季里，阁楼的玻璃被雨点滴的淅沥，将自己蜷缩在木质地板的角落里，看冰心的《安琪儿》。</p>
+
+<p>文字是语言的发音。有时，这些蝌蚪般缠绵的楔形符号给人的是那些抽象而高远的画面，比如说写这时间，眼前便会不知觉然的跳动这些玄在空中飘舞的轨迹，再比如说，阳光，你会想起在回归线以南的某个街道那次夕阳的落落，再者，如果记忆还能持久，或许看着日记里的文字会想起多少年的从容却在那样的傍晚邂逅一个女孩。可是，语言却另有一番韵味。比如，眼前的这个词语，轻轻的从口中滑落，想丝绸在风淡云清的清晨划破肌肤。Angel，读着这个词汇，这个简单到明了而复杂到不解的词语，心中，自是一番温暖。</p>
+
+<p>似乎有一段时间没有开口说话。话语是人类的一项基本权力，其中包含了两方面的意思，其一是如梭所言的“我虽不同意你所说的每句话，但我坚决捍卫你说话的权力”，其二，便是可以不再说话，像王小波说的。“沉默是一种生活的方式”。</p>
+
+<p>如果在某种程度上说，Darwin的进化论是正确的，那么，根据假设检验，这其中其实还是有部分的处于显著水平之上的错误。Keynese说有一种animal spirit的动物精神在人们的交往中发生作用，这种动物精神并非绝对意义上的进化结果，因为人们可以通过n重博弈来减少成本，获得收益。</p>
+
+<p>沉默久了，便不开口，不开口久了，便更宁愿沉默，这似乎更趋于一种死胡同的均衡。有一首歌曲爱的发声练习，也许，该多练习在爱里的练习。只是，我在这个过程总是不及格。一直到等有一天，可以把这个词语说的完整的时候，有一个小笑话，说考生在测试过程中，发现主考官已经不再，自己对测试纸大声痛苦，为过去的岁月里那些挥之不去的记忆，为那些努力过的人。这个测验，叫做爱情。</p>
+
+<p>有时会做一些漫长的梦，关于时间旅行的常识问题，从这头走到那头，需要多少时间呢，可能这就是一个有限的值域，可是从这个时刻开往下一个时刻，从这个信念走出那个信念，需要多少时间呢，或许，这是一个趋于无穷的值。不知道，记住的，该怎么忘记。</p>
+
+<p>格拉斯有本小说，铁皮鼓，里面讲述了一个奥斯卡的小孩永远也不需要长大的故事，他让成年的自己躲进孩童的身躯，以为这样便能躲避一切的世俗，一切的烦恼，可以敲着铁皮鼓一直延续幸福。可是，我们知道，后来他还是长大了，长大到发现要从一个信念转化到另一个信念，这是多么的困难。Westlife唱到，it's hard to die。</p>
+
+<p>安其儿，冰心在文章里用着纯洁的文字，用纯洁的心灵，描绘这个纯洁的精灵。那个下午，我把这个文章死命的记住，在心中创造过一个有angel的世界。我不需要自由，只想保护她的梦，一步步向前走，她给的永远不远。</p>
+
+<p>Angel，my angel</p>
+
+</section>
+<section class="meta">
+
+
+<br/>
+<br/>
+<span>
+	<a  href="http://mad4alcohol.github.io/2009/11/11/lonely-love/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://mad4alcohol.github.io/2010/01/17/only-me/" class="pageNav"  >Next</a>
+</span>
+<hr> 
+<span class="author">
+  <a href="http://williamlfang.github.com">陈</a>
+</span>
+<span class="time">
+  /
+<time datetime="2009-11-20">2009-11-20</time> 
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Personal" title="Personal">Personal</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#少年" title="少年">少年</a>&nbsp;
+  
+</span>
+
+</section>
+
+
+
+<!-- <script>
+// https://github.com/ghiculescu/jekyll-table-of-contents
+$(document).ready(function() {
+  var no_back_to_top_links = false
+
+  var headers = $('h1, h2, h3, h4, h5, h6').filter(function() {return this.id}), // get all headers with an ID
+      output = $('.toc');
+  if (!headers.length || headers.length < 3 || !output.length)
+    return;
+
+  var get_level = function(ele) { return parseInt(ele.nodeName.replace("H", ""), 10) }
+  var highest_level = headers.map(function(_, ele) { return get_level(ele) }).get().sort()[0]
+  // var return_to_top = '<i class="icon-arrow-up back-to-top"> ^ </i>'
+  var return_to_top = ''
+
+  var level = get_level(headers[0]), this_level, html = "<i></i> <ol>";
+  headers.on('click', function() {
+    if (!no_back_to_top_links) window.location.hash = this.id
+  }).addClass('clickable-header').each(function(_, header) {
+    this_level = get_level(header);
+    if (!no_back_to_top_links && this_level === highest_level) {
+      $(header).addClass('top-level-header').after(return_to_top)
+    }
+    if (this_level === level) // same level as before; same indenting
+      html += "<li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level < level) // higher level than before; end parent ol
+      html += "</li></ol></li><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level > level) // lower level than before; expand the previous to contain a ol
+      html += "<ol><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    level = this_level; // update for the next one
+  });
+  html += "</ol>";
+  if (!no_back_to_top_links) {
+    $(document).on('click', '.back-to-top', function() {
+      $(window).scrollTop(0)
+      window.location.hash = ''
+    })
+  }
+  output.hide().html(html).show('slow');
+});
+</script>
+<div class="toc"></div>
+       <!-- Table of Content-->
+<div  style="position: fixed; top: 99px; width: 180px; text-align: left;  display:block;margin-left:750px;margin-top:10px;padding:4px 0 4px 10px;border-top:3px solid #91895b;border-left:3px solid #91895b;border-bottom:3px solid #91895b;padding:20x;font-size:13px;line-height: 15px;background-color:#ffffff;">
+<script>
+// https://github.com/ghiculescu/jekyll-table-of-contents
+$(document).ready(function() {
+  var no_back_to_top_links = false
+
+  var headers = $('h1, h2, h3, h4, h5, h6').filter(function() {return this.id}), // get all headers with an ID
+      output = $('.toc');
+  if (!headers.length || headers.length < 3 || !output.length)
+    return;
+
+  var get_level = function(ele) { return parseInt(ele.nodeName.replace("H", ""), 10) }
+  var highest_level = headers.map(function(_, ele) { return get_level(ele) }).get().sort()[0]
+  // var return_to_top = '<i class="icon-arrow-up back-to-top"> ^ </i>'
+  var return_to_top = ''
+
+  var level = get_level(headers[0]), this_level, html = "<i></i> <ol>";
+  headers.on('click', function() {
+    if (!no_back_to_top_links) window.location.hash = this.id
+  }).addClass('clickable-header').each(function(_, header) {
+    this_level = get_level(header);
+    if (!no_back_to_top_links && this_level === highest_level) {
+      $(header).addClass('top-level-header').after(return_to_top)
+    }
+    if (this_level === level) // same level as before; same indenting
+      html += "<li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level < level) // higher level than before; end parent ol
+      html += "</li></ol></li><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level > level) // lower level than before; expand the previous to contain a ol
+      html += "<ol><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    level = this_level; // update for the next one
+  });
+  html += "</ol>";
+  if (!no_back_to_top_links) {
+    $(document).on('click', '.back-to-top', function() {
+      $(window).scrollTop(0)
+      window.location.hash = ''
+    })
+  }
+  output.hide().html(html).show('slow');
+});
+</script>
+<div class="toc"></div>
+ 
+</div>
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://mad4alcohol.github.io/2009/11/11/lonely-love/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://mad4alcohol.github.io/2010/01/17/only-me/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-02-23 13:16:18</span></small></p>
+</footer>
+
+  </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+</html>

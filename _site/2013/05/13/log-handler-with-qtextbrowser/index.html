@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>前述</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h2>前述</h2>
+
+<p>在<a href="../../12/pyqt-model-view-framework/">之前的一篇文章</a>里说过，log这种流动的文字信息可以用<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a>来展示。这篇文章会演示如何实现一个log窗口，而且还能根据特定log等级变化颜色。</p>
+
+<p>最终效果
+<img src="/assets/images/log-handler-with-qtextbrowser/overview.png" alt="overview.png"/></p>
+
+<p>实现可以分成3步</p>
+
+<ul>
+<li>在Qt中实现带颜色的文字显示</li>
+<li>在python中实现log颜色的格式化</li>
+<li>连接python中的<a href="http://docs.python.org/2/library/logging.html#logging.Logger">logging.Logger</a>和Qt中的<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a></li>
+</ul>
+
+<h2>在Qt中实现带颜色的文字显示</h2>
+
+<p>很简单，有了<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a>之后，使用<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html#append"><code>append()</code></a>槽就可以往里面添加了。而且QTextBrowser还支持html，也就是你可以在程序里写（至少是简单的）html代码，Qt可以正确的渲染出来。
+比如
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="n">text_browser</span> <span class="o">=</span> <span class="n">QTextBrowser</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">3</span> 
+<span class="lineno">4</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">text_browser</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;&lt;b&gt;this&lt;/b&gt; is &lt;font color=blue&gt;&lt;i&gt;append&lt;/i&gt;&lt;/font&gt;ed&amp;#39;</span>
+<span class="lineno">5</span>                   <span class="o">&amp;</span><span class="c">#39; into &lt;code&gt;text_browser&lt;/code&gt;&amp;#39;)&lt;/p&gt;</span>
+<span class="lineno">6</span> 
+<span class="lineno">7</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">text</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">browser</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="lineno">8</span> <span class="n">app</span><span class="o">.</span><span class="k">exec</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="p">()</span>
+</code></pre>
+</div>
+
+如图 <img src="/assets/images/log-handler-with-qtextbrowser/render-html.png" alt="render-html.png"/></p>
+
+<h2>在python中实现log颜色的格式化</h2>
+
+<p>为了能在logger的工作流程里插一手，我们只有实现自己的<a href="http://docs.python.org/2/library/logging.html#logging.Formatter">Formatter</a>这一条路走。</p>
+
+<p>我们的主要思路就是，在<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a>中，把给传入的参数的每个需要格式化的值外面套上<code>&lt;font color=%1&gt;</code>和<code>&lt;/font&gt;</code>，所以我们需要一个表，来确定什么参数要用什么颜色，像这样
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="o">&amp;</span><span class="c">#39;asctime&amp;#39;: &amp;#39;blue&amp;#39;,</span>
+<span class="lineno">3</span>     <span class="o">&amp;</span><span class="c">#39;message&amp;#39;: &amp;#39;green&amp;#39;</span>
+<span class="lineno">4</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+但是这样不够灵活，如果这样写，我们怎么来按照log等级来选择不停的颜色呢，所以可以这样
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="o">&amp;</span><span class="c">#39;asctime&amp;#39;: lambda _: &amp;#39;blue&amp;#39;,</span>
+<span class="lineno">3</span>     <span class="o">&amp;</span><span class="c">#39;levelname&amp;#39;: lambda record: {&amp;#39;DEBUG&amp;#39;: &amp;#39;gray&amp;#39;,</span>
+<span class="lineno">4</span>                                  <span class="o">&amp;</span><span class="c">#39;INFO&amp;#39; : &amp;#39;green&amp;#39;,</span>
+<span class="lineno">5</span>                                  <span class="o">&amp;</span><span class="c">#39;WARNING&amp;#39;: &amp;#39;orange&amp;#39;}[record.levelname]</span>
+<span class="lineno">6</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+也就是颜色表的值是一个函数，按照输入来确定颜色，如果这么写，理论上（实际上也是可以实现的）我们甚至可以按照时间的不同来显示不同的颜色
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="o">&amp;</span><span class="c">#39;asctime&amp;#39;: lambda t: &amp;#39;blue&amp;#39; if int(t) % 2 else &amp;#39;red&amp;#39;</span>
+<span class="lineno">3</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+效果如图 <img src="/assets/images/log-handler-with-qtextbrowser/asctime-change-color.png" alt="asctime-change-color.png"/></p>
+
+<p>接下来我们来着手重载<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a></p>
+
+<p><a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a>带了一个参数<code>record</code>，保证了是<a href="http://docs.python.org/2/library/logging.html#logging.LogRecord">LogRecord</a>类的实例，我们要格式化的内容就在这个里面。但是我们只是一个formatter，不应该修改这个record，所以我们应该做一个这个record的拷贝，在这个拷贝的基础上，我们再来格式化log信息。
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+<span class="lineno">2</span>     <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">r</span> <span class="o">=</span> <span class="n">makeLogRecord</span><span class="p">(</span><span class="n">record</span><span class="o">.&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="nb">dict</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">_</span><span class="p">)</span>
+</code></pre>
+</div>
+
+其中<code>makeLogRecord</code>函数是我在logging库的源码里找到的，manual里好像没记录这个东西。</p>
+
+<p>接下来根据<code>colors</code>表来格式化各个项目，需要注意的是，我们要对<code>asctime</code>这个项目做特殊处理，因为</p>
+
+<ul>
+<li>首先，<a href="http://docs.python.org/2/library/logging.html#logging.LogRecord">LogRecord</a>对象里面没有<code>asctime</code>这个属性，但是为了跟格式化字符串<code>fmt</code>保持一致的关键字，我还是决定继续用<code>asctime</code></li>
+<li>其次，超类里的<code>format</code>方法会自己调用<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.formatTime">formatTime()</a>，然后我们对<code>asctime</code>做的颜色格式化就被覆盖了</li>
+</ul>
+
+<p>所以基本上来说，因为<code>asctime</code>的原因，我们不能简单地按项目格式化他们的颜色之后简单的调用<code>super(ColoredFormatter, self).format(_r)</code>了。代码如下
+<div class="highlight"><pre><code class="python"><span class="lineno"> 1</span>     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="p">:</span>
+<span class="lineno"> 2</span>         <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="o">&amp;</span><span class="c">#39;asctime&amp;#39;:</span>
+<span class="lineno"> 3</span>             <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatTime</span><span class="p">(</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">r</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">datefmt</span><span class="p">)</span>
+<span class="lineno"> 4</span>         <span class="k">else</span><span class="p">:</span>
+<span class="lineno"> 5</span>             <span class="n">info</span> <span class="o">=</span> <span class="n">_r</span><span class="o">.&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">getattribute</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="lineno"> 6</span>         <span class="n">_r</span><span class="o">.&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="nb">setattr</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">_</span><span class="p">(</span><span class="n">item</span><span class="p">,</span>
+<span class="lineno"> 7</span>                        <span class="o">&amp;</span><span class="c">#39;&lt;font color=%s&gt;%s&lt;/font&gt;&amp;#39; % (</span>
+<span class="lineno"> 8</span>                            <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;_r&quot;</span><span class="o">&gt;</span><span class="n">item</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="lineno"> 9</span>                            <span class="n">info</span>
+<span class="lineno">10</span>                        <span class="p">))</span>
+<span class="lineno">11</span>     <span class="n">_r</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">_r</span><span class="o">.</span><span class="n">getMessage</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">12</span> 
+<span class="lineno">13</span> <span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">usesTime</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="o">&amp;</span><span class="c">#39;asctime&amp;#39; in self.colors:</span>
+<span class="lineno">14</span>     <span class="n">_r</span><span class="o">.</span><span class="n">asctime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatTime</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">datefmt</span><span class="p">)</span>
+<span class="lineno">15</span> 
+<span class="lineno">16</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fmt</span> <span class="o">%</span> <span class="n">_r</span><span class="o">.</span><span class="n">__dict__</span>
+<span class="lineno">17</span> <span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+<span class="lineno">18</span> 
+<span class="lineno">19</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+</p>
+
+<p><code>for</code>后面那一段基本上按照<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a>的源码写的，但是为了简单没有照抄后面关于异常的格式化。</p>
+
+<h2>连接python中的<a href="http://docs.python.org/2/library/logging.html#logging.Logger">logging.Logger</a>和Qt中的<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a></h2>
+
+<p>上面介绍了在log信息格式化中插一手的方法，现在介绍在log信息传播中插一手的方法。</p>
+
+<p>使用<a href="http://docs.python.org/2/library/logging.html#handler-objects">logging.Handler</a>来实现log信息转播到Qt中的控件中，具体方法是实现<a href="http://docs.python.org/2/library/logging.html#handler-objects">Handler</a>的子类。
+实现这个子类很简单，只需要实现一个方法<a href="http://docs.python.org/2/library/logging.html#logging.Handler.emit"><code>Handler.emit()</code></a>，在这个方法中写操作[<code>QTextBrowser</code>]的相关代码。为了实现线程安全，我们需要利用Qt的信号/槽机制（这个机制天生就是线程安全的），但是[<code>QTextBrowser</code>]并没有提供添加信息的信号供我们发射，只提供了一个槽。所以我们得自己做一个信号
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="k">def</span> <span class="nf">append_to_widget</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+<span class="lineno">2</span>     <span class="n">widget</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre>
+</div>
+</p>
+
+<p>然后Handler的子类代码如下
+<div class="highlight"><pre><code class="python"><span class="lineno"> 1</span> <span class="k">class</span> <span class="nc">LoggerHandler</span><span class="p">(</span><span class="n">Handler</span><span class="p">):</span>
+<span class="lineno"> 2</span>     <span class="k">def</span> <span class="err">&lt;</span><span class="nf">strong</span><span class="o">&gt;</span><span class="n">init</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logger</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">widget</span><span class="p">):</span>
+<span class="lineno"> 3</span>         <span class="bp">self</span><span class="o">.</span><span class="n">logger_widget</span> <span class="o">=</span> <span class="n">logger_widget</span>
+<span class="lineno"> 4</span>         <span class="nb">super</span><span class="p">(</span><span class="n">LoggerHandler</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">init</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">_</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno"> 5</span> 
+<span class="lineno"> 6</span> <span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">emit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+<span class="lineno"> 7</span>     <span class="bp">self</span><span class="o">.</span><span class="n">logger_widget</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">SIGNAL</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;new_log(QString)&amp;#39;),</span>
+<span class="lineno"> 8</span>                             <span class="n">QString</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">record</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;utf-8&amp;#39;)))</span>
+<span class="lineno"> 9</span> <span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+<span class="lineno">10</span> 
+<span class="lineno">11</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+</p>
+
+<p>然后配置代码如下
+<div class="highlight"><pre><code class="python"><span class="lineno"> 1</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">name</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">handler</span> <span class="o">=</span> <span class="n">LoggerHandler</span><span class="p">(</span><span class="n">text_browser</span><span class="p">)</span>
+<span class="lineno"> 4</span> <span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">ColoredFormatter</span><span class="p">(</span>
+<span class="lineno"> 5</span>     <span class="n">fmt</span><span class="o">=&amp;</span><span class="c">#39;%(asctime)s %(levelname)s %(message)s&amp;#39;,</span>
+<span class="lineno"> 6</span>     <span class="n">datefmt</span><span class="o">=&amp;</span><span class="c">#39;%m/%dT%H:%M:%S&amp;#39;,</span>
+<span class="lineno"> 7</span>     <span class="n">colors</span><span class="o">=</span><span class="p">{</span><span class="o">&amp;</span><span class="c">#39;asctime&amp;#39;: lambda _: &amp;#39;blue&amp;#39;,</span>
+<span class="lineno"> 8</span>             <span class="o">&amp;</span><span class="c">#39;levelname&amp;#39;: lambda record:</span>
+<span class="lineno"> 9</span>                 <span class="n">ColoredFormatter</span><span class="o">.</span><span class="n">gen_colorscheme</span><span class="p">()[</span><span class="n">record</span><span class="o">.</span><span class="n">levelname</span><span class="p">]}</span>
+<span class="lineno">10</span> <span class="p">))</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">11</span> 
+<span class="lineno">12</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">13</span> 
+<span class="lineno">14</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">text_browser</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">text_browser</span><span class="p">,</span>
+<span class="lineno">15</span>                      <span class="n">SIGNAL</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;new_log(QString)&amp;#39;),</span>
+<span class="lineno">16</span>                      <span class="k">lambda</span> <span class="n">log</span><span class="p">:</span> <span class="n">append_to_widget</span><span class="p">(</span><span class="n">text_browser</span><span class="p">,</span> <span class="n">log</span><span class="p">))</span>
+</code></pre>
+</div>
+</p>
+
+<p>其中<code>ColoredFormatter.gen_colorscheme()</code>是我另外写的一个convenience函数，就是返回了一个默认的字典罢了，不多说。</p>
+
+<p>测试代码
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;debug&amp;#39;)</span>
+<span class="lineno">2</span> <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;info&amp;#39;)</span>
+<span class="lineno">3</span> <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;warning&amp;#39;)</span>
+<span class="lineno">4</span> <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;error&amp;#39;)</span>
+<span class="lineno">5</span> <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;critical&amp;#39;)</span>
+</code></pre>
+</div>
+</p>
+
+<p>最终效果如图 <img src="/assets/images/log-handler-with-qtextbrowser/final.png" alt="final.png"/></p>
+
+<h2>扩展阅读</h2>
+
+<ul>
+<li><a href="http://docs.python.org/2/howto/logging.html#logging-basic-tutorial">基础的logging教程</a></li>
+<li><a href="http://docs.python.org/2/library/logging.handlers.html#module-logging.handlers">Python内置的handler，壮哉我大Python Stdlib</a></li>
+<li><a href="http://docs.python.org/2/howto/logging-cookbook.html#logging-cookbook">Logging Cookbook</a></li>
+</ul>
+
+</body>
+
+</html>
+

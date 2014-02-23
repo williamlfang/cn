@@ -1,1366 +1,1378 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"
+  <rss version="2.0"
         xmlns:content="http://purl.org/rss/1.0/modules/content/"
         xmlns:atom="http://www.w3.org/2005/Atom"
   >
   <channel>
     <title>William Fang</title>
-    <atom:link href="http://williamlfang.github.com/cn/feed/" rel="self" type="application/rss+xml" />
-    <link>http://williamlfang.github.com</link>
-    <lastBuildDate>2014-02-23T12:51:01+08:00</lastBuildDate>
-    <webMaster>william.lian.fang@gmail.com</webMaster>
+    <link href="http://williamlfang.github.com/cn/feed/" rel="self" />
+    <link href="http://webfrogs.github.com" />
+    <lastBuildDate>2014-02-23T12:53:36+08:00</lastBuildDate>
+    <webMaster>ccf.developer@gmail.com</webMaster>
     
     <item>
-      <title>诸多事情</title>
-      <link>http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/</link>
-      <pubDate>2014-02-12T00:00:00+08:00</pubDate>
+      <title>pickle模块简介与一个简单的clojure实现</title>
+      <link href="http://williamlfang.github.com/cn/2013/06/26/brief-analysis-on-pickle-and-an-implementation-in-clojure/"/>
+      <pubDate>2013-06-26T00:00:00+08:00</pubDate>
       <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing</guid>
-      <content:encoded><![CDATA[<p>想着有一段时间没有码字了，指尖竟然有些生疏。其实每次打开笔记本，总是想着要有千言万语诉说，那种浓厚的情绪像是一次乘坐列车的远行去拜见一位老友，漫长的路途上早就打好了腹稿构造了完整的画面，可是真正见面了，我们却什么也不说，只是静静的凝望彼此，一言不发。我是有着千般感情万种思绪，却像是失去了老友多年消息总是联系不上了，我愈要赴会，却不知该买到何站的列车。</p>
+      <guid>http://williamlfang.github.com/cn/2013/06/26/brief-analysis-on-pickle-and-an-implementation-in-clojure</guid>
+      <content:encoded><![CDATA[<p>有段时间突然对二进制的数据产生了强烈的兴趣（具体原因可能是因为解析坦克世界的<code>dossier.dat</code>可以获得平时看不到的数据），寒假在家也闲不住，就跑去研究了一下pickle这个模块（坦克世界的那些数据实际上也就是pickle之后的东西）。然后用clojure做了一个<a href="https://github.com/mad4alcohol/naive-unpickler-clj">简易的unpickle库</a>，未来可能在有时间的时候会添加pickle的功能。</p>
 
-<blockquote>
-  <p>此情可待成追忆，只是当时已惘然。</p>
-</blockquote>
+<h2 id="section">准备工作</h2>
 
-<h2 id="section">一场团圆的春节</h2>
+<p>如何去了解一个不了解的东西？Google。Google不到怎么破？源码。</p>
 
-<p>这个春节过得平淡，安静的出奇。本来嘛，厦门就是一个旅游的城市，人来人往，车水马龙，热闹喧嚣，浮华尘世，这个本该就是这座城市的标志。可是真正到了春节，却也少了人，不见了往日的喧嚣。这座城市一下子变得可爱，如含蓄的姑娘，像待放的花苞，羞羞答答的。大抵是政府的规定只为贪图省事（baoli zhifa），我们的城市在春节期间竟然不允许燃放烟花。只是冷冷清清的城市，在这个孤孤单单的季节里，多少显得有点委屈。</p>
+<p>翻了一下python的<code>Lib</code>文件夹，发现了两个有关的东西：<code>pickle.py</code>，<code>pickletools.py</code>。打开<code>pickletools.py</code>看一下，<code>"Executable documentation" for the pickle module</code>，看来是找对地方了。</p>
 
-<p>不过几日的天气倒是也好。阳光灿烂如孩童的笑脸天真无瑕，暖心的却不热烈，滑落在皮肤生怕破碎。有一天猪头提议全家动身前去东坪山晒太阳，只为了这一刻的阳光弥足珍贵。是啊，往前每每在老家过年，春节这几天几乎都是阴雨连天，难得的出现这么晴朗的天气。南方的小渔村更添了几分冷意，空气了充斥了水气的冰冻，像是凝结的薄幕。更有那些象征喜庆的鞭炮在燃放过后四处挥舞的烟雾，掺杂在冰晶的半空，久久不散，犹如仙境。一个人常年在外旅居，此刻见了这般景象，竟有一些感伤，仿佛这是一股催泪剂，流浪的酸楚与归家的喜悦一齐涌上眼角，润湿了眼眶。</p>
+<h2 id="pickle">pickle的简介</h2>
 
-<p>今天春节并没有回老家过春节。年前和猪头商量了一下，决定邀请家中两位老人来厦团聚。一来是我们也没有那么多时间，本来她的假期就少得可怜，这来来回回的在路上费的时间多，也够折腾人（航班经常改道，火车时而晚点），小咪豆也不大适合舟车劳顿，怕了出了漏子；二来，我们也想让老人家出来走走，毕竟厦门这个春节的天气真的是好的惹人疼爱，招人喜欢，而且在这边我们两个都比较熟悉，平时出来旅游吃饭都挺方便的。于是乎，我们家今年便最终在厦门团聚了。</p>
+<p>文档说的总会比我说的清楚，这里就摘抄几段文档了。</p>
 
-<h2 id="section-1">一次未行的聚会</h2>
+<p>一个”pickle”是一个给pickle虚拟机（PM）使用的程序。它是一系列的操作码（opcode），被PM解释后，用来创建任意复杂的Python对象。总体来说PM非常简单：操作码每个被执行一次，从第一个到最后一个，直到碰到了<code>STOP</code>操作码。</p>
 
-<p>掐指一算，现在离初中毕业已经十年了。十年可算是一个大时期，我从一个毛头小伙子到一个丈夫与一个孩子的父亲。走过的这十年，一直都坎坎坷坷，曲曲折折。人生本当如此，历经风雨，奋斗不止，在晚年回首方有可念之处。可是这十年来，我总是那么的羡慕当初的那个纯真的孩子，一脸惘然的朝向未知的旅途，却也满心的勇气。</p>
+<p>PM有两个数据域：栈（stack）和备忘（memo）。</p>
 
-<p>初中的校园坐落在一个海滩湾处。小，而且年代久远，当时又正值人口峰值，我们的学校里竟然漫漫的都是人。这业已脱离了我对学校的概念，原先的小学人少，地大，小伙伴们总是有各种玩趣之地可去。可是现在，我只能在教室里待着，不能出去，稍不小心，便有人在走廊里撞到了。在这个拥挤甚至可以说是臃肿的校园里，我却感到无尽的孤单。人与人的会面，往往加深了心与心的分裂。愈多的人，愈感孤单。这种在人多之处说体会到的孤单，长年累月的陪伴着我，阴魂不散，挥之不去。</p>
+<p>许多操作码把Python对象压到栈里，比如<code>INT</code>把一个Python整数对象压到栈里，这个整数对象的值从一个在pickle字节流中紧跟在<code>INT</code>操作码后面的十进制字符串字面量中取得。另外有一些操作码把Python对象弹出栈中。unpickling的结果就是当执行到<code>STOP</code>操作码时，留在栈顶的那个东西了。</p>
 
-<p>初中唯一让我着迷的事情，是数学课本里那些由符号与方程编写而成的美丽世界。它们像极了天际线在昏黄夜晚的轮廓，淡淡的泛着氤氲。很多时候，我愿凝视这个虚无缥缈却深埋心底的幻城，痴痴的美梦着，想要得到那个神秘的答案。</p>
+<p>备忘仅仅只是一个存放对象的数组，或者也能被实现成一个从小整数映射到对象的字典。备忘是PM的“长期记忆”，那些为备忘提供索引的小整数类似于变量名。有些操作码把对象从栈顶弹出后放入备忘的一个指定索引里，另外一些把给定索引处的备忘对象再压回栈里。</p>
 
-<p>无数的小时里，我把自己深埋在那些符号里，不吭一声。我的这种孤傲与孤单，将周边的同学都隔离起来了，不再联系。其实，我只是不说一句话；其实，我只是一直都孤单着。</p>
+<p>以上基本上就是pickle的工作原理了。</p>
 
-<p>很多的年头里，我不曾与我的那些小伙伴们联络。</p>
+<p>具体的pickle操作码的定义被称为pickle协议，由于历史原因pickle协议存在多个版本，但是令人感到安心的是，pickle操作码的意义永远不变，即高版本兼容低版本，令人感到不安的是，对于实现者工作量就会大些了。</p>
 
-<p>今年突然听娜姐给我电话（我也不知她何来家里的号码），说是春节会有同学聚会，毕竟许多人已经不见整十年，希望此次可以相聚会面。可是，这次命运又在捉弄玩笑，今年正值全家都齐来厦门团聚，并没有计划会老家。而家中尚有小咪豆需要照顾，故而此次聚会也无奈不能成行。</p>
+<p>最原始的pickle现在被称为“协议0”，并且在Python 2.3前被称为“文字模式（text mode）”。整个pickle字节流由可打印的7位ASCII字符加上换行符组成。这也是它被称为文字模式的原因。协议0小且优雅，但是有时极其低效。</p>
 
-<h2 id="section-2">一个未果的问题</h2>
+<p>第二个主要的协议版本现在被称为“协议1”，并且在Python 2.3前被称为“二进制模式（binary mode）”。增加了许多参数可以包含任意长度字节的操作码。通常二进制模式的pickle比文字模式的占用的空间要小，有时也会更快。协议1也添加了几个立即操作多个栈上元素的操作码（如<code>APPENDS</code>和<code>SETITEMS</code>）和“快捷”操作码（如<code>EMPTY_DICT</code>和<code>EMPTY_TUPLE</code>）。</p>
 
-<p>有一个悬而未解的问题，未果，不便诉说。</p>
+<p>第三个主要的协议版本在Python 2.3中被引入，被称作“协议2”。具体内容这里就略去了。因为这篇文章只会用clojure实现协议1（当然也包括了协议0），协议2等我熟悉了clojure的面向对象编程再说吧。</p>
 
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>美联储的「博士系」</title>
-      <link>http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/</link>
-      <pubDate>2014-02-12T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi</guid>
-      <content:encoded><![CDATA[<p>下午在浏览『华尔街见闻』的时候正好看到了这样一篇有意思的文章，大致介绍了美联储是如何从一个由实干家（如银行家与金融巨头）组成的俱乐部升级成由一帮<a href="http://wallstreetcn.com/node/75851">经济学博士引领的「学院派」</a>。文章写的条理比较清楚的了，从成员的学位背景出发梳理了美联储的发展历程。诸位如果感兴趣可以前去看看。我这里主要是提供一个个人的随想而已。</p>
+<h2 id="section-1">在开始实现之前</h2>
 
-<p>首先来一个「全家福」吧。
-<img src="/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg" alt="the fed" /></p>
+<p>先阅读一下<code>pickletools.py</code>的其他部分，翻了一下，在883行发现了一个叫<code>opcodes</code>的list，可以说是pickle协议的可执行版本，讲解了操作码的名称，码值，参数，执行前后栈的变化情况，提供该操作码的协议版本和该操作码的文档。</p>
 
-<p>文章谈到了对美联储决策有重要影响的几位「高官」的学历背景。目前新晋美联储主席的耶伦（Yellen）拥有 Yale 经济学博士学历，其在学术界有颇有建树。而那些身处高职的几位委员会成员（<strong>FOMC</strong>）均配有经济学博士学位，如 Stanley Fischer 就是前 <strong>IMF</strong> 的首席经济学家 [^1] 。而如果从历史的纵向来看，这个趋势就更加明显了：沃尔克当时还只是经济学硕士，到了格林斯潘后来获得博士学位，而前任伯南克就已经是一名正式的大学（宏观）经济学教授了。Blinder 是原 <strong>FOMC</strong> 委员，他对 <strong>Fed</strong> 的历史颇有研究，宣称：</p>
+<p>比如</p>
 
-<blockquote>
-  <p>我相信，当时在美联储80年的历史中，我是第四个或第五个学院派委员。不久后耶伦也来了，然后学院派就开始蜂拥而入。如今，这是一个很正常的现象，而且学院派教授更受欢迎。</p>
-</blockquote>
-
-<p>中国有古语说『物以类聚，人以群分』，这个自然界的普遍真理同样适用于经济学界。我们经常看到持有不同观点的学派之间是如何明争暗斗的，比如早些年的世纪大战——凯恩斯与哈耶克的论战，到后来由弗里德曼扛旗的货币主义学派反攻凯恩斯主义阵营。有些时候我真就觉得经济学这个大火锅里搅拌的是娱乐圈的废料，「你方唱罢我来和」，不无热闹，却全无一点增进人民福祉的实景。</p>
-
-<p>当初成立美联储的初衷是为了结束美国国内混乱的金融秩序，统一由一个中央决策机构来制定、执行货币政策。因此，当初在位掌权的一般都是一些银行家与金融巨头，大家都比较注重实干，以直觉和经验取胜，很少能寻觅到经济学院派的作风。</p>
-
-<p>物是人非，斗转星移，我们现在看到美联储的境况，清一色的由理论界与学院派占山为王，并且在将来的很长一段时间内，这样的趋势会进一步明显。这些成员一般都具有良好的经济学训练，取得正规的博士学位，而且绝大部分还有过学术研究的经历，在各自的领域都有不小的影响力。如前任伯南克，在研究经济萧条理论、商业周期、宏观经济与失业率等诸多方面颇有成就。下面这幅图揭示了在美联储长达一个世纪的演变过程中，成员学术能力的提升。</p>
-
-<p><img src="/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/position.jpg" alt="position" /></p>
-
-<p>就美联储成员在学位背景上不断更新的情况来分析，文章是这样认为的：</p>
-
-<blockquote>
-  <p>美联储拥有越来越多的博士可能是件好事。一个只有经济学博士担任高级职位的美联储将有很多局限。多元化会带来各种正面效应，单一文化则会脆弱和不健康。</p>
-</blockquote>
-
-<p>我的想法是，今后金融实务界能够更好的预测到美联储的决策机制了。在以前，美联储在公开市场的决策与操作动机基本是一个黑盒子，外界无从知晓。到了上世纪70年代，美联储才开始注重与大众的沟通，定期的发布公告向金融市场传送消息，并且在独立性方面获得了巨大的改善。可是外界在对美联储的决策进行拿捏把握上依然小心谨慎，如履薄冰。这归根到底还是因为美联储的决策机制不够开放，无法面向外界提供所有的内部信息。而正是这种信息上的不对称，导致每次在美联储闭门研讨经济决策的前后时期均可看到明显的市场波动，伤害经济的稳健。</p>
-
-<p>而现在，我们可以从美联储成员的组成结构上获得一定的「启发」。不同的经济学理论在针对同样一个经济问题时提供的解决方案千差万别，有时甚至是南辕北辙，背道而驰。因此，我们可以借助对美联储组成成员的经济理论主张上分析其未来的决策风格与指导理论，从而在一定程度上透析美联储这个神秘的机构。我的建议时，当前的市场参与者还是需要对新一届的美联储决策机构多做一些「功课」，以便深入了解其决策特征，从而更好的预测与把握美联储在今后制定的各项经济政策。</p>
-
-<p>当然，我们也可以从另外一个方面看问题。就是如果美联储的成员构成正的过于学院派，那么其在应对更加具体的金融事件上，可能不会从金融实务界的形势出发，或者干脆就忽视了那些真正需要解决问题的方案的银行家的呼声。这对美联储今后的决策有效性不得不大打折扣，甚至在某些时候反而会伤害实际经济的健康发展。纯粹由经济理论模型提出的药方往往不能够良好的「接地气」，反而挫伤实体经济的积极性。</p>
-
-<p>[^1] Fischer 也是学术界的大牛，和 Blanchard 共同著有“Lectures on Macroeconomcis”，红极一时，可谓那个时代的标准 <em>textbook</em>。</p>
-
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Data Structure</title>
-      <link>http://williamlfang.github.com/cn/2014/01/26/data-structure/</link>
-      <pubDate>2014-01-26T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2014/01/26/data-structure</guid>
-      <content:encoded><![CDATA[<p>这一章主要介绍了在 <strong>R</strong> 中最基本的元素：数据。前段时间我在网上看到一个帖子（暂时忘记在哪里找到了），强调「data science」的重心不是在前面的那个「data」，而是后面的「science」。这是因为随着互联网的深入发展，我们现在不再是缺乏数据，反而是面临着「big data」造成的「information rich」（信息冗余）的困扰。因此，今后的数据科学应当更进一步的发展新的理论与方法来解决大数据分析。</p>
-
-<p>好了，这个扯远了。不过在 <strong>R</strong> 中，我们最紧要的事情就是：给了一大箩筐的数据，可能是排列完整的，不过大多数情况下是混乱不堪的，要求对这些数据做统计分析与可视化工作。这个基本上是一件既头疼又心烦的苦差事。首先的任务是，先对这些数据做一定格局的处理，得到我们后续需要使用的信息变量。因此，熟练掌握处理数据的基本方法，对未来的分析至关重要。</p>
-
-<h2 id="section">概览</h2>
-
-<p>Wickham 用一张表格总结了 <strong>R</strong> 中的数据结构</p>
-
-<blockquote>
-  <p>R’s base data structures are summarised in the table below, organised by their dimensionality and whether they’re homogeneous (all contents must be of the same type) or heterogeneous (the contents can be of different types):</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th> </th>
-        <th>Homogeneous</th>
-        <th>Heterogeneous</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1d</td>
-        <td>Atomic vector</td>
-        <td>List</td>
-      </tr>
-      <tr>
-        <td>2d</td>
-        <td>Matrix</td>
-        <td>Data frame</td>
-      </tr>
-      <tr>
-        <td>nd</td>
-        <td>Array</td>
-        <td> </td>
-      </tr>
-    </tbody>
-  </table>
-</blockquote>
-
-<p>需要解释的是标量（scalar）。什么是标量呢？就是一个个单独的变量，如</p>
-
-<pre><code>x &lt;- 5
-y &lt;- "scalar"
-
-x
-
-## [1] 5
-
-y
-
-## [1] "scalar"
-</code></pre>
-
-<p><strong>R</strong> 默认地将标量识别为 1*1 的向量（vector），也就是 0-dimensional。</p>
-
-<blockquote>
-  <p>这里科普一下有关 <strong>R</strong> 中的面向对象的特征。也就是说， <strong>R</strong> 中所有的元素都可以叫做「对象」（obgect），这不仅仅是基本的数据，如向量、data frame，还包括函数（function）、环境（environment），甚至是符号（symbols）。 <strong>R</strong> 处理完分析后得到的就是一个对象，我们需要哪儿元素，直接提取就可以了。比如，</p>
-
-</blockquote>
-
-<pre><code>    df = data.frame(x = rnorm(100, 0, 1), y = seq(from = 1, to = 100))
-    result &lt;- lm(y ~ x, data = df)
-    
-    result
-
-    ## 
-    ## Call:
-    ## lm(formula = y ~ x, data = df)
-    ## 
-    ## Coefficients:
-    ## (Intercept)            x  
-    ##       51.01         3.01
-</code></pre>
-
-<blockquote>
-  <p>得到的结果存储在 <code>result</code> 里，这个就是一个对象，等到我们需要使用其中的「子对象」时，再从中提取即可</p>
-</blockquote>
-
-<pre><code>    result$coeff
-
-    ## (Intercept)           x 
-    ##      51.005       3.007
-</code></pre>
-
-<p>面向对象的编程能够提供非常灵活的数据处理结果，并且具有较高的程序维护性。这在 <strong>R</strong> 得到了极大的展现。</p>
-
-<h3 id="str"><code>str()</code>：查看数据结构</h3>
-<p>查看数据类型可以使用命令 <code>str()</code> </p>
-
-<pre><code>str(df)
-
-## 'data.frame':	100 obs. of  2 variables:
-##  $ x: num  0.659 0.277 0.614 -0.655 -0.896 ...
-##  $ y: int  1 2 3 4 5 6 7 8 9 10 ...
-</code></pre>
-
-<h2 id="section-1">向量</h2>
-
-<p>如上所述， <strong>R</strong> 中主要的一维数据类型包括 <code>atomic vector</code>（基础向量） 和 <code>list</code>（列表），前者要求罗列其中的数据均是同属性的，比如 <code>logical</code>，<code>interger</code>，<code>double</code>，和 <code>character</code>。而后者 <code>list</code> 则可以是多种数据类型的混合。</p>
-
-<h3 id="section-2">基础向量</h3>
-
-<p>基础向量是组成 <strong>R</strong> 编程语言的基石，可以由此构成其他类型的数据结构。怎么去理解  <strong>R</strong> 中的向量呢？</p>
-
-<h4 id="section-3">数据的向量化</h4>
-
-<p>其实，这个可以看作是一个研究变量的序列观测值。比如</p>
-
-<pre><code>x &lt;- c(35.6, 36.1, 35.8, 37, 36.5, 37.2, 35.8)
-str(x)
-
-##  num [1:7] 35.6 36.1 35.8 37 36.5 37.2 35.8
-
-is.vector(x)
-
-## [1] TRUE
-</code></pre>
-
-<p>这个就是一个向量，可以视为一天中在七个不同时间段的气温观测。因此，我们可以利用这个向量来产生矩阵，从而实现多元变量在不同时间序列上的观测值。其实，这种数据的向量化不仅提供了对数据的直观理解，而且还能提高 <strong>R</strong> 的运算速度，尽量避免使用循环，优化程序。这点我们在日后会继续讨论。</p>
-
-<h4 id="section-4">生成向量的方法</h4>
-
-<p>用于生成向量的命令主要有：</p>
-
-<ul>
-  <li>
-    <p><code>c()</code>:即「concantinate」的意思，用于生成一个向量，并且可用于嵌套</p>
-
-    <pre><code>  a &lt;- c(1, 2, 4, 6, 8)
-  b &lt;- c(1, c(2, c(4, 6.8)))  # 套嵌使用
-  a == b
-
-  ## Warning: longer object length is not a multiple of shorter object length
-
-  ## [1]  TRUE  TRUE  TRUE FALSE FALSE
-
-    
-  s &lt;- c(1:10)  # 一个序列。相当于 seq(from = 1, to = 10, by= 1)
-  s
-
-  ##  [1]  1  2  3  4  5  6  7  8  9 10
-
-    
-  int &lt;- c(1L, 6L, 8L)  # 产生integer类
-    
-  log &lt;- c(T, F, F, T, T)  # logical
-    
-  chr &lt;- c("these", "are", "some", "character")
-</code></pre>
-  </li>
-  <li>
-    <p><code>seq()</code>:即「sequence」的意思，主要用于产生一个带有规律的序列        </p>
-
-    <pre><code>  f &lt;- seq(1:10)  # 默认的increament是1,相当于 c(1:10)
-  f
-
-  ##  [1]  1  2  3  4  5  6  7  8  9 10
-
-    
-  g &lt;- seq(from = 1, to = 10, by = 0.5)
-    
-  g
-
-  ##  [1]  1.0  1.5  2.0  2.5  3.0  3.5  4.0  4.5  5.0  5.5  6.0  6.5  7.0  7.5
-  ## [15]  8.0  8.5  9.0  9.5 10.0
-</code></pre>
-  </li>
-  <li>
-    <p><code>rep()</code>:即[replecate],重复某个数或者某个「序列」，可用于产生较为复杂的数据。</p>
-
-    <pre><code>  h &lt;- rep(5, 10)  # 单个数字的重复
-  h
-
-  ##  [1] 5 5 5 5 5 5 5 5 5 5
-
-    
-  j &lt;- rep(c(1:3), 3)  # 重复一个序列 c(1:3)
-  j
-
-  ## [1] 1 2 3 1 2 3 1 2 3
-</code></pre>
-  </li>
-  <li>
-    <p><code>rnorm()</code>:产生随机数，还有其他的分布</p>
-
-    <pre><code>  k &lt;- rnorm(100)  #default：rnorm(no, mean = 0, sd = 1)
-    
-  l &lt;- rnorm(100, mean = 2, sd = 5)
-  plot(density(l))
-</code></pre>
-
-    <p><img src="/cn/assets/images/r-figures/2014-01-26-data-structure/unnamed-chunk-9.png" alt="plot of chunk unnamed-chunk-9" /> </p>
-  </li>
-</ul>
-
-<h4 id="section-5">类型与长度</h4>
-
-<p><code>typeof()</code> 用于查看数据类型，而 <code>length()</code> 则用于查看向量长度：如果是一维数据，则给出长度；如果是矩阵或者 <code>data.frame</code>，则给出 <code>nrow</code> 与 <code>ncol</code> 的合计。</p>
-
-<pre><code>x &lt;- rnorm(100)
-typeof(x)
-
-## [1] "double"
-
-length(x)
-
-## [1] 100
-
-
-y &lt;- c("first", "second", "third")
-typeof(y)
-
-## [1] "character"
-
-length(y)
-
-## [1] 3
-
-
-z &lt;- c(T, T, F)
-typeof(z)
-
-## [1] "logical"
-
-length(z)
-
-## [1] 3
-
-
-w &lt;- seq(from = 1, to = 10, by = 1)
-typeof(w)
-
-## [1] "double"
-
-length(w)
-
-## [1] 10
-
-
-mat &lt;- matrix(rnorm(20), nrow = 4, ncol = 5)
-typeof(mat)
-
-## [1] "double"
-
-length(mat)
-
-## [1] 20
-</code></pre>
-
-<h3 id="list"><code>list</code>:列表</h3>
-
-<p>我们已经知道，<code>vector</code>是用于同种类型属性的数据，而<code>list</code>则适用于不同类型的数据，可以说是各种数据的一个「大火锅」。我们使用<code>list()</code>来生成数据，不是之前介绍的<code>c()</code>。</p>
-
-<pre><code>u &lt;- list(1:3, "cha", T, F, c(1, 4, 7), rep(1, 3), seq(1:5))
-
-u
-
-## [[1]]
-## [1] 1 2 3
-## 
-## [[2]]
-## [1] "cha"
-## 
-## [[3]]
-## [1] TRUE
-## 
-## [[4]]
-## [1] FALSE
-## 
-## [[5]]
-## [1] 1 4 7
-## 
-## [[6]]
-## [1] 1 1 1
-## 
-## [[7]]
-## [1] 1 2 3 4 5
-
-str(u)
-
-## List of 7
-##  $ : int [1:3] 1 2 3
-##  $ : chr "cha"
-##  $ : logi TRUE
-##  $ : logi FALSE
-##  $ : num [1:3] 1 4 7
-##  $ : num [1:3] 1 1 1
-##  $ : int [1:5] 1 2 3 4 5
-
-typeof(u)
-
-## [1] "list"
-</code></pre>
-
-<p>当然，<code>list</code>也可以跟<code>c()</code>一样实现套嵌 (Wickham称之为[recursive])</p>
-
-<pre><code>v &lt;- list(list(2, 4, T, "nope", seq(4:8)), rep(3:4, 2), list(T, F, "yes"))
-v
-
-## [[1]]
-## [[1]][[1]]
-## [1] 2
-## 
-## [[1]][[2]]
-## [1] 4
-## 
-## [[1]][[3]]
-## [1] TRUE
-## 
-## [[1]][[4]]
-## [1] "nope"
-## 
-## [[1]][[5]]
-## [1] 1 2 3 4 5
-## 
-## 
-## [[2]]
-## [1] 3 4 3 4
-## 
-## [[3]]
-## [[3]][[1]]
-## [1] TRUE
-## 
-## [[3]][[2]]
-## [1] FALSE
-## 
-## [[3]][[3]]
-## [1] "yes"
-
-
-str(v)
-
-## List of 3
-##  $ :List of 5
-##   ..$ : num 2
-##   ..$ : num 4
-##   ..$ : logi TRUE
-##   ..$ : chr "nope"
-##   ..$ : int [1:5] 1 2 3 4 5
-##  $ : int [1:4] 3 4 3 4
-##  $ :List of 3
-##   ..$ : logi TRUE
-##   ..$ : logi FALSE
-##   ..$ : chr "yes"
-
-typeof(v)
-
-## [1] "list"
-</code></pre>
-
-<h3 id="factors">factors:因子</h3>
-
-<p>因子也是一种向量类型，不过在因子里面，我们需要预先设定好水平值。换句话说，因子有两个属性特者</p>
-
-<ul>
-  <li>class（类型)：也就是 <code>factor</code>，使用命令 <code>class()</code> 来查看。</li>
-  <li>
-    <p>level (层级)：表明因子有哪些不同取值。</p>
-
-    <pre><code>x &lt;- factor(c("a", "b", "b", "a"))
-x
-  
-## [1] a b b a
-## Levels: a b
-  
-class(x)
-  
-## [1] "factor"
-  
-levels(x)
-  
-## [1] "a" "b"
-</code></pre>
-  </li>
-</ul>
-
-<h2 id="section-6">矩阵</h2>
-
-<p>前面我们解释过如何看待向量（vector）作为一个研究变量的观测，那么，一个有多祖向量组成的矩阵（<strong>Matrix</strong>）就可以被视为是一个多元变量的观测。每一个列向量表示一个变量，而每一个行向量则表示一次的观测结果。这样，我们便可以将其与多元统计结合在一起理解了。</p>
-
-<h3 id="section-7">创建矩阵</h3>
-
-<p>由于矩阵是一个带有二维属性的数据列表，我们在创建矩阵时需要设定矩阵的行与列数目。表示矩阵列向量数据的是命令 <code>ncol</code>, 相应的，行数目的是 <code>nrow</code>。具体的方法有</p>
-
-<ul>
-  <li>
-    <p>预先设定好行列数：</p>
-
-    <pre><code> mat01 &lt;- matrix(1:10, ncol = 2, nrow = 5)
-   
- mat01
-   
- ##      [,1] [,2]
- ## [1,]    1    6
- ## [2,]    2    7
- ## [3,]    3    8
- ## [4,]    4    9
- ## [5,]    5   10
-</code></pre>
-  </li>
-  <li>
-    <p>使用命令 <code>dim()</code> 设置</p>
-
-    <pre><code> mat02 &lt;- matrix(1:10)
- dim &lt;- c(2, 5)
-   
- mat02
-   
- ##       [,1]
- ##  [1,]    1
- ##  [2,]    2
- ##  [3,]    3
- ##  [4,]    4
- ##  [5,]    5
- ##  [6,]    6
- ##  [7,]    7
- ##  [8,]    8
- ##  [9,]    9
- ## [10,]   10
-</code></pre>
-  </li>
-</ul>
-
-<h3 id="section-8">矩阵的行列名称</h3>
-
-<p>有时候，我们需要指定矩阵当中的行列名称，就像在 <strong>Excel</strong> 里面有表头一样。这样可以通过命令来完成</p>
-
-<ul>
-  <li>
-    <p><code>colnames</code>：列名称。可以看作是不同的研究变量，比如在多元回归里面的不同影响因素。</p>
-
-    <pre><code> mat03 &lt;- matrix(1:15, ncol = 3, nrow = 5)
-   
- mat03
-   
- ##      [,1] [,2] [,3]
- ## [1,]    1    6   11
- ## [2,]    2    7   12
- ## [3,]    3    8   13
- ## [4,]    4    9   14
- ## [5,]    5   10   15
-   
-   
- colnames(mat03) &lt;- c("x1", "x2", "x3")  # 三个研究变量
-   
- mat03
-   
- ##      x1 x2 x3
- ## [1,]  1  6 11
- ## [2,]  2  7 12
- ## [3,]  3  8 13
- ## [4,]  4  9 14
- ## [5,]  5 10 15
-</code></pre>
-  </li>
-  <li>
-    <p><code>rownams</code>：行名称，算作一次的截面数据。</p>
-
-    <pre><code> mat04 &lt;- matrix(1:15, ncol = 5, nrow = 3)
-   
- mat04
-   
- ##      [,1] [,2] [,3] [,4] [,5]
- ## [1,]    1    4    7   10   13
- ## [2,]    2    5    8   11   14
- ## [3,]    3    6    9   12   15
-   
-   
- rownames(mat04) &lt;- c("obs01", "obs02", "obs03")
-   
- mat04
-   
- ##       [,1] [,2] [,3] [,4] [,5]
- ## obs01    1    4    7   10   13
- ## obs02    2    5    8   11   14
- ## obs03    3    6    9   12   15
-</code></pre>
-  </li>
-</ul>
-
-<h2 id="data-frames">Data Frames：数据框</h2>
-
-<p><strong>Data Frame</strong> 可以说是 <strong>R</strong> 中最重要的数据类型了，一方面，既具有向量的特征，表示同样长度的变量数据，另一方面，还保持了 <code>list</code> 中对不同类型数据的支持。这个也是我们做计量经济分析主要用到的数据结构。<strong>Data Frame</strong> 在很多的方面都与 <strong>matrix</strong> 相似，比如 <code>colnames</code>, <code>dim</code>。</p>
-
-<h3 id="dataframe">建立 dataframe</h3>
-
-<p>建立 <strong>Data Frame</strong> 的命令是 <code>data.frame</code>，要求是行数目要相同，列向量允许不同类型的数据。比如，有一个数据是这样的，第一个为姓名，第二个是性别，接着是收入，受教育年限，等等。这些都可以在 <strong>Data Frame</strong> 共存。</p>
-
-<pre><code>df &lt;- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"))
-
-df
-
-##   x y
-## 1 1 a
-## 2 2 b
-## 3 3 c
-## 4 4 d
-## 5 5 e
-
-
-str(df)
-
-## 'data.frame':	5 obs. of  2 variables:
-##  $ x: int  1 2 3 4 5
-##  $ y: Factor w/ 5 levels "a","b","c","d",..: 1 2 3 4 5
-</code></pre>
-
-<p>这里有一点需要特别注意，<strong>R</strong> 会默认在数据框里面将字符型（string)转化为因子（factor），如果不想要转化，可以通过参数 <code>stringsAsFactors = FALSE</code> 来设置。</p>
-
-<pre><code>df_02 &lt;- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"), stringsAsFactors = FALSE)
-
-df_02
-
-##   x y
-## 1 1 a
-## 2 2 b
-## 3 3 c
-## 4 4 d
-## 5 5 e
-
-
-str(df_02)
-
-## 'data.frame':	5 obs. of  2 variables:
-##  $ x: int  1 2 3 4 5
-##  $ y: chr  "a" "b" "c" "d" ...
-</code></pre>
-
-<h3 id="data-frame">合并 <strong>data frame</strong></h3>
-
-<p>其实我们在上面介绍向量合并的时候已经接触到这个函数了，即 <code>cbind()</code> 和 <code>rbind()</code>。前者是按照列顺序进行合并，后者则是按照行顺序优先进行合并。
-- <code>cbind()</code>：列合并</p>
-
-<pre><code>   df &lt;- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"))
-   
-   df
-   
-   ##   x y
-   ## 1 1 a
-   ## 2 2 b
-   ## 3 3 c
-   ## 4 4 d
-   ## 5 5 e
-   
-   
-   str(df)
-   
-   ## 'data.frame':	5 obs. of  2 variables:
-   ##  $ x: int  1 2 3 4 5
-   ##  $ y: Factor w/ 5 levels "a","b","c","d",..: 1 2 3 4 5
-   
-   
-   df_cbind &lt;- cbind(df, data.frame(z = 5:1))
-   
-   df_cbind
-   
-   ##   x y z
-   ## 1 1 a 5
-   ## 2 2 b 4
-   ## 3 3 c 3
-   ## 4 4 d 2
-   ## 5 5 e 1
-   
-   
-   str(df_cbind)
-   
-   ## 'data.frame':	5 obs. of  3 variables:
-   ##  $ x: int  1 2 3 4 5
-   ##  $ y: Factor w/ 5 levels "a","b","c","d",..: 1 2 3 4 5
-   ##  $ z: int  5 4 3 2 1
-</code></pre>
-
-<ul>
-  <li>
-    <p><code>rbind()</code>：行合并</p>
-
-    <pre><code>df &lt;- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"))
-  
-df
-  
-##   x y
-## 1 1 a
-## 2 2 b
-## 3 3 c
-## 4 4 d
-## 5 5 e
-  
-  
-str(df)
-  
-## 'data.frame':	5 obs. of  2 variables:
-##  $ x: int  1 2 3 4 5
-##  $ y: Factor w/ 5 levels "a","b","c","d",..: 1 2 3 4 5
-  
-  
-df_rbind &lt;- rbind(df, data.frame(x = 10, y = "j"))
-  
-df_rbind
-  
-##    x y
-## 1  1 a
-## 2  2 b
-## 3  3 c
-## 4  4 d
-## 5  5 e
-## 6 10 j
-  
-  
-str(df_rbind)
-  
-## 'data.frame':	6 obs. of  2 variables:
-##  $ x: num  1 2 3 4 5 10
-##  $ y: Factor w/ 6 levels "a","b","c","d",..: 1 2 3 4 5 6
-</code></pre>
-  </li>
-</ul>
-
-<h3 id="section-9">提取列向量</h3>
-
-<p>对于一个 <strong>data frame</strong>，里面包含了非常多的信息。有时，我们只需要提取其中的某个列向量（也就是一个变量），那么可以使用 <code>$</code> 来实现</p>
-
-<pre><code>df &lt;- data.frame(x = 1:5, y = c("a", "b", "c", "d", "e"))
-
-df
-
-##   x y
-## 1 1 a
-## 2 2 b
-## 3 3 c
-## 4 4 d
-## 5 5 e
-
-
-df$x
-
-## [1] 1 2 3 4 5
-</code></pre>
-
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>使用 Jekyll + knitr 发布博客</title>
-      <link>http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/</link>
-      <pubDate>2014-01-24T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke</guid>
-      <content:encoded><![CDATA[<h2 id="section">我的博客之旅</h2>
-
-<p>这些天一直都在钻研如何在博客中加入可以执行 <strong>R</strong> 程序代码的博客模板。我先前也有过写博客的经历，不过那时候使用的博客都是免费托管在其他的服务器中，一方面是缺乏可定制，大都是千篇一律的，无法满足「DIY」的需要，另一方面，也是主要的问题，这些博客网站很少有支持 <strong>LaTeX</strong> 的数学输出，对于数学环境的支持不尽人意。我也就偶尔在写一些纯文字类的随想，不曾涉及专业领域的事情。</p>
-
-<p>后来我实在忍无可忍了，觉得找一个必须是支持 <strong>LaTeX</strong> 代码的博客网站。这也就只有在 <strong>WordPress</strong> 上了。我也尝试了使用一段时间。一开始发现还真是方便，直接使用 <strong>LaTeX</strong> 代码产生数学编译环境，如此一来便可以在上面多说点专业领域的话了。可是，后来我发现在 <strong>WordPress</strong> 上管理博客与修改模板是一件多么痛苦的事情，既需要更改模板，而且每次改完了发现不是自己想要的效果，又得重新再做。如此一来，光花费在博客网站的维护时间竟然占用了多数。如此不堪重负。</p>
-
-<p>后来我开始尝试在使用  <strong>R</strong> 做统计分析，也陆陆续续的写了一些小程序。我的想法是，将 <strong>R</strong> 强大的数据分析与绘图能力与 <strong>LaTeX</strong> 超级优美的数学编辑水平结合一起，从而生成既有分析又有数据、既有文本又有图表的文档。后来发现这个想法别人早已实现，那就是 <code>Sweave</code>，支持在 <strong>LaTeX</strong> 使用 <strong>R</strong> 代码 （或者倒过来说，在 <strong>R</strong> 中使用 <strong>LaTeX</strong> 语法），并且直接输出结果。再后来，我接着发现这个原来还有『豪华升级版』，那就是我今天要给各位介绍的 <code>knitr</code>，一个更加强大的支持 <strong>LaTeX</strong> 编译环境的 <strong>R</strong> 软件包。</p>
-
-<p>可是，有时候我不大喜欢 <strong>LaTeX</strong> 的一点在于，永远都需要那么复杂的插入代码环境，比如，当需要使用「强调」的时候，还得非常复杂而琐碎的键入 <code>\emph{}</code>，这个让我实在崩溃，因为毕竟我很多时候都是在使用纯文本输入，只是少数地方使用数学公式表达。那么，我想要的就是，需要强调了，就键入 <em>斜体强调</em>，或者 <strong>粗体强调</strong>。如此一来，写博客就非常的轻松了。</p>
-
-<p>于是我在某个凌晨「毅然决然」的将博客编译语言再次转移阵地。这一次，我需要</p>
-
-<ul>
-  <li>简单：写博客就是写博客，随心所欲，没有多余的格式。在写作过程中，我仅仅需要关心文本，专注于思想表达。</li>
-  <li>支持 <strong>R</strong> 代码，能够直接产生计算结果，插入图形。而且最好的是，别人看到这个代码还觉得不错，可以自己在电脑上重复输出结果。</li>
-  <li>具有良好的定制特征，我可以根据个人偏好设置网页界面，并且需要很好的可持续维护性。</li>
-  <li>最后是能够记录我在不同时间段写作的备份，方便随时「倒带」。这样我就不用担心删除当下文字段落后以后就找不回来，而且最好是告诉我具体的细节。</li>
-</ul>
-
-<h2 id="github--jekyll--knitr--rmarkdown">Github + Jekyll + knitr + Rmarkdown</h2>
-
-<p>我就抱着这样的「苛刻要求」去找「谷哥」。出乎意料的是，竟然如此简单的就得到需要的解决方案了：</p>
-
-<blockquote>
-  <p>Github + Jekyll + Rmarkdown</p>
-</blockquote>
-
-<p>这是一个完美的方案！完全实现了我需要的多种服务：</p>
-
-<ul>
-  <li>
-    <p><strong>Github</strong> 用于托管代码与博客。<strong>Git</strong> 是一款优秀的版本管理软件（VCS），由现在的 <strong>Linux</strong> 开发团队在维护。而 <strong>Github</strong> 就相当于一个网罗世界优秀程序员的「Facebook」，汇集了目前几乎所有的开源项目。</p>
-
-    <p>现在，我可以通过将代码与博客托管到 <strong>Github</strong> 上，实现版本的系统检测，方便网站运行。</p>
-  </li>
-  <li>
-    <p><strong>Jekyll</strong> 为我的博客网站提供了静态编译，将其打包为 <em>Html</em> 然后发布在托管的网站上。而且 <strong>Jekyll</strong> 提供了一系列的模板与模块，方便个人定制网站。与其他博客网站不同，经常动不动的就蹦出一个广告，<strong>Jekyll</strong> 编制的网站上面不会有多余的信息，我只陈列需要分享的内容。</p>
-  </li>
-  <li>
-    <p>最后，就是 <strong>knitr</strong> 与 <strong>Rmardown</strong> 可以轻松的实现博客撰写。现在，我需要做的就是使用 <strong>Markdown</strong> 语法输入，然后在需要 <strong>R</strong> 的地方直接插入代码即可。一篇完整的博客就是我沿着自己的想法一路写到底，中间不会有其他的打扰，不要反复的插入格式命令。</p>
-  </li>
-</ul>
-
-<h2 id="rmarkdown">使用 <strong>Rmarkdown</strong></h2>
-
-<p>下面，我介绍一下如何实现将 <strong>R</strong> 代码编译为网页 <strong>Markdown</strong> 格式。由于 <strong>Jekyll</strong> 支持将 <strong>Markdown</strong> 编译成 <strong>Html</strong> 网页，因此，我们就可以很方便的将 <strong>R</strong> 文件编译成 <strong>Html</strong> 并发布到 <strong>Github</strong> 上面了。我主要参考了 Jason Bryer 的帖子， <a href="http://jason.bryer.org/posts/2012-12-10/Markdown_Jekyll_R_for_Blogging.html">“Using (R) Markdown, Jekyll, &amp; GitHub for a Website”</a>。另外，由于这个帖子生成的图片存储在同样一个文件夹下面，有时我想找某个博客的图片时，会非常的不方便。于是我对其做了一个小小的修改，将经过 <strong>R</strong> 产生的图片放在与帖子相对应的文件夹目录下，方便查找。比如，我有一个文档，<code>2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke.Rmd</code>，那么，图片的存放目录应该是</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>-dir</td>
-    </tr>
-    <tr>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>-assets</td>
-    </tr>
-    <tr>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>– images</td>
-    </tr>
-    <tr>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>—- r-figures</td>
-    </tr>
-    <tr>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>—– 2014-01-24-shi-yong–rmarkdown–fa-biao-bo-ke</td>
-    </tr>
-    <tr>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>—— fig1.png</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="rmarkdownr">建立一个 <code>rmarkdown.r</code></h3>
-
-<p>首先是在主目录(<code>_posts</code>)下面建立一个 <code>rmarkdown.r</code> 文件，用于执行编译功能。主要用途就是实现将当前目录下所有的带 <code>.Rmd</code> 文件转化为 <code>.md</code> 格式，从而可以实现发布。下面是其主要内容，也可以在<a href="/cn/_post/rmarkdwn.r">这里</a>下载。</p>
-
-<pre><code>#' This R script will process all R mardown files (those with in_ext file extention,
-#' .rmd by default) in the current working directory. Files with a status of
-#' 'processed' will be converted to markdown (with out_ext file extention, '.markdown'
-#' by default). It will change the published parameter to 'true' and change the
-#' status parameter to 'publish'.
-#' 
-#' @param dir the directory to process R Markdown files.
-#' @param images.dir the base directory where images will be generated.
-#' @param images.url
-#' @param out_ext the file extention to use for processed files.
-#' @param in_ext the file extention of input files to process.
-#' @param recursive should rmd files in subdirectories be processed.
-#' @return nothing.
-#' @author Jason Bryer &lt;jason@bryer.org&gt;
-convertRMarkdown &lt;- function(dir=getwd(), images.dir=dir, images.url='/cn/assets/images/',
-  						 out_ext='.markdown', in_ext='.rmd', recursive=FALSE) {
-  	require(knitr, quietly=TRUE, warn.conflicts=FALSE)
-  	files &lt;- list.files(path=dir, pattern=in_ext, ignore.case=TRUE, recursive=recursive)
-  	for(f in files) {
-  		message(paste("Processing ", f, sep=''))
-  		content &lt;- readLines(f)
-  	frontMatter &lt;- which(substr(content, 1, 3) == '---')
-	  if(length(frontMatter) &gt;= 2 &amp; 1 %in% frontMatter) {
-		  statusLine &lt;- which(substr(content, 1, 7) == 'status:')
-  		publishedLine &lt;- which(substr(content, 1, 10) == 'published:')
-	  	if(statusLine &gt; frontMatter[1] &amp; statusLine &lt; frontMatter[2]) {
-		  	status &lt;- unlist(strsplit(content[statusLine], ':'))[2]
-  				status &lt;- sub('[[:space:]]+$', '', status)
-  			status &lt;- sub('^[[:space:]]+', '', status)
-	  		if(tolower(status) == 'process') {
-		  		#This is a bit of a hack but if a line has zero length (i.e. a
-			  	#black line), it will be removed in the resulting markdown file.
-				  #This will ensure that all line returns are retained.
-				content[nchar(content) == 0] &lt;- ' '
-	  			message(paste('Processing ', f, sep=''))
-		  		content[statusLine] &lt;- 'status: publish'
-			  	content[publishedLine] &lt;- 'published: true'
-				  outFile &lt;- paste(substr(f, 1, (nchar(f)-(nchar(in_ext)))), out_ext, sep='')
-  					render_markdown(strict=TRUE)
-  				opts_knit$set(out.format='markdown')
-	  			opts_knit$set(base.dir=images.dir)
-		  		opts_knit$set(base.url=images.url)
-  					##
-  				## 产生的图片存储位置 `/assets/images/r-figures/`
-	  			fig.path &lt;- paste0("r-figures/", sub(".Rmd$", "", basename(files)), "/")
-		  		opts_chunk$set(fig.path = fig.path)
-			  	## opts_chunk$set(fig.cap = "center")  ## figure position
-			    render_jekyll()     
-				  ##
-  					try(knit(text=content, output=outFile), silent=FALSE)
-  				} else {
-  					warning(paste("Not processing ", f, ", status is '", status, 
-  								"'. Set status to 'process' to convert.", sep=''))
-  				}
-  			} else {
-  				warning("Status not found in front matter.")
-  			}
-  		} else {
-  			warning("No front matter found. Will not process this file.")
-  		}
-  	 }
-  	 invisible()
- }
-</code></pre>
-
-<h3 id="rmdsh">建立可执行文本 <code>rmd.sh</code></h3>
-
-<p>这个 <code>rmd.sh</code> 也是存放在目录 <code>_posts</code>, 主要就是</p>
-
-<ul>
-  <li>
-    <p>识别当前的目录，并将其赋予 <code>dir</code> 参数</p>
-  </li>
-  <li>
-    <p>默认在 <code>Terminal</code> 运行 <code>rmakrdown.r</code> 的 <code>convertRmarkdown</code> 函数，并输出经过转化的 <code>.markdown</code> 文件。</p>
-  </li>
-</ul>
-
-<p>文本 <code>rmd.sh</code> 可以<a href="/cn/_post/rmd.sh">下载</a>，里面内容是</p>
-
-<pre><code>DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &amp;&amp; pwd )"
-Rscript -e "source('$DIR/rmarkdown.r'); convertRMarkdown(images.dir='../assets/images')"
-</code></pre>
-
-<h3 id="yaml-">添加 <code>YAML</code> 标头</h3>
-
-<p>最后，我们需要在 <code>.Rmd</code> 文件标头添加以下命令：</p>
-
-<pre><code>published: false
-status: process
-</code></pre>
-
-<p>这个是因为：</p>
-<blockquote>
-  <p> - First, the published parameter should be set to false so that Jekyll will not attempt to process the file. The convertRMarkdown function will change this parameter to true in the resulting Markdown file. </p>
-  <p> - The second parameter, status, must be set to process for the convertRMarkdown function to convert the file. This is useful when working a draft of a document and you wish to not have the file converted. </p>
-</blockquote>
-
-<h3 id="mathjax"><strong>MathJax</strong></h3>
-
-<p>如果想要让 <strong>Jekyll</strong> 支持数学公式，我们还需要添加插件，<strong>MathJax</strong>，然后使用 *markdown** 的编译设置为 <strong>kramdown</strong>。我是这样配置的</p>
-
-<h4 id="kramdown">添加 <strong>kramdown</strong></h4>
-<p>由于我先前使用的是 <em>rdiscount</em> 来编译 <strong>mardown</strong> 语法，不能够支持对数学公式的输出。使用的替代是 <strong>kramdown</strong>，一个更加强大的插件，支持 <em>pdf</em>， <em>html</em>，<em>LaTeX</em> 等格式的转化。</p>
-
-<ul>
-  <li>
-    <p>首先是在主目录文件夹找到 <code>_config-yml</code> 打开，将 <strong>markdown</strong> 默认的编译设置为 <strong>kramdown</strong>。</p>
-  </li>
-  <li>
-    <p>在 <code>_layout</code> 目录下面有 <code>post.html</code> 的页面设置，我们需要在 <code>&lt;head&gt;</code> 与 <code>&lt;/head&gt;</code> 之间插入代码
-<img src="/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/snapshot1.png" alt="snapshot1.png" /></p>
-
-    <p>也就是在网页开启前使用 <strong>MathJax</strong> 进行编译，支持对数学的输出。这里，我使用单个美元符号 <code>$</code> 与 <code>$</code> 输入 <strong>LaTeX</strong> 代码，会在网页显示相应的 <em>行内公式</em>，而使用一对的美元符号 <code>$$</code> 与 <code>$$</code> 来输入行间数学公式。</p>
-  </li>
-</ul>
-
-<h3 id="section-1">例子</h3>
-
-<h4 id="section-2">数学公式</h4>
-
-<p>比如我只需要如下输入数学公式，$S = \sum_{i=1}^k x_i$，或者是<script type="math/tex">a^2 + b^2 = c^2</script></p>
-
-<script type="math/tex; mode=display">\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum_{k=0}^\infty\frac{(4k)!(1103+26390k)}{(k!)^4396^{4k}}</script>
-
-<script type="math/tex; mode=display"> \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\ldots} } } } </script>
-
-<script type="math/tex; mode=display">% <![CDATA[
-
-\begin{align}
-\mbox{Union: } & A\cup B = \{x\mid x\in A \mbox{ or } x\in B\} \\
-\mbox{Concatenation: } & A\circ B  = \{xy\mid x\in A \mbox{ and } y\in B\} \\
-\mbox{Star: } & A^\star  = \{x_1x_2\ldots x_k \mid  k\geq 0 \mbox{ and each } x_i\in A\} \\
-\end{align}
- %]]></script>
-
-<h4 id="r"><strong>R</strong></h4>
-
-<p>再者，这个 <code>R</code> 代码，我们可以直接生成图片。</p>
-
-<pre><code>x = rnorm(100)
-plot(density(x))
-</code></pre>
-
-<p><img src="/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/fig1.png" alt="plot of chunk fig1" /> </p>
-
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Advanced R Programming</title>
-      <link>http://williamlfang.github.com/cn/2014/01/20/r-note/</link>
-      <pubDate>2014-01-20T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2014/01/20/r-note</guid>
-      <content:encoded><![CDATA[<p>这个文档记录了我在学习 <a href="http://had.co.nz/">Hadley Wickham</a> 即将出版的新书，<a href="http://adv-r.had.co.nz/">Advanced R Programming</a> 时的一些笔记与总结，以便将来复习查阅。该书博大精深，结构严谨，涵盖面广泛，涉及几乎目前有关「R」的所有问题。从最基础的数据结构开始讲起，然后逐步渐进到如何编写针对问题的 <code>function</code>，再进阶到如何开发能够发布以供他人使用的 <code>package</code>。Wickham 本人就是在「R Community」团体中的传奇人物，开发了许多为人称道的宏包，如 <code>ggplot2</code>等。而本书真是作者在总结了近十年的 「R」软件开发后编写的一本巨著。仔细深入阅读此书必将受益匪浅，极大的提升我们使用与开发「R」的各项技能，真正从最底层去认识「R」这个当今最强大的数据处理、统计分析与图形可视化编程语言。</p>
-
-<p>正如他自己所说的：</p>
-
-<blockquote>
-  <p>I have been programming in R for over 10 years, spending a lot of time trying to figure out how the language works. Not everyone has the luxury of spending years to understand a programming language, so this book is my attempt to help you to become an effective R programmer as quickly as possible. By reading this book, you will avoid the many mistakes that I made and the many dead ends that I got stuck in, and quickly navigate your way to useful tools and techniques. Although R has its frustrating quirks, I truly believe that at its heart lies an elegant and beautiful language, well tailored for data analysis and statistics. In this book, I’ll do my best to reveal that language to you, helping you to understand powerful idioms that allow you to attack many types of problems.</p>
-</blockquote>
-
-<h2 id="why-r">Why 「R」</h2>
-
-<p>对于这个问题的回答，最简短的回答是</p>
-
-<blockquote>
-  <p>多学一门编程语言总不会死吧？！！！</p>
-</blockquote>
-
-<p>确实，在当今这个互联网与信息时代，我们的生活与工作与电脑紧密相连、形影不离，如果要想了解这个时代、这个世界，我们首先必须先了解那些控制与主宰了我们生活节奏的「电脑们」是如何「生活」的。进一步说，即那些操控了「电脑们」的<strong>「程序」</strong>是如何运行的。而所谓的「程序」，终归到底，是「程序语言」（Programming language）。前几年流行的一本「Hakers and Painters」就在序言开宗明义地说：</p>
-
-<blockquote>
-  <p>Everything around us is turning into computers. Your typewriter is gone, replaced by a computer. Your phone has turned into a computer. So has your camera. Soon your Tv will. Your car was not only designed on computers, but has more processing power in it than a room-sized mainframe did in 1970. Letters, encyclopedias, newspapers, and even your local store are being replaced by the Internet.</p>
-</blockquote>
-
-<p>因此，我们要想了解世界，就必须先懂得这个世界在说什么（编程）「语言」。所谓「技多不压身」，多学习一门「编程语言」也促使我们从另外一个角度看世界，多一种批判的眼光，多一层思维的觉悟。何乐而不为？</p>
-
-<p>当然，如果你是首次听说/接触「R」，对这个编程语言一点冲动的想法都没有，那我就需要找各种<em>理由</em>来劝说你「是时候该学习『R』了」，哪怕是对阅读统计报告的需要。</p>
-
-<p><em>注意</em>：真是下面的几条<em>Reasons</em>把我拉入了「R」介个广大的「神教」中，有幸或不幸，我也希望你来加入！</p>
-
-<ul>
-  <li>
-    <p>「R」是处理统计数据与图形可视化的「神器」，能够高效的完成各种数据分析，生成信息充实而页面精美的图形。一方面，我们可是直接使用现今已有的软件包（通过<code>install.packages("")</code>)，涵盖了从基本的统计分析方法，如计算均值，方差分析，到时下最前沿的统计方法，可用于处理有关统计建模、机器学习、大数据管理等问题;另一方面，如果发现现有的软件包不能满足或者不适合手头问题的解决，那么我们还可以自己动手开发。这个特性赋予了「R」强大的处理数据的能力。</p>
-  </li>
-  <li>
-    <p>「R」是一款<strong>自由的开源软件体</strong>。这意味着你有权限去获取、使用、修改甚至是发行任何版本的「R」程序。这一点对于使用<code>Windows</code>的用户可能不会意识到有多重要，因为在国内的环境中，我们从来都没有关心过一款软件的「版权」问题，心想着反正上网有大量的破解软件可供下载使用。可是对于一个合格的哪怕只是刚入门的「Geek」来说，我已经不能再忍受破解（=盗版=病毒）软件的荼毒。从网上某处下载的软件，总是神乎其神的在某个地方给你添加插件，修改管理者权限，安装不必要也不想要的软件。然后在某天开机之后，屏幕变黑，系统变坏，情绪变糟。</p>
-
-    <p>后来我开始转移阵地到「Linux」，开始慢慢接触开源项目，才逐渐领会到开源软件带来的自由。比如，我可以从互联网以「正当理由」、「合理方式」获得所需的软件，并能够在尊重原开发者的情况下修改软件，生成「私人定制」，我甚至还可以将其发布到网上供他人使用。涉及到软件的自由是多层次的，其中最基本的一条就是，我可以修改、进一步开发以利解决问题。</p>
-
-    <p>「R」就是这么一个软件，她给你所需，为你所用，助你之力。</p>
-
-    <p>同时，「R」的开源特性也意味着这是一个免费的软件，我们可以以零成本的价格使用。这对于一枚「学生党」，有着「千情万钟」的诱惑（刨去破解软件）。</p>
-  </li>
-  <li>
-    <p>分散在世界各地的「R Community」为这个编程语言持续地注入新鲜的生命力，使之长久延续。我们可以到「CRAN」、<a href="https://stat.ethz.ch/mailman/listinfo/r-help">R-help mailing list</a>、<a href="http://stackoverflow.com/questions/tagged/r">StackOverflow</a>寻求帮助，也可以通过当地的「R user group」来咨询方案。不同与其他的编程语言，「R」的开源共享的属性让她得到世界各地用户的偏好，共同开发以保持其活力。我们无需担心哪一天自己辛苦学习与使用的编程语言/软件就撒手不干停止更新服务了。因此，学习「R」几乎是一个「零（违约）风险」的投资。</p>
-  </li>
-  <li>
-    <p>可重复（reproducable）研究指得是在现有的数据框架下，我们可以通过复制原来研究成果的代码来验证其准确性。这区别于更加广泛意义上的可复制（replecated）研究，即需要重新收集数据样本来复制结果。可重复研究允许我们在有限的经费预算约束下，极大可能的验证科学研究成果。</p>
-
-    <p>「R」正是开发可重复研究的利器，提供了像<code>knitr</code>这样优秀的软件包，使得统计分析的任何一个过程都可以通过运行代码来检验研究成果。同时，我们还可以在文章正文中「植入」程序代码，直接计算结果（面向对象，object-oriented）、绘制图形（ggplot2）、编制表格（tabular，xtable）。这省去了传统的撰写文章的麻烦与琐碎。比如，原先我们可能是在「LaTex」中写入论述，等到了需要使用图形的地方，需要事先标明<code>\includegraphic{}</code>，然后通过查找对应的图片插入。这期间被各种「烦文缛节」、各种「黑暗技巧」搞得晕头转向、不知何处。最后搞不好还弄错了文字与图形的匹配。而这些统统在<code>knitr</code>中可以自动完成，我们需要的，就是顺着思维的路线一路走下去，该说人话的时候就写人话，该使用机器语言就直接健入代码产生需要的结果或者图形。真可谓</p>
-  </li>
-</ul>
-
-<blockquote>
-  <p>「R」与「LaTex」齐飞，思想代码共一体。</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>此外，「R」还是一个<em>跨平台</em>的软件体，通吃「三界」：</p>
-
-    <ul>
-      <li>Windows系统可以直接点击<code>.exe</code>软件来安装;</li>
-      <li>
-        <p>Linux系统使用命令安装：</p>
-
-        <pre><code> sudo apt-get install r-base r-base-dev
-</code></pre>
-      </li>
-      <li>Mac系统。（抱歉，我没有使用Mac，故此处不敢高声语。）</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="why-not-r">Why <em>Not</em> 「R」</h2>
-
-<p>对于这个问题，我真的不知该如何回答。如果说以上的几点理由还不够具有「杀伤力」，那在下也只能自愧功力不够、道行尚浅、修行有限。</p>
-
-<p>不过还好，大神来帮忙了：</p>
-
-<blockquote>
-  <p>Of course, R is not perfect. R’s biggest challenge is that most R users are not programmers.     </p>
-</blockquote>
-
-<p>他给出的批评无非是「double-edged sword」，所谓凡是有利有弊、一正一邪。各位看官可以到大神的网上去找找不使用「R」的「牵强附会」的理由。在下无需多言，只不过再此累赘一下，也算是个人当初的体会。</p>
-
-<p>「R」的学习曲线太陡峭、成本太高了。也就是说，对于一个初学者来说，「R」的代码几乎可以说是「摧枯拉朽」、「灭顶之灾」的。原因有二：</p>
-
-<ul>
-  <li><strong>R</strong> 掺杂了其他语言的使用，如<strong>C</strong>，<strong>Python</strong>。这旨在提高「R」的运行速度与计算能力，增强数据分析。不过这对「beginner」却造成了困扰。</li>
-</ul>
-
-<blockquote>
-  <p>我的建议是：既来之，则安之。一开始看不懂没关系，先试着挑-「好看」的来，然后再进一步深入学习。等到你真正需要扩展的时候，再去找些资料学习就可以了。</p>
-</blockquote>
-
-<ul>
-  <li><strong>R</strong> 对于编写程序没有过于严格的要求，是真正意义上的「注重结果」的编程语言。这直接造成了「恶劣影响」，导致许多的代码行都不大注重严谨，缺乏统一。看不懂别人的代码那是必须的，有时甚至都看不懂自己以前写的代码了。,,Ծ‸Ծ,,</li>
-</ul>
-
-<blockquote>
-  <p>推荐：多看多看多看！没见过猪跑也好歹有吃过猪肉。另外，可以看看一些「guide」，养成良好的编写程序的习惯，比如，大神的<a href="http://adv-r.had.co.nz/Style.html">建议</a>,以及<a href="http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml">Google’s R Style Guide</a></p>
-</blockquote>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>WineQQ2013 可以使用</title>
-      <link>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/</link>
-      <pubDate>2014-01-18T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux</guid>
-      <content:encoded><![CDATA[<h2 id="qq-for-linux">QQ for <code>Linux</code></h2>
-<p>想要在Linux操作系统下使用 <code>QQ</code> 真的得费不少劲。我之前尝试通过 <code>WINE</code> 来安装 <code>QQ2013</code>，可是最终以失败结束。</p>
-
-<ul>
-  <li>
-    <p>一方面是由于目前的 <code>WINE</code> 技术还不是很好，对于一些商业软件支持力度不够，也不能完全模拟 <code>Windows</code> 系统来安装 <code>.exe</code> 的软件（如果完全取代了，怎么感觉又回到 <code>Windows</code> 时代了呢…..），期间需要不停的下载相关而不必要的软件，大费人力与（电）脑力，而且终归落得个不能使用/中文乱码的惨淡结局。</p>
-  </li>
-  <li>
-    <p>另一方面，<code>Tencent</code> 公司也不会完全放弃 <code>QQ</code> 的商业价值来满足开源爱好者的，他们满眼看到的是商业利益。<code>QQ</code> 本身是一个具有黑暗魔法力量的软件，可以推送广告取得收入，可以不间断的搜索用户资料（先前有 3Q 大战及由此来），还能维护一个庞大的软件生态链。故此，虽然曾经有一段时间的 <code>QQ for Linux</code> 的美好光景，却也一去不复返。</p>
-  </li>
-</ul>
-
-<p>我们现在想要在 Linux 上使用 <code>QQ</code>，真可谓“斗智斗勇”，方能取得一丁点的成就。</p>
-
-<h2 id="qq">虚拟机下使用 QQ</h2>
-<p>我之前有在一篇关于虚拟机 <a href="http://williamlfang.github.io/cn/2014/01/04/virtualbox/">virtualbox</a> 的文章中谈过可以利用虚拟机来运行 <code>Windows</code> 操作系统，并在其使用 <code>QQ</code> 等软件。可以，这也很不方便，为了使用一个软件大开虚拟机占用大量的内存，实属不值，何况对于一些老机子更是苦命。因此，我决定放弃这个既浪费资源又不讨好的想法，另辟蹊径。</p>
-
-<h2 id="wineqq">WineQQ</h2>
-<p>目前，由一个叫做 “LongeneTeam” 团队给广大的用户带来了福音。他们号称开发了史上最牛叉的、能够在 Linux 系统运行的 <code>wineQQ</code>。其工作原理是：
-&gt; 通过以deb的格式将 QQ 软件、Wine基本配置、有关字体以及一些必要的配件统统打包好，这样用户可以直接点击deb文件来安装、使用 QQ。</p>
-
-<p>目前 wineQQ 的最新版本为 <a href="http://www.longene.org/forum/viewtopic.php?t=4700">wine-1.7.9</a>。deb格式的软件可以在<a href="http://pan.baidu.com/s/1hq83fWo">这里</a>或者<a href="http://www.longene.org/download/WineQQ2013SP6-20140102-Longene.deb">这里</a>下载到。之后可以直接双击打开，经由 <code>Software Manager</code> 确认系统密码后即可安装。完成之后在找到 <code>QQ</code> 打开即可。
-<img src="/cn/assets/images/QQ/qq.png" alt="wineqq2013" /></p>
-
-<h2 id="section">问题之门及解决之道</h2>
-<p>以下汇集了我在使用 wineQQ2013 过程中遇到的一些问题，以及相应的解决方法。欢迎补充。</p>
-
-<h3 id="section-1">64位操作系统不能运行</h3>
-<p>这个问题主要是由于原先只是在32位系统运行的 <code>wineQQ</code> 需要安装配件。如下：</p>
-
-<div class="highlight"><pre><code class="bash"><span class="lineno">1</span> sudo apt-get install libc6-i386 
-<span class="lineno">2</span> sudo apt-get install ia32-libs
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">I</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;LONG&#39;</span><span class="p">,</span>
+<span class="lineno">2</span>   <span class="n">code</span><span class="o">=</span><span class="s">&#39;L&#39;</span><span class="p">,</span>
+<span class="lineno">3</span>   <span class="n">arg</span><span class="o">=</span><span class="n">decimalnl_long</span><span class="p">,</span>
+<span class="lineno">4</span>   <span class="n">stack_before</span><span class="o">=</span><span class="p">[],</span>
+<span class="lineno">5</span>   <span class="n">stack_after</span><span class="o">=</span><span class="p">[</span><span class="n">pylong</span><span class="p">],</span>
+<span class="lineno">6</span>   <span class="n">proto</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="lineno">7</span>   <span class="n">doc</span><span class="o">=</span><span class="s">&quot;&quot;&quot;...&quot;&quot;&quot;</span><span class="p">)</span>
 </code></pre>
 </div>
 
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Images</title>
-      <link>http://williamlfang.github.com/cn/2014/01/18/img/</link>
-      <pubDate>2014-01-18T00:00:00+08:00</pubDate>
-      <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2014/01/18/img</guid>
-      <content:encoded><![CDATA[<p>This thread will show you how to add a new images in Markdown through <code>relative path</code>.</p>
+<p>告诉我们<code>LONG</code>这个操作码，实际的码值（在字节流中的值）是’L’，即76，参数是<code>decimalnl_long</code>，在执行这个操作码后，栈上会多一个pylong对象，协议0提供这个操作码。</p>
 
-<ol>
-  <li>
-    <p>Make sure that you have already set the <code>url</code> correctly as <code>williamlfang.github.com</code>.</p>
-  </li>
-  <li>
-    <p>Now that we wanna to add new images in the website as <code>williamlfang.github.com/cn</code>, which is a <code>gh-pages</code>. Unfortunely, all the <code>url</code> links are directed to the main repo <code>williamlfang.github.com</code> instead of the <code>williamlfang.github.com/cn</code>. This is what the following to be utilized.</p>
-  </li>
-  <li>
-    <p>Suppose you have created a relative path containing folder as <code>assets/images/btt.png</code>, all you need to do is to add the additional prelix <code>/cn</code> alongsie the relative file path <code>assets/images/btt.png</code>. See below as as example: </p>
-  </li>
-</ol>
+<p>再看<code>decimalnl_long</code>是什么玩意，</p>
 
-<div class="highlight"><pre><code class="bash">!<span class="o">[</span>bottom<span class="o">](</span>/cn/assets/images/btt.png<span class="o">)</span>
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">decimalnl_long</span> <span class="o">=</span> <span class="n">ArgumentDescriptor</span><span class="p">(</span>
+<span class="lineno">2</span>                      <span class="n">name</span><span class="o">=</span><span class="s">&#39;decimalnl_long&#39;</span><span class="p">,</span>
+<span class="lineno">3</span>                      <span class="n">n</span><span class="o">=</span><span class="n">UP_TO_NEWLINE</span><span class="p">,</span>
+<span class="lineno">4</span>                      <span class="n">reader</span><span class="o">=</span><span class="n">read_decimalnl_long</span><span class="p">,</span>
+<span class="lineno">5</span>                      <span class="n">doc</span><span class="o">=</span><span class="s">&quot;&quot;&quot;A newline-terminated decimal integer literal.</span>
+<span class="lineno">6</span> <span class="s">                            ...&quot;&quot;&quot;</span><span class="p">)</span>
 </code></pre>
 </div>
 
-<p>which gives
-<img src="/cn/assets/images/btt.png" alt="bottom" /></p>
+<p>看doc说，<code>decimalnl_long</code>是一个以换行符结尾的十进制整数字面量。而且看它的<code>reader</code>项目可以看到这个参数的读取的具体实现，也就是<code>read_decimalnl_long</code>，如下</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="k">def</span> <span class="nf">read_decimalnl_long</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+<span class="lineno">2</span>     <span class="n">s</span> <span class="o">=</span> <span class="n">read_stringnl</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">decode</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">stripquotes</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="lineno">3</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">&quot;L&quot;</span><span class="p">):</span>
+<span class="lineno">4</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;trailing &#39;L&#39; required in </span><span class="si">%r</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">s</span><span class="p">)</span>
+<span class="lineno">5</span>     <span class="k">return</span> <span class="nb">long</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>这个函数实际上是很简单的，用<code>read_stringnl</code>读取一个以换行结尾的字符串，并且判断它尾巴上有没有一个<code>L</code>，如果有<code>L</code>就用built-in函数<code>long</code>把这个字符串转换成一个<code>long</code>对象。</p>
+
+<p>如果总结一下，对字节流的操作可以综合成以下几个操作：</p>
+
+<ul>
+  <li>读下一个字节</li>
+  <li>读下一行</li>
+  <li>读下四个字节</li>
+  <li>读下n个字节</li>
+</ul>
+
+<p>这也是会在clojure里实现的几个基本操作。</p>
+
+<h2 id="section-2">开始实现</h2>
+
+<p>如果仿照<code>pickletools.py</code>里的写法，在clojure里我们可以自己定义一个<code>defxxx</code>，比如<code>defopcode</code>，当然这个<code>defopcode</code>得用宏来实现。</p>
+
+<p><code>defopcode</code>的基本操作就是修改维护的一个<code>map</code>，码值做键，具体的操作函数做值，这个操作函数接受三个参数，即字节流对象、栈对象和备忘对象，其中栈对象用<code>vector</code>实现，备忘对象用<code>map</code>实现，在函数内部对按照协议操作后，返回新的栈和备忘，作为下次执行所使用的栈和备忘。</p>
+
+<p>在unpickle的时候，每次读入一个字节，然后通过这个<code>map</code>获得对应的操作函数，把需要的参数传递进去，并且接收好返回值，在loop的时候注意<code>STOP</code>操作码的判断，如果操作码是<code>STOP</code>，则立即停止recur，并返回栈顶元素。</p>
+
+<p>在这个实现中有一个遗憾就是不能很好的实现<code>defopcode</code>这个宏，以至于每个操作码的定义后面都需要显式地写出返回值（即stack和memo）。</p>
+
+<p>这里举一个例子</p>
+
+<div class="highlight"><pre><code class="clojure"><span class="lineno">1</span> <span class="p">(</span><span class="nf">defopcode</span> <span class="nv">BINUNICODE</span> <span class="sc">\X</span>
+<span class="lineno">2</span>   <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">len</span> <span class="p">(</span><span class="nf">from-byte-vector-lendian</span> <span class="p">(</span><span class="nf">next-4-byte</span><span class="p">))</span>
+<span class="lineno">3</span>         <span class="nv">data</span> <span class="p">(</span><span class="nf">next-n-byte</span> <span class="nv">len</span><span class="p">)]</span>
+<span class="lineno">4</span>     <span class="p">[(</span><span class="nb">conj </span><span class="nv">stack</span>
+<span class="lineno">5</span>            <span class="p">(</span><span class="nf">String.</span> <span class="p">(</span><span class="nf">to-java-byte-array</span> <span class="nv">data</span><span class="p">)</span>
+<span class="lineno">6</span>                     <span class="s">&quot;utf-8&quot;</span><span class="p">))</span>
+<span class="lineno">7</span>      <span class="nv">memo</span><span class="p">]))</span>
+</code></pre>
+</div>
+
+<p>首先将字节流当前位置的后面4个字节读出来并且按小端（little endian）转换成一个<code>int</code>，使用的是自己写的函数<code>from-byte-vector-lendian</code>（python可以直接使用<code>struct.unpack</code>），绑定给<code>len</code>，随后又读取<code>len</code>个字节绑定给<code>data</code>，最后将<code>data</code>按<code>utf-8</code>解码为unicode的<code>String</code>后，压栈并返回。</p>
+
+<p>这里不得不提的是java的<code>byte</code>类型很奇怪，竟然是带符号的，所以如果某个字节大于128（<code>0b10000000</code>）需要转换成<code>byte</code>，需要减掉256，把它变成负数，比如129（<code>0b10000001</code>）直接赋给<code>byte</code>是不行的，但是如果把它减掉256，变成-127，在补码下它的二进制表示仍然是<code>0b10000001</code>，这样就既没有破坏数据又可以被java接受了。</p>
+
+<h2 id="section-3">后记</h2>
+
+<p>感觉上用clojure实现协议1（包括部分协议2）的PM，要说的就是这么多（篇幅上来说比想象中的要短不少啊）。这回使用的编辑器依然是&lt;font color=red&gt;THE MIGHTY EMACS&lt;/font&gt;，插件是很好用的nrepl，也算是体验了一下Lisp的开发方式，非常快捷方便，但是由于我个人的原因，开发起来还不是很熟练，最近买了O’reilly的《Clojure编程》打算系统地学习一下clojure。另外一个感觉是clojure的文档有些地方对于我来说不是很好用，比如clojure 1.4里面很多包名都从contrib里面移出去了，我找这方面的文档找了半天还是没找到（以前找到过一次貌似，但是寒假里没找到），还有就是clojure的错误信息有些时候很难读懂，这个可能跟经验有关，以后再慢慢积累吧。</p>
+
 ]]></content:encoded>
     </item>
     
     <item>
-      <title>Linux Mint 安装 Pandoc</title>
-      <link>http://williamlfang.github.com/cn/2014/01/16/pandoc/</link>
-      <pubDate>2014-01-16T00:00:00+08:00</pubDate>
+      <title>Log Handler With Qtextbrowser</title>
+      <link href="http://williamlfang.github.com/cn/2013/05/13/log-handler-with-qtextbrowser/"/>
+      <pubDate>2013-05-13T00:00:00+08:00</pubDate>
       <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2014/01/16/pandoc</guid>
-      <content:encoded><![CDATA[<h2 id="linux-mint--pandoc">下面介绍在 Linux Mint 系统下如何安装 pandoc。</h2>
+      <guid>http://williamlfang.github.com/cn/2013/05/13/log-handler-with-qtextbrowser</guid>
+      <content:encoded><![CDATA[<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
 
-<ol>
-  <li>
-    <p>如官网介绍，安装 pandoc
- sudo apt-get install cabal-install
- cabal update
- cabal install pandoc</p>
-  </li>
-  <li>
-    <p>添加路径，
- sudo gedit /etc/profile
-  在打开的文档最后输入
- export PATH=/home/william/.cabal/bin:$PATH
-  再到 
- cd /etc/
- source profile</p>
-  </li>
-  <li>
-    <p>再次重新
- cabal install pandoc pandoc-citeproc</p>
-  </li>
-  <li>
-    <p>查看是否安装成功
- pandoc –version</p>
-  </li>
-</ol>
+<title>前述</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h2>前述</h2>
+
+<p>在<a href="../../12/pyqt-model-view-framework/">之前的一篇文章</a>里说过，log这种流动的文字信息可以用<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a>来展示。这篇文章会演示如何实现一个log窗口，而且还能根据特定log等级变化颜色。</p>
+
+<p>最终效果
+<img src="/assets/images/log-handler-with-qtextbrowser/overview.png" alt="overview.png"/></p>
+
+<p>实现可以分成3步</p>
+
+<ul>
+<li>在Qt中实现带颜色的文字显示</li>
+<li>在python中实现log颜色的格式化</li>
+<li>连接python中的<a href="http://docs.python.org/2/library/logging.html#logging.Logger">logging.Logger</a>和Qt中的<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a></li>
+</ul>
+
+<h2>在Qt中实现带颜色的文字显示</h2>
+
+<p>很简单，有了<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a>之后，使用<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html#append"><code>append()</code></a>槽就可以往里面添加了。而且QTextBrowser还支持html，也就是你可以在程序里写（至少是简单的）html代码，Qt可以正确的渲染出来。
+比如
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="n">text_browser</span> <span class="o">=</span> <span class="n">QTextBrowser</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">3</span> 
+<span class="lineno">4</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">text_browser</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;&lt;b&gt;this&lt;/b&gt; is &lt;font color=blue&gt;&lt;i&gt;append&lt;/i&gt;&lt;/font&gt;ed&amp;#39;</span>
+<span class="lineno">5</span>                   <span class="o">&amp;</span><span class="c">#39; into &lt;code&gt;text_browser&lt;/code&gt;&amp;#39;)&lt;/p&gt;</span>
+<span class="lineno">6</span> 
+<span class="lineno">7</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">text</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">browser</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="lineno">8</span> <span class="n">app</span><span class="o">.</span><span class="k">exec</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="p">()</span>
+</code></pre>
+</div>
+
+如图 <img src="/assets/images/log-handler-with-qtextbrowser/render-html.png" alt="render-html.png"/></p>
+
+<h2>在python中实现log颜色的格式化</h2>
+
+<p>为了能在logger的工作流程里插一手，我们只有实现自己的<a href="http://docs.python.org/2/library/logging.html#logging.Formatter">Formatter</a>这一条路走。</p>
+
+<p>我们的主要思路就是，在<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a>中，把给传入的参数的每个需要格式化的值外面套上<code>&lt;font color=%1&gt;</code>和<code>&lt;/font&gt;</code>，所以我们需要一个表，来确定什么参数要用什么颜色，像这样
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="o">&amp;</span><span class="c">#39;asctime&amp;#39;: &amp;#39;blue&amp;#39;,</span>
+<span class="lineno">3</span>     <span class="o">&amp;</span><span class="c">#39;message&amp;#39;: &amp;#39;green&amp;#39;</span>
+<span class="lineno">4</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+但是这样不够灵活，如果这样写，我们怎么来按照log等级来选择不停的颜色呢，所以可以这样
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="o">&amp;</span><span class="c">#39;asctime&amp;#39;: lambda _: &amp;#39;blue&amp;#39;,</span>
+<span class="lineno">3</span>     <span class="o">&amp;</span><span class="c">#39;levelname&amp;#39;: lambda record: {&amp;#39;DEBUG&amp;#39;: &amp;#39;gray&amp;#39;,</span>
+<span class="lineno">4</span>                                  <span class="o">&amp;</span><span class="c">#39;INFO&amp;#39; : &amp;#39;green&amp;#39;,</span>
+<span class="lineno">5</span>                                  <span class="o">&amp;</span><span class="c">#39;WARNING&amp;#39;: &amp;#39;orange&amp;#39;}[record.levelname]</span>
+<span class="lineno">6</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+也就是颜色表的值是一个函数，按照输入来确定颜色，如果这么写，理论上（实际上也是可以实现的）我们甚至可以按照时间的不同来显示不同的颜色
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="o">&amp;</span><span class="c">#39;asctime&amp;#39;: lambda t: &amp;#39;blue&amp;#39; if int(t) % 2 else &amp;#39;red&amp;#39;</span>
+<span class="lineno">3</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+效果如图 <img src="/assets/images/log-handler-with-qtextbrowser/asctime-change-color.png" alt="asctime-change-color.png"/></p>
+
+<p>接下来我们来着手重载<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a></p>
+
+<p><a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a>带了一个参数<code>record</code>，保证了是<a href="http://docs.python.org/2/library/logging.html#logging.LogRecord">LogRecord</a>类的实例，我们要格式化的内容就在这个里面。但是我们只是一个formatter，不应该修改这个record，所以我们应该做一个这个record的拷贝，在这个拷贝的基础上，我们再来格式化log信息。
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+<span class="lineno">2</span>     <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">r</span> <span class="o">=</span> <span class="n">makeLogRecord</span><span class="p">(</span><span class="n">record</span><span class="o">.&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="nb">dict</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">_</span><span class="p">)</span>
+</code></pre>
+</div>
+
+其中<code>makeLogRecord</code>函数是我在logging库的源码里找到的，manual里好像没记录这个东西。</p>
+
+<p>接下来根据<code>colors</code>表来格式化各个项目，需要注意的是，我们要对<code>asctime</code>这个项目做特殊处理，因为</p>
+
+<ul>
+<li>首先，<a href="http://docs.python.org/2/library/logging.html#logging.LogRecord">LogRecord</a>对象里面没有<code>asctime</code>这个属性，但是为了跟格式化字符串<code>fmt</code>保持一致的关键字，我还是决定继续用<code>asctime</code></li>
+<li>其次，超类里的<code>format</code>方法会自己调用<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.formatTime">formatTime()</a>，然后我们对<code>asctime</code>做的颜色格式化就被覆盖了</li>
+</ul>
+
+<p>所以基本上来说，因为<code>asctime</code>的原因，我们不能简单地按项目格式化他们的颜色之后简单的调用<code>super(ColoredFormatter, self).format(_r)</code>了。代码如下
+<div class="highlight"><pre><code class="python"><span class="lineno"> 1</span>     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="p">:</span>
+<span class="lineno"> 2</span>         <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="o">&amp;</span><span class="c">#39;asctime&amp;#39;:</span>
+<span class="lineno"> 3</span>             <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatTime</span><span class="p">(</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">r</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">datefmt</span><span class="p">)</span>
+<span class="lineno"> 4</span>         <span class="k">else</span><span class="p">:</span>
+<span class="lineno"> 5</span>             <span class="n">info</span> <span class="o">=</span> <span class="n">_r</span><span class="o">.&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">getattribute</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="lineno"> 6</span>         <span class="n">_r</span><span class="o">.&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="nb">setattr</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">_</span><span class="p">(</span><span class="n">item</span><span class="p">,</span>
+<span class="lineno"> 7</span>                        <span class="o">&amp;</span><span class="c">#39;&lt;font color=%s&gt;%s&lt;/font&gt;&amp;#39; % (</span>
+<span class="lineno"> 8</span>                            <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;_r&quot;</span><span class="o">&gt;</span><span class="n">item</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="lineno"> 9</span>                            <span class="n">info</span>
+<span class="lineno">10</span>                        <span class="p">))</span>
+<span class="lineno">11</span>     <span class="n">_r</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">_r</span><span class="o">.</span><span class="n">getMessage</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">12</span> 
+<span class="lineno">13</span> <span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">usesTime</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="o">&amp;</span><span class="c">#39;asctime&amp;#39; in self.colors:</span>
+<span class="lineno">14</span>     <span class="n">_r</span><span class="o">.</span><span class="n">asctime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatTime</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">datefmt</span><span class="p">)</span>
+<span class="lineno">15</span> 
+<span class="lineno">16</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fmt</span> <span class="o">%</span> <span class="n">_r</span><span class="o">.</span><span class="n">__dict__</span>
+<span class="lineno">17</span> <span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+<span class="lineno">18</span> 
+<span class="lineno">19</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+</p>
+
+<p><code>for</code>后面那一段基本上按照<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a>的源码写的，但是为了简单没有照抄后面关于异常的格式化。</p>
+
+<h2>连接python中的<a href="http://docs.python.org/2/library/logging.html#logging.Logger">logging.Logger</a>和Qt中的<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a></h2>
+
+<p>上面介绍了在log信息格式化中插一手的方法，现在介绍在log信息传播中插一手的方法。</p>
+
+<p>使用<a href="http://docs.python.org/2/library/logging.html#handler-objects">logging.Handler</a>来实现log信息转播到Qt中的控件中，具体方法是实现<a href="http://docs.python.org/2/library/logging.html#handler-objects">Handler</a>的子类。
+实现这个子类很简单，只需要实现一个方法<a href="http://docs.python.org/2/library/logging.html#logging.Handler.emit"><code>Handler.emit()</code></a>，在这个方法中写操作[<code>QTextBrowser</code>]的相关代码。为了实现线程安全，我们需要利用Qt的信号/槽机制（这个机制天生就是线程安全的），但是[<code>QTextBrowser</code>]并没有提供添加信息的信号供我们发射，只提供了一个槽。所以我们得自己做一个信号
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="k">def</span> <span class="nf">append_to_widget</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+<span class="lineno">2</span>     <span class="n">widget</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre>
+</div>
+</p>
+
+<p>然后Handler的子类代码如下
+<div class="highlight"><pre><code class="python"><span class="lineno"> 1</span> <span class="k">class</span> <span class="nc">LoggerHandler</span><span class="p">(</span><span class="n">Handler</span><span class="p">):</span>
+<span class="lineno"> 2</span>     <span class="k">def</span> <span class="err">&lt;</span><span class="nf">strong</span><span class="o">&gt;</span><span class="n">init</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logger</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">widget</span><span class="p">):</span>
+<span class="lineno"> 3</span>         <span class="bp">self</span><span class="o">.</span><span class="n">logger_widget</span> <span class="o">=</span> <span class="n">logger_widget</span>
+<span class="lineno"> 4</span>         <span class="nb">super</span><span class="p">(</span><span class="n">LoggerHandler</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">init</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">_</span><span class="p">()</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno"> 5</span> 
+<span class="lineno"> 6</span> <span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">emit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+<span class="lineno"> 7</span>     <span class="bp">self</span><span class="o">.</span><span class="n">logger_widget</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">SIGNAL</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;new_log(QString)&amp;#39;),</span>
+<span class="lineno"> 8</span>                             <span class="n">QString</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">record</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;utf-8&amp;#39;)))</span>
+<span class="lineno"> 9</span> <span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+<span class="lineno">10</span> 
+<span class="lineno">11</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+</p>
+
+<p>然后配置代码如下
+<div class="highlight"><pre><code class="python"><span class="lineno"> 1</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">name</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">handler</span> <span class="o">=</span> <span class="n">LoggerHandler</span><span class="p">(</span><span class="n">text_browser</span><span class="p">)</span>
+<span class="lineno"> 4</span> <span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">ColoredFormatter</span><span class="p">(</span>
+<span class="lineno"> 5</span>     <span class="n">fmt</span><span class="o">=&amp;</span><span class="c">#39;%(asctime)s %(levelname)s %(message)s&amp;#39;,</span>
+<span class="lineno"> 6</span>     <span class="n">datefmt</span><span class="o">=&amp;</span><span class="c">#39;%m/%dT%H:%M:%S&amp;#39;,</span>
+<span class="lineno"> 7</span>     <span class="n">colors</span><span class="o">=</span><span class="p">{</span><span class="o">&amp;</span><span class="c">#39;asctime&amp;#39;: lambda _: &amp;#39;blue&amp;#39;,</span>
+<span class="lineno"> 8</span>             <span class="o">&amp;</span><span class="c">#39;levelname&amp;#39;: lambda record:</span>
+<span class="lineno"> 9</span>                 <span class="n">ColoredFormatter</span><span class="o">.</span><span class="n">gen_colorscheme</span><span class="p">()[</span><span class="n">record</span><span class="o">.</span><span class="n">levelname</span><span class="p">]}</span>
+<span class="lineno">10</span> <span class="p">))</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">11</span> 
+<span class="lineno">12</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">13</span> 
+<span class="lineno">14</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">text_browser</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">text_browser</span><span class="p">,</span>
+<span class="lineno">15</span>                      <span class="n">SIGNAL</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;new_log(QString)&amp;#39;),</span>
+<span class="lineno">16</span>                      <span class="k">lambda</span> <span class="n">log</span><span class="p">:</span> <span class="n">append_to_widget</span><span class="p">(</span><span class="n">text_browser</span><span class="p">,</span> <span class="n">log</span><span class="p">))</span>
+</code></pre>
+</div>
+</p>
+
+<p>其中<code>ColoredFormatter.gen_colorscheme()</code>是我另外写的一个convenience函数，就是返回了一个默认的字典罢了，不多说。</p>
+
+<p>测试代码
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;debug&amp;#39;)</span>
+<span class="lineno">2</span> <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;info&amp;#39;)</span>
+<span class="lineno">3</span> <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;warning&amp;#39;)</span>
+<span class="lineno">4</span> <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;error&amp;#39;)</span>
+<span class="lineno">5</span> <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="o">&amp;</span><span class="c">#39;critical&amp;#39;)</span>
+</code></pre>
+</div>
+</p>
+
+<p>最终效果如图 <img src="/assets/images/log-handler-with-qtextbrowser/final.png" alt="final.png"/></p>
+
+<h2>扩展阅读</h2>
+
+<ul>
+<li><a href="http://docs.python.org/2/howto/logging.html#logging-basic-tutorial">基础的logging教程</a></li>
+<li><a href="http://docs.python.org/2/library/logging.handlers.html#module-logging.handlers">Python内置的handler，壮哉我大Python Stdlib</a></li>
+<li><a href="http://docs.python.org/2/howto/logging-cookbook.html#logging-cookbook">Logging Cookbook</a></li>
+</ul>
+
+</body>
+
+</html>
 
 ]]></content:encoded>
     </item>
     
     <item>
-      <title>Linux 中文输入法（fcitx）安装与设置</title>
-      <link>http://williamlfang.github.com/cn/2014/01/08/chinese-input/</link>
-      <pubDate>2014-01-08T00:00:00+08:00</pubDate>
+      <title>在PyQt中实现一个可以变色的log窗口</title>
+      <link href="http://williamlfang.github.com/cn/2013/05/13/log-handler-with-qtextbrowser/"/>
+      <pubDate>2013-05-13T00:00:00+08:00</pubDate>
       <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2014/01/08/chinese-input</guid>
-      <content:encoded><![CDATA[<p>Linux （Mint，16 Petra）系统本身并没有默认安装中文输入法。为了在 Linux 操作系统下使用中文输入，需要自己添加。我倒腾了大半天的，终于明白过来这是怎么设置了。现在将全部的过程记录在下面，以备日后使用。</p>
+      <guid>http://williamlfang.github.com/cn/2013/05/13/log-handler-with-qtextbrowser</guid>
+      <content:encoded><![CDATA[<h2 id="section">前述</h2>
 
-<ol>
-  <li>
-    <p>首先是安装源，</p>
+<p>在<a href="../../12/pyqt-model-view-framework/">之前的一篇文章</a>里说过，log这种流动的文字信息可以用<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a>来展示。这篇文章会演示如何实现一个log窗口，而且还能根据特定log等级变化颜色。</p>
 
-    <p>sudo add-apt-repository ppa:fcitx-team/nightly</p>
-  </li>
-  <li>
-    <p>更新</p>
+<p>最终效果
+<img src="/assets/images/log-handler-with-qtextbrowser/overview.png" alt="overview.png" /></p>
 
-    <p>sudo apt-get update</p>
-  </li>
-  <li>
-    <p>安装 fcitx，搜狗输入法，五笔（一般不用），以及双拼</p>
+<p>实现可以分成3步</p>
 
-    <p>sudo apt-get install fcitx fcitx-sogoupinyin fcitx-table-wubi fcitx-pinyin</p>
-  </li>
-  <li>
-    <p>这个比较重要，可以先在终端输入 fcitx，看看是不是提示没有可用的前端，则需要安装如下 <code>fcitx-frontend-gtk3</code></p>
+<ul>
+  <li>在Qt中实现带颜色的文字显示</li>
+  <li>在python中实现log颜色的格式化</li>
+  <li>连接python中的<a href="http://docs.python.org/2/library/logging.html#logging.Logger">logging.Logger</a>和Qt中的<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a></li>
+</ul>
 
-    <p>sudo apt-get install fcitx-frontend-gtk3 fcitx-ui-classic</p>
-  </li>
-  <li>
-    <p>打开 fcitx config，如果提示 “fcitx 的 KCModule 未被找到 缺少”，则在Terminator输入</p>
+<h2 id="qt">在Qt中实现带颜色的文字显示</h2>
 
-    <p>sudo apt-get install kde-config-fcitx</p>
-  </li>
-  <li>
-    <p>在 <code>fconfig</code> 设置输入法即可使用。</p>
-  </li>
-  <li>
-    <p>需要在 <code>/home</code> 文件夹下面新建/修改 <code>.xprofile</code></p>
-  </li>
-</ol>
+<p>很简单，有了<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a>之后，使用<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html#append"><code>append()</code></a>槽就可以往里面添加了。而且QTextBrowser还支持html，也就是你可以在程序里写（至少是简单的）html代码，Qt可以正确的渲染出来。
+比如</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="n">text_browser</span> <span class="o">=</span> <span class="n">QTextBrowser</span><span class="p">()</span>
+<span class="lineno">3</span> 
+<span class="lineno">4</span> <span class="n">text_browser</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;&lt;b&gt;this&lt;/b&gt; is &lt;font color=blue&gt;&lt;i&gt;append&lt;/i&gt;&lt;/font&gt;ed&#39;</span>
+<span class="lineno">5</span>                   <span class="s">&#39; into &lt;code&gt;text_browser&lt;/code&gt;&#39;</span><span class="p">)</span>
+<span class="lineno">6</span> 
+<span class="lineno">7</span> <span class="n">text_browser</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="lineno">8</span> <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>如图 <img src="/assets/images/log-handler-with-qtextbrowser/render-html.png" alt="render-html.png" /></p>
+
+<h2 id="pythonlog">在python中实现log颜色的格式化</h2>
+
+<p>为了能在logger的工作流程里插一手，我们只有实现自己的<a href="http://docs.python.org/2/library/logging.html#logging.Formatter">Formatter</a>这一条路走。</p>
+
+<p>我们的主要思路就是，在<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a>中，把给传入的参数的每个需要格式化的值外面套上<code>&lt;font color=%1&gt;</code>和<code>&lt;/font&gt;</code>，所以我们需要一个表，来确定什么参数要用什么颜色，像这样</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="s">&#39;asctime&#39;</span><span class="p">:</span> <span class="s">&#39;blue&#39;</span><span class="p">,</span>
+<span class="lineno">3</span>     <span class="s">&#39;message&#39;</span><span class="p">:</span> <span class="s">&#39;green&#39;</span>
+<span class="lineno">4</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+<p>但是这样不够灵活，如果这样写，我们怎么来按照log等级来选择不停的颜色呢，所以可以这样</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="s">&#39;asctime&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="s">&#39;blue&#39;</span><span class="p">,</span>
+<span class="lineno">3</span>     <span class="s">&#39;levelname&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">record</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;DEBUG&#39;</span><span class="p">:</span> <span class="s">&#39;gray&#39;</span><span class="p">,</span>
+<span class="lineno">4</span>                                  <span class="s">&#39;INFO&#39;</span> <span class="p">:</span> <span class="s">&#39;green&#39;</span><span class="p">,</span>
+<span class="lineno">5</span>                                  <span class="s">&#39;WARNING&#39;</span><span class="p">:</span> <span class="s">&#39;orange&#39;</span><span class="p">}[</span><span class="n">record</span><span class="o">.</span><span class="n">levelname</span><span class="p">]</span>
+<span class="lineno">6</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+<p>也就是颜色表的值是一个函数，按照输入来确定颜色，如果这么写，理论上（实际上也是可以实现的）我们甚至可以按照时间的不同来显示不同的颜色</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="s">&#39;asctime&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="s">&#39;blue&#39;</span> <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="k">else</span> <span class="s">&#39;red&#39;</span>
+<span class="lineno">3</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+<p>效果如图 <img src="/assets/images/log-handler-with-qtextbrowser/asctime-change-color.png" alt="asctime-change-color.png" /></p>
+
+<p>接下来我们来着手重载<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a></p>
+
+<p><a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a>带了一个参数<code>record</code>，保证了是<a href="http://docs.python.org/2/library/logging.html#logging.LogRecord">LogRecord</a>类的实例，我们要格式化的内容就在这个里面。但是我们只是一个formatter，不应该修改这个record，所以我们应该做一个这个record的拷贝，在这个拷贝的基础上，我们再来格式化log信息。</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+<span class="lineno">2</span>     <span class="n">_r</span> <span class="o">=</span> <span class="n">makeLogRecord</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>其中<code>makeLogRecord</code>函数是我在logging库的源码里找到的，manual里好像没记录这个东西。</p>
+
+<p>接下来根据<code>colors</code>表来格式化各个项目，需要注意的是，我们要对<code>asctime</code>这个项目做特殊处理，因为
+* 首先，<a href="http://docs.python.org/2/library/logging.html#logging.LogRecord">LogRecord</a>对象里面没有<code>asctime</code>这个属性，但是为了跟格式化字符串<code>fmt</code>保持一致的关键字，我还是决定继续用<code>asctime</code>
+* 其次，超类里的<code>format</code>方法会自己调用<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.formatTime">formatTime()</a>，然后我们对<code>asctime</code>做的颜色格式化就被覆盖了</p>
+
+<p>所以基本上来说，因为<code>asctime</code>的原因，我们不能简单地按项目格式化他们的颜色之后简单的调用<code>super(ColoredFormatter, self).format(_r)</code>了。代码如下</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno"> 1</span>     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="p">:</span>
+<span class="lineno"> 2</span>         <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s">&#39;asctime&#39;</span><span class="p">:</span>
+<span class="lineno"> 3</span>             <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatTime</span><span class="p">(</span><span class="n">_r</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">datefmt</span><span class="p">)</span>
+<span class="lineno"> 4</span>         <span class="k">else</span><span class="p">:</span>
+<span class="lineno"> 5</span>             <span class="n">info</span> <span class="o">=</span> <span class="n">_r</span><span class="o">.</span><span class="n">__getattribute__</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="lineno"> 6</span>         <span class="n">_r</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="n">item</span><span class="p">,</span>
+<span class="lineno"> 7</span>                        <span class="s">&#39;&lt;font color=</span><span class="si">%s</span><span class="s">&gt;</span><span class="si">%s</span><span class="s">&lt;/font&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span>
+<span class="lineno"> 8</span>                            <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="p">[</span><span class="n">item</span><span class="p">](</span><span class="n">_r</span><span class="p">),</span>
+<span class="lineno"> 9</span>                            <span class="n">info</span>
+<span class="lineno">10</span>                        <span class="p">))</span>
+<span class="lineno">11</span>     <span class="n">_r</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">_r</span><span class="o">.</span><span class="n">getMessage</span><span class="p">()</span>
+<span class="lineno">12</span> 
+<span class="lineno">13</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">usesTime</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="s">&#39;asctime&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="p">:</span>
+<span class="lineno">14</span>         <span class="n">_r</span><span class="o">.</span><span class="n">asctime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatTime</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">datefmt</span><span class="p">)</span>
+<span class="lineno">15</span> 
+<span class="lineno">16</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fmt</span> <span class="o">%</span> <span class="n">_r</span><span class="o">.</span><span class="n">__dict__</span>
+</code></pre>
+</div>
+
+<p><code>for</code>后面那一段基本上按照<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a>的源码写的，但是为了简单没有照抄后面关于异常的格式化。</p>
+
+<h2 id="pythonloggingloggerqtqtextbrowser">连接python中的<a href="http://docs.python.org/2/library/logging.html#logging.Logger">logging.Logger</a>和Qt中的<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a></h2>
+
+<p>上面介绍了在log信息格式化中插一手的方法，现在介绍在log信息传播中插一手的方法。</p>
+
+<p>使用<a href="http://docs.python.org/2/library/logging.html#handler-objects">logging.Handler</a>来实现log信息转播到Qt中的控件中，具体方法是实现<a href="http://docs.python.org/2/library/logging.html#handler-objects">Handler</a>的子类。
+实现这个子类很简单，只需要实现一个方法<a href="http://docs.python.org/2/library/logging.html#logging.Handler.emit"><code>Handler.emit()</code></a>，在这个方法中写操作[<code>QTextBrowser</code>]的相关代码。为了实现线程安全，我们需要利用Qt的信号/槽机制（这个机制天生就是线程安全的），但是[<code>QTextBrowser</code>]并没有提供添加信息的信号供我们发射，只提供了一个槽。所以我们得自己做一个信号</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="k">def</span> <span class="nf">append_to_widget</span><span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+<span class="lineno">2</span>     <span class="n">widget</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>然后Handler的子类代码如下</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="k">class</span> <span class="nc">LoggerHandler</span><span class="p">(</span><span class="n">Handler</span><span class="p">):</span>
+<span class="lineno">2</span>     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logger_widget</span><span class="p">):</span>
+<span class="lineno">3</span>         <span class="bp">self</span><span class="o">.</span><span class="n">logger_widget</span> <span class="o">=</span> <span class="n">logger_widget</span>
+<span class="lineno">4</span>         <span class="nb">super</span><span class="p">(</span><span class="n">LoggerHandler</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+<span class="lineno">5</span> 
+<span class="lineno">6</span> 
+<span class="lineno">7</span>     <span class="k">def</span> <span class="nf">emit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+<span class="lineno">8</span>         <span class="bp">self</span><span class="o">.</span><span class="n">logger_widget</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">SIGNAL</span><span class="p">(</span><span class="s">&#39;new_log(QString)&#39;</span><span class="p">),</span>
+<span class="lineno">9</span>                                 <span class="n">QString</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">record</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)))</span>
+</code></pre>
+</div>
+
+<p>然后配置代码如下</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno"> 1</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> <span class="n">handler</span> <span class="o">=</span> <span class="n">LoggerHandler</span><span class="p">(</span><span class="n">text_browser</span><span class="p">)</span>
+<span class="lineno"> 4</span> <span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">ColoredFormatter</span><span class="p">(</span>
+<span class="lineno"> 5</span>     <span class="n">fmt</span><span class="o">=</span><span class="s">&#39;</span><span class="si">%(asctime)s</span><span class="s"> </span><span class="si">%(levelname)s</span><span class="s"> </span><span class="si">%(message)s</span><span class="s">&#39;</span><span class="p">,</span>
+<span class="lineno"> 6</span>     <span class="n">datefmt</span><span class="o">=</span><span class="s">&#39;%m/</span><span class="si">%d</span><span class="s">T%H:%M:%S&#39;</span><span class="p">,</span>
+<span class="lineno"> 7</span>     <span class="n">colors</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;asctime&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="s">&#39;blue&#39;</span><span class="p">,</span>
+<span class="lineno"> 8</span>             <span class="s">&#39;levelname&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">record</span><span class="p">:</span>
+<span class="lineno"> 9</span>                 <span class="n">ColoredFormatter</span><span class="o">.</span><span class="n">gen_colorscheme</span><span class="p">()[</span><span class="n">record</span><span class="o">.</span><span class="n">levelname</span><span class="p">]}</span>
+<span class="lineno">10</span> <span class="p">))</span>
+<span class="lineno">11</span> 
+<span class="lineno">12</span> <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+<span class="lineno">13</span> 
+<span class="lineno">14</span> <span class="n">text_browser</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">text_browser</span><span class="p">,</span>
+<span class="lineno">15</span>                      <span class="n">SIGNAL</span><span class="p">(</span><span class="s">&#39;new_log(QString)&#39;</span><span class="p">),</span>
+<span class="lineno">16</span>                      <span class="k">lambda</span> <span class="n">log</span><span class="p">:</span> <span class="n">append_to_widget</span><span class="p">(</span><span class="n">text_browser</span><span class="p">,</span> <span class="n">log</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<p>其中<code>ColoredFormatter.gen_colorscheme()</code>是我另外写的一个convenience函数，就是返回了一个默认的字典罢了，不多说。</p>
+
+<p>测试代码</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;debug&#39;</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&#39;info&#39;</span><span class="p">)</span>
+<span class="lineno">3</span> <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&#39;warning&#39;</span><span class="p">)</span>
+<span class="lineno">4</span> <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&#39;error&#39;</span><span class="p">)</span>
+<span class="lineno">5</span> <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">&#39;critical&#39;</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>最终效果如图 <img src="/assets/images/log-handler-with-qtextbrowser/final.png" alt="final.png" /></p>
+
+<h2 id="section-1">扩展阅读</h2>
+
+<ul>
+  <li><a href="http://docs.python.org/2/howto/logging.html#logging-basic-tutorial">基础的logging教程</a></li>
+  <li><a href="http://docs.python.org/2/library/logging.handlers.html#module-logging.handlers">Python内置的handler，壮哉我大Python Stdlib</a></li>
+  <li><a href="http://docs.python.org/2/howto/logging-cookbook.html#logging-cookbook">Logging Cookbook</a></li>
+</ul>
+
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>PyQt的Model/View框架的个人总结</title>
+      <link href="http://williamlfang.github.com/cn/2013/05/12/pyqt-model-view-framework/"/>
+      <pubDate>2013-05-12T00:00:00+08:00</pubDate>
+      <author>William Fang</author>
+      <guid>http://williamlfang.github.com/cn/2013/05/12/pyqt-model-view-framework</guid>
+      <content:encoded><![CDATA[
+<h2 id="section">概述</h2>
+
+<p>ui设计中，经常会有展示一系列数据的情况，如果是log那种流动的文字信息，可以用<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a>来展示（<a href="../../13/log-handler-with-qtextbrowser/">参见这篇文章</a>）。如果是列表式的（树形，表形之类的），可以考虑用Qt的<a href="http://qt-project.org/doc/qt-4.8/model-view-programming.html">Model/View Framework</a>。这篇文章会介绍如何自定义model和如何使用model。一般来说，会这些就足够实现一些简单的功能了。Qt的delegate可能以后会添一篇文章，毕竟现在我也没怎么用过delegate。</p>
+
+<p>这个框架利用了经典的MVC设计模式，model用来提供数据，view用来展示数据，control用来控制view对用户输入的反应。而在Qt里，view和controller被合并成了view，也就是说Qt里的view有了（初步的）反应用户输入的功能，而为了提供灵活的处理方式，Qt引入了delegate。delegate可以自定义数据显示（render）和修改的方式。</p>
+
+<p>Qt提供了<a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html">QAbstractItemModel</a>给我们作为实现自定义的model的基础，而对于列表和树形表型则分别提供了更具体的<a href="http://qt-project.org/doc/qt-4.8/qabstractlistmodel.html">QAbstractListModel</a>，<a href="http://qt-project.org/doc/qt-4.8/qabstracttablemodel.html">QAbstractTableModel</a>。然后Qt还提供了一些做好的model比如<a href="http://qt-project.org/doc/qt-4.8/qstandarditemmodel.html">QStandardItemModel</a>，<a href="http://qt-project.org/doc/qt-4.8/qsqlquerymodel.html">QSqlQueryModel</a>等等，可以算是<a href="http://docs.python.org/2/tutorial/stdlib.html#batteries-included">batteries included</a>。</p>
+
+<p>这里主要用例子来介绍<a href="http://qt-project.org/doc/qt-4.8/qabstracttablemodel.html">QAbstractTableModel</a>，<a href="http://qt-project.org/doc/qt-4.8/qabstractlistmodel.html">QAbstractListModel</a>的使用方法很类似。</p>
+
+<p>例子来自于（操蛋的）<a href="https://github.com/mad4alcohol/os-experiments">操作系统实习</a>，最终实现效果如图 <img src="/assets/images/pyqt-model-view-framework/overview.png" alt="overview.png" /></p>
+
+<p>说下每个地方是干什么的。用户首先输入进程名和大小，点添加之后会在上面的列表控件里面添加一项，用来显示进程相关的信息。同时会为这个进程创造一个页表对象（见源码的PageTable类），由于一个进程对应一个页表，也就是说会有多个页表对象，那么在选中上面的列表中的项目的时候，下面的页表列表控件也要切换到相应的PageTable对象上去。用户可以选择任意的页面然后点击释放按钮来释放页面。对应地，内存空间在变化的时候，位示图（图中右边的那个Table控件）也要变化。</p>
+
+<p>整理一下需求</p>
+
+<ul>
+  <li>程序需要至少3个model来为3个view提供数据</li>
+  <li>要能向进程列表添加表项</li>
+  <li>要能切换不同的页表对象（model）到页表列表上，实现同上</li>
+  <li>页表列表要能根据进程的分配和释放而变化</li>
+  <li>位示图控件要能根据空间的变化而变化</li>
+</ul>
+
+<p>经过（很长时间的）文档翻阅，初步得出一些思路</p>
+
+<ul>
+  <li>列表控件的变化利用model的<a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#beginInsertRows"><code>beginInsertRows()</code></a>，<a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#endInsertRows"><code>endInsertRows()</code></a>等来实现</li>
+  <li>数据的修改可以直接在自定义的model中内置的数据存储中修改</li>
+</ul>
+
+<h2 id="model">自定义一个Model</h2>
+
+<p>首先来实现存放进程列表用的model——ProcessModel，继承自<a href="http://qt-project.org/doc/qt-4.8/qabstracttablemodel.html">QAbstractTableModel</a>，为了实现这个类，我们必须实现几个必要的方法</p>
+
+<ul>
+  <li><code>__init__</code></li>
+</ul>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+<span class="lineno">2</span>     <span class="nb">super</span><span class="p">(</span><span class="n">ProcessModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+<span class="lineno">3</span> 
+<span class="lineno">4</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span> <span class="o">=</span> <span class="n">parent</span>
+<span class="lineno">5</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_proc_list</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="lineno">6</span> 
+<span class="lineno">7</span>     <span class="bp">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="s">u&#39;进程名&#39;</span><span class="p">,</span> <span class="s">u&#39;已分配 (kB)&#39;</span><span class="p">]</span>
+<span class="lineno">8</span> 	
+</code></pre>
+</div>
+
+<ul>
+  <li><a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#rowCount"><code>rowCount()</code></a>用来定义列表项的个数</li>
+</ul>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="k">def</span> <span class="nf">rowCount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="lineno">2</span>     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_proc_list</span><span class="p">)</span>
+<span class="lineno">3</span> 	
+</code></pre>
+</div>
+
+<ul>
+  <li><a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#columnCount"><code>columnCount()</code></a>用来定义列数，这里我们只有两列，所以返回定值</li>
+</ul>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="k">def</span> <span class="nf">columnCount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="lineno">2</span>     <span class="k">return</span> <span class="mi">2</span>
+<span class="lineno">3</span> 	
+</code></pre>
+</div>
+
+<ul>
+  <li><a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#data"><code>data()</code></a>用来根据给定的index和role来返回数据</li>
+</ul>
+
+<p>以下简要的来说一下role是个什么东西。</p>
+
+<p>在model/view框架中，role就跟它自己的名字表示的意思一样，是用来控制data表示的是什么东西的，比如给定某index和<code>role=Qt.DisplayRole</code>来调用[<code>data</code>][]，那么返回的数据就是用来显示这个index表示的位置上的内容的。
+如果给定某index和<code>role=Qt.TextAlignmentRole</code>来调用[<code>data</code>][]，那么返回的数据就是用来控制这个index表示的位置上的内容的文字对齐方向的。
+用户也可以自己定义一些role，从Qt.UserRole开始，每次加1就表示一个新role，同时在delegate中也要控制对应的role。
+像这样的role还有很多，具体可见 <a href="http://qt-project.org/doc/qt-4.8/qt.html#ItemDataRole-enum">文档</a> 。 </p>
+
+<p>这里不得不说一下pyqt的实现细节，由于重载的是Qt对象的方法，所以data的返回值最好是Qt内置的数据类型，比如<a href="http://qt-project.org/doc/qt-4.8/qstring.html">QString</a>之类的，一般来说，属于python的数据类型在返回前是用<a href="http://qt-project.org/doc/qt-4.8/qvariant.html">QVariant</a>包起来的，在实际使用的时候解包也很简单，调用<a href="http://pyqt.sourceforge.net/Docs/PyQt4/pyqt_qvariant.html"><code>toPyObject()</code></a>即可。</p>
+
+<p>所以<a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#data"><code>data()</code></a>的主要代码就是</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno"> 1</span> <span class="n">proc_name</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_proc_list</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">row</span><span class="p">]</span>
+<span class="lineno"> 2</span> <span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_proc_list</span><span class="p">[</span><span class="n">proc_name</span><span class="p">]</span>
+<span class="lineno"> 3</span> <span class="k">if</span> <span class="n">role</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">TextAlignmentRole</span><span class="p">:</span>
+<span class="lineno"> 4</span>     <span class="k">if</span> <span class="n">col</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="lineno"> 5</span>         <span class="k">return</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignLeft</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignVCenter</span>
+<span class="lineno"> 6</span>     <span class="k">if</span> <span class="n">col</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="lineno"> 7</span>         <span class="k">return</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignLeft</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">.</span><span class="n">AlignVCenter</span>
+<span class="lineno"> 8</span> <span class="k">elif</span> <span class="n">role</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">DisplayRole</span><span class="p">:</span>
+<span class="lineno"> 9</span>     <span class="k">if</span> <span class="n">col</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="lineno">10</span>         <span class="k">return</span> <span class="n">QString</span><span class="p">(</span><span class="n">proc_name</span><span class="p">)</span>
+<span class="lineno">11</span>     <span class="k">elif</span> <span class="n">col</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="lineno">12</span>         <span class="k">return</span> <span class="n">QVariant</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+<span class="lineno">13</span> <span class="k">elif</span> <span class="n">role</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">ForegroundRole</span><span class="p">:</span>
+<span class="lineno">14</span>     <span class="k">if</span> <span class="n">proc_name</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">last_alloc</span><span class="p">:</span>
+<span class="lineno">15</span>         <span class="k">return</span> <span class="n">QBrush</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">blue</span><span class="p">)</span>
+<span class="lineno">16</span> <span class="k">elif</span> <span class="n">role</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">UserRole</span><span class="p">:</span>
+<span class="lineno">17</span>     <span class="k">return</span> <span class="n">proc_name</span>
+<span class="lineno">18</span> <span class="k">return</span> <span class="n">QVariant</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>当然还有一些boilerplate</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">row</span><span class="p">(),</span> <span class="n">index</span><span class="o">.</span><span class="n">column</span><span class="p">()</span>
+<span class="lineno">2</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">index</span><span class="o">.</span><span class="n">isValid</span><span class="p">()</span> \
+<span class="lineno">3</span>     <span class="ow">or</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">rowCount</span><span class="p">())</span> \
+<span class="lineno">4</span>     <span class="ow">or</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">columnCount</span><span class="p">()):</span>
+<span class="lineno">5</span>     <span class="k">return</span> <span class="n">QVariant</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>还有一些非必要的方法，比如用来提供header数据的类似data的方法<a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#headerData"><code>headerData()</code></a></p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="k">def</span> <span class="nf">headerData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">orientation</span><span class="p">,</span> <span class="n">role</span><span class="o">=</span><span class="n">Qt</span><span class="o">.</span><span class="n">DisplayRole</span><span class="p">):</span>
+<span class="lineno">2</span>     <span class="k">if</span> <span class="n">role</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">DisplayRole</span> <span class="ow">and</span> <span class="n">orientation</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">Horizontal</span><span class="p">:</span>
+<span class="lineno">3</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="n">section</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<p>然后说说怎么合法地对model的数据做修改，根据文档中Resizable models的一节里说的，插入新数据前必须调用<a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#beginInsertRows"><code>beginInsertRows()</code></a>，插入结束后必须调用<a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#endInsertRows"><code>endInsertRows()</code></a>，同样，删除数据前必须调用<a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#beginRemoveRows"><code>beginRemoveRows()</code></a>，删除结束后必须调用<a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#endRemoveRows"><code>endRemoveRows()</code></a>，如果不这么做，根据实验，view中不会有变化。（对列的变化应该是一样的，但是我们这个例子中并不涉及到对列的修改，所以在此略去）。如果列表项的数量没有增加或者减少，只是内容改变了，则需要发射<a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#dataChanged"><code>dataChanged(QModelIndex, QModelIndex)</code></a>信号。根据我的实验，发射信号带的参数只需要是两个空的<a href="http://qt-project.org/doc/qt-4.8/qmodelindex.html"><code>QModelIndex()</code></a>就行了，可能数据量大了之后，指明范围会比较好。</p>
+
+<p>其实在很多修改model内数据的场合下，我们并不知道数据到底是会多还是会少，或者增删数据不好分离出来，在这些情况下，调用上面说的<code>beginXXXRows()</code>和<code>endXXXRows()</code>还是比较困难的。</p>
+
+<p>这样，我们就可以算是完整地实现了一个model。直接调用view的<a href="http://qt-project.org/doc/qt-4.8/qabstractitemview.html#setModel"><code>setModel()</code></a>方法就行了。</p>
+
+<h2 id="view">有关View</h2>
+
+<p>接下来说说view，这篇文章并不打算继承一个view类，因为很多<a href="http://qt-project.org/doc/qt-4.8/model-view-programming.html#view-classes">Qt提供了很多view</a>，很多view直接拿现成的来就可以用。</p>
+
+<p>为了实现这种genuine的带列的列表，我们只能选<a href="http://qt-project.org/doc/qt-4.8/qtreeview.html">QTreeView</a>了，<a href="http://qt-project.org/doc/qt-4.8/qtableview.html">QTableView</a>我试过，效果并不好，然后<a href="http://qt-project.org/doc/qt-4.8/qlistview.html">QListView</a>是压根就不能带列，<a href="http://qt-project.org/doc/qt-4.8/qcolumnview.html">QColumnView</a>就更不明觉厉了。</p>
+
+<p>生的<a href="http://qt-project.org/doc/qt-4.8/qtreeview.html">QTreeView</a>看起来是这样的 <img src="/assets/images/pyqt-model-view-framework/raw-treeview.png" alt="raw-treeview.png" />为了让它变熟，得先用<a href="http://qt-project.org/doc/qt-4.8/qtreeview.html#rootIsDecorated-prop"><code>setRootIsDecorated()</code></a>去掉左边的树形图用的线，然后用<a href="http://qt-project.org/doc/qt-4.8/qtreeview.html#itemsExpandable-prop"><code>setItemsExpandable()</code></a>让项目不能展开。变成这样 <img src="/assets/images/pyqt-model-view-framework/usable-treeview.png" alt="usable-treeview.png" /></p>
+
+<p>接下来调用<a href="http://qt-project.org/doc/qt-4.8/qabstractitemview.html#setModel"><code>setModel()</code></a>来设置view使用的model对象。虽然是<a href="http://qt-project.org/doc/qt-4.8/qtreeview.html">QTreeView</a>，但是它仍然支持<a href="http://qt-project.org/doc/qt-4.8/qabstracttablemodel.html">QAbstractTableModel</a>。你也可以把这个model应用到<a href="http://qt-project.org/doc/qt-4.8/qtableview.html">QTableView</a>上，看看展示效果上的区别。</p>
+
+<h2 id="delegate">如何交互（只读，可编辑的要涉及到delegate）</h2>
+
+<p>然后说说交互方面，比如进程项目的添加、页表的转换之类的。</p>
+
+<p>向进程列表中添加进程项目，首先要调用model的<a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#beginInsertRows"><code>beginInsertRows()</code></a>，然后修改数据来源（比如我们这里是个内置的<a href="http://docs.python.org/2/library/collections.html#collections.defaultdict">defaultdict</a>），修改完毕之后调用<a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#endInsertRows"><code>endInsertRows()</code></a>。</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="bp">self</span><span class="o">.</span><span class="n">beginInsertRows</span><span class="p">(</span><span class="n">QModelIndex</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="bp">self</span><span class="o">.</span><span class="n">_proc_list</span><span class="p">[</span><span class="n">proc_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">size</span>
+<span class="lineno">3</span> <span class="bp">self</span><span class="o">.</span><span class="n">endInsertRows</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>其中调用<a href="http://qt-project.org/doc/qt-4.8/qabstractitemmodel.html#beginInsertRows"><code>beginInsertRows()</code></a>的时候用到的参数是<code>index, start, end</code>，这里为了简单，取了一些定值，对实际效果（好像）也没什么影响。
+删除项目也是差不多了，这里不再赘述。</p>
+
+<p>为了显示每个进程的对应列表，必须知道在进程列表中，当前选中的是哪一项。在<a href="http://qt-project.org/doc/qt-4.8/qabstractitemview.html">QAbstractItemView</a>里有一个方法<a href="http://qt-project.org/doc/qt-4.8/qabstractitemview.html#selectionModel"><code>selectionModel()</code></a>可以拿到这个view的<a href="http://qt-project.org/doc/qt-4.8/qitemselectionmodel.html">QItemSelectionModel</a>，它管理这个view关于<em>选择</em>的一切信息。可以同过它拿到被选中的行、列，或者判断是否有行或列被选中（具体方法参见<a href="http://qt-project.org/doc/qt-4.8/qitemselectionmodel.html">文档</a>。这里我们要用的是它的<a href="http://qt-project.org/doc/qt-4.8/qitemselectionmodel.html#currentRowChanged"><code>currentRowChanged()</code></a>信号。</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">proc_list_view</span><span class="o">.</span><span class="n">selectionModel</span><span class="p">(),</span>
+<span class="lineno">2</span>              <span class="n">SIGNAL</span><span class="p">(</span><span class="s">&#39;currentRowChanged(QModelIndex, QModelIndex)&#39;</span><span class="p">),</span>
+<span class="lineno">3</span>              <span class="bp">self</span><span class="o">.</span><span class="n">switch_page_table_model</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>然后是这个信号连接到的槽的代码</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="k">def</span> <span class="nf">switch_page_table_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">_</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<span class="lineno">2</span>     <span class="n">proc_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_model</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">role</span><span class="o">=</span><span class="n">Qt</span><span class="o">.</span><span class="n">UserRole</span><span class="p">)</span>
+<span class="lineno">3</span>     <span class="bp">self</span><span class="o">.</span><span class="n">current_proc_name</span> <span class="o">=</span> <span class="n">proc_name</span>
+<span class="lineno">4</span>     <span class="bp">self</span><span class="o">.</span><span class="n">page_table_view</span><span class="o">.</span><span class="n">setModel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">page_table_models</span><span class="p">[</span><span class="n">proc_name</span><span class="p">])</span>
+</code></pre>
+</div>
+
+<p>我维护了一个<a href="http://docs.python.org/2/library/collections.html#collections.defaultdict">defaultdict</a>，进程名做键，PageTableModel作为值，这个函数首先通过index拿到这个index对应的进程名<code>proc_name</code>，然后用<a href="http://qt-project.org/doc/qt-4.8/qabstractitemview.html#setModel"><code>setModel()</code></a>方法切换<code>self.page_table_view</code>使用的model。实现起来还是比较简单的。</p>
+
+<p>如果要改变一个view的选择模式，可以调用<a href="http://qt-project.org/doc/qt-4.8/qabstractitemview.html#selectionMode-prop"><code>setSelectionMode()</code></a>，这里我使用的是默认的，而页表控件可以使用<a href="http://qt-project.org/doc/qt-4.8/qabstractitemview.html#SelectionMode-enum">ExtendedSelection模式</a>来开启多选功能。如果要获得选中项，仍然可以通过<a href="http://qt-project.org/doc/qt-4.8/qitemselectionmodel.html">QItemSelectionModel</a>来获得，也可以使用<a href="http://qt-project.org/doc/qt-4.8/qabstractitemview.html#selectedIndexes"><code>selectedIndexes()</code></a>来获取（我猜测这个方法只是对<a href="http://qt-project.org/doc/qt-4.8/qitemselectionmodel.html">QItemSelectionModel</a>的一些方法做了一个convenience包装）。Qt为啥要还要单独提供一个model来表示选中项呢？我的理解是，这也是为了灵活性做的一个解耦，有了这个类，我们就可以利用<a href="http://qt-project.org/doc/qt-4.8/qabstractitemview.html#setSelectionModel"><code>setSelectionModel()</code></a>同步两个或者多个view的selection了。要注意的是这些view使用的model最好相同，model不同的话，同步selection好像也没什么意义。</p>
+
+<p>示例代码</p>
+
+<div class="highlight"><pre><code class="python"><span class="lineno">1</span> <span class="n">model</span> <span class="o">=</span> <span class="n">YourModel</span><span class="p">()</span>
+<span class="lineno">2</span> <span class="n">view1</span> <span class="o">=</span> <span class="n">QTableView</span><span class="p">()</span>
+<span class="lineno">3</span> <span class="n">view1</span><span class="o">.</span><span class="n">setModel</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="lineno">4</span> <span class="n">view2</span> <span class="o">=</span> <span class="n">QListView</span><span class="p">()</span>
+<span class="lineno">5</span> <span class="n">view2</span><span class="o">.</span><span class="n">setModel</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="lineno">6</span> <span class="c"># 注意：只有在setModel之后才能设置selectionModel</span>
+<span class="lineno">7</span> <span class="c"># 因为只有在设置了model之后view才会生成自己的selectionModel</span>
+<span class="lineno">8</span> <span class="c"># 如果在setModel之前设置，python会崩溃</span>
+<span class="lineno">9</span> <span class="n">view2</span><span class="o">.</span><span class="n">setSelectionModel</span><span class="p">(</span><span class="n">view1</span><span class="o">.</span><span class="n">selectionModel</span><span class="p">())</span>
+</code></pre>
+</div>
+
+<h2 id="delegate-1">关于delegate</h2>
+
+<p>这篇文章就先不介绍这个了，我自己用的也不多。感兴趣的可以先看看<a href="http://files.meetup.com/2179791/pyqt-model-view-framework-overview.pdf">这个文档</a>，是一位台湾友人写的，我觉得写的挺好的，不过毕竟是个overview，所以内容也不多，剩下的就要靠各位自己钻研了。</p>
+
+<h2 id="section-1">后记</h2>
+
+<p>本文的代码可以在<a href="https://github.com/mad4alcohol/os-experiments">这个repo</a>找到（前面也说过了）。</p>
+
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>不规范地简述一下JPEG原理</title>
+      <link href="http://williamlfang.github.com/cn/2013/05/10/jpeg-thoughts/"/>
+      <pubDate>2013-05-10T00:00:00+08:00</pubDate>
+      <author>William Fang</author>
+      <guid>http://williamlfang.github.com/cn/2013/05/10/jpeg-thoughts</guid>
+      <content:encoded><![CDATA[<p>最近在做水得一比的信安大赛，按指导老师要求，去看了JPEG相关的东西。这里稍微记录一下。</p>
+
+<p>如果对JPEG的背景什么的感兴趣可以去看看 <a href="http://en.wikipedia.org/wiki/JPEG">JPEG的wiki页面</a> 。</p>
+
+<p>说到JPEG，就不能不说DCT。</p>
+
+<p>所谓<a href="http://en.wikipedia.org/wiki/Discrete_cosine_transform">DCT (Discrete Cosine Transform)</a>，离散余弦变换，跟离散傅里叶变换类似，可以用来把时空域的数据变换到频域上。</p>
+
+<p>这里直接说二维DCT变换，变换的输入是一个矩阵A（比如一个方阵，内容是0到255，即一个字节的整数）：
+<img src="/assets/images/jpeg-thoughts/jpeg-thoughts-mat-a.png" alt="jpeg-thoughts-mat-a.png" />
+变换的输出是一个浮点数矩阵B <img src="/assets/images/jpeg-thoughts/jpeg-thoughts-mat-b.png" alt="jpeg-thoughts-mat-b.png" />
+可以看到除了矩阵左上角以外，其他元素基本上都是0左右的数。如果把这些数全部取值为0得到B’，再做逆变换得到矩阵A’，可以发现，A’的每个元素值跟A的每个元素值差距不大。也就是说，A的能量，经过DCT，被很好的聚集到了B的左上角（实际上如果去看DCT-I的公式可以发现结果向量的第一个值实际上就是输入向量的所有元素的平均值）。位于(0, 0)的值就是DC系数，左上角的其他值可以被认为是低频的AC系数，除了左上角的值可以称为是高频的AC系数，由于人对低频信息敏感，对高频信息不敏感，也就可以认为原对于人来说，矩阵A的主要信息都在B（和B’）的左上角。</p>
+
+<p>JPEG能压缩图片的最主要的原理就在DCT里面：经过DCT变换之后，再舍去一部分无关紧要的信息，这样就减少了要编码的信息的量，从而达到压缩的功能。</p>
+
+<p>JPEG规范要求将输入图片（比如灰度图）按8x8分块，每块做DCT变换，然后舍去一些高频信息（也叫量化），然后编码器用熵编码之类的方法对量化过的信息进行无损压缩，也就是说JPEG的压缩损失来自于量化这一步，最后是编码器按照JPEG规范，使用规范好的语法和结构来写出合法的JPEG文件。</p>
+
+<p>JPEG解码基本上是上面的逆变换。</p>
+
+<p>用语和概念可能并不规范，甚至有误，请包涵。</p>
+
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>2012年的暑假总结</title>
+      <link href="http://williamlfang.github.com/cn/2012/09/02/summer-summary/"/>
+      <pubDate>2012-09-02T00:00:00+08:00</pubDate>
+      <author>William Fang</author>
+      <guid>http://williamlfang.github.com/cn/2012/09/02/summer-summary</guid>
+      <content:encoded><![CDATA[<p>将近2两个月的暑假过去了，写点总结性的东西，填充一下文章的数量。</p>
+
+<h2 id="section">首先</h2>
+
+<p>还没考完试就被一个密码学的老师邀请去做东西，这是_第二次_跟着这个老师了，第一次退出是因为，做出来第一个小东西之后，就给我了一个<em>在我看来</em>很专业的东西，被吓尿，然后就发了封邮件，说打算以后有基础了再弄。这次也是没搞几天就退了。哎，弄的东西实在是提不起兴趣，而且用的尽是我不喜欢的技术（<a href="http://www.cplusplus.com/">洗屁屁</a>和<a href="http://www.java.com/">假娃</a>什么的），跟我最开始想去实验室干活的目的不一样。不过这次我也学到了两件事：</p>
 
 <blockquote>
-  <p>export LC_ALL=zh_CN.utf8        <br />
-export XMODIFIERS=@im=fcitx        <br /> 
-export QT_IM_MODULE=xim        <br />
-export GTK_IM_MODULE=xim        <br /> 
-fcitx -d        <br /></p>
+  <ul>
+    <li>一是实验室永远用的都不会去用小众的东西，C就不说了，这货暂时还是不可替代的，cpp/java/c#可以说是大行其道，所以<strong>永远不要</strong>抱着<strong>试试Scala，Clojure之类的东西在实战中是个什么样子</strong>这种心态去找实验室，这是<strong>不可能</strong>的！想玩这些东西，呵呵，自己家里鼓捣鼓捣就算了吧。</li>
+    <li>二是写任何东西，不可能做到<strong><font color="red">不去了解背景知识就能完成</font></strong>的。</li>
+  </ul>
 </blockquote>
+
+<h2 id="section-1">然后</h2>
+
+<p>是跟另外一个同学一起做了一个比较坑的东西：python做一个特定领域搜索网站的爬虫。呵呵，坑人的地方就在于——<strong>要爬<font color="red">所有</font>东西下来</strong>！！而且，最开始还不知道这个需求，所以信誓旦旦地根据以前的经验说3天拿下，但是最后需求变得越来越，怎么说，烦人。最后是花了快20天，呵呵。收获就是，熟悉了一下python的线程（以前只有单线程抓东西，和actor模型的经验）和基础的pyqt。</p>
+
+<h2 id="section-2">再然后</h2>
+
+<p>想在github上搭一个博客，以前试过<a href="https://github.com/hyde/hyde">Hyde</a>这个python写的静态网站生成器，但是文档太少，所以放弃了。于是这次试了Jekyll（准确的说是<a href="http://jekyllbootstrap.com">Jekyll-Bootstrap</a>。配置也不是很难，以后记起来了就另开一篇说说。弄好了之后顺便去买了个域名，配置了一下CNAME什么的。然后配置了一下emacs，稍微学了学emacs lisp，也写了一个<a href="https://github.com/mad4alcohol/mfa-elisp-lib">小插件</a>练练手。最开始是打算专门写博客用的，但是后来也还是配置了一下<a href="clojure-mode">clojure-mode</a>，顺带着也弄了一下<a href="https://github.com/technomancy/leiningen">Leiningen</a>（另，这货在arch下面还挺难装的，最后还是在emacs里不知不觉自己就弄好了）。配置emacs的东西都在前两篇文章里。</p>
+
+<h2 id="section-3">最后</h2>
+
+<p>是写了一个<a href="https://github.com/mad4alcohol/LaborHourInputter">工票录入系统</a>，目的是加快工票的输入（原来是直接在写好的excel表格里输入工时之类的数据），所以根据用户需求，用才熟悉起来的pyqt弄了一个专门输入工票的界面。一直到现在都很简单，一天完事。这之后用户又有需求了：写出到excel之前，要用现在已有的数据算出工人的绩效，然后再跟工时废品之类的数据一起写到给定的excel的sheet里。这个工作，根据跨平台的原则，当然是首先考虑pypi里的可以跨平台的东西，所以看起来是可以用<a href="http://sourceforge.net/projects/pyexcelerator/">pyExcelerator</a>或者<a href="http://pypi.python.org/pypi/xlutils">xlutils</a>这种东西来弄的，但是经过实践</p>
+
+<blockquote>
+  <ul>
+    <li>用pyExcelerator写入的话，所有格子的style消失，所有公式消失，基本可以说废掉了</li>
+    <li>用xlutils的话，压根就写入不了（可能是操作有误吧）</li>
+  </ul>
+</blockquote>
+
+<p>最后只能去试试用<a href="http://sourceforge.net/projects/pywin32/">pywin32</a>的win32com模块了，随便去搜了搜，看起来好像很复杂，但是仔细看了一下某个邮件列表的某个邮件存档（链接已经忘了），发现用COM去操作excel还是挺简单的，直接定位之后给<code>Value</code>属性赋值就行了，然后设置style就是直接给<code>Style</code>属性赋值，比如<code>cell.Style = 'Percent'</code>（如果设置<code>xl_app.Visible = True</code>会有很有意思的事情发生）。摸清楚之后，剩下工作的工期缩短了500%（预期是十几天断断续续地弄）。收获也还是有的，熟悉了一下数据库之类的东西，但是因为用的是<a href="http://www.sqlalchemy.org/">SQLAlchemy</a>，所以很不熟悉底层的操作（比如sql语句什么的），这也导致数据库那块的效率略低，然后稍微用了一下 <a href="http://pypi.python.org/pypi/xlrd">xlrd</a>去读存在表格里的工人信息，然后实践了一下抽象类之类的东西，目前感觉继承还是只是一种消除重复的机制，并没有那么神奇或者不可捉摸。反正目前我发现的办法就是，先写两个需要用的类出来（没有两个以及以上类似的类就暂时不需要抽象类对吧？），然后<em>并排打开</em>，从<strong>字面上</strong>提取出重复，放到一个抽象类里去，然后去掉这两个类的重复部分。</p>
+
+<p>另外考虑到用户的<em>非</em>专业人员的属性，为每个项目入口点（比如输入界面和输出到表格）做了一个batch文件（给安装也做了一个脚本，静默安装python，安装distribute库，安装pip，安装xlrd和sqlalchemy，最后是安装pyqt和pywin32，基本上是全自动，除了最后两个需要手动点几下Next，因为实在是没找到可以用的静默参数是啥）。</p>
 
 ]]></content:encoded>
     </item>
     
     <item>
-      <title>新系统的第一个软件</title>
-      <link>http://williamlfang.github.com/cn/2014/01/05/goagent/</link>
-      <pubDate>2014-01-05T00:00:00+08:00</pubDate>
+      <title>Emacs总结（续）之YASnippet</title>
+      <link href="http://williamlfang.github.com/cn/2012/08/02/emacs-summary-cont/"/>
+      <pubDate>2012-08-02T00:00:00+08:00</pubDate>
       <author>William Fang</author>
-      <guid>http://williamlfang.github.com/cn/2014/01/05/goagent</guid>
-      <content:encoded><![CDATA[<p>最近由于电脑不是很稳定,装了几次系统.这个我之前也有谈过,如何从万恶的 MS 的 Windows 系统成功<a href="http://williamlfang.github.io/cn/2014/01/window-2-linux/">转型</a>到自由软件与操作系统 Linux.经过这几次的装机经历,我也发现了这其中的一些pattern.比如,我今天要谈到的话题:
-&gt; 谁是你的新系统的第一个软件呢?</p>
+      <guid>http://williamlfang.github.com/cn/2012/08/02/emacs-summary-cont</guid>
+      <content:encoded><![CDATA[<p>这里我不建议用pac-ins装它，因为无论怎么按照网上给出的方法配置，重启之后都没有YASnippet这个菜单出现。我推荐的安装方法是去<a href="https://github.com/capitaomorte/yasnippet">YASnippet的主页</a>，按照README里的第一种方法安装，重启后成功出现了YASnippet菜单。</p>
 
-<p>对于这个问题的回答,估计该是千奇百怪的吧.对于典型的程序员,可能是先装一个 git, 然后在 <em>Emacs</em> 下积极的编程.而对于一个游戏痴迷者,大概是某个武器装备吧.而对于我,在多次的装机之后,无一例外的,(竟然)!均是安装了 <a href="https://code.google.com/p/goagent/">GoAgent 科学上网神器</a>.</p>
+<p>YASnippet的配置是非常简单的，只需要在<code>.emacs</code>中加入</p>
 
-<p>关于<em>科学上网</em>,此处不必多言,如果诸君想要一窥究竟,可以在google上找找.我想说的是,为什么,这个普通的<em>翻墙</em>工具,会成为新系统的第一位”业主”.</p>
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span>
+<span class="lineno">2</span>              <span class="s">&quot;your path to yasnippet&quot;</span><span class="p">)</span>
+<span class="lineno">3</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;yasnippet</span><span class="p">)</span>
+<span class="lineno">4</span> <span class="p">(</span><span class="nv">yas/global-mode</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<h2 id="section">我的青春旁白</h2>
+<p>要说的一点是展开模板的快捷键Tab的设置，在主模式markdown-mode下，Tab被绑定到markdown-cycle，而辅模式yas-minor-mode下，Tab是yas/expand，被markdown-cycle覆盖了。这样非常不方便。解决的办法有两种：</p>
 
-<p>我向来愚钝,对于一些词汇,总是不能辨识.比如,这个词汇,”中国梦”.我一直不曾明白过,大概也不会明白了.</p>
+<ul>
+  <li>取消markdown-mode对tab的占用，代码出处： <a href="http://calas.github.com/2009/11/20/using-yasnippets-in-markdown-mode.html">这篇博客</a></li>
+</ul>
 
-<p>高中时,我怀疑自己有病.而且不仅仅是”我怀疑”这个初诊判断,我的老师也是这么认为的,说白日梦是一种病,得治,年轻人不要整天想着拯救世界红旗插遍美帝.可是,我当时就是这么一种精神状态,以为可以三年高考五年大学三年赶英五年超美,然后世界和平世态安定世人均等,我也可以冲着某某领导某某”长”(音,zhang,上声,意同高大上伟光正,异于短)说,这tm谁呀,我哥们.</p>
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nb">defun</span> <span class="nv">markdown-unset-tab</span> <span class="p">()</span>
+<span class="lineno">2</span>   <span class="p">(</span><span class="nv">define-key</span> <span class="nv">markdown-mode-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;&lt;tab&gt;&quot;</span><span class="p">)</span> <span class="no">nil</span><span class="p">))</span>
+<span class="lineno">3</span> <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;markdown-mode-hook</span> <span class="ss">&#39;markdown-unset-tab</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p>然后我就被老师提着耳朵连打带骂赶鸭上架赶驴赴约般拜见心理医生.我说,医生,我有病,心里的.他贼兮兮的看着我说,没症状,不是心里的,是脑子的病.专业术语曰”心理”.我说,那就是呀,我有病,心里的.他说,不对,你心里的,没有病,你心理的,有病.</p>
+<ul>
+  <li>将yas/expand绑定到其他快捷键上</li>
+</ul>
 
-<p>我说,那我心里的到底有没有病呢.他说,你心里的没有病,可是你心理的有病.</p>
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;C-;&quot;</span><span class="p">)</span> <span class="ss">&#39;yas/expand</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p>我们就这样争吵了一个下午.彼此都忘了最开始的症结.原来的我是会做白日梦的,原来的我是会有堂吉诃德的烦恼的维特的追忆似水流年的普鲁斯特的情人在敲打铁皮鼓的令人愉悦的忧伤的.可是那个下午过后,我像是决意要长大的奥斯卡,毅然丢弃了心爱的铁皮鼓,毅然开始乐观向上开始做一颗好的种子好的花朵好的公民.我的梦丢了,可是我的病也好了.</p>
+<p>考虑到markdown里用tab的次数还是挺多的，我采用的是第二种方法。</p>
 
-<p>这个诊断报告一直保护了我走过三年的高中.因为有了它,我有病就像我的白日梦一样就成了一个历史一个过去一个不能遗忘的以往,而我没病给我保护给我遮羞布给我得以进入那个浩浩大学给我得以存活于这个泱泱大国.</p>
+<p>再说下YASnippet的自定义模板吧，这么方便的工具不会自定义真是太浪费了。
+我们从实例来说明。</p>
 
-<p>多年后,我一直以为,梦是一种病,而且是一种叫做心理的病.对于这一点,当初还是非常学究范非常书生气的我查找了诸多名家,诸多著作.我还一副洗耳恭听卑躬屈膝的写笔记做总结.可是我满眼看到的,是有关梦的病与关于病的梦的论述,是有关身体健全心智不全躯体安康心理黯然刻画,是有关自由意志如何被独裁奸污被专断纳妾的记录.那时候,我有那么一个片段,回到过去那个有病的年代,回去那个到了要治病的年代,对着他们歇斯底里也罢痛哭流涕也罢,求求你们,放过那个孩子.他有病,可是真的不需要治.</p>
+<h2 id="postmeta">第一个例子：post的meta信息模板</h2>
 
-<p>对于这样一种类似没病的有病,”中国梦”最直观的解释,就是大家都回青春去,重走青春路.就像当年的有病的我,大家一起在做白日梦.以前我在学校里有病,因为白日梦在当初是属于疑难杂症乱象丛生,即使我背着老师偷偷溜进学校那个仅有的半个平方的播音室里,有点科普有点可笑向全校师生介绍F的梦的解析,可是他们依然不懂.至少我得到的惩罚告诉我他们不懂.他们说,这是一种病,一种臆想的病.</p>
+<p>大家知道，jekyll的post是由markdown编译而来的，而这些markdown文件（即post源文件）必须有一些可以为jekyll所用的meta信息（比如title，category之类的）才能被识别为一篇博客。本着<a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY原则</a>（是的，代码里的原则不光码代码的时候很受用，从字面上看，干别的事也是），现将这些meta信息做成一个snippet。</p>
 
-<p>而现在,当我毅然学着当年那个书生学究的模样,想要研究”中国梦”之时,早已有伟大的教授与伟哥的叫兽在申请课题在申报遗迹.我想要试着研究者病一样的梦与梦一样的病,于是,我开始了在互联网的漫长冲浪在无人旷野的漫长流浪.</p>
+<p>使用命令<code>M-x yas/new-snippet</code>来进入新建snippet的buffer，可以看到以下的内容</p>
 
-<h2 id="section-1">我的互联网空白</h2>
-
-<p>这个时代据说是”一个言论与集社自由”的好时代,我们在享受着犹如”忍者神龟”一般”龟网速”的同时,还在享受着天朝给予的各种”保护”.比如,某天有个小小的病毒侵入你的电脑,WOW,我们立马就有了防火墙的提醒,并在不知不觉中将其隔离,将其粉碎.此乃一劳永逸,不再整天提醒吊胆.再比如,某天你溜了个神,觉得是不是应该看看nyt整天都在评论神马玩意.于是,冒着被病毒侵入的危险,顶着被审查的暴风,你胆颤心惊而又小心翼翼的在你那个多年前早就不曾更新换待的IE浏览器输入一下符号</p>
-
-<pre><code>http://www.nyt.com
-http://www.facebook.com
-http://www.twitter.com
+<pre><code># -*- mode: snippet -*-
+# name:
+# key: 
+# binding: direct-keybinding
+# expand-env: ((some-var some-value))
+# type: command
+# --
 </code></pre>
 
-<p>叮咚….恭喜你,没有被电脑病毒侵入….因为有我们这个时代最伟大的软件设计–GFW的保护.你的一颗悬而又悬的心终于安定了.O(∩_∩)O哈哈~.你暗自庆幸着.原来无国外的网站竟然都一窝si的是病毒,善哉,善哉,多亏不曾打开过,多谢不曾浏览过,多喜没有腐蚀过…</p>
+<p>其中</p>
 
-<p>很抱歉,我也曾今是众多号称是全球最庞大群体的”你”当中的一个,我也曾今为了侥幸躲过所谓”病毒与不良信息”的腐蚀而暗地窃喜过,我也曾今在茶余饭后有事没事的诅咒过那些有事没事天天设计所以”不良信息”的”美帝”,我也曾经在这有限的土地上观望这有限的雾霾幻想着无限的美梦得到无限的实现,我也曾经……</p>
+<ul>
+  <li><code>name</code>是在YASnippet中显示的名字</li>
+  <li><code>key</code>是触发这个snippet所用的关键字</li>
+  <li><code>binding</code>和<code>expand-env</code>是两个高级特性，这里不做说明</li>
+</ul>
 
-<p>如果人为回首过去的无知而羞愧,那么,我愿永远的停留这个状态,在这千万中可能中的一个实现.因为过去的无知,足以让我愧对先贤的智慧,愧对自我的审判.</p>
+<p>接下来，将上面的信息改为（不需要的行可以删掉）</p>
 
-<p>有一天,我也想多说的你一样,在心惊胆颤心跳提速心率不齐的情况下,打开了一个网页,也打开了一扇通往未知无限境地的危险抑或一扇引我走进更广阔苍穹的视窗.这一次,多亏那些大叔大”审”们的慷慨与仁慈,多谢在这一刻种种可能迹象中的一个处理随机过程实现的状态,一个不知天高地厚一个不通天朝美梦的孩子,在懵懵懂懂与莽莽撞撞间,如同童话里的爱丽斯之于仙界,我也来到了一个未知与未来的世界.</p>
+<pre><code># name: post-meta
+# key: pm
+</code></pre>
 
-<h2 id="section-2">我的自由独白</h2>
+<p>值得注意的是，这个new snippet的buffer的初始内容就是YASnippet的一个snippet，按tab可以自动跳到下一个要填内容的地方。</p>
 
-<p>传世纪之初,上帝说,要有人,于是世界多了亚当与夏娃.</p>
+<p>接着在<code># --</code>后面一行按照要求的格式写下我们需要的meta信息</p>
 
-<p>我自知神力不比上帝,却也斗胆在互联网之初,说,要有自由,要有万能的自由.</p>
+<pre><code>---
+layout: post
+title: "${1:Title}"
+description: ""
+category: $2
+tags:[$3]
+---
+{% include JB/setup %}
+$0
+</code></pre>
 
-<p>可是,这个世界依然没有自由.因为他们如同一群奔跑在困境当中的野兽,争取着解放全世界,却最终挣扎着躺倒在猎人的枪口下.在有光之前,世界是黑的.在有互联网之后,自由便死光了.所有这个盛产网民的社会也盛产”黑客”.</p>
+<p>这其中形如${N:Some Text}的内容被称为字段，N是tab stop序号（顺序是从$1到$N的），冒号后面的文字（如Title）则是其中的默认值。最后$0被称为YASnippet的退出点，即一个key被展开为snippet，并按顺序走完所有tab stop之后光标停留的点。</p>
 
-<p>我该感谢这些”黑客”,是他们让我看到原来世界是有光的.他们是谁,我不知道.我们彼此不曾谋面,也就省了在人潮拥挤的地铁站见着面隔着口罩相互寒暄.我们从来不打招呼,我们也从来不打群架,因为这个世界有很多的问题靠暴力与强拆是解决不了问题的,有很多的自由,越是抗争,越是抗取,越是早衰,越是早死.</p>
+<p>现在这个snippet就写好了。别忘了_保存_！如果你是按照github上的安装方法安装的，可以用<code>C-x C-s ~/.emacs.d/plugins/yasnippet/snippets/markdown/post-meta</code>把这个snippet保存在YASnippet的markdown分类下。</p>
 
-<p>后来,我也只是默默的躲进小楼,躲在小角,偶尔透过残留余光的视网膜,看看这个世界.</p>
+<p>重启之后，新建一个md文件，emacs会自动进入markdown-mode和yas-minor-mode以及其他的一些minor-mode，这时你可以在空白处输入<code>pm</code>，然后用命令<code>M-x yas/expand</code>或者用它的快捷键（我的是<code>C-;</code>），就可以看到pm被扩展成了上面那几句，如图</p>
 
-<p>有些时候,我会通过goagent联系多年失散的朋友,在fb上看看近照是不是瘦了胖了高了怎么有人还矮了呢,在tw里也会想念那些远在天边的切切私语遗忘在某个不知名的接到.他们如同失落天涯的蒲公英,飘零在荒无管制的原野.可我却一直羡慕着羡慕着,唯独恨我这落地生根了的躯干,不远不近,囚禁在这无形的地牢里,守着这有形的长城,过着无期的日子,叹一口无尽的哀怨.</p>
+<p><img src="/assets/images/emacs-summary-cont/post-meta-screenshot.png" alt="post-meta-screenshot.png" /></p>
 
-<hr />
-<p>### 附录:GoAgent设置说明
-—-
-GoAgent 为在天朝上网提供了一个小小的洞眼，让被墙的我们得以窥见外面自由的世界。</p>
+<p>如果不能展开，那么就要注意一下展开时你的光标的位置：光标不能处于key上，只能在你正常打完key的时候光标的那个位置（即key的最后一个字母之后）。同时key也有要求，除了空白符（空格，tab等）周围不能有其他字符。</p>
 
-<p>以下设置为个人经验,请谨慎借用.</p>
+<p>然后就可以按tab，依次输入信息了。</p>
 
-<ol>
-  <li>
-    <p>创建 <a href="https://appengine.google.com/">Google Appengine</a> 的ID.一个ID每天上限流量为1GB,最多可以申请10个账号.这样就可以保证一天内有10GB的流量可供使用,基本能够保证一天的上网需要,看个Youtube或者浏览Facebook是没问题的.如我的
-&gt; williamfang01|williamfang02|williamfang05|williamfang06|williamfang07|williamfang08| <br />
-&gt; williamfang09|williamfang1988|williamfang1989|williamlianfang</p>
-  </li>
-  <li>
-    <p>下载 <a href="https://developers.google.com/appengine/downloads?hl=zh-cn">Google App Engine SDK</a>,并解压到一个 <code>/Goagent/go_appengine</code> 的文件夹下面.</p>
-  </li>
-  <li>
-    <p>下载 <a href="https://code.google.com/p/goagent/">GoAgent</a>,将其解压到 <code>/Goagent/go_appengine</code>.</p>
-  </li>
-  <li>
-    <p>打开 <code>/Goagent/go_appengine/goagent-goagent-37d13a7/local/proxy.ini</code>,在 <code>appid</code> 中输入刚才申请的 ID 账号,保存.</p>
-  </li>
-  <li>
-    <p>打开 Linux 终端机,填写ID,gmail密码,上传账号信息.
-&gt; cd /home/william/Programs/Goagent/go_appengine/goagent-goagent-37d13a7/serve    <br />
-&gt; python uploader.zip</p>
-  </li>
-  <li>
-    <p>成功后会有提示,回车推出.</p>
-  </li>
-  <li>
-    <p>现在可以到 <code>/local</code> 下打开 <code>goagent-gtk.py</code>,直接运行即可上网.也可以将其复制到桌面,以后直接双击即可.</p>
-  </li>
-  <li>
-    <p>在 chrome 中的配置.
-&gt;+ 首先是通过 chrome store 安装 proxy
-&gt;+ 点击设置,上传 <code>/local/SwitchyOptions.bak</code>
-&gt;+ 点击 chrome 的 setting, 安装证书 <code>/local/CA</code>.</p>
-  </li>
-</ol>
+<h2 id="tag">第二个例子：高亮代码tag模板</h2>
+
+<p>用jekyll写博客时，插入代码片段要用到liquid的tag（准确地说是jekyll给liquid写的扩展tag）如下</p>
+
+<pre><code>{% highlight lang linenos %}
+{% endhighlight %}
+</code></pre>
+
+<p>这里的<code>lang</code>是一个语言的缩写形式，比如Common Lisp是<code>cl</code>，Python是<code>python</code>（其他语言的名字可以查 <a href="http://pygments.org/docs/lexers">Pygments的Lexer页面</a> ）。本着DRY原则，应该将这些重复性的操作给抽取出来。</p>
+
+<p>跟上一个例子的操作一样，进入new snippet的buffer，其中</p>
+
+<ul>
+  <li><code>name</code>设为<code>highlight</code></li>
+  <li><code>key</code>设为<code>hl</code></li>
+</ul>
+
+<p>其他的meta可以删掉，snippet正文如下</p>
+
+<pre><code>{% highlight ${1:cl} linenos %}
+$0
+{% endhighlight %}
+</code></pre>
+
+<p>保存并重启之后，在markdown-mode下就可以把<code>hl</code>展开为上面那一段了，基本消灭了重复操作。</p>
+
+<h2 id="section">最后一个例子，也是最复杂的一个，但是也是最好玩的一个</h2>
+
+<p>markdown中的img标签语法为</p>
+
+<pre><code>![ALT TEXT](URL)
+</code></pre>
+
+<p>很明显这个语法可以做成如下的snippet</p>
+
+<pre><code>![${1:ALT TEXT}](${2:URL }) $0
+</code></pre>
+
+<p>但是这还不够。还可以更简单。</p>
+
+<p>在开始之前，我想说一下这个博客的文件布局（同时也是jekyll blog的默认布局）</p>
+
+<pre><code>root
+  | --- _posts
+  |       | --- 2012-07-31-hello-world-again.md
+  | 	  | --- 2012-08-01-emacs-summary.md
+  | 	  | --- 2012-08-02-emacs-summary-cont.md
+  |
+  | --- assets
+  |       | --- images
+  |       |       | --- emacs-summary
+  |       |       |       | --- emacs-screenshot.png
+  |       |       |
+  |       |       | --- emacs-summary-cont
+  |       |       |       | --- post-meta-screenshot.png
+</code></pre>
+
+<p>可以看到，图片可以用<code>/assets/images/post-name/xxx.extension</code>来访问（<code>post-name</code>是文章的名字，比如这篇博客的是<code>emacs-summary-cont</code>）。</p>
+
+<p>观察了一下路径，发现<code>/assets/images/</code>是确定的，而实际上<code>post-name/</code>也是确定的，因为它实际上是文章源代码的路径去掉多余的修饰值（日期，扩展名）后的值，也就是这个post的实际名称，而且在emacs里编辑的时候，就已经知道路径了。然后<code>xxx.extension</code>原本是要手填的，但是可以用YASnippet的<code>yas/choose-value</code>特性把<code>/assets/images/post-name/</code>里是图片的文件名列出来，由我们来选择一个填入（为什么这样是可行的，因为我的习惯是先放图进去再接着写）。还剩一个要填的Alt Text，就把图片文件名填到Alt Text里去好了。这么一看，我们的录入量从<strong>整个的路径</strong>减少到了<strong>只用上下键选择</strong>的程度。<strong>这正是emacs的魅力所在</strong>。</p>
+
+<p>为什么上面的设想是可行的？因为YASnippet支持在snippet中<em>嵌入elisp</em>代码！</p>
+
+<p>整理一下已知量：</p>
+
+<ul>
+  <li>post的绝对路径，通过 <a href="http://www.gnu.org/software/emacs/manual/elisp.html">GNU Emacs Lisp Reference Manual</a> 的相关章节可以知道函数<code>buffer-file-name</code>返回形如<code>d:/workspace/2012-08-02-emacs-summary-cont.md</code>的绝对路径</li>
+  <li>url的前缀，即<code>/assets/images/post-name/</code></li>
+  <li>Alt Text，即图片url里的文件名（这里只是知道了Alt Text与文件名相同，实际上在这个时候文件名是不知道的）</li>
+</ul>
+
+<p>整理一下要求的量：</p>
+
+<ul>
+  <li>post的实际名称，如这篇文章的实际名称为<code>emacs-summary-cont</code></li>
+  <li><code>/assets/images/post-name/</code>里的图片文件的列表</li>
+</ul>
+
+<p>接下来求解第一个问题，求一个post的实际名称。</p>
+
+<p>首先把路径去掉，扩展名去掉，通过manual可以查得有两个函数可以用，于是代码如下</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nb">defun</span> <span class="nv">mfa/extract-file-name</span> <span class="p">(</span><span class="nv">file-name</span><span class="p">)</span>
+<span class="lineno">2</span>   <span class="p">(</span><span class="nv">file-name-nondirectory</span> <span class="p">(</span><span class="nv">file-name-sans-extension</span> <span class="nv">file-name</span><span class="p">)))</span>
+</code></pre>
+</div>
+
+<p>然后可以发现实际名称是把上一步得到的值，用<code>-</code>打散之后，去掉前3个，再用<code>-</code>合起来，手册可以查到有<code>concat</code>、<code>split-string</code>和<code>cdddr</code>（<code>cdr</code>的变形），但是没有查到类似python里的<code>join</code>的函数，只能自己写了</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno"> 1</span> <span class="p">(</span><span class="nb">defun</span> <span class="nv">mfa/join</span> <span class="p">(</span><span class="nv">l</span> <span class="nv">separator</span><span class="p">)</span>
+<span class="lineno"> 2</span>   <span class="p">(</span><span class="nb">apply</span> <span class="ss">&#39;concat</span>
+<span class="lineno"> 3</span>          <span class="p">(</span><span class="nb">car</span> <span class="nv">l</span><span class="p">)</span>
+<span class="lineno"> 4</span>          <span class="p">(</span><span class="nb">mapcar</span> <span class="nf">#&#39;</span><span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nv">str</span><span class="p">)</span> <span class="p">(</span><span class="nv">concat</span> <span class="nv">separator</span> <span class="nv">str</span><span class="p">))</span>
+<span class="lineno"> 5</span>                  <span class="p">(</span><span class="nb">cdr</span> <span class="nv">l</span><span class="p">))))</span>
+<span class="lineno"> 6</span> 
+<span class="lineno"> 7</span> <span class="p">(</span><span class="nb">defun</span> <span class="nv">mfa/remove-date</span> <span class="p">(</span><span class="nv">file-name</span><span class="p">)</span>
+<span class="lineno"> 8</span>   <span class="p">(</span><span class="nv">mfa/join</span> <span class="p">(</span><span class="nb">cdddr</span> <span class="p">(</span><span class="nv">split-string</span> <span class="nv">file-name</span> <span class="s">&quot;-&quot;</span><span class="p">))</span>
+<span class="lineno"> 9</span>             <span class="s">&quot;-&quot;</span><span class="p">))</span>
+<span class="lineno">10</span> 
+<span class="lineno">11</span> <span class="p">(</span><span class="nb">defun</span> <span class="nv">mfa/get-directory-from-bufname</span> <span class="p">(</span><span class="nv">file-name</span><span class="p">)</span>
+<span class="lineno">12</span>   <span class="p">(</span><span class="nv">mfa/remove-date</span> <span class="p">(</span><span class="nv">mfa/extract-file-name</span> <span class="nv">file-name</span><span class="p">)))</span>
+</code></pre>
+</div>
+
+<p>稍微解释一下<code>mfa/join</code>（如果你懂一些lisp，以下内容可以跳过）：</p>
+
+<ul>
+  <li>首先把参数之一的列表l分成两份，l1表示<code>(car l)</code>，即l的第一个元素，lr（l-rest）表示<code>(cdr l)</code>，即去掉了l的头元素的剩下的列表。</li>
+  <li>然后对lr做运算：每个元素的前面都加一个separator，例如若lr是<code>'("a" "b" "c")</code>，经过运算之后就是<code>'("-a" "-b" "-c")</code>了。这个运算用<code>mapcar</code>函数来实现，<code>mapcar</code>接受两个参数：一个函数，一个列表；<code>mapcar</code>把这个函数按顺序应用到这个列表的每一个元素上，并且把每一个函数应用的返回值按顺序收集起来，做成一个新列表，<code>mapcar</code>的运算结果就是这个新列表。</li>
+  <li>把l1和lr拼起来。</li>
+  <li>如果还是有问题可以用<code>M-x ielm</code>命令打开elisp的repl，自己去试验一下。</li>
+</ul>
+
+<p>（事后突然发现其实没必要那么麻烦。因为日期是固定长度的<code>xxxx-xx-xx</code>，可以直接去掉<code>file-name</code>的前11个字符（比日期多加了一个杠，所以是11个））</p>
+
+<p>接下来求图像文件列表</p>
+
+<p>要求一个文件列表，首先得知道文件的目录在哪，如果用绝对路径，这个目录是很好知道的，但是如果要保证跨平台性，只能使用相对路径，手册里查到一个函数<code>expand-file-name</code>可以完成相对路径展开到绝对路径的工作，
+然后可以发现从我当前的编辑目录<code>./_posts</code>到<code>./assets</code>需要向上走一级目录，所求的目录用elisp表达出来即</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nb">defun</span> <span class="nv">mfa/get-images-directory</span> <span class="p">(</span><span class="nv">file-name</span><span class="p">)</span>
+<span class="lineno">2</span>   <span class="p">(</span><span class="nv">concat</span> <span class="p">(</span><span class="nv">file-name-as-directory</span> <span class="p">(</span><span class="nv">expand-file-name</span> <span class="s">&quot;&quot;</span> <span class="s">&quot;../assets/images/&quot;</span><span class="p">))</span>
+<span class="lineno">3</span>           <span class="p">(</span><span class="nv">mfa/get-directory-from-bufname</span> <span class="nv">file-name</span><span class="p">)))</span>
+</code></pre>
+</div>
+
+<p>如果调用<code>(mfa/get-images-directory (buffer-file-name))</code>在我的电脑上可得返回值为<code>d:/workspace/blog-content/assets/images/emacs-summary-cont</code></p>
+
+<p>接下来就可以用<code>directory-files</code>求得某个目录下的文件列表了，而且<code>directory-files</code>有个参数<code>:match-regexp</code>用来guard文件名。注意：这个函数返回的文件列表里的元素是绝对路径的，而我们只需要文件名，所以需要用<code>mapcar</code>处理一下，代码如下</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nb">defun</span> <span class="nv">mfa/list-image-files</span> <span class="p">(</span><span class="nb">directory</span><span class="p">)</span>
+<span class="lineno">2</span>   <span class="p">(</span><span class="nb">mapcar</span> <span class="ss">&#39;file-name-nondirectory</span>
+<span class="lineno">3</span>           <span class="p">(</span><span class="nv">directory-files</span> <span class="nb">directory</span>
+<span class="lineno">4</span>                            <span class="ss">:match-regexp</span> <span class="s">&quot;\\.\\(png\\|jpg\\|jpeg\\|gif\\)&quot;</span><span class="p">)))</span>
+</code></pre>
+</div>
+
+<p>Emacs Lisp用的正则表达式的语法是posix风格的（与vim一样），熟悉perl风格的同学们可能会觉得很奇怪（比如括号要转义了才有分组的作用）。</p>
+
+<p>最后一步，弄一个函数把上面的函数拼起来，首先在脑袋里想好输入输出：输入是一个带绝对路径的文件名，输出是这个文件名对应的图片文件夹下的图片文件名列表。</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nb">defun</span> <span class="nv">mfa/yield-choices</span> <span class="p">(</span><span class="nv">file-name</span><span class="p">)</span>
+<span class="lineno">2</span>   <span class="p">(</span><span class="nv">mfa/list-image-files</span> <span class="p">(</span><span class="nv">mfa/get-images-directory</span> <span class="nv">file-name</span><span class="p">)))</span>
+</code></pre>
+</div>
+
+<p>这样一来，我们所有的elisp编码工作就完成了（可以看出来所有代码都是由函数拼起来的，这也是<a href="http://en.wikipedia.org/wiki/Functional_programming">函数式编程</a>的主要编码方式），可以把以上代码存入一个elisp文件中（注意，最后一行要写<code>(provide 'your-file-name)</code>），并在<code>.emacs</code>里配置一下，把这个文件像插件一样加载进来。</p>
+
+<p>接下来，我们开始snippet的编码，这部分就相对来说容易很多了</p>
+
+<pre><code>![${1:$$(yas/choose-value (mfa/yield-choices (buffer-file-name)))}](/assets/images/`(mfa/get-directory-from-bufname (buffer-file-name))`/$1)$0
+</code></pre>
+
+<p><em>注意</em>：里面是一行，不能折行。</p>
+
+<p>这里主要用到了三个特性：<code>yas/choose-value</code>，内嵌elisp和镜像。</p>
+
+<ul>
+  <li>在扩展形如<code>${N:$$(yas/choose-value your-list)}</code>的snippet的时候，可以显示一个下拉菜单来选择要填入的内容；</li>
+  <li>可以在snippet的任意地方嵌入用_反引号_括起来的elisp代码；</li>
+  <li>在前面定义的tab stop，如果在后面有对它的引用，则会直接copy到后面的引用处，在上面的snippet里，前面作为Alt Text的文件名被镜像到后面的路径里去了。</li>
+</ul>
+
+<p>这样一来，我们所有的编码工作就完成了，将这个snippet保存至上面的markdown的snippet目录下，重启emacs之后就可以看效果了。</p>
+
+<p>附效果截图一张：</p>
+
+<p><img src="/assets/images/emacs-summary-cont/snippet-screenshot.png" alt="snippet-screenshot.png" /></p>
+
+<p>这样就基本介绍了YASnippet的配置和自定义snippet（中间还穿插了一点elisp）。</p>
+
+<h2 id="section-1">后记</h2>
+
+<p>要知道YASnippet这个插件自身就是elisp写的，emacs的超高可配置性可见一斑，无怪乎说 <a href="http://c2.com/cgi/wiki?EmacsAsOperatingSystem"><strong>emacs就是一个操作系统</strong></a>了。</p>
+
+<p>就我个人来看，虽然vim的编辑效率可以爆emacs几条街（我之前可以算是个坚定的vim党，额，可能没那么坚定，我更喜欢在ide里用vim插件，而不是直接用gvim），但是如果emacs加上扩展再去和vim比（哪怕vim也加扩展），那真是不好说了。</p>
+
+<p>我开始体会到emacs的强大，也是自己摸索出来上面那个图片文件列表snippet之后了，而elisp正是emacs强大的根源所在。elisp开发（或者说lisp类的语言的开发）的过程也是非常愉悦的过程，你在主buffer里写着代码，写了两个函数，想试一下效果，可以直接eval一下buffer，然后在旁边的repl里立即进行测试，基本上等于_所写即所得编程_（好像是废话，但是你懂我说的），我想目前还没有别的语言能这么做，对于我这个不会单元测试（也不喜欢，如果是好lisp代码的话，应该是不需要单元测试的，因为本身就完全是<a href="http://en.wikipedia.org/wiki/Declarative_programming">声明式</a>的，要干什么一目了然）的人来说，真是救星一般的东西。另：elisp的文档也写得非常好，朴素且实用，就像emacs自己。</p>
+
+<p>如果想进一步了解lisp这种<strong>神奇</strong>的东西，可以看看 <a href="http://book.douban.com/subject/6021440/">黑客与画家</a>。Paul Graham写的很精彩，但是我觉得略微有点太夸大lisp了（虽然lisp确实很强大） :)</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>折腾了一天的emacs，现在来写点总结</title>
+      <link href="http://williamlfang.github.com/cn/2012/07/31/emacs-summary/"/>
+      <pubDate>2012-07-31T00:00:00+08:00</pubDate>
+      <author>William Fang</author>
+      <guid>http://williamlfang.github.com/cn/2012/07/31/emacs-summary</guid>
+      <content:encoded><![CDATA[<p>今天一起床，突然心血来潮，想配个emacs来玩玩。一来增加点见识，一个<em>编辑器</em>到底能做到什么水平；二来，如果真配好了，以后用起来也应该会很方便；再来，我本来就对lisp类的语言很感兴趣（其实只要不是命令式的都感兴趣，嘛，满大街都是imperative的，这不科学），而且最开始是想作为clojure的ide来弄的，配配emacs也算是增进对lisp的了解吧。</p>
+
+<h2 id="section">准备工作</h2>
+
+<ul>
+  <li>过一遍emacs自带的tutorial，了解一下基本操作，后面的配置也就可以作为实际的练习了。另：有中文的，所以应该不是什么大问题，无奈的是emacs在windows下默认的字体渲染得很丑（ps: 这是可以解决的，详见后文）。</li>
+  <li>了解lisp的基本知识，比如这种_奇怪_的语法（<a href="http://en.wikipedia.org/wiki/S-expression">S-expression</a>）是怎么回事，最开始可能不习惯，但是习惯之后，你就会明白这种语法的表达力有多强大（通过宏来体现出数据即代码，代码即数据）。</li>
+</ul>
+
+<p>接下来，开始<em>一块一块</em>地来看<code>.emacs</code>（即vim里的<code>.vimrc</code>）。</p>
+
+<h2 id="emacs">哦，对了，首先要说的是.emacs放哪</h2>
+
+<p>*nix就不说了，大家都知道。但是windows的情况就要复杂点了。
+我先是稍微在网上搜了一下，说在<code>C:/Users/xxx/AppData/Roaming/.emacs.d</code>里建一个<code>init.el</code>。我试了，不行。（怎么试？就加一句<code>(tool-bar-mode -1)</code>，然后重启emacs看看有变化没。）百撕不得骑姐（大误）之后，还是打算换个关键字，用英语搜吧。果然搜到了一个关于windows的<a href="http://www.gnu.org/software/emacs/windows/Installing-Emacs.html#index-HOME-directory-49">faq</a>，里面的3.5节对确定主文件夹的机制讲得很清楚：
+&gt; 1. 如果设置了<code>HOME</code>环境变量，那么就用<code>HOME</code>指代的文件夹。
+&gt; 2. 如果注册表有<code>HKCU\SOFTWARE\GNU\Emacs\HOME</code>这一项，那么就用它指代的文件夹。
+&gt; 3. 如果注册表有<code>HKLM\SOFTWARE\GNU\Emacs\HOME</code>这一项，那么就用它指代的文件夹。不推荐，因为它会让多个用户共享同一个主文件夹。
+&gt; 4. 如果存在<code>C:\.emacs</code>，那么就用<code>C:/</code>。这么做是为了向前兼容，因为如果没有设置<code>HOME</code>，以前的版本会默认将其设置为<code>C:/</code>。
+&gt; 5. 使用当前用户的<code>AppData</code>文件夹，通常是在当前用户的profile文件夹里一个叫做<code>Application Data</code>的文件夹，其路径根据Windows版本和计算机是否是域上的一部分而不同。</p>
+
+<p>后面还有一句
+&gt; 在Emacs中，一个文件名开头处的&lt;~&gt;会被展开为你的主文件夹，所以你总是可以用<code>C-x C-f ~/.emacs</code>找到你的<code>.emacs</code>文件。</p>
+
+<p>我是直接用的第一个方法弄的，果然好使（还是官方文档靠谱啊）。</p>
+
+<h2 id="section-1">外观部分</h2>
+
+<p>首先得设置好语言环境（应该就是总编码的意思），
+用以下代码设置</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nv">set-language-environment</span> <span class="ss">&#39;utf-8</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>其中<code>'utf-8</code>表示的是一个引用（quote），表示一个唯一确定的标识，跟java里的枚举类型有点类似。</p>
+
+<p>然后设置汉字的渲染，
+我在google上搜过，得到的结论是强制设定一个字体应该能解决问题，在<a href="http://emacser.com/torture-emacs.htm">这篇文章</a>里copy了一段代码</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">charset</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">kana</span> <span class="nv">han</span> <span class="nc">symbol</span> <span class="nv">cjk-misc</span> <span class="nv">bopomofo</span><span class="p">))</span>
+<span class="lineno">2</span>   <span class="p">(</span><span class="nv">set-fontset-font</span> <span class="p">(</span><span class="nv">frame-parameter</span> <span class="no">nil</span> <span class="ss">&#39;font</span><span class="p">)</span>
+<span class="lineno">3</span> 					<span class="nv">charset</span>
+<span class="lineno">4</span> 					<span class="p">(</span><span class="nv">font-spec</span> <span class="ss">:family</span> <span class="s">&quot;微软雅黑&quot;</span> <span class="ss">:size</span> <span class="mi">12</span><span class="p">)))</span>
+</code></pre>
+</div>
+
+<p>eval之后，渲染果然好多了，但是保存<code>.emacs</code>之后，新开一个emacs，又变回以前那种渲染了，经过又一次的百思不得其解之后，还是去翻文档，试着把<code>set-fontset-font</code>的第一个参数，即<code>(frame-parameter nil 'font)</code>，改成<code>"fontset-default"</code>，保存，重启，ok了。
+然后设置英文字体，把其中的<code>Bitstream Vera Sans Mono</code>换成你想要的字体名就行了，比如<code>Consolas</code></p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;default</span> <span class="no">nil</span> <span class="ss">:font</span> <span class="s">&quot;Bitstream Vera Sans Mono-10&quot;</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>ps: 在这里强烈推荐一下<a href="http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/">Bitstream Vera Sans Mono</a>，非常耐看的字体，再配上mactype的渲染简直完美（*nix个发行版的桌面一般自带比windows好看的多的渲染，mac就更不用说了）;)。</p>
+
+<p>接下来把那个烦人的工具栏去掉</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">fboundp</span> <span class="ss">&#39;tool-bar-mode</span><span class="p">)</span>
+<span class="lineno">2</span>   <span class="p">(</span><span class="nv">tool-bar-mode</span> <span class="mi">-1</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<p>其中在设置之前检测一下应该是为了兼容<code>nw</code>模式（因为既然在控制台下，工具栏什么的肯定是没有的吧）。如果你也不喜欢菜单栏，可以照葫芦画瓢，设置<code>menu-bar-mode</code>为<code>-1</code>。</p>
+
+<p>然后把总是在响的bell给关掉</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">visible-bell</span> <span class="no">t</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>值得一提的是<code>setq</code>（set quoted）与<code>set</code>的区别，基本可以理解为以下两个表达式等价</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">some-variable</span> <span class="no">t</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="p">(</span><span class="nb">set</span> <span class="ss">&#39;some-variable</span> <span class="no">t</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>然后设置主题，
+我试过用<code>M-x package-install</code>装color-theme，也试过直接从color-theme的官网上下zip，在emacs24下都有问题：<code>Symbol's function definition is void: plist-to-alist</code>，去源码里一看，调用<code>plist-to-alist</code>的那句后面写着<code>XEmacs only</code>-_-|，试过把这句注释，或者加个<code>plist-to-alist</code>的假实现，都不行。最后看了一个stackoverflow的回答说emacs24自带了主题管理（好像以前的版本也有？），先在buffer里用<code>M-x customize-themes</code>看所有的主题，选一个，然后在<code>.emacs</code>里加入</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nv">load-theme</span> <span class="ss">&#39;wheatgrass</span> <span class="no">t</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>外观这部分最后要说的是两个插件：tabbar和lineno
+但是在说tabbar的配置之前，要说一下emacs的package管理器的配置</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;package</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span>
+<span class="lineno">3</span> 	         <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;marmalade&quot;</span> <span class="o">.</span> <span class="s">&quot;http://marmalade-repo.org/packages/&quot;</span><span class="p">))</span>
+<span class="lineno">4</span> <span class="p">(</span><span class="nv">package-initialize</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>具体来说就是将”marmalade”和这个repo的url作为一个cons存进<code>package-archives</code>里。
+以后要安装什么插件，一般可以直接用命令<code>M-x package-install xxx</code>（以下简称pac-ins）安装。</p>
+
+<p>首先用pac-ins安装lineno，然后在<code>(package-initialize)</code>后面加入</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nv">linum-mode</span> <span class="no">t</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>注意，所有跟用pac-ins安装的插件有关的代码都只能写在<code>(package-initialize)</code>后面，否则会提示找不到变量之类的错误。</p>
+
+<p>然后安装tabbar，并加入以下代码</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;tabbar</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="p">(</span><span class="nv">tabbar-mode</span> <span class="no">t</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>重启之后就可以看到buffer上面都多了一行tab。</p>
+
+<p>为了更加方便地使用tabbar，可以绑定两个快捷键到tabbar-xward上，比如</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno">1</span> <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;M-j&quot;</span><span class="p">)</span> <span class="ss">&#39;tabbar-backward</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;M-k&quot;</span><span class="p">)</span> <span class="ss">&#39;tabbar-forward</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>另外，如果你觉得默认的样式很丑，可以用下面的代码来自定义，修改自<a href="http://blog.csdn.net/CherylNatsu/article/details/6204737">这篇文章</a>。</p>
+
+<div class="highlight"><pre><code class="cl"><span class="lineno"> 1</span> <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;tabbar-default</span> <span class="no">nil</span>
+<span class="lineno"> 2</span> 		    <span class="ss">:background</span> <span class="s">&quot;gray80&quot;</span>
+<span class="lineno"> 3</span> 		    <span class="ss">:family</span> <span class="s">&quot;Bitstream Vera Sans Mono&quot;</span>
+<span class="lineno"> 4</span> 		    <span class="ss">:foreground</span> <span class="s">&quot;gray30&quot;</span>
+<span class="lineno"> 5</span> 		    <span class="ss">:height</span> <span class="mf">0.75</span><span class="p">)</span>
+<span class="lineno"> 6</span> <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;tabbar-unselected</span> <span class="no">nil</span>
+<span class="lineno"> 7</span> 		    <span class="ss">:inherit</span> <span class="ss">&#39;tabbar-default</span>
+<span class="lineno"> 8</span> 		    <span class="ss">:background</span> <span class="s">&quot;gray85&quot;</span>
+<span class="lineno"> 9</span> 		    <span class="ss">:foreground</span> <span class="s">&quot;gray30&quot;</span>
+<span class="lineno">10</span> 		    <span class="ss">:box</span> <span class="no">nil</span><span class="p">)</span>
+<span class="lineno">11</span> <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;tabbar-selected</span> <span class="no">nil</span>
+<span class="lineno">12</span> 		    <span class="ss">:inherit</span> <span class="ss">&#39;tabbar-default</span>
+<span class="lineno">13</span> 		    <span class="ss">:background</span> <span class="s">&quot;#f2f2f6&quot;</span>
+<span class="lineno">14</span> 		    <span class="ss">:foreground</span> <span class="s">&quot;black&quot;</span>
+<span class="lineno">15</span> 		    <span class="ss">:box</span> <span class="no">nil</span><span class="p">)</span>
+<span class="lineno">16</span> <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;tabbar-button</span> <span class="no">nil</span>
+<span class="lineno">17</span> 		    <span class="ss">:inherit</span> <span class="ss">&#39;tabbar-default</span>
+<span class="lineno">18</span> 		    <span class="ss">:box</span> <span class="o">&#39;</span><span class="p">(</span><span class="ss">:line-width</span> <span class="mi">1</span>
+<span class="lineno">19</span> 			   <span class="ss">:color</span> <span class="s">&quot;gray72&quot;</span>
+<span class="lineno">20</span> 			   <span class="ss">:style</span> <span class="nv">released-button</span><span class="p">))</span>
+<span class="lineno">21</span> <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;tabbar-separator</span> <span class="no">nil</span>
+<span class="lineno">22</span> 		    <span class="ss">:height</span> <span class="mf">0.7</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>在那篇文章里，所有的<code>set-face-attribute</code>的第一个参数都以<code>-face</code>结尾，但是到我这来就没有了，所以直接copy过来是不能跑的。看了tabbar.el，那些face都是没有<code>-face</code>的，只好跟着把<code>-face</code>去掉了，重启一下，可以发现样式改过来了。</p>
+
+<p>附上emacs截图一张
+<img src="/assets/images/emacs-summary/emacs-screenshot.png" alt="截图" /></p>
+
+<p>未完待续…</p>
 
 ]]></content:encoded>
     </item>

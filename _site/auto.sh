@@ -1,14 +1,12 @@
-jekyll build
+cd /home/william/cn
+git add . -A
+git commit -m "updates"
 
-git add .
-git commit -m 'update'
-git push -u origin master &
+git remote rm origin
+git remote add origin git@github.com:williamlfang/cn.git
+git push origin gh-pages
 
-cp _site/* ../mad4alcohol.github.com/ -r
+jekyll --server
 
-cd ../mad4alcohol.github.com
-git add .
-git commit -m 'update'
-git push -u origin master &
 
 

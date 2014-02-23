@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>前述</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h2>前述</h2>
+
+<p>在<a href="../../12/pyqt-model-view-framework/">之前的一篇文章</a>里说过，log这种流动的文字信息可以用<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a>来展示。这篇文章会演示如何实现一个log窗口，而且还能根据特定log等级变化颜色。</p>
+
+<p>最终效果
+<img src="/assets/images/log-handler-with-qtextbrowser/overview.png" alt="overview.png"/></p>
+
+<p>实现可以分成3步</p>
+
+<ul>
+<li>在Qt中实现带颜色的文字显示</li>
+<li>在python中实现log颜色的格式化</li>
+<li>连接python中的<a href="http://docs.python.org/2/library/logging.html#logging.Logger">logging.Logger</a>和Qt中的<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a></li>
+</ul>
+
+<h2>在Qt中实现带颜色的文字显示</h2>
+
+<p>很简单，有了<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a>之后，使用<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html#append"><code>append()</code></a>槽就可以往里面添加了。而且QTextBrowser还支持html，也就是你可以在程序里写（至少是简单的）html代码，Qt可以正确的渲染出来。
+比如
+{% highlight python linenos %}
+app = QApplication(sys.argv)
+text_browser = QTextBrowser()</p>
+
+<p>text_browser.append(&#39;<b>this</b> is <font color=blue><i>append</i></font>ed&#39;
+                  &#39; into <code>text_browser</code>&#39;)</p>
+
+<p>text<em>browser.show()
+app.exec</em>()
+{% endhighlight %}
+如图 <img src="/assets/images/log-handler-with-qtextbrowser/render-html.png" alt="render-html.png"/></p>
+
+<h2>在python中实现log颜色的格式化</h2>
+
+<p>为了能在logger的工作流程里插一手，我们只有实现自己的<a href="http://docs.python.org/2/library/logging.html#logging.Formatter">Formatter</a>这一条路走。</p>
+
+<p>我们的主要思路就是，在<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a>中，把给传入的参数的每个需要格式化的值外面套上<code>&lt;font color=%1&gt;</code>和<code>&lt;/font&gt;</code>，所以我们需要一个表，来确定什么参数要用什么颜色，像这样
+{% highlight python linenos %}
+colors = {
+    &#39;asctime&#39;: &#39;blue&#39;,
+    &#39;message&#39;: &#39;green&#39;
+}
+{% endhighlight %}
+但是这样不够灵活，如果这样写，我们怎么来按照log等级来选择不停的颜色呢，所以可以这样
+{% highlight python linenos %}
+colors = {
+    &#39;asctime&#39;: lambda _: &#39;blue&#39;,
+    &#39;levelname&#39;: lambda record: {&#39;DEBUG&#39;: &#39;gray&#39;,
+                                 &#39;INFO&#39; : &#39;green&#39;,
+                                 &#39;WARNING&#39;: &#39;orange&#39;}[record.levelname]
+}
+{% endhighlight %}
+也就是颜色表的值是一个函数，按照输入来确定颜色，如果这么写，理论上（实际上也是可以实现的）我们甚至可以按照时间的不同来显示不同的颜色
+{% highlight python linenos %}
+colors = {
+    &#39;asctime&#39;: lambda t: &#39;blue&#39; if int(t) % 2 else &#39;red&#39;
+}
+{% endhighlight %}
+效果如图 <img src="/assets/images/log-handler-with-qtextbrowser/asctime-change-color.png" alt="asctime-change-color.png"/></p>
+
+<p>接下来我们来着手重载<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a></p>
+
+<p><a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a>带了一个参数<code>record</code>，保证了是<a href="http://docs.python.org/2/library/logging.html#logging.LogRecord">LogRecord</a>类的实例，我们要格式化的内容就在这个里面。但是我们只是一个formatter，不应该修改这个record，所以我们应该做一个这个record的拷贝，在这个拷贝的基础上，我们再来格式化log信息。
+{% highlight python linenos %}
+def format(self, record):
+    <em>r = makeLogRecord(record.</em><em>dict</em>_)
+{% endhighlight %}
+其中<code>makeLogRecord</code>函数是我在logging库的源码里找到的，manual里好像没记录这个东西。</p>
+
+<p>接下来根据<code>colors</code>表来格式化各个项目，需要注意的是，我们要对<code>asctime</code>这个项目做特殊处理，因为</p>
+
+<ul>
+<li>首先，<a href="http://docs.python.org/2/library/logging.html#logging.LogRecord">LogRecord</a>对象里面没有<code>asctime</code>这个属性，但是为了跟格式化字符串<code>fmt</code>保持一致的关键字，我还是决定继续用<code>asctime</code></li>
+<li>其次，超类里的<code>format</code>方法会自己调用<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.formatTime">formatTime()</a>，然后我们对<code>asctime</code>做的颜色格式化就被覆盖了</li>
+</ul>
+
+<p>所以基本上来说，因为<code>asctime</code>的原因，我们不能简单地按项目格式化他们的颜色之后简单的调用<code>super(ColoredFormatter, self).format(_r)</code>了。代码如下
+{% highlight python linenos %}
+    for item in self.colors:
+        if item == &#39;asctime&#39;:
+            info = self.formatTime(<em>r, self.datefmt)
+        else:
+            info = _r.</em><em>getattribute</em><em>(item)
+        _r.</em><em>setattr</em>_(item,
+                       &#39;<font color=%s>%s</font>&#39; % (
+                           self.colors<a href="_r">item</a>,
+                           info
+                       ))
+    _r.message = _r.getMessage()</p>
+
+<pre><code>if self.usesTime() and not &#39;asctime&#39; in self.colors:
+    _r.asctime = self.formatTime(record, self.datefmt)
+
+return self._fmt % _r.__dict__
+</code></pre>
+
+<p>{% endhighlight %}</p>
+
+<p><code>for</code>后面那一段基本上按照<a href="http://docs.python.org/2/library/logging.html#logging.Formatter.format"><code>Formatter.format()</code></a>的源码写的，但是为了简单没有照抄后面关于异常的格式化。</p>
+
+<h2>连接python中的<a href="http://docs.python.org/2/library/logging.html#logging.Logger">logging.Logger</a>和Qt中的<a href="http://qt-project.org/doc/qt-4.8/qtextedit.html">QTextBrowser</a></h2>
+
+<p>上面介绍了在log信息格式化中插一手的方法，现在介绍在log信息传播中插一手的方法。</p>
+
+<p>使用<a href="http://docs.python.org/2/library/logging.html#handler-objects">logging.Handler</a>来实现log信息转播到Qt中的控件中，具体方法是实现<a href="http://docs.python.org/2/library/logging.html#handler-objects">Handler</a>的子类。
+实现这个子类很简单，只需要实现一个方法<a href="http://docs.python.org/2/library/logging.html#logging.Handler.emit"><code>Handler.emit()</code></a>，在这个方法中写操作[<code>QTextBrowser</code>]的相关代码。为了实现线程安全，我们需要利用Qt的信号/槽机制（这个机制天生就是线程安全的），但是[<code>QTextBrowser</code>]并没有提供添加信息的信号供我们发射，只提供了一个槽。所以我们得自己做一个信号
+{% highlight python linenos %}
+def append_to_widget(widget, s):
+    widget.append(s)
+{% endhighlight %}</p>
+
+<p>然后Handler的子类代码如下
+{% highlight python linenos %}
+class LoggerHandler(Handler):
+    def <strong>init</strong>(self, logger<em>widget):
+        self.logger_widget = logger_widget
+        super(LoggerHandler, self).</em><em>init</em>_()</p>
+
+<pre><code>def emit(self, record):
+    self.logger_widget.emit(SIGNAL(&#39;new_log(QString)&#39;),
+                            QString(self.format(record).decode(&#39;utf-8&#39;)))
+</code></pre>
+
+<p>{% endhighlight %}</p>
+
+<p>然后配置代码如下
+{% highlight python linenos %}
+logger = Logger(<strong>name</strong>)</p>
+
+<p>handler = LoggerHandler(text_browser)
+handler.setFormatter(ColoredFormatter(
+    fmt=&#39;%(asctime)s %(levelname)s %(message)s&#39;,
+    datefmt=&#39;%m/%dT%H:%M:%S&#39;,
+    colors={&#39;asctime&#39;: lambda _: &#39;blue&#39;,
+            &#39;levelname&#39;: lambda record:
+                ColoredFormatter.gen_colorscheme()[record.levelname]}
+))</p>
+
+<p>logger.addHandler(handler)</p>
+
+<p>text_browser.connect(text_browser,
+                     SIGNAL(&#39;new_log(QString)&#39;),
+                     lambda log: append_to_widget(text_browser, log))
+{% endhighlight %}</p>
+
+<p>其中<code>ColoredFormatter.gen_colorscheme()</code>是我另外写的一个convenience函数，就是返回了一个默认的字典罢了，不多说。</p>
+
+<p>测试代码
+{% highlight python linenos %}
+logger.debug(&#39;debug&#39;)
+logger.info(&#39;info&#39;)
+logger.warning(&#39;warning&#39;)
+logger.error(&#39;error&#39;)
+logger.critical(&#39;critical&#39;)
+{% endhighlight %}</p>
+
+<p>最终效果如图 <img src="/assets/images/log-handler-with-qtextbrowser/final.png" alt="final.png"/></p>
+
+<h2>扩展阅读</h2>
+
+<ul>
+<li><a href="http://docs.python.org/2/howto/logging.html#logging-basic-tutorial">基础的logging教程</a></li>
+<li><a href="http://docs.python.org/2/library/logging.handlers.html#module-logging.handlers">Python内置的handler，壮哉我大Python Stdlib</a></li>
+<li><a href="http://docs.python.org/2/howto/logging-cookbook.html#logging-cookbook">Logging Cookbook</a></li>
+</ul>
+
+</body>
+
+</html>
+

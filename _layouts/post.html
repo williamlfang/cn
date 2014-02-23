@@ -2,72 +2,26 @@
 layout: default
 ---
 
-
-<head>
-<!--=================================================================== -->
-<!-- mathjax config similar to math.stackexchange -->
-<style TYPE="text/css"> /*以下为数学格式*/
-/* code.has-jax {font: inherit; font-size: 200%; background: inherit; border: inherit;}*/
- body {font-family: "Georgia"; } /* Palatino */
- h1, h2 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;} /*font-family: Century Gothic; color: #3C5084;*/
- h3 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;} /*font-family: Century Gothic; color: #6076B4*/
- h4 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;color: #6076B4;}
-/*code {font-family: Inconsolata;}*/
- p {text-align:left;} */             /* TEXT ALIGHT: */
-.hidden {display: none;}
-.newpage {page-break-before:always;}
-/*pre {padding: 10px; margin-left: 100px; margin-right: 100px; background: #EEEEEE;}*/
-@media print {h2 {page-break-before:always;}}
-/* TODO: use Google Web Fonts to ensure Palatino, Century Gothic and Inconsolata are installed and used */
-</style>
-<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [ ['$$', '$$']],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
-    },
-    /*   方程编号 */
-    TeX: {
-            equationNumbers: {
-                autoNumber: ["AMS"],
-                useLabelIds: true
-            }
-        },
-        "HTML-CSS": {
-            linebreaks: {
-                automatic: true
-            },
-            scale: 100      /* 数学字体大小*/
-        },
-        SVG: {
-            linebreaks: {
-                automatic: true
-            }
-        }
-        /*   方程编号 */
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
-</script>
-<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
-<!-- CDN upload request sent in private mail to generated-toc author -->
-<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
-<!--=================================================================== -->
-</head>
-
 <section class="post">
+{% if page.categories %}
+<span class="categories">
+  in category
+  {% for cat in page.categories %}
+  <a href="/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
+  {% endfor %}
+</span>
+{% endif %}
+{% if page.tags %}
+<span class="tags">
+  ( tagged with 
+  {% for tag in page.tags %}
+  <a href="/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+  {% endfor %})
+</span>
+{% endif %}
 {{ content }}
 </section>
 <section class="meta">
-
 
 <br/>
 <br/>
@@ -76,46 +30,21 @@ MathJax.Hub.Queue(function() {
 	&nbsp;&nbsp;&nbsp;
 	<a {% if page.next %} href="{{ site.url }}{{ page.next.url }}" class="pageNav"{% endif %} {% unless page.next %} class="pageNavInvalid" {% endunless %} >Next</a>
 </span>
-<hr> 
+<hr>
 <span class="author">
-  <a href="http://williamlfang.github.com">{{ site.author }}</a>
+  <a href="http://mad4alcohol.github.com">{{ site.author }}</a>
 </span>
 <span class="time">
   /
-<time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time> 
+  <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time>
 </span>
 <br />
 <span class="license">
   Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
 </span>
-{% if page.categories %}
-<span class="categories">
-  in categories
-  {% for cat in page.categories %}
-  <a href="/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>&nbsp;
-  {% endfor %}
-</span>
-{% endif %}
-{% if page.tags %}
-<span class="tags">
-  tagged with 
-  {% for tag in page.tags %}
-  <a href="/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>&nbsp;
-  {% endfor %}
-</span>
-{% endif %}
 </section>
-
-
-
-<!-- {% include toc.html %}       <!-- Table of Content-->
-<div  style="position: fixed; top: 99px; width: 180px; text-align: left;  display:block;margin-left:750px;margin-top:10px;padding:4px 0 4px 10px;border-top:3px solid #91895b;border-left:3px solid #91895b;border-bottom:3px solid #91895b;padding:20x;font-size:13px;line-height: 15px;background-color:#ffffff;">
-{% include toc.html %} 
-</div>
-
 {% include comments.md %}
-
-
+<!--
 <script type="text/javascript">
 $(function(){
   $(document).keydown(function(e) {
@@ -136,5 +65,5 @@ $(function(){
   });
 })
 </script>
-
+-->
 

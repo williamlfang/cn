@@ -1,9 +1,16 @@
-markdown: rdiscount
+markdown: kramdown
 permalink: /:year/:month/:day/:title/
-url: http://mad4alcohol.github.io
-author: 陈
+url: http://williamlfang.github.com/cn
+author: William Fang
 pygments: true
-safe: false
-paginate: 16
 auto: true
+safe: true
+paginate: 10
+
+web: williamlfang.github.com
+qq: 564985882
+email: william.lian.fang@gmail.com
+duoshuo: 夏石
+weibo: 夏石_will
+github: williamlfang
 

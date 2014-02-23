@@ -2,184 +2,411 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="William Fang" />
-    <title>在 Virutalbox 环境下安装虚拟机 | William Fang</title>
+    <meta name="author" content="陈" />
+    <!--   <title>在 Virutalbox 环境下安装虚拟机 | 陈</title>    -->
+    <title>在 Virutalbox 环境下安装虚拟机 | 陈</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
     <link rel="shortcut icon" href="/favicon.ico">
-    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
-    <link rel="stylesheet" href="/media/css/style.css">
-    <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="陈" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://mad4alcohol.github.io/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
     <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="/media/js/outliner.js"></script>
-  </head>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<!-- <script type="text/javascript" src="/media/js/outliner.js"></script> -->
+<!--=================================================================== -->
   <script type="text/javascript">
     function setTimeSpan(){
-    	var date = new Date();
-    	timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
     }
     
     Date.prototype.format = function(format)
-		{
+    {
     var o =
-    	{
-    	    "M+" : this.getMonth()+1, //month
-    	    "d+" : this.getDate(),    //day
-    	    "h+" : this.getHours(),   //hour
-    	    "m+" : this.getMinutes(), //minute
-    	    "s+" : this.getSeconds(), //second
-    	    "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
-    	    "S" : this.getMilliseconds() //millisecond
-    	}
-    	if(/(y+)/.test(format))
-    	format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
-    	for(var k in o)
-    	if(new RegExp("("+ k +")").test(format))
-    	format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
-    	return format;
-		}
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
   </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+ 
+<!-- CDN upload request sent in private mail to generated-toc author -->
+
+ </head>
+
   <body onLoad="setInterval(setTimeSpan,1000);">
     <div id="container">
       <div id="main" role="main">
         <header>
         <h1>在 Virutalbox 环境下安装虚拟机</h1>
         </header>
-        <nav id="real_nav">
-        <span><a title="home page" class="" href="/">Home</a></span>
-        <span><a title="about" class="" href="/about/">About</a></span>
-        <span><a title="categories" class="" href="/categories/">Categories</a></span>
-        <span><a title="tags" class="" href="/tags/">Tags</a></span>
-        <!--<span><a title="links" class="" href="/links/">Links</a></span> -->
+        <nav id="real_nav" style="position: fixed;">
+        <span><a title="home page" class="" href="http://mad4alcohol.github.io/">home</a></span>
+        <span><a title="about" class="" href="http://mad4alcohol.github.io/about/">about</a></span>
+        <span><a title="publication" class="" href="http://mad4alcohol.github.io/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://mad4alcohol.github.io/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://mad4alcohol.github.io/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://mad4alcohol.github.io/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://mad4alcohol.github.io/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://mad4alcohol.github.io/contact/">contact</a></span>
+      <!-- <span><a title="links" class="" href="http://mad4alcohol.github.io/links/">links</a></span> -->
+       <span><a title="links" class="" href="http://mad4alcohol.github.io/links/">links</a></span>
+        <!--  <span><a title="links" class="" href="http://mad4alcohol.github.io/journey/">journey</a></span>  -->
+        <span><a title="subscribe by RSS" class="" href="http://mad4alcohol.github.io/feed/">subscribe</a></span>
         </nav>
         <article class="content">
-        <section class="post">
+        <head>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
+<style TYPE="text/css"> /*以下为数学格式*/
+/* code.has-jax {font: inherit; font-size: 200%; background: inherit; border: inherit;}*/
+ body {font-family: "Georgia"; } /* Palatino */
+ h1, h2 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;} /*font-family: Century Gothic; color: #3C5084;*/
+ h3 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;} /*font-family: Century Gothic; color: #6076B4*/
+ h4 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;color: #6076B4;}
+/*code {font-family: Inconsolata;}*/
+ p {text-align:left;} */             /* TEXT ALIGHT: */
+.hidden {display: none;}
+.newpage {page-break-before:always;}
+/*pre {padding: 10px; margin-left: 100px; margin-right: 100px; background: #EEEEEE;}*/
+@media print {h2 {page-break-before:always;}}
+/* TODO: use Google Web Fonts to ensure Palatino, Century Gothic and Inconsolata are installed and used */
+</style>
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 100      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
+});
 
-<span class="categories">
-  in category
-  
-  <a href="/categories/#Tech" title="Tech">Tech</a>
-  
-</span>
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+<!--=================================================================== -->
+</head>
 
-
-<span class="tags">
-  ( tagged with 
-  
-  <a href="/tags/#Linux" title="Linux">Linux</a>
-  
-  <a href="/tags/#Virtualbox" title="Virtualbox">Virtualbox</a>
-  )
-</span>
-
+<section class="post">
 <p>我现在的系统是 Linux Mint 16 (Petra,KDE),在开源社区有提供众多的软件,基本上能够满足工作和学习的需要.不过,对于在国内环境下,有些商业软件并不提供 Linux 支持,比如,我现在使用的招行网银U盾,不能在 Linux 下读取,再比如,厦大图书馆提供的远程访问数据库iReader,只能在window操作系统下使用.</p>
 
-<h2 id="linux--windows-">Linux 下安装 Windows 软件</h2>
+<h2>Linux 下安装 Windows 软件</h2>
 
 <p>对于此类的问题,目前有两种解决方法:</p>
 
 <ol>
-  <li>在 Linux 系统中安装 wine,从而可以安装大部分的软件,如QQ等.
-    <ul>
-      <li>优点:占用的CPU资源少,不影响系统的运行速度</li>
-      <li>缺点:设置麻烦,尤其是中文的设置基本是要人命的.典型的就是ireader不能运行.而且还需要相应的安装在 Linux 下的配套软件.</li>
-    </ul>
-  </li>
-  <li>另外一种就是我要介绍的方法:在 Linux 下使用虚拟机安装 Windows 操作系统,在其上面运行软件.
-    <ul>
-      <li>优点:一劳永逸,简单方便</li>
-      <li>缺点:由于虚拟机需要固定的分配内存和硬盘空间,会大大的降低系统的运行速度.</li>
-    </ul>
-  </li>
+<li><p>在 Linux 系统中安装 wine,从而可以安装大部分的软件,如QQ等.</p>
+
+<ul>
+<li>优点:占用的CPU资源少,不影响系统的运行速度</li>
+<li>缺点:设置麻烦,尤其是中文的设置基本是要人命的.典型的就是ireader不能运行.而且还需要相应的安装在 Linux 下的配套软件.</li>
+</ul>
+</li>
+<li><p>另外一种就是我要介绍的方法:在 Linux 下使用虚拟机安装 Windows 操作系统,在其上面运行软件.</p>
+
+<ul>
+<li>优点:一劳永逸,简单方便</li>
+<li>缺点:由于虚拟机需要固定的分配内存和硬盘空间,会大大的降低系统的运行速度.</li>
+</ul>
+</li>
 </ol>
+
 
 <p>不过,就目前的笔记本硬件配置来看,一般的内存是4G的,处理器在i3以上,硬盘在500G.在 Linux 下利用虚拟机安装 Windows 系统基本上不会有太大的影响.就本人目前的使用情况来看,效果还是可以接受的.</p>
 
 <p>下面就简单介绍一下我的安装经验.</p>
 
-<h2 id="virtualbox">安装 Virtualbox</h2>
+<h2>安装 Virtualbox</h2>
 
 <p>首先是从网站下载 <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a>,这个是 deb 格式的,可以直接点击安装即可.需要 \root 权限.输入密码即可.</p>
 
 <p>然后在终端输入 virtualbox 打开.</p>
 
 <ol>
-  <li>点击”新建”一个虚拟机,设置虚拟机名称,并选择相应的操作系统.这个其实意义不大,主要 virtualbox 会根据相应的操作系统分配默认的内存和硬盘空间.
+<li>点击"新建"一个虚拟机,设置虚拟机名称,并选择相应的操作系统.这个其实意义不大,主要 virtualbox 会根据相应的操作系统分配默认的内存和硬盘空间.
 <img src="/assets/virtualbox/vb01.png" alt="vb01" />
 <img src="/assets/virtualbox/vb02.png" alt="vb02" />
 <img src="/assets/virtualbox/vb03.png" alt="vb03" /></li>
-  <li>也就是上一步骤的延续,设定内存大小.建议给主机留多一些内存以加快主机的运行速度.
+<li>也就是上一步骤的延续,设定内存大小.建议给主机留多一些内存以加快主机的运行速度.
 <img src="/files/virtualbox/vb04.png" alt="vb04" /></li>
-  <li>点击”创建”开始建立一个虚拟机.
+<li>点击"创建"开始建立一个虚拟机.
 <img src="/files/virtualbox/vb05.png" alt="vb05" /></li>
-  <li>如果不知道虚拟硬盘的文件类型,那就选择默认的”VDI”,点击”下一步”继续.
+<li>如果不知道虚拟硬盘的文件类型,那就选择默认的"VDI",点击"下一步"继续.
 <img src="/files/virtualbox/vb06.png" alt="vb06" /></li>
-  <li>分配虚拟机的硬盘大小,有两种选择
+<li>分配虚拟机的硬盘大小,有两种选择
 <img src="/files/virtualbox/vb07.png" alt="vb07" />
-    <ul>
-      <li>动态分配,默认选择,前期不怎么占用硬盘,后面会随着需要而增加.比较适用于硬盘存储比较小的计算机.</li>
-      <li>固定大小,这个会占用主机硬盘空间.</li>
-    </ul>
-  </li>
-  <li>选择需要将虚拟机建立在那个文件夹下面.视个人情况而定.我一般是建立在 /home
+
+<ul>
+<li>动态分配,默认选择,前期不怎么占用硬盘,后面会随着需要而增加.比较适用于硬盘存储比较小的计算机.</li>
+<li>固定大小,这个会占用主机硬盘空间.</li>
+</ul>
+</li>
+<li>选择需要将虚拟机建立在那个文件夹下面.视个人情况而定.我一般是建立在 /home
 <img src="/files/virtualbox/vb08.png" alt="vb08" /></li>
-  <li>该页面显示已经成功的建立起来一个虚拟机,在上面有对应的配置.这个可以通过设置来更改.
+<li>该页面显示已经成功的建立起来一个虚拟机,在上面有对应的配置.这个可以通过设置来更改.
 <img src="/files/virtualbox/vb09.png" alt="vb09" /></li>
-  <li>为了在虚拟机上面安装 Windows 系统,需要点击”设置”,找到”存储”里面的”分配光驱”,然后选择移动硬盘上的 Windows 7 iso.
+<li>为了在虚拟机上面安装 Windows 系统,需要点击"设置",找到"存储"里面的"分配光驱",然后选择移动硬盘上的 Windows 7 iso.
 <img src="/files/virtualbox/vb10.png" alt="vb010" /></li>
-  <li>设置完成后的页面.点击”启动”开始安装系统.
+<li>设置完成后的页面.点击"启动"开始安装系统.
 <img src="/files/virtualbox/vb16.png" alt="vb016" /></li>
-  <li>普通的 Windows 7 安装过程.
+<li>普通的 Windows 7 安装过程.
 <img src="/files/virtualbox/vb11.png" alt="vb011" /></li>
-  <li>成功安装系统,开始启动.
+<li>成功安装系统,开始启动.
 <img src="/files/virtualbox/vb12.png" alt="vb012" />
 <img src="/files/virtualbox/vb13.png" alt="vb013" /></li>
-  <li>在虚拟机上面的 Win 7 找到 Cd 光驱,点击打开安装扩展应用,期间会重启一次.进入之后可以看到整个 Win 7 的完整系统.
+<li>在虚拟机上面的 Win 7 找到 Cd 光驱,点击打开安装扩展应用,期间会重启一次.进入之后可以看到整个 Win 7 的完整系统.
 <img src="/files/virtualbox/vb14.png" alt="vb14" /></li>
-  <li>设置”共享文件夹”,以实现在主机和虚拟机之间的文件传输.
+<li>设置"共享文件夹",以实现在主机和虚拟机之间的文件传输.
 <img src="/files/virtualbox/vb15.png" alt="vb15" /></li>
 </ol>
 
-<h2 id="virtualbox--usb">Virtualbox 识别 USB</h2>
+
+<h2>Virtualbox 识别 USB</h2>
 
 <p>为了能够在主机与虚拟机之间相互使用USB,还需有做如下的设置.</p>
 
-<blockquote>
-  <ul>
-    <li>由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,<a href="https://www.virtualbox.org/wiki/Downloads">Extention pack</a>.下载完成后点击安装即可.然后重启 virtualbox.   <br /></li>
-    <li>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:   <br />
-  sudo addgroup wiliam vboxusers  <br /></li>
-    <li>接着做一下设置:    <br />
-      <ul>
-        <li>打开virtualbox,但事先不启动虚拟机.找到”设置”中的”USB设备”,点击右边的”+”以添加USB  <br /></li>
-        <li>重启主机,启动虚拟机后就可以通过右下角的USB符号添加.如果不用的话,也可以点击推出.</li>
-      </ul>
-    </li>
-  </ul>
-</blockquote>
+<blockquote><ul>
+<li>由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,<a href="https://www.virtualbox.org/wiki/Downloads">Extention pack</a>.下载完成后点击安装即可.然后重启 virtualbox.   <br></li>
+<li>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:   <br>
+  sudo addgroup wiliam vboxusers  <br></li>
+<li>接着做一下设置:    <br>
 
+<ul>
+<li>打开virtualbox,但事先不启动虚拟机.找到"设置"中的"USB设备",点击右边的"+"以添加USB  <br></li>
+<li>重启主机,启动虚拟机后就可以通过右下角的USB符号添加.如果不用的话,也可以点击推出.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
 
 </section>
 <section class="meta">
 
+
 <br/>
 <br/>
 <span>
-	<a  href="http://williamlfang.github.com/cn/2014/01/03/github-jekyll/" class="pageNav"  >Previous</a>
+	<a  href="http://mad4alcohol.github.io/2014/01/03/github-jekyll/" class="pageNav"  >Previous</a>
 	&nbsp;&nbsp;&nbsp;
-	<a  href="http://williamlfang.github.com/cn/2014/01/05/goagent/" class="pageNav"  >Next</a>
+	<a  href="http://mad4alcohol.github.io/2014/01/05/goagent/" class="pageNav"  >Next</a>
 </span>
-<hr>
+<hr> 
 <span class="author">
-  <a href="http://mad4alcohol.github.com">William Fang</a>
+  <a href="http://williamlfang.github.com">陈</a>
 </span>
 <span class="time">
   /
-  <time datetime="2014-01-04">2014-01-04</time>
+<time datetime="2014-01-04">2014-01-04</time> 
 </span>
 <br />
 <span class="license">
   Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
 </span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Tech" title="Tech">Tech</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#Linux" title="Linux">Linux</a>&nbsp;
+  
+  <a href="/tags/#Virtualbox" title="Virtualbox">Virtualbox</a>&nbsp;
+  
+</span>
+
 </section>
+
+
+
+<!-- <script>
+// https://github.com/ghiculescu/jekyll-table-of-contents
+$(document).ready(function() {
+  var no_back_to_top_links = false
+
+  var headers = $('h1, h2, h3, h4, h5, h6').filter(function() {return this.id}), // get all headers with an ID
+      output = $('.toc');
+  if (!headers.length || headers.length < 3 || !output.length)
+    return;
+
+  var get_level = function(ele) { return parseInt(ele.nodeName.replace("H", ""), 10) }
+  var highest_level = headers.map(function(_, ele) { return get_level(ele) }).get().sort()[0]
+  // var return_to_top = '<i class="icon-arrow-up back-to-top"> ^ </i>'
+  var return_to_top = ''
+
+  var level = get_level(headers[0]), this_level, html = "<i></i> <ol>";
+  headers.on('click', function() {
+    if (!no_back_to_top_links) window.location.hash = this.id
+  }).addClass('clickable-header').each(function(_, header) {
+    this_level = get_level(header);
+    if (!no_back_to_top_links && this_level === highest_level) {
+      $(header).addClass('top-level-header').after(return_to_top)
+    }
+    if (this_level === level) // same level as before; same indenting
+      html += "<li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level < level) // higher level than before; end parent ol
+      html += "</li></ol></li><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level > level) // lower level than before; expand the previous to contain a ol
+      html += "<ol><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    level = this_level; // update for the next one
+  });
+  html += "</ol>";
+  if (!no_back_to_top_links) {
+    $(document).on('click', '.back-to-top', function() {
+      $(window).scrollTop(0)
+      window.location.hash = ''
+    })
+  }
+  output.hide().html(html).show('slow');
+});
+</script>
+<div class="toc"></div>
+       <!-- Table of Content-->
+<div  style="position: fixed; top: 99px; width: 180px; text-align: left;  display:block;margin-left:750px;margin-top:10px;padding:4px 0 4px 10px;border-top:3px solid #91895b;border-left:3px solid #91895b;border-bottom:3px solid #91895b;padding:20x;font-size:13px;line-height: 15px;background-color:#ffffff;">
+<script>
+// https://github.com/ghiculescu/jekyll-table-of-contents
+$(document).ready(function() {
+  var no_back_to_top_links = false
+
+  var headers = $('h1, h2, h3, h4, h5, h6').filter(function() {return this.id}), // get all headers with an ID
+      output = $('.toc');
+  if (!headers.length || headers.length < 3 || !output.length)
+    return;
+
+  var get_level = function(ele) { return parseInt(ele.nodeName.replace("H", ""), 10) }
+  var highest_level = headers.map(function(_, ele) { return get_level(ele) }).get().sort()[0]
+  // var return_to_top = '<i class="icon-arrow-up back-to-top"> ^ </i>'
+  var return_to_top = ''
+
+  var level = get_level(headers[0]), this_level, html = "<i></i> <ol>";
+  headers.on('click', function() {
+    if (!no_back_to_top_links) window.location.hash = this.id
+  }).addClass('clickable-header').each(function(_, header) {
+    this_level = get_level(header);
+    if (!no_back_to_top_links && this_level === highest_level) {
+      $(header).addClass('top-level-header').after(return_to_top)
+    }
+    if (this_level === level) // same level as before; same indenting
+      html += "<li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level < level) // higher level than before; end parent ol
+      html += "</li></ol></li><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level > level) // lower level than before; expand the previous to contain a ol
+      html += "<ol><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    level = this_level; // update for the next one
+  });
+  html += "</ol>";
+  if (!no_back_to_top_links) {
+    $(document).on('click', '.back-to-top', function() {
+      $(window).scrollTop(0)
+      window.location.hash = ''
+    })
+  }
+  output.hide().html(html).show('slow');
+});
+</script>
+<div class="toc"></div>
+ 
+</div>
+
 <!-- Duoshuo Comment BEGIN -->
 	<div class="ds-thread"></div>
 	<script type="text/javascript">
@@ -195,19 +422,20 @@
 	</script>
 <!-- Duoshuo Comment END -->
 
-<!--
+
+
 <script type="text/javascript">
 $(function(){
   $(document).keydown(function(e) {
     var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow and J
             
-        url = 'http://williamlfang.github.com/cn/2014/01/03/github-jekyll/';
+        url = 'http://mad4alcohol.github.io/2014/01/03/github-jekyll/';
         
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             
-        url = 'http://williamlfang.github.com/cn/2014/01/05/goagent/';
+        url = 'http://mad4alcohol.github.io/2014/01/05/goagent/';
         
         }
         if (url) {
@@ -216,20 +444,25 @@ $(function(){
   });
 })
 </script>
--->
+
 
 
         </article>
-        <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
             <img src="/assets/images/btt.png" />
-        </a> 
+          </a>      
+        -->  
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
       </div>
 
-    <footer>
-    <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a> | Copyright 2012 - 2014 by <a href="/about/">William Fang</a> | <span class="label label-info" id="timeSpan"></span></small></p>
-    </footer>
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-02-23 12:49:55</span></small></p>
+</footer>
 
-    </div>
+  </div>
 
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -241,5 +474,6 @@ $(function(){
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
+
   </body>
 </html>

@@ -30,14 +30,18 @@ outline-offset:-2px;
 a:hover,a:active {
 outline:0;
 }
-
+/*  img -----------------------------------------------------------------------------------------------------*/
 img {
 max-width:100%;
 height:auto;
 border:0;
 -ms-interpolation-mode:bicubic;
+/*
 -webkit-border-radius:4px;
 -moz-border-radius:4px;
+*/
+-webkit-box-shadow:2px 2px 100px #06C; /*#06C;*/
+-moz-box-shadow:2px 2px 100px #06C;
 border-radius:4px;
 }
 
@@ -47,9 +51,14 @@ display:block;
 margin-left:auto;
 margin-right:auto;
 border:4px solid #FFF;
+-webkit-box-shadow:2px 2px 100px #06C; /*#06C;*/
+-moz-box-shadow:2px 2px 100px #06C;
+/* shadow 
 -webkit-box-shadow:0 1px 3px #ccc;
 -moz-box-shadow:0 1px 3px #ccc;
+*/
 }
+/*  img -----------------------------------------------------------------------------------------------------*/
 
 body {
 font-family:Galdeano,"Hiragino Sans GB","Microsoft YaHei",Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
@@ -491,3 +500,7 @@ float:left;
 .pager .next a,.pull-right {
 float:right;
 }
+
+
+<!-- =============================================================== -->
+<!-- =============================================================== -->

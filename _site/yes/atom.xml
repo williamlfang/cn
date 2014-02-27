@@ -4,13 +4,30 @@
  <title>方莲 | William</title>
  <link href="http://williamlfang.github.com/cn/" rel="self"/>
  <link href="http://williamlfang.github.com/cn"/>
- <updated>2014-02-28T03:45:30+08:00</updated>
+ <updated>2014-02-28T03:55:45+08:00</updated>
  <id>http://williamlfang.github.com/cn</id>
  <author>
    <name>william</name>
    <email>william.lian.fang@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>入手NEXUS7 二代</title>
+   <link href="http://williamlfang.github.com/cn/2014/02/23/nexus-7-two/"/>
+   <updated>2014-02-23T22:02:52+08:00</updated>
+   <id>http://williamlfang.github.com/cn/2014/02/23/nexus-7-two</id>
+   <content type="html">&lt;p&gt;开学前在V2EX上看到有人求购NEXUS7二代，自己也有点心动，便在回复里找到一个靠谱的，发邮件联系，1000元顺利买到，16G Wi-Fi版本。&lt;br /&gt;
+&lt;a href=&quot;http://ww1.sinaimg.cn/large/4eda25f5gw1edtnv1zybuj20dw0afabx.jpg&quot;&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/bmiddle/4eda25f5gw1edtnv1zybuj20dw0afabx.jpg&quot; alt=&quot;Nexus7&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- more --&gt;
+&lt;p&gt;拿到手打开看成色，很满意，基本可以说是95新。卖家是一个在豆瓣工作的人，猜测是比较文艺的人，机子也会保护的不错，所以才敢大胆下手的。&lt;/p&gt;
+
+&lt;p&gt;拿到手刷机肯定必须的，但是CM汉化的不完全，有点小强迫症，感觉不舒服。就去刷了魔趣的ROM（&lt;a href=&quot;http://download.mfunz.com/?device=flo&quot;&gt;传送门&lt;/a&gt;）,用着很不错。 魔趣是一个开源的ROM,类似于CM，不过是国内开发者。&lt;/p&gt;
+
+&lt;p&gt;原来的酷派5930太卡了，现在可以把里边的应用搬到平板上边了，手机就留着打电话，发短信、微信，聊QQ吧。电子书阅读也搬到平板上边了，搭配多看读电子书很舒服，再也不用担心在手机上看PDF滑来滑去了。&lt;/p&gt;
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
+ </entry>
  
  <entry>
    <title>诸多事情</title>
@@ -64,7 +81,7 @@
 &lt;!-- more --&gt;
 
 &lt;p&gt;首先来一个「全家福」吧。
-&lt;a href=&quot;/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg&quot; alt=&quot;the fed&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;img src=&quot;/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg&quot; alt=&quot;the fed&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;文章谈到了对美联储决策有重要影响的几位「高官」的学历背景。目前新晋美联储主席的耶伦（Yellen）拥有 Yale 经济学博士学历，其在学术界有颇有建树。而那些身处高职的几位委员会成员（&lt;strong&gt;FOMC&lt;/strong&gt;）均配有经济学博士学位，如 Stanley Fischer 就是前 &lt;strong&gt;IMF&lt;/strong&gt; 的首席经济学家 [^1] 。而如果从历史的纵向来看，这个趋势就更加明显了：沃尔克当时还只是经济学硕士，到了格林斯潘后来获得博士学位，而前任伯南克就已经是一名正式的大学（宏观）经济学教授了。Blinder 是原 &lt;strong&gt;FOMC&lt;/strong&gt; 委员，他对 &lt;strong&gt;Fed&lt;/strong&gt; 的历史颇有研究，宣称：&lt;/p&gt;
 
@@ -107,7 +124,7 @@
 &lt;!-- more --&gt;
 
 &lt;p&gt;首先来一个「全家福」吧。
-&lt;img src=&quot;/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg&quot; alt=&quot;the fed&quot; /&gt;&lt;/p&gt;
+&lt;a href=&quot;/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg&quot; alt=&quot;the fed&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;文章谈到了对美联储决策有重要影响的几位「高官」的学历背景。目前新晋美联储主席的耶伦（Yellen）拥有 Yale 经济学博士学历，其在学术界有颇有建树。而那些身处高职的几位委员会成员（&lt;strong&gt;FOMC&lt;/strong&gt;）均配有经济学博士学位，如 Stanley Fischer 就是前 &lt;strong&gt;IMF&lt;/strong&gt; 的首席经济学家 [^1] 。而如果从历史的纵向来看，这个趋势就更加明显了：沃尔克当时还只是经济学硕士，到了格林斯潘后来获得博士学位，而前任伯南克就已经是一名正式的大学（宏观）经济学教授了。Blinder 是原 &lt;strong&gt;FOMC&lt;/strong&gt; 委员，他对 &lt;strong&gt;Fed&lt;/strong&gt; 的历史颇有研究，宣称：&lt;/p&gt;
 
@@ -141,6 +158,45 @@
  </entry>
  
  <entry>
+   <title>祝大家新年快乐</title>
+   <link href="http://williamlfang.github.com/cn/2014/01/31/happy-chinese-year-2014/"/>
+   <updated>2014-01-31T10:11:33+08:00</updated>
+   <id>http://williamlfang.github.com/cn/2014/01/31/happy-chinese-year-2014</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;祝大家在新的一年里写代码没有BUG，事事顺心。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;!-- more --&gt;
+&lt;p&gt;昨晚给in笔记的所有评论者用插件群发了一封邮件。但是Lifememory Memory是读者却没有办法拿出邮件列表，后来想到了多说，导出评论的备份，然后用python提取出来邮箱地址。  扔一个Gists，需要的朋友自己拿。https://gist.github.com/ccbikai/8725349&lt;br /&gt;
+&lt;a href=&quot;http://ww1.sinaimg.cn/large/4eda25f5jw1ed20ekrnetj20hs0hs78u.jpg&quot;&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/bmiddle/4eda25f5jw1ed20ekrnetj20hs0hs78u.jpg&quot; alt=&quot;多说&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;邮件发送用的是sendcloud和mailgun,sendcloud一个账号每天可以发生300封，然后mailgun，每个域名可以发送300封。不过sendcloud在国内的到达率高，毕竟是国内的公司。&lt;/p&gt;
+
+&lt;p&gt;邮件发送时候做错两件事，一是in笔记和Life Memory的前300封邮件没有留博客地址，可能让大家都不知道是谁。还有一个严重的是，对mailgun不熟悉，不知道它群发里边会有所有邮箱地址，所以在大家的邮箱收件人里边好多邮箱，泄露了大家的邮箱地址，对大家说声对不起。下次发邮件一定调整代码，一封一封发送。&lt;/p&gt;
+
+&lt;p&gt;还有最近热火的微信红包，我一个都没有收到，难道我微信好友圈都是屌丝？&lt;/p&gt;
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
+ </entry>
+ 
+ <entry>
+   <title>宅</title>
+   <link href="http://williamlfang.github.com/cn/2014/01/28/homebody/"/>
+   <updated>2014-01-28T11:50:17+08:00</updated>
+   <id>http://williamlfang.github.com/cn/2014/01/28/homebody</id>
+   <content type="html">&lt;p&gt;不知不觉，寒假的一半已经过完，看书计划也没有跟得上，而且还给自己挖了好多坑。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+&lt;p&gt;不知道为什么今年寒假不喜欢出门了，几乎也没有找同学去玩，整体宅在家里连门也不出，真是大门不出二门不迈啊。我记得以前假期总爱出去玩了，难道是越长大越孤单了？&lt;/p&gt;
+
+&lt;p&gt;本来计划回家多看看书的，而且还给自己布置了几个任务，可是书看了两天就不看了，然后就玩起了手机。家里没网，所以流量早早就用光了，只能去淘宝买一张流量卡。暑假的时候9G的流量卡只要50多，可是现在过年就要100多了，翻了整整一倍啊。家里边联通的速度还不错，能达250+K/s,感觉已经满足了。可是我手机是电信的，还是没有流量玩。电脑共享了无线网络，但是手机连上就是上不了网，不知道是不是联通网卡的原因。最后尝试了好多方法，用代理的办法解决了。 电脑上装shadowssockes客户端，然后本地的1991端口就是局域网一个代理了，手机上用ProxyDroid连接代理，设置为全局代理，手机就可以上网了。由于电脑的shadowsocke连接的是国外的服务器，手机上直接可以上推了，感觉还挺爽。&lt;/p&gt;
+
+&lt;p&gt;这些天一直在看&lt;a href=&quot;http://www.zhihu.com/people/ccbikai&quot;&gt;知乎&lt;/a&gt;，越看越感到自己知道的少。没事的时候整理了一下RSS订阅，折腾了一下手机，给浏览器多装了几个插件，有时间写出来推荐一下。&lt;/p&gt;
+
+&lt;p&gt;想必好多人过年会被别人喊去修电脑，不想修的，你可以给装了Linux系统，以后再也不会找你修了。&lt;/p&gt;
+
+&lt;p&gt;马上就要过年了，给大家送个春节&lt;a href=&quot;http://www.meiziweibo.com/&quot;&gt;小福利&lt;/a&gt;，记得点赞噢！&lt;/p&gt;
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
+ </entry>
+ 
+ <entry>
    <title>Data Structure</title>
    <link href="http://williamlfang.github.com/cn/2014/01/26/data-structure/"/>
    <updated>2014-01-26T00:00:00+08:00</updated>
@@ -1922,273 +1978,6 @@ plot(density(x))
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/fig1.png&quot; alt=&quot;plot of chunk fig1&quot; /&gt; &lt;/p&gt;
-
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
- </entry>
- 
- <entry>
-   <title>Advanced R Programming</title>
-   <link href="http://williamlfang.github.com/cn/2014/01/20/r-note/"/>
-   <updated>2014-01-20T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/2014/01/20/r-note</id>
-   <content type="html">&lt;p&gt;这个文档记录了我在学习 &lt;a href=&quot;http://had.co.nz/&quot;&gt;Hadley Wickham&lt;/a&gt; 即将出版的新书，&lt;a href=&quot;http://adv-r.had.co.nz/&quot;&gt;Advanced R Programming&lt;/a&gt; 时的一些笔记与总结，以便将来复习查阅。该书博大精深，结构严谨，涵盖面广泛，涉及几乎目前有关「R」的所有问题。从最基础的数据结构开始讲起，然后逐步渐进到如何编写针对问题的 &lt;code&gt;function&lt;/code&gt;，再进阶到如何开发能够发布以供他人使用的 &lt;code&gt;package&lt;/code&gt;。Wickham 本人就是在「R Community」团体中的传奇人物，开发了许多为人称道的宏包，如 &lt;code&gt;ggplot2&lt;/code&gt;等。而本书真是作者在总结了近十年的 「R」软件开发后编写的一本巨著。仔细深入阅读此书必将受益匪浅，极大的提升我们使用与开发「R」的各项技能，真正从最底层去认识「R」这个当今最强大的数据处理、统计分析与图形可视化编程语言。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;正如他自己所说的：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;I have been programming in R for over 10 years, spending a lot of time trying to figure out how the language works. Not everyone has the luxury of spending years to understand a programming language, so this book is my attempt to help you to become an effective R programmer as quickly as possible. By reading this book, you will avoid the many mistakes that I made and the many dead ends that I got stuck in, and quickly navigate your way to useful tools and techniques. Although R has its frustrating quirks, I truly believe that at its heart lies an elegant and beautiful language, well tailored for data analysis and statistics. In this book, I’ll do my best to reveal that language to you, helping you to understand powerful idioms that allow you to attack many types of problems.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;why-r&quot;&gt;Why 「R」&lt;/h2&gt;
-
-&lt;p&gt;对于这个问题的回答，最简短的回答是&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;多学一门编程语言总不会死吧？！！！&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;确实，在当今这个互联网与信息时代，我们的生活与工作与电脑紧密相连、形影不离，如果要想了解这个时代、这个世界，我们首先必须先了解那些控制与主宰了我们生活节奏的「电脑们」是如何「生活」的。进一步说，即那些操控了「电脑们」的&lt;strong&gt;「程序」&lt;/strong&gt;是如何运行的。而所谓的「程序」，终归到底，是「程序语言」（Programming language）。前几年流行的一本「Hakers and Painters」就在序言开宗明义地说：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Everything around us is turning into computers. Your typewriter is gone, replaced by a computer. Your phone has turned into a computer. So has your camera. Soon your Tv will. Your car was not only designed on computers, but has more processing power in it than a room-sized mainframe did in 1970. Letters, encyclopedias, newspapers, and even your local store are being replaced by the Internet.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;因此，我们要想了解世界，就必须先懂得这个世界在说什么（编程）「语言」。所谓「技多不压身」，多学习一门「编程语言」也促使我们从另外一个角度看世界，多一种批判的眼光，多一层思维的觉悟。何乐而不为？&lt;/p&gt;
-
-&lt;p&gt;当然，如果你是首次听说/接触「R」，对这个编程语言一点冲动的想法都没有，那我就需要找各种&lt;em&gt;理由&lt;/em&gt;来劝说你「是时候该学习『R』了」，哪怕是对阅读统计报告的需要。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;注意&lt;/em&gt;：真是下面的几条&lt;em&gt;Reasons&lt;/em&gt;把我拉入了「R」介个广大的「神教」中，有幸或不幸，我也希望你来加入！&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;「R」是处理统计数据与图形可视化的「神器」，能够高效的完成各种数据分析，生成信息充实而页面精美的图形。一方面，我们可是直接使用现今已有的软件包（通过&lt;code&gt;install.packages(&quot;&quot;)&lt;/code&gt;)，涵盖了从基本的统计分析方法，如计算均值，方差分析，到时下最前沿的统计方法，可用于处理有关统计建模、机器学习、大数据管理等问题;另一方面，如果发现现有的软件包不能满足或者不适合手头问题的解决，那么我们还可以自己动手开发。这个特性赋予了「R」强大的处理数据的能力。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;「R」是一款&lt;strong&gt;自由的开源软件体&lt;/strong&gt;。这意味着你有权限去获取、使用、修改甚至是发行任何版本的「R」程序。这一点对于使用&lt;code&gt;Windows&lt;/code&gt;的用户可能不会意识到有多重要，因为在国内的环境中，我们从来都没有关心过一款软件的「版权」问题，心想着反正上网有大量的破解软件可供下载使用。可是对于一个合格的哪怕只是刚入门的「Geek」来说，我已经不能再忍受破解（=盗版=病毒）软件的荼毒。从网上某处下载的软件，总是神乎其神的在某个地方给你添加插件，修改管理者权限，安装不必要也不想要的软件。然后在某天开机之后，屏幕变黑，系统变坏，情绪变糟。&lt;/p&gt;
-
-    &lt;p&gt;后来我开始转移阵地到「Linux」，开始慢慢接触开源项目，才逐渐领会到开源软件带来的自由。比如，我可以从互联网以「正当理由」、「合理方式」获得所需的软件，并能够在尊重原开发者的情况下修改软件，生成「私人定制」，我甚至还可以将其发布到网上供他人使用。涉及到软件的自由是多层次的，其中最基本的一条就是，我可以修改、进一步开发以利解决问题。&lt;/p&gt;
-
-    &lt;p&gt;「R」就是这么一个软件，她给你所需，为你所用，助你之力。&lt;/p&gt;
-
-    &lt;p&gt;同时，「R」的开源特性也意味着这是一个免费的软件，我们可以以零成本的价格使用。这对于一枚「学生党」，有着「千情万钟」的诱惑（刨去破解软件）。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;分散在世界各地的「R Community」为这个编程语言持续地注入新鲜的生命力，使之长久延续。我们可以到「CRAN」、&lt;a href=&quot;https://stat.ethz.ch/mailman/listinfo/r-help&quot;&gt;R-help mailing list&lt;/a&gt;、&lt;a href=&quot;http://stackoverflow.com/questions/tagged/r&quot;&gt;StackOverflow&lt;/a&gt;寻求帮助，也可以通过当地的「R user group」来咨询方案。不同与其他的编程语言，「R」的开源共享的属性让她得到世界各地用户的偏好，共同开发以保持其活力。我们无需担心哪一天自己辛苦学习与使用的编程语言/软件就撒手不干停止更新服务了。因此，学习「R」几乎是一个「零（违约）风险」的投资。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;可重复（reproducable）研究指得是在现有的数据框架下，我们可以通过复制原来研究成果的代码来验证其准确性。这区别于更加广泛意义上的可复制（replecated）研究，即需要重新收集数据样本来复制结果。可重复研究允许我们在有限的经费预算约束下，极大可能的验证科学研究成果。&lt;/p&gt;
-
-    &lt;p&gt;「R」正是开发可重复研究的利器，提供了像&lt;code&gt;knitr&lt;/code&gt;这样优秀的软件包，使得统计分析的任何一个过程都可以通过运行代码来检验研究成果。同时，我们还可以在文章正文中「植入」程序代码，直接计算结果（面向对象，object-oriented）、绘制图形（ggplot2）、编制表格（tabular，xtable）。这省去了传统的撰写文章的麻烦与琐碎。比如，原先我们可能是在「LaTex」中写入论述，等到了需要使用图形的地方，需要事先标明&lt;code&gt;\includegraphic{}&lt;/code&gt;，然后通过查找对应的图片插入。这期间被各种「烦文缛节」、各种「黑暗技巧」搞得晕头转向、不知何处。最后搞不好还弄错了文字与图形的匹配。而这些统统在&lt;code&gt;knitr&lt;/code&gt;中可以自动完成，我们需要的，就是顺着思维的路线一路走下去，该说人话的时候就写人话，该使用机器语言就直接健入代码产生需要的结果或者图形。真可谓&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;「R」与「LaTex」齐飞，思想代码共一体。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;此外，「R」还是一个&lt;em&gt;跨平台&lt;/em&gt;的软件体，通吃「三界」：&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Windows系统可以直接点击&lt;code&gt;.exe&lt;/code&gt;软件来安装;&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Linux系统使用命令安装：&lt;/p&gt;
-
-        &lt;pre&gt;&lt;code&gt; sudo apt-get install r-base r-base-dev
-&lt;/code&gt;&lt;/pre&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Mac系统。（抱歉，我没有使用Mac，故此处不敢高声语。）&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;why-not-r&quot;&gt;Why &lt;em&gt;Not&lt;/em&gt; 「R」&lt;/h2&gt;
-
-&lt;p&gt;对于这个问题，我真的不知该如何回答。如果说以上的几点理由还不够具有「杀伤力」，那在下也只能自愧功力不够、道行尚浅、修行有限。&lt;/p&gt;
-
-&lt;p&gt;不过还好，大神来帮忙了：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Of course, R is not perfect. R’s biggest challenge is that most R users are not programmers.     &lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;他给出的批评无非是「double-edged sword」，所谓凡是有利有弊、一正一邪。各位看官可以到大神的网上去找找不使用「R」的「牵强附会」的理由。在下无需多言，只不过再此累赘一下，也算是个人当初的体会。&lt;/p&gt;
-
-&lt;p&gt;「R」的学习曲线太陡峭、成本太高了。也就是说，对于一个初学者来说，「R」的代码几乎可以说是「摧枯拉朽」、「灭顶之灾」的。原因有二：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;R&lt;/strong&gt; 掺杂了其他语言的使用，如&lt;strong&gt;C&lt;/strong&gt;，&lt;strong&gt;Python&lt;/strong&gt;。这旨在提高「R」的运行速度与计算能力，增强数据分析。不过这对「beginner」却造成了困扰。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;我的建议是：既来之，则安之。一开始看不懂没关系，先试着挑-「好看」的来，然后再进一步深入学习。等到你真正需要扩展的时候，再去找些资料学习就可以了。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;R&lt;/strong&gt; 对于编写程序没有过于严格的要求，是真正意义上的「注重结果」的编程语言。这直接造成了「恶劣影响」，导致许多的代码行都不大注重严谨，缺乏统一。看不懂别人的代码那是必须的，有时甚至都看不懂自己以前写的代码了。,,Ծ‸Ծ,,&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;推荐：多看多看多看！没见过猪跑也好歹有吃过猪肉。另外，可以看看一些「guide」，养成良好的编写程序的习惯，比如，大神的&lt;a href=&quot;http://adv-r.had.co.nz/Style.html&quot;&gt;建议&lt;/a&gt;,以及&lt;a href=&quot;http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml&quot;&gt;Google’s R Style Guide&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
- </entry>
- 
- <entry>
-   <title>Advanced R Programming</title>
-   <link href="http://williamlfang.github.com/cn/2014/01/20/r-note/"/>
-   <updated>2014-01-20T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/2014/01/20/r-note</id>
-   <content type="html">&lt;p&gt;这个文档记录了我在学习 &lt;a href=&quot;http://had.co.nz/&quot;&gt;Hadley Wickham&lt;/a&gt; 即将出版的新书，&lt;a href=&quot;http://adv-r.had.co.nz/&quot;&gt;Advanced R Programming&lt;/a&gt; 时的一些笔记与总结，以便将来复习查阅。该书博大精深，结构严谨，涵盖面广泛，涉及几乎目前有关「R」的所有问题。从最基础的数据结构开始讲起，然后逐步渐进到如何编写针对问题的 &lt;code&gt;function&lt;/code&gt;，再进阶到如何开发能够发布以供他人使用的 &lt;code&gt;package&lt;/code&gt;。Wickham 本人就是在「R Community」团体中的传奇人物，开发了许多为人称道的宏包，如 &lt;code&gt;ggplot2&lt;/code&gt;等。而本书真是作者在总结了近十年的 「R」软件开发后编写的一本巨著。仔细深入阅读此书必将受益匪浅，极大的提升我们使用与开发「R」的各项技能，真正从最底层去认识「R」这个当今最强大的数据处理、统计分析与图形可视化编程语言。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;正如他自己所说的：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;I have been programming in R for over 10 years, spending a lot of time trying to figure out how the language works. Not everyone has the luxury of spending years to understand a programming language, so this book is my attempt to help you to become an effective R programmer as quickly as possible. By reading this book, you will avoid the many mistakes that I made and the many dead ends that I got stuck in, and quickly navigate your way to useful tools and techniques. Although R has its frustrating quirks, I truly believe that at its heart lies an elegant and beautiful language, well tailored for data analysis and statistics. In this book, I’ll do my best to reveal that language to you, helping you to understand powerful idioms that allow you to attack many types of problems.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;why-r&quot;&gt;Why 「R」&lt;/h2&gt;
-
-&lt;p&gt;对于这个问题的回答，最简短的回答是&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;多学一门编程语言总不会死吧？！！！&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;确实，在当今这个互联网与信息时代，我们的生活与工作与电脑紧密相连、形影不离，如果要想了解这个时代、这个世界，我们首先必须先了解那些控制与主宰了我们生活节奏的「电脑们」是如何「生活」的。进一步说，即那些操控了「电脑们」的&lt;strong&gt;「程序」&lt;/strong&gt;是如何运行的。而所谓的「程序」，终归到底，是「程序语言」（Programming language）。前几年流行的一本「Hakers and Painters」就在序言开宗明义地说：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Everything around us is turning into computers. Your typewriter is gone, replaced by a computer. Your phone has turned into a computer. So has your camera. Soon your Tv will. Your car was not only designed on computers, but has more processing power in it than a room-sized mainframe did in 1970. Letters, encyclopedias, newspapers, and even your local store are being replaced by the Internet.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;因此，我们要想了解世界，就必须先懂得这个世界在说什么（编程）「语言」。所谓「技多不压身」，多学习一门「编程语言」也促使我们从另外一个角度看世界，多一种批判的眼光，多一层思维的觉悟。何乐而不为？&lt;/p&gt;
-
-&lt;p&gt;当然，如果你是首次听说/接触「R」，对这个编程语言一点冲动的想法都没有，那我就需要找各种&lt;em&gt;理由&lt;/em&gt;来劝说你「是时候该学习『R』了」，哪怕是对阅读统计报告的需要。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;注意&lt;/em&gt;：真是下面的几条&lt;em&gt;Reasons&lt;/em&gt;把我拉入了「R」介个广大的「神教」中，有幸或不幸，我也希望你来加入！&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;「R」是处理统计数据与图形可视化的「神器」，能够高效的完成各种数据分析，生成信息充实而页面精美的图形。一方面，我们可是直接使用现今已有的软件包（通过&lt;code&gt;install.packages(&quot;&quot;)&lt;/code&gt;)，涵盖了从基本的统计分析方法，如计算均值，方差分析，到时下最前沿的统计方法，可用于处理有关统计建模、机器学习、大数据管理等问题;另一方面，如果发现现有的软件包不能满足或者不适合手头问题的解决，那么我们还可以自己动手开发。这个特性赋予了「R」强大的处理数据的能力。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;「R」是一款&lt;strong&gt;自由的开源软件体&lt;/strong&gt;。这意味着你有权限去获取、使用、修改甚至是发行任何版本的「R」程序。这一点对于使用&lt;code&gt;Windows&lt;/code&gt;的用户可能不会意识到有多重要，因为在国内的环境中，我们从来都没有关心过一款软件的「版权」问题，心想着反正上网有大量的破解软件可供下载使用。可是对于一个合格的哪怕只是刚入门的「Geek」来说，我已经不能再忍受破解（=盗版=病毒）软件的荼毒。从网上某处下载的软件，总是神乎其神的在某个地方给你添加插件，修改管理者权限，安装不必要也不想要的软件。然后在某天开机之后，屏幕变黑，系统变坏，情绪变糟。&lt;/p&gt;
-
-    &lt;p&gt;后来我开始转移阵地到「Linux」，开始慢慢接触开源项目，才逐渐领会到开源软件带来的自由。比如，我可以从互联网以「正当理由」、「合理方式」获得所需的软件，并能够在尊重原开发者的情况下修改软件，生成「私人定制」，我甚至还可以将其发布到网上供他人使用。涉及到软件的自由是多层次的，其中最基本的一条就是，我可以修改、进一步开发以利解决问题。&lt;/p&gt;
-
-    &lt;p&gt;「R」就是这么一个软件，她给你所需，为你所用，助你之力。&lt;/p&gt;
-
-    &lt;p&gt;同时，「R」的开源特性也意味着这是一个免费的软件，我们可以以零成本的价格使用。这对于一枚「学生党」，有着「千情万钟」的诱惑（刨去破解软件）。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;分散在世界各地的「R Community」为这个编程语言持续地注入新鲜的生命力，使之长久延续。我们可以到「CRAN」、&lt;a href=&quot;https://stat.ethz.ch/mailman/listinfo/r-help&quot;&gt;R-help mailing list&lt;/a&gt;、&lt;a href=&quot;http://stackoverflow.com/questions/tagged/r&quot;&gt;StackOverflow&lt;/a&gt;寻求帮助，也可以通过当地的「R user group」来咨询方案。不同与其他的编程语言，「R」的开源共享的属性让她得到世界各地用户的偏好，共同开发以保持其活力。我们无需担心哪一天自己辛苦学习与使用的编程语言/软件就撒手不干停止更新服务了。因此，学习「R」几乎是一个「零（违约）风险」的投资。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;可重复（reproducable）研究指得是在现有的数据框架下，我们可以通过复制原来研究成果的代码来验证其准确性。这区别于更加广泛意义上的可复制（replecated）研究，即需要重新收集数据样本来复制结果。可重复研究允许我们在有限的经费预算约束下，极大可能的验证科学研究成果。&lt;/p&gt;
-
-    &lt;p&gt;「R」正是开发可重复研究的利器，提供了像&lt;code&gt;knitr&lt;/code&gt;这样优秀的软件包，使得统计分析的任何一个过程都可以通过运行代码来检验研究成果。同时，我们还可以在文章正文中「植入」程序代码，直接计算结果（面向对象，object-oriented）、绘制图形（ggplot2）、编制表格（tabular，xtable）。这省去了传统的撰写文章的麻烦与琐碎。比如，原先我们可能是在「LaTex」中写入论述，等到了需要使用图形的地方，需要事先标明&lt;code&gt;\includegraphic{}&lt;/code&gt;，然后通过查找对应的图片插入。这期间被各种「烦文缛节」、各种「黑暗技巧」搞得晕头转向、不知何处。最后搞不好还弄错了文字与图形的匹配。而这些统统在&lt;code&gt;knitr&lt;/code&gt;中可以自动完成，我们需要的，就是顺着思维的路线一路走下去，该说人话的时候就写人话，该使用机器语言就直接健入代码产生需要的结果或者图形。真可谓&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;「R」与「LaTex」齐飞，思想代码共一体。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;此外，「R」还是一个&lt;em&gt;跨平台&lt;/em&gt;的软件体，通吃「三界」：&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Windows系统可以直接点击&lt;code&gt;.exe&lt;/code&gt;软件来安装;&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Linux系统使用命令安装：&lt;/p&gt;
-
-        &lt;pre&gt;&lt;code&gt; sudo apt-get install r-base r-base-dev
-&lt;/code&gt;&lt;/pre&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Mac系统。（抱歉，我没有使用Mac，故此处不敢高声语。）&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;why-not-r&quot;&gt;Why &lt;em&gt;Not&lt;/em&gt; 「R」&lt;/h2&gt;
-
-&lt;p&gt;对于这个问题，我真的不知该如何回答。如果说以上的几点理由还不够具有「杀伤力」，那在下也只能自愧功力不够、道行尚浅、修行有限。&lt;/p&gt;
-
-&lt;p&gt;不过还好，大神来帮忙了：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Of course, R is not perfect. R’s biggest challenge is that most R users are not programmers.     &lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;他给出的批评无非是「double-edged sword」，所谓凡是有利有弊、一正一邪。各位看官可以到大神的网上去找找不使用「R」的「牵强附会」的理由。在下无需多言，只不过再此累赘一下，也算是个人当初的体会。&lt;/p&gt;
-
-&lt;p&gt;「R」的学习曲线太陡峭、成本太高了。也就是说，对于一个初学者来说，「R」的代码几乎可以说是「摧枯拉朽」、「灭顶之灾」的。原因有二：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;R&lt;/strong&gt; 掺杂了其他语言的使用，如&lt;strong&gt;C&lt;/strong&gt;，&lt;strong&gt;Python&lt;/strong&gt;。这旨在提高「R」的运行速度与计算能力，增强数据分析。不过这对「beginner」却造成了困扰。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;我的建议是：既来之，则安之。一开始看不懂没关系，先试着挑-「好看」的来，然后再进一步深入学习。等到你真正需要扩展的时候，再去找些资料学习就可以了。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;R&lt;/strong&gt; 对于编写程序没有过于严格的要求，是真正意义上的「注重结果」的编程语言。这直接造成了「恶劣影响」，导致许多的代码行都不大注重严谨，缺乏统一。看不懂别人的代码那是必须的，有时甚至都看不懂自己以前写的代码了。,,Ծ‸Ծ,,&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;推荐：多看多看多看！没见过猪跑也好歹有吃过猪肉。另外，可以看看一些「guide」，养成良好的编写程序的习惯，比如，大神的&lt;a href=&quot;http://adv-r.had.co.nz/Style.html&quot;&gt;建议&lt;/a&gt;,以及&lt;a href=&quot;http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml&quot;&gt;Google’s R Style Guide&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
- </entry>
- 
- <entry>
-   <title>WineQQ2013 可以使用</title>
-   <link href="http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/"/>
-   <updated>2014-01-18T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux</id>
-   <content type="html">&lt;h2 id=&quot;qq-for-linux&quot;&gt;QQ for &lt;code&gt;Linux&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;想要在Linux操作系统下使用 &lt;code&gt;QQ&lt;/code&gt; 真的得费不少劲。我之前尝试通过 &lt;code&gt;WINE&lt;/code&gt; 来安装 &lt;code&gt;QQ2013&lt;/code&gt;，可是最终以失败结束。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;一方面是由于目前的 &lt;code&gt;WINE&lt;/code&gt; 技术还不是很好，对于一些商业软件支持力度不够，也不能完全模拟 &lt;code&gt;Windows&lt;/code&gt; 系统来安装 &lt;code&gt;.exe&lt;/code&gt; 的软件（如果完全取代了，怎么感觉又回到 &lt;code&gt;Windows&lt;/code&gt; 时代了呢…..），期间需要不停的下载相关而不必要的软件，大费人力与（电）脑力，而且终归落得个不能使用/中文乱码的惨淡结局。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;另一方面，&lt;code&gt;Tencent&lt;/code&gt; 公司也不会完全放弃 &lt;code&gt;QQ&lt;/code&gt; 的商业价值来满足开源爱好者的，他们满眼看到的是商业利益。&lt;code&gt;QQ&lt;/code&gt; 本身是一个具有黑暗魔法力量的软件，可以推送广告取得收入，可以不间断的搜索用户资料（先前有 3Q 大战及由此来），还能维护一个庞大的软件生态链。故此，虽然曾经有一段时间的 &lt;code&gt;QQ for Linux&lt;/code&gt; 的美好光景，却也一去不复返。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;我们现在想要在 Linux 上使用 &lt;code&gt;QQ&lt;/code&gt;，真可谓“斗智斗勇”，方能取得一丁点的成就。&lt;/p&gt;
-
-&lt;h2 id=&quot;qq&quot;&gt;虚拟机下使用 QQ&lt;/h2&gt;
-&lt;p&gt;我之前有在一篇关于虚拟机 &lt;a href=&quot;http://williamlfang.github.io/cn/2014/01/04/virtualbox/&quot;&gt;virtualbox&lt;/a&gt; 的文章中谈过可以利用虚拟机来运行 &lt;code&gt;Windows&lt;/code&gt; 操作系统，并在其使用 &lt;code&gt;QQ&lt;/code&gt; 等软件。可以，这也很不方便，为了使用一个软件大开虚拟机占用大量的内存，实属不值，何况对于一些老机子更是苦命。因此，我决定放弃这个既浪费资源又不讨好的想法，另辟蹊径。&lt;/p&gt;
-
-&lt;h2 id=&quot;wineqq&quot;&gt;WineQQ&lt;/h2&gt;
-&lt;p&gt;目前，由一个叫做 “LongeneTeam” 团队给广大的用户带来了福音。他们号称开发了史上最牛叉的、能够在 Linux 系统运行的 &lt;code&gt;wineQQ&lt;/code&gt;。其工作原理是：
-&amp;gt; 通过以deb的格式将 QQ 软件、Wine基本配置、有关字体以及一些必要的配件统统打包好，这样用户可以直接点击deb文件来安装、使用 QQ。&lt;/p&gt;
-
-&lt;p&gt;目前 wineQQ 的最新版本为 &lt;a href=&quot;http://www.longene.org/forum/viewtopic.php?t=4700&quot;&gt;wine-1.7.9&lt;/a&gt;。deb格式的软件可以在&lt;a href=&quot;http://pan.baidu.com/s/1hq83fWo&quot;&gt;这里&lt;/a&gt;或者&lt;a href=&quot;http://www.longene.org/download/WineQQ2013SP6-20140102-Longene.deb&quot;&gt;这里&lt;/a&gt;下载到。之后可以直接双击打开，经由 &lt;code&gt;Software Manager&lt;/code&gt; 确认系统密码后即可安装。完成之后在找到 &lt;code&gt;QQ&lt;/code&gt; 打开即可。
-&lt;img src=&quot;/cn/assets/images/QQ/qq.png&quot; alt=&quot;wineqq2013&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;问题之门及解决之道&lt;/h2&gt;
-&lt;p&gt;以下汇集了我在使用 wineQQ2013 过程中遇到的一些问题，以及相应的解决方法。欢迎补充。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;64位操作系统不能运行&lt;/h3&gt;
-&lt;p&gt;这个问题主要是由于原先只是在32位系统运行的 &lt;code&gt;wineQQ&lt;/code&gt; 需要安装配件。如下：&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; sudo apt-get install libc6-i386 
-&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; sudo apt-get install ia32-libs
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 <img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
  </entry>

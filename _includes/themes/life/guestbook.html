@@ -1,9 +1,7 @@
 <div class="post mt-2">
 	<div class="info box">
 		<a class="date" href="{{ page.url }}">
-		<span class="year">{{ page.date | date:"%Y" }}</span>
-		<span class="day">{{ page.date | date:"%d" }}</span>
-		<span class="month">{{ page.date | date:"%B" }}</span>
+		<span class="day">{{ page.date | date:"%d" }}</span><span class="month">{{ page.date | date:"%b" }}</span>
 		<span class="circle"></span>
 		</a>
 	</div>
@@ -12,8 +10,7 @@
 		<div class="content lh-150p font-16 pd-1 mg-2 radius-7">
 		{{ content }}
 		</div>
-		<!-- <div class="recent-visitors"><ul class="ds-recent-visitors mg-2 pd-1" data-num-items="99" data-avatar-size="48"></ul></div>
-		-->
+		<div class="recent-visitors"><ul class="ds-recent-visitors mg-2 pd-1" data-num-items="99" data-avatar-size="48"></ul></div>
 	</div>
 	{% if page.comments %}
 	<div id="comments cleared" class="mt-2 pl-2 pr-2">

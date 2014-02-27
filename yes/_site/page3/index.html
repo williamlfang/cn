@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+<!--
+-->
+<html lang="zh-CN"/>
+<head>
+
+	<meta charset="UTF-8"/>
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+
+	<title> 方 莲 | William</title>
+
+	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="LifeMemory ATOM Feed" />
+	<link rel="canonical" href="http://williamlfang.github.com/cn" />
+	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
+
+	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
+	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
+	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
+	<script>hljs.initHighlightingOnLoad();</script>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 100      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+
+<!--=================================================================== -->
+</head>
+
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--	<link rel="stylesheet" href="/media/themes/miantiao/xiaohudie-sidebar.css" media="all"/>		
+<link rel="stylesheet" href="/media/themes/miantiao/xiaohudie-style.css" media="all"/>
+-->
+<!-- <link rel="stylesheet" href="/media/themes/miantiao/xiaohudie-sidebar.css" media="all"/>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37286418-1']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_setCustomVar', 1, 'IP', '8.35.201.54', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Reviewer ', 'anonymous user', 1]);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret+One">
+-->
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<body>
+<!--
+	<div id="head" class="w-100p">
+		<div class="header">
+			<a href="http://williamlfang.github.com/" class="logo left"><img class="logoimg" src="/assets/images/logo.png" alt="Life Memory"/></a>
+			<!--
+			<div class="site">
+				<a href="http://williamlfang.github.com/cn" class="name font-white font-36">Life Memory</a>
+				<p class="desc font-white font-20">人生就像那旅程,谁知道转弯后的风光</p>
+			</div>
+			-->
+			<!--
+			<div class="social-icons right">
+				<a href="http://feed.miantiao.me" class="feed" title="订阅我的博客"  rel="nofollow">feed</a>
+				<a href="http://weibo.com/ccbikai" class="weibo" title="新浪微博"  rel="nofollow">weibo</a>
+				<a href="http://t.qq.com/ccbikai" class="tqq" title="腾讯微博"  rel="nofollow">tqq</a>
+				<a href="http://www.twitter.com/ccbikai" class="twitter" title="Tui特"  rel="nofollow">twi</a>
+			</div>
+			-->
+<!--		</div>
+	</div>
+-->
+	<div id="main" class="w-100p font-gray-dark">
+		<div class="nav nav-large nav-orange">
+			<div class="menu cleared">
+			<a title="首页" class="nav-item" href="http://williamlfang.github.com/cn/">首页</a>
+				<div class="nav-has-menu">
+					<a class="nav-item" href="http://williamlfang.github.com/cn/archives.html">归档</a>
+						<div class="nav-menu">
+							
+							<a title="Time" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Time">Time</a>
+							
+							<a title="Love" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Love">Love</a>
+							
+							<a title="Campus" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Campus">Campus</a>
+							
+							<a title="Personal" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Personal">Personal</a>
+							
+							<a title="Life" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Life">Life</a>
+							
+							<a title="Tech" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Tech">Tech</a>
+							
+							<a title="Programming" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Programming">Programming</a>
+							
+							<a title="经济分析" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#经济分析">经济分析</a>
+							
+						</div>
+				</div>
+			<a title="邻居" class="nav-item" href="http://williamlfang.github.com/cn/links.html">链接</a>
+			<a title="关于" class="nav-item" href="http://williamlfang.github.com/cn/about.html">关于</a>
+			<a title="留言" class="nav-item" href="http://williamlfang.github.com/cn/guestbook.html">留言</a>
+				<div class="search right h-1">
+					<form method="get" id="searchform" action="http://williamlfang.github.com/cn/search.html">
+					<input type="text" name="q" id="search" size="13" value="" placeholder="你在找什么呢？" x-webkit-speech />
+					</form>
+				</div>
+			</div>
+		</div>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--
+<div class="sidebar">
+<div class="wget"> 
+
+<table border="0" class="snsul">
+<tbody>
+
+<tr>
+<td><a href="https://plus.google.com/+MehyWang?rel=author" target="_blank" rel="me"><div class="sns" id="tw"></div></a>
+</td>
+
+<td><div class="sns" id="wb"></div></td>
+
+<td>
+  	<form role="search" method="get" class="search-form" action="http://xiaohudie.net/">
+  		<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">				 
+ 	</form>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+						<div class="wget-tab">
+				<ul class="tabs xhd_potaps">
+					<li class="tabs active"><h3 class="wget-t" tabhref="#tab1">Rand</h3></li>
+					<li class="tabs"><h3 class="wget-t" tabhref="#tab2">New</h3></li>
+					<li class="tabs"><h3 class="wget-t" tabhref="#tab3">Pop</h3></li>
+					<div class="clear"></div>
+				</ul>
+				
+ 		
+			</div>
+
+ <div id="tab1" class="xhd_tab" style="display: block;">
+ <div>  
+				<ul class="ft_nav">
+					    
+				<li>
+				 
+		
+				<a href="http://xiaohudie.net/code/youproxy-20121104.html" rel="bookmark" title="1 条评论 | 分类：Code" >YOUPROXY更新至20121104</a>
+				
+			 
+			<div class="clear"></div>
+
+				</li>   		
+				</ul>
+			
+</div> 
+</div>
+
+			<div id="tab2" class="xhd_tab" style="display: none;">
+ <div> 
+  				<ul class="ft_nav">
+					    
+
+				<li>
+			 
+		
+				<a href="http://xiaohudie.net/code/wbto-plugin.html" rel="bookmark" title="128 条评论 | 分类：Code" >微博通for wordpress插件完善</a>
+				
+			 
+			<div class="clear"></div>
+				</li>   	   
+				<li>
+			 
+		
+				<a href="http://xiaohudie.net/code/async-comment-author-screenshot.html" rel="bookmark" title="125 条评论 | 分类：Code" >异步获取评论者网站截图</a>
+				
+			 
+			<div class="clear"></div>
+				</li>   					
+			</ul>  
+			
+ </div> 
+ </div>
+
+
+<div class="wget"><h3>Categories</h3>
+  	<ul class="ft_nav">					
+ 	<li class="cat-item cat-item-2"><a href="http://xiaohudie.net/code" title="the Best Damn Thing">Code</a> (92)
+	</li>
+	<li class="cat-item cat-item-3"><a href="http://xiaohudie.net/ios" title="IOS once, IOS forever">IOS</a> (10)
+	</li>
+	<li class="cat-item cat-item-4"><a href="http://xiaohudie.net/themes" title="Theme  by 小蝴蝶">Themes</a> (7)
+	</li>
+	<li class="cat-item cat-item-5"><a href="http://xiaohudie.net/blog" title="吃的是奶,吐的是草">吐草</a> (43)
+	</li>
+	<li class="cat-item cat-item-7"><a href="http://xiaohudie.net/management" title="其实我是学管理的........">管理学</a> (1)
+	</li>
+ 	</ul>
+</div>
+
+<div class="wget">
+	<h3>Tags</h3>					
+	<div class="entry-tags">
+		<a href='http://xiaohudie.net/tag/other' class='tag-link-70' title='12 topics' style='font-size: 14.6739130435px;'>其他技术</a>
+
+<a href='http://xiaohudie.net/tag/tag-ios' class='tag-link-31' title='9 topics' style='font-size: 13.9565217391px;'>IOS</a>	</div>
+	<script>jQuery(".entry-tags a").append("<span></span>");jQuery(".entry-tags a").find("span").html( function(){var s=$(this).parent().attr("title").replace(/[^0-9]/ig, "");return " ("+parseInt(s)+")";});</script>
+</div>
+
+
+<div class="wget">
+  <ul class="ft_nav">
+        <li><h3>你们。</h3></li>
+	<li class="rc"><div class="fr">哥特复兴</div><div class="rcavatar fra"><img alt="哥特复兴" src="http://0.gravatar.com/avatar/00f29fa85cc9593a9bd0166449998434?s=30&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&r=G" class="avatar avatar-30 photo" height="30" width="30"></div><a href="http://dyygtfx.com" target="_blank">哥特复兴</a></li> 
+
+      </ul>
+</div> 
+
+<div class="wget">
+      <ul class="ft_nav">
+        <li><h3>Recent Comments</h3></li>
+	<li class="rc"><div class="rcer" >feelfeelsister</div> <a href="http://xiaohudie.net/contact/comment-page-26#comment-9029" title="《Contact》上的评论"><div class="rcavatar"><img alt='feelfeelsister' src='http://0.gravatar.com/avatar/a8a925c464116616ff1955226a161657?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' /></div>考的怎么样。 </a></li>      </ul>
+</div>  
+ 
+
+<div class="wget">
+      <ul class="ft_nav">
+        <li><h3>Analytics</h3></li>
+       		<li class="rc"><div class="anal" id="analp"></div><div class="anal-title" id="analp-t">Posts</div>153</li>
+		<li class="rc"><div class="anal" id="analv"></div><div class="anal-title" id="analv-t">Views</div>531,409 </li>
+		<li class="rc"><div class="anal" id="analc"></div><div class="anal-title" id="analc-t">Comments</div>7898</li>
+		<li class="rc"><div class="anal" id="analu"></div><div class="anal-title" id="analu-t">Uptime</div>605 days</li>
+		<li class="rc"><div class="anal" id="anall"></div><div class="anal-title" id="anall-t">Last Updated</div>2 months ago</li>
+      </ul>
+ </div>  
+ 
+</div>
+</div>
+-->
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->	
+		<div id="articles">
+		
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2010/08/21/summer-gone/">
+		<span class="year">2010</span>
+		<span class="day">21</span>
+		<span class="month">August</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2010/08/21/summer-gone/" title="盛夏的那些事">盛夏的那些事</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>终于可以等到夏至的到来，虽然在北回归线的北方，往着一个方向，死死的看，像是一场莫大的盛典，像在迎接一个久违的老友，更像是一场祭奠的仪式，一点一点的将盛夏的那些埋进夏至的土壤，将曾经的轻狂桀骜埋进温热的地壳里，等待千万年后的生根发芽，虽然是注定的离开，依然会显得灿烂若孩童的微笑，干净的脸颊写满天空的纯，没有一丝的忧伤。</p>
+
+
+		<a href="http://williamlfang.github.com/cn/2010/08/21/summer-gone/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2010/06/25/nothing-meaningful/">
+		<span class="year">2010</span>
+		<span class="day">25</span>
+		<span class="month">June</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2010/06/25/nothing-meaningful/" title="存在的空虚">存在的空虚</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>存在的，消失了。</p>
+
+<p>在子夜给一个朋友打电话。话筒的两端，只是不做声。没有言语，我们只是在彼此倾听夜的孤单，寂寞在歌唱。任何语言，似乎都显得惨白，残缺无力，而心底的那种深深的思想源流，难以表述。</p>
+
+<p>有时候，我们缺的，不是言语的表达，不是肢体的挥舞，不是表情的演绎。我们缺乏的，是对彼此的聆听，倾听一段倾诉的结束，是对方观察，看岁月书写精湛的纹路。而我们仅有的，只是孤单，深深的孤独感游离在漫漫人群的荒漠之中。</p>
+
+<p>就这样，一场“对话”结束，彼此放下电话。不需要互道再见，不要有任何的牵绊。</p>
+
+<p>一场从来就没有开始的游戏，便永远也不会再结束了。没有相遇，便不会有离别。与陌生人的擦肩而过，那也只是擦肩而过，而已，偶尔几次蓦然回首，那也只是瞥见了渐行渐远的身影，孤孤单单的，我们不会去道别。</p>
+
+<p>因为不需要。</p>
+
+<p>很多时候，很多东西，只是因为存在了，所以消失了。尼采不说上帝不存在过，而是说他已经死了。因为只有消失的，才真正存在。存在于虚无，存在于过去，存在于消失。</p>
+
+<p>爱自己越深的人，给的伤害越多。刺猬爱上玫瑰，一场游戏一场梦。天亮了，也就该说再见了。如果刺猬偶然照着湖面，看见自己满身的毛刺，他会宁愿选择待在洞穴，常年的，一个人，做个虔诚的教徒，始终双手合十，默默为玫瑰祈祷。存在本身，便是一个原子式的衰变过程。</p>
+
+<p>虚空的虚空，凡事都是虚空。</p>
+
+		<a href="http://williamlfang.github.com/cn/2010/06/25/nothing-meaningful/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2010/05/26/graduation/">
+		<span class="year">2010</span>
+		<span class="day">26</span>
+		<span class="month">May</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2010/05/26/graduation/" title="毕业啦">毕业啦</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>就像突然被人推了一下，还没来得及缓过紧张的情绪，还在迷恋校园浪漫的风景，却已经走在了大学时光的将至未至的尾巴。回首那些时光，从一个盛夏起点出发，前进，前进，一直奔跑着前进，在季节的幽谷里低吟，在青春的岁月里高歌，在人生的象牙塔沉思。有着这样的一段时光，漂泊在知识浩瀚的汪洋，穿梭于历史沧桑的街坊，一路沥风淋雨、披荆斩棘，却也满程暗香浮动、岁月如歌，然后在春夏秋冬的跑道上循环往复故地重游，一圈一圈不知疲倦的把青春的光年写在岁月的年轮里，把那些属于青春的激情岁月写在大地的沟壑里。</p>
+
+<p>多年回味，多少欣慰。</p>
+
+		<a href="http://williamlfang.github.com/cn/2010/05/26/graduation/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2010/05/21/missing/">
+		<span class="year">2010</span>
+		<span class="day">21</span>
+		<span class="month">May</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2010/05/21/missing/" title="我怀念的">我怀念的</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>签名档一直在更改着，却没有一个词汇，一个谚语能够表达自己的心情。就像小学时代的田字格，简单明了，那时的心情也是单纯的，一横一撇总是能够在分明的纸页上说明自己的心情，诸如我的心情是太阳，在祖国的阳光下成长。可是现在，即使大学将至未老，却发现难以表达自己的心境。叶子的心是简单的，可是我的心，却是纷乱的。</p>
+
+<p>我不是一个怀旧的人。怀旧是对过去的嗟叹，是对过往的遗憾，也是对逝去的徒伤，生命是短暂的，至少我的是。偶尔与朋友聊天，希冀能够活到四十足已，现在开始十年学习，用十年做完人生的目标。然后可以安心的离开。时间就从来不是我的，就像生命从来不是上帝的，而是胰岛素的。怀旧易于伤感，伤感沉沦在离去，而我的离去在未来。不要为未来的离开而伤心。</p>
+
+<p>可是我却时常怀念很多。很多的，是关于事，也关于人。</p>
+
+<p>怀念在过去的时间里没有完成的事情，这些像你在那个春天播下的种子，想要在秋天收获很多的飞鱼，结局却是颗粒无望。为爱的人找到春暖花开，为一条河流写浪漫的情歌，让生命更加的绚丽，让自己可以没有悲伤。燕子怀念春泥，往返于回归线见，叶子怀念大地，往返于春夏秋冬。我怀念你，却往返于幸福与心痛。</p>
+
+<p>怀念在未来没有到来的时间，那些如轰轰烈类的典礼，没有任何的致辞便早早的落幕，唯有在场的观众，翘首以待却摇头遗憾。看人世间繁华衰落，阅读岁月沧桑浮沉，牵手年迈走过灿烂，扬起皱纹的微笑。我怀念与你的每一刻，每个不同的时刻，却也是每个逝去的时刻。</p>
+
+<p>没有终点，我只是在断点，也许下一刻便是断崖，生命会在时间随机方程的那个句点戛然呢。人的生命，是自己的，却也有时希望不是自己的，或者祷告，或者祈福，希望父能给我更多的片刻，希望这个思想的个体能延续着思想。我的生命，却是我的。不是谁的，不是父的，不在基督。</p>
+
+<p>在的时候，我不怀念，离开了，我也不怀念。我只怀念那一刻，我遇见了你。</p>
+
+		<a href="http://williamlfang.github.com/cn/2010/05/21/missing/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2010/01/30/how-far/">
+		<span class="year">2010</span>
+		<span class="day">30</span>
+		<span class="month">January</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2010/01/30/how-far/" title="永远有多远">永远有多远</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>似乎，这个一个地理学科的问题，就像你问我，从A到B的距离是多少。常常的，我们给出的答案会是多少的数字，然后在尾巴的后面加上以单位计量的符号。至于这个单位是多少，自有规定。</p>
+
+<p>真的有规定吗？</p>
+
+<p>似乎，这个更像一个哲学的问题，就像柏拉图问人生到底有多深一样。可是，在这里，我们却时常给不出答案。没有任何的规定，告诉我说，石头，我给你的永远有这么远，即使是一根无名指的长度，哪怕是一个嘴角弧度的概括，甚至简单的一根面条在嘴里弯曲的角度。</p>
+
+<p>不会有规定了。</p>
+
+<p>患有强迫症的人会像傻子一样习惯性的追究一个问题的答案，像歇斯底里的孩子想要得到那个芭比的强烈渴望，像深处绝处的羚羊在峡谷间想要身存在空中抛洒优美的弧线。强迫症的人，他们便是一头被激怒的西班牙斗牛冲击前方的虚无缥缈，他们便是一个远洋的千纸鹤滴滴答答的淅淅沥沥的漂流着，他们便是那个在爱情里找到了又迷失的男孩终于又迷失了。他们终日追问着，永远到底有多远。</p>
+
+<p>我认识这样的孩子，因为这样的孩子认识我。我们终日什么也不做了什么也不想了什么也不屑了，只是在玩着游戏唱着歌听着远方传来的牧羊曲。有时我们会在荒野里有时我们会站在天空中央而又有时我们只是傻傻的排着队伍等待我们的我们，因为我不想被遗忘被遗落被遗失被遗弃。我不想，因为我还没有得到那个答案还没有得到她的回复还没有得到糖果棒。</p>
+
+<p>她能告诉我答案。我想问这个问题一样，一样的强迫着这个答案先前的答案，就好比门背后的门盒子里面套着的盒子脸孔背后的面孔，她是给我答案的先前的答案。我对她说，永远有多远，你可以给我答案。</p>
+
+<p>她笑了，微微的，像一朵鹅毛在三月的南方轻舞飞扬，升起又降落，降落却划破天空的脸，轻轻的画出的一个弧线。优雅，而从容。</p>
+
+<p>她说，我也在寻找这个答案，因为我也在问着。</p>
+
+		<a href="http://williamlfang.github.com/cn/2010/01/30/how-far/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2010/01/17/only-me/">
+		<span class="year">2010</span>
+		<span class="day">17</span>
+		<span class="month">January</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2010/01/17/only-me/" title="知我者">知我者</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>手指在键盘上胡乱的点击，敲打这些能将心情变为文字的符号。只是一连串的符号而已，可是究竟有谁会透过这些简单的由远古的象形文字演化而来的符号看懂我的心情呢。太白半是自嘲半是无奈的问起，知我者谓我心忧，不知我者谓我何所求。此刻，我何所优呢？</p>
+
+<p>就像很久没有写字，很久没有那样灿烂是为微笑，很久，也不会在那样像放闸一样的倾诉，我的世界，有谁会懂呢。快乐是有的，这是不是我要的。这句话写出来很心酸，就像下面这句话一样的心寒，这世界，幸福永远缺货。</p>
+
+<p>考试结束了却莫名其妙的发着高烧，让整个儿的身体蜷缩在一个角落里，没有纷杂，没有争吵，偶尔会有思念，像十年一般漫长的电影，只是故事的情节已经不是诺亚，剧本已经不在我的手中。吃了大把的药却把胰岛素停用了，是否我的朋友都已经不再了呢。开了手机却莫名的格式化，所有的名片在顷刻便成为昨日的追忆。铁皮鼓里奥斯卡可以永远不要长大，敲着铁皮鼓永远灿烂，多想生活会是我的那些数独格，思路清晰而条理明朗。我在我的世界里，真的活的很好。异常的好。</p>
+
+<p>沉默是一种生活方式。</p>
+
+<p>是否文字也有冷暖。写这样的字符，感觉寒冷，那种入骨的锥心痛。按理说我应该应用瓦尔拉斯的叙述效用理论，每种痛只是对于当事人的一种心理排序，当你把最重要的东西放在心头，等及瞅着那些玻璃板纯洁的美好自觉地遵循牛顿的力学定律却做很短暂的自由落体，破碎的永远只是心中的美丽。可是，倾倒的了，却是我的整个世界。</p>
+
+<p>想你了，在看圣经。爱是恒久忍耐、又有恩慈．爱是不嫉妒．爱是不自夸．不张狂．不作害羞的事．不求自己的益处．不轻易发怒．不计算人的恶．不喜欢不义．只喜欢真理．凡事包容．凡事相信．凡事盼望．凡事忍耐．爱是永不止息．</p>
+
+		<a href="http://williamlfang.github.com/cn/2010/01/17/only-me/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2009/11/20/angel/">
+		<span class="year">2009</span>
+		<span class="day">20</span>
+		<span class="month">November</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2009/11/20/angel/" title="Angel">Angel</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>第一次那么具体而生动的体会这个词语的意思，意义以及意思背后的韵味，是在南方的一个雨季里，阁楼的玻璃被雨点滴的淅沥，将自己蜷缩在木质地板的角落里，看冰心的《安琪儿》。</p>
+
+<p>文字是语言的发音。有时，这些蝌蚪般缠绵的楔形符号给人的是那些抽象而高远的画面，比如说写这时间，眼前便会不知觉然的跳动这些玄在空中飘舞的轨迹，再比如说，阳光，你会想起在回归线以南的某个街道那次夕阳的落落，再者，如果记忆还能持久，或许看着日记里的文字会想起多少年的从容却在那样的傍晚邂逅一个女孩。可是，语言却另有一番韵味。比如，眼前的这个词语，轻轻的从口中滑落，想丝绸在风淡云清的清晨划破肌肤。Angel，读着这个词汇，这个简单到明了而复杂到不解的词语，心中，自是一番温暖。</p>
+
+<p>似乎有一段时间没有开口说话。话语是人类的一项基本权力，其中包含了两方面的意思，其一是如梭所言的“我虽不同意你所说的每句话，但我坚决捍卫你说话的权力”，其二，便是可以不再说话，像王小波说的。“沉默是一种生活的方式”。</p>
+
+<p>如果在某种程度上说，Darwin的进化论是正确的，那么，根据假设检验，这其中其实还是有部分的处于显著水平之上的错误。Keynese说有一种animal spirit的动物精神在人们的交往中发生作用，这种动物精神并非绝对意义上的进化结果，因为人们可以通过n重博弈来减少成本，获得收益。</p>
+
+<p>沉默久了，便不开口，不开口久了，便更宁愿沉默，这似乎更趋于一种死胡同的均衡。有一首歌曲爱的发声练习，也许，该多练习在爱里的练习。只是，我在这个过程总是不及格。一直到等有一天，可以把这个词语说的完整的时候，有一个小笑话，说考生在测试过程中，发现主考官已经不再，自己对测试纸大声痛苦，为过去的岁月里那些挥之不去的记忆，为那些努力过的人。这个测验，叫做爱情。</p>
+
+<p>有时会做一些漫长的梦，关于时间旅行的常识问题，从这头走到那头，需要多少时间呢，可能这就是一个有限的值域，可是从这个时刻开往下一个时刻，从这个信念走出那个信念，需要多少时间呢，或许，这是一个趋于无穷的值。不知道，记住的，该怎么忘记。</p>
+
+<p>格拉斯有本小说，铁皮鼓，里面讲述了一个奥斯卡的小孩永远也不需要长大的故事，他让成年的自己躲进孩童的身躯，以为这样便能躲避一切的世俗，一切的烦恼，可以敲着铁皮鼓一直延续幸福。可是，我们知道，后来他还是长大了，长大到发现要从一个信念转化到另一个信念，这是多么的困难。Westlife唱到，it’s hard to die。</p>
+
+<p>安其儿，冰心在文章里用着纯洁的文字，用纯洁的心灵，描绘这个纯洁的精灵。那个下午，我把这个文章死命的记住，在心中创造过一个有angel的世界。我不需要自由，只想保护她的梦，一步步向前走，她给的永远不远。</p>
+
+<p>Angel，my angel</p>
+
+		<a href="http://williamlfang.github.com/cn/2009/11/20/angel/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2009/11/11/lonely-love/">
+		<span class="year">2009</span>
+		<span class="day">11</span>
+		<span class="month">November</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2009/11/11/lonely-love/" title="作品">作品</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>月亮对太阳说</p>
+
+<p>我是你未完成的作品</p>
+
+<p>在世界的尽头</p>
+
+<p>太阳  默默</p>
+
+<p>转过身去</p>
+
+<p>谁是谁的作品  谁在谁的轨迹</p>
+
+<p>黑夜对白昼说</p>
+
+<p>我是你未完成的作品</p>
+
+<p>在纸的另一页</p>
+
+<p>白昼   默默</p>
+
+<p>背过身影</p>
+
+<p>谁是谁的作品  谁在谁的生命</p>
+
+<p>我对你说</p>
+
+<p>我是你未完成的作品</p>
+
+<p>在时间的罅隙</p>
+
+<p>你也  默默</p>
+
+<p>转身愁容</p>
+
+<p>谁是谁的作品  谁有谁的珍惜</p>
+
+		<a href="http://williamlfang.github.com/cn/2009/11/11/lonely-love/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2009/11/04/the-girl/">
+		<span class="year">2009</span>
+		<span class="day">04</span>
+		<span class="month">November</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2009/11/04/the-girl/" title="那女孩對我說">那女孩對我說</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>不知道如何開始這樣的敘述，傾訴的完成似乎早在故事的開始就已經註定，只是在這樣的結尾處偶然斷點，斷開的裂痕將自己淹沒。匍匐在黑色懸崖許久，卻發現我的人兒已不再。</p>
+
+<p>晚上開始大段大段的失眠，然後大口大口的喝冰冷的白水，冰冷到刺激到麻木，然後繼續臥倒，做一副睡眠狀。會在凌晨驚醒，驚嚇一身的汗水，有一次我夢見我們都是不相識的，可是醒來后卻發現原來彼此是相愛的。</p>
+
+<p>習慣是自然進化的均衡解，像納什的男女孩博弈，總會有一個最優的均衡，只是，習慣有時也是致命，突然轉身后發現你已不再，就像孩子返身卻找不到回家的歸路。習慣，讓我不知所措。得到越多，我卻比從前更寂寞。</p>
+
+<p>不知道故事是如何開始的，只是一切都安靜的發生著，人來人往，擦肩而過，揮手說著再見不見。有個天使在我的天空微笑，很美很燦爛，把整個的世界照的通明。似乎這更像時間序列，匆匆的卻也蘊含規律。時代的宿遷是時代的宿命，在過去與過往的彼此間隙，我們匆匆的遇見，希冀時間剛好在你我的身邊經過。流沙，我卻可以恣意的隨手塗鴉，為你寫過的詩篇，像刻在年輪的龜裂，多年不退色，多年重複的響絕在夢里。</p>
+
+<p>會偶爾記起多年前聽過的樂曲，看過的影片，相愛的人兒，擦肩的風景，一切都很美麗。普率斯特在一個暗淡的屋舍里追憶逝去的年華匆匆一片，不再守候的人兒漸漸黯然。唯一的樂園，是人們失去的樂園。生命不能承受的，是那些不好笑的玩笑，上帝想聽歌，所以將MJ帶走了，想好好的珍惜，卻發現你已離我萬里的距離。北方有佳人，傾國有傾城。</p>
+
+<p>看到一首Norman McCaig寫的詩歌，書呆子，以為世界的旋轉是書頁上飄動的精靈，以為櫻桃樹盛開了你的微笑那樣的美麗，以為愛的詞典了你會給出所有的答案。書呆會踟躕的下著涼雨的小巷等候你，書呆偶爾採摘的玫瑰是女孩的眼淚凝結的花朵。書呆，在等你的執著。</p>
+
+<p>文字是一生的故己，陪你守候的，是這些的精靈在流沙的時間里跳動的音符與旋轉的曲綫。會在桌臺上安靜的記錄這一刻想你的心跡，在下一刻抬頭卻想起了你的輪廓。麥當勞的落地窗透露出陽光很好看的燦爛，想起在飄落初雪的清晨給你的祝福。追尋意識的流淌，卻怎麼也找尋不到你的影子。</p>
+
+<p>想像著在一片莫大的原野兀自的奔跑，天圓地方的宇宙，只是朝著任何你的方向，然後像個麥哲倫一樣循環往復的追尋，故地重遊，一遍一遍，一圈一圈，直到飛蛾撲火把自己弄得很累，麥哲倫沒有看到他的理想其實在開始的那一刻已經成真，我們看到了一眼望見盡頭的幸福，卻在航行的途中迷失了方位，丟失了方向。</p>
+
+<p>第一次打開收音機聽到的是遊鴻明的一天一萬年，一下便記住了那個午後的陽光，折射在閣樓的窗臺角落，把一疊曹文軒的書曬的很暖。那個季節，我在閱讀，在開始一段傾訴的開始，草房子在海的對岸，彼岸的海邊。便是這樣的好笑，根據物理學的弦理論，我們的世界時一個十一維度的空間，偶爾這些神奇的弦交互邂逅，我們也便相識了。在某個日落的街道，在月起的屋簷，在海風吹拂的石青路，我們會看到時間是如此神奇的交錯雜織。這一刻，我的一天一萬年。</p>
+
+<p>據說有一種鳥，會飛躍大洋，千里迢迢，只爲找尋他的愛人，可是每次都有很多因為精力耗盡而永遠的沉沒在海的中心。人們叫它，荊棘鳥。或許，Darwin的進化論在這裡可以很好的解釋，可是不，這不是一個均衡的解，這個世界應該得到更好的答案。更好的答案，我一直在找尋。據說是一個偏執的人，渴望為這個世界找尋更好的答案。人們總說，這個不行那個不行，人們總說，這個不合那個不合，人們總說，這樣不好那樣不好，人們總說，這是不能那個不能。可是，沒有人告訴我們倒是什麽才是這個問題的答案。我們，有自己的答案。我們知道，這個是命運的轉盤剛好指向你我的方向，我們知道，這個是自然的開始恰好沒有早點也剛好沒有晚了在這一刻讓我遇到你，我們還知道，這是彼此的生命註定在如此複雜的維度里邂逅在一個日落的午後。</p>
+
+<p>亞當斯密一生孤單，可是他找到了那個通向自由的答案，自然自由秩序，給予人們充足的自由權，這個貌似無序社會可以達到完美的境界。沒有任何的阻力，不需要任何的附加，我們，要勇敢。同時期的美利堅大地也響徹相同的絕響，對幸福的追求。</p>
+
+<p>選擇一個自己的方向，像在故事的開始我們一同設定的前方，然後堅定的往前走，一直相信這個會是最終主人公的答案，那個他找尋許久的。想像你一直陪伴在我的身邊，一路有你，一路高歌。</p>
+
+<p>下一站，會是我們的的幸福終點站。</p>
+
+		<a href="http://williamlfang.github.com/cn/2009/11/04/the-girl/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2009/09/15/liu-nian/">
+		<span class="year">2009</span>
+		<span class="day">15</span>
+		<span class="month">September</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2009/09/15/liu-nian/" title="流年">流年</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>那天有人通知说需要写大学四年的总结。心生惶恐。</p>
+
+<p>原来，在蓦然之间，一天又三年外加莫名的一年，这样便是我的大学了。俗话说好马不吃回头草，到底我是不是好马暂且不论，至少，写总结对于我而言，正如扒开昨日的伤疤，看流年留下的年轮，痕迹累累。这不是身体的伤害，不是肢体的残缺，而是心的受难，对逝去光阴的祭奠。而唯一的乐园，是人们失去的乐园。回头或许无益补漏，反增伤感。</p>
+
+<p>现在翻开以前惯例写的终结，大学一年祭，春夏秋冬，一天又三年。现在，我该怎么给这个流年下个题目呢，像图书馆的标签，像超市的条码，像灵魂索骥的暗号，若干年，如果还有机会回顾，兴许凭借这些文字的精灵，找到昨日，窥见曾经。</p>
+
+<p>或许应该直接写上“流年”二字，每年便都循此惯例，为每个不往复的流年做一次微小的祭奠，为每次迷茫的心灵做一次虔诚的祷告。</p>
+
+<p>年华似水匆匆一瞥，多少岁月轻描淡写。</p>
+
+<p>记住的，忘记了。</p>
+
+<p>昨天下午在整理旧物，发现一本厚厚的日记本，“写给未来的自己”，这是扉页的签字。当时是怎样的心情呢，当时是怎样的情景呢，已然忘记。只是这些散落的文字顽固的附着在早已褪色泛黄的纸页上，提醒“未来的我”，那些流年已经不再了。日记的第一句话是，“你要活下去”。兴许，当时的自己对于“活下去”是什么意思甚至浑然不知晓，简单的三个字倒不如儿时的田字格简简单单，可以随意的刻画星象般的梦幻。死是一件必然的事，大凡对于确定降临的东西，心已坦诚，也就无须忧虑，而往往是那些或然的过程，满心惶恐。或许当时病了，或许只是看到某个生命的镜头，可是，当时却那么强烈的写着要活下去。</p>
+
+<p>谢谢这些散落的文字，让我记住了流年。“你要快乐，幸福”，这是接下来的话。存在于存在，基督的教义里生命是个受难的过程，存在于过程中，即使如烟花般短暂，却要更灿烂。不需要天天提醒自己，需要的，重要的，是把这个过程完好的走完，要快乐，要幸福。记住了遗忘，忘记了记忆。现在的我，想对“未来的自己”说，我现在很幸福。</p>
+
+		<a href="http://williamlfang.github.com/cn/2009/09/15/liu-nian/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+
+
+
+		
+		<div class="friends">
+			<div class="friends_info"><a id="friends" href="#" rel="nofollow"><span>我的小伙伴</span></a></div>
+			<div id="friends_list" class="friends_list">
+			<ul class="no-list">
+				<li><a href="http://www.inbiji.com/" title="好记性不如烂笔记" >in笔记</a></li>
+				<li><a href="http://klant.cn/" title="Klant&#039;s Blog" >Klant&#039;s Blog</a></li>
+			</ul>
+			</div>
+			<a href="#" id="gc_close" rel="nofollow">X</a>
+		</div>
+		
+		
+		</div>
+		
+			<div id="more" class="align-center mt-2">
+				<a href="/page4/" class="loadmore button button-orange w-30p" >查  看  更  多</a>
+			</div>
+		
+	</div>
+
+	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
+		<div id="about" class="align-center">&copy; 2013-2014 Powered By Jekyll, Designed By <a href="http://williamlfang.github.io/">William Fang</a>.
+		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
+		<div class="radar"></div>
+		</div>
+	</div>
+<link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hibikai"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<script src="http://cdn.staticfile.org/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://cdn.staticfile.org/jqueryui/1.10.2/css/smoothness/jquery-ui-1.10.2.custom.min.css" type="text/css" media="all" />
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+</body>
+</html>
+

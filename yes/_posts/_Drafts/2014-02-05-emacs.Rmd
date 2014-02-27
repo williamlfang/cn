@@ -1,0 +1,18 @@
+---
+layout:   post
+title:    "Emacs"
+category:  
+tags:     []
+description: 
+published: false
+status:    process
+---
+
+Emacs 的优点：
+
+- 高度可定制：
+- 跨平台：
+
+
+
+

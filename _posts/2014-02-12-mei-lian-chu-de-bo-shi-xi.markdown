@@ -17,7 +17,7 @@ status: publish
 <!-- more -->
 
 首先来一个「全家福」吧。
-![the fed](/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg)
+[![the fed](/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg)](/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg)
  
 文章谈到了对美联储决策有重要影响的几位「高官」的学历背景。目前新晋美联储主席的耶伦（Yellen）拥有 Yale 经济学博士学历，其在学术界有颇有建树。而那些身处高职的几位委员会成员（**FOMC**）均配有经济学博士学位，如 Stanley Fischer 就是前 **IMF** 的首席经济学家 [^1] 。而如果从历史的纵向来看，这个趋势就更加明显了：沃尔克当时还只是经济学硕士，到了格林斯潘后来获得博士学位，而前任伯南克就已经是一名正式的大学（宏观）经济学教授了。Blinder 是原 **FOMC** 委员，他对 **Fed** 的历史颇有研究，宣称：
  

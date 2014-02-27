@@ -1,389 +1,388 @@
 
 <!DOCTYPE html>
 <!--
- #                   ####
- #           #      #                         #     #
- #                  #                         ##   ##
- #         ###     ####      #####            # # # #   #####   ### ##    #####    # ###   #    #
- #           #      #       #     #           #  #  #  #     #  #  #  #  #     #   ##      #    #
- #           #      #       #######           #     #  #######  #  #  #  #     #   #       #    #
- #           #      #       #                 #     #  #        #  #  #  #     #   #       #    #
- ######    #####    #        #####            #     #   #####   #     #   #####    #        #####
-                                                                                                #
-                                                                                            ####
 -->
 <html lang="zh-CN"/>
 <head>
-	<meta http-equiv="pragma" content="no-cache">
+
+	<meta charset="UTF-8"/>
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+
+	<title> 方 莲 | William</title>
+
+	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+
 	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
 	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
-	<meta charset="utf-8" />
-	<meta name="author" content="ccbikai" />
-	<meta name="generator" content="Jekyll" />
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-	<meta name="keywords" content="生活,记忆,生活记忆,Life,Memory,Life Memory,不给力的面条,面条,人生就像那旅程,谁知道转弯后的风光" />
-	<meta name="description" content="标签" />
-	<title>标签 | Life Memory</title>
-	<link rel="stylesheet" href="/assets/themes/life/css/kimochi.css" media="all"/>
-	<link rel="stylesheet" href="/assets/themes/life/css/style.css" media="all"/>
+
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
 	<link rel="shortcut icon" href="/favicon.ico" />
-	<link href="http://feed.miantiao.me" type="application/rss+xml" rel="alternate" title="LifeMemory RSS Feed" />
+	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
 	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="LifeMemory ATOM Feed" />
-	<link rel="canonical" href="http://miantiao.me/yes/tags.html" />
-	<script type="text/javascript" src="/assets/themes/life/js/jquery.min.js"></script>
+	<link rel="canonical" href="http://williamlfang.github.com/cn/yes/tags.html" />
+	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
+
+	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
+	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
+	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
+	<script>hljs.initHighlightingOnLoad();</script>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 100      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+
+<!--=================================================================== -->
 </head>
+
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--	<link rel="stylesheet" href="/media/themes/miantiao/xiaohudie-sidebar.css" media="all"/>		
+<link rel="stylesheet" href="/media/themes/miantiao/xiaohudie-style.css" media="all"/>
+-->
+<!-- <link rel="stylesheet" href="/media/themes/miantiao/xiaohudie-sidebar.css" media="all"/>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37286418-1']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_setCustomVar', 1, 'IP', '8.35.201.54', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Reviewer ', 'anonymous user', 1]);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret+One">
+-->
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 <body>
+<!--
 	<div id="head" class="w-100p">
 		<div class="header">
-			<a href="http://miantiao.me" class="logo left"><img class="logoimg" src="/assets/themes/life/images/logo.png" alt="Life Memory"/></a>
+			<a href="http://williamlfang.github.com/" class="logo left"><img class="logoimg" src="/assets/images/logo.png" alt="Life Memory"/></a>
+			<!--
 			<div class="site">
-				<a href="http://miantiao.me" class="name font-white font-36">Life Memory</a>
+				<a href="http://williamlfang.github.com/cn" class="name font-white font-36">Life Memory</a>
 				<p class="desc font-white font-20">人生就像那旅程,谁知道转弯后的风光</p>
 			</div>
+			-->
+			<!--
 			<div class="social-icons right">
 				<a href="http://feed.miantiao.me" class="feed" title="订阅我的博客"  rel="nofollow">feed</a>
 				<a href="http://weibo.com/ccbikai" class="weibo" title="新浪微博"  rel="nofollow">weibo</a>
 				<a href="http://t.qq.com/ccbikai" class="tqq" title="腾讯微博"  rel="nofollow">tqq</a>
 				<a href="http://www.twitter.com/ccbikai" class="twitter" title="Tui特"  rel="nofollow">twi</a>
 			</div>
-		</div>
+			-->
+<!--		</div>
 	</div>
+-->
 	<div id="main" class="w-100p font-gray-dark">
 		<div class="nav nav-large nav-orange">
 			<div class="menu cleared">
-			<a title="首页" class="nav-item" href="/">首页</a>
+			<a title="首页" class="nav-item" href="http://williamlfang.github.com/cn/">首页</a>
 				<div class="nav-has-menu">
-					<a class="nav-item" href="/archives.html">归档</a>
+					<a class="nav-item" href="http://williamlfang.github.com/cn/archives.html">归档</a>
 						<div class="nav-menu">
 							
-							<a title="Time" class="nav-menu-item" href="/archives.html#Time">Time</a>
+							<a title="Time" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Time">Time</a>
 							
-							<a title="yes" class="nav-menu-item" href="/archives.html#yes">yes</a>
+							<a title="Love" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Love">Love</a>
 							
-							<a title="Love" class="nav-menu-item" href="/archives.html#Love">Love</a>
+							<a title="Campus" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Campus">Campus</a>
 							
-							<a title="随口一说" class="nav-menu-item" href="/archives.html#随口一说">随口一说</a>
+							<a title="Personal" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Personal">Personal</a>
 							
-							<a title="扯淡文章" class="nav-menu-item" href="/archives.html#扯淡文章">扯淡文章</a>
+							<a title="Life" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Life">Life</a>
 							
-							<a title="一块分享" class="nav-menu-item" href="/archives.html#一块分享">一块分享</a>
+							<a title="Tech" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Tech">Tech</a>
 							
-							<a title="Campus" class="nav-menu-item" href="/archives.html#Campus">Campus</a>
+							<a title="Programming" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Programming">Programming</a>
 							
-							<a title="Personal" class="nav-menu-item" href="/archives.html#Personal">Personal</a>
-							
-							<a title="Life" class="nav-menu-item" href="/archives.html#Life">Life</a>
-							
-							<a title="科技牛逼" class="nav-menu-item" href="/archives.html#科技牛逼">科技牛逼</a>
-							
-							<a title="Tech" class="nav-menu-item" href="/archives.html#Tech">Tech</a>
-							
-							<a title="Programming" class="nav-menu-item" href="/archives.html#Programming">Programming</a>
-							
-							<a title="经济分析" class="nav-menu-item" href="/archives.html#经济分析">经济分析</a>
+							<a title="经济分析" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#经济分析">经济分析</a>
 							
 						</div>
 				</div>
-			<a title="邻居" class="nav-item" href="/links.html">邻居</a>
-			<a title="留言" class="nav-item" href="/guestbook.html">留言</a>
+			<a title="邻居" class="nav-item" href="http://williamlfang.github.com/cn/links.html">链接</a>
+			<a title="关于" class="nav-item" href="http://williamlfang.github.com/cn/about.html">关于</a>
+			<a title="留言" class="nav-item" href="http://williamlfang.github.com/cn/guestbook.html">留言</a>
 				<div class="search right h-1">
-					<form method="get" id="searchform" action="http://miantiao.me/search.html">
-					<input type="text" name="q" id="search" size="13" value="" placeholder="敢不敢搜一下？" x-webkit-speech />
+					<form method="get" id="searchform" action="http://williamlfang.github.com/cn/search.html">
+					<input type="text" name="q" id="search" size="13" value="" placeholder="你在找什么呢？" x-webkit-speech />
 					</form>
 				</div>
 			</div>
 		</div>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--
+<div class="sidebar">
+<div class="wget"> 
+
+<table border="0" class="snsul">
+<tbody>
+
+<tr>
+<td><a href="https://plus.google.com/+MehyWang?rel=author" target="_blank" rel="me"><div class="sns" id="tw"></div></a>
+</td>
+
+<td><div class="sns" id="wb"></div></td>
+
+<td>
+  	<form role="search" method="get" class="search-form" action="http://xiaohudie.net/">
+  		<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">				 
+ 	</form>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+						<div class="wget-tab">
+				<ul class="tabs xhd_potaps">
+					<li class="tabs active"><h3 class="wget-t" tabhref="#tab1">Rand</h3></li>
+					<li class="tabs"><h3 class="wget-t" tabhref="#tab2">New</h3></li>
+					<li class="tabs"><h3 class="wget-t" tabhref="#tab3">Pop</h3></li>
+					<div class="clear"></div>
+				</ul>
+				
+ 		
+			</div>
+
+ <div id="tab1" class="xhd_tab" style="display: block;">
+ <div>  
+				<ul class="ft_nav">
+					    
+				<li>
+				 
+		
+				<a href="http://xiaohudie.net/code/youproxy-20121104.html" rel="bookmark" title="1 条评论 | 分类：Code" >YOUPROXY更新至20121104</a>
+				
+			 
+			<div class="clear"></div>
+
+				</li>   		
+				</ul>
+			
+</div> 
+</div>
+
+			<div id="tab2" class="xhd_tab" style="display: none;">
+ <div> 
+  				<ul class="ft_nav">
+					    
+
+				<li>
+			 
+		
+				<a href="http://xiaohudie.net/code/wbto-plugin.html" rel="bookmark" title="128 条评论 | 分类：Code" >微博通for wordpress插件完善</a>
+				
+			 
+			<div class="clear"></div>
+				</li>   	   
+				<li>
+			 
+		
+				<a href="http://xiaohudie.net/code/async-comment-author-screenshot.html" rel="bookmark" title="125 条评论 | 分类：Code" >异步获取评论者网站截图</a>
+				
+			 
+			<div class="clear"></div>
+				</li>   					
+			</ul>  
+			
+ </div> 
+ </div>
+
+
+<div class="wget"><h3>Categories</h3>
+  	<ul class="ft_nav">					
+ 	<li class="cat-item cat-item-2"><a href="http://xiaohudie.net/code" title="the Best Damn Thing">Code</a> (92)
+	</li>
+	<li class="cat-item cat-item-3"><a href="http://xiaohudie.net/ios" title="IOS once, IOS forever">IOS</a> (10)
+	</li>
+	<li class="cat-item cat-item-4"><a href="http://xiaohudie.net/themes" title="Theme  by 小蝴蝶">Themes</a> (7)
+	</li>
+	<li class="cat-item cat-item-5"><a href="http://xiaohudie.net/blog" title="吃的是奶,吐的是草">吐草</a> (43)
+	</li>
+	<li class="cat-item cat-item-7"><a href="http://xiaohudie.net/management" title="其实我是学管理的........">管理学</a> (1)
+	</li>
+ 	</ul>
+</div>
+
+<div class="wget">
+	<h3>Tags</h3>					
+	<div class="entry-tags">
+		<a href='http://xiaohudie.net/tag/other' class='tag-link-70' title='12 topics' style='font-size: 14.6739130435px;'>其他技术</a>
+
+<a href='http://xiaohudie.net/tag/tag-ios' class='tag-link-31' title='9 topics' style='font-size: 13.9565217391px;'>IOS</a>	</div>
+	<script>jQuery(".entry-tags a").append("<span></span>");jQuery(".entry-tags a").find("span").html( function(){var s=$(this).parent().attr("title").replace(/[^0-9]/ig, "");return " ("+parseInt(s)+")";});</script>
+</div>
+
+
+<div class="wget">
+  <ul class="ft_nav">
+        <li><h3>你们。</h3></li>
+	<li class="rc"><div class="fr">哥特复兴</div><div class="rcavatar fra"><img alt="哥特复兴" src="http://0.gravatar.com/avatar/00f29fa85cc9593a9bd0166449998434?s=30&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&r=G" class="avatar avatar-30 photo" height="30" width="30"></div><a href="http://dyygtfx.com" target="_blank">哥特复兴</a></li> 
+
+      </ul>
+</div> 
+
+<div class="wget">
+      <ul class="ft_nav">
+        <li><h3>Recent Comments</h3></li>
+	<li class="rc"><div class="rcer" >feelfeelsister</div> <a href="http://xiaohudie.net/contact/comment-page-26#comment-9029" title="《Contact》上的评论"><div class="rcavatar"><img alt='feelfeelsister' src='http://0.gravatar.com/avatar/a8a925c464116616ff1955226a161657?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' /></div>考的怎么样。 </a></li>      </ul>
+</div>  
+ 
+
+<div class="wget">
+      <ul class="ft_nav">
+        <li><h3>Analytics</h3></li>
+       		<li class="rc"><div class="anal" id="analp"></div><div class="anal-title" id="analp-t">Posts</div>153</li>
+		<li class="rc"><div class="anal" id="analv"></div><div class="anal-title" id="analv-t">Views</div>531,409 </li>
+		<li class="rc"><div class="anal" id="analc"></div><div class="anal-title" id="analc-t">Comments</div>7898</li>
+		<li class="rc"><div class="anal" id="analu"></div><div class="anal-title" id="analu-t">Uptime</div>605 days</li>
+		<li class="rc"><div class="anal" id="anall"></div><div class="anal-title" id="anall-t">Last Updated</div>2 months ago</li>
+      </ul>
+ </div>  
+ 
+</div>
+</div>
+-->
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->	
 		<div id="articles">
 		
 <div class="post mt-2">
 	<div class="info box">
 		<a class="date" href="/yes/tags.html">
-		<span class="day">17</span><span class="month">Jan</span>
+		<span class="year">2014</span>
+		<span class="day">28</span>
+		<span class="month">Febuary</span>
 		<span class="circle"></span>
 		</a>
 	</div>
 	<div class="article">
-		<h3><a class="title font-orange mb-2" href="/yes/tags.html" title="标签">标签</a></h>
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/yes/tags.html" title="标签">标签</a></h>
 		<div class="content lh-200p font-16 pd-1 mg-2 radius-7">
 			<div id='tag_cloud'>
 				
-				<a href="#时光" class="button button-small button-orange mt-1" title="时光" rel="4">时光</a>
+				<a href="#时光" class="button button-small button-orange mt-1" title="时光" rel="2">时光</a>
 				
-				<a href="#心情" class="button button-small button-orange mt-1" title="心情" rel="35">心情</a>
+				<a href="#采访" class="button button-small button-orange mt-1" title="采访" rel="2">采访</a>
 				
-				<a href="#凤翔" class="button button-small button-orange mt-1" title="凤翔" rel="2">凤翔</a>
+				<a href="#爱情" class="button button-small button-orange mt-1" title="爱情" rel="1">爱情</a>
 				
-				<a href="#凤翔中学" class="button button-small button-orange mt-1" title="凤翔中学" rel="12">凤翔中学</a>
+				<a href="#诗歌" class="button button-small button-orange mt-1" title="诗歌" rel="1">诗歌</a>
 				
-				<a href="#恶搞" class="button button-small button-orange mt-1" title="恶搞" rel="5">恶搞</a>
+				<a href="#少年" class="button button-small button-orange mt-1" title="少年" rel="1">少年</a>
 				
-				<a href="#高中" class="button button-small button-orange mt-1" title="高中" rel="22">高中</a>
+				<a href="#思考" class="button button-small button-orange mt-1" title="思考" rel="2">思考</a>
 				
-				<a href="#笑话" class="button button-small button-orange mt-1" title="笑话" rel="2">笑话</a>
+				<a href="#时间" class="button button-small button-orange mt-1" title="时间" rel="4">时间</a>
 				
-				<a href="#考试" class="button button-small button-orange mt-1" title="考试" rel="6">考试</a>
+				<a href="#爱" class="button button-small button-orange mt-1" title="爱" rel="1">爱</a>
 				
-				<a href="#电脑" class="button button-small button-orange mt-1" title="电脑" rel="4">电脑</a>
+				<a href="#无聊" class="button button-small button-orange mt-1" title="无聊" rel="1">无聊</a>
 				
-				<a href="#软件" class="button button-small button-orange mt-1" title="软件" rel="7">软件</a>
+				<a href="#往事" class="button button-small button-orange mt-1" title="往事" rel="1">往事</a>
 				
-				<a href="#图片" class="button button-small button-orange mt-1" title="图片" rel="1">图片</a>
+				<a href="#留念" class="button button-small button-orange mt-1" title="留念" rel="1">留念</a>
 				
-				<a href="#地震" class="button button-small button-orange mt-1" title="地震" rel="2">地震</a>
+				<a href="#流年" class="button button-small button-orange mt-1" title="流年" rel="1">流年</a>
 				
-				<a href="#博客" class="button button-small button-orange mt-1" title="博客" rel="15">博客</a>
+				<a href="#古人" class="button button-small button-orange mt-1" title="古人" rel="1">古人</a>
 				
-				<a href="#回忆" class="button button-small button-orange mt-1" title="回忆" rel="4">回忆</a>
+				<a href="#Linux" class="button button-small button-orange mt-1" title="Linux" rel="5">Linux</a>
 				
-				<a href="#手机" class="button button-small button-orange mt-1" title="手机" rel="9">手机</a>
+				<a href="#Github" class="button button-small button-orange mt-1" title="Github" rel="3">Github</a>
 				
-				<a href="#采访" class="button button-small button-orange mt-1" title="采访" rel="4">采访</a>
+				<a href="#Jekyll" class="button button-small button-orange mt-1" title="Jekyll" rel="3">Jekyll</a>
 				
-				<a href="#音乐" class="button button-small button-orange mt-1" title="音乐" rel="18">音乐</a>
+				<a href="#博客" class="button button-small button-orange mt-1" title="博客" rel="1">博客</a>
 				
-				<a href="#魔方" class="button button-small button-orange mt-1" title="魔方" rel="3">魔方</a>
+				<a href="#SSH" class="button button-small button-orange mt-1" title="SSH" rel="2">SSH</a>
 				
-				<a href="#诗词" class="button button-small button-orange mt-1" title="诗词" rel="2">诗词</a>
+				<a href="#Virtualbox" class="button button-small button-orange mt-1" title="Virtualbox" rel="1">Virtualbox</a>
 				
-				<a href="#爱情" class="button button-small button-orange mt-1" title="爱情" rel="4">爱情</a>
+				<a href="#Googgle" class="button button-small button-orange mt-1" title="Googgle" rel="1">Googgle</a>
 				
-				<a href="#诗歌" class="button button-small button-orange mt-1" title="诗歌" rel="2">诗歌</a>
+				<a href="#GoAgent" class="button button-small button-orange mt-1" title="GoAgent" rel="1">GoAgent</a>
 				
-				<a href="#少年" class="button button-small button-orange mt-1" title="少年" rel="2">少年</a>
+				<a href="#翻墙" class="button button-small button-orange mt-1" title="翻墙" rel="1">翻墙</a>
 				
-				<a href="#小孩子" class="button button-small button-orange mt-1" title="小孩子" rel="3">小孩子</a>
+				<a href="#互联网自由" class="button button-small button-orange mt-1" title="互联网自由" rel="1">互联网自由</a>
 				
-				<a href="#网站" class="button button-small button-orange mt-1" title="网站" rel="7">网站</a>
+				<a href="#fcitx" class="button button-small button-orange mt-1" title="fcitx" rel="1">fcitx</a>
 				
-				<a href="#羽泉" class="button button-small button-orange mt-1" title="羽泉" rel="6">羽泉</a>
+				<a href="#输入法" class="button button-small button-orange mt-1" title="输入法" rel="1">输入法</a>
 				
-				<a href="#思考" class="button button-small button-orange mt-1" title="思考" rel="4">思考</a>
+				<a href="#pandoc" class="button button-small button-orange mt-1" title="pandoc" rel="1">pandoc</a>
 				
-				<a href="#时间" class="button button-small button-orange mt-1" title="时间" rel="8">时间</a>
+				<a href="#QQ" class="button button-small button-orange mt-1" title="QQ" rel="1">QQ</a>
 				
-				<a href="#分享" class="button button-small button-orange mt-1" title="分享" rel="6">分享</a>
+				<a href="#R" class="button button-small button-orange mt-1" title="R" rel="3">R</a>
 				
-				<a href="#邀请码" class="button button-small button-orange mt-1" title="邀请码" rel="7">邀请码</a>
+				<a href="#Note" class="button button-small button-orange mt-1" title="Note" rel="2">Note</a>
 				
-				<a href="#再见" class="button button-small button-orange mt-1" title="再见" rel="1">再见</a>
+				<a href="#Rmarkdown" class="button button-small button-orange mt-1" title="Rmarkdown" rel="1">Rmarkdown</a>
 				
-				<a href="#愚人节" class="button button-small button-orange mt-1" title="愚人节" rel="1">愚人节</a>
+				<a href="#美联储" class="button button-small button-orange mt-1" title="美联储" rel="1">美联储</a>
 				
-				<a href="#QQ农场" class="button button-small button-orange mt-1" title="QQ农场" rel="1">QQ农场</a>
+				<a href="#经济" class="button button-small button-orange mt-1" title="经济" rel="1">经济</a>
 				
-				<a href="#玩" class="button button-small button-orange mt-1" title="玩" rel="2">玩</a>
+				<a href="#博士" class="button button-small button-orange mt-1" title="博士" rel="1">博士</a>
 				
-				<a href="#腾讯微博" class="button button-small button-orange mt-1" title="腾讯微博" rel="1">腾讯微博</a>
-				
-				<a href="#同学录" class="button button-small button-orange mt-1" title="同学录" rel="1">同学录</a>
-				
-				<a href="#情侣博客" class="button button-small button-orange mt-1" title="情侣博客" rel="1">情侣博客</a>
-				
-				<a href="#周杰伦" class="button button-small button-orange mt-1" title="周杰伦" rel="2">周杰伦</a>
-				
-				<a href="#毕业" class="button button-small button-orange mt-1" title="毕业" rel="2">毕业</a>
-				
-				<a href="#高考" class="button button-small button-orange mt-1" title="高考" rel="7">高考</a>
-				
-				<a href="#生活" class="button button-small button-orange mt-1" title="生活" rel="8">生活</a>
-				
-				<a href="#爱" class="button button-small button-orange mt-1" title="爱" rel="2">爱</a>
-				
-				<a href="#大学" class="button button-small button-orange mt-1" title="大学" rel="13">大学</a>
-				
-				<a href="#网名" class="button button-small button-orange mt-1" title="网名" rel="2">网名</a>
-				
-				<a href="#小说" class="button button-small button-orange mt-1" title="小说" rel="1">小说</a>
-				
-				<a href="#百度" class="button button-small button-orange mt-1" title="百度" rel="4">百度</a>
-				
-				<a href="#谷歌" class="button button-small button-orange mt-1" title="谷歌" rel="1">谷歌</a>
-				
-				<a href="#凡客" class="button button-small button-orange mt-1" title="凡客" rel="1">凡客</a>
-				
-				<a href="#无聊" class="button button-small button-orange mt-1" title="无聊" rel="2">无聊</a>
-				
-				<a href="#微信" class="button button-small button-orange mt-1" title="微信" rel="1">微信</a>
-				
-				<a href="#未来" class="button button-small button-orange mt-1" title="未来" rel="1">未来</a>
-				
-				<a href="#qq" class="button button-small button-orange mt-1" title="qq" rel="1">qq</a>
-				
-				<a href="#vps" class="button button-small button-orange mt-1" title="vps" rel="1">vps</a>
-				
-				<a href="#人人网" class="button button-small button-orange mt-1" title="人人网" rel="2">人人网</a>
-				
-				<a href="#社团" class="button button-small button-orange mt-1" title="社团" rel="1">社团</a>
-				
-				<a href="#军训" class="button button-small button-orange mt-1" title="军训" rel="1">军训</a>
-				
-				<a href="#南京" class="button button-small button-orange mt-1" title="南京" rel="2">南京</a>
-				
-				<a href="#淘宝" class="button button-small button-orange mt-1" title="淘宝" rel="1">淘宝</a>
-				
-				<a href="#青春" class="button button-small button-orange mt-1" title="青春" rel="1">青春</a>
-				
-				<a href="#刷机" class="button button-small button-orange mt-1" title="刷机" rel="2">刷机</a>
-				
-				<a href="#域名" class="button button-small button-orange mt-1" title="域名" rel="3">域名</a>
-				
-				<a href="#备案" class="button button-small button-orange mt-1" title="备案" rel="2">备案</a>
-				
-				<a href="#代码" class="button button-small button-orange mt-1" title="代码" rel="1">代码</a>
-				
-				<a href="#网速" class="button button-small button-orange mt-1" title="网速" rel="1">网速</a>
-				
-				<a href="#实验" class="button button-small button-orange mt-1" title="实验" rel="2">实验</a>
-				
-				<a href="#吃" class="button button-small button-orange mt-1" title="吃" rel="1">吃</a>
-				
-				<a href="#活动" class="button button-small button-orange mt-1" title="活动" rel="1">活动</a>
-				
-				<a href="#硬盘" class="button button-small button-orange mt-1" title="硬盘" rel="1">硬盘</a>
-				
-				<a href="#系统" class="button button-small button-orange mt-1" title="系统" rel="2">系统</a>
-				
-				<a href="#南邮" class="button button-small button-orange mt-1" title="南邮" rel="1">南邮</a>
-				
-				<a href="#win8" class="button button-small button-orange mt-1" title="win8" rel="1">win8</a>
-				
-				<a href="#技巧" class="button button-small button-orange mt-1" title="技巧" rel="1">技巧</a>
-				
-				<a href="#互联网" class="button button-small button-orange mt-1" title="互联网" rel="1">互联网</a>
-				
-				<a href="#安全" class="button button-small button-orange mt-1" title="安全" rel="1">安全</a>
-				
-				<a href="#隐私" class="button button-small button-orange mt-1" title="隐私" rel="1">隐私</a>
-				
-				<a href="#娱乐" class="button button-small button-orange mt-1" title="娱乐" rel="1">娱乐</a>
-				
-				<a href="#微博" class="button button-small button-orange mt-1" title="微博" rel="2">微博</a>
-				
-				<a href="#下载" class="button button-small button-orange mt-1" title="下载" rel="1">下载</a>
-				
-				<a href="#在一起" class="button button-small button-orange mt-1" title="在一起" rel="1">在一起</a>
-				
-				<a href="#福利" class="button button-small button-orange mt-1" title="福利" rel="1">福利</a>
-				
-				<a href="#RSS" class="button button-small button-orange mt-1" title="RSS" rel="1">RSS</a>
-				
-				<a href="#订阅" class="button button-small button-orange mt-1" title="订阅" rel="1">订阅</a>
-				
-				<a href="#linux" class="button button-small button-orange mt-1" title="linux" rel="3">linux</a>
-				
-				<a href="#facebook" class="button button-small button-orange mt-1" title="facebook" rel="1">facebook</a>
-				
-				<a href="#twitter" class="button button-small button-orange mt-1" title="twitter" rel="1">twitter</a>
-				
-				<a href="#jekyll" class="button button-small button-orange mt-1" title="jekyll" rel="1">jekyll</a>
-				
-				<a href="#wordpress" class="button button-small button-orange mt-1" title="wordpress" rel="1">wordpress</a>
-				
-				<a href="#ios" class="button button-small button-orange mt-1" title="ios" rel="1">ios</a>
-				
-				<a href="#历史" class="button button-small button-orange mt-1" title="历史" rel="1">历史</a>
-				
-				<a href="#路由器" class="button button-small button-orange mt-1" title="路由器" rel="2">路由器</a>
-				
-				<a href="#openwrt" class="button button-small button-orange mt-1" title="openwrt" rel="2">openwrt</a>
-				
-				<a href="#乱说" class="button button-small button-orange mt-1" title="乱说" rel="1">乱说</a>
-				
-				<a href="#往事" class="button button-small button-orange mt-1" title="往事" rel="2">往事</a>
-				
-				<a href="#留念" class="button button-small button-orange mt-1" title="留念" rel="2">留念</a>
-				
-				<a href="#流年" class="button button-small button-orange mt-1" title="流年" rel="2">流年</a>
-				
-				<a href="#支付宝" class="button button-small button-orange mt-1" title="支付宝" rel="1">支付宝</a>
-				
-				<a href="#godaddy" class="button button-small button-orange mt-1" title="godaddy" rel="1">godaddy</a>
-				
-				<a href="#安卓" class="button button-small button-orange mt-1" title="安卓" rel="1">安卓</a>
-				
-				<a href="#计算机" class="button button-small button-orange mt-1" title="计算机" rel="2">计算机</a>
-				
-				<a href="#工作" class="button button-small button-orange mt-1" title="工作" rel="1">工作</a>
-				
-				<a href="#笔试" class="button button-small button-orange mt-1" title="笔试" rel="1">笔试</a>
-				
-				<a href="#服务器" class="button button-small button-orange mt-1" title="服务器" rel="1">服务器</a>
-				
-				<a href="#nginx" class="button button-small button-orange mt-1" title="nginx" rel="1">nginx</a>
-				
-				<a href="#python" class="button button-small button-orange mt-1" title="python" rel="1">python</a>
-				
-				<a href="#rss" class="button button-small button-orange mt-1" title="rss" rel="1">rss</a>
-				
-				<a href="#脚本" class="button button-small button-orange mt-1" title="脚本" rel="2">脚本</a>
-				
-				<a href="#主题" class="button button-small button-orange mt-1" title="主题" rel="1">主题</a>
-				
-				<a href="#古人" class="button button-small button-orange mt-1" title="古人" rel="2">古人</a>
-				
-				<a href="#学习" class="button button-small button-orange mt-1" title="学习" rel="1">学习</a>
-				
-				<a href="#Linux" class="button button-small button-orange mt-1" title="Linux" rel="10">Linux</a>
-				
-				<a href="#Github" class="button button-small button-orange mt-1" title="Github" rel="6">Github</a>
-				
-				<a href="#Jekyll" class="button button-small button-orange mt-1" title="Jekyll" rel="6">Jekyll</a>
-				
-				<a href="#SSH" class="button button-small button-orange mt-1" title="SSH" rel="4">SSH</a>
-				
-				<a href="#Virtualbox" class="button button-small button-orange mt-1" title="Virtualbox" rel="2">Virtualbox</a>
-				
-				<a href="#Googgle" class="button button-small button-orange mt-1" title="Googgle" rel="2">Googgle</a>
-				
-				<a href="#GoAgent" class="button button-small button-orange mt-1" title="GoAgent" rel="2">GoAgent</a>
-				
-				<a href="#翻墙" class="button button-small button-orange mt-1" title="翻墙" rel="2">翻墙</a>
-				
-				<a href="#互联网自由" class="button button-small button-orange mt-1" title="互联网自由" rel="2">互联网自由</a>
-				
-				<a href="#fcitx" class="button button-small button-orange mt-1" title="fcitx" rel="2">fcitx</a>
-				
-				<a href="#输入法" class="button button-small button-orange mt-1" title="输入法" rel="2">输入法</a>
-				
-				<a href="#pandoc" class="button button-small button-orange mt-1" title="pandoc" rel="2">pandoc</a>
-				
-				<a href="#QQ" class="button button-small button-orange mt-1" title="QQ" rel="2">QQ</a>
-				
-				<a href="#云存储" class="button button-small button-orange mt-1" title="云存储" rel="1">云存储</a>
-				
-				<a href="#R" class="button button-small button-orange mt-1" title="R" rel="6">R</a>
-				
-				<a href="#Note" class="button button-small button-orange mt-1" title="Note" rel="4">Note</a>
-				
-				<a href="#Rmarkdown" class="button button-small button-orange mt-1" title="Rmarkdown" rel="2">Rmarkdown</a>
-				
-				<a href="#假期" class="button button-small button-orange mt-1" title="假期" rel="1">假期</a>
-				
-				<a href="#上网" class="button button-small button-orange mt-1" title="上网" rel="1">上网</a>
-				
-				<a href="#新年" class="button button-small button-orange mt-1" title="新年" rel="1">新年</a>
-				
-				<a href="#祝福" class="button button-small button-orange mt-1" title="祝福" rel="1">祝福</a>
-				
-				<a href="#美联储" class="button button-small button-orange mt-1" title="美联储" rel="2">美联储</a>
-				
-				<a href="#经济" class="button button-small button-orange mt-1" title="经济" rel="2">经济</a>
-				
-				<a href="#博士" class="button button-small button-orange mt-1" title="博士" rel="2">博士</a>
-				
-				<a href="#学院派" class="button button-small button-orange mt-1" title="学院派" rel="2">学院派</a>
+				<a href="#学院派" class="button button-small button-orange mt-1" title="学院派" rel="1">学院派</a>
 				
 				<a href="#日子" class="button button-small button-orange mt-1" title="日子" rel="1">日子</a>
 				
 				<a href="#咪豆" class="button button-small button-orange mt-1" title="咪豆" rel="1">咪豆</a>
 				
 				<a href="#随想" class="button button-small button-orange mt-1" title="随想" rel="1">随想</a>
-				
-				<a href="#败家" class="button button-small button-orange mt-1" title="败家" rel="1">败家</a>
-				
-				<a href="#平板" class="button button-small button-orange mt-1" title="平板" rel="1">平板</a>
-				
-				<a href="#看书" class="button button-small button-orange mt-1" title="看书" rel="1">看书</a>
 				
 			</div>
 			<ul class="archives no-list">
@@ -392,694 +391,12 @@
 				
 				<li class="listing-item">
 				<span>2013-12-31</span>
-				<a class="font-orange atitle" href="/final-day.html" title="2013年的最后一天">2013年的最后一天</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-12-31</span>
-				<a class="font-orange atitle" href="/final-day.html" title="2013年的最后一天">2013年的最后一天</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2013/12/31/final-day/" title="2013年的最后一天">2013年的最后一天</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2007-05-15</span>
-				<a class="font-orange atitle" href="/time-flying.html" title="一天又三年">一天又三年</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2007-05-15</span>
-				<a class="font-orange atitle" href="/time-flying.html" title="一天又三年">一天又三年</a>
-				</li>
-				
-			
-			<div id="心情" class="msg msg-orange mt-1 mb-1"><a href="#心情">心情</a></div>
-				
-				<li class="listing-item">
-				<span>2013-10-05</span>
-				<a class="font-orange atitle" href="/listen-a-old-song.html" title="听一首老歌">听一首老歌</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-10-10</span>
-				<a class="font-orange atitle" href="/old-boys.html" title="老男孩">老男孩</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-08-17</span>
-				<a class="font-orange atitle" href="/get-the-admission-notice-of-the.html" title="拿到录取通知书了">拿到录取通知书了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-07-31</span>
-				<a class="font-orange atitle" href="/two-months-later.html" title="两个月过去了 ">两个月过去了 </a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-07-11</span>
-				<a class="font-orange atitle" href="/i-consider-about-the-university.html" title="我在考虑的问题——关于大学">我在考虑的问题——关于大学</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-06-10</span>
-				<a class="font-orange atitle" href="/thank-you-for-your-love.html" title="谢谢你的爱">谢谢你的爱</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-04-13</span>
-				<a class="font-orange atitle" href="/jiu-zhe-dian-shi-jian-liao.html" title="就这点时间了">就这点时间了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-02-07</span>
-				<a class="font-orange atitle" href="/school-reunion.html" title="小学同学聚会">小学同学聚会</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-08-16</span>
-				<a class="font-orange atitle" href="/song-of-the-month-recommendation-lonely-season.html" title="好歌推荐——《寂寞的季节 》">好歌推荐——《寂寞的季节 》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-07-01</span>
-				<a class="font-orange atitle" href="/of-charity.html" title="上善若水">上善若水</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-25</span>
-				<a class="font-orange atitle" href="/i-was-admitted-2-it.html" title="我考上二本了！">我考上二本了！</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-08</span>
-				<a class="font-orange atitle" href="/entrance-end.html" title="高考结束了">高考结束了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-04</span>
-				<a class="font-orange atitle" href="/graduate.html" title="毕业了">毕业了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-03</span>
-				<a class="font-orange atitle" href="/untitled.html" title="无题">无题</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-02-07</span>
-				<a class="font-orange atitle" href="/not-in-the-mood-depressed.html" title="没心情，郁闷!">没心情，郁闷!</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-01-27</span>
-				<a class="font-orange atitle" href="/18-sky.html" title="18岁的天空">18岁的天空</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-01-24</span>
-				<a class="font-orange atitle" href="/yu-has-said-the-passage-where.html" title="羽凡曾经说过的一段话">羽凡曾经说过的一段话</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-01-08</span>
-				<a class="font-orange atitle" href="/or-children.html" title="还是小孩子">还是小孩子</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-01-01</span>
-				<a class="font-orange atitle" href="/hello-2010.html" title="Hello 2010   !">Hello 2010   !</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-01-01</span>
-				<a class="font-orange atitle" href="/december-31-2009-the-last-day-of-2009.html" title="2009年12月31日，2009年最后一天">2009年12月31日，2009年最后一天</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-12-25</span>
-				<a class="font-orange atitle" href="/most-like-to-receive-a-gift-yu-quan.html" title="最想收到的礼物――羽·泉">最想收到的礼物――羽·泉</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-12-23</span>
-				<a class="font-orange atitle" href="/dispute.html" title="争">争</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-12-12</span>
-				<a class="font-orange atitle" href="/wisecracking-high-school-a-happy-life.html" title="好歌推荐——《贫嘴高中生的幸福生活》">好歌推荐——《贫嘴高中生的幸福生活》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-11-23</span>
-				<a class="font-orange atitle" href="/e7-ad-89-e5-be-85.html" title="等待">等待</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-11-14</span>
-				<a class="font-orange atitle" href="/fifth-order-magic-square-the-second-cube-all-over.html" title="五阶魔方，二阶魔方都结束了">五阶魔方，二阶魔方都结束了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-11-05</span>
-				<a class="font-orange atitle" href="/one-song-two-different-styles.html" title="一首歌,两种不同的风格">一首歌,两种不同的风格</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-08-18</span>
-				<a class="font-orange atitle" href="/remember-when-you-said-the-same-table-with-these-words.html" title="还记得你跟同桌说过的这些话吗?">还记得你跟同桌说过的这些话吗?</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-06-21</span>
-				<a class="font-orange atitle" href="/qq-mailbox-has-been-stolen.html" title="QQ邮箱被别人盗用了">QQ邮箱被别人盗用了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-06-19</span>
-				<a class="font-orange atitle" href="/two-years-ago.html" title="两年前">两年前</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-05-30</span>
-				<a class="font-orange atitle" href="/how-so-not-careful.html" title="怎么这么不细心?">怎么这么不细心?</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-05-28</span>
-				<a class="font-orange atitle" href="/dragon-boat-festival-dumplings.html" title="端午节:粽子">端午节:粽子</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-04-25</span>
-				<a class="font-orange atitle" href="/these-things-enough-to-make-me-happy-but-i-was-not-happy.html" title="这些事足以让我高兴,可我却高兴不起来!">这些事足以让我高兴,可我却高兴不起来!</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-04-07</span>
-				<a class="font-orange atitle" href="/this-is-how-i-was-i.html" title="我这是怎么了?我">我这是怎么了?我</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-01-17</span>
-				<a class="font-orange atitle" href="/bye-2008.html" title="Bye 2008!">Bye 2008!</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-01-17</span>
-				<a class="font-orange atitle" href="/finally-have-their-own-blog.html" title="终于有了自己的博客！">终于有了自己的博客！</a>
-				</li>
-				
-			
-			<div id="凤翔" class="msg msg-orange mt-1 mb-1"><a href="#凤翔">凤翔</a></div>
-				
-				<li class="listing-item">
-				<span>2009-08-30</span>
-				<a class="font-orange atitle" href="/u0026quottanabatau0026quot-appears-over-the-rainbow-fung-cheung.html" title="“七夕”凤翔上空出现的彩虹...">“七夕”凤翔上空出现的彩虹...</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-01-29</span>
-				<a class="font-orange atitle" href="/baoji-dialect.html" title="宝鸡方言">宝鸡方言</a>
-				</li>
-				
-			
-			<div id="凤翔中学" class="msg msg-orange mt-1 mb-1"><a href="#凤翔中学">凤翔中学</a></div>
-				
-				<li class="listing-item">
-				<span>2010-09-11</span>
-				<a class="font-orange atitle" href="/kee-fung-cheung-secondary-school-96-strike-kitchen-incident.html" title="记凤翔中学“九六罢灶”事件">记凤翔中学“九六罢灶”事件</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-07-31</span>
-				<a class="font-orange atitle" href="/tidy-blanket-to-school.html" title="收拾一下铺盖，去学校">收拾一下铺盖，去学校</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-03</span>
-				<a class="font-orange atitle" href="/untitled.html" title="无题">无题</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-11-22</span>
-				<a class="font-orange atitle" href="/legend-fengxiang-secondary-school-based-teaching-materials.html" title="传说中的凤翔中学的校本教材">传说中的凤翔中学的校本教材</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-09-27</span>
-				<a class="font-orange atitle" href="/absolutely-true-reflection-of-middle-school-students.html" title="高三学生绝对真实的写照">高三学生绝对真实的写照</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-08-07</span>
-				<a class="font-orange atitle" href="/high-school-class-teacheru002639s-comments-to-me.html" title="高中班主任给我的评语">高中班主任给我的评语</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-05-23</span>
-				<a class="font-orange atitle" href="/your-commitment.html" title="你的承诺">你的承诺</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-05-20</span>
-				<a class="font-orange atitle" href="/small-note-3-sophomore-english-class-the-teacher-used.html" title="小记高二3班老师常用语">小记高二3班老师常用语</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-04-25</span>
-				<a class="font-orange atitle" href="/these-things-enough-to-make-me-happy-but-i-was-not-happy.html" title="这些事足以让我高兴,可我却高兴不起来!">这些事足以让我高兴,可我却高兴不起来!</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-03-26</span>
-				<a class="font-orange atitle" href="/phoenix-in-the-computer-room-from-the-control-method.html" title="凤中微机室脱离控制的方法">凤中微机室脱离控制的方法</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-01-29</span>
-				<a class="font-orange atitle" href="/yellow-book-under-the-class-about.html" title="下节课讲黄书">下节课讲黄书</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-01-29</span>
-				<a class="font-orange atitle" href="/high-one-13-basketball-class-teacher.html" title="高一（13）班老师篮球賽">高一（13）班老师篮球賽</a>
-				</li>
-				
-			
-			<div id="恶搞" class="msg msg-orange mt-1 mb-1"><a href="#恶搞">恶搞</a></div>
-				
-				<li class="listing-item">
-				<span>2010-04-02</span>
-				<a class="font-orange atitle" href="/the-happy-foolu002639s-day.html" title="愚人节快乐！">愚人节快乐！</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-05-20</span>
-				<a class="font-orange atitle" href="/3-rubiku002639s-cube-competition-sophomore-class-teacher.html" title="高二3班老师魔方大赛">高二3班老师魔方大赛</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-01-29</span>
-				<a class="font-orange atitle" href="/chrysanthemum-network-infatuation-edition.html" title="【菊花台】-(网络痴情版)">【菊花台】-(网络痴情版)</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-01-29</span>
-				<a class="font-orange atitle" href="/student-songs.html" title="学生歌">学生歌</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-01-29</span>
-				<a class="font-orange atitle" href="/high-one-13-basketball-class-teacher.html" title="高一（13）班老师篮球賽">高一（13）班老师篮球賽</a>
-				</li>
-				
-			
-			<div id="高中" class="msg msg-orange mt-1 mb-1"><a href="#高中">高中</a></div>
-				
-				<li class="listing-item">
-				<span>2011-08-17</span>
-				<a class="font-orange atitle" href="/get-the-admission-notice-of-the.html" title="拿到录取通知书了">拿到录取通知书了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-08-16</span>
-				<a class="font-orange atitle" href="/my-novel-food-of-love.html" title="我的小说情缘">我的小说情缘</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-07-31</span>
-				<a class="font-orange atitle" href="/tidy-blanket-to-school.html" title="收拾一下铺盖，去学校">收拾一下铺盖，去学校</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-03</span>
-				<a class="font-orange atitle" href="/untitled.html" title="无题">无题</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-05-23</span>
-				<a class="font-orange atitle" href="/academic-performance-test-scores-are-all-a-rights.html" title="学业水平考试成绩全是A啦">学业水平考试成绩全是A啦</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-03-31</span>
-				<a class="font-orange atitle" href="/thought-of-an-earthquake.html" title="想起了地震时">想起了地震时</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-12-12</span>
-				<a class="font-orange atitle" href="/wisecracking-high-school-a-happy-life.html" title="好歌推荐——《贫嘴高中生的幸福生活》">好歌推荐——《贫嘴高中生的幸福生活》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-12-05</span>
-				<a class="font-orange atitle" href="/school-test-scores-came-out-again.html" title="学业考试成绩又出来了">学业考试成绩又出来了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-11-22</span>
-				<a class="font-orange atitle" href="/legend-fengxiang-secondary-school-based-teaching-materials.html" title="传说中的凤翔中学的校本教材">传说中的凤翔中学的校本教材</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-09-27</span>
-				<a class="font-orange atitle" href="/absolutely-true-reflection-of-middle-school-students.html" title="高三学生绝对真实的写照">高三学生绝对真实的写照</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-08-18</span>
-				<a class="font-orange atitle" href="/remember-when-you-said-the-same-table-with-these-words.html" title="还记得你跟同桌说过的这些话吗?">还记得你跟同桌说过的这些话吗?</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-08-07</span>
-				<a class="font-orange atitle" href="/high-school-class-teacheru002639s-comments-to-me.html" title="高中班主任给我的评语">高中班主任给我的评语</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-06-19</span>
-				<a class="font-orange atitle" href="/two-years-ago.html" title="两年前">两年前</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-05-23</span>
-				<a class="font-orange atitle" href="/your-commitment.html" title="你的承诺">你的承诺</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-05-20</span>
-				<a class="font-orange atitle" href="/3-rubiku002639s-cube-competition-sophomore-class-teacher.html" title="高二3班老师魔方大赛">高二3班老师魔方大赛</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-05-20</span>
-				<a class="font-orange atitle" href="/small-note-3-sophomore-english-class-the-teacher-used.html" title="小记高二3班老师常用语">小记高二3班老师常用语</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-04-25</span>
-				<a class="font-orange atitle" href="/these-things-enough-to-make-me-happy-but-i-was-not-happy.html" title="这些事足以让我高兴,可我却高兴不起来!">这些事足以让我高兴,可我却高兴不起来!</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-04-07</span>
-				<a class="font-orange atitle" href="/this-is-how-i-was-i.html" title="我这是怎么了?我">我这是怎么了?我</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-04-02</span>
-				<a class="font-orange atitle" href="/academic-proficiency-test-results-out.html" title="学业水平考试成绩出来了">学业水平考试成绩出来了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-01-29</span>
-				<a class="font-orange atitle" href="/yellow-book-under-the-class-about.html" title="下节课讲黄书">下节课讲黄书</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-01-29</span>
-				<a class="font-orange atitle" href="/student-songs.html" title="学生歌">学生歌</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-01-29</span>
-				<a class="font-orange atitle" href="/high-one-13-basketball-class-teacher.html" title="高一（13）班老师篮球賽">高一（13）班老师篮球賽</a>
-				</li>
-				
-			
-			<div id="笑话" class="msg msg-orange mt-1 mb-1"><a href="#笑话">笑话</a></div>
-				
-				<li class="listing-item">
-				<span>2009-01-29</span>
-				<a class="font-orange atitle" href="/yellow-book-under-the-class-about.html" title="下节课讲黄书">下节课讲黄书</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-01-29</span>
-				<a class="font-orange atitle" href="/our-house.html" title="咱家">咱家</a>
-				</li>
-				
-			
-			<div id="考试" class="msg msg-orange mt-1 mb-1"><a href="#考试">考试</a></div>
-				
-				<li class="listing-item">
-				<span>2013-12-16</span>
-				<a class="font-orange atitle" href="/everyday-is-festival.html" title="天天像过年？">天天像过年？</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-07-31</span>
-				<a class="font-orange atitle" href="/tidy-blanket-to-school.html" title="收拾一下铺盖，去学校">收拾一下铺盖，去学校</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-07-31</span>
-				<a class="font-orange atitle" href="/my-record-of-college-entrance-examination-papers.html" title="我的高考试卷记录">我的高考试卷记录</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-05</span>
-				<a class="font-orange atitle" href="/i-went-to-the-college-entrance-examination.html" title="我去高考了">我去高考了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-12-05</span>
-				<a class="font-orange atitle" href="/school-test-scores-came-out-again.html" title="学业考试成绩又出来了">学业考试成绩又出来了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-04-02</span>
-				<a class="font-orange atitle" href="/academic-proficiency-test-results-out.html" title="学业水平考试成绩出来了">学业水平考试成绩出来了</a>
-				</li>
-				
-			
-			<div id="电脑" class="msg msg-orange mt-1 mb-1"><a href="#电脑">电脑</a></div>
-				
-				<li class="listing-item">
-				<span>2013-05-15</span>
-				<a class="font-orange atitle" href="/freedom-of-the-network.html" title="爲上網貢獻一丁點力量">爲上網貢獻一丁點力量</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-04-24</span>
-				<a class="font-orange atitle" href="/good-split-screen-function-under-the-metro-interface.html" title="Metro界面下的分屏功能不错">Metro界面下的分屏功能不错</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-12-29</span>
-				<a class="font-orange atitle" href="/win7-forget-separation-vhd-virtual-hard-disk-can-not-boot.html" title="win7忘记分离vhd虚拟硬盘,无法开机">win7忘记分离vhd虚拟硬盘,无法开机</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-04-21</span>
-				<a class="font-orange atitle" href="/teach-you-to-remove-the-memory-card-back-what-recovery.html" title="教你把删除内存卡的东西复原回来">教你把删除内存卡的东西复原回来</a>
-				</li>
-				
-			
-			<div id="软件" class="msg msg-orange mt-1 mb-1"><a href="#软件">软件</a></div>
-				
-				<li class="listing-item">
-				<span>2013-08-20</span>
-				<a class="font-orange atitle" href="/boring-summer-vacation.html" title="越来越无聊的暑假">越来越无聊的暑假</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-05-15</span>
-				<a class="font-orange atitle" href="/freedom-of-the-network.html" title="爲上網貢獻一丁點力量">爲上網貢獻一丁點力量</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-05-05</span>
-				<a class="font-orange atitle" href="/markdown-editor.html" title="一款简洁的Markdown编辑器">一款简洁的Markdown编辑器</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-02-16</span>
-				<a class="font-orange atitle" href="/i-also-registered-the-micro-letters.html" title="我也注册了微信">我也注册了微信</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-04-11</span>
-				<a class="font-orange atitle" href="/qq-finish-off-the-farm-so.html" title="QQ农场就这样玩完了">QQ农场就这样玩完了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-04-03</span>
-				<a class="font-orange atitle" href="/finally-will-be-over-the-wall-of-the.html" title="终于会翻墙了">终于会翻墙了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-04-21</span>
-				<a class="font-orange atitle" href="/teach-you-to-remove-the-memory-card-back-what-recovery.html" title="教你把删除内存卡的东西复原回来">教你把删除内存卡的东西复原回来</a>
-				</li>
-				
-			
-			<div id="图片" class="msg msg-orange mt-1 mb-1"><a href="#图片">图片</a></div>
-				
-				<li class="listing-item">
-				<span>2009-04-25</span>
-				<a class="font-orange atitle" href="/april-24-at-noon-in-the-sky-clouds-of-different-colors.html" title="4月24日中午天空中出现彩色云彩了!">4月24日中午天空中出现彩色云彩了!</a>
-				</li>
-				
-			
-			<div id="地震" class="msg msg-orange mt-1 mb-1"><a href="#地震">地震</a></div>
-				
-				<li class="listing-item">
-				<span>2010-03-31</span>
-				<a class="font-orange atitle" href="/thought-of-an-earthquake.html" title="想起了地震时">想起了地震时</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-04-25</span>
-				<a class="font-orange atitle" href="/april-24-at-noon-in-the-sky-clouds-of-different-colors.html" title="4月24日中午天空中出现彩色云彩了!">4月24日中午天空中出现彩色云彩了!</a>
-				</li>
-				
-			
-			<div id="博客" class="msg msg-orange mt-1 mb-1"><a href="#博客">博客</a></div>
-				
-				<li class="listing-item">
-				<span>2014-01-02</span>
-				<a class="font-orange atitle" href="/window-linux.html" title="本本的转型">本本的转型</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-02</span>
-				<a class="font-orange atitle" href="/window-linux.html" title="本本的转型">本本的转型</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-12-20</span>
-				<a class="font-orange atitle" href="/a-wordpress-theme-fqyd.html" title="WordPress轻博客主题《风轻云淡》">WordPress轻博客主题《风轻云淡》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-06-07</span>
-				<a class="font-orange atitle" href="/use-jekyll.html" title="博客换到了jekyll，托管在gitcafe">博客换到了jekyll，托管在gitcafe</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-05-05</span>
-				<a class="font-orange atitle" href="/markdown-editor.html" title="一款简洁的Markdown编辑器">一款简洁的Markdown编辑器</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-12-25</span>
-				<a class="font-orange atitle" href="/this-article-is-write-the-word.html" title="这篇文章是用word写的">这篇文章是用word写的</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-05-23</span>
-				<a class="font-orange atitle" href="/nuffnang.html" title="nuffnang拿福能千人斩只为进入中国">nuffnang拿福能千人斩只为进入中国</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-11-13</span>
-				<a class="font-orange atitle" href="/where-the-object-of-my.html" title="我的凡客体">我的凡客体</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-07-22</span>
-				<a class="font-orange atitle" href="/transfer-wordpress-blog-rights.html" title="博客转wordpress啦">博客转wordpress啦</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-07-02</span>
-				<a class="font-orange atitle" href="/ive-changed-my-screen-name-the-fifth.html" title="我改网名了——小五">我改网名了——小五</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-05-14</span>
-				<a class="font-orange atitle" href="/this-blog-i-will-always-do-so.html" title="这个博客我会一直做下去">这个博客我会一直做下去</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-04-25</span>
-				<a class="font-orange atitle" href="/tencent-launched-micro-bo.html" title="开通了腾讯微博">开通了腾讯微博</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-02-18</span>
-				<a class="font-orange atitle" href="/statistics-give-you-some-clicki-invitation-code.html" title="送给大家一些clicki统计邀请码">送给大家一些clicki统计邀请码</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-12-19</span>
-				<a class="font-orange atitle" href="/blog-award-and-unfortunately-did-not-get-their-prize.html" title="博客获奖了，可惜没领到奖品!">博客获奖了，可惜没领到奖品!</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-05-16</span>
-				<a class="font-orange atitle" href="/new-new-new-new.html" title="新 ， 新 ， 新 ， 新 ！">新 ， 新 ， 新 ， 新 ！</a>
-				</li>
-				
-			
-			<div id="回忆" class="msg msg-orange mt-1 mb-1"><a href="#回忆">回忆</a></div>
-				
-				<li class="listing-item">
-				<span>2010-03-31</span>
-				<a class="font-orange atitle" href="/thought-of-an-earthquake.html" title="想起了地震时">想起了地震时</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-01-01</span>
-				<a class="font-orange atitle" href="/december-31-2009-the-last-day-of-2009.html" title="2009年12月31日，2009年最后一天">2009年12月31日，2009年最后一天</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-08-18</span>
-				<a class="font-orange atitle" href="/remember-when-you-said-the-same-table-with-these-words.html" title="还记得你跟同桌说过的这些话吗?">还记得你跟同桌说过的这些话吗?</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-06-19</span>
-				<a class="font-orange atitle" href="/two-years-ago.html" title="两年前">两年前</a>
-				</li>
-				
-			
-			<div id="手机" class="msg msg-orange mt-1 mb-1"><a href="#手机">手机</a></div>
-				
-				<li class="listing-item">
-				<span>2013-08-20</span>
-				<a class="font-orange atitle" href="/boring-summer-vacation.html" title="越来越无聊的暑假">越来越无聊的暑假</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-06-13</span>
-				<a class="font-orange atitle" href="/ios7-hehe.html" title="Ios 7 呵呵">Ios 7 呵呵</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-11-30</span>
-				<a class="font-orange atitle" href="/dhd-g10-the-official-unlock-the-brush-third-party-rom-not-start.html" title="DHD G10 官方解锁，刷第三方rom无法启动">DHD G10 官方解锁，刷第三方rom无法启动</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-11-29</span>
-				<a class="font-orange atitle" href="/whim-to-the-experimental-subject-drew-interface.html" title="突发奇想，给实验题目画了个界面">突发奇想，给实验题目画了个界面</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-05-16</span>
-				<a class="font-orange atitle" href="/lewaos-for-milestone-milestones-le-frog-os.html" title="LeWaOS For Milestone 里程碑的乐蛙OS">LeWaOS For Milestone 里程碑的乐蛙OS</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-02-16</span>
-				<a class="font-orange atitle" href="/i-also-registered-the-micro-letters.html" title="我也注册了微信">我也注册了微信</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-10-25</span>
-				<a class="font-orange atitle" href="/google-latitude-do-you-dare-to-play.html" title="“谷歌纵横”你敢玩吗？">“谷歌纵横”你敢玩吗？</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-04-03</span>
-				<a class="font-orange atitle" href="/finally-will-be-over-the-wall-of-the.html" title="终于会翻墙了">终于会翻墙了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-06-21</span>
-				<a class="font-orange atitle" href="/qq-mailbox-has-been-stolen.html" title="QQ邮箱被别人盗用了">QQ邮箱被别人盗用了</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2007/05/15/time-flying/" title="一天又三年">一天又三年</a>
 				</li>
 				
 			
@@ -1087,169 +404,20 @@
 				
 				<li class="listing-item">
 				<span>2013-07-14</span>
-				<a class="font-orange atitle" href="/to-be-a-man.html" title="曾厝垵后厝85号的大男孩">曾厝垵后厝85号的大男孩</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-07-14</span>
-				<a class="font-orange atitle" href="/to-be-a-man.html" title="曾厝垵后厝85号的大男孩">曾厝垵后厝85号的大男孩</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2013/07/14/to-be-a-man/" title="曾厝垵后厝85号的大男孩">曾厝垵后厝85号的大男孩</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2009-09-15</span>
-				<a class="font-orange atitle" href="/liu-nian.html" title="流年">流年</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-09-15</span>
-				<a class="font-orange atitle" href="/liu-nian.html" title="流年">流年</a>
-				</li>
-				
-			
-			<div id="音乐" class="msg msg-orange mt-1 mb-1"><a href="#音乐">音乐</a></div>
-				
-				<li class="listing-item">
-				<span>2013-06-14</span>
-				<a class="font-orange atitle" href="/qing-chao-guoge.html" title="来听听清朝国歌">来听听清朝国歌</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-05-05</span>
-				<a class="font-orange atitle" href="/yu-quan-shanghai-15-anniversary-of-the-the-concert-first-half-of-the-game-video.html" title="羽泉上海15周年【在一起】演唱会前半场视频">羽泉上海15周年【在一起】演唱会前半场视频</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-02-27</span>
-				<a class="font-orange atitle" href="/fireworks-cool-easily.html" title="《烟花易冷》">《烟花易冷》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-12-05</span>
-				<a class="font-orange atitle" href="/dusk.html" title="黄昏">黄昏</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-10-10</span>
-				<a class="font-orange atitle" href="/old-boys.html" title="老男孩">老男孩</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-06-10</span>
-				<a class="font-orange atitle" href="/thank-you-for-your-love.html" title="谢谢你的爱">谢谢你的爱</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-01-04</span>
-				<a class="font-orange atitle" href="/dear-it-is-not-love.html" title="亲爱的那不是爱情">亲爱的那不是爱情</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-10-22</span>
-				<a class="font-orange atitle" href="/beijing-rain.html" title="北京下雨了">北京下雨了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-08-16</span>
-				<a class="font-orange atitle" href="/song-of-the-month-recommendation-lonely-season.html" title="好歌推荐——《寂寞的季节 》">好歌推荐——《寂寞的季节 》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-03</span>
-				<a class="font-orange atitle" href="/untitled.html" title="无题">无题</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-05-22</span>
-				<a class="font-orange atitle" href="/song-of-the-month-recommendation-u0026quotsay-goodbyeu0026quot.html" title="好歌推荐——《说了再见》">好歌推荐——《说了再见》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-05-22</span>
-				<a class="font-orange atitle" href="/nandao.html" title="好歌推荐——《难道》">好歌推荐——《难道》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-05-22</span>
-				<a class="font-orange atitle" href="/song-of-the-month-recommendation-u0026quotbeautifulu0026quot.html" title="好歌推荐——《最美》">好歌推荐——《最美》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-03-23</span>
-				<a class="font-orange atitle" href="/take-me-to-your-heart.html" title="好歌推荐——《Take me to your heart》">好歌推荐——《Take me to your heart》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-02-24</span>
-				<a class="font-orange atitle" href="/hard-to-say-goodbye.html" title="好歌推荐——《难说再见》">好歌推荐——《难说再见》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-12-12</span>
-				<a class="font-orange atitle" href="/wisecracking-high-school-a-happy-life.html" title="好歌推荐——《贫嘴高中生的幸福生活》">好歌推荐——《贫嘴高中生的幸福生活》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-11-05</span>
-				<a class="font-orange atitle" href="/one-song-two-different-styles.html" title="一首歌,两种不同的风格">一首歌,两种不同的风格</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-10-16</span>
-				<a class="font-orange atitle" href="/road-has-been-in.html" title="好歌推荐——《路一直都在》">好歌推荐——《路一直都在》</a>
-				</li>
-				
-			
-			<div id="魔方" class="msg msg-orange mt-1 mb-1"><a href="#魔方">魔方</a></div>
-				
-				<li class="listing-item">
-				<span>2009-11-14</span>
-				<a class="font-orange atitle" href="/fifth-order-magic-square-the-second-cube-all-over.html" title="五阶魔方，二阶魔方都结束了">五阶魔方，二阶魔方都结束了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-10-31</span>
-				<a class="font-orange atitle" href="/rubiku002639s-revenge-so-it-was-concluded.html" title="四阶魔方也就这样结束了">四阶魔方也就这样结束了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-10-24</span>
-				<a class="font-orange atitle" href="/it-took-more-than-two-hours-time-and-finally-learned-to-spell-triangular-cube.html" title="花了两个多小时时间,终于学会了拼三角魔方">花了两个多小时时间,终于学会了拼三角魔方</a>
-				</li>
-				
-			
-			<div id="诗词" class="msg msg-orange mt-1 mb-1"><a href="#诗词">诗词</a></div>
-				
-				<li class="listing-item">
-				<span>2009-11-06</span>
-				<a class="font-orange atitle" href="/interpretation-of-the-term-of-the-ancient-love-poems.html" title="恋爱名词的古诗词解释">恋爱名词的古诗词解释</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-11-06</span>
-				<a class="font-orange atitle" href="/ancient-poems-about-love.html" title="关于爱情的古诗词">关于爱情的古诗词</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2009/09/15/liu-nian/" title="流年">流年</a>
 				</li>
 				
 			
 			<div id="爱情" class="msg msg-orange mt-1 mb-1"><a href="#爱情">爱情</a></div>
 				
 				<li class="listing-item">
-				<span>2012-01-30</span>
-				<a class="font-orange atitle" href="/youth-has-been-continued.html" title="青春，一直都在继续">青春，一直都在继续</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-01-04</span>
-				<a class="font-orange atitle" href="/dear-it-is-not-love.html" title="亲爱的那不是爱情">亲爱的那不是爱情</a>
-				</li>
-				
-				<li class="listing-item">
 				<span>2009-11-11</span>
-				<a class="font-orange atitle" href="/lonely-love.html" title="作品">作品</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-11-11</span>
-				<a class="font-orange atitle" href="/lonely-love.html" title="作品">作品</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2009/11/11/lonely-love/" title="作品">作品</a>
 				</li>
 				
 			
@@ -1257,12 +425,7 @@
 				
 				<li class="listing-item">
 				<span>2009-11-11</span>
-				<a class="font-orange atitle" href="/lonely-love.html" title="作品">作品</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-11-11</span>
-				<a class="font-orange atitle" href="/lonely-love.html" title="作品">作品</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2009/11/11/lonely-love/" title="作品">作品</a>
 				</li>
 				
 			
@@ -1270,101 +433,7 @@
 				
 				<li class="listing-item">
 				<span>2009-11-20</span>
-				<a class="font-orange atitle" href="/angel.html" title="Angel">Angel</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-11-20</span>
-				<a class="font-orange atitle" href="/angel.html" title="Angel">Angel</a>
-				</li>
-				
-			
-			<div id="小孩子" class="msg msg-orange mt-1 mb-1"><a href="#小孩子">小孩子</a></div>
-				
-				<li class="listing-item">
-				<span>2010-06-21</span>
-				<a class="font-orange atitle" href="/always-children.html" title="永远小孩子">永远小孩子</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-01-08</span>
-				<a class="font-orange atitle" href="/or-children.html" title="还是小孩子">还是小孩子</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-12-15</span>
-				<a class="font-orange atitle" href="/have-children.html" title="曾经小孩子">曾经小孩子</a>
-				</li>
-				
-			
-			<div id="网站" class="msg msg-orange mt-1 mb-1"><a href="#网站">网站</a></div>
-				
-				<li class="listing-item">
-				<span>2014-01-18</span>
-				<a class="font-orange atitle" href="/qiniu-feel.html" title="七牛云存储使用感受">七牛云存储使用感受</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-05-17</span>
-				<a class="font-orange atitle" href="/booby.html" title="boo.by美胸打分网站">boo.by美胸打分网站</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-08-29</span>
-				<a class="font-orange atitle" href="/get-rid-of-the-little-mesh-upper-right-corner-of-concern-log-tab.html" title="去掉点点网右上角关注和登录标签">去掉点点网右上角关注和登录标签</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-08-27</span>
-				<a class="font-orange atitle" href="/little-network-provides-independent-domain-name-for-the-record.html" title="点点网提供独立域名备案啦">点点网提供独立域名备案啦</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-07-29</span>
-				<a class="font-orange atitle" href="/ifttt-cottage-if-you-send-an-invitation-code-cloud.html" title="ifttt山寨版，如果云邀请码发送">ifttt山寨版，如果云邀请码发送</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-02-18</span>
-				<a class="font-orange atitle" href="/statistics-give-you-some-clicki-invitation-code.html" title="送给大家一些clicki统计邀请码">送给大家一些clicki统计邀请码</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-12-19</span>
-				<a class="font-orange atitle" href="/blog-award-and-unfortunately-did-not-get-their-prize.html" title="博客获奖了，可惜没领到奖品!">博客获奖了，可惜没领到奖品!</a>
-				</li>
-				
-			
-			<div id="羽泉" class="msg msg-orange mt-1 mb-1"><a href="#羽泉">羽泉</a></div>
-				
-				<li class="listing-item">
-				<span>2013-05-05</span>
-				<a class="font-orange atitle" href="/yu-quan-shanghai-15-anniversary-of-the-the-concert-first-half-of-the-game-video.html" title="羽泉上海15周年【在一起】演唱会前半场视频">羽泉上海15周年【在一起】演唱会前半场视频</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-05-22</span>
-				<a class="font-orange atitle" href="/nandao.html" title="好歌推荐——《难道》">好歌推荐——《难道》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-05-22</span>
-				<a class="font-orange atitle" href="/song-of-the-month-recommendation-u0026quotbeautifulu0026quot.html" title="好歌推荐——《最美》">好歌推荐——《最美》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-01-24</span>
-				<a class="font-orange atitle" href="/yu-has-said-the-passage-where.html" title="羽凡曾经说过的一段话">羽凡曾经说过的一段话</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-01-01</span>
-				<a class="font-orange atitle" href="/december-31-2009-the-last-day-of-2009.html" title="2009年12月31日，2009年最后一天">2009年12月31日，2009年最后一天</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2009-12-25</span>
-				<a class="font-orange atitle" href="/most-like-to-receive-a-gift-yu-quan.html" title="最想收到的礼物――羽·泉">最想收到的礼物――羽·泉</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2009/11/20/angel/" title="Angel">Angel</a>
 				</li>
 				
 			
@@ -1372,22 +441,12 @@
 				
 				<li class="listing-item">
 				<span>2010-01-30</span>
-				<a class="font-orange atitle" href="/how-far.html" title="永远有多远">永远有多远</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-01-30</span>
-				<a class="font-orange atitle" href="/how-far.html" title="永远有多远">永远有多远</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2010/01/30/how-far/" title="永远有多远">永远有多远</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2010-01-17</span>
-				<a class="font-orange atitle" href="/only-me.html" title="知我者">知我者</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-01-17</span>
-				<a class="font-orange atitle" href="/only-me.html" title="知我者">知我者</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2010/01/17/only-me/" title="知我者">知我者</a>
 				</li>
 				
 			
@@ -1395,281 +454,22 @@
 				
 				<li class="listing-item">
 				<span>2010-06-25</span>
-				<a class="font-orange atitle" href="/nothing-meaningful.html" title="存在的空虚">存在的空虚</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-25</span>
-				<a class="font-orange atitle" href="/nothing-meaningful.html" title="存在的空虚">存在的空虚</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2010/06/25/nothing-meaningful/" title="存在的空虚">存在的空虚</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2010-05-26</span>
-				<a class="font-orange atitle" href="/graduation.html" title="毕业啦">毕业啦</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-05-26</span>
-				<a class="font-orange atitle" href="/graduation.html" title="毕业啦">毕业啦</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2010/05/26/graduation/" title="毕业啦">毕业啦</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2010-05-21</span>
-				<a class="font-orange atitle" href="/missing.html" title="我怀念的">我怀念的</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-05-21</span>
-				<a class="font-orange atitle" href="/missing.html" title="我怀念的">我怀念的</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2010/05/21/missing/" title="我怀念的">我怀念的</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2010-01-30</span>
-				<a class="font-orange atitle" href="/how-far.html" title="永远有多远">永远有多远</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-01-30</span>
-				<a class="font-orange atitle" href="/how-far.html" title="永远有多远">永远有多远</a>
-				</li>
-				
-			
-			<div id="分享" class="msg msg-orange mt-1 mb-1"><a href="#分享">分享</a></div>
-				
-				<li class="listing-item">
-				<span>2013-05-05</span>
-				<a class="font-orange atitle" href="/markdown-editor.html" title="一款简洁的Markdown编辑器">一款简洁的Markdown编辑器</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-05-05</span>
-				<a class="font-orange atitle" href="/yu-quan-shanghai-15-anniversary-of-the-the-concert-first-half-of-the-game-video.html" title="羽泉上海15周年【在一起】演唱会前半场视频">羽泉上海15周年【在一起】演唱会前半场视频</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-05-20</span>
-				<a class="font-orange atitle" href="/baidu-to-listen-to-an-invitation-code.html" title="百度听邀请码">百度听邀请码</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-09-20</span>
-				<a class="font-orange atitle" href="/share-baidu-speak-invitation-code.html" title="分享百度说吧邀请码">分享百度说吧邀请码</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-09-18</span>
-				<a class="font-orange atitle" href="/share-baidu-idol-invitation-code.html" title="分享百度偶像邀请码">分享百度偶像邀请码</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-02-18</span>
-				<a class="font-orange atitle" href="/statistics-give-you-some-clicki-invitation-code.html" title="送给大家一些clicki统计邀请码">送给大家一些clicki统计邀请码</a>
-				</li>
-				
-			
-			<div id="邀请码" class="msg msg-orange mt-1 mb-1"><a href="#邀请码">邀请码</a></div>
-				
-				<li class="listing-item">
-				<span>2012-05-10</span>
-				<a class="font-orange atitle" href="/baidu-network-disk-invitation-code.html" title="百度网盘邀请码">百度网盘邀请码</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-11-25</span>
-				<a class="font-orange atitle" href="/taobao-index-invitation-code.html" title="淘宝指数邀请码">淘宝指数邀请码</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-07-29</span>
-				<a class="font-orange atitle" href="/ifttt-cottage-if-you-send-an-invitation-code-cloud.html" title="ifttt山寨版，如果云邀请码发送">ifttt山寨版，如果云邀请码发送</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-05-20</span>
-				<a class="font-orange atitle" href="/baidu-to-listen-to-an-invitation-code.html" title="百度听邀请码">百度听邀请码</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-09-20</span>
-				<a class="font-orange atitle" href="/share-baidu-speak-invitation-code.html" title="分享百度说吧邀请码">分享百度说吧邀请码</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-09-18</span>
-				<a class="font-orange atitle" href="/share-baidu-idol-invitation-code.html" title="分享百度偶像邀请码">分享百度偶像邀请码</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-02-18</span>
-				<a class="font-orange atitle" href="/statistics-give-you-some-clicki-invitation-code.html" title="送给大家一些clicki统计邀请码">送给大家一些clicki统计邀请码</a>
-				</li>
-				
-			
-			<div id="再见" class="msg msg-orange mt-1 mb-1"><a href="#再见">再见</a></div>
-				
-				<li class="listing-item">
-				<span>2010-02-24</span>
-				<a class="font-orange atitle" href="/hard-to-say-goodbye.html" title="好歌推荐——《难说再见》">好歌推荐——《难说再见》</a>
-				</li>
-				
-			
-			<div id="愚人节" class="msg msg-orange mt-1 mb-1"><a href="#愚人节">愚人节</a></div>
-				
-				<li class="listing-item">
-				<span>2010-04-02</span>
-				<a class="font-orange atitle" href="/the-happy-foolu002639s-day.html" title="愚人节快乐！">愚人节快乐！</a>
-				</li>
-				
-			
-			<div id="QQ农场" class="msg msg-orange mt-1 mb-1"><a href="#QQ农场">QQ农场</a></div>
-				
-				<li class="listing-item">
-				<span>2010-04-11</span>
-				<a class="font-orange atitle" href="/qq-finish-off-the-farm-so.html" title="QQ农场就这样玩完了">QQ农场就这样玩完了</a>
-				</li>
-				
-			
-			<div id="玩" class="msg msg-orange mt-1 mb-1"><a href="#玩">玩</a></div>
-				
-				<li class="listing-item">
-				<span>2011-09-17</span>
-				<a class="font-orange atitle" href="/to-nanjing-these-days.html" title="来南京这些天">来南京这些天</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-04-11</span>
-				<a class="font-orange atitle" href="/qq-finish-off-the-farm-so.html" title="QQ农场就这样玩完了">QQ农场就这样玩完了</a>
-				</li>
-				
-			
-			<div id="腾讯微博" class="msg msg-orange mt-1 mb-1"><a href="#腾讯微博">腾讯微博</a></div>
-				
-				<li class="listing-item">
-				<span>2010-04-25</span>
-				<a class="font-orange atitle" href="/tencent-launched-micro-bo.html" title="开通了腾讯微博">开通了腾讯微博</a>
-				</li>
-				
-			
-			<div id="同学录" class="msg msg-orange mt-1 mb-1"><a href="#同学录">同学录</a></div>
-				
-				<li class="listing-item">
-				<span>2010-05-14</span>
-				<a class="font-orange atitle" href="/this-blog-i-will-always-do-so.html" title="这个博客我会一直做下去">这个博客我会一直做下去</a>
-				</li>
-				
-			
-			<div id="情侣博客" class="msg msg-orange mt-1 mb-1"><a href="#情侣博客">情侣博客</a></div>
-				
-				<li class="listing-item">
-				<span>2010-05-14</span>
-				<a class="font-orange atitle" href="/this-blog-i-will-always-do-so.html" title="这个博客我会一直做下去">这个博客我会一直做下去</a>
-				</li>
-				
-			
-			<div id="周杰伦" class="msg msg-orange mt-1 mb-1"><a href="#周杰伦">周杰伦</a></div>
-				
-				<li class="listing-item">
-				<span>2013-02-27</span>
-				<a class="font-orange atitle" href="/fireworks-cool-easily.html" title="《烟花易冷》">《烟花易冷》</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-05-22</span>
-				<a class="font-orange atitle" href="/song-of-the-month-recommendation-u0026quotsay-goodbyeu0026quot.html" title="好歌推荐——《说了再见》">好歌推荐——《说了再见》</a>
-				</li>
-				
-			
-			<div id="毕业" class="msg msg-orange mt-1 mb-1"><a href="#毕业">毕业</a></div>
-				
-				<li class="listing-item">
-				<span>2010-06-04</span>
-				<a class="font-orange atitle" href="/graduate.html" title="毕业了">毕业了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-03</span>
-				<a class="font-orange atitle" href="/untitled.html" title="无题">无题</a>
-				</li>
-				
-			
-			<div id="高考" class="msg msg-orange mt-1 mb-1"><a href="#高考">高考</a></div>
-				
-				<li class="listing-item">
-				<span>2011-07-31</span>
-				<a class="font-orange atitle" href="/two-months-later.html" title="两个月过去了 ">两个月过去了 </a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-04-13</span>
-				<a class="font-orange atitle" href="/jiu-zhe-dian-shi-jian-liao.html" title="就这点时间了">就这点时间了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-08-16</span>
-				<a class="font-orange atitle" href="/my-novel-food-of-love.html" title="我的小说情缘">我的小说情缘</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-07-31</span>
-				<a class="font-orange atitle" href="/my-record-of-college-entrance-examination-papers.html" title="我的高考试卷记录">我的高考试卷记录</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-25</span>
-				<a class="font-orange atitle" href="/i-was-admitted-2-it.html" title="我考上二本了！">我考上二本了！</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-08</span>
-				<a class="font-orange atitle" href="/entrance-end.html" title="高考结束了">高考结束了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-05</span>
-				<a class="font-orange atitle" href="/i-went-to-the-college-entrance-examination.html" title="我去高考了">我去高考了</a>
-				</li>
-				
-			
-			<div id="生活" class="msg msg-orange mt-1 mb-1"><a href="#生活">生活</a></div>
-				
-				<li class="listing-item">
-				<span>2014-01-28</span>
-				<a class="font-orange atitle" href="/homebody.html" title="宅">宅</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-01</span>
-				<a class="font-orange atitle" href="/year-a-year.html" title="一年又一年">一年又一年</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-11-30</span>
-				<a class="font-orange atitle" href="/did-not-eat-for-a-long-time-so-a-bowl-cut-tendons.html" title="好久没有吃这么一碗削筋了">好久没有吃这么一碗削筋了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-11-29</span>
-				<a class="font-orange atitle" href="/whim-to-the-experimental-subject-drew-interface.html" title="突发奇想，给实验题目画了个界面">突发奇想，给实验题目画了个界面</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-11-27</span>
-				<a class="font-orange atitle" href="/school-room-pit-father-network-speed-looks-so-much-open-web-pages-are-card.html" title="学校机房坑爹的网速">学校机房坑爹的网速</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-11-26</span>
-				<a class="font-orange atitle" href="/two-weeks-experiment-course.html" title="两周实验课">两周实验课</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-01-30</span>
-				<a class="font-orange atitle" href="/youth-has-been-continued.html" title="青春，一直都在继续">青春，一直都在继续</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-21</span>
-				<a class="font-orange atitle" href="/can-you-distinguish-between-wheat-and-leek-it.html" title="你能区分小麦和韭菜吗？">你能区分小麦和韭菜吗？</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2010/01/30/how-far/" title="永远有多远">永远有多远</a>
 				</li>
 				
 			
@@ -1677,140 +477,7 @@
 				
 				<li class="listing-item">
 				<span>2010-06-25</span>
-				<a class="font-orange atitle" href="/nothing-meaningful.html" title="存在的空虚">存在的空虚</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-25</span>
-				<a class="font-orange atitle" href="/nothing-meaningful.html" title="存在的空虚">存在的空虚</a>
-				</li>
-				
-			
-			<div id="大学" class="msg msg-orange mt-1 mb-1"><a href="#大学">大学</a></div>
-				
-				<li class="listing-item">
-				<span>2013-12-16</span>
-				<a class="font-orange atitle" href="/everyday-is-festival.html" title="天天像过年？">天天像过年？</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-12-02</span>
-				<a class="font-orange atitle" href="/zhengfang-yijian.html" title="正方教务系统一键教学评价脚本">正方教务系统一键教学评价脚本</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-11-03</span>
-				<a class="font-orange atitle" href="/a-written-test.html" title="一次PPTV笔试">一次PPTV笔试</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-09-30</span>
-				<a class="font-orange atitle" href="/study-python.html" title="开始学习python">开始学习python</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-09-16</span>
-				<a class="font-orange atitle" href="/junior.html" title="大三">大三</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-04-27</span>
-				<a class="font-orange atitle" href="/51-day-off.html" title="五一一天假">五一一天假</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-01-08</span>
-				<a class="font-orange atitle" href="/the-real-shot-nupt-library-madness-gripping-scenes-the-opening-climax.html" title="实拍南邮图书馆疯狂揪心一幕幕——开馆高潮">实拍南邮图书馆疯狂揪心一幕幕——开馆高潮</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-01-30</span>
-				<a class="font-orange atitle" href="/youth-has-been-continued.html" title="青春，一直都在继续">青春，一直都在继续</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-09-17</span>
-				<a class="font-orange atitle" href="/to-nanjing-these-days.html" title="来南京这些天">来南京这些天</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-08-17</span>
-				<a class="font-orange atitle" href="/get-the-admission-notice-of-the.html" title="拿到录取通知书了">拿到录取通知书了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-07-31</span>
-				<a class="font-orange atitle" href="/two-months-later.html" title="两个月过去了 ">两个月过去了 </a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-07-11</span>
-				<a class="font-orange atitle" href="/i-consider-about-the-university.html" title="我在考虑的问题——关于大学">我在考虑的问题——关于大学</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-06-25</span>
-				<a class="font-orange atitle" href="/i-was-admitted-2-it.html" title="我考上二本了！">我考上二本了！</a>
-				</li>
-				
-			
-			<div id="网名" class="msg msg-orange mt-1 mb-1"><a href="#网名">网名</a></div>
-				
-				<li class="listing-item">
-				<span>2010-07-02</span>
-				<a class="font-orange atitle" href="/ive-changed-my-screen-name-the-fifth.html" title="我改网名了——小五">我改网名了——小五</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-07-01</span>
-				<a class="font-orange atitle" href="/of-charity.html" title="上善若水">上善若水</a>
-				</li>
-				
-			
-			<div id="小说" class="msg msg-orange mt-1 mb-1"><a href="#小说">小说</a></div>
-				
-				<li class="listing-item">
-				<span>2010-08-16</span>
-				<a class="font-orange atitle" href="/my-novel-food-of-love.html" title="我的小说情缘">我的小说情缘</a>
-				</li>
-				
-			
-			<div id="百度" class="msg msg-orange mt-1 mb-1"><a href="#百度">百度</a></div>
-				
-				<li class="listing-item">
-				<span>2012-05-10</span>
-				<a class="font-orange atitle" href="/baidu-network-disk-invitation-code.html" title="百度网盘邀请码">百度网盘邀请码</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-05-20</span>
-				<a class="font-orange atitle" href="/baidu-to-listen-to-an-invitation-code.html" title="百度听邀请码">百度听邀请码</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-09-20</span>
-				<a class="font-orange atitle" href="/share-baidu-speak-invitation-code.html" title="分享百度说吧邀请码">分享百度说吧邀请码</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2010-09-18</span>
-				<a class="font-orange atitle" href="/share-baidu-idol-invitation-code.html" title="分享百度偶像邀请码">分享百度偶像邀请码</a>
-				</li>
-				
-			
-			<div id="谷歌" class="msg msg-orange mt-1 mb-1"><a href="#谷歌">谷歌</a></div>
-				
-				<li class="listing-item">
-				<span>2010-10-25</span>
-				<a class="font-orange atitle" href="/google-latitude-do-you-dare-to-play.html" title="“谷歌纵横”你敢玩吗？">“谷歌纵横”你敢玩吗？</a>
-				</li>
-				
-			
-			<div id="凡客" class="msg msg-orange mt-1 mb-1"><a href="#凡客">凡客</a></div>
-				
-				<li class="listing-item">
-				<span>2010-11-13</span>
-				<a class="font-orange atitle" href="/where-the-object-of-my.html" title="我的凡客体">我的凡客体</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2010/06/25/nothing-meaningful/" title="存在的空虚">存在的空虚</a>
 				</li>
 				
 			
@@ -1818,421 +485,7 @@
 				
 				<li class="listing-item">
 				<span>2011-01-15</span>
-				<a class="font-orange atitle" href="/one-semeter-ends.html" title="一个学期结束了">一个学期结束了</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-01-15</span>
-				<a class="font-orange atitle" href="/one-semeter-ends.html" title="一个学期结束了">一个学期结束了</a>
-				</li>
-				
-			
-			<div id="微信" class="msg msg-orange mt-1 mb-1"><a href="#微信">微信</a></div>
-				
-				<li class="listing-item">
-				<span>2011-02-16</span>
-				<a class="font-orange atitle" href="/i-also-registered-the-micro-letters.html" title="我也注册了微信">我也注册了微信</a>
-				</li>
-				
-			
-			<div id="未来" class="msg msg-orange mt-1 mb-1"><a href="#未来">未来</a></div>
-				
-				<li class="listing-item">
-				<span>2011-07-11</span>
-				<a class="font-orange atitle" href="/i-consider-about-the-university.html" title="我在考虑的问题——关于大学">我在考虑的问题——关于大学</a>
-				</li>
-				
-			
-			<div id="qq" class="msg msg-orange mt-1 mb-1"><a href="#qq">qq</a></div>
-				
-				<li class="listing-item">
-				<span>2011-08-01</span>
-				<a class="font-orange atitle" href="/vps-early-play.html" title="初玩vps">初玩vps</a>
-				</li>
-				
-			
-			<div id="vps" class="msg msg-orange mt-1 mb-1"><a href="#vps">vps</a></div>
-				
-				<li class="listing-item">
-				<span>2011-08-01</span>
-				<a class="font-orange atitle" href="/vps-early-play.html" title="初玩vps">初玩vps</a>
-				</li>
-				
-			
-			<div id="人人网" class="msg msg-orange mt-1 mb-1"><a href="#人人网">人人网</a></div>
-				
-				<li class="listing-item">
-				<span>2013-05-15</span>
-				<a class="font-orange atitle" href="/freedom-of-the-network.html" title="爲上網貢獻一丁點力量">爲上網貢獻一丁點力量</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-08-17</span>
-				<a class="font-orange atitle" href="/get-the-admission-notice-of-the.html" title="拿到录取通知书了">拿到录取通知书了</a>
-				</li>
-				
-			
-			<div id="社团" class="msg msg-orange mt-1 mb-1"><a href="#社团">社团</a></div>
-				
-				<li class="listing-item">
-				<span>2011-08-17</span>
-				<a class="font-orange atitle" href="/get-the-admission-notice-of-the.html" title="拿到录取通知书了">拿到录取通知书了</a>
-				</li>
-				
-			
-			<div id="军训" class="msg msg-orange mt-1 mb-1"><a href="#军训">军训</a></div>
-				
-				<li class="listing-item">
-				<span>2011-09-17</span>
-				<a class="font-orange atitle" href="/to-nanjing-these-days.html" title="来南京这些天">来南京这些天</a>
-				</li>
-				
-			
-			<div id="南京" class="msg msg-orange mt-1 mb-1"><a href="#南京">南京</a></div>
-				
-				<li class="listing-item">
-				<span>2013-06-04</span>
-				<a class="font-orange atitle" href="/nanjing-asian-youth-for-facebook-and-other-social-media-during-the-opening.html" title="南京申请亚青期间开放Facebook等社交媒体">南京申请亚青期间开放Facebook等社交媒体</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2011-09-17</span>
-				<a class="font-orange atitle" href="/to-nanjing-these-days.html" title="来南京这些天">来南京这些天</a>
-				</li>
-				
-			
-			<div id="淘宝" class="msg msg-orange mt-1 mb-1"><a href="#淘宝">淘宝</a></div>
-				
-				<li class="listing-item">
-				<span>2011-11-25</span>
-				<a class="font-orange atitle" href="/taobao-index-invitation-code.html" title="淘宝指数邀请码">淘宝指数邀请码</a>
-				</li>
-				
-			
-			<div id="青春" class="msg msg-orange mt-1 mb-1"><a href="#青春">青春</a></div>
-				
-				<li class="listing-item">
-				<span>2012-01-30</span>
-				<a class="font-orange atitle" href="/youth-has-been-continued.html" title="青春，一直都在继续">青春，一直都在继续</a>
-				</li>
-				
-			
-			<div id="刷机" class="msg msg-orange mt-1 mb-1"><a href="#刷机">刷机</a></div>
-				
-				<li class="listing-item">
-				<span>2012-11-30</span>
-				<a class="font-orange atitle" href="/dhd-g10-the-official-unlock-the-brush-third-party-rom-not-start.html" title="DHD G10 官方解锁，刷第三方rom无法启动">DHD G10 官方解锁，刷第三方rom无法启动</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-05-16</span>
-				<a class="font-orange atitle" href="/lewaos-for-milestone-milestones-le-frog-os.html" title="LeWaOS For Milestone 里程碑的乐蛙OS">LeWaOS For Milestone 里程碑的乐蛙OS</a>
-				</li>
-				
-			
-			<div id="域名" class="msg msg-orange mt-1 mb-1"><a href="#域名">域名</a></div>
-				
-				<li class="listing-item">
-				<span>2013-11-13</span>
-				<a class="font-orange atitle" href="/the-nginx-pan-domain-301-redirect-rules.html" title="nginx泛域名301重定向规则">nginx泛域名301重定向规则</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-07-28</span>
-				<a class="font-orange atitle" href="/apply-money-from-godaddy-to-alipay.html" title="申请godaddy域名退款到支付宝">申请godaddy域名退款到支付宝</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-05-29</span>
-				<a class="font-orange atitle" href="/cn-domain-name-and-opening-up-the-personal-registration-is-not-the-record-still-can-not-dns-resolution.html" title=".CN域名开放个人注册 未备案仍不能DNS解析">.CN域名开放个人注册 未备案仍不能DNS解析</a>
-				</li>
-				
-			
-			<div id="备案" class="msg msg-orange mt-1 mb-1"><a href="#备案">备案</a></div>
-				
-				<li class="listing-item">
-				<span>2012-08-27</span>
-				<a class="font-orange atitle" href="/little-network-provides-independent-domain-name-for-the-record.html" title="点点网提供独立域名备案啦">点点网提供独立域名备案啦</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-05-29</span>
-				<a class="font-orange atitle" href="/cn-domain-name-and-opening-up-the-personal-registration-is-not-the-record-still-can-not-dns-resolution.html" title=".CN域名开放个人注册 未备案仍不能DNS解析">.CN域名开放个人注册 未备案仍不能DNS解析</a>
-				</li>
-				
-			
-			<div id="代码" class="msg msg-orange mt-1 mb-1"><a href="#代码">代码</a></div>
-				
-				<li class="listing-item">
-				<span>2012-08-29</span>
-				<a class="font-orange atitle" href="/get-rid-of-the-little-mesh-upper-right-corner-of-concern-log-tab.html" title="去掉点点网右上角关注和登录标签">去掉点点网右上角关注和登录标签</a>
-				</li>
-				
-			
-			<div id="网速" class="msg msg-orange mt-1 mb-1"><a href="#网速">网速</a></div>
-				
-				<li class="listing-item">
-				<span>2012-11-27</span>
-				<a class="font-orange atitle" href="/school-room-pit-father-network-speed-looks-so-much-open-web-pages-are-card.html" title="学校机房坑爹的网速">学校机房坑爹的网速</a>
-				</li>
-				
-			
-			<div id="实验" class="msg msg-orange mt-1 mb-1"><a href="#实验">实验</a></div>
-				
-				<li class="listing-item">
-				<span>2012-11-29</span>
-				<a class="font-orange atitle" href="/whim-to-the-experimental-subject-drew-interface.html" title="突发奇想，给实验题目画了个界面">突发奇想，给实验题目画了个界面</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-11-29</span>
-				<a class="font-orange atitle" href="/experimental-class-headache.html" title="实验课上的头疼啊">实验课上的头疼啊</a>
-				</li>
-				
-			
-			<div id="吃" class="msg msg-orange mt-1 mb-1"><a href="#吃">吃</a></div>
-				
-				<li class="listing-item">
-				<span>2012-11-30</span>
-				<a class="font-orange atitle" href="/did-not-eat-for-a-long-time-so-a-bowl-cut-tendons.html" title="好久没有吃这么一碗削筋了">好久没有吃这么一碗削筋了</a>
-				</li>
-				
-			
-			<div id="活动" class="msg msg-orange mt-1 mb-1"><a href="#活动">活动</a></div>
-				
-				<li class="listing-item">
-				<span>2012-12-01</span>
-				<a class="font-orange atitle" href="/your-release-acid-shuang-look-ice-breakers.html" title="释放你的酸爽Look-ICE BREAKERS">释放你的酸爽Look-ICE BREAKERS</a>
-				</li>
-				
-			
-			<div id="硬盘" class="msg msg-orange mt-1 mb-1"><a href="#硬盘">硬盘</a></div>
-				
-				<li class="listing-item">
-				<span>2012-12-29</span>
-				<a class="font-orange atitle" href="/win7-forget-separation-vhd-virtual-hard-disk-can-not-boot.html" title="win7忘记分离vhd虚拟硬盘,无法开机">win7忘记分离vhd虚拟硬盘,无法开机</a>
-				</li>
-				
-			
-			<div id="系统" class="msg msg-orange mt-1 mb-1"><a href="#系统">系统</a></div>
-				
-				<li class="listing-item">
-				<span>2013-06-01</span>
-				<a class="font-orange atitle" href="/started-using-linux-system.html" title="开始使用 linux 系统">开始使用 linux 系统</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2012-12-29</span>
-				<a class="font-orange atitle" href="/win7-forget-separation-vhd-virtual-hard-disk-can-not-boot.html" title="win7忘记分离vhd虚拟硬盘,无法开机">win7忘记分离vhd虚拟硬盘,无法开机</a>
-				</li>
-				
-			
-			<div id="南邮" class="msg msg-orange mt-1 mb-1"><a href="#南邮">南邮</a></div>
-				
-				<li class="listing-item">
-				<span>2013-01-08</span>
-				<a class="font-orange atitle" href="/the-real-shot-nupt-library-madness-gripping-scenes-the-opening-climax.html" title="实拍南邮图书馆疯狂揪心一幕幕——开馆高潮">实拍南邮图书馆疯狂揪心一幕幕——开馆高潮</a>
-				</li>
-				
-			
-			<div id="win8" class="msg msg-orange mt-1 mb-1"><a href="#win8">win8</a></div>
-				
-				<li class="listing-item">
-				<span>2013-04-24</span>
-				<a class="font-orange atitle" href="/good-split-screen-function-under-the-metro-interface.html" title="Metro界面下的分屏功能不错">Metro界面下的分屏功能不错</a>
-				</li>
-				
-			
-			<div id="技巧" class="msg msg-orange mt-1 mb-1"><a href="#技巧">技巧</a></div>
-				
-				<li class="listing-item">
-				<span>2013-04-24</span>
-				<a class="font-orange atitle" href="/good-split-screen-function-under-the-metro-interface.html" title="Metro界面下的分屏功能不错">Metro界面下的分屏功能不错</a>
-				</li>
-				
-			
-			<div id="互联网" class="msg msg-orange mt-1 mb-1"><a href="#互联网">互联网</a></div>
-				
-				<li class="listing-item">
-				<span>2013-04-28</span>
-				<a class="font-orange atitle" href="/no-privacy-on-the-internet.html" title="互联网上无隐私">互联网上无隐私</a>
-				</li>
-				
-			
-			<div id="安全" class="msg msg-orange mt-1 mb-1"><a href="#安全">安全</a></div>
-				
-				<li class="listing-item">
-				<span>2013-04-28</span>
-				<a class="font-orange atitle" href="/no-privacy-on-the-internet.html" title="互联网上无隐私">互联网上无隐私</a>
-				</li>
-				
-			
-			<div id="隐私" class="msg msg-orange mt-1 mb-1"><a href="#隐私">隐私</a></div>
-				
-				<li class="listing-item">
-				<span>2013-04-28</span>
-				<a class="font-orange atitle" href="/no-privacy-on-the-internet.html" title="互联网上无隐私">互联网上无隐私</a>
-				</li>
-				
-			
-			<div id="娱乐" class="msg msg-orange mt-1 mb-1"><a href="#娱乐">娱乐</a></div>
-				
-				<li class="listing-item">
-				<span>2013-05-04</span>
-				<a class="font-orange atitle" href="/forged-the-sina-microblogging-tail-brought-loaded-to-force.html" title="伪造新浪微博尾巴，拿来装逼">伪造新浪微博尾巴，拿来装逼</a>
-				</li>
-				
-			
-			<div id="微博" class="msg msg-orange mt-1 mb-1"><a href="#微博">微博</a></div>
-				
-				<li class="listing-item">
-				<span>2013-11-22</span>
-				<a class="font-orange atitle" href="/weibo-rss.html" title="修改了一个微博RSS生成工具">修改了一个微博RSS生成工具</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-05-04</span>
-				<a class="font-orange atitle" href="/forged-the-sina-microblogging-tail-brought-loaded-to-force.html" title="伪造新浪微博尾巴，拿来装逼">伪造新浪微博尾巴，拿来装逼</a>
-				</li>
-				
-			
-			<div id="下载" class="msg msg-orange mt-1 mb-1"><a href="#下载">下载</a></div>
-				
-				<li class="listing-item">
-				<span>2013-05-05</span>
-				<a class="font-orange atitle" href="/yu-quan-shanghai-15-anniversary-of-the-the-concert-first-half-of-the-game-video.html" title="羽泉上海15周年【在一起】演唱会前半场视频">羽泉上海15周年【在一起】演唱会前半场视频</a>
-				</li>
-				
-			
-			<div id="在一起" class="msg msg-orange mt-1 mb-1"><a href="#在一起">在一起</a></div>
-				
-				<li class="listing-item">
-				<span>2013-05-05</span>
-				<a class="font-orange atitle" href="/yu-quan-shanghai-15-anniversary-of-the-the-concert-first-half-of-the-game-video.html" title="羽泉上海15周年【在一起】演唱会前半场视频">羽泉上海15周年【在一起】演唱会前半场视频</a>
-				</li>
-				
-			
-			<div id="福利" class="msg msg-orange mt-1 mb-1"><a href="#福利">福利</a></div>
-				
-				<li class="listing-item">
-				<span>2013-05-17</span>
-				<a class="font-orange atitle" href="/booby.html" title="boo.by美胸打分网站">boo.by美胸打分网站</a>
-				</li>
-				
-			
-			<div id="RSS" class="msg msg-orange mt-1 mb-1"><a href="#RSS">RSS</a></div>
-				
-				<li class="listing-item">
-				<span>2013-05-28</span>
-				<a class="font-orange atitle" href="/rss-new-address-change-my-trouble-subscriptions-friend.html" title="新的Rss地址，麻烦订阅的朋友换一下">新的Rss地址，麻烦订阅的朋友换一下</a>
-				</li>
-				
-			
-			<div id="订阅" class="msg msg-orange mt-1 mb-1"><a href="#订阅">订阅</a></div>
-				
-				<li class="listing-item">
-				<span>2013-05-28</span>
-				<a class="font-orange atitle" href="/rss-new-address-change-my-trouble-subscriptions-friend.html" title="新的Rss地址，麻烦订阅的朋友换一下">新的Rss地址，麻烦订阅的朋友换一下</a>
-				</li>
-				
-			
-			<div id="linux" class="msg msg-orange mt-1 mb-1"><a href="#linux">linux</a></div>
-				
-				<li class="listing-item">
-				<span>2013-07-19</span>
-				<a class="font-orange atitle" href="/play-openwrt-2.html" title="openwrt折腾记（二）">openwrt折腾记（二）</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-06-25</span>
-				<a class="font-orange atitle" href="/play-openwrt-1.html" title="openwrt折腾记(一)">openwrt折腾记(一)</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-06-01</span>
-				<a class="font-orange atitle" href="/started-using-linux-system.html" title="开始使用 linux 系统">开始使用 linux 系统</a>
-				</li>
-				
-			
-			<div id="facebook" class="msg msg-orange mt-1 mb-1"><a href="#facebook">facebook</a></div>
-				
-				<li class="listing-item">
-				<span>2013-06-04</span>
-				<a class="font-orange atitle" href="/nanjing-asian-youth-for-facebook-and-other-social-media-during-the-opening.html" title="南京申请亚青期间开放Facebook等社交媒体">南京申请亚青期间开放Facebook等社交媒体</a>
-				</li>
-				
-			
-			<div id="twitter" class="msg msg-orange mt-1 mb-1"><a href="#twitter">twitter</a></div>
-				
-				<li class="listing-item">
-				<span>2013-06-04</span>
-				<a class="font-orange atitle" href="/nanjing-asian-youth-for-facebook-and-other-social-media-during-the-opening.html" title="南京申请亚青期间开放Facebook等社交媒体">南京申请亚青期间开放Facebook等社交媒体</a>
-				</li>
-				
-			
-			<div id="jekyll" class="msg msg-orange mt-1 mb-1"><a href="#jekyll">jekyll</a></div>
-				
-				<li class="listing-item">
-				<span>2013-06-07</span>
-				<a class="font-orange atitle" href="/use-jekyll.html" title="博客换到了jekyll，托管在gitcafe">博客换到了jekyll，托管在gitcafe</a>
-				</li>
-				
-			
-			<div id="wordpress" class="msg msg-orange mt-1 mb-1"><a href="#wordpress">wordpress</a></div>
-				
-				<li class="listing-item">
-				<span>2013-06-07</span>
-				<a class="font-orange atitle" href="/use-jekyll.html" title="博客换到了jekyll，托管在gitcafe">博客换到了jekyll，托管在gitcafe</a>
-				</li>
-				
-			
-			<div id="ios" class="msg msg-orange mt-1 mb-1"><a href="#ios">ios</a></div>
-				
-				<li class="listing-item">
-				<span>2013-06-13</span>
-				<a class="font-orange atitle" href="/ios7-hehe.html" title="Ios 7 呵呵">Ios 7 呵呵</a>
-				</li>
-				
-			
-			<div id="历史" class="msg msg-orange mt-1 mb-1"><a href="#历史">历史</a></div>
-				
-				<li class="listing-item">
-				<span>2013-06-14</span>
-				<a class="font-orange atitle" href="/qing-chao-guoge.html" title="来听听清朝国歌">来听听清朝国歌</a>
-				</li>
-				
-			
-			<div id="路由器" class="msg msg-orange mt-1 mb-1"><a href="#路由器">路由器</a></div>
-				
-				<li class="listing-item">
-				<span>2013-07-19</span>
-				<a class="font-orange atitle" href="/play-openwrt-2.html" title="openwrt折腾记（二）">openwrt折腾记（二）</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-06-25</span>
-				<a class="font-orange atitle" href="/play-openwrt-1.html" title="openwrt折腾记(一)">openwrt折腾记(一)</a>
-				</li>
-				
-			
-			<div id="openwrt" class="msg msg-orange mt-1 mb-1"><a href="#openwrt">openwrt</a></div>
-				
-				<li class="listing-item">
-				<span>2013-07-19</span>
-				<a class="font-orange atitle" href="/play-openwrt-2.html" title="openwrt折腾记（二）">openwrt折腾记（二）</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-06-25</span>
-				<a class="font-orange atitle" href="/play-openwrt-1.html" title="openwrt折腾记(一)">openwrt折腾记(一)</a>
-				</li>
-				
-			
-			<div id="乱说" class="msg msg-orange mt-1 mb-1"><a href="#乱说">乱说</a></div>
-				
-				<li class="listing-item">
-				<span>2013-07-18</span>
-				<a class="font-orange atitle" href="/procrastination.html" title="拖延症">拖延症</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2011/01/15/one-semeter-ends/" title="一个学期结束了">一个学期结束了</a>
 				</li>
 				
 			
@@ -2240,12 +493,7 @@
 				
 				<li class="listing-item">
 				<span>2013-07-27</span>
-				<a class="font-orange atitle" href="/old-times.html" title="往事如烟灭">往事如烟灭</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-07-27</span>
-				<a class="font-orange atitle" href="/old-times.html" title="往事如烟灭">往事如烟灭</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2013/07/27/old-times/" title="往事如烟灭">往事如烟灭</a>
 				</li>
 				
 			
@@ -2253,12 +501,7 @@
 				
 				<li class="listing-item">
 				<span>2013-07-27</span>
-				<a class="font-orange atitle" href="/old-times.html" title="往事如烟灭">往事如烟灭</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-07-27</span>
-				<a class="font-orange atitle" href="/old-times.html" title="往事如烟灭">往事如烟灭</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2013/07/27/old-times/" title="往事如烟灭">往事如烟灭</a>
 				</li>
 				
 			
@@ -2266,118 +509,7 @@
 				
 				<li class="listing-item">
 				<span>2013-07-27</span>
-				<a class="font-orange atitle" href="/old-times.html" title="往事如烟灭">往事如烟灭</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-07-27</span>
-				<a class="font-orange atitle" href="/old-times.html" title="往事如烟灭">往事如烟灭</a>
-				</li>
-				
-			
-			<div id="支付宝" class="msg msg-orange mt-1 mb-1"><a href="#支付宝">支付宝</a></div>
-				
-				<li class="listing-item">
-				<span>2013-07-28</span>
-				<a class="font-orange atitle" href="/apply-money-from-godaddy-to-alipay.html" title="申请godaddy域名退款到支付宝">申请godaddy域名退款到支付宝</a>
-				</li>
-				
-			
-			<div id="godaddy" class="msg msg-orange mt-1 mb-1"><a href="#godaddy">godaddy</a></div>
-				
-				<li class="listing-item">
-				<span>2013-07-28</span>
-				<a class="font-orange atitle" href="/apply-money-from-godaddy-to-alipay.html" title="申请godaddy域名退款到支付宝">申请godaddy域名退款到支付宝</a>
-				</li>
-				
-			
-			<div id="安卓" class="msg msg-orange mt-1 mb-1"><a href="#安卓">安卓</a></div>
-				
-				<li class="listing-item">
-				<span>2013-08-20</span>
-				<a class="font-orange atitle" href="/boring-summer-vacation.html" title="越来越无聊的暑假">越来越无聊的暑假</a>
-				</li>
-				
-			
-			<div id="计算机" class="msg msg-orange mt-1 mb-1"><a href="#计算机">计算机</a></div>
-				
-				<li class="listing-item">
-				<span>2013-09-30</span>
-				<a class="font-orange atitle" href="/study-python.html" title="开始学习python">开始学习python</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-09-16</span>
-				<a class="font-orange atitle" href="/junior.html" title="大三">大三</a>
-				</li>
-				
-			
-			<div id="工作" class="msg msg-orange mt-1 mb-1"><a href="#工作">工作</a></div>
-				
-				<li class="listing-item">
-				<span>2013-11-03</span>
-				<a class="font-orange atitle" href="/a-written-test.html" title="一次PPTV笔试">一次PPTV笔试</a>
-				</li>
-				
-			
-			<div id="笔试" class="msg msg-orange mt-1 mb-1"><a href="#笔试">笔试</a></div>
-				
-				<li class="listing-item">
-				<span>2013-11-03</span>
-				<a class="font-orange atitle" href="/a-written-test.html" title="一次PPTV笔试">一次PPTV笔试</a>
-				</li>
-				
-			
-			<div id="服务器" class="msg msg-orange mt-1 mb-1"><a href="#服务器">服务器</a></div>
-				
-				<li class="listing-item">
-				<span>2013-11-13</span>
-				<a class="font-orange atitle" href="/the-nginx-pan-domain-301-redirect-rules.html" title="nginx泛域名301重定向规则">nginx泛域名301重定向规则</a>
-				</li>
-				
-			
-			<div id="nginx" class="msg msg-orange mt-1 mb-1"><a href="#nginx">nginx</a></div>
-				
-				<li class="listing-item">
-				<span>2013-11-13</span>
-				<a class="font-orange atitle" href="/the-nginx-pan-domain-301-redirect-rules.html" title="nginx泛域名301重定向规则">nginx泛域名301重定向规则</a>
-				</li>
-				
-			
-			<div id="python" class="msg msg-orange mt-1 mb-1"><a href="#python">python</a></div>
-				
-				<li class="listing-item">
-				<span>2013-11-22</span>
-				<a class="font-orange atitle" href="/weibo-rss.html" title="修改了一个微博RSS生成工具">修改了一个微博RSS生成工具</a>
-				</li>
-				
-			
-			<div id="rss" class="msg msg-orange mt-1 mb-1"><a href="#rss">rss</a></div>
-				
-				<li class="listing-item">
-				<span>2013-11-22</span>
-				<a class="font-orange atitle" href="/weibo-rss.html" title="修改了一个微博RSS生成工具">修改了一个微博RSS生成工具</a>
-				</li>
-				
-			
-			<div id="脚本" class="msg msg-orange mt-1 mb-1"><a href="#脚本">脚本</a></div>
-				
-				<li class="listing-item">
-				<span>2014-01-31</span>
-				<a class="font-orange atitle" href="/happy-chinese-year-2014.html" title="祝大家新年快乐">祝大家新年快乐</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-12-02</span>
-				<a class="font-orange atitle" href="/zhengfang-yijian.html" title="正方教务系统一键教学评价脚本">正方教务系统一键教学评价脚本</a>
-				</li>
-				
-			
-			<div id="主题" class="msg msg-orange mt-1 mb-1"><a href="#主题">主题</a></div>
-				
-				<li class="listing-item">
-				<span>2013-12-20</span>
-				<a class="font-orange atitle" href="/a-wordpress-theme-fqyd.html" title="WordPress轻博客主题《风轻云淡》">WordPress轻博客主题《风轻云淡》</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2013/07/27/old-times/" title="往事如烟灭">往事如烟灭</a>
 				</li>
 				
 			
@@ -2385,20 +517,7 @@
 				
 				<li class="listing-item">
 				<span>2013-12-31</span>
-				<a class="font-orange atitle" href="/final-day.html" title="2013年的最后一天">2013年的最后一天</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2013-12-31</span>
-				<a class="font-orange atitle" href="/final-day.html" title="2013年的最后一天">2013年的最后一天</a>
-				</li>
-				
-			
-			<div id="学习" class="msg msg-orange mt-1 mb-1"><a href="#学习">学习</a></div>
-				
-				<li class="listing-item">
-				<span>2014-01-01</span>
-				<a class="font-orange atitle" href="/year-a-year.html" title="一年又一年">一年又一年</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2013/12/31/final-day/" title="2013年的最后一天">2013年的最后一天</a>
 				</li>
 				
 			
@@ -2406,52 +525,27 @@
 				
 				<li class="listing-item">
 				<span>2014-01-18</span>
-				<a class="font-orange atitle" href="/qq-for-linux.html" title="WineQQ2013 可以使用">WineQQ2013 可以使用</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-18</span>
-				<a class="font-orange atitle" href="/qq-for-linux.html" title="WineQQ2013 可以使用">WineQQ2013 可以使用</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/" title="WineQQ2013 可以使用">WineQQ2013 可以使用</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2014-01-16</span>
-				<a class="font-orange atitle" href="/pandoc.html" title="Linux Mint 安装 Pandoc">Linux Mint 安装 Pandoc</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-16</span>
-				<a class="font-orange atitle" href="/pandoc.html" title="Linux Mint 安装 Pandoc">Linux Mint 安装 Pandoc</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/16/pandoc/" title="Linux Mint 安装 Pandoc">Linux Mint 安装 Pandoc</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2014-01-08</span>
-				<a class="font-orange atitle" href="/chinese-input.html" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-08</span>
-				<a class="font-orange atitle" href="/chinese-input.html" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/08/chinese-input/" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2014-01-04</span>
-				<a class="font-orange atitle" href="/virtualbox.html" title="在 Virutalbox 环境下安装虚拟机">在 Virutalbox 环境下安装虚拟机</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-04</span>
-				<a class="font-orange atitle" href="/virtualbox.html" title="在 Virutalbox 环境下安装虚拟机">在 Virutalbox 环境下安装虚拟机</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/04/virtualbox/" title="在 Virutalbox 环境下安装虚拟机">在 Virutalbox 环境下安装虚拟机</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2014-01-02</span>
-				<a class="font-orange atitle" href="/window-linux.html" title="本本的转型">本本的转型</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-02</span>
-				<a class="font-orange atitle" href="/window-linux.html" title="本本的转型">本本的转型</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/02/window-linux/" title="本本的转型">本本的转型</a>
 				</li>
 				
 			
@@ -2459,32 +553,17 @@
 				
 				<li class="listing-item">
 				<span>2014-01-18</span>
-				<a class="font-orange atitle" href="/img.html" title="Images">Images</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-18</span>
-				<a class="font-orange atitle" href="/img.html" title="Images">Images</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/18/img/" title="Images">Images</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2014-01-03</span>
-				<a class="font-orange atitle" href="/github-jekyll.html" title="Github 的一些设置技巧">Github 的一些设置技巧</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-03</span>
-				<a class="font-orange atitle" href="/github-jekyll.html" title="Github 的一些设置技巧">Github 的一些设置技巧</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/03/github-jekyll/" title="Github 的一些设置技巧">Github 的一些设置技巧</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2014-01-02</span>
-				<a class="font-orange atitle" href="/window-linux.html" title="本本的转型">本本的转型</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-02</span>
-				<a class="font-orange atitle" href="/window-linux.html" title="本本的转型">本本的转型</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/02/window-linux/" title="本本的转型">本本的转型</a>
 				</li>
 				
 			
@@ -2492,32 +571,25 @@
 				
 				<li class="listing-item">
 				<span>2014-01-18</span>
-				<a class="font-orange atitle" href="/img.html" title="Images">Images</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-18</span>
-				<a class="font-orange atitle" href="/img.html" title="Images">Images</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/18/img/" title="Images">Images</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2014-01-03</span>
-				<a class="font-orange atitle" href="/github-jekyll.html" title="Github 的一些设置技巧">Github 的一些设置技巧</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-03</span>
-				<a class="font-orange atitle" href="/github-jekyll.html" title="Github 的一些设置技巧">Github 的一些设置技巧</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/03/github-jekyll/" title="Github 的一些设置技巧">Github 的一些设置技巧</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2014-01-02</span>
-				<a class="font-orange atitle" href="/window-linux.html" title="本本的转型">本本的转型</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/02/window-linux/" title="本本的转型">本本的转型</a>
 				</li>
+				
+			
+			<div id="博客" class="msg msg-orange mt-1 mb-1"><a href="#博客">博客</a></div>
 				
 				<li class="listing-item">
 				<span>2014-01-02</span>
-				<a class="font-orange atitle" href="/window-linux.html" title="本本的转型">本本的转型</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/02/window-linux/" title="本本的转型">本本的转型</a>
 				</li>
 				
 			
@@ -2525,22 +597,12 @@
 				
 				<li class="listing-item">
 				<span>2014-01-18</span>
-				<a class="font-orange atitle" href="/img.html" title="Images">Images</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-18</span>
-				<a class="font-orange atitle" href="/img.html" title="Images">Images</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/18/img/" title="Images">Images</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2014-01-03</span>
-				<a class="font-orange atitle" href="/github-jekyll.html" title="Github 的一些设置技巧">Github 的一些设置技巧</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-03</span>
-				<a class="font-orange atitle" href="/github-jekyll.html" title="Github 的一些设置技巧">Github 的一些设置技巧</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/03/github-jekyll/" title="Github 的一些设置技巧">Github 的一些设置技巧</a>
 				</li>
 				
 			
@@ -2548,12 +610,7 @@
 				
 				<li class="listing-item">
 				<span>2014-01-04</span>
-				<a class="font-orange atitle" href="/virtualbox.html" title="在 Virutalbox 环境下安装虚拟机">在 Virutalbox 环境下安装虚拟机</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-04</span>
-				<a class="font-orange atitle" href="/virtualbox.html" title="在 Virutalbox 环境下安装虚拟机">在 Virutalbox 环境下安装虚拟机</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/04/virtualbox/" title="在 Virutalbox 环境下安装虚拟机">在 Virutalbox 环境下安装虚拟机</a>
 				</li>
 				
 			
@@ -2561,12 +618,7 @@
 				
 				<li class="listing-item">
 				<span>2014-01-05</span>
-				<a class="font-orange atitle" href="/goagent.html" title="新系统的第一个软件">新系统的第一个软件</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-05</span>
-				<a class="font-orange atitle" href="/goagent.html" title="新系统的第一个软件">新系统的第一个软件</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/05/goagent/" title="新系统的第一个软件">新系统的第一个软件</a>
 				</li>
 				
 			
@@ -2574,12 +626,7 @@
 				
 				<li class="listing-item">
 				<span>2014-01-05</span>
-				<a class="font-orange atitle" href="/goagent.html" title="新系统的第一个软件">新系统的第一个软件</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-05</span>
-				<a class="font-orange atitle" href="/goagent.html" title="新系统的第一个软件">新系统的第一个软件</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/05/goagent/" title="新系统的第一个软件">新系统的第一个软件</a>
 				</li>
 				
 			
@@ -2587,12 +634,7 @@
 				
 				<li class="listing-item">
 				<span>2014-01-05</span>
-				<a class="font-orange atitle" href="/goagent.html" title="新系统的第一个软件">新系统的第一个软件</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-05</span>
-				<a class="font-orange atitle" href="/goagent.html" title="新系统的第一个软件">新系统的第一个软件</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/05/goagent/" title="新系统的第一个软件">新系统的第一个软件</a>
 				</li>
 				
 			
@@ -2600,12 +642,7 @@
 				
 				<li class="listing-item">
 				<span>2014-01-05</span>
-				<a class="font-orange atitle" href="/goagent.html" title="新系统的第一个软件">新系统的第一个软件</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-05</span>
-				<a class="font-orange atitle" href="/goagent.html" title="新系统的第一个软件">新系统的第一个软件</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/05/goagent/" title="新系统的第一个软件">新系统的第一个软件</a>
 				</li>
 				
 			
@@ -2613,12 +650,7 @@
 				
 				<li class="listing-item">
 				<span>2014-01-08</span>
-				<a class="font-orange atitle" href="/chinese-input.html" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-08</span>
-				<a class="font-orange atitle" href="/chinese-input.html" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/08/chinese-input/" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
 				</li>
 				
 			
@@ -2626,12 +658,7 @@
 				
 				<li class="listing-item">
 				<span>2014-01-08</span>
-				<a class="font-orange atitle" href="/chinese-input.html" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-08</span>
-				<a class="font-orange atitle" href="/chinese-input.html" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/08/chinese-input/" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
 				</li>
 				
 			
@@ -2639,12 +666,7 @@
 				
 				<li class="listing-item">
 				<span>2014-01-16</span>
-				<a class="font-orange atitle" href="/pandoc.html" title="Linux Mint 安装 Pandoc">Linux Mint 安装 Pandoc</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-16</span>
-				<a class="font-orange atitle" href="/pandoc.html" title="Linux Mint 安装 Pandoc">Linux Mint 安装 Pandoc</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/16/pandoc/" title="Linux Mint 安装 Pandoc">Linux Mint 安装 Pandoc</a>
 				</li>
 				
 			
@@ -2652,20 +674,7 @@
 				
 				<li class="listing-item">
 				<span>2014-01-18</span>
-				<a class="font-orange atitle" href="/qq-for-linux.html" title="WineQQ2013 可以使用">WineQQ2013 可以使用</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-18</span>
-				<a class="font-orange atitle" href="/qq-for-linux.html" title="WineQQ2013 可以使用">WineQQ2013 可以使用</a>
-				</li>
-				
-			
-			<div id="云存储" class="msg msg-orange mt-1 mb-1"><a href="#云存储">云存储</a></div>
-				
-				<li class="listing-item">
-				<span>2014-01-18</span>
-				<a class="font-orange atitle" href="/qiniu-feel.html" title="七牛云存储使用感受">七牛云存储使用感受</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/" title="WineQQ2013 可以使用">WineQQ2013 可以使用</a>
 				</li>
 				
 			
@@ -2673,32 +682,17 @@
 				
 				<li class="listing-item">
 				<span>2014-01-26</span>
-				<a class="font-orange atitle" href="/data-structure.html" title="Data Structure">Data Structure</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-26</span>
-				<a class="font-orange atitle" href="/data-structure.html" title="Data Structure">Data Structure</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/26/data-structure/" title="Data Structure">Data Structure</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2014-01-24</span>
-				<a class="font-orange atitle" href="/shi-yong--rmarkdown--fa-biao-bo-ke.html" title="使用 Jekyll + knitr 发布博客">使用 Jekyll + knitr 发布博客</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-24</span>
-				<a class="font-orange atitle" href="/shi-yong--rmarkdown--fa-biao-bo-ke.html" title="使用 Jekyll + knitr 发布博客">使用 Jekyll + knitr 发布博客</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/" title="使用 Jekyll + knitr 发布博客">使用 Jekyll + knitr 发布博客</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2014-01-20</span>
-				<a class="font-orange atitle" href="/r-note.html" title="Advanced R Programming">Advanced R Programming</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-20</span>
-				<a class="font-orange atitle" href="/r-note.html" title="Advanced R Programming">Advanced R Programming</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/20/r-note/" title="Advanced R Programming">Advanced R Programming</a>
 				</li>
 				
 			
@@ -2706,22 +700,12 @@
 				
 				<li class="listing-item">
 				<span>2014-01-26</span>
-				<a class="font-orange atitle" href="/data-structure.html" title="Data Structure">Data Structure</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-26</span>
-				<a class="font-orange atitle" href="/data-structure.html" title="Data Structure">Data Structure</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/26/data-structure/" title="Data Structure">Data Structure</a>
 				</li>
 				
 				<li class="listing-item">
 				<span>2014-01-20</span>
-				<a class="font-orange atitle" href="/r-note.html" title="Advanced R Programming">Advanced R Programming</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-20</span>
-				<a class="font-orange atitle" href="/r-note.html" title="Advanced R Programming">Advanced R Programming</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/20/r-note/" title="Advanced R Programming">Advanced R Programming</a>
 				</li>
 				
 			
@@ -2729,44 +713,7 @@
 				
 				<li class="listing-item">
 				<span>2014-01-24</span>
-				<a class="font-orange atitle" href="/shi-yong--rmarkdown--fa-biao-bo-ke.html" title="使用 Jekyll + knitr 发布博客">使用 Jekyll + knitr 发布博客</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-01-24</span>
-				<a class="font-orange atitle" href="/shi-yong--rmarkdown--fa-biao-bo-ke.html" title="使用 Jekyll + knitr 发布博客">使用 Jekyll + knitr 发布博客</a>
-				</li>
-				
-			
-			<div id="假期" class="msg msg-orange mt-1 mb-1"><a href="#假期">假期</a></div>
-				
-				<li class="listing-item">
-				<span>2014-01-28</span>
-				<a class="font-orange atitle" href="/homebody.html" title="宅">宅</a>
-				</li>
-				
-			
-			<div id="上网" class="msg msg-orange mt-1 mb-1"><a href="#上网">上网</a></div>
-				
-				<li class="listing-item">
-				<span>2014-01-28</span>
-				<a class="font-orange atitle" href="/homebody.html" title="宅">宅</a>
-				</li>
-				
-			
-			<div id="新年" class="msg msg-orange mt-1 mb-1"><a href="#新年">新年</a></div>
-				
-				<li class="listing-item">
-				<span>2014-01-31</span>
-				<a class="font-orange atitle" href="/happy-chinese-year-2014.html" title="祝大家新年快乐">祝大家新年快乐</a>
-				</li>
-				
-			
-			<div id="祝福" class="msg msg-orange mt-1 mb-1"><a href="#祝福">祝福</a></div>
-				
-				<li class="listing-item">
-				<span>2014-01-31</span>
-				<a class="font-orange atitle" href="/happy-chinese-year-2014.html" title="祝大家新年快乐">祝大家新年快乐</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/" title="使用 Jekyll + knitr 发布博客">使用 Jekyll + knitr 发布博客</a>
 				</li>
 				
 			
@@ -2774,12 +721,7 @@
 				
 				<li class="listing-item">
 				<span>2014-02-12</span>
-				<a class="font-orange atitle" href="/mei-lian-chu-de-bo-shi-xi.html" title="美联储的「博士系」">美联储的「博士系」</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-02-12</span>
-				<a class="font-orange atitle" href="/mei-lian-chu-de-bo-shi-xi.html" title="美联储的「博士系」">美联储的「博士系」</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/" title="美联储的「博士系」">美联储的「博士系」</a>
 				</li>
 				
 			
@@ -2787,12 +729,7 @@
 				
 				<li class="listing-item">
 				<span>2014-02-12</span>
-				<a class="font-orange atitle" href="/mei-lian-chu-de-bo-shi-xi.html" title="美联储的「博士系」">美联储的「博士系」</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-02-12</span>
-				<a class="font-orange atitle" href="/mei-lian-chu-de-bo-shi-xi.html" title="美联储的「博士系」">美联储的「博士系」</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/" title="美联储的「博士系」">美联储的「博士系」</a>
 				</li>
 				
 			
@@ -2800,12 +737,7 @@
 				
 				<li class="listing-item">
 				<span>2014-02-12</span>
-				<a class="font-orange atitle" href="/mei-lian-chu-de-bo-shi-xi.html" title="美联储的「博士系」">美联储的「博士系」</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-02-12</span>
-				<a class="font-orange atitle" href="/mei-lian-chu-de-bo-shi-xi.html" title="美联储的「博士系」">美联储的「博士系」</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/" title="美联储的「博士系」">美联储的「博士系」</a>
 				</li>
 				
 			
@@ -2813,12 +745,7 @@
 				
 				<li class="listing-item">
 				<span>2014-02-12</span>
-				<a class="font-orange atitle" href="/mei-lian-chu-de-bo-shi-xi.html" title="美联储的「博士系」">美联储的「博士系」</a>
-				</li>
-				
-				<li class="listing-item">
-				<span>2014-02-12</span>
-				<a class="font-orange atitle" href="/mei-lian-chu-de-bo-shi-xi.html" title="美联储的「博士系」">美联储的「博士系」</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/" title="美联储的「博士系」">美联储的「博士系」</a>
 				</li>
 				
 			
@@ -2826,7 +753,7 @@
 				
 				<li class="listing-item">
 				<span>2014-02-12</span>
-				<a class="font-orange atitle" href="/zhu-duo-shi-qing.html" title="诸多事情">诸多事情</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/" title="诸多事情">诸多事情</a>
 				</li>
 				
 			
@@ -2834,7 +761,7 @@
 				
 				<li class="listing-item">
 				<span>2014-02-12</span>
-				<a class="font-orange atitle" href="/zhu-duo-shi-qing.html" title="诸多事情">诸多事情</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/" title="诸多事情">诸多事情</a>
 				</li>
 				
 			
@@ -2842,31 +769,7 @@
 				
 				<li class="listing-item">
 				<span>2014-02-12</span>
-				<a class="font-orange atitle" href="/zhu-duo-shi-qing.html" title="诸多事情">诸多事情</a>
-				</li>
-				
-			
-			<div id="败家" class="msg msg-orange mt-1 mb-1"><a href="#败家">败家</a></div>
-				
-				<li class="listing-item">
-				<span>2014-02-23</span>
-				<a class="font-orange atitle" href="/nexus-7-two.html" title="入手NEXUS7 二代">入手NEXUS7 二代</a>
-				</li>
-				
-			
-			<div id="平板" class="msg msg-orange mt-1 mb-1"><a href="#平板">平板</a></div>
-				
-				<li class="listing-item">
-				<span>2014-02-23</span>
-				<a class="font-orange atitle" href="/nexus-7-two.html" title="入手NEXUS7 二代">入手NEXUS7 二代</a>
-				</li>
-				
-			
-			<div id="看书" class="msg msg-orange mt-1 mb-1"><a href="#看书">看书</a></div>
-				
-				<li class="listing-item">
-				<span>2014-02-23</span>
-				<a class="font-orange atitle" href="/nexus-7-two.html" title="入手NEXUS7 二代">入手NEXUS7 二代</a>
+				<a class="font-orange atitle" href="http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/" title="诸多事情">诸多事情</a>
 				</li>
 				
 			
@@ -2878,18 +781,21 @@
 </div>
 
 
+
+		
 		
 		</div>
 		
 	</div>
+
 	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
-		<div id="about" class="align-center">&copy; 2009-2013 Life Memory ,Powered By Jekyll ,Design By <a href="https://plus.google.com/113613029248221235605?rel=author">cc bikai</a> .
+		<div id="about" class="align-center">&copy; 2013-2014 Powered By Jekyll, Designed By <a href="http://williamlfang.github.io/">William Fang</a>.
 		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
 		<div class="radar"></div>
 		</div>
 	</div>
-<link rel="stylesheet" href="/assets/themes/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
-<script type="text/javascript" src="/assets/themes/life/js/common.js" charset="UTF-8"></script>
+<link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
 <script type="text/javascript">
 	var duoshuoQuery = {short_name:"hibikai"};
 	(function() {

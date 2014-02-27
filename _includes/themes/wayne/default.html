@@ -21,7 +21,7 @@
         <div id="main" role="main">
             <div id="outheader">
                 <div id="header" class="clearfix">
-                    <h1><a title="{{ site.title }}" class="pjax" href="/">{{ site.title }}</a></h1>
+                    <h1><a title="{{ site.title }}" class="pjax" href="{{ site.url }}/">{{ site.title }}</a></h1>
                     <div class="floatnav">
                         <span><a title="Archive" class="pjax" href="{{ site.JB.archive_path }}">Archive</a></span>
                         <span><a title="Tags" class="pjax" href="{{ site.JB.tags_path }}">Tags</a></span>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="fixnav">
-                    <span><a title="Home" class="icon-home pjax" href="/"></a></span>
+                    <span><a title="Home" class="icon-home pjax" href="{{ site.url }}/"></a></span>
                     <span><a title="Archive" class="icon-list pjax" href="{{ site.JB.archive_path }}"></a></span>
                     <span><a title="Tags" class="icon-tags pjax" href="{{ site.JB.tags_path }}"></a></span>
                     <span><a title="Categories" class="icon-bookmark pjax" href="{{ site.JB.categories_path }}"></a></span>

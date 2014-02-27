@@ -1,169 +1,375 @@
 
 <!DOCTYPE html>
 <!--
- #                   ####
- #           #      #                         #     #
- #                  #                         ##   ##
- #         ###     ####      #####            # # # #   #####   ### ##    #####    # ###   #    #
- #           #      #       #     #           #  #  #  #     #  #  #  #  #     #   ##      #    #
- #           #      #       #######           #     #  #######  #  #  #  #     #   #       #    #
- #           #      #       #                 #     #  #        #  #  #  #     #   #       #    #
- ######    #####    #        #####            #     #   #####   #     #   #####    #        #####
-                                                                                                #
-                                                                                            ####
 -->
 <html lang="zh-CN"/>
 <head>
-	<meta http-equiv="pragma" content="no-cache">
+
+	<meta charset="UTF-8"/>
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+
+	<title> 方 莲 | William</title>
+
+	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+
 	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
 	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
-	<meta charset="utf-8" />
-	<meta name="author" content="ccbikai" />
-	<meta name="generator" content="Jekyll" />
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-	<meta name="keywords" content="生活,记忆,生活记忆,Life,Memory,Life Memory,不给力的面条,面条,人生就像那旅程,谁知道转弯后的风光" />
-	<meta name="description" content="邻居" />
-	<title>邻居 | Life Memory</title>
-	<link rel="stylesheet" href="/assets/themes/life/css/kimochi.css" media="all"/>
-	<link rel="stylesheet" href="/assets/themes/life/css/style.css" media="all"/>
+
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
 	<link rel="shortcut icon" href="/favicon.ico" />
-	<link href="http://feed.miantiao.me" type="application/rss+xml" rel="alternate" title="LifeMemory RSS Feed" />
+	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
 	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="LifeMemory ATOM Feed" />
-	<link rel="canonical" href="http://miantiao.me/links.html" />
-	<script type="text/javascript" src="/assets/themes/life/js/jquery.min.js"></script>
+	<link rel="canonical" href="http://williamlfang.github.com/cn/links.html" />
+	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
+
+	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
+	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
+	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
+	<script>hljs.initHighlightingOnLoad();</script>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 100      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+
+<!--=================================================================== -->
 </head>
+
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--	<link rel="stylesheet" href="/media/themes/miantiao/xiaohudie-sidebar.css" media="all"/>		
+<link rel="stylesheet" href="/media/themes/miantiao/xiaohudie-style.css" media="all"/>
+-->
+<!-- <link rel="stylesheet" href="/media/themes/miantiao/xiaohudie-sidebar.css" media="all"/>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37286418-1']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_setCustomVar', 1, 'IP', '8.35.201.54', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Reviewer ', 'anonymous user', 1]);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret+One">
+-->
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 <body>
+<!--
 	<div id="head" class="w-100p">
 		<div class="header">
-			<a href="http://miantiao.me" class="logo left"><img class="logoimg" src="/assets/themes/life/images/logo.png" alt="Life Memory"/></a>
+			<a href="http://williamlfang.github.com/" class="logo left"><img class="logoimg" src="/assets/images/logo.png" alt="Life Memory"/></a>
+			<!--
 			<div class="site">
-				<a href="http://miantiao.me" class="name font-white font-36">Life Memory</a>
+				<a href="http://williamlfang.github.com/cn" class="name font-white font-36">Life Memory</a>
 				<p class="desc font-white font-20">人生就像那旅程,谁知道转弯后的风光</p>
 			</div>
+			-->
+			<!--
 			<div class="social-icons right">
 				<a href="http://feed.miantiao.me" class="feed" title="订阅我的博客"  rel="nofollow">feed</a>
 				<a href="http://weibo.com/ccbikai" class="weibo" title="新浪微博"  rel="nofollow">weibo</a>
 				<a href="http://t.qq.com/ccbikai" class="tqq" title="腾讯微博"  rel="nofollow">tqq</a>
 				<a href="http://www.twitter.com/ccbikai" class="twitter" title="Tui特"  rel="nofollow">twi</a>
 			</div>
-		</div>
+			-->
+<!--		</div>
 	</div>
+-->
 	<div id="main" class="w-100p font-gray-dark">
 		<div class="nav nav-large nav-orange">
 			<div class="menu cleared">
-			<a title="首页" class="nav-item" href="/">首页</a>
+			<a title="首页" class="nav-item" href="http://williamlfang.github.com/cn/">首页</a>
 				<div class="nav-has-menu">
-					<a class="nav-item" href="/archives.html">归档</a>
+					<a class="nav-item" href="http://williamlfang.github.com/cn/archives.html">归档</a>
 						<div class="nav-menu">
 							
-							<a title="Time" class="nav-menu-item" href="/archives.html#Time">Time</a>
+							<a title="Time" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Time">Time</a>
 							
-							<a title="yes" class="nav-menu-item" href="/archives.html#yes">yes</a>
+							<a title="Love" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Love">Love</a>
 							
-							<a title="Love" class="nav-menu-item" href="/archives.html#Love">Love</a>
+							<a title="Campus" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Campus">Campus</a>
 							
-							<a title="随口一说" class="nav-menu-item" href="/archives.html#随口一说">随口一说</a>
+							<a title="Personal" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Personal">Personal</a>
 							
-							<a title="扯淡文章" class="nav-menu-item" href="/archives.html#扯淡文章">扯淡文章</a>
+							<a title="Life" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Life">Life</a>
 							
-							<a title="一块分享" class="nav-menu-item" href="/archives.html#一块分享">一块分享</a>
+							<a title="Tech" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Tech">Tech</a>
 							
-							<a title="Campus" class="nav-menu-item" href="/archives.html#Campus">Campus</a>
+							<a title="Programming" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Programming">Programming</a>
 							
-							<a title="Personal" class="nav-menu-item" href="/archives.html#Personal">Personal</a>
-							
-							<a title="Life" class="nav-menu-item" href="/archives.html#Life">Life</a>
-							
-							<a title="科技牛逼" class="nav-menu-item" href="/archives.html#科技牛逼">科技牛逼</a>
-							
-							<a title="Tech" class="nav-menu-item" href="/archives.html#Tech">Tech</a>
-							
-							<a title="Programming" class="nav-menu-item" href="/archives.html#Programming">Programming</a>
-							
-							<a title="经济分析" class="nav-menu-item" href="/archives.html#经济分析">经济分析</a>
+							<a title="经济分析" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#经济分析">经济分析</a>
 							
 						</div>
 				</div>
-			<a title="邻居" class="nav-item" href="/links.html">邻居</a>
-			<a title="留言" class="nav-item" href="/guestbook.html">留言</a>
+			<a title="邻居" class="nav-item" href="http://williamlfang.github.com/cn/links.html">链接</a>
+			<a title="关于" class="nav-item" href="http://williamlfang.github.com/cn/about.html">关于</a>
+			<a title="留言" class="nav-item" href="http://williamlfang.github.com/cn/guestbook.html">留言</a>
 				<div class="search right h-1">
-					<form method="get" id="searchform" action="http://miantiao.me/search.html">
-					<input type="text" name="q" id="search" size="13" value="" placeholder="敢不敢搜一下？" x-webkit-speech />
+					<form method="get" id="searchform" action="http://williamlfang.github.com/cn/search.html">
+					<input type="text" name="q" id="search" size="13" value="" placeholder="你在找什么呢？" x-webkit-speech />
 					</form>
 				</div>
 			</div>
 		</div>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--
+<div class="sidebar">
+<div class="wget"> 
+
+<table border="0" class="snsul">
+<tbody>
+
+<tr>
+<td><a href="https://plus.google.com/+MehyWang?rel=author" target="_blank" rel="me"><div class="sns" id="tw"></div></a>
+</td>
+
+<td><div class="sns" id="wb"></div></td>
+
+<td>
+  	<form role="search" method="get" class="search-form" action="http://xiaohudie.net/">
+  		<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">				 
+ 	</form>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+						<div class="wget-tab">
+				<ul class="tabs xhd_potaps">
+					<li class="tabs active"><h3 class="wget-t" tabhref="#tab1">Rand</h3></li>
+					<li class="tabs"><h3 class="wget-t" tabhref="#tab2">New</h3></li>
+					<li class="tabs"><h3 class="wget-t" tabhref="#tab3">Pop</h3></li>
+					<div class="clear"></div>
+				</ul>
+				
+ 		
+			</div>
+
+ <div id="tab1" class="xhd_tab" style="display: block;">
+ <div>  
+				<ul class="ft_nav">
+					    
+				<li>
+				 
+		
+				<a href="http://xiaohudie.net/code/youproxy-20121104.html" rel="bookmark" title="1 条评论 | 分类：Code" >YOUPROXY更新至20121104</a>
+				
+			 
+			<div class="clear"></div>
+
+				</li>   		
+				</ul>
+			
+</div> 
+</div>
+
+			<div id="tab2" class="xhd_tab" style="display: none;">
+ <div> 
+  				<ul class="ft_nav">
+					    
+
+				<li>
+			 
+		
+				<a href="http://xiaohudie.net/code/wbto-plugin.html" rel="bookmark" title="128 条评论 | 分类：Code" >微博通for wordpress插件完善</a>
+				
+			 
+			<div class="clear"></div>
+				</li>   	   
+				<li>
+			 
+		
+				<a href="http://xiaohudie.net/code/async-comment-author-screenshot.html" rel="bookmark" title="125 条评论 | 分类：Code" >异步获取评论者网站截图</a>
+				
+			 
+			<div class="clear"></div>
+				</li>   					
+			</ul>  
+			
+ </div> 
+ </div>
+
+
+<div class="wget"><h3>Categories</h3>
+  	<ul class="ft_nav">					
+ 	<li class="cat-item cat-item-2"><a href="http://xiaohudie.net/code" title="the Best Damn Thing">Code</a> (92)
+	</li>
+	<li class="cat-item cat-item-3"><a href="http://xiaohudie.net/ios" title="IOS once, IOS forever">IOS</a> (10)
+	</li>
+	<li class="cat-item cat-item-4"><a href="http://xiaohudie.net/themes" title="Theme  by 小蝴蝶">Themes</a> (7)
+	</li>
+	<li class="cat-item cat-item-5"><a href="http://xiaohudie.net/blog" title="吃的是奶,吐的是草">吐草</a> (43)
+	</li>
+	<li class="cat-item cat-item-7"><a href="http://xiaohudie.net/management" title="其实我是学管理的........">管理学</a> (1)
+	</li>
+ 	</ul>
+</div>
+
+<div class="wget">
+	<h3>Tags</h3>					
+	<div class="entry-tags">
+		<a href='http://xiaohudie.net/tag/other' class='tag-link-70' title='12 topics' style='font-size: 14.6739130435px;'>其他技术</a>
+
+<a href='http://xiaohudie.net/tag/tag-ios' class='tag-link-31' title='9 topics' style='font-size: 13.9565217391px;'>IOS</a>	</div>
+	<script>jQuery(".entry-tags a").append("<span></span>");jQuery(".entry-tags a").find("span").html( function(){var s=$(this).parent().attr("title").replace(/[^0-9]/ig, "");return " ("+parseInt(s)+")";});</script>
+</div>
+
+
+<div class="wget">
+  <ul class="ft_nav">
+        <li><h3>你们。</h3></li>
+	<li class="rc"><div class="fr">哥特复兴</div><div class="rcavatar fra"><img alt="哥特复兴" src="http://0.gravatar.com/avatar/00f29fa85cc9593a9bd0166449998434?s=30&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&r=G" class="avatar avatar-30 photo" height="30" width="30"></div><a href="http://dyygtfx.com" target="_blank">哥特复兴</a></li> 
+
+      </ul>
+</div> 
+
+<div class="wget">
+      <ul class="ft_nav">
+        <li><h3>Recent Comments</h3></li>
+	<li class="rc"><div class="rcer" >feelfeelsister</div> <a href="http://xiaohudie.net/contact/comment-page-26#comment-9029" title="《Contact》上的评论"><div class="rcavatar"><img alt='feelfeelsister' src='http://0.gravatar.com/avatar/a8a925c464116616ff1955226a161657?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' /></div>考的怎么样。 </a></li>      </ul>
+</div>  
+ 
+
+<div class="wget">
+      <ul class="ft_nav">
+        <li><h3>Analytics</h3></li>
+       		<li class="rc"><div class="anal" id="analp"></div><div class="anal-title" id="analp-t">Posts</div>153</li>
+		<li class="rc"><div class="anal" id="analv"></div><div class="anal-title" id="analv-t">Views</div>531,409 </li>
+		<li class="rc"><div class="anal" id="analc"></div><div class="anal-title" id="analc-t">Comments</div>7898</li>
+		<li class="rc"><div class="anal" id="analu"></div><div class="anal-title" id="analu-t">Uptime</div>605 days</li>
+		<li class="rc"><div class="anal" id="anall"></div><div class="anal-title" id="anall-t">Last Updated</div>2 months ago</li>
+      </ul>
+ </div>  
+ 
+</div>
+</div>
+-->
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->	
 		<div id="articles">
 		
 <div class="post mt-2">
 	<div class="info box">
-		<a class="date" href="/links.html">
-		<span class="day">17</span><span class="month">Jan</span>
+		<a class="date" href="http://williamlfang.github.com/cn/links.html">
+		<span class="year">2014</span>
+		<span class="day">27</span>
+		<span class="month">February</span>
 		<span class="circle"></span>
 		</a>
 	</div>
 	<div class="article">
-		<h3><a class="title font-orange mb-2" href="/links.html" title="邻居">邻居</a></h3>
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/links.html" title="邻居">邻居</a></h3>
 		<div class="content lh-150p font-16 pd-1 mg-2 radius-7">
-		<center><p><b>排名不分先后,如果忘记添加您的链接,请及时告知</b></p></center>
+		<center><p><b>排名不分先后</b></p></center>
+
+<!---== == == == == == == == == == == == == == -->
 	<div id="linkcaption">
 		<h4>首页链接</h4>
-    </div>
-    <div class="link-content">
-		<ul class="no-list">
-		<li><a href="http://www.inbiji.com/" rel="external" title="好记性不如烂笔记" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=www.inbiji.com" alt="in笔记" />in笔记</a><p>好记性不如烂笔记</p></li>
-		<li><a href="http://www.jucelin.cn/" rel="external" title="关注生活,关注网络,关注新的一天&#8230;" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=www.jucelin.cn" alt="Jucelin&#039;s Blog" />Jucelin&#039;s Blog</a><p>关注生活,关注网络,关注新的一天</p></li>
-		<li><a href="http://kagami.me/" rel="external" title="Code is immaterial wealth" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=kagami.me" alt="橙的记事本"  />橙的记事本</a><p>Code is immaterial wealth</p></li>
-		<li><a href="http://thoseyears.org/" rel="external" title="有态度的生活博客" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=thoseyears.org" alt="那些年的永远站" />那些年的永远站</a><p>有态度的生活博客</p></li>
-		<li><a href="http://yooooo.us/" rel="external" title="论野生技术&二次元" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=yooooo.us" alt="yooooo.us"  />yooooo.us</a><p>论野生技术&二次元</p></li>
-		<li><a href="http://www.zhbk.name/" rel="external" title="淡定的人生不寂寞" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=www.zhbk.name" alt="子浩博客"  />子浩博客</a><p>淡定的人生不寂寞</p></li>
-		<li><a href="http://www.54575.com/blog/" rel="external" title="小琪不小气" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=www.54575.com" alt="小琪不小气" />小琪不小气</a><p>小琪不小气</p></li>
-		<li><a href="http://ijustin.pw/ " rel="external" title="即使行至命运的终点，剑刃相向之时，回望云峰，此生无悔，此生无愧！" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=ijustin.pw/" alt="Justin's House" />Justin's House</a><p>即使行至命运的终点，剑刃相向之时，回望云峰，此生无悔，此生无愧！</p></li>
-		<li><a href="http://www.arefly.com/" rel="external" title="暢想資源 | 搜索樂趣" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=www.arefly.com" alt="暢想資源" />暢想資源</a><p>暢想資源 | 搜索樂趣</p></li>
-		<li><a href="http://www.leewe.tk/" rel="external" title="leewe" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=www.leewe.tk" alt="leewe" />leewe</a><p>leewe</p></li>
-		<li><a href="http://www.yuxiaoxi.com/" rel="external" title="麦田里长着一根葱" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=www.yuxiaoxi.com" alt="麦田一根葱" />麦田一根葱</a><p>麦田里长着一根葱</p></li>
-		<li><a href="http://klant.cn/" rel="external" title="leewe" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=klant.cn" alt="Klant&#039;s Blog"  />Klant&#039;s Blog</a><p>Klant&#039;s Blog</p></li>
-		</ul>
-    </div>
-<div id="linkcaption">
-	<h4>内页链接</h4>
-</div>
-<div class="link-content">
-	<ul class="no-list">
-	<li><a href="http://www.blueionic.com/" rel="external" title="蓝色离子" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=www.blueionic.com" alt="蓝色离子"  />蓝色离子</a><p>蓝色离子</p></li>
+	</div>
+
+    	<div class="link-content">
+			<ul class="no-list">
+			<li><a href="http://klant.cn/" rel="external" title="leewe" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=klant.cn" alt="Klant&#039;s Blog"  />Klant&#039;s Blog</a><p>Klant&#039;s Blog</p></li>
+			</ul>
+		</div>
+<!---== == == == == == == == == == == == == == -->
+
+<!---== == == == == == == == == == == == == == -->
+	<div id="linkcaption">
+		<h4>内页链接</h4>
+	</div>
+
+		<div class="link-content">
+			<ul class="no-list">
+			<li><a href="http://www.blueionic.com/" rel="external" title="蓝色离子" ><img width="16px";height="16px"; src="http://statics.dnspod.cn/proxy_favicon/_/favicon?domain=www.blueionic.com" alt="蓝色离子"  />蓝色离子</a><p>蓝色离子</p></li>
+			</ul>
+		</div>
+<!---== == == == == == == == == == == == == == -->
+
+<!---== == == == == == == == == == == == == == -->
+	<div class="msg msg-orange mt-1 mb-1" style="font-weight:bolder;">
+	<a href=""> R </a>
+	</div>
+	<ul>
+		<li>
+			<a href="http://www.ats.ucla.edu/stat/r/">
+				Resources to help you learn and use R
+			</a>
+				：涵盖了众多有关 **R** 的初级入门，并且有提供了翔实的具体例子可供复制、练习。
+		</li>
 	</ul>
-</div>
 
 		</div>
 	</div>
 	
-	<div id="comments cleared" class="mt-2 pl-2 pr-2">
-		<div class="comment left w-60 h-60">
-		<a class="yuan" href="#comments">
-		<span class="ds-thread-count num" data-thread-key="572" data-count-type="comments"></span>
-		<span class="circle"></span>
-		</a>
-	</div>
-	<div class="ds-thread" data-thread-key="572" data-title="邻居" data-url="http://miantiao.me/links.html"></div>
-	</div>
-    
 </div>
 	<div class="clear"></div>
 </div>
 
 
+
+		
 		
 		</div>
 		
 	</div>
+
 	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
-		<div id="about" class="align-center">&copy; 2009-2013 Life Memory ,Powered By Jekyll ,Design By <a href="https://plus.google.com/113613029248221235605?rel=author">cc bikai</a> .
+		<div id="about" class="align-center">&copy; 2013-2014 Powered By Jekyll, Designed By <a href="http://williamlfang.github.io/">William Fang</a>.
 		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
 		<div class="radar"></div>
 		</div>
 	</div>
-<link rel="stylesheet" href="/assets/themes/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
-<script type="text/javascript" src="/assets/themes/life/js/common.js" charset="UTF-8"></script>
+<link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
 <script type="text/javascript">
 	var duoshuoQuery = {short_name:"hibikai"};
 	(function() {

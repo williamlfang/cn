@@ -13,6 +13,8 @@ description:
 
 Git是一个分散化的版本管理系统(DVCS),最早是用于处理Linux的远程协作编程,后来开始在编程社区逐渐受到关注,在程序猿们广泛流传.而Github就相当于给Git安装了一个在线的存储系统,用于远程协同,相当于码农们的Facebook.
 
+<!-- more -->
+
 ## Jekyll
 
 > Transform your plain text into static websites and blogs.

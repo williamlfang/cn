@@ -10,6 +10,8 @@ tags:
 
 Linux （Mint，16 Petra）系统本身并没有默认安装中文输入法。为了在 Linux 操作系统下使用中文输入，需要自己添加。我倒腾了大半天的，终于明白过来这是怎么设置了。现在将全部的过程记录在下面，以备日后使用。
 
+<!-- more -->
+
 1. 首先是安装源，
 
     sudo add-apt-repository ppa:fcitx-team/nightly

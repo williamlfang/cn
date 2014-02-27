@@ -1,0 +1,31 @@
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="{{ page.url }}">
+		<span class="year">{{ page.date | date:"%Y" }}</span>
+		<span class="day">{{ page.date | date:"%d" }}</span>
+		<span class="month">{{ page.date | date:"%B" }}</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h3>
+		<div class="content lh-150p font-16 pd-1 mg-2 radius-7">
+		{{ content }}
+		</div>
+		<!-- <div class="recent-visitors"><ul class="ds-recent-visitors mg-2 pd-1" data-num-items="99" data-avatar-size="48"></ul></div>
+		-->
+	</div>
+	{% if page.comments %}
+	<div id="comments cleared" class="mt-2 pl-2 pr-2">
+		<div class="comment left w-60 h-60">
+		<a class="yuan" href="{{ post.url }}#comments">
+		<span class="ds-thread-count num" data-thread-key="{{page.wordpress_id}}" data-count-type="comments"></span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="ds-thread" data-thread-key="{{page.wordpress_id}}" data-title="{{ page.title }}" data-url="{{ site.url }}{{ page.url }}"></div>
+	</div>
+    {% endif %}
+</div>
+	<div class="clear"></div>
+</div>

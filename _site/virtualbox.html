@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<!--
+ #                   ####
+ #           #      #                         #     #
+ #                  #                         ##   ##
+ #         ###     ####      #####            # # # #   #####   ### ##    #####    # ###   #    #
+ #           #      #       #     #           #  #  #  #     #  #  #  #  #     #   ##      #    #
+ #           #      #       #######           #     #  #######  #  #  #  #     #   #       #    #
+ #           #      #       #                 #     #  #        #  #  #  #     #   #       #    #
+ ######    #####    #        #####            #     #   #####   #     #   #####    #        #####
+                                                                                                #
+                                                                                            ####
+-->
+<html lang="zh-CN"/>
+<head>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+	<meta charset="utf-8" />
+	<meta name="author" content="ccbikai" />
+	<meta name="generator" content="Jekyll" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<meta name="keywords" content="LinuxVirtualbox" />
+	<meta name="description" content="在 Virutalbox 环境下安装虚拟机" />
+	<title>在 Virutalbox 环境下安装虚拟机 | Life Memory</title>
+	<link rel="stylesheet" href="/assets/themes/life/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="/assets/themes/life/css/style.css" media="all"/>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="http://feed.miantiao.me" type="application/rss+xml" rel="alternate" title="LifeMemory RSS Feed" />
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="LifeMemory ATOM Feed" />
+	<link rel="canonical" href="http://miantiao.me/virtualbox.html" />
+	<script type="text/javascript" src="/assets/themes/life/js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="head" class="w-100p">
+		<div class="header">
+			<a href="http://miantiao.me" class="logo left"><img class="logoimg" src="/assets/themes/life/images/logo.png" alt="Life Memory"/></a>
+			<div class="site">
+				<a href="http://miantiao.me" class="name font-white font-36">Life Memory</a>
+				<p class="desc font-white font-20">人生就像那旅程,谁知道转弯后的风光</p>
+			</div>
+			<div class="social-icons right">
+				<a href="http://feed.miantiao.me" class="feed" title="订阅我的博客"  rel="nofollow">feed</a>
+				<a href="http://weibo.com/ccbikai" class="weibo" title="新浪微博"  rel="nofollow">weibo</a>
+				<a href="http://t.qq.com/ccbikai" class="tqq" title="腾讯微博"  rel="nofollow">tqq</a>
+				<a href="http://www.twitter.com/ccbikai" class="twitter" title="Tui特"  rel="nofollow">twi</a>
+			</div>
+		</div>
+	</div>
+	<div id="main" class="w-100p font-gray-dark">
+		<div class="nav nav-large nav-orange">
+			<div class="menu cleared">
+			<a title="首页" class="nav-item" href="/">首页</a>
+				<div class="nav-has-menu">
+					<a class="nav-item" href="/archives.html">归档</a>
+						<div class="nav-menu">
+							
+							<a title="Time" class="nav-menu-item" href="/archives.html#Time">Time</a>
+							
+							<a title="yes" class="nav-menu-item" href="/archives.html#yes">yes</a>
+							
+							<a title="Love" class="nav-menu-item" href="/archives.html#Love">Love</a>
+							
+							<a title="随口一说" class="nav-menu-item" href="/archives.html#随口一说">随口一说</a>
+							
+							<a title="扯淡文章" class="nav-menu-item" href="/archives.html#扯淡文章">扯淡文章</a>
+							
+							<a title="一块分享" class="nav-menu-item" href="/archives.html#一块分享">一块分享</a>
+							
+							<a title="Campus" class="nav-menu-item" href="/archives.html#Campus">Campus</a>
+							
+							<a title="Personal" class="nav-menu-item" href="/archives.html#Personal">Personal</a>
+							
+							<a title="Life" class="nav-menu-item" href="/archives.html#Life">Life</a>
+							
+							<a title="科技牛逼" class="nav-menu-item" href="/archives.html#科技牛逼">科技牛逼</a>
+							
+							<a title="Tech" class="nav-menu-item" href="/archives.html#Tech">Tech</a>
+							
+							<a title="Programming" class="nav-menu-item" href="/archives.html#Programming">Programming</a>
+							
+							<a title="经济分析" class="nav-menu-item" href="/archives.html#经济分析">经济分析</a>
+							
+						</div>
+				</div>
+			<a title="邻居" class="nav-item" href="/links.html">邻居</a>
+			<a title="留言" class="nav-item" href="/guestbook.html">留言</a>
+				<div class="search right h-1">
+					<form method="get" id="searchform" action="http://miantiao.me/search.html">
+					<input type="text" name="q" id="search" size="13" value="" placeholder="敢不敢搜一下？" x-webkit-speech />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="articles">
+		
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="/virtualbox.html">
+		<span class="day">04</span><span class="month">Jan</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="/virtualbox.html" title="在 Virutalbox 环境下安装虚拟机">在 Virutalbox 环境下安装虚拟机</a></h3>
+		<div class="content lh-150p font-16 pd-1 mg-2 radius-8">
+		<p>我现在的系统是 Linux Mint 16 (Petra,KDE),在开源社区有提供众多的软件,基本上能够满足工作和学习的需要.不过,对于在国内环境下,有些商业软件并不提供 Linux 支持,比如,我现在使用的招行网银U盾,不能在 Linux 下读取,再比如,厦大图书馆提供的远程访问数据库iReader,只能在window操作系统下使用.</p>
+
+<!-- more -->
+
+
+<h2>Linux 下安装 Windows 软件</h2>
+
+<p>对于此类的问题,目前有两种解决方法:</p>
+
+<ol>
+<li><p>在 Linux 系统中安装 wine,从而可以安装大部分的软件,如QQ等.</p>
+
+<ul>
+<li>优点:占用的CPU资源少,不影响系统的运行速度</li>
+<li>缺点:设置麻烦,尤其是中文的设置基本是要人命的.典型的就是ireader不能运行.而且还需要相应的安装在 Linux 下的配套软件.</li>
+</ul>
+</li>
+<li><p>另外一种就是我要介绍的方法:在 Linux 下使用虚拟机安装 Windows 操作系统,在其上面运行软件.</p>
+
+<ul>
+<li>优点:一劳永逸,简单方便</li>
+<li>缺点:由于虚拟机需要固定的分配内存和硬盘空间,会大大的降低系统的运行速度.</li>
+</ul>
+</li>
+</ol>
+
+
+<p>不过,就目前的笔记本硬件配置来看,一般的内存是4G的,处理器在i3以上,硬盘在500G.在 Linux 下利用虚拟机安装 Windows 系统基本上不会有太大的影响.就本人目前的使用情况来看,效果还是可以接受的.</p>
+
+<p>下面就简单介绍一下我的安装经验.</p>
+
+<h2>安装 Virtualbox</h2>
+
+<p>首先是从网站下载 <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a>,这个是 deb 格式的,可以直接点击安装即可.需要 \root 权限.输入密码即可.</p>
+
+<p>然后在终端输入 virtualbox 打开.</p>
+
+<ol>
+<li>点击"新建"一个虚拟机,设置虚拟机名称,并选择相应的操作系统.这个其实意义不大,主要 virtualbox 会根据相应的操作系统分配默认的内存和硬盘空间.
+<img src="/assets/virtualbox/vb01.png" alt="vb01" />
+<img src="/assets/virtualbox/vb02.png" alt="vb02" />
+<img src="/assets/virtualbox/vb03.png" alt="vb03" /></li>
+<li>也就是上一步骤的延续,设定内存大小.建议给主机留多一些内存以加快主机的运行速度.
+<img src="/files/virtualbox/vb04.png" alt="vb04" /></li>
+<li>点击"创建"开始建立一个虚拟机.
+<img src="/files/virtualbox/vb05.png" alt="vb05" /></li>
+<li>如果不知道虚拟硬盘的文件类型,那就选择默认的"VDI",点击"下一步"继续.
+<img src="/files/virtualbox/vb06.png" alt="vb06" /></li>
+<li>分配虚拟机的硬盘大小,有两种选择
+<img src="/files/virtualbox/vb07.png" alt="vb07" />
+
+<ul>
+<li>动态分配,默认选择,前期不怎么占用硬盘,后面会随着需要而增加.比较适用于硬盘存储比较小的计算机.</li>
+<li>固定大小,这个会占用主机硬盘空间.</li>
+</ul>
+</li>
+<li>选择需要将虚拟机建立在那个文件夹下面.视个人情况而定.我一般是建立在 /home
+<img src="/files/virtualbox/vb08.png" alt="vb08" /></li>
+<li>该页面显示已经成功的建立起来一个虚拟机,在上面有对应的配置.这个可以通过设置来更改.
+<img src="/files/virtualbox/vb09.png" alt="vb09" /></li>
+<li>为了在虚拟机上面安装 Windows 系统,需要点击"设置",找到"存储"里面的"分配光驱",然后选择移动硬盘上的 Windows 7 iso.
+<img src="/files/virtualbox/vb10.png" alt="vb010" /></li>
+<li>设置完成后的页面.点击"启动"开始安装系统.
+<img src="/files/virtualbox/vb16.png" alt="vb016" /></li>
+<li>普通的 Windows 7 安装过程.
+<img src="/files/virtualbox/vb11.png" alt="vb011" /></li>
+<li>成功安装系统,开始启动.
+<img src="/files/virtualbox/vb12.png" alt="vb012" />
+<img src="/files/virtualbox/vb13.png" alt="vb013" /></li>
+<li>在虚拟机上面的 Win 7 找到 Cd 光驱,点击打开安装扩展应用,期间会重启一次.进入之后可以看到整个 Win 7 的完整系统.
+<img src="/files/virtualbox/vb14.png" alt="vb14" /></li>
+<li>设置"共享文件夹",以实现在主机和虚拟机之间的文件传输.
+<img src="/files/virtualbox/vb15.png" alt="vb15" /></li>
+</ol>
+
+
+<h2>Virtualbox 识别 USB</h2>
+
+<p>为了能够在主机与虚拟机之间相互使用USB,还需有做如下的设置.</p>
+
+<blockquote><ul>
+<li>由于 virtualbox 默认的是不打开主机的USB插件的.为了实现在虚拟机上读取USB,我们需要安装一个拓展包,<a href="https://www.virtualbox.org/wiki/Downloads">Extention pack</a>.下载完成后点击安装即可.然后重启 virtualbox.   <br></li>
+<li>同时,为了使 virtualbox 能够识别 USB,还需要将当前用户添加到组里.在终端输入以下命令并重启主机:   <br>
+  sudo addgroup wiliam vboxusers  <br></li>
+<li>接着做一下设置:    <br>
+
+<ul>
+<li>打开virtualbox,但事先不启动虚拟机.找到"设置"中的"USB设备",点击右边的"+"以添加USB  <br></li>
+<li>重启主机,启动虚拟机后就可以通过右下角的USB符号添加.如果不用的话,也可以点击推出.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+		<div class="post-end mt-1"><span><i></i>04 January 2014</span></div>
+		</div>
+	</div>
+	
+	<div class="tags pl-2 pr-2 mb-2 left">
+		<span class="tag">标签：
+		
+		<a class="button button-small button-orange" href="/tags.html#Linux" title="Linux">Linux</a>
+		
+		<a class="button button-small button-orange" href="/tags.html#Virtualbox" title="Virtualbox">Virtualbox</a>
+		
+		</span>
+	</div>
+	
+	
+	<div class="categories pl-2 pr-2 mb-2 right">
+		<span class="categorie">分类：
+		
+		<a class="button button-small button-orange" href="/archives.html#Tech" title="Tech">Tech</a>
+		
+		</span>
+	</div>
+	
+	
+	<div class="cleared mt-2 pl-2 pr-2">
+		
+		<a class="button button-orange left" href="/github-jekyll.html" rel="prev" title="在 Virutalbox 环境下安装虚拟机">←Github 的一些设置技巧</a>
+		
+		
+		<a class="button button-orange right" href="/virtualbox.html" rel="next" title="在 Virutalbox 环境下安装虚拟机">在 Virutalbox 环境下安装虚拟机→</a>
+		
+	</div>
+	
+	<span id="btn_page_prev"><a href="/github-jekyll.html" rel="prev"><span id="fanye" style="display: none;">‹</span></a></span>
+	
+	
+	<span id="btn_page_next"><a href="/virtualbox.html" rel="next"><span id="fanye" style="display: none;">›</span></a></span>
+	
+	
+	<div id="hm_t_18226" class="radius-8 baidu"></div>
+	
+</div>
+	<div class="clear"></div>
+</div>
+
+
+		
+		</div>
+		
+	</div>
+	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
+		<div id="about" class="align-center">&copy; 2009-2013 Life Memory ,Powered By Jekyll ,Design By <a href="https://plus.google.com/113613029248221235605?rel=author">cc bikai</a> .
+		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
+		<div class="radar"></div>
+		</div>
+	</div>
+<link rel="stylesheet" href="/assets/themes/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="/assets/themes/life/js/common.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hibikai"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<script src="http://cdn.staticfile.org/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://cdn.staticfile.org/jqueryui/1.10.2/css/smoothness/jquery-ui-1.10.2.custom.min.css" type="text/css" media="all" />
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+</body>
+</html>
+

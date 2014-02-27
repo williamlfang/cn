@@ -8,7 +8,7 @@
 		</a>
 	</div>
 	<div class="article">
-		<h3><a class="title font-orange mb-2" href="{{ site.url }}{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h>
+		<h3><a class="title font-orange mb-2" href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h>
 		<div class="content lh-200p font-16 pd-1 mg-2 radius-7">
 			<div id='tag_cloud'>
 				{% for tag in site.tags %}
@@ -21,7 +21,7 @@
 				{% for post in tag[1] %}
 				<li class="listing-item">
 				<span>{{ post.date | date:"%Y-%m-%d" }}</span>
-				<a class="font-orange atitle" href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+				<a class="font-orange atitle" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
 				</li>
 				{% endfor %}
 			{% endfor %}

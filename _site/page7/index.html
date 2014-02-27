@@ -1,0 +1,1070 @@
+
+<!DOCTYPE html>
+<!--
+-->
+<html lang="zh-CN"/>
+<head>
+
+	<meta charset="UTF-8"/>
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+
+	<title> 方 莲 | William</title>
+
+	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="LifeMemory ATOM Feed" />
+	<link rel="canonical" href="http://williamlfang.github.com/cn" />
+	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
+
+	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
+	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
+	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
+	<script>hljs.initHighlightingOnLoad();</script>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 100      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+
+<!--=================================================================== -->
+</head>
+
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--	<link rel="stylesheet" href="/media/themes/miantiao/xiaohudie-sidebar.css" media="all"/>		
+<link rel="stylesheet" href="/media/themes/miantiao/xiaohudie-style.css" media="all"/>
+-->
+<!-- <link rel="stylesheet" href="/media/themes/miantiao/xiaohudie-sidebar.css" media="all"/>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37286418-1']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_setCustomVar', 1, 'IP', '8.35.201.54', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Reviewer ', 'anonymous user', 1]);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret+One">
+-->
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<body>
+<!--
+	<div id="head" class="w-100p">
+		<div class="header">
+			<a href="http://williamlfang.github.com/" class="logo left"><img class="logoimg" src="/assets/images/logo.png" alt="Life Memory"/></a>
+			<!--
+			<div class="site">
+				<a href="http://williamlfang.github.com/cn" class="name font-white font-36">Life Memory</a>
+				<p class="desc font-white font-20">人生就像那旅程,谁知道转弯后的风光</p>
+			</div>
+			-->
+			<!--
+			<div class="social-icons right">
+				<a href="http://feed.miantiao.me" class="feed" title="订阅我的博客"  rel="nofollow">feed</a>
+				<a href="http://weibo.com/ccbikai" class="weibo" title="新浪微博"  rel="nofollow">weibo</a>
+				<a href="http://t.qq.com/ccbikai" class="tqq" title="腾讯微博"  rel="nofollow">tqq</a>
+				<a href="http://www.twitter.com/ccbikai" class="twitter" title="Tui特"  rel="nofollow">twi</a>
+			</div>
+			-->
+<!--		</div>
+	</div>
+-->
+	<div id="main" class="w-100p font-gray-dark">
+		<div class="nav nav-large nav-orange">
+			<div class="menu cleared">
+			<a title="首页" class="nav-item" href="http://williamlfang.github.com/cn/">首页</a>
+				<div class="nav-has-menu">
+					<a class="nav-item" href="http://williamlfang.github.com/cn/archives.html">归档</a>
+						<div class="nav-menu">
+							
+							<a title="Time" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Time">Time</a>
+							
+							<a title="yes" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#yes">yes</a>
+							
+							<a title="Love" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Love">Love</a>
+							
+							<a title="Campus" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Campus">Campus</a>
+							
+							<a title="Personal" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Personal">Personal</a>
+							
+							<a title="Life" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Life">Life</a>
+							
+							<a title="Tech" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Tech">Tech</a>
+							
+							<a title="Programming" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Programming">Programming</a>
+							
+							<a title="经济分析" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#经济分析">经济分析</a>
+							
+						</div>
+				</div>
+			<a title="邻居" class="nav-item" href="http://williamlfang.github.com/cn/links.html">链接</a>
+			<a title="关于" class="nav-item" href="http://williamlfang.github.com/cn/about.html">关于</a>
+			<a title="留言" class="nav-item" href="http://williamlfang.github.com/cn/guestbook.html">留言</a>
+				<div class="search right h-1">
+					<form method="get" id="searchform" action="http://williamlfang.github.com/cn/search.html">
+					<input type="text" name="q" id="search" size="13" value="" placeholder="你在找什么呢？" x-webkit-speech />
+					</form>
+				</div>
+			</div>
+		</div>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--
+<div class="sidebar">
+<div class="wget"> 
+
+<table border="0" class="snsul">
+<tbody>
+
+<tr>
+<td><a href="https://plus.google.com/+MehyWang?rel=author" target="_blank" rel="me"><div class="sns" id="tw"></div></a>
+</td>
+
+<td><div class="sns" id="wb"></div></td>
+
+<td>
+  	<form role="search" method="get" class="search-form" action="http://xiaohudie.net/">
+  		<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">				 
+ 	</form>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+						<div class="wget-tab">
+				<ul class="tabs xhd_potaps">
+					<li class="tabs active"><h3 class="wget-t" tabhref="#tab1">Rand</h3></li>
+					<li class="tabs"><h3 class="wget-t" tabhref="#tab2">New</h3></li>
+					<li class="tabs"><h3 class="wget-t" tabhref="#tab3">Pop</h3></li>
+					<div class="clear"></div>
+				</ul>
+				
+ 		
+			</div>
+
+ <div id="tab1" class="xhd_tab" style="display: block;">
+ <div>  
+				<ul class="ft_nav">
+					    
+				<li>
+				 
+		
+				<a href="http://xiaohudie.net/code/youproxy-20121104.html" rel="bookmark" title="1 条评论 | 分类：Code" >YOUPROXY更新至20121104</a>
+				
+			 
+			<div class="clear"></div>
+
+				</li>   		
+				</ul>
+			
+</div> 
+</div>
+
+			<div id="tab2" class="xhd_tab" style="display: none;">
+ <div> 
+  				<ul class="ft_nav">
+					    
+
+				<li>
+			 
+		
+				<a href="http://xiaohudie.net/code/wbto-plugin.html" rel="bookmark" title="128 条评论 | 分类：Code" >微博通for wordpress插件完善</a>
+				
+			 
+			<div class="clear"></div>
+				</li>   	   
+				<li>
+			 
+		
+				<a href="http://xiaohudie.net/code/async-comment-author-screenshot.html" rel="bookmark" title="125 条评论 | 分类：Code" >异步获取评论者网站截图</a>
+				
+			 
+			<div class="clear"></div>
+				</li>   					
+			</ul>  
+			
+ </div> 
+ </div>
+
+
+<div class="wget"><h3>Categories</h3>
+  	<ul class="ft_nav">					
+ 	<li class="cat-item cat-item-2"><a href="http://xiaohudie.net/code" title="the Best Damn Thing">Code</a> (92)
+	</li>
+	<li class="cat-item cat-item-3"><a href="http://xiaohudie.net/ios" title="IOS once, IOS forever">IOS</a> (10)
+	</li>
+	<li class="cat-item cat-item-4"><a href="http://xiaohudie.net/themes" title="Theme  by 小蝴蝶">Themes</a> (7)
+	</li>
+	<li class="cat-item cat-item-5"><a href="http://xiaohudie.net/blog" title="吃的是奶,吐的是草">吐草</a> (43)
+	</li>
+	<li class="cat-item cat-item-7"><a href="http://xiaohudie.net/management" title="其实我是学管理的........">管理学</a> (1)
+	</li>
+ 	</ul>
+</div>
+
+<div class="wget">
+	<h3>Tags</h3>					
+	<div class="entry-tags">
+		<a href='http://xiaohudie.net/tag/other' class='tag-link-70' title='12 topics' style='font-size: 14.6739130435px;'>其他技术</a>
+
+<a href='http://xiaohudie.net/tag/tag-ios' class='tag-link-31' title='9 topics' style='font-size: 13.9565217391px;'>IOS</a>	</div>
+	<script>jQuery(".entry-tags a").append("<span></span>");jQuery(".entry-tags a").find("span").html( function(){var s=$(this).parent().attr("title").replace(/[^0-9]/ig, "");return " ("+parseInt(s)+")";});</script>
+</div>
+
+
+<div class="wget">
+  <ul class="ft_nav">
+        <li><h3>你们。</h3></li>
+	<li class="rc"><div class="fr">哥特复兴</div><div class="rcavatar fra"><img alt="哥特复兴" src="http://0.gravatar.com/avatar/00f29fa85cc9593a9bd0166449998434?s=30&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&r=G" class="avatar avatar-30 photo" height="30" width="30"></div><a href="http://dyygtfx.com" target="_blank">哥特复兴</a></li> 
+
+      </ul>
+</div> 
+
+<div class="wget">
+      <ul class="ft_nav">
+        <li><h3>Recent Comments</h3></li>
+	<li class="rc"><div class="rcer" >feelfeelsister</div> <a href="http://xiaohudie.net/contact/comment-page-26#comment-9029" title="《Contact》上的评论"><div class="rcavatar"><img alt='feelfeelsister' src='http://0.gravatar.com/avatar/a8a925c464116616ff1955226a161657?s=30&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D30&amp;r=G' class='avatar avatar-30 photo' height='30' width='30' /></div>考的怎么样。 </a></li>      </ul>
+</div>  
+ 
+
+<div class="wget">
+      <ul class="ft_nav">
+        <li><h3>Analytics</h3></li>
+       		<li class="rc"><div class="anal" id="analp"></div><div class="anal-title" id="analp-t">Posts</div>153</li>
+		<li class="rc"><div class="anal" id="analv"></div><div class="anal-title" id="analv-t">Views</div>531,409 </li>
+		<li class="rc"><div class="anal" id="analc"></div><div class="anal-title" id="analc-t">Comments</div>7898</li>
+		<li class="rc"><div class="anal" id="analu"></div><div class="anal-title" id="analu-t">Uptime</div>605 days</li>
+		<li class="rc"><div class="anal" id="anall"></div><div class="anal-title" id="anall-t">Last Updated</div>2 months ago</li>
+      </ul>
+ </div>  
+ 
+</div>
+</div>
+-->
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->	
+		<div id="articles">
+		
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2009/03/14/my-love-for-you/">
+		<span class="year">2009</span>
+		<span class="day">14</span>
+		<span class="month">March</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2009/03/14/my-love-for-you/" title="我爱主同时亦爱一位世人">我爱主同时亦爱一位世人</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>对于现代生活，我们彼此的联系（Lingking）似乎很多，电子科技的发展方便了人们的交流，从早些时候的座机，到mobile，及至现在的电脑，及时通讯等。</p>
+
+<p>可是失去了一个人，却也失去的一个世界。一个你相信它会永恒的世界。
+先前在163注册的一个邮箱，后来由于学校宿舍的网络问题，登录速度比较“old”，所以一直没用。直到最近，发现失去了一个人，失去了一个世界。终于在未读邮件里找到了一个熟悉的地址，时间是，2008年，11月20。</p>
+
+<p>凌晨。</p>
+
+<p>有多少次，在北回归线未归的地方，午夜有痛，有人在安静的敲击键盘呢。而我，一直是到翌日方能看到。</p>
+
+<p>看到屏幕前面不满密密麻麻的文字，像一群流浪的孩子，因为贪玩而找不到回家的方向，希望，有人带他回家。它们，与我，是如此的熟悉。感情至交的老朋友，见面也许并不显得激动，拥抱或者热泪盈眶之类只是逢场的礼仪，他们只是相互大量着，注视着，于默默中望见往昔的灿烂与沧桑。</p>
+
+<p>看到最后一行文字，竟佩服自己当时的镇定，默默，于默默中把这样的文字删除。留下或不留下的，是程序的母体里没人理会与理解的孤单。</p>
+
+<p>Fantasy说，夏石，我计划从上海开始，做一次漫长的旅程。然后，累了，累的没有力气逃跑，老了，老了没有资格逃跑，然后，就为自己找一个歇脚的家。祝我快乐，夏石。</p>
+
+<p>邮箱里，再也没有记载相同地址的信件，没有相同忧伤的文字。</p>
+
+<p>失去一个人，失去一个世界。</p>
+
+<p>突然那么想逃离这样的一个国度，人们在相互虚妄与猜度中惘然，就像说好的诺言可以撕开如同撕碎一张白纸的干净，就像陌生到熟悉的距离与熟悉到陌生的流离。时代是时代的悲哀，我们却被束缚在这更加浓重的悲哀之中。</p>
+
+<p>Vida la Vida，是coldplay新近的一首歌，在西班牙语里是生命万岁。记起春节在城关教堂里参加陪灵会，有支歌是常常喜乐，向主高歌。我该高歌什么呢，是污秽的灵魂在醉生梦死的沉沦，是安静的天空被拥挤在忧伤的角落，还是康德式心中的底律与头顶的太阳，抑或是那个孩子只是想回家的忧伤在黄昏被拉长的影子很长很长？</p>
+
+<p>我爱主，全能的父。一颗心，要承受多大的痛楚，承载多少的情愫，才能安静的为你做一次停留。我爱主，同时亦爱以为世人。我知道你看的见一切，全能的父。</p>
+
+<p>又要到一个凌晨的开始，不知远方的某方，是否会有人想起曾经在凌晨敲击键盘的咖啡声。</p>
+
+<p>是否，你能听到我的祈祷，与来来自天堂的赞美诗？</p>
+
+<p>（阿门）</p>
+
+		<a href="http://williamlfang.github.com/cn/2009/03/14/my-love-for-you/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2009/03/14/my-love-for-you/">
+		<span class="year">2009</span>
+		<span class="day">14</span>
+		<span class="month">March</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2009/03/14/my-love-for-you/" title="我爱主同时亦爱一位世人">我爱主同时亦爱一位世人</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>对于现代生活，我们彼此的联系（Lingking）似乎很多，电子科技的发展方便了人们的交流，从早些时候的座机，到mobile，及至现在的电脑，及时通讯等。</p>
+
+<p>可是失去了一个人，却也失去的一个世界。一个你相信它会永恒的世界。
+先前在163注册的一个邮箱，后来由于学校宿舍的网络问题，登录速度比较“old”，所以一直没用。直到最近，发现失去了一个人，失去了一个世界。终于在未读邮件里找到了一个熟悉的地址，时间是，2008年，11月20。</p>
+
+<p>凌晨。</p>
+
+<p>有多少次，在北回归线未归的地方，午夜有痛，有人在安静的敲击键盘呢。而我，一直是到翌日方能看到。</p>
+
+<p>看到屏幕前面不满密密麻麻的文字，像一群流浪的孩子，因为贪玩而找不到回家的方向，希望，有人带他回家。它们，与我，是如此的熟悉。感情至交的老朋友，见面也许并不显得激动，拥抱或者热泪盈眶之类只是逢场的礼仪，他们只是相互大量着，注视着，于默默中望见往昔的灿烂与沧桑。</p>
+
+<p>看到最后一行文字，竟佩服自己当时的镇定，默默，于默默中把这样的文字删除。留下或不留下的，是程序的母体里没人理会与理解的孤单。</p>
+
+<p>Fantasy说，夏石，我计划从上海开始，做一次漫长的旅程。然后，累了，累的没有力气逃跑，老了，老了没有资格逃跑，然后，就为自己找一个歇脚的家。祝我快乐，夏石。</p>
+
+<p>邮箱里，再也没有记载相同地址的信件，没有相同忧伤的文字。</p>
+
+<p>失去一个人，失去一个世界。</p>
+
+<p>突然那么想逃离这样的一个国度，人们在相互虚妄与猜度中惘然，就像说好的诺言可以撕开如同撕碎一张白纸的干净，就像陌生到熟悉的距离与熟悉到陌生的流离。时代是时代的悲哀，我们却被束缚在这更加浓重的悲哀之中。</p>
+
+<p>Vida la Vida，是coldplay新近的一首歌，在西班牙语里是生命万岁。记起春节在城关教堂里参加陪灵会，有支歌是常常喜乐，向主高歌。我该高歌什么呢，是污秽的灵魂在醉生梦死的沉沦，是安静的天空被拥挤在忧伤的角落，还是康德式心中的底律与头顶的太阳，抑或是那个孩子只是想回家的忧伤在黄昏被拉长的影子很长很长？</p>
+
+<p>我爱主，全能的父。一颗心，要承受多大的痛楚，承载多少的情愫，才能安静的为你做一次停留。我爱主，同时亦爱以为世人。我知道你看的见一切，全能的父。</p>
+
+<p>又要到一个凌晨的开始，不知远方的某方，是否会有人想起曾经在凌晨敲击键盘的咖啡声。</p>
+
+<p>是否，你能听到我的祈祷，与来来自天堂的赞美诗？</p>
+
+<p>（阿门）</p>
+
+		<a href="http://williamlfang.github.com/cn/2009/03/14/my-love-for-you/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2009/02/20/till-the-end/">
+		<span class="year">2009</span>
+		<span class="day">20</span>
+		<span class="month">February</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2009/02/20/till-the-end/" title="Till the end">Till the end</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>摘自网站的歌词，突然爱上这样简单的午后，伤感的歌词，纳兰氏有诗云，人生若只如初见，何事西风悲画扇，是否可以有个终点，像回归了起点，我的那些文字不再因为孤单而流浪，在偌大的荒野找不到方向。</p>
+
+<p>长大是一个什么样的概念呢?如果从一开始，孩子的世界唯你，到后来，开始不断的接触整个的时间序列，在这个不确定（uncertainty or ambiguity？）的旅途里，相识了陌生人，邂逅了熟悉的脸孔，与爱转角擦肩，在黄昏的街道向昨日挥手，故地重游的回到起点，孩子的世界，依旧，唯你。普鲁斯特是一个永远的孩子，终日在阴暗的角落里，承受哮喘之重，他有句话，说，唯一的乐园，是人们失去的乐园。可是，从机械论（physics）的角度说，不对，因为如若此刻的乐园已经殆尽，这等同说，此刻非现在，那么昨日的乐园，已经何去何从？</p>
+
+<p>前些天，看一个科普短片，说到宇宙与时间的源起，爱氏的广义相对论（General Relativity?）认为宇宙应该是一个有序平整的世界，而量子力学(Quantum Mechanics)却反其道而论，说构成宏观世界物质的微粒，如质子，中子，乃至更加微笑的夸克，却是在日复一日的演绎不确定的话剧。后来的玄学说（String Theory）认为有更加合理的解释，甚至物质本身也可能是由众多看不见（就目前的手段而言）玄（String）组成。如若果真此般，整个宇宙有十一个维度（dimensions）组合而成，世界，我的，你的，我们的，却原来在玄的众多运动轨迹里，交错运行着。</p>
+
+<p>可是，我要告诉你，在这样的未知中，有我所确定的，说过的诺言看到的星空，转角的微笑牵手的彩虹，真理与爱。Nash获得诺贝尔做的一个演讲，说，You are the reason I am. You are all my reasons. Rene Descartes有一个有趣的哲学观点，我思，故我在。而在那个疯狂的年代，也有形似且神同的口号，人有多大胆，地有多大产。教科书告诉我们说这些是唯心学派，可是我要告诉你，我相信你在，在我的世界里。</p>
+
+<p>时间是否有终点（the end ）呢？可是孩子终会找到归宿。它在你那，在你的方向上。</p>
+
+<blockquote>
+  <p>all these precious moments <br />
+with you by my side <br />
+must be a gift from heaven <br />
+that ‘s holding me all night <br />
+i don ‘t know how i found you <br />
+i ‘m thankful that i have <br />
+now that i have a love so true <br />
+to hold , <br />
+to keep , <br />
+to share <br />
+in my heart , <br />
+i can no longer hold inside <br />
+all of the love i used to hide <br />
+i ‘ll always be  <br />
+with you untill the very end <br />
+in this world , <br />
+there is no place i ‘d rather be <br />
+you are my life , <br />
+my soul , <br />
+my girl <br />
+and through it all <br />
+i know  <br />
+that you ‘ve come to see  <br />
+thatyou ‘re the one  <br />
+till the end <br />
+all my friend around me <br />
+say you ‘d be gone too soon <br />
+baby , <br />
+i ‘m gonna make them see <br />
+we ‘ve found our way  <br />
+back home <br />
+in my heart , <br />
+i can no longer  <br />
+hold inside <br />
+all of the love  <br />
+i used to hide <br />
+i ‘ll always be  <br />
+with you untill the very end <br />
+in this world , <br />
+there is no place  <br />
+i ‘d rather be <br />
+you are my life , <br />
+my soul , <br />
+my girl <br />
+and through <br />
+it all <br />
+i know that  <br />
+you ‘ve come to see that <br />
+you ‘re the one  <br />
+till the end <br />
+we ‘ll always be  <br />
+till the end <br /></p>
+</blockquote>
+
+		<a href="http://williamlfang.github.com/cn/2009/02/20/till-the-end/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2009/02/20/till-the-end/">
+		<span class="year">2009</span>
+		<span class="day">20</span>
+		<span class="month">February</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2009/02/20/till-the-end/" title="Till the end">Till the end</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>摘自网站的歌词，突然爱上这样简单的午后，伤感的歌词，纳兰氏有诗云，人生若只如初见，何事西风悲画扇，是否可以有个终点，像回归了起点，我的那些文字不再因为孤单而流浪，在偌大的荒野找不到方向。</p>
+
+<p>长大是一个什么样的概念呢?如果从一开始，孩子的世界唯你，到后来，开始不断的接触整个的时间序列，在这个不确定（uncertainty or ambiguity？）的旅途里，相识了陌生人，邂逅了熟悉的脸孔，与爱转角擦肩，在黄昏的街道向昨日挥手，故地重游的回到起点，孩子的世界，依旧，唯你。普鲁斯特是一个永远的孩子，终日在阴暗的角落里，承受哮喘之重，他有句话，说，唯一的乐园，是人们失去的乐园。可是，从机械论（physics）的角度说，不对，因为如若此刻的乐园已经殆尽，这等同说，此刻非现在，那么昨日的乐园，已经何去何从？</p>
+
+<p>前些天，看一个科普短片，说到宇宙与时间的源起，爱氏的广义相对论（General Relativity?）认为宇宙应该是一个有序平整的世界，而量子力学(Quantum Mechanics)却反其道而论，说构成宏观世界物质的微粒，如质子，中子，乃至更加微笑的夸克，却是在日复一日的演绎不确定的话剧。后来的玄学说（String Theory）认为有更加合理的解释，甚至物质本身也可能是由众多看不见（就目前的手段而言）玄（String）组成。如若果真此般，整个宇宙有十一个维度（dimensions）组合而成，世界，我的，你的，我们的，却原来在玄的众多运动轨迹里，交错运行着。</p>
+
+<p>可是，我要告诉你，在这样的未知中，有我所确定的，说过的诺言看到的星空，转角的微笑牵手的彩虹，真理与爱。Nash获得诺贝尔做的一个演讲，说，You are the reason I am. You are all my reasons. Rene Descartes有一个有趣的哲学观点，我思，故我在。而在那个疯狂的年代，也有形似且神同的口号，人有多大胆，地有多大产。教科书告诉我们说这些是唯心学派，可是我要告诉你，我相信你在，在我的世界里。</p>
+
+<p>时间是否有终点（the end ）呢？可是孩子终会找到归宿。它在你那，在你的方向上。</p>
+
+<blockquote>
+  <p>all these precious moments <br />
+with you by my side <br />
+must be a gift from heaven <br />
+that ‘s holding me all night <br />
+i don ‘t know how i found you <br />
+i ‘m thankful that i have <br />
+now that i have a love so true <br />
+to hold , <br />
+to keep , <br />
+to share <br />
+in my heart , <br />
+i can no longer hold inside <br />
+all of the love i used to hide <br />
+i ‘ll always be  <br />
+with you untill the very end <br />
+in this world , <br />
+there is no place i ‘d rather be <br />
+you are my life , <br />
+my soul , <br />
+my girl <br />
+and through it all <br />
+i know  <br />
+that you ‘ve come to see  <br />
+thatyou ‘re the one  <br />
+till the end <br />
+all my friend around me <br />
+say you ‘d be gone too soon <br />
+baby , <br />
+i ‘m gonna make them see <br />
+we ‘ve found our way  <br />
+back home <br />
+in my heart , <br />
+i can no longer  <br />
+hold inside <br />
+all of the love  <br />
+i used to hide <br />
+i ‘ll always be  <br />
+with you untill the very end <br />
+in this world , <br />
+there is no place  <br />
+i ‘d rather be <br />
+you are my life , <br />
+my soul , <br />
+my girl <br />
+and through <br />
+it all <br />
+i know that  <br />
+you ‘ve come to see that <br />
+you ‘re the one  <br />
+till the end <br />
+we ‘ll always be  <br />
+till the end <br /></p>
+</blockquote>
+
+		<a href="http://williamlfang.github.com/cn/2009/02/20/till-the-end/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2008/11/11/where-to-go/">
+		<span class="year">2008</span>
+		<span class="day">11</span>
+		<span class="month">November</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2008/11/11/where-to-go/" title="在哪里">在哪里</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>下楼的时候发现很浓重的雾气，层层叠叠，像极了南方暖阳里熠熠的竹林，望眼婆娑。 </p>
+
+<p>我在这样的小城市里一待，两三年，就如同当初那群孩子在芳草碧连天的时候说一天又三年，各自被秋风吹落在海角天边。找不到影迹的候鸟。走在浓雾里，感觉在舞台演绎一场冬天的孤单。 </p>
+
+<p>仅有的几条马路总是拥挤不堪，车水马龙，静止不动。车里的人，急躁的摁喇叭，声音在雾里回响，嘈杂的城市。而行走的人们，亦是脚步匆匆，前方，我们看不到很远。谁知道呢，在此刻浓雾里，我们该奔向哪里，朝着南北西东不知所从。也许吧，家里等待着熟悉而亲切的面孔，孩子嗷嗷的哭声，或许赶赴某个盛大的晚宴，在城市的夜晚灯红酒绿，或许等待一次未知的邂逅，两条平行线在浓雾里转折…… </p>
+
+<p>世界总有那么少数派，就像当初被上帝遗忘的角落总有背叛，随机过程会有熵变。他们，却脚步迟缓，不知归处。也许放慢脚步，可以放缓沉重的心灵，而这，比如，以为停止呼吸就能抑制了心跳。看着身边匆匆擦肩的身影，内心愈加惶恐。你是否认真注视他们的眼睛，竟是茫然中点缀一盏灯光。只是浓雾，你我不知。只是遥远，他们不悟。 </p>
+
+<p>常年旅者，多在行走中忘却时间的流逝，忘记年华在路边的花开，他们只是坚定的朝着一个远方的前方，在万空俯瞰，是一个渺小的微点在移动。一路艰辛，一路飘摇，却不可怕。最怕的是在午夜的月晕里传来袅袅乡音，曲调悠扬。缠缠绵绵，在南方的小镇萦绕千年。 </p>
+
+<p>他们，在路上。 </p>
+
+<p>而我，在远方。 </p>
+
+<p>收到流樱给我的一张相片，邮件的时间是午夜。在喧嚣的都市，她对我说她选择在午夜万籁俱静的纯洁里活动，泡咖啡，写文字，看漫长的电影，偶尔阅读多年的印记刻在纸上直到傻笑泪流，或者什么都不做只是发呆，想象如果时间重游我们该如何安排我们无处安放的青春。 </p>
+
+<p>我会收到很多写满了文字的邮件，密密麻麻。而这次，却是一张空的发白的照片。 </p>
+
+<p>经过photoshop处理的注脚是：我在南方。 </p>
+
+<p>是否会有这样的经历，在某个随机过程的断点，感到不可思议的混乱。多年前的一个梦境在眼前流水般的纷落，触手可及的人却不可及，远远观看他们兀自的演绎。街角擦肩的身影挥之不去的纠缠，隐隐如同伤口作痛。走在校园的林荫却回忆起了身边牵手的温暖，灿烂笑容绽放在她的脸颊。 </p>
+
+<p>接到小宇电话的时候，我正躺在被窝里。听电台的音乐频道，说是昨天来暖气，后来发现屋里的暖气片坏了，很无语的躺着，就像夏天无语的躺在医院等待未知一样。 </p>
+
+<p>他说，我在上海。语气淡淡，是清晨的薄雾。 </p>
+
+<p>这样的一个都会，在南北的交界。就像一个大杂烩，融进了历史的尘埃落定，融合了百家的花样齐放，融化了陌生的尔虞我诈，融解了遥远的哀愁相思，融入了弄堂的屋檐瓦砾。 </p>
+
+<p>多少的王侯将相，短兵相接，欲望垂涎;多少的文人墨客，舞文弄笔，谈笑风生。多少的游子，在清明的月晕里潸然泪下，吟唱流水人家；多少的少年，隔着堤岸婉转墙里佳人笑，铭刻秋千荡漾。多少的烽火遍野，芳草碧连天终究是分别；多少的嬉笑怒骂，悲欢离合犹是阴晴圆缺。 </p>
+
+<p>殊途同归。 </p>
+
+<p>在这样的一个浓雾的夜晚，我们奔向一个个不同的方向。 </p>
+
+<p>而我，在哪里。 </p>
+
+<p>而我，在你心里。 </p>
+
+		<a href="http://williamlfang.github.com/cn/2008/11/11/where-to-go/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2008/11/11/where-to-go/">
+		<span class="year">2008</span>
+		<span class="day">11</span>
+		<span class="month">November</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2008/11/11/where-to-go/" title="在哪里">在哪里</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>下楼的时候发现很浓重的雾气，层层叠叠，像极了南方暖阳里熠熠的竹林，望眼婆娑。 </p>
+
+<p>我在这样的小城市里一待，两三年，就如同当初那群孩子在芳草碧连天的时候说一天又三年，各自被秋风吹落在海角天边。找不到影迹的候鸟。走在浓雾里，感觉在舞台演绎一场冬天的孤单。 </p>
+
+<p>仅有的几条马路总是拥挤不堪，车水马龙，静止不动。车里的人，急躁的摁喇叭，声音在雾里回响，嘈杂的城市。而行走的人们，亦是脚步匆匆，前方，我们看不到很远。谁知道呢，在此刻浓雾里，我们该奔向哪里，朝着南北西东不知所从。也许吧，家里等待着熟悉而亲切的面孔，孩子嗷嗷的哭声，或许赶赴某个盛大的晚宴，在城市的夜晚灯红酒绿，或许等待一次未知的邂逅，两条平行线在浓雾里转折…… </p>
+
+<p>世界总有那么少数派，就像当初被上帝遗忘的角落总有背叛，随机过程会有熵变。他们，却脚步迟缓，不知归处。也许放慢脚步，可以放缓沉重的心灵，而这，比如，以为停止呼吸就能抑制了心跳。看着身边匆匆擦肩的身影，内心愈加惶恐。你是否认真注视他们的眼睛，竟是茫然中点缀一盏灯光。只是浓雾，你我不知。只是遥远，他们不悟。 </p>
+
+<p>常年旅者，多在行走中忘却时间的流逝，忘记年华在路边的花开，他们只是坚定的朝着一个远方的前方，在万空俯瞰，是一个渺小的微点在移动。一路艰辛，一路飘摇，却不可怕。最怕的是在午夜的月晕里传来袅袅乡音，曲调悠扬。缠缠绵绵，在南方的小镇萦绕千年。 </p>
+
+<p>他们，在路上。 </p>
+
+<p>而我，在远方。 </p>
+
+<p>收到流樱给我的一张相片，邮件的时间是午夜。在喧嚣的都市，她对我说她选择在午夜万籁俱静的纯洁里活动，泡咖啡，写文字，看漫长的电影，偶尔阅读多年的印记刻在纸上直到傻笑泪流，或者什么都不做只是发呆，想象如果时间重游我们该如何安排我们无处安放的青春。 </p>
+
+<p>我会收到很多写满了文字的邮件，密密麻麻。而这次，却是一张空的发白的照片。 </p>
+
+<p>经过photoshop处理的注脚是：我在南方。 </p>
+
+<p>是否会有这样的经历，在某个随机过程的断点，感到不可思议的混乱。多年前的一个梦境在眼前流水般的纷落，触手可及的人却不可及，远远观看他们兀自的演绎。街角擦肩的身影挥之不去的纠缠，隐隐如同伤口作痛。走在校园的林荫却回忆起了身边牵手的温暖，灿烂笑容绽放在她的脸颊。 </p>
+
+<p>接到小宇电话的时候，我正躺在被窝里。听电台的音乐频道，说是昨天来暖气，后来发现屋里的暖气片坏了，很无语的躺着，就像夏天无语的躺在医院等待未知一样。 </p>
+
+<p>他说，我在上海。语气淡淡，是清晨的薄雾。 </p>
+
+<p>这样的一个都会，在南北的交界。就像一个大杂烩，融进了历史的尘埃落定，融合了百家的花样齐放，融化了陌生的尔虞我诈，融解了遥远的哀愁相思，融入了弄堂的屋檐瓦砾。 </p>
+
+<p>多少的王侯将相，短兵相接，欲望垂涎;多少的文人墨客，舞文弄笔，谈笑风生。多少的游子，在清明的月晕里潸然泪下，吟唱流水人家；多少的少年，隔着堤岸婉转墙里佳人笑，铭刻秋千荡漾。多少的烽火遍野，芳草碧连天终究是分别；多少的嬉笑怒骂，悲欢离合犹是阴晴圆缺。 </p>
+
+<p>殊途同归。 </p>
+
+<p>在这样的一个浓雾的夜晚，我们奔向一个个不同的方向。 </p>
+
+<p>而我，在哪里。 </p>
+
+<p>而我，在你心里。 </p>
+
+		<a href="http://williamlfang.github.com/cn/2008/11/11/where-to-go/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2008/08/14/year-arournd/">
+		<span class="year">2008</span>
+		<span class="day">14</span>
+		<span class="month">August</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2008/08/14/year-arournd/" title="春夏秋冬">春夏秋冬</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<blockquote>
+  <p>像針尖上一滴水珠滴在大海裏，我的日子滴在了時間的湧流中，沒有聲音，也沒有影子…… <br />
+——題記</p>
+</blockquote>
+
+<h2 id="section">1</h2>
+
+<p>对于一个年轮的旋转，春夏秋冬，便是整个的生命。</p>
+
+<p>自然似乎很善良的安排这样的春天，孕育着生命与奇迹，像是从宇宙最神秘的深处走来，那些人类千万年的历史与记忆便以基因双螺旋的DNA形式遗传下来，一次次的更迭，一代代的流传，如同一支缠绵悠扬的曲调，唱过了繁华的朱雀，滑落墙角的坍圮，穿过陈家祠宗的欢歌笑语，宛转王谢弄堂的沉浮飘零，仍旧不曾停止脚步的前行。</p>
+
+<p>关于夏天的回忆，或许大脑中有些许活跃的兴奋，一整片的季节，总是那么的激情澎湃，没有污渍的阳光一直很灿烂的直射北回归线，慷慨的让我想起圣诞老人的慈祥。青春的明媚更像是被形容的忧伤，妖艳而刺眼，深深的伤痕像灼伤的疼痛。记忆中的夏天，一直在说着分手，各奔东西的流浪，南方的季节很大的雨夜，看不清彼此的侧脸只是凝视双眼像是看见忧伤划破整片的天空，很暗淡的背景落幕，很明亮的逆轨灿烂。而我们便彼此分开了，说着再见了不复相见。一年，几年，一辈子。</p>
+
+<p>是谁说的呢，在春天播下的种子，会穿越整个季节，等到了秋天，漫天飞舞的是收获的喜悦，可是，抬头望见的世界却不总是这样的善良，燕子很艰难的南飞，是因为害怕秋天吗，寒冷抑或孤单。还会邂逅落单的飞鸟，在冷风中擦肩而过，遇见了，走近了，等不及一阵秋风，便也离开了。</p>
+
+<p>冬天是一个故事的季节，去年的彼时，很浪漫的飘雪，牵着某人的手你以为这便是整个世界。有时绝望就像那些洁白单纯的碎片，扎疼最柔弱的部位。像日常测验，很麻木的让银针刺破肌肤的脆弱，穿越没有设防的界限，隐隐作痛。走在路上，会很敏感的听到那些雪人，可爱的精灵们，轻轻的召唤，“等到春天就要来临，而我也将，也将不再”。偶尔站在落地窗，想起那个卖火柴的女孩，是否依然寒冷呢，而我，希望给她祝福。给每个人祝福，希望他们都好。而我，只愿守候自己的幸福，直到离开，直到永远……</p>
+
+<h2 id="section-1">2.</h2>
+
+<p>一年的轮回，简简单单。</p>
+
+<p>人的一年四季，人生的一年四季，暖春酷夏凉秋寒冬，便这样一圈一圈的循环往复，故地重游。从一个起点出发，打背好行囊，卷一纸地图方向，携一段青葱年华，尘土飞扬，豪情万丈，不曾停止脚步前行，下一站，哪一站，将会是我的终点呢。像飞越高山与汪洋的候鸟，终能找到落脚，像久行力疲的旅者，有个依靠的归宿，像因为贪玩而迷路的孩童，记起母亲的呼唤，起身准备回家……</p>
+
+<h2 id="section-2">3.</h2>
+
+<p>对于时间的思考，是个古老而弥新的话题。而对时间的计量与记录，极是深奥。出于这一目的，恐怕是对时间的恐惧吧，深深的，不可遏制的，植根于血脉之中的。或者更大的范围来将，应该是对生命的恐惧，些许夹杂着还有对生命的敬畏，对无与伦比的美与奇迹的崇尚。古人对时间的计量，尤为巧妙。早在埃及，便有人参照星象的运转来记录时间，一年的春夏秋冬，简简单单的却能为复杂的星象图所映射，时间流转的轨迹，在埃及的高塔里划下深深的印痕。至今仍未消退。在巴比伦国王甚至想用整个的空中花园来制造盛世宏典，只为博取神灵的宽恕。或许希腊的诸神更是忙的不亦乐呼，Amsterdam执着的追去对真理的渴求，时间只在弹指间灰飞。关于时间的衡量，玛雅人似乎显得神秘，一个个尖尖高耸的木塔，是否在指引我们对生命的畏惧呢。</p>
+
+<p>而近在咫尺的中国，早已有之结绳记事、刻木画时，千百年的石英钟依然在提醒人们莫要忘记时间即在身边。犹如一流细水的宛转，叮叮咚咚的飘动。比如，逝者如斯夫，不舍昼夜。比如，大江东去浪淘尽。消失的，看不见了。然而及至现在，我们发明的各种机械来辅助记录，却越发对其愈发冷漠，像久视不见的空气，浮动周围，浑然不知其所在。一天的繁忙过后，是否还能想起今天的邂逅呢，在街角遇到爱在巷尾说着再见，又与何人相逢在地铁站的拐弯，在城市的出口同谁擦肩而过呢。</p>
+
+<h2 id="section-3">4.</h2>
+
+<p>是否会有错觉，明明还在一起的人，转眼的瞬间就已不见，而明明已经流逝的时光，却冤鬼般纠缠着，挥之不去，是关于昨日的追忆。梦里的花儿，早该落向天边……</p>
+
+<h2 id="section-4">5.</h2>
+
+<p>坐在这里写文字，突然很有去年的印记，一样的人去楼空，风走沙飞。彼时的情景，依稀记得，像放映电影的倒带，在黑白的年代无声的回旋，整个的宇宙如同是一个多维的世界，而自己就站在这边，彼岸的一端，看着曾经的往事一点点的叮咚，如同细水的宛转，缓慢而低沉，如同林鸟的呢喃，安静却执着。想努力的伸手，抓一把时间的颜料或喜或悲可以随意的涂鸦在空气中，任意的组合，一幅画便是一个季节，一个季节是一支曲调，候鸟穿行的执着，旅者跋涉的荒漠，母亲亲吻的温柔，流云轻舞的孤傲，烟火刺空的静默。</p>
+
+<p>写下大学的一年祭，似乎显得伤感。</p>
+
+<p>伤感是一个形容词，我的许多的可爱的老师总是这样告诫，而我，每次都只是将“她”作为一句名词，一种被附于生命与神灵的状态。就像在我们城市的某个角落，总会有些人将寂寞当作伴侣，一生守护，执着不知疲倦。比如我的小学便是伤感的时代没有乐趣的生活，比如我的中学是伤感的整天对着一堵墙壁开始念经，烧香拜佛而他们不知道我是信仰的基督。大学呢，还是伤感的所以我开始将它埋进土地埋进地表埋进千万年自然的杰作人类最原始的故乡。</p>
+
+<p>我说，你好，大学。然后挥手告别一年的轮回。大学的春夏秋冬……</p>
+
+<p>无论如何，我们的生活依然继续着，故事总该有个交代的结束，剧场的落幕应该等及尾声。</p>
+
+<h2 id="section-5">6.</h2>
+
+<p>大学的一年，都做了什么呢……</p>
+
+<p>很奇怪的句式，对不起，这不是疑问句，当语言的后面尾随省略，是意味深长吗？课本总是很权威的讲授知识。</p>
+
+<p>意味深长的你该如何继续你的思路。</p>
+
+<h2 id="section-6">7.</h2>
+
+<p>大一时候发现自己生病了真的生病了，以前会很天真的以为自己还是孩子般很健康的成长，做祖国的花朵，天真无邪，脸上干净的像明净的天空没有一丝的忧伤，甚至最微小的裂痕也能在天亮之前恢复了消失了纯净了。</p>
+
+<p>谁知道呢，这个世界，出错了。如若程序的某句命令被修改后的错乱，杂而无章。</p>
+
+<p>身体一直不是很好，高血糖的症状并没多大的消退。有时走在校园的林荫，会很知足的享受这一片刻的阳光新鲜，像婴儿给你最无邪的笑容，让人记起某刻的际遇依然生动。习惯是一个潜台词，我的意思是，当有人告诉你必须这样做而非那样因为时间所剩无几，能怎么办呢。习惯每天的扎针看见莫名的液体悄悄的靠近，靠近然后进入一个辽阔的荒原，内心是一片更加空旷的荒野，没有任何保护与警惕的接受它们的强迫。习惯独自一人坐上城市的公交想象着化做某一个时间的句点遗落在某一个空间，追随大群的人们去找寻自己的幸福。习惯等待在白色的间隔组成的诊所，麻木的手捧化验单眼神呆滞，看见身旁的人群急躁而揪心，而自己，从来的默默不吱声。习惯自己的生活方式很简单的透明像辽原不设防。习惯了……</p>
+
+<p>要怎样开始追忆我的大二生活呢，这样说的意思就像你告诉我，怎样才能计算一个恒等式的方程解。答案总是千万个，斑怪陆离。而选择的途径，总该事先设定好了的吧，才能最终抵达终点。至少，总不该在起点仍未出发之前便已浪费了大段的时间。</p>
+
+<p>在偌大的精神世界里游荡，颠覆哥白尼似的幻想，偶尔碰见某处的曾经沧桑，又是何等的欣喜，欣喜夹杂的遗憾。所谓欣喜者，终究会有这样的时光依然值得记忆珍存，所以遗憾者，乃为荒废一段青春岁月而无丝毫成就也。</p>
+
+<h2 id="section-7">8.</h2>
+
+<p>刚开学的那段时间，生活混乱低迷，眼睛的问题一直困扰着我，后来到医院进行检查，得需要住院做手术，回来很安静的跟班长请假，一脸的死水状，平静的没有一丝生气。给树宁和利宏姐打了一个电话，语气很淡定的讲明情况，让大家都不要担心。在话端那边，是持续的久久的安静，偶尔的呜咽，我知道，又让身边的人忧虑了。这样一个让人忧的孩子。九月份的天空，很透明的干净。抬头望见，还有夏天的飞鸟写下的一道长长的轨迹，弧线曲折的迷蒙与美丽。曾经的它在我的窗前歌唱夜的狂欢。</p>
+
+<p>后来，终究掰不过班长和学姐的“执拗”，在他俩的帮助下，注册，缴费，化验，入住，甚至是微小的订餐。而班级里的同学，更是制定了值班次序，有些同学更是舍弃宝贵的上课时间来陪护我。虽然当时眼睛已是被纱布包裹着，却能分明的感受到这份的温暖，来自最深处的祝福与祈祷。</p>
+
+<p>手术前一天，是中秋节，这个千万中华儿女共聚团圆的日子，纵然常年飘零他乡的旅者，亦会想起家中的那屡炊烟袅袅，即使是颠沛流离的游人，也能记起在深夜对面明月的惆怅。以为自己已经长大变得强大足以漠视所有的伤悲所有的痛楚，却在这样的晚上莫名的流泪，想家的情绪像是胡同里穿越的曲调，悠悠扰动心弦。</p>
+
+<p>后来的迷糊中，听见有声音在响动，睁眼看见，班里的同学们竟然都来到医院陪我一起度过中秋节，有的甚至手里拿着鲜花，开的灿烂的芬芳，有的用笔刻录最真诚的祝福，而更多的，是一脸的微笑，明媚如同夏日的阳光，灿若樱花。那晚，我在甜甜的幸福里睡着，梦里有花，花开灿烂。</p>
+
+<h2 id="section-8">9.</h2>
+
+<p>对于一段时光的追忆，人们的感情是如何呢，是对过去美好的无比怀念，沉湎以至难以逃离沧桑的阴影，对于曾经的留恋，如同普鲁斯特终日关闭在一个幽寂的屋子，窗户是紧闭的隔离，外面的世界如同平行漂移的游魂，看到的是无尽的落寞的心痛，或者，比如还有尽情的遗忘，过去的岁月已是消失，未来的阳光总该有是的明媚，或者都不是呢，人只是一味的“生”着，为的是证明自己的存在，作为一堆物质源自宇宙的其妙上帝的功德，而这些人，却是没有真正的“活”过，不仅是追求物质的丰富及至最大化，更多的是心灵的熏陶、思想的深邃、灵魂的洁净。</p>
+
+<p>人可以诗意的栖居。</p>
+
+<p>如果说大一的一年是不知道自己不知道的阶段，那么，大二了，应该是知道自己不知道的时候了，放飞一只风筝，你必须准确把握好它的方向，现在的定位，未来的轨迹。就像解析几何课里讲的，在一个多维的空间里，首先要做的是找到点的位置，在特定的空间进行映射。</p>
+
+<p>开始往返于图书馆与教研室，抱着厚厚的专业书然后很认真的拜读，像一个虔诚的信徒，总是表情神圣的凝望神灵，开始在洁白的纸张上来回的运算公式点滴图案描绘最精致的曲线，在数字与文字间寻找快乐寻找自由的天空，偶尔瞥见一只云雀从我的书里飞开，飞走了又飞回，开始忘记吃饭的时间流逝在图书馆的青春年少等待低血糖的召唤如同母亲对孩子的呵护，开始安静的走在校园的林荫道里抬头看见风轻云淡边走边想念在北方更北的远方，开始坐在小树林的石桌上双手合十虔诚的祈祷静默的思虑，思想可以跨越千万年的遥远穿梭在漫野的荒原……</p>
+
+<h2 id="section-9">10.</h2>
+
+<p>唯一的乐园，是人们失去的乐园。</p>
+
+<p>我从清晨的迷雾里走来，走过夏至的盛开，现在开始数落时间被风吹伤飞黄昏，依然可认几瓣流年。</p>
+
+<p>就这样，不停的行走，不停的找寻……</p>
+
+<p>直到有一天，是的，比如黎明的火车总该有个终点站吧，常年漂泊的游者总得找到一个栖居的驿站吧，深埋在冬季的花儿也会找春天里开辟一寸家园吧，我也将为自己找到开往春天的地铁了。不再流浪，不会有孤单。</p>
+
+<p>就像多年前，在某处的客栈里，在南方的流水旁，在漠北的角落，在遥远的荒野，我看见的年华，似水般流转，叮咚叮咚，匆匆，匆匆，春夏秋冬的旋转，犹如魔盘。</p>
+
+<p>流年在瞬间灰飞湮灭，而我，也早已泪流满面。</p>
+
+<h2 id="section-10">11．</h2>
+
+<p>季节也是一个有生命的灵物。春天是个温情的少女能够感知你的希望，追随梦想的花开找寻一地芬芳，夏至的知了叽叽喳喳的喧闹，而你正行走在幽寂的林野，脚步坚定沉稳，秋天更像一个淘气的小孩，悄悄的躲藏在枫树的背后，咯咯笑着把落叶粘在肩膀，冬天呢，腊梅的鲜艳格外的妖艳，远远的向你招手，来吧，年轻人，请把大地捂热。</p>
+
+<p>下一个周期，已经该来却迟迟未来的春夏秋冬，生活依然会继续前进。只不过，这样的路途，点缀着另一份成熟与思考，添加些许的沧桑与沉稳，肩负更多的责任与使命。</p>
+
+<p>有很多的时候，在思考一些莫名其妙的问题，比如我们从清晨的迷雾里走出，走过灿烂的夏至，现在开始数落记忆被风吹皱的银发，丝丝清晰，比如我们会在陌生的街角遇见了然后打声招呼然后擦肩然后错过，彼此今生不再交叉，比如我们总是以为时间会很多的真的很多的吗，可是它们却更像是璀璨的沙漏，流走的，要怎么寻回，比如我们还是那样天真的不想长大忘记了落叶满地又是一个轮回而曾经守侯的人已经不在一起了分离了说着再见彼此不再相见了，再比如明明还是看着童年在初春安静的角落安静的发芽在明媚的北回归线迟迟的茁壮却一下子跌入了深秋的幽谷并且依稀可见冬天的影子在北半球慢慢的被拉长了，还比如，我们，在天堂口相见了……</p>
+
+<h2 id="section-11">12.</h2>
+
+<p>这样的生活……</p>
+
+<p>依然在继续……</p>
+
+<p>后来发现，自己已经失去了思考的能力，难以辨别方向，与道路，像是身体里的神经系统，已经习惯了一直的高血糖，像是双眼已经可以和晶体找到了默契，像是自己已经习惯了每天麻木的疼痛，像是左手的无名指已经习惯了每次扎透流血的尖锐，还像是已经习惯在人来人往间忘记了自己的存在，忘记了自己的方向。</p>
+
+<p>逐渐习惯每天在北方的寒冷中孤单的行走，会偶尔抬头望见远方更北的远方，看见一丝飞鸟的痕迹依晰，逐渐习惯安静的自习在黑暗里走过多的路回家，不会冷也不会哭，逐渐习惯了一个人不寂寞不要孤单会为自己找个温暖的家把心加热，开始去把一些事忘记了把一些人封存了因为空间有限因为还有明天因为我们还要继续生活……</p>
+
+		<a href="http://williamlfang.github.com/cn/2008/08/14/year-arournd/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2008/08/14/year-arournd/">
+		<span class="year">2008</span>
+		<span class="day">14</span>
+		<span class="month">August</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2008/08/14/year-arournd/" title="春夏秋冬">春夏秋冬</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<blockquote>
+  <p>像針尖上一滴水珠滴在大海裏，我的日子滴在了時間的湧流中，沒有聲音，也沒有影子…… <br />
+——題記</p>
+</blockquote>
+
+<h2 id="section">1</h2>
+
+<p>对于一个年轮的旋转，春夏秋冬，便是整个的生命。</p>
+
+<p>自然似乎很善良的安排这样的春天，孕育着生命与奇迹，像是从宇宙最神秘的深处走来，那些人类千万年的历史与记忆便以基因双螺旋的DNA形式遗传下来，一次次的更迭，一代代的流传，如同一支缠绵悠扬的曲调，唱过了繁华的朱雀，滑落墙角的坍圮，穿过陈家祠宗的欢歌笑语，宛转王谢弄堂的沉浮飘零，仍旧不曾停止脚步的前行。</p>
+
+<p>关于夏天的回忆，或许大脑中有些许活跃的兴奋，一整片的季节，总是那么的激情澎湃，没有污渍的阳光一直很灿烂的直射北回归线，慷慨的让我想起圣诞老人的慈祥。青春的明媚更像是被形容的忧伤，妖艳而刺眼，深深的伤痕像灼伤的疼痛。记忆中的夏天，一直在说着分手，各奔东西的流浪，南方的季节很大的雨夜，看不清彼此的侧脸只是凝视双眼像是看见忧伤划破整片的天空，很暗淡的背景落幕，很明亮的逆轨灿烂。而我们便彼此分开了，说着再见了不复相见。一年，几年，一辈子。</p>
+
+<p>是谁说的呢，在春天播下的种子，会穿越整个季节，等到了秋天，漫天飞舞的是收获的喜悦，可是，抬头望见的世界却不总是这样的善良，燕子很艰难的南飞，是因为害怕秋天吗，寒冷抑或孤单。还会邂逅落单的飞鸟，在冷风中擦肩而过，遇见了，走近了，等不及一阵秋风，便也离开了。</p>
+
+<p>冬天是一个故事的季节，去年的彼时，很浪漫的飘雪，牵着某人的手你以为这便是整个世界。有时绝望就像那些洁白单纯的碎片，扎疼最柔弱的部位。像日常测验，很麻木的让银针刺破肌肤的脆弱，穿越没有设防的界限，隐隐作痛。走在路上，会很敏感的听到那些雪人，可爱的精灵们，轻轻的召唤，“等到春天就要来临，而我也将，也将不再”。偶尔站在落地窗，想起那个卖火柴的女孩，是否依然寒冷呢，而我，希望给她祝福。给每个人祝福，希望他们都好。而我，只愿守候自己的幸福，直到离开，直到永远……</p>
+
+<h2 id="section-1">2.</h2>
+
+<p>一年的轮回，简简单单。</p>
+
+<p>人的一年四季，人生的一年四季，暖春酷夏凉秋寒冬，便这样一圈一圈的循环往复，故地重游。从一个起点出发，打背好行囊，卷一纸地图方向，携一段青葱年华，尘土飞扬，豪情万丈，不曾停止脚步前行，下一站，哪一站，将会是我的终点呢。像飞越高山与汪洋的候鸟，终能找到落脚，像久行力疲的旅者，有个依靠的归宿，像因为贪玩而迷路的孩童，记起母亲的呼唤，起身准备回家……</p>
+
+<h2 id="section-2">3.</h2>
+
+<p>对于时间的思考，是个古老而弥新的话题。而对时间的计量与记录，极是深奥。出于这一目的，恐怕是对时间的恐惧吧，深深的，不可遏制的，植根于血脉之中的。或者更大的范围来将，应该是对生命的恐惧，些许夹杂着还有对生命的敬畏，对无与伦比的美与奇迹的崇尚。古人对时间的计量，尤为巧妙。早在埃及，便有人参照星象的运转来记录时间，一年的春夏秋冬，简简单单的却能为复杂的星象图所映射，时间流转的轨迹，在埃及的高塔里划下深深的印痕。至今仍未消退。在巴比伦国王甚至想用整个的空中花园来制造盛世宏典，只为博取神灵的宽恕。或许希腊的诸神更是忙的不亦乐呼，Amsterdam执着的追去对真理的渴求，时间只在弹指间灰飞。关于时间的衡量，玛雅人似乎显得神秘，一个个尖尖高耸的木塔，是否在指引我们对生命的畏惧呢。</p>
+
+<p>而近在咫尺的中国，早已有之结绳记事、刻木画时，千百年的石英钟依然在提醒人们莫要忘记时间即在身边。犹如一流细水的宛转，叮叮咚咚的飘动。比如，逝者如斯夫，不舍昼夜。比如，大江东去浪淘尽。消失的，看不见了。然而及至现在，我们发明的各种机械来辅助记录，却越发对其愈发冷漠，像久视不见的空气，浮动周围，浑然不知其所在。一天的繁忙过后，是否还能想起今天的邂逅呢，在街角遇到爱在巷尾说着再见，又与何人相逢在地铁站的拐弯，在城市的出口同谁擦肩而过呢。</p>
+
+<h2 id="section-3">4.</h2>
+
+<p>是否会有错觉，明明还在一起的人，转眼的瞬间就已不见，而明明已经流逝的时光，却冤鬼般纠缠着，挥之不去，是关于昨日的追忆。梦里的花儿，早该落向天边……</p>
+
+<h2 id="section-4">5.</h2>
+
+<p>坐在这里写文字，突然很有去年的印记，一样的人去楼空，风走沙飞。彼时的情景，依稀记得，像放映电影的倒带，在黑白的年代无声的回旋，整个的宇宙如同是一个多维的世界，而自己就站在这边，彼岸的一端，看着曾经的往事一点点的叮咚，如同细水的宛转，缓慢而低沉，如同林鸟的呢喃，安静却执着。想努力的伸手，抓一把时间的颜料或喜或悲可以随意的涂鸦在空气中，任意的组合，一幅画便是一个季节，一个季节是一支曲调，候鸟穿行的执着，旅者跋涉的荒漠，母亲亲吻的温柔，流云轻舞的孤傲，烟火刺空的静默。</p>
+
+<p>写下大学的一年祭，似乎显得伤感。</p>
+
+<p>伤感是一个形容词，我的许多的可爱的老师总是这样告诫，而我，每次都只是将“她”作为一句名词，一种被附于生命与神灵的状态。就像在我们城市的某个角落，总会有些人将寂寞当作伴侣，一生守护，执着不知疲倦。比如我的小学便是伤感的时代没有乐趣的生活，比如我的中学是伤感的整天对着一堵墙壁开始念经，烧香拜佛而他们不知道我是信仰的基督。大学呢，还是伤感的所以我开始将它埋进土地埋进地表埋进千万年自然的杰作人类最原始的故乡。</p>
+
+<p>我说，你好，大学。然后挥手告别一年的轮回。大学的春夏秋冬……</p>
+
+<p>无论如何，我们的生活依然继续着，故事总该有个交代的结束，剧场的落幕应该等及尾声。</p>
+
+<h2 id="section-5">6.</h2>
+
+<p>大学的一年，都做了什么呢……</p>
+
+<p>很奇怪的句式，对不起，这不是疑问句，当语言的后面尾随省略，是意味深长吗？课本总是很权威的讲授知识。</p>
+
+<p>意味深长的你该如何继续你的思路。</p>
+
+<h2 id="section-6">7.</h2>
+
+<p>大一时候发现自己生病了真的生病了，以前会很天真的以为自己还是孩子般很健康的成长，做祖国的花朵，天真无邪，脸上干净的像明净的天空没有一丝的忧伤，甚至最微小的裂痕也能在天亮之前恢复了消失了纯净了。</p>
+
+<p>谁知道呢，这个世界，出错了。如若程序的某句命令被修改后的错乱，杂而无章。</p>
+
+<p>身体一直不是很好，高血糖的症状并没多大的消退。有时走在校园的林荫，会很知足的享受这一片刻的阳光新鲜，像婴儿给你最无邪的笑容，让人记起某刻的际遇依然生动。习惯是一个潜台词，我的意思是，当有人告诉你必须这样做而非那样因为时间所剩无几，能怎么办呢。习惯每天的扎针看见莫名的液体悄悄的靠近，靠近然后进入一个辽阔的荒原，内心是一片更加空旷的荒野，没有任何保护与警惕的接受它们的强迫。习惯独自一人坐上城市的公交想象着化做某一个时间的句点遗落在某一个空间，追随大群的人们去找寻自己的幸福。习惯等待在白色的间隔组成的诊所，麻木的手捧化验单眼神呆滞，看见身旁的人群急躁而揪心，而自己，从来的默默不吱声。习惯自己的生活方式很简单的透明像辽原不设防。习惯了……</p>
+
+<p>要怎样开始追忆我的大二生活呢，这样说的意思就像你告诉我，怎样才能计算一个恒等式的方程解。答案总是千万个，斑怪陆离。而选择的途径，总该事先设定好了的吧，才能最终抵达终点。至少，总不该在起点仍未出发之前便已浪费了大段的时间。</p>
+
+<p>在偌大的精神世界里游荡，颠覆哥白尼似的幻想，偶尔碰见某处的曾经沧桑，又是何等的欣喜，欣喜夹杂的遗憾。所谓欣喜者，终究会有这样的时光依然值得记忆珍存，所以遗憾者，乃为荒废一段青春岁月而无丝毫成就也。</p>
+
+<h2 id="section-7">8.</h2>
+
+<p>刚开学的那段时间，生活混乱低迷，眼睛的问题一直困扰着我，后来到医院进行检查，得需要住院做手术，回来很安静的跟班长请假，一脸的死水状，平静的没有一丝生气。给树宁和利宏姐打了一个电话，语气很淡定的讲明情况，让大家都不要担心。在话端那边，是持续的久久的安静，偶尔的呜咽，我知道，又让身边的人忧虑了。这样一个让人忧的孩子。九月份的天空，很透明的干净。抬头望见，还有夏天的飞鸟写下的一道长长的轨迹，弧线曲折的迷蒙与美丽。曾经的它在我的窗前歌唱夜的狂欢。</p>
+
+<p>后来，终究掰不过班长和学姐的“执拗”，在他俩的帮助下，注册，缴费，化验，入住，甚至是微小的订餐。而班级里的同学，更是制定了值班次序，有些同学更是舍弃宝贵的上课时间来陪护我。虽然当时眼睛已是被纱布包裹着，却能分明的感受到这份的温暖，来自最深处的祝福与祈祷。</p>
+
+<p>手术前一天，是中秋节，这个千万中华儿女共聚团圆的日子，纵然常年飘零他乡的旅者，亦会想起家中的那屡炊烟袅袅，即使是颠沛流离的游人，也能记起在深夜对面明月的惆怅。以为自己已经长大变得强大足以漠视所有的伤悲所有的痛楚，却在这样的晚上莫名的流泪，想家的情绪像是胡同里穿越的曲调，悠悠扰动心弦。</p>
+
+<p>后来的迷糊中，听见有声音在响动，睁眼看见，班里的同学们竟然都来到医院陪我一起度过中秋节，有的甚至手里拿着鲜花，开的灿烂的芬芳，有的用笔刻录最真诚的祝福，而更多的，是一脸的微笑，明媚如同夏日的阳光，灿若樱花。那晚，我在甜甜的幸福里睡着，梦里有花，花开灿烂。</p>
+
+<h2 id="section-8">9.</h2>
+
+<p>对于一段时光的追忆，人们的感情是如何呢，是对过去美好的无比怀念，沉湎以至难以逃离沧桑的阴影，对于曾经的留恋，如同普鲁斯特终日关闭在一个幽寂的屋子，窗户是紧闭的隔离，外面的世界如同平行漂移的游魂，看到的是无尽的落寞的心痛，或者，比如还有尽情的遗忘，过去的岁月已是消失，未来的阳光总该有是的明媚，或者都不是呢，人只是一味的“生”着，为的是证明自己的存在，作为一堆物质源自宇宙的其妙上帝的功德，而这些人，却是没有真正的“活”过，不仅是追求物质的丰富及至最大化，更多的是心灵的熏陶、思想的深邃、灵魂的洁净。</p>
+
+<p>人可以诗意的栖居。</p>
+
+<p>如果说大一的一年是不知道自己不知道的阶段，那么，大二了，应该是知道自己不知道的时候了，放飞一只风筝，你必须准确把握好它的方向，现在的定位，未来的轨迹。就像解析几何课里讲的，在一个多维的空间里，首先要做的是找到点的位置，在特定的空间进行映射。</p>
+
+<p>开始往返于图书馆与教研室，抱着厚厚的专业书然后很认真的拜读，像一个虔诚的信徒，总是表情神圣的凝望神灵，开始在洁白的纸张上来回的运算公式点滴图案描绘最精致的曲线，在数字与文字间寻找快乐寻找自由的天空，偶尔瞥见一只云雀从我的书里飞开，飞走了又飞回，开始忘记吃饭的时间流逝在图书馆的青春年少等待低血糖的召唤如同母亲对孩子的呵护，开始安静的走在校园的林荫道里抬头看见风轻云淡边走边想念在北方更北的远方，开始坐在小树林的石桌上双手合十虔诚的祈祷静默的思虑，思想可以跨越千万年的遥远穿梭在漫野的荒原……</p>
+
+<h2 id="section-9">10.</h2>
+
+<p>唯一的乐园，是人们失去的乐园。</p>
+
+<p>我从清晨的迷雾里走来，走过夏至的盛开，现在开始数落时间被风吹伤飞黄昏，依然可认几瓣流年。</p>
+
+<p>就这样，不停的行走，不停的找寻……</p>
+
+<p>直到有一天，是的，比如黎明的火车总该有个终点站吧，常年漂泊的游者总得找到一个栖居的驿站吧，深埋在冬季的花儿也会找春天里开辟一寸家园吧，我也将为自己找到开往春天的地铁了。不再流浪，不会有孤单。</p>
+
+<p>就像多年前，在某处的客栈里，在南方的流水旁，在漠北的角落，在遥远的荒野，我看见的年华，似水般流转，叮咚叮咚，匆匆，匆匆，春夏秋冬的旋转，犹如魔盘。</p>
+
+<p>流年在瞬间灰飞湮灭，而我，也早已泪流满面。</p>
+
+<h2 id="section-10">11．</h2>
+
+<p>季节也是一个有生命的灵物。春天是个温情的少女能够感知你的希望，追随梦想的花开找寻一地芬芳，夏至的知了叽叽喳喳的喧闹，而你正行走在幽寂的林野，脚步坚定沉稳，秋天更像一个淘气的小孩，悄悄的躲藏在枫树的背后，咯咯笑着把落叶粘在肩膀，冬天呢，腊梅的鲜艳格外的妖艳，远远的向你招手，来吧，年轻人，请把大地捂热。</p>
+
+<p>下一个周期，已经该来却迟迟未来的春夏秋冬，生活依然会继续前进。只不过，这样的路途，点缀着另一份成熟与思考，添加些许的沧桑与沉稳，肩负更多的责任与使命。</p>
+
+<p>有很多的时候，在思考一些莫名其妙的问题，比如我们从清晨的迷雾里走出，走过灿烂的夏至，现在开始数落记忆被风吹皱的银发，丝丝清晰，比如我们会在陌生的街角遇见了然后打声招呼然后擦肩然后错过，彼此今生不再交叉，比如我们总是以为时间会很多的真的很多的吗，可是它们却更像是璀璨的沙漏，流走的，要怎么寻回，比如我们还是那样天真的不想长大忘记了落叶满地又是一个轮回而曾经守侯的人已经不在一起了分离了说着再见彼此不再相见了，再比如明明还是看着童年在初春安静的角落安静的发芽在明媚的北回归线迟迟的茁壮却一下子跌入了深秋的幽谷并且依稀可见冬天的影子在北半球慢慢的被拉长了，还比如，我们，在天堂口相见了……</p>
+
+<h2 id="section-11">12.</h2>
+
+<p>这样的生活……</p>
+
+<p>依然在继续……</p>
+
+<p>后来发现，自己已经失去了思考的能力，难以辨别方向，与道路，像是身体里的神经系统，已经习惯了一直的高血糖，像是双眼已经可以和晶体找到了默契，像是自己已经习惯了每天麻木的疼痛，像是左手的无名指已经习惯了每次扎透流血的尖锐，还像是已经习惯在人来人往间忘记了自己的存在，忘记了自己的方向。</p>
+
+<p>逐渐习惯每天在北方的寒冷中孤单的行走，会偶尔抬头望见远方更北的远方，看见一丝飞鸟的痕迹依晰，逐渐习惯安静的自习在黑暗里走过多的路回家，不会冷也不会哭，逐渐习惯了一个人不寂寞不要孤单会为自己找个温暖的家把心加热，开始去把一些事忘记了把一些人封存了因为空间有限因为还有明天因为我们还要继续生活……</p>
+
+		<a href="http://williamlfang.github.com/cn/2008/08/14/year-arournd/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2008/07/17/lost-in-shunde/">
+		<span class="year">2008</span>
+		<span class="day">17</span>
+		<span class="month">July</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2008/07/17/lost-in-shunde/" title="在顺德">在顺德</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>用这样的句式，似乎像昆德拉说生活在别处一样，很远的你便看到了她在那里，却触手不可及。这样的朦胧，在中国的古诗里，应该是众里寻他千百度吧。一样的无奈，还有些许的落寞。 </p>
+
+<p>在顺德的办公室里，整天对着大段的数据，然后很安静的填写，刚才回来的路上跟学姐开玩笑说，这样枯燥的公式，来回于办公室与宿舍，是否会有发疯的一天呢。xls用的不是很好，努力向老师学习吧。 </p>
+
+<p>觉得有一个挺大的误解，在学校里，老师讲授的统计学，似乎很玄乎，用于分析复杂的数据，比如时间分析的构成，可是在这里，只要能把数据统计结果输出就是万岁了，全然失望。 </p>
+
+<p>一天都很无聊的待着，还好带来了本本，可以上网找点东东。鬼知道呢，实习结束了还要回去准备注会的考试。 </p>
+
+<p>手机一直的信号不好，真的见鬼了。猪头在北京，想起那个中午，一个往南，一个向北，像是红粉世家里，最后的结局总是很难受，其实每一步都走的很好。一定是游戏规则有错了…… </p>
+
+<p>晚上很喜欢在国华的操场跑步，很安静的角落，虽然曾经很“旷野”，现在却被周围的建筑与围墙包围了，小小的，围城的世界。很累的时候，会躺在草坪上，看暗淡的天空，像要哭的样子却告诉我一脸的坚强。</p>
+
+		<a href="http://williamlfang.github.com/cn/2008/07/17/lost-in-shunde/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2008/07/17/lost-in-shunde/">
+		<span class="year">2008</span>
+		<span class="day">17</span>
+		<span class="month">July</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2008/07/17/lost-in-shunde/" title="在顺德">在顺德</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>用这样的句式，似乎像昆德拉说生活在别处一样，很远的你便看到了她在那里，却触手不可及。这样的朦胧，在中国的古诗里，应该是众里寻他千百度吧。一样的无奈，还有些许的落寞。 </p>
+
+<p>在顺德的办公室里，整天对着大段的数据，然后很安静的填写，刚才回来的路上跟学姐开玩笑说，这样枯燥的公式，来回于办公室与宿舍，是否会有发疯的一天呢。xls用的不是很好，努力向老师学习吧。 </p>
+
+<p>觉得有一个挺大的误解，在学校里，老师讲授的统计学，似乎很玄乎，用于分析复杂的数据，比如时间分析的构成，可是在这里，只要能把数据统计结果输出就是万岁了，全然失望。 </p>
+
+<p>一天都很无聊的待着，还好带来了本本，可以上网找点东东。鬼知道呢，实习结束了还要回去准备注会的考试。 </p>
+
+<p>手机一直的信号不好，真的见鬼了。猪头在北京，想起那个中午，一个往南，一个向北，像是红粉世家里，最后的结局总是很难受，其实每一步都走的很好。一定是游戏规则有错了…… </p>
+
+<p>晚上很喜欢在国华的操场跑步，很安静的角落，虽然曾经很“旷野”，现在却被周围的建筑与围墙包围了，小小的，围城的世界。很累的时候，会躺在草坪上，看暗淡的天空，像要哭的样子却告诉我一脸的坚强。</p>
+
+		<a href="http://williamlfang.github.com/cn/2008/07/17/lost-in-shunde/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+
+
+
+		
+		<div class="friends">
+			<div class="friends_info"><a id="friends" href="#" rel="nofollow"><span>我的小伙伴</span></a></div>
+			<div id="friends_list" class="friends_list">
+			<ul class="no-list">
+				<li><a href="http://www.inbiji.com/" title="好记性不如烂笔记" >in笔记</a></li>
+				<li><a href="http://klant.cn/" title="Klant&#039;s Blog" >Klant&#039;s Blog</a></li>
+			</ul>
+			</div>
+			<a href="#" id="gc_close" rel="nofollow">X</a>
+		</div>
+		
+		
+		</div>
+		
+			<div id="more" class="align-center mt-2">
+				<a href="http://williamlfang.github.com/cn/page8/" class="loadmore button button-orange w-30p" >查  看  更  多</a>
+			</div>
+		
+	</div>
+
+	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
+		<div id="about" class="align-center">&copy; 2013-2014 Powered By Jekyll, Designed By <a href="http://williamlfang.github.io/">William Fang</a>.
+		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
+		<div class="radar"></div>
+		</div>
+	</div>
+<link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hibikai"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<script src="http://cdn.staticfile.org/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://cdn.staticfile.org/jqueryui/1.10.2/css/smoothness/jquery-ui-1.10.2.custom.min.css" type="text/css" media="all" />
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+</body>
+</html>
+

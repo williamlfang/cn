@@ -1,5 +1,5 @@
 markdown: kramdown
-permalink: /:year/:month/:day/:title/
+permalink: /cn/:year/:month/:day/:title/
 url: http://williamlfang.github.com/cn
 author: William Fang
 pygments: true

@@ -4,7 +4,7 @@
  <title>方莲 | William</title>
  <link href="http://williamlfang.github.com/cn/" rel="self"/>
  <link href="http://williamlfang.github.com/cn"/>
- <updated>2014-02-28T03:40:39+08:00</updated>
+ <updated>2014-02-28T03:45:30+08:00</updated>
  <id>http://williamlfang.github.com/cn</id>
  <author>
    <name>william</name>
@@ -55,43 +55,44 @@
  </entry>
  
  <entry>
-   <title>诸多事情</title>
-   <link href="http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/"/>
+   <title>美联储的「博士系」</title>
+   <link href="http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/"/>
    <updated>2014-02-12T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing</id>
-   <content type="html">&lt;p&gt;想着有一段时间没有码字了，指尖竟然有些生疏。其实每次打开笔记本，总是想着要有千言万语诉说，那种浓厚的情绪像是一次乘坐列车的远行去拜见一位老友，漫长的路途上早就打好了腹稿构造了完整的画面，可是真正见面了，我们却什么也不说，只是静静的凝望彼此，一言不发。我是有着千般感情万种思绪，却像是失去了老友多年消息总是联系不上了，我愈要赴会，却不知该买到何站的列车。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;此情可待成追忆，只是当时已惘然。&lt;/p&gt;
-&lt;/blockquote&gt;
+   <id>http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi</id>
+   <content type="html">&lt;p&gt;下午在浏览『华尔街见闻』的时候正好看到了这样一篇有意思的文章，大致介绍了美联储是如何从一个由实干家（如银行家与金融巨头）组成的俱乐部升级成由一帮&lt;a href=&quot;http://wallstreetcn.com/node/75851&quot;&gt;经济学博士引领的「学院派」&lt;/a&gt;。文章写的条理比较清楚的了，从成员的学位背景出发梳理了美联储的发展历程。诸位如果感兴趣可以前去看看。我这里主要是提供一个个人的随想而已。&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;一场团圆的春节&lt;/h2&gt;
+&lt;p&gt;首先来一个「全家福」吧。
+&lt;a href=&quot;/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg&quot; alt=&quot;the fed&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;这个春节过得平淡，安静的出奇。本来嘛，厦门就是一个旅游的城市，人来人往，车水马龙，热闹喧嚣，浮华尘世，这个本该就是这座城市的标志。可是真正到了春节，却也少了人，不见了往日的喧嚣。这座城市一下子变得可爱，如含蓄的姑娘，像待放的花苞，羞羞答答的。大抵是政府的规定只为贪图省事（baoli zhifa），我们的城市在春节期间竟然不允许燃放烟花。只是冷冷清清的城市，在这个孤孤单单的季节里，多少显得有点委屈。&lt;/p&gt;
+&lt;p&gt;文章谈到了对美联储决策有重要影响的几位「高官」的学历背景。目前新晋美联储主席的耶伦（Yellen）拥有 Yale 经济学博士学历，其在学术界有颇有建树。而那些身处高职的几位委员会成员（&lt;strong&gt;FOMC&lt;/strong&gt;）均配有经济学博士学位，如 Stanley Fischer 就是前 &lt;strong&gt;IMF&lt;/strong&gt; 的首席经济学家 [^1] 。而如果从历史的纵向来看，这个趋势就更加明显了：沃尔克当时还只是经济学硕士，到了格林斯潘后来获得博士学位，而前任伯南克就已经是一名正式的大学（宏观）经济学教授了。Blinder 是原 &lt;strong&gt;FOMC&lt;/strong&gt; 委员，他对 &lt;strong&gt;Fed&lt;/strong&gt; 的历史颇有研究，宣称：&lt;/p&gt;
 
-&lt;p&gt;不过几日的天气倒是也好。阳光灿烂如孩童的笑脸天真无瑕，暖心的却不热烈，滑落在皮肤生怕破碎。有一天猪头提议全家动身前去东坪山晒太阳，只为了这一刻的阳光弥足珍贵。是啊，往前每每在老家过年，春节这几天几乎都是阴雨连天，难得的出现这么晴朗的天气。南方的小渔村更添了几分冷意，空气了充斥了水气的冰冻，像是凝结的薄幕。更有那些象征喜庆的鞭炮在燃放过后四处挥舞的烟雾，掺杂在冰晶的半空，久久不散，犹如仙境。一个人常年在外旅居，此刻见了这般景象，竟有一些感伤，仿佛这是一股催泪剂，流浪的酸楚与归家的喜悦一齐涌上眼角，润湿了眼眶。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;我相信，当时在美联储80年的历史中，我是第四个或第五个学院派委员。不久后耶伦也来了，然后学院派就开始蜂拥而入。如今，这是一个很正常的现象，而且学院派教授更受欢迎。&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;今天春节并没有回老家过春节。年前和猪头商量了一下，决定邀请家中两位老人来厦团聚。一来是我们也没有那么多时间，本来她的假期就少得可怜，这来来回回的在路上费的时间多，也够折腾人（航班经常改道，火车时而晚点），小咪豆也不大适合舟车劳顿，怕了出了漏子；二来，我们也想让老人家出来走走，毕竟厦门这个春节的天气真的是好的惹人疼爱，招人喜欢，而且在这边我们两个都比较熟悉，平时出来旅游吃饭都挺方便的。于是乎，我们家今年便最终在厦门团聚了。&lt;/p&gt;
+&lt;p&gt;中国有古语说『物以类聚，人以群分』，这个自然界的普遍真理同样适用于经济学界。我们经常看到持有不同观点的学派之间是如何明争暗斗的，比如早些年的世纪大战——凯恩斯与哈耶克的论战，到后来由弗里德曼扛旗的货币主义学派反攻凯恩斯主义阵营。有些时候我真就觉得经济学这个大火锅里搅拌的是娱乐圈的废料，「你方唱罢我来和」，不无热闹，却全无一点增进人民福祉的实景。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;一次未行的聚会&lt;/h2&gt;
+&lt;p&gt;当初成立美联储的初衷是为了结束美国国内混乱的金融秩序，统一由一个中央决策机构来制定、执行货币政策。因此，当初在位掌权的一般都是一些银行家与金融巨头，大家都比较注重实干，以直觉和经验取胜，很少能寻觅到经济学院派的作风。&lt;/p&gt;
 
-&lt;p&gt;掐指一算，现在离初中毕业已经十年了。十年可算是一个大时期，我从一个毛头小伙子到一个丈夫与一个孩子的父亲。走过的这十年，一直都坎坎坷坷，曲曲折折。人生本当如此，历经风雨，奋斗不止，在晚年回首方有可念之处。可是这十年来，我总是那么的羡慕当初的那个纯真的孩子，一脸惘然的朝向未知的旅途，却也满心的勇气。&lt;/p&gt;
+&lt;p&gt;物是人非，斗转星移，我们现在看到美联储的境况，清一色的由理论界与学院派占山为王，并且在将来的很长一段时间内，这样的趋势会进一步明显。这些成员一般都具有良好的经济学训练，取得正规的博士学位，而且绝大部分还有过学术研究的经历，在各自的领域都有不小的影响力。如前任伯南克，在研究经济萧条理论、商业周期、宏观经济与失业率等诸多方面颇有成就。下面这幅图揭示了在美联储长达一个世纪的演变过程中，成员学术能力的提升。&lt;/p&gt;
 
-&lt;p&gt;初中的校园坐落在一个海滩湾处。小，而且年代久远，当时又正值人口峰值，我们的学校里竟然漫漫的都是人。这业已脱离了我对学校的概念，原先的小学人少，地大，小伙伴们总是有各种玩趣之地可去。可是现在，我只能在教室里待着，不能出去，稍不小心，便有人在走廊里撞到了。在这个拥挤甚至可以说是臃肿的校园里，我却感到无尽的孤单。人与人的会面，往往加深了心与心的分裂。愈多的人，愈感孤单。这种在人多之处说体会到的孤单，长年累月的陪伴着我，阴魂不散，挥之不去。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/position.jpg&quot; alt=&quot;position&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;初中唯一让我着迷的事情，是数学课本里那些由符号与方程编写而成的美丽世界。它们像极了天际线在昏黄夜晚的轮廓，淡淡的泛着氤氲。很多时候，我愿凝视这个虚无缥缈却深埋心底的幻城，痴痴的美梦着，想要得到那个神秘的答案。&lt;/p&gt;
+&lt;p&gt;就美联储成员在学位背景上不断更新的情况来分析，文章是这样认为的：&lt;/p&gt;
 
-&lt;p&gt;无数的小时里，我把自己深埋在那些符号里，不吭一声。我的这种孤傲与孤单，将周边的同学都隔离起来了，不再联系。其实，我只是不说一句话；其实，我只是一直都孤单着。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;美联储拥有越来越多的博士可能是件好事。一个只有经济学博士担任高级职位的美联储将有很多局限。多元化会带来各种正面效应，单一文化则会脆弱和不健康。&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;很多的年头里，我不曾与我的那些小伙伴们联络。&lt;/p&gt;
+&lt;p&gt;我的想法是，今后金融实务界能够更好的预测到美联储的决策机制了。在以前，美联储在公开市场的决策与操作动机基本是一个黑盒子，外界无从知晓。到了上世纪70年代，美联储才开始注重与大众的沟通，定期的发布公告向金融市场传送消息，并且在独立性方面获得了巨大的改善。可是外界在对美联储的决策进行拿捏把握上依然小心谨慎，如履薄冰。这归根到底还是因为美联储的决策机制不够开放，无法面向外界提供所有的内部信息。而正是这种信息上的不对称，导致每次在美联储闭门研讨经济决策的前后时期均可看到明显的市场波动，伤害经济的稳健。&lt;/p&gt;
 
-&lt;p&gt;今年突然听娜姐给我电话（我也不知她何来家里的号码），说是春节会有同学聚会，毕竟许多人已经不见整十年，希望此次可以相聚会面。可是，这次命运又在捉弄玩笑，今年正值全家都齐来厦门团聚，并没有计划会老家。而家中尚有小咪豆需要照顾，故而此次聚会也无奈不能成行。&lt;/p&gt;
+&lt;p&gt;而现在，我们可以从美联储成员的组成结构上获得一定的「启发」。不同的经济学理论在针对同样一个经济问题时提供的解决方案千差万别，有时甚至是南辕北辙，背道而驰。因此，我们可以借助对美联储组成成员的经济理论主张上分析其未来的决策风格与指导理论，从而在一定程度上透析美联储这个神秘的机构。我的建议时，当前的市场参与者还是需要对新一届的美联储决策机构多做一些「功课」，以便深入了解其决策特征，从而更好的预测与把握美联储在今后制定的各项经济政策。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;一个未果的问题&lt;/h2&gt;
+&lt;p&gt;当然，我们也可以从另外一个方面看问题。就是如果美联储的成员构成正的过于学院派，那么其在应对更加具体的金融事件上，可能不会从金融实务界的形势出发，或者干脆就忽视了那些真正需要解决问题的方案的银行家的呼声。这对美联储今后的决策有效性不得不大打折扣，甚至在某些时候反而会伤害实际经济的健康发展。纯粹由经济理论模型提出的药方往往不能够良好的「接地气」，反而挫伤实体经济的积极性。&lt;/p&gt;
 
-&lt;p&gt;有一个悬而未解的问题，未果，不便诉说。&lt;/p&gt;
+&lt;p&gt;[^1] Fischer 也是学术界的大牛，和 Blanchard 共同著有“Lectures on Macroeconomcis”，红极一时，可谓那个时代的标准 &lt;em&gt;textbook&lt;/em&gt;。&lt;/p&gt;
 
 <img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
  </entry>
@@ -140,49 +141,6 @@
  </entry>
  
  <entry>
-   <title>美联储的「博士系」</title>
-   <link href="http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/"/>
-   <updated>2014-02-12T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi</id>
-   <content type="html">&lt;p&gt;下午在浏览『华尔街见闻』的时候正好看到了这样一篇有意思的文章，大致介绍了美联储是如何从一个由实干家（如银行家与金融巨头）组成的俱乐部升级成由一帮&lt;a href=&quot;http://wallstreetcn.com/node/75851&quot;&gt;经济学博士引领的「学院派」&lt;/a&gt;。文章写的条理比较清楚的了，从成员的学位背景出发梳理了美联储的发展历程。诸位如果感兴趣可以前去看看。我这里主要是提供一个个人的随想而已。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;首先来一个「全家福」吧。
-&lt;a href=&quot;/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg&quot; alt=&quot;the fed&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;文章谈到了对美联储决策有重要影响的几位「高官」的学历背景。目前新晋美联储主席的耶伦（Yellen）拥有 Yale 经济学博士学历，其在学术界有颇有建树。而那些身处高职的几位委员会成员（&lt;strong&gt;FOMC&lt;/strong&gt;）均配有经济学博士学位，如 Stanley Fischer 就是前 &lt;strong&gt;IMF&lt;/strong&gt; 的首席经济学家 [^1] 。而如果从历史的纵向来看，这个趋势就更加明显了：沃尔克当时还只是经济学硕士，到了格林斯潘后来获得博士学位，而前任伯南克就已经是一名正式的大学（宏观）经济学教授了。Blinder 是原 &lt;strong&gt;FOMC&lt;/strong&gt; 委员，他对 &lt;strong&gt;Fed&lt;/strong&gt; 的历史颇有研究，宣称：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;我相信，当时在美联储80年的历史中，我是第四个或第五个学院派委员。不久后耶伦也来了，然后学院派就开始蜂拥而入。如今，这是一个很正常的现象，而且学院派教授更受欢迎。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;中国有古语说『物以类聚，人以群分』，这个自然界的普遍真理同样适用于经济学界。我们经常看到持有不同观点的学派之间是如何明争暗斗的，比如早些年的世纪大战——凯恩斯与哈耶克的论战，到后来由弗里德曼扛旗的货币主义学派反攻凯恩斯主义阵营。有些时候我真就觉得经济学这个大火锅里搅拌的是娱乐圈的废料，「你方唱罢我来和」，不无热闹，却全无一点增进人民福祉的实景。&lt;/p&gt;
-
-&lt;p&gt;当初成立美联储的初衷是为了结束美国国内混乱的金融秩序，统一由一个中央决策机构来制定、执行货币政策。因此，当初在位掌权的一般都是一些银行家与金融巨头，大家都比较注重实干，以直觉和经验取胜，很少能寻觅到经济学院派的作风。&lt;/p&gt;
-
-&lt;p&gt;物是人非，斗转星移，我们现在看到美联储的境况，清一色的由理论界与学院派占山为王，并且在将来的很长一段时间内，这样的趋势会进一步明显。这些成员一般都具有良好的经济学训练，取得正规的博士学位，而且绝大部分还有过学术研究的经历，在各自的领域都有不小的影响力。如前任伯南克，在研究经济萧条理论、商业周期、宏观经济与失业率等诸多方面颇有成就。下面这幅图揭示了在美联储长达一个世纪的演变过程中，成员学术能力的提升。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/position.jpg&quot; alt=&quot;position&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;就美联储成员在学位背景上不断更新的情况来分析，文章是这样认为的：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;美联储拥有越来越多的博士可能是件好事。一个只有经济学博士担任高级职位的美联储将有很多局限。多元化会带来各种正面效应，单一文化则会脆弱和不健康。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;我的想法是，今后金融实务界能够更好的预测到美联储的决策机制了。在以前，美联储在公开市场的决策与操作动机基本是一个黑盒子，外界无从知晓。到了上世纪70年代，美联储才开始注重与大众的沟通，定期的发布公告向金融市场传送消息，并且在独立性方面获得了巨大的改善。可是外界在对美联储的决策进行拿捏把握上依然小心谨慎，如履薄冰。这归根到底还是因为美联储的决策机制不够开放，无法面向外界提供所有的内部信息。而正是这种信息上的不对称，导致每次在美联储闭门研讨经济决策的前后时期均可看到明显的市场波动，伤害经济的稳健。&lt;/p&gt;
-
-&lt;p&gt;而现在，我们可以从美联储成员的组成结构上获得一定的「启发」。不同的经济学理论在针对同样一个经济问题时提供的解决方案千差万别，有时甚至是南辕北辙，背道而驰。因此，我们可以借助对美联储组成成员的经济理论主张上分析其未来的决策风格与指导理论，从而在一定程度上透析美联储这个神秘的机构。我的建议时，当前的市场参与者还是需要对新一届的美联储决策机构多做一些「功课」，以便深入了解其决策特征，从而更好的预测与把握美联储在今后制定的各项经济政策。&lt;/p&gt;
-
-&lt;p&gt;当然，我们也可以从另外一个方面看问题。就是如果美联储的成员构成正的过于学院派，那么其在应对更加具体的金融事件上，可能不会从金融实务界的形势出发，或者干脆就忽视了那些真正需要解决问题的方案的银行家的呼声。这对美联储今后的决策有效性不得不大打折扣，甚至在某些时候反而会伤害实际经济的健康发展。纯粹由经济理论模型提出的药方往往不能够良好的「接地气」，反而挫伤实体经济的积极性。&lt;/p&gt;
-
-&lt;p&gt;[^1] Fischer 也是学术界的大牛，和 Blanchard 共同著有“Lectures on Macroeconomcis”，红极一时，可谓那个时代的标准 &lt;em&gt;textbook&lt;/em&gt;。&lt;/p&gt;
-
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
- </entry>
- 
- <entry>
    <title>Data Structure</title>
    <link href="http://williamlfang.github.com/cn/2014/01/26/data-structure/"/>
    <updated>2014-01-26T00:00:00+08:00</updated>
@@ -2187,6 +2145,51 @@ plot(density(x))
 &lt;blockquote&gt;
   &lt;p&gt;推荐：多看多看多看！没见过猪跑也好歹有吃过猪肉。另外，可以看看一些「guide」，养成良好的编写程序的习惯，比如，大神的&lt;a href=&quot;http://adv-r.had.co.nz/Style.html&quot;&gt;建议&lt;/a&gt;,以及&lt;a href=&quot;http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml&quot;&gt;Google’s R Style Guide&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
+ </entry>
+ 
+ <entry>
+   <title>WineQQ2013 可以使用</title>
+   <link href="http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/"/>
+   <updated>2014-01-18T00:00:00+08:00</updated>
+   <id>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux</id>
+   <content type="html">&lt;h2 id=&quot;qq-for-linux&quot;&gt;QQ for &lt;code&gt;Linux&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;想要在Linux操作系统下使用 &lt;code&gt;QQ&lt;/code&gt; 真的得费不少劲。我之前尝试通过 &lt;code&gt;WINE&lt;/code&gt; 来安装 &lt;code&gt;QQ2013&lt;/code&gt;，可是最终以失败结束。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;一方面是由于目前的 &lt;code&gt;WINE&lt;/code&gt; 技术还不是很好，对于一些商业软件支持力度不够，也不能完全模拟 &lt;code&gt;Windows&lt;/code&gt; 系统来安装 &lt;code&gt;.exe&lt;/code&gt; 的软件（如果完全取代了，怎么感觉又回到 &lt;code&gt;Windows&lt;/code&gt; 时代了呢…..），期间需要不停的下载相关而不必要的软件，大费人力与（电）脑力，而且终归落得个不能使用/中文乱码的惨淡结局。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;另一方面，&lt;code&gt;Tencent&lt;/code&gt; 公司也不会完全放弃 &lt;code&gt;QQ&lt;/code&gt; 的商业价值来满足开源爱好者的，他们满眼看到的是商业利益。&lt;code&gt;QQ&lt;/code&gt; 本身是一个具有黑暗魔法力量的软件，可以推送广告取得收入，可以不间断的搜索用户资料（先前有 3Q 大战及由此来），还能维护一个庞大的软件生态链。故此，虽然曾经有一段时间的 &lt;code&gt;QQ for Linux&lt;/code&gt; 的美好光景，却也一去不复返。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我们现在想要在 Linux 上使用 &lt;code&gt;QQ&lt;/code&gt;，真可谓“斗智斗勇”，方能取得一丁点的成就。&lt;/p&gt;
+
+&lt;h2 id=&quot;qq&quot;&gt;虚拟机下使用 QQ&lt;/h2&gt;
+&lt;p&gt;我之前有在一篇关于虚拟机 &lt;a href=&quot;http://williamlfang.github.io/cn/2014/01/04/virtualbox/&quot;&gt;virtualbox&lt;/a&gt; 的文章中谈过可以利用虚拟机来运行 &lt;code&gt;Windows&lt;/code&gt; 操作系统，并在其使用 &lt;code&gt;QQ&lt;/code&gt; 等软件。可以，这也很不方便，为了使用一个软件大开虚拟机占用大量的内存，实属不值，何况对于一些老机子更是苦命。因此，我决定放弃这个既浪费资源又不讨好的想法，另辟蹊径。&lt;/p&gt;
+
+&lt;h2 id=&quot;wineqq&quot;&gt;WineQQ&lt;/h2&gt;
+&lt;p&gt;目前，由一个叫做 “LongeneTeam” 团队给广大的用户带来了福音。他们号称开发了史上最牛叉的、能够在 Linux 系统运行的 &lt;code&gt;wineQQ&lt;/code&gt;。其工作原理是：
+&amp;gt; 通过以deb的格式将 QQ 软件、Wine基本配置、有关字体以及一些必要的配件统统打包好，这样用户可以直接点击deb文件来安装、使用 QQ。&lt;/p&gt;
+
+&lt;p&gt;目前 wineQQ 的最新版本为 &lt;a href=&quot;http://www.longene.org/forum/viewtopic.php?t=4700&quot;&gt;wine-1.7.9&lt;/a&gt;。deb格式的软件可以在&lt;a href=&quot;http://pan.baidu.com/s/1hq83fWo&quot;&gt;这里&lt;/a&gt;或者&lt;a href=&quot;http://www.longene.org/download/WineQQ2013SP6-20140102-Longene.deb&quot;&gt;这里&lt;/a&gt;下载到。之后可以直接双击打开，经由 &lt;code&gt;Software Manager&lt;/code&gt; 确认系统密码后即可安装。完成之后在找到 &lt;code&gt;QQ&lt;/code&gt; 打开即可。
+&lt;img src=&quot;/cn/assets/images/QQ/qq.png&quot; alt=&quot;wineqq2013&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;问题之门及解决之道&lt;/h2&gt;
+&lt;p&gt;以下汇集了我在使用 wineQQ2013 过程中遇到的一些问题，以及相应的解决方法。欢迎补充。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;64位操作系统不能运行&lt;/h3&gt;
+&lt;p&gt;这个问题主要是由于原先只是在32位系统运行的 &lt;code&gt;wineQQ&lt;/code&gt; 需要安装配件。如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; sudo apt-get install libc6-i386 
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; sudo apt-get install ia32-libs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 <img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
  </entry>
  

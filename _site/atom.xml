@@ -4,7 +4,7 @@
  <title>方莲 | William</title>
  <link href="http://williamlfang.github.com/cn/" rel="self"/>
  <link href="http://williamlfang.github.com/cn"/>
- <updated>2014-02-28T01:38:35+08:00</updated>
+ <updated>2014-02-28T01:47:18+08:00</updated>
  <id>http://williamlfang.github.com/cn</id>
  <author>
    <name>william</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>诸多事情</title>
-   <link href="http://williamlfang.github.com/cn/cn/2014/02/12/zhu-duo-shi-qing/"/>
+   <link href="http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/"/>
    <updated>2014-02-12T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/cn/2014/02/12/zhu-duo-shi-qing</id>
+   <id>http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing</id>
    <content type="html">&lt;p&gt;想着有一段时间没有码字了，指尖竟然有些生疏。其实每次打开笔记本，总是想着要有千言万语诉说，那种浓厚的情绪像是一次乘坐列车的远行去拜见一位老友，漫长的路途上早就打好了腹稿构造了完整的画面，可是真正见面了，我们却什么也不说，只是静静的凝望彼此，一言不发。我是有着千般感情万种思绪，却像是失去了老友多年消息总是联系不上了，我愈要赴会，却不知该买到何站的列车。&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -56,9 +56,9 @@
  
  <entry>
    <title>美联储的「博士系」</title>
-   <link href="http://williamlfang.github.com/cn/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/"/>
+   <link href="http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/"/>
    <updated>2014-02-12T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi</id>
+   <id>http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi</id>
    <content type="html">&lt;p&gt;下午在浏览『华尔街见闻』的时候正好看到了这样一篇有意思的文章，大致介绍了美联储是如何从一个由实干家（如银行家与金融巨头）组成的俱乐部升级成由一帮&lt;a href=&quot;http://wallstreetcn.com/node/75851&quot;&gt;经济学博士引领的「学院派」&lt;/a&gt;。文章写的条理比较清楚的了，从成员的学位背景出发梳理了美联储的发展历程。诸位如果感兴趣可以前去看看。我这里主要是提供一个个人的随想而已。&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -99,9 +99,9 @@
  
  <entry>
    <title>Data Structure</title>
-   <link href="http://williamlfang.github.com/cn/cn/2014/01/26/data-structure/"/>
+   <link href="http://williamlfang.github.com/cn/2014/01/26/data-structure/"/>
    <updated>2014-01-26T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/cn/2014/01/26/data-structure</id>
+   <id>http://williamlfang.github.com/cn/2014/01/26/data-structure</id>
    <content type="html">&lt;p&gt;这一章主要介绍了在 &lt;strong&gt;R&lt;/strong&gt; 中最基本的元素：数据。前段时间我在网上看到一个帖子（暂时忘记在哪里找到了），强调「data science」的重心不是在前面的那个「data」，而是后面的「science」。这是因为随着互联网的深入发展，我们现在不再是缺乏数据，反而是面临着「big data」造成的「information rich」（信息冗余）的困扰。因此，今后的数据科学应当更进一步的发展新的理论与方法来解决大数据分析。&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -747,9 +747,9 @@ df$x
  
  <entry>
    <title>使用 Jekyll + knitr 发布博客</title>
-   <link href="http://williamlfang.github.com/cn/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/"/>
+   <link href="http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/"/>
    <updated>2014-01-24T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke</id>
+   <id>http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke</id>
    <content type="html">&lt;h2 id=&quot;section&quot;&gt;我的博客之旅&lt;/h2&gt;
 
 &lt;p&gt;这些天一直都在钻研如何在博客中加入可以执行 &lt;strong&gt;R&lt;/strong&gt; 程序代码的博客模板。我先前也有过写博客的经历，不过那时候使用的博客都是免费托管在其他的服务器中，一方面是缺乏可定制，大都是千篇一律的，无法满足「DIY」的需要，另一方面，也是主要的问题，这些博客网站很少有支持 &lt;strong&gt;LaTeX&lt;/strong&gt; 的数学输出，对于数学环境的支持不尽人意。我也就偶尔在写一些纯文字类的随想，不曾涉及专业领域的事情。&lt;/p&gt;
@@ -992,9 +992,9 @@ plot(density(x))
  
  <entry>
    <title>Advanced R Programming</title>
-   <link href="http://williamlfang.github.com/cn/cn/2014/01/20/r-note/"/>
+   <link href="http://williamlfang.github.com/cn/2014/01/20/r-note/"/>
    <updated>2014-01-20T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/cn/2014/01/20/r-note</id>
+   <id>http://williamlfang.github.com/cn/2014/01/20/r-note</id>
    <content type="html">&lt;p&gt;这个文档记录了我在学习 &lt;a href=&quot;http://had.co.nz/&quot;&gt;Hadley Wickham&lt;/a&gt; 即将出版的新书，&lt;a href=&quot;http://adv-r.had.co.nz/&quot;&gt;Advanced R Programming&lt;/a&gt; 时的一些笔记与总结，以便将来复习查阅。该书博大精深，结构严谨，涵盖面广泛，涉及几乎目前有关「R」的所有问题。从最基础的数据结构开始讲起，然后逐步渐进到如何编写针对问题的 &lt;code&gt;function&lt;/code&gt;，再进阶到如何开发能够发布以供他人使用的 &lt;code&gt;package&lt;/code&gt;。Wickham 本人就是在「R Community」团体中的传奇人物，开发了许多为人称道的宏包，如 &lt;code&gt;ggplot2&lt;/code&gt;等。而本书真是作者在总结了近十年的 「R」软件开发后编写的一本巨著。仔细深入阅读此书必将受益匪浅，极大的提升我们使用与开发「R」的各项技能，真正从最底层去认识「R」这个当今最强大的数据处理、统计分析与图形可视化编程语言。&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -1103,9 +1103,9 @@ plot(density(x))
  
  <entry>
    <title>WineQQ2013 可以使用</title>
-   <link href="http://williamlfang.github.com/cn/cn/2014/01/18/qq-for-linux/"/>
+   <link href="http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/"/>
    <updated>2014-01-18T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/cn/2014/01/18/qq-for-linux</id>
+   <id>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux</id>
    <content type="html">&lt;h2 id=&quot;qq-for-linux&quot;&gt;QQ for &lt;code&gt;Linux&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;想要在Linux操作系统下使用 &lt;code&gt;QQ&lt;/code&gt; 真的得费不少劲。我之前尝试通过 &lt;code&gt;WINE&lt;/code&gt; 来安装 &lt;code&gt;QQ2013&lt;/code&gt;，可是最终以失败结束。&lt;/p&gt;
 
@@ -1148,9 +1148,9 @@ plot(density(x))
  
  <entry>
    <title>Images</title>
-   <link href="http://williamlfang.github.com/cn/cn/2014/01/18/img/"/>
+   <link href="http://williamlfang.github.com/cn/2014/01/18/img/"/>
    <updated>2014-01-18T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/cn/2014/01/18/img</id>
+   <id>http://williamlfang.github.com/cn/2014/01/18/img</id>
    <content type="html">&lt;p&gt;This thread will show you how to add a new images in Markdown through &lt;code&gt;relative path&lt;/code&gt;.&lt;/p&gt;
 
 &lt;ol&gt;
@@ -1176,9 +1176,9 @@ plot(density(x))
  
  <entry>
    <title>Linux Mint 安装 Pandoc</title>
-   <link href="http://williamlfang.github.com/cn/cn/2014/01/16/pandoc/"/>
+   <link href="http://williamlfang.github.com/cn/2014/01/16/pandoc/"/>
    <updated>2014-01-16T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/cn/2014/01/16/pandoc</id>
+   <id>http://williamlfang.github.com/cn/2014/01/16/pandoc</id>
    <content type="html">&lt;h2 id=&quot;linux-mint--pandoc&quot;&gt;下面介绍在 Linux Mint 系统下如何安装 pandoc。&lt;/h2&gt;
 
 &lt;ol&gt;
@@ -1212,9 +1212,9 @@ plot(density(x))
  
  <entry>
    <title>Linux 中文输入法（fcitx）安装与设置</title>
-   <link href="http://williamlfang.github.com/cn/cn/2014/01/08/chinese-input/"/>
+   <link href="http://williamlfang.github.com/cn/2014/01/08/chinese-input/"/>
    <updated>2014-01-08T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/cn/2014/01/08/chinese-input</id>
+   <id>http://williamlfang.github.com/cn/2014/01/08/chinese-input</id>
    <content type="html">&lt;p&gt;Linux （Mint，16 Petra）系统本身并没有默认安装中文输入法。为了在 Linux 操作系统下使用中文输入，需要自己添加。我倒腾了大半天的，终于明白过来这是怎么设置了。现在将全部的过程记录在下面，以备日后使用。&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -1266,9 +1266,9 @@ fcitx -d        &lt;br /&gt;&lt;/p&gt;
  
  <entry>
    <title>新系统的第一个软件</title>
-   <link href="http://williamlfang.github.com/cn/cn/2014/01/05/goagent/"/>
+   <link href="http://williamlfang.github.com/cn/2014/01/05/goagent/"/>
    <updated>2014-01-05T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/cn/2014/01/05/goagent</id>
+   <id>http://williamlfang.github.com/cn/2014/01/05/goagent</id>
    <content type="html">&lt;p&gt;最近由于电脑不是很稳定,装了几次系统.这个我之前也有谈过,如何从万恶的 MS 的 Windows 系统成功&lt;a href=&quot;http://williamlfang.github.io/cn/2014/01/window-2-linux/&quot;&gt;转型&lt;/a&gt;到自由软件与操作系统 Linux.经过这几次的装机经历,我也发现了这其中的一些pattern.比如,我今天要谈到的话题:
 &amp;gt; 谁是你的新系统的第一个软件呢?&lt;/p&gt;
 

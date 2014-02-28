@@ -89,7 +89,7 @@ $(fb_IMG_select).addClass('fancybox').attr('rel', 'gallery');
 $(document).ajaxError(function(e,xhr,opt){if(xhr.status==404)$('#more').remove();});
 });
 
-
+/*
 $(window).bind("scroll",function(e){
 if( $(document).scrollTop() + $(window).height() > $(document).height() - 10 ) {
 		e.preventDefault();
@@ -112,7 +112,7 @@ if( $(document).scrollTop() + $(window).height() > $(document).height() - 10 ) {
 		});
 }
 });
-
+*/
 
 $(window).scroll(function () {
 	$(window).scrollTop() > 400 ? $("#rocket").addClass("show") : $("#rocket").removeClass("show");
@@ -130,7 +130,7 @@ $("#rocket").click(function () {
 	
 $(document).ready(function() {
 $('.title').click(function(){
-    $(this).text('给力载入中……'); /*给力载入中……给力载入中……给力载入中……给力载入中……给力载入中……给力载入中……给力载入中……给力载入中……给力载入中……*/
+    $(this).text('给力载入中……');
     window.location = $(this).attr('href');
     });
 });

@@ -5,7 +5,7 @@ author: William Fang
 pygments: true
 auto: true
 safe: true
-paginate: 10
+paginate: 7
 timezone: Asia/Shanghai
 
 web: williamlfang.github.com

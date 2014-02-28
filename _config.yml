@@ -1,30 +1,21 @@
-markdown: kramdown
-permalink: /:year/:month/:day/:title/
-url: http://williamlfang.github.com/cn
-author: William Fang
+permalink: /:title.html
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 pygments: true
-auto: true
+markdown: rdiscount
+paginate: 7
 safe: true
-paginate: 10
+future: false
 timezone: Asia/Shanghai
 
-
-web: williamlfang.github.com
-qq: 564985882
-email: william.lian.fang@gmail.com
-duoshuo: 夏石
-weibo: 夏石_will
-github: williamlfang
-
-title : 方莲 | William
-keywords: "宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网"
+title : Life Memory
+keywords: "生活,记忆,生活记忆,Life,Memory,Life Memory,不给力的面条,面条,人生就像那旅程,谁知道转弯后的风光"
 description : "人生就像那旅程,谁知道转弯后的风光"
-
 author :
-  name : william
-  email : william.lian.fang@gmail.com
-  github : williamlfang
-  twitter : 564985882@qq.com
+  name : ccbikai
+  email : ccbikai@qq.com
+  github : ccbikai
+  twitter : ccbikai
+url : http://miantiao.me
 
 JB :
   version : 0.3.0

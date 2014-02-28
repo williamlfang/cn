@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<!--
+ #                   ####
+ #           #      #                         #     #
+ #                  #                         ##   ##
+ #         ###     ####      #####            # # # #   #####   ### ##    #####    # ###   #    #
+ #           #      #       #     #           #  #  #  #     #  #  #  #  #     #   ##      #    #
+ #           #      #       #######           #     #  #######  #  #  #  #     #   #       #    #
+ #           #      #       #                 #     #  #        #  #  #  #     #   #       #    #
+ ######    #####    #        #####            #     #   #####   #     #   #####    #        #####
+                                                                                                #
+                                                                                            ####
+-->
+<html lang="zh-CN"/>
+<head>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+	<meta charset="utf-8" />
+	<meta name="author" content="ccbikai" />
+	<meta name="generator" content="Jekyll" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<meta name="keywords" content="路由器linuxopenwrt" />
+	<meta name="description" content="openwrt折腾记（二）" />
+	<title>openwrt折腾记（二） | Life Memory</title>
+	<link rel="stylesheet" href="/assets/themes/life/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="/assets/themes/life/css/style.css" media="all"/>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="http://feed.miantiao.me" type="application/rss+xml" rel="alternate" title="LifeMemory RSS Feed" />
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="LifeMemory ATOM Feed" />
+	<link rel="canonical" href="http://williamlfang.github.com/cn/play-openwrt-2.html" />
+	<script type="text/javascript" src="/assets/themes/life/js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="head" class="w-100p">
+		<div class="header">
+			<a href="http://williamlfang.github.com/cn" class="logo left"><img class="logoimg" src="/assets/themes/life/images/logo.png" alt="Life Memory"/></a>
+			<div class="site">
+				<a href="http://williamlfang.github.com/cn" class="name font-white font-36">Life Memory</a>
+				<p class="desc font-white font-20">人生就像那旅程,谁知道转弯后的风光</p>
+			</div>
+			<div class="social-icons right">
+				<a href="http://feed.miantiao.me" class="feed" title="订阅我的博客"  rel="nofollow">feed</a>
+				<a href="http://weibo.com/ccbikai" class="weibo" title="新浪微博"  rel="nofollow">weibo</a>
+				<a href="http://t.qq.com/ccbikai" class="tqq" title="腾讯微博"  rel="nofollow">tqq</a>
+				<a href="http://www.twitter.com/ccbikai" class="twitter" title="Tui特"  rel="nofollow">twi</a>
+			</div>
+		</div>
+	</div>
+	<div id="main" class="w-100p font-gray-dark">
+		<div class="nav nav-large nav-orange">
+			<div class="menu cleared">
+			<a title="首页" class="nav-item" href="/">首页</a>
+				<div class="nav-has-menu">
+					<a class="nav-item" href="/archives.html">归档</a>
+						<div class="nav-menu">
+							
+							<a title="随口一说" class="nav-menu-item" href="/archives.html#随口一说">随口一说</a>
+							
+							<a title="扯淡文章" class="nav-menu-item" href="/archives.html#扯淡文章">扯淡文章</a>
+							
+							<a title="一块分享" class="nav-menu-item" href="/archives.html#一块分享">一块分享</a>
+							
+							<a title="科技牛逼" class="nav-menu-item" href="/archives.html#科技牛逼">科技牛逼</a>
+							
+						</div>
+				</div>
+			<a title="邻居" class="nav-item" href="/links.html">邻居</a>
+			<a title="留言" class="nav-item" href="/guestbook.html">留言</a>
+				<div class="search right h-1">
+					<form method="get" id="searchform" action="http://williamlfang.github.com/cn/search.html">
+					<input type="text" name="q" id="search" size="13" value="" placeholder="敢不敢搜一下？" x-webkit-speech />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="articles">
+		
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="/play-openwrt-2.html">
+		<span class="day">19</span><span class="month">Jul</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="/play-openwrt-2.html" title="openwrt折腾记（二）">openwrt折腾记（二）</a></h3>
+		<div class="content lh-150p font-16 pd-1 mg-2 radius-8">
+		<p>前段时间，写了openwrt第一篇，但是第二篇一直拖到现在也没有写，今天强迫自己写出来，不然不知道又要拖到什么时候了。</p>
+
+<!-- more -->
+
+
+<p>
+上次主要是联网遇到的问题和文件共享的设置，今天我写写离线下载文件，和DDNS。</p>
+
+<p>文件共享搞好了，就做离线下载，这样电脑可以直接读取路由器下载的电影，手机也可以直接读取，减少复制和存储空间（U盘存储不够，你可以用挂载移动硬盘）。离线下载主要依靠的是aria2,openwrt路由器已经有编译好的软件包，你可以直接在软件管理的地方安装(或者<code>opkg install aria2</code>),安装好了需要给它设置配置文件（我在下面贴出来），用 <code>aria2c --conf-path=/root/aria2.conf</code> 命令启动它，如果不出错，就可以用web管理面版给它添加东西了，下载<a href="http://pan.baidu.com/share/link?shareid=65077310&amp;uk=2617666054">这里</a> 的压缩包，解压放在/www目录，然后访问http://192.168.1.1/yaaw 或者http://192.168.1.1/xunlei ，添加下载文件。</p>
+
+<p>aria2配置文件，放在/root目录，里边的路径修改一下对应你的。  如果需要开机自启动在 系统》启动项添加 <code>aria2c --conf-path=/root/aria2.conf -D</code>命令。</p>
+
+<script src="https://gist.github.com/ccbikai/6037312.js"></script>
+
+
+<p></p>
+
+<p>如果你要用迅雷离线，或者旋风离线，需要给浏览器安装油猴子js脚本，迅雷旋风二合一（http://userscripts.org/scripts/source/153927.user.js）。安装好以后，设置一下rpc路径，和yaaw设置里边的一致就可以一键添加下载了。旋风是rpc导出，迅雷是批量导出。
+<a href="http://ww3.sinaimg.cn/large/4eda25f5gw1e6s6c1y4zfj20er076aaj.jpg"><img src="http://ww3.sinaimg.cn/large/4eda25f5gw1e6s6c1y4zfj20er076aaj.jpg" alt="旋风设置" /></a><br/>
+<a href="http://ww3.sinaimg.cn/large/4eda25f5gw1e6s6ch2hm8j20hz0drgmj.jpg"><img src="http://ww3.sinaimg.cn/large/4eda25f5gw1e6s6ch2hm8j20hz0drgmj.jpg" alt="迅雷设置" /></a></p>
+
+<p>离线下载设置好了，但你有时在外边，就需要远程控制了，但是每次拨号路由器的ip都是变化的，很多人用的是花生壳，我是用dnspd解析的，下面是我用的脚本。</p>
+
+<script src="https://gist.github.com/ccbikai/6037342.js"></script>
+
+
+<p>
+保存为php文件，放在外网可以访问的支持curl的php空间，然后打开"/usr/lib/ddns/services"文件，如果你找不到那就是路由器安装ddns，在软件管理那里安装一下。在"/usr/lib/ddns/services"里边添加 <code>"dnspod.com" "http://api.inbiji.com/dnspod/dnspodupdate.php?username=[USERNAME]&amp;password=[PASSWORD]&amp;domain=[DOMAIN]&amp;myip=[IP]"</code>，如果你没有空间，可以直接用我的接口，不会记录密码。</p>
+
+<p>然后在路由器设置页面 服务->动态DNS->添加一条记录，这里服务里现在会出现dnspod.com选项，主机名:二级域名@顶级域名(比如你的二级域名是openwrt.xxx.com,那么该处就填写openwrt@xxx.com)，用户名:就是你的dnspod账户，密码  :就是你的dnspod密码，网络  :选wan，"保存并应用",最好开启定时更新,间隔时间不要太短,10分钟就好。</p>
+
+<p>这样路由器就可以有一个固定的域名了，但是你直接远程访问http://openwrt.xxx.com还是不行的，需要在防火墙里边添加端口转发，将外网1024端口转发到192.168.1.1的80端口（外网端口不建议用80,又不是面向公众的服务，而且一些省份是屏蔽80端口的），这样就可以通过http://openwrt.xxx.com:1024 访问路由器管理页面了，当然yaaw的管理页面就是http://openwrt.xxx.com:1024/yaaw ，http://openwrt.xxx.com:1024/xunlei 了。</p>
+
+<p>第二次折腾就是这些了，当然还有第三次，准备折腾拿安卓手机做web服务器（已经成功），然后通过路由器转发，就可以让外网访问了，搭建一个小网站是可以的，许多人是拿树莓派这样玩的，买不起树莓派，只能拿手机了。</p>
+
+		<div class="post-end mt-1"><span><i></i>19 July 2013</span></div>
+		</div>
+	</div>
+	
+	<div class="tags pl-2 pr-2 mb-2 left">
+		<span class="tag">标签：
+		
+		<a class="button button-small button-orange" href="/tags.html#路由器" title="路由器">路由器</a>
+		
+		<a class="button button-small button-orange" href="/tags.html#linux" title="linux">linux</a>
+		
+		<a class="button button-small button-orange" href="/tags.html#openwrt" title="openwrt">openwrt</a>
+		
+		</span>
+	</div>
+	
+	
+	<div class="categories pl-2 pr-2 mb-2 right">
+		<span class="categorie">分类：
+		
+		<a class="button button-small button-orange" href="/archives.html#科技牛逼" title="科技牛逼">科技牛逼</a>
+		
+		</span>
+	</div>
+	
+	
+	<div class="cleared mt-2 pl-2 pr-2">
+		
+		<a class="button button-orange left" href="/procrastination.html" rel="prev" title="申请godaddy域名退款到支付宝">←拖延症</a>
+		
+		
+		<a class="button button-orange right" href="/apply-money-from-godaddy-to-alipay.html" rel="next" title="申请godaddy域名退款到支付宝">申请godaddy域名退款到支付宝→</a>
+		
+	</div>
+	
+	<span id="btn_page_prev"><a href="/procrastination.html" rel="prev"><span id="fanye" style="display: none;">‹</span></a></span>
+	
+	
+	<span id="btn_page_next"><a href="/apply-money-from-godaddy-to-alipay.html" rel="next"><span id="fanye" style="display: none;">›</span></a></span>
+	
+	
+	<div id="hm_t_18226" class="radius-8 baidu"></div>
+	
+	<div id="comments cleared" class="mt-2 pl-2 pr-2">
+		<div class="comment left w-60 h-60">
+		<a class="yuan" href="#comments">
+		<span class="ds-thread-count num" data-thread-key="1584" data-count-type="comments"></span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="ds-thread" data-thread-key="1584" data-title="openwrt折腾记（二）" data-url="http://williamlfang.github.com/cn/play-openwrt-2.html"></div>
+	</div>
+    
+</div>
+	<div class="clear"></div>
+</div>
+
+
+		
+		</div>
+		
+	</div>
+	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
+		<div id="about" class="align-center">&copy; 2009-2013 Life Memory ,Powered By Jekyll ,Design By <a href="https://plus.google.com/113613029248221235605?rel=author">cc bikai</a> .
+		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
+		<div class="radar"></div>
+		</div>
+	</div>
+<link rel="stylesheet" href="/assets/themes/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="/assets/themes/life/js/common.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hibikai"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<script src="http://cdn.staticfile.org/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://cdn.staticfile.org/jqueryui/1.10.2/css/smoothness/jquery-ui-1.10.2.custom.min.css" type="text/css" media="all" />
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+</body>
+</html>
+

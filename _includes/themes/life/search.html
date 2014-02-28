@@ -1,7 +1,9 @@
 <div class="post mt-2">
 	<div class="info box">
 		<a class="date" href="{{ site.url }}{{ page.url }}">
-		<span class="day">{{ page.date | date:"%d" }}</span><span class="month">{{ page.date | date:"%b" }}</span>
+		<span class="year">{{ page.date | date:"%Y" }}</span>
+		<span class="day">{{ page.date | date:"%d" }}</span>
+		<span class="month">{{ page.date | date:"%B" }}</span>
 		<span class="circle"></span>
 		</a>
 	</div>

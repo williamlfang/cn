@@ -1,15 +1,10 @@
-
 <div class="post mt-2">
-
 	<div class="info box">
 		<a class="date" href="{{ page.url }}">
-		<span class="year">{{ page.date | date:"%Y" }}</span>
-		<span class="day">{{ page.date | date:"%d" }}</span>
-		<span class="month">{{ page.date | date:"%B" }}</span>
+		<span class="day">{{ page.date | date:"%d" }}</span><span class="month">{{ page.date | date:"%b" }}</span>
 		<span class="circle"></span>
 		</a>
 	</div>
-
 	<div class="article">
 		<h3><a class="title font-orange mb-2" href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h3>
 		<div class="content lh-150p font-16 pd-1 mg-2 radius-8">
@@ -17,7 +12,6 @@
 		<div class="post-end mt-1"><span><i></i>{{ page.date | date_to_long_string }}</span></div>
 		</div>
 	</div>
-
 	{% if page.tags %}
 	<div class="tags pl-2 pr-2 mb-2 left">
 		<span class="tag">标签：
@@ -27,7 +21,6 @@
 		</span>
 	</div>
 	{% endif %}
-
 	{% if page.categories %}
 	<div class="categories pl-2 pr-2 mb-2 right">
 		<span class="categorie">分类：
@@ -37,7 +30,6 @@
 		</span>
 	</div>
 	{% endif %}
-
 	{% if page.previous or page.next %}
 	<div class="cleared mt-2 pl-2 pr-2">
 		{% if page.previous %}
@@ -47,24 +39,14 @@
 		<a class="button button-orange right" href="{{page.next.url}}" rel="next" title="{{page.next.title}}">{{page.next.title}}→</a>
 		{% endif %}
 	</div>
-
 	{% if page.previous %}
-	<span id="btn_page_prev"><a href="{{page.previous.url}}" rel="prev" title="Previous">
-	<span id="fanye" style="display: none;">
-		‹--
-	</span></a></span>
+	<span id="btn_page_prev"><a href="{{page.previous.url}}" rel="prev"><span id="fanye" style="display: none;">‹</span></a></span>
 	{% endif %}
-
 	{% if page.next %}
-	<span id="btn_page_next"><a href="{{page.next.url}}" rel="next" title="Next">
-	<span id="fanye" style="display: none;">
-		--›
-	</span></a></span>
+	<span id="btn_page_next"><a href="{{page.next.url}}" rel="next"><span id="fanye" style="display: none;">›</span></a></span>
 	{% endif %}
 	{% endif %}
-
 	<div id="hm_t_18226" class="radius-8 baidu"></div>
-
 	{% if page.comments %}
 	<div id="comments cleared" class="mt-2 pl-2 pr-2">
 		<div class="comment left w-60 h-60">
@@ -76,17 +58,6 @@
 	<div class="ds-thread" data-thread-key="{{page.wordpress_id}}" data-title="{{ page.title }}" data-url="{{ site.url }}{{ page.url }}"></div>
 	</div>
     {% endif %}
-<!--=========================================================================-->
-		<div class="friends">
-			<div class="friends_info"><a id="friends" href="#" rel="nofollow"><span>Contents</span></a></div>
-			<div id="friends_list" class="friends_list">
-				{% include toc.html %} 
-				<br />
-			</div>
-			<a href="#" id="gc_close" rel="nofollow">X</a>
-		</div>
-<!--=========================================================================-->
-
 </div>
 	<div class="clear"></div>
 </div>

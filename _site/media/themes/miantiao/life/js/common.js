@@ -61,11 +61,13 @@ $(document).ready(function() {
 });
 
 // open url in new a window 
+/*
 $(document).ready(function() { 
 $("a[href*='http://']:not([href*='"+location.hostname+"'],.fancybox),[href*='https://']:not([href*='"+location.hostname+"'],.fancybox)")
 .addClass("external")
 .attr("target","_blank"); 
 }); 
+*/
 
 if(window.console&&window.console.log){
 console.log('青春的土壤中，只有记忆是潮湿的。\n我们不是植物，不能在这块土地上生生不息。\n当我们回眸青春，仿佛有一种说不出的痛。\n很多人问我，青春的诀别是否意味着年迈的将近?\n其实，青春，它一直都在继续……');

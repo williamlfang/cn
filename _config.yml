@@ -1,6 +1,6 @@
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
-url: http://williamlfang.github.com/
+url: http://williamlfang.github.com/cn
 author: William Fang
 pygments: true
 auto: true

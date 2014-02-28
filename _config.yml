@@ -1,6 +1,6 @@
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
-url: http://williamlfang.github.com/cn
+url: http://williamlfang.github.com/
 author: William Fang
 pygments: true
 auto: true
@@ -25,4 +25,19 @@ author :
   email : william.lian.fang@gmail.com
   github : williamlfang
   twitter : 564985882@qq.com
+
+JB :
+  version : 0.3.0
+  BASE_PATH : false
+  ASSET_PATH : false
+  archive_path: /archives.html
+  about_path: /about.html
+  links_path: /links.html
+  tags_path : /tags.html
+  atom_path : /atom.xml
+  rss_path : /rss.xml
+  sitemap_path : /sitemap.xml
+  search_path : /search.html
+  guestbook_path : /guestbook.html
+
 

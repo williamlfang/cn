@@ -325,6 +325,7 @@ input#search {
 	width:720px;
 	margin: 0 auto;
 	height:70px;
+	display: block;
 }
 .loadmore {
 	-webkit-transition: all .3s;

@@ -1,4 +1,6 @@
-
+pre{
+	padding-bottom: 10px;
+}
 
 .post h2{font-size:20px; padding:12px;color:#222;line-height:1.2;border-left:6px solid;border-radius:2px;
 		-moz-border-radius:2px;-webkit-border-radius:2px;-o-border-radius:2px;

@@ -1,32 +1,16 @@
-permalink: /:title.html
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+url: http://williamlfang.github.com/cn
+author: William Fang
 pygments: true
-markdown: rdiscount
-paginate: 7
+auto: true
 safe: true
-future: false
-timezone: Asia/Shanghai
+paginate: 10
 
-title : Life Memory
-keywords: "生活,记忆,生活记忆,Life,Memory,Life Memory,不给力的面条,面条,人生就像那旅程,谁知道转弯后的风光"
-description : "人生就像那旅程,谁知道转弯后的风光"
-author :
-  name : ccbikai
-  email : ccbikai@qq.com
-  github : ccbikai
-  twitter : ccbikai
-url : http://miantiao.me
+web: williamlfang.github.com
+qq: 564985882
+email: william.lian.fang@gmail.com
+duoshuo: 夏石
+weibo: 夏石_will
+github: williamlfang
 
-JB :
-  version : 0.3.0
-  BASE_PATH : false
-  ASSET_PATH : false
-  archive_path: /archives.html
-  about_path: /about.html
-  links_path: /links.html
-  tags_path : /tags.html
-  atom_path : /atom.xml
-  rss_path : /rss.xml
-  sitemap_path : /sitemap.xml
-  search_path : /search.html
-  guestbook_path : /guestbook.html

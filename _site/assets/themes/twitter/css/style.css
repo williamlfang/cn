@@ -1,4 +1,12 @@
 /* Custom container */
+body {
+  padding-top: 40px;
+}
+
+p.post-date {
+  margin: 15px 0 0 0;
+}
+
 .container-narrow {
   margin: 0 auto;
   max-width: 700px; }
@@ -63,3 +71,77 @@
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+
+/* Twitter Bootstrap Overrides */
+.navbar .nav {
+  margin-right: 0;
+}
+.page-header {
+  padding-bottom: 0;
+}
+h1 {
+  font-size: 28px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+/* Homepage Styling */
+.recent-posts {
+  margin-left: 50px;
+  min-height: 150px;
+}
+.recent-posts h3 {
+  margin: -5px 0 0;
+}
+.network-icon {
+  color: #000;
+  opacity: 0.75;
+  margin: 0 15px;
+}
+.network-icon:hover {
+  color: #000;
+  opacity: 1;
+  text-decoration: none;
+}
+.network-twitter {
+  font-size: 90%;
+}
+
+/* Back to top */
+a#go-top {
+  width:50px;
+  height:50px;
+  text-decoration:none;
+  opacity:0.5;
+  background: url("/assets/images/back-top.png") no-repeat scroll 0 0 transparent;
+}
+a#go-top:hover {
+  background-position: -50px 0
+}
+
+.back-to {
+  bottom: 35px;
+  overflow: hidden;
+  position: fixed;
+  right: 10px;
+  width: 110px;
+  z-index: 999;
+}
+.back-to .back-top {
+  background: url("/assets/images/back-top.png") no-repeat scroll 0 0 transparent;
+  display: block;
+  float: right;
+  height: 50px;
+  margin-left: 10px;
+  outline: 0 none;
+  text-indent: -9999em;
+  width: 50px;
+}
+.back-to .back-top:hover {
+  background-position: -50px 0
+}

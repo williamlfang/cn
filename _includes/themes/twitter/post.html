@@ -1,16 +1,18 @@
 <div class="page-header">
+  <p class="muted pull-right post-date"><strong>{{ page.date | date: "%B %d, %Y" }}</strong></p>
   <h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
 </div>
 
 <div class="row-fluid post-full">
   <div class="span12">
-    <div class="date">
-      <span>{{ page.date | date_to_long_string }}</strong>
-    </div>
     <div class="content">
       {{ content }}
     </div>
 
+
+    <br>
+    <br>
+    <br>
   {% unless page.categories == empty %}
     <ul class="tag_box inline">
       <li><i class="icon-folder-open"></i></li>
@@ -27,23 +29,40 @@
     </ul>
   {% endunless %}  
 
-    <hr>
+
     <div class="pagination">
       <ul>
       {% if page.previous %}
-        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
+        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous: {{ page.previous.title }}</a></li>
       {% else %}
         <li class="prev disabled"><a>&larr; Previous</a></li>
       {% endif %}
         <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
       {% if page.next %}
-        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
+        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next: {{ page.next.title }} &rarr;</a></li>
       {% else %}
         <li class="next disabled"><a>Next &rarr;</a>
       {% endif %}
       </ul>
     </div>
-    <hr>
-    {% include JB/comments %}
+
+    <center><a href="#" onclick="goTop();return false;">TOP</a></center>
+
+    <br>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'zhipeng'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <center><a href="#" onclick="goTop();return false;">TOP</a></center>
   </div>
 </div>

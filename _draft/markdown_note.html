@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Markdown 语法学习笔记</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Markdown 语法学习笔记</h1>
+
+<p>Markdown 是一种轻量级的「标记语言」，与 <code>Markup</code>相对，目标在于实现文本输出的「易读易写」。与 「html」 或者 「LaTex」 不同，Markdown 尽量减少标记，使得编写代码和阅读代码都同样的「简单明了」，无需太复杂的符号注释。比如，我在写「LaTex」文档时，看到的几乎是一堆的代码，如<code>\documentclass{}</code>、<code>\begin{equation}</code>等让人初识不能很好的知晓。曾经有一段时间，我花大量的时间在琢磨如何使得「LaTex」的代码显得「好看好玩」一些，至今依然没能找到答案。这就需要一定的「tradeoff」，我们不可能既要有「LaTex」输出文档的优美精确，却在另一方面想要得到「易读易写」的所有好处。</p>
+
+<p>然后我就看到了 <strong>Markdown</strong>, 一种非常简单的文本编辑语言。这种简单，是你一看即懂，一读即爱。无需太多的标记、符号、代码、格式，我所作的只不过以最纯粹的语言直觉来书写，在某个地方我需要引用，立马就能出来效果，</p>
+
+<blockquote>
+<p>Markdown 语法的目标是：成为一种适用于网络的书写语言。</p>
+</blockquote>
+
+<p>别的地方做一个图片链接，也简单的出奇。这就使得我们的写作真正回到了本源上来：所谓文字者，大抵就是思想，无需附加过多的润饰，纯粹即是本源。</p>
+
+<h2>标题</h2>
+
+<p><strong>Markdown</strong> 对标题格式的处理非常的灵活：</p>
+
+<ul>
+<li>可以使用底线的形式，如 <code>=</code>（代表第一级标题），<code>-</code>（二级标题），「数量任选」都是可以的：</li>
+</ul>
+
+<p>{% highlight bash linenos=table %}</p>
+
+<h1>论人类不平的的起源</h1>
+
+<h2>18世纪开始</h2>
+
+<h2>19世纪之后</h2>
+
+<p>{% endhighlight%}</p>
+
+<p>当然，我们有更加灵活的表达，<code>#</code>，个数代表标题的层级：</p>
+
+<p>{% highlight bash linenos=table %}</p>
+
+<h1>第一级标题</h1>
+
+<h2>第二级标题</h2>
+
+<h5>第五级标题</h5>
+
+<p>{% endhighlight%}</p>
+
+<h2>引用</h2>
+
+<p>引用是我们在写文章时经常用到的，引用某人的一个观点，或者一句「无聊」的话以做茶余饭后的谈资，甚至是一个近期发生的热点事件的报道。因此，<strong>Markdown</strong> 提供了非常简单的用作处理「引用」的标记，如</p>
+
+<blockquote>
+<p>凯恩斯说过，从长期来看，我们都得死。</p>
+</blockquote>
+
+<p>当然，引用也是可以套嵌的。比如，</p>
+
+<blockquote>
+<p>凯恩斯说过，从长期来看，我们都得死。</p>
+
+<blockquote>
+<p>凯恩斯说过，从长期来看，我们都得死。</p>
+</blockquote>
+</blockquote>
+
+<h2>列表</h2>
+
+<p>列表在 「LaTex」 中需要提前说明列表环境，如 <code>enumerate</code>，然后再规定列表使用的识别符。这个在 <strong>Markdown</strong> 可以很直观的就以识别符来实现，比如</p>
+
+<p>{% highlight bash linenos=table %}</p>
+
+<ul>
+<li>这是一个列表条目</li>
+<li><p>第二个条目</p></li>
+<li><p>另外的格式</p></li>
+<li><p>另外再另外的格式</p></li>
+</ul>
+
+<ol>
+<li>带数字的列表</li>
+<li>可以实现层次
+{% endhighlight%}</li>
+</ol>
+
+</body>
+
+</html>
+

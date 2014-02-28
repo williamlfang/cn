@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="William Fang" />
+    <!--   <title>思维的乐趣 | William Fang</title>    -->
+    <title>思维的乐趣 | William Fang</title> 
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+    <link rel="shortcut icon" href="/favicon.ico">
+<!--=================================================================== 
+    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
+    <link href="/media/css/bootstrap.css" >
+    -->
+        <!-- atom & rss feed -->
+    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
+     <link rel="stylesheet" href="/media/css/style.css">
+    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
+<!--=================================================================== -->
+     <!--  主题格式在 bootstrap 设置
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    -->
+    <!--
+    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
+    -->   <!-- use the timeline -->
+    <!-- code hightlight -->
+    <!--
+    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     -->
+         <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
+     <script type="text/javascript" src="/media/js/application.js"></script>
+<!-- go to top -->
+    <script type="text/javascript" src="/media/js/go-top.js"></script>
+<!-- outlier -->
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+    <!-- KICKSTART  -->
+    <script src="/media/js/kickstart.js"></script>   
+ 
+ <link rel="stylesheet" href="/media/css/highlight.css">
+   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
+    <!-- KICKSTART -->
+
+<!-- <script type="text/javascript" src="/media/js/outliner.js"></script> -->
+<!--=================================================================== -->
+  <script type="text/javascript">
+    function setTimeSpan(){
+      var date = new Date();
+      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
+    }
+    
+    Date.prototype.format = function(format)
+    {
+    var o =
+      {
+          "M+" : this.getMonth()+1, //month
+          "d+" : this.getDate(),    //day
+          "h+" : this.getHours(),   //hour
+          "m+" : this.getMinutes(), //minute
+          "s+" : this.getSeconds(), //second
+          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+          "S" : this.getMilliseconds() //millisecond
+      }
+      if(/(y+)/.test(format))
+      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+      for(var k in o)
+      if(new RegExp("("+ k +")").test(format))
+      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+      return format;
+    }
+  </script>
+  <!--=================================================================== -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+
+        var limitsw = (sw - 840) / 2 - 150;
+        if (limitsw > 0){
+                limitsw = parseInt(limitsw);
+                bt.css("right",limitsw);
+        }
+
+        $(window).scroll(function() {
+                var st = $(window).scrollTop();
+                if(st > 30){
+                        bt.show();
+                }else{
+                        bt.hide();
+                }
+        });
+    })
+    </script>
+ 
+<!-- CDN upload request sent in private mail to generated-toc author -->
+
+ </head>
+
+  <body onLoad="setInterval(setTimeSpan,1000);">
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>思维的乐趣</h1>
+        </header>
+        <nav id="real_nav" style="position: fixed;font-size: 1em">
+        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
+        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
+        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
+        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
+        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
+        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
+        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
+	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
+      <!-- <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span> -->
+       <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
+        <!--  <span><a title="links" class="" href="http://williamlfang.github.com/cn/journey/">journey</a></span>  -->
+        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
+        </nav>
+        <article class="content">
+        <head>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
+<style TYPE="text/css"> /*以下为数学格式*/
+/* code.has-jax {font: inherit; font-size: 200%; background: inherit; border: inherit;}*/
+ body {font-family: "Georgia"; } /* Palatino */
+ h1, h2 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;} /*font-family: Century Gothic; color: #3C5084;*/
+ h3 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;} /*font-family: Century Gothic; color: #6076B4*/
+ h4 {font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;color: #6076B4;}
+/*code {font-family: Inconsolata;}*/
+ p {text-align:left;} */             /* TEXT ALIGHT: */
+.hidden {display: none;}
+.newpage {page-break-before:always;}
+/*pre {padding: 10px; margin-left: 100px; margin-right: 100px; background: #EEEEEE;}*/
+@media print {h2 {page-break-before:always;}}
+/* TODO: use Google Web Fonts to ensure Palatino, Century Gothic and Inconsolata are installed and used */
+</style>
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 100      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+<!--=================================================================== -->
+</head>
+
+<section class="post">
+<p>刚刚才把一个案例写好，不觉中已经19点多，才发现还没吃饭，或者用我的话说应该准确的讲是补充能量而已，似乎胰岛素今天想叛变似的，不听使唤，呵呵，如果有一天，身边的人都走了，至少还有这个跟随一辈子的莫名液体，在陪伴石头，走过夏至最灿烂的回归线。</p>
+
+<p>好像一下子就开始懂得很多很复杂的事情，比如自己爱着自己，即使有些人，也不会一直的在，身边，比如，看斯密的作品，用张五常的话说，很简单却很大气的那些东西，明明看着许是简单了些，可是多少自己究竟能够明白能够明了的呢。后来看倒一个调查，说其实有很多的经济学家并不是很透彻的理解斯密的思想，比如，在Wealth of Nations 里讲人的自私性，为了追求个人利益的最大化，或者说是那个著名的”看不见的手”，在自动的指挥人的行为，可是在THe Theories of Moral Sentiments，却强调了人的道德底蕴对社会的作用，甚至在论法的讲稿里，也有过类似的说法，然后很多人就很莫名其妙的说Smith的思想是否前后矛盾呢，其实不然，在这两个方面，都有各个不同的强调，在图书馆看斯密的原著，不经意间看到一本相关的论著，关于斯密的国富论在资本主义社会，挺有意思的。下午还跟一个大四的学姐说起斯密的Wealth of Nations ，出来的时候刚好碰见路边的毕业生在”卖书”，甚是惊讶，或许自己是不会这样做的，翻的时候看见斯密的著作孤单的躺在摊的角落，其实想买，不过忘带钱，无奈，有种伤感，人类几千万年的智慧，就这样被公然的拍卖，像上次的战略管理课，有同学上去演讲，后来的老师就在班里公然的要他们评分，我不是说这样的不好。只是觉得应该有个更好的机制，来实现经济的更高效益，至少人的智慧，是不能用来拍卖的！</p>
+
+<p>整个下午精神都很差，好吧，就让思考去忘记疼痛，终于把案例写完，有时觉得很不理解，大家只是为了应付老师的作业，就随便的下载些东西，怎么感觉哪么熟悉呢，大学生不应该是这样的，可是究竟大学生应该是什么样的呢，自己也没有更好的机制来解决。2007年的诺奖是关于社会机制设置的问题，在New-istitutional Economic里，说如果有一定的机制，或者是制度，就能取得更好的效益，资源会得到更好的配置，可是谁在设置这样的机制呢，其中的机会成本许是很高的。</p>
+
+<p>昨晚待到很晚，看张五常的讲稿。蛮有理的，很多的理论，只有得到了实际的验证，才能证明是有效的，在计量里，我们假设的置信水平，只能说在一定的范围里，不能证明它是错的，不能否定，可是并不是意味着结论就一定是正确 的，有人可能会拿数学里 的反证法做反例，殊不知，那是在一个确定的世界中，而我们的社会，充其量是一个随机化的过程。还有一点，竟然很佩服张五常，他在60年代就开始不看很多所谓的大师的著作（如果大师不随着货币在贬值的话）。而是专注于自己的研究，像谁呢，Nash吗，有点哦。可是那样话，前阶段的阅读该有多少呢。呵呵，惭愧啊。开始努力吧……</p>
+
+<p>如果你能明白我的世界</p>
+
+<blockquote>
+  <p>fighting</p>
+</blockquote>
+
+</section>
+<section class="meta">
+
+
+<br/>
+<br/>
+<span>
+	<a  href="http://williamlfang.github.com/cn/2008/05/28/confusing/" class="pageNav"  >Previous</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="http://williamlfang.github.com/cn/2008/07/17/lost-in-shunde/" class="pageNav"  >Next</a>
+</span>
+<hr> 
+<span class="author">
+  <a href="http://williamlfang.github.com">William Fang</a>
+</span>
+<span class="time">
+  /
+<time datetime="2008-05-31">2008-05-31</time> 
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#Time" title="Time">Time</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+</span>
+
+</section>
+
+
+
+<!-- <script>
+// https://github.com/ghiculescu/jekyll-table-of-contents
+$(document).ready(function() {
+  var no_back_to_top_links = false
+
+  var headers = $('h1, h2, h3, h4, h5, h6').filter(function() {return this.id}), // get all headers with an ID
+      output = $('.toc');
+  if (!headers.length || headers.length < 3 || !output.length)
+    return;
+
+  var get_level = function(ele) { return parseInt(ele.nodeName.replace("H", ""), 10) }
+  var highest_level = headers.map(function(_, ele) { return get_level(ele) }).get().sort()[0]
+  // var return_to_top = '<i class="icon-arrow-up back-to-top"> ^ </i>'
+  var return_to_top = ''
+
+  var level = get_level(headers[0]), this_level, html = "<i></i> <ol>";
+  headers.on('click', function() {
+    if (!no_back_to_top_links) window.location.hash = this.id
+  }).addClass('clickable-header').each(function(_, header) {
+    this_level = get_level(header);
+    if (!no_back_to_top_links && this_level === highest_level) {
+      $(header).addClass('top-level-header').after(return_to_top)
+    }
+    if (this_level === level) // same level as before; same indenting
+      html += "<li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level < level) // higher level than before; end parent ol
+      html += "</li></ol></li><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level > level) // lower level than before; expand the previous to contain a ol
+      html += "<ol><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    level = this_level; // update for the next one
+  });
+  html += "</ol>";
+  if (!no_back_to_top_links) {
+    $(document).on('click', '.back-to-top', function() {
+      $(window).scrollTop(0)
+      window.location.hash = ''
+    })
+  }
+  output.hide().html(html).show('slow');
+});
+</script>
+<div class="toc"></div>
+       <!-- Table of Content-->
+<div  style="position: fixed; top: 99px; width: 180px; text-align: left;  display:block;margin-left:750px;margin-top:10px;padding:4px 0 4px 10px;border-top:3px solid #91895b;border-left:3px solid #91895b;border-bottom:3px solid #91895b;padding:20x;font-size:14px;line-height: 15px;background-color:#ffffff;font-weight:normal">
+<p style="color:#91895b;font-size:16px;"><strong>思维的乐趣</strong></p>
+<script>
+// https://github.com/ghiculescu/jekyll-table-of-contents
+$(document).ready(function() {
+  var no_back_to_top_links = false
+
+  var headers = $('h1, h2, h3, h4, h5, h6').filter(function() {return this.id}), // get all headers with an ID
+      output = $('.toc');
+  if (!headers.length || headers.length < 3 || !output.length)
+    return;
+
+  var get_level = function(ele) { return parseInt(ele.nodeName.replace("H", ""), 10) }
+  var highest_level = headers.map(function(_, ele) { return get_level(ele) }).get().sort()[0]
+  // var return_to_top = '<i class="icon-arrow-up back-to-top"> ^ </i>'
+  var return_to_top = ''
+
+  var level = get_level(headers[0]), this_level, html = "<i></i> <ol>";
+  headers.on('click', function() {
+    if (!no_back_to_top_links) window.location.hash = this.id
+  }).addClass('clickable-header').each(function(_, header) {
+    this_level = get_level(header);
+    if (!no_back_to_top_links && this_level === highest_level) {
+      $(header).addClass('top-level-header').after(return_to_top)
+    }
+    if (this_level === level) // same level as before; same indenting
+      html += "<li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level < level) // higher level than before; end parent ol
+      html += "</li></ol></li><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level > level) // lower level than before; expand the previous to contain a ol
+      html += "<ol><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    level = this_level; // update for the next one
+  });
+  html += "</ol>";
+  if (!no_back_to_top_links) {
+    $(document).on('click', '.back-to-top', function() {
+      $(window).scrollTop(0)
+      window.location.hash = ''
+    })
+  }
+  output.hide().html(html).show('slow');
+});
+</script>
+<div class="toc"></div>
+ 
+</div>
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"William"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://williamlfang.github.com/cn/2008/05/28/confusing/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://williamlfang.github.com/cn/2008/07/17/lost-in-shunde/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+        </article>
+        <!--
+         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
+            <img src="/assets/images/btt.png" />
+          </a>      
+        -->  
+
+        <div style="display:none;" class="back-to" id="toolBackTop">
+          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
+        </div>
+
+        <!--
+            <div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
+                <a id="rocket" href="#top" title="返回顶部" class="show"><i></i></a>
+            <script type="text/javascript" src="/media/js/common.js" charset="UTF-8"></script>
+            </div>
+       -->
+
+      </div>
+
+<footer>
+  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-02-27 18:15:34</span></small></p>
+</footer>
+
+  </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33748333-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+</html>

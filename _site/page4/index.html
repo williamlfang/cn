@@ -1,647 +1,266 @@
+
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="William Fang" />
-    <!--   <title>夏石 | William Fang</title>    -->
-    <title>夏石 | William Fang</title> 
-  <!-- Update these with your own images
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-  -->
-    <link rel="shortcut icon" href="/favicon.ico">
-<!--=================================================================== 
-    <link href="/media/css/bootstrap.2.2.2.min.css" >         <!--  rel="stylesheet" -
-    <link href="/media/css/bootstrap.css" >
-    -->
-        <!-- atom & rss feed -->
-    <link href="/feed/" rel="alternate" title="William Fang" type="application/atom+xml" />
-     <link rel="stylesheet" href="/media/css/style.css">
-    <!-- <link rel="stylesheet" href="/media/css/highlight.css">
-<!--=================================================================== -->
-     <!--  主题格式在 bootstrap 设置
-    <link href="/media/css/bootstrap.css" rel="stylesheet">
-    
-    <link href="http://williamlfang.github.com/cn/media/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    -->
-    <!--
-    <link href="/media/css/bootstrap.2.2.2.min.css" rel="stylesheet"> 
-    -->   <!-- use the timeline -->
-    <!-- code hightlight -->
-    <!--
-    <link href="/media/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
-     -->
-         <script type="text/javascript" src="/media/google-code-prettify/prettify.js"></script>
-     <script type="text/javascript" src="/media/js/application.js"></script>
-<!-- go to top -->
-    <script type="text/javascript" src="/media/js/go-top.js"></script>
-<!-- outlier -->
-    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
-    <!-- KICKSTART  -->
-    <script src="/media/js/kickstart.js"></script>   
- 
- <link rel="stylesheet" href="/media/css/highlight.css">
-   <!--  <link rel="stylesheet" href="/media/css/kickstart/kickstart.css" media="all" />  
-    <!-- KICKSTART -->
+<!--
+-->
+<html lang="zh-CN"/>
+<head>
 
-<!-- <script type="text/javascript" src="/media/js/outliner.js"></script> -->
-<!--=================================================================== -->
-  <script type="text/javascript">
-    function setTimeSpan(){
-      var date = new Date();
-      timeSpan.innerText=date.format('yyyy-MM-dd hh:mm:ss');
-    }
-    
-    Date.prototype.format = function(format)
-    {
-    var o =
-      {
-          "M+" : this.getMonth()+1, //month
-          "d+" : this.getDate(),    //day
-          "h+" : this.getHours(),   //hour
-          "m+" : this.getMinutes(), //minute
-          "s+" : this.getSeconds(), //second
-          "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
-          "S" : this.getMilliseconds() //millisecond
-      }
-      if(/(y+)/.test(format))
-      format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
-      for(var k in o)
-      if(new RegExp("("+ k +")").test(format))
-      format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
-      return format;
-    }
-  </script>
-  <!--=================================================================== -->
-    <script type="text/javascript">
-    $(document).ready(function () {
-        var bt = $('#toolBackTop');
-        var sw = $(document.body)[0].clientWidth;
+	<meta charset="UTF-8"/>
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
 
-        var limitsw = (sw - 840) / 2 - 150;
-        if (limitsw > 0){
-                limitsw = parseInt(limitsw);
-                bt.css("right",limitsw);
+	<title> 方 莲 | William</title>
+
+	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="LifeMemory ATOM Feed" />
+	<link rel="canonical" href="http://williamlfang.github.com/cn" />
+	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
+
+	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
+	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
+	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
+	<script>hljs.initHighlightingOnLoad();</script>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 100      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
         }
+        /*   方程编号 */
+});
 
-        $(window).scroll(function() {
-                var st = $(window).scrollTop();
-                if(st > 30){
-                        bt.show();
-                }else{
-                        bt.hide();
-                }
-        });
-    })
-    </script>
- 
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
 <!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+
+<!--=================================================================== -->
+</head>
+
+
+<body>
+
+	<div id="main" class="w-100p font-gray-dark">
+		<div class="nav nav-large nav-orange">
+			<div class="menu cleared">
+			<a title="首页" class="nav-item" href="http://williamlfang.github.com/cn/">首页</a>
+				<div class="nav-has-menu">
+					<a class="nav-item" href="http://williamlfang.github.com/cn/archives.html">归档</a>
+						<div class="nav-menu">
+							
+							<a title="Time" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Time">Time</a>
+							
+							<a title="Love" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Love">Love</a>
+							
+							<a title="Campus" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Campus">Campus</a>
+							
+							<a title="Personal" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Personal">Personal</a>
+							
+							<a title="Life" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Life">Life</a>
+							
+							<a title="Tech" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Tech">Tech</a>
+							
+							<a title="Programming" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Programming">Programming</a>
+							
+							<a title="经济分析" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#经济分析">经济分析</a>
+							
+						</div>
+				</div>
+			<a title="邻居" class="nav-item" href="http://williamlfang.github.com/cn/links.html">链接</a>
+			<a title="关于" class="nav-item" href="http://williamlfang.github.com/cn/about.html">关于</a>
+			<a title="留言" class="nav-item" href="http://williamlfang.github.com/cn/guestbook.html">留言</a>
+				<div class="search right h-1">
+					<form method="get" id="searchform" action="http://williamlfang.github.com/cn/search.html">
+					<input type="text" name="q" id="search" size="13" value="" placeholder="你在找什么呢？" x-webkit-speech />
+					</form>
+				</div>
+			</div>
+		</div>
+
+	<div id="articles">
+		
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2007/05/19/always-there/">
+		<span class="year">2007</span>
+		<span class="day">19</span>
+		<span class="month">May</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2007/05/19/always-there/" title="一直在身边">一直在身边</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>一直想永远可以那么简单地做一个安静的孩子，在风清云淡的时候抬头仰望星空，偶尔瞥见忧伤地划破天空的流年串串连线，胜似彩虹，画面华美浓郁，幸运地在人声嘈杂看见火树银花的绚丽，看的心痛……</p>
+
+<p>在想要是有一天突然没有了文字我该怎么办?</p>
+
+<p>文字是最好的伴侣，即使有那么一天你一无所有了至少还有文字一直在身边，可以刻录小城大事里一段流浪的轨迹，还有那个明亮的夏至满脸樟橡树落墨的碎影…..</p>
+
+<p>随手抓一把忧伤涂鸦在幽暗的终年不见日光的角落然后就是一段若隐若见的往事，伤心的，兰色的，模糊的背景模糊的只剩下凌乱的轮廓的人物在翩翩独舞，我们站在画面外无奈地注视画面里的每个人的连上写满迷惘不知彼岸是何处天涯在身后，有不小心转身便已物是人非，老态龙钟了……</p>
+
+<p>然后开始大段大段地挥霍文字，用冰冷的字块拼凑迷失的褪色成模糊的碎片，一样的伤心的，散发薄荷香的夏至傍晚滑落指间，泪水般流淌，一样的模糊的人物模糊的情节还有倒影在墙角的啜泣……</p>
+
+<p>背景永远是火树银花的绚丽,若水微笑灿如樱花,挥汗奔跑在尘土飞扬的迷雾中,小马很失落地埋头翻阅离奇的漫画直是摇头叹气,还有阿Ａ轮换着左手定则右手定则地分析一个物体高速运动后是否遵守相对论,感叹说如果我们可以告诉奔跑是否就能回到过去,落落为什么总是双手捧书埋头苦读不理他事我以前还以为她冷淡后来却发现她那样做只是想麻痹自己好让分手再见不是永远,还有老洋似乎永远都长不大眼瞳永远落满迷雾看了让人心疼,还有……</p>
+
+<p>记忆的幻城若隐若现,有很多的人在离我远去,遥远的只剩下片片的记忆可寻,像散落谩空的星辰,遥远伸手难及.</p>
+
+<p>然后是很多的人,很多的陌生人与我擦肩而过,在空际的平行里相遇着相识,相识了道别,道别成永远的伤口,在风清云淡时隐隐做痛.</p>
+
+<p>也许有一天我会微笑的灿若樱花地面对一起走过的人,然后一起翻阅褪色的记忆,时间就是这样一天又三年的流逝,一晃便告别了飞舞张扬的年代了,好象还是那么临近,却已经物是人非,散落天涯了…</p>
+
+		<a href="http://williamlfang.github.com/cn/2007/05/19/always-there/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2007/05/18/lonely-words/">
+		<span class="year">2007</span>
+		<span class="day">18</span>
+		<span class="month">May</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2007/05/18/lonely-words/" title="流浪的文字">流浪的文字</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>我们就像海浪之与海鸥相遇似的，遇见了，走近了，海鸥飞走，波浪滚滚远退，我们也分别了……</p>
+
+		<a href="http://williamlfang.github.com/cn/2007/05/18/lonely-words/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
 
- </head>
-
-  <body onLoad="setInterval(setTimeSpan,1000);">
-    <div id="container">
-      <div id="main" role="main">
-        <header>
-        <h1>夏石</h1>
-        </header>
-        <nav id="real_nav" style="position: fixed;font-size: 1em">
-        <span><a title="home page" class="" href="http://williamlfang.github.com/cn/">home</a></span>
-        <span><a title="about" class="" href="http://williamlfang.github.com/cn/about/">about</a></span>
-        <span><a title="publication" class="" href="http://williamlfang.github.com/cn/publication/">publication</a></span>
-        <span><a title="guestbook" class="" href="http://williamlfang.github.com/cn/guestbook/">guestbook</a></span>
-        <span><a title="vitae" class="" href="http://williamlfang.github.com/cn/vitae/">vitae</a></span>
-        <span><a title="categories" class="" href="http://williamlfang.github.com/cn/categories/">categories</a></span>
-        <span><a title="tags" class="" href="http://williamlfang.github.com/cn/tags/">tags</a></span>
-	<span><a title="contact" class="" href="http://williamlfang.github.com/cn/contact/">contact</a></span>
-      <!-- <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span> -->
-       <span><a title="links" class="" href="http://williamlfang.github.com/cn/links/">links</a></span>
-        <!--  <span><a title="links" class="" href="http://williamlfang.github.com/cn/journey/">journey</a></span>  -->
-        <span><a title="subscribe by RSS" class="" href="http://williamlfang.github.com/cn/feed/">subscribe</a></span>
-        </nav>
-        <article class="content">
-        <section class="post">
-<ul class="listing">
-
-  
-  
-    
-    <li class="listing-seperator">2009</li>
-  
-  <li class="listing-item">
-    <time datetime="2009-03-14">2009-03-14</time>
-    <a href="http://williamlfang.github.com/cn/2009/03/14/my-love-for-you/" title="我爱主同时亦爱一位世人">我爱主同时亦爱一位世人</a>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2009-02-20">2009-02-20</time>
-    <a href="http://williamlfang.github.com/cn/2009/02/20/till-the-end/" title="Till the end">Till the end</a>
-
-  
-  
-    
-    <li class="listing-seperator">2008</li>
-  
-  <li class="listing-item">
-    <time datetime="2008-11-11">2008-11-11</time>
-    <a href="http://williamlfang.github.com/cn/2008/11/11/where-to-go/" title="在哪里">在哪里</a>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-08-14">2008-08-14</time>
-    <a href="http://williamlfang.github.com/cn/2008/08/14/year-arournd/" title="春夏秋冬">春夏秋冬</a>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-07-17">2008-07-17</time>
-    <a href="http://williamlfang.github.com/cn/2008/07/17/lost-in-shunde/" title="在顺德">在顺德</a>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-05-31">2008-05-31</time>
-    <a href="http://williamlfang.github.com/cn/2008/05/31/thinking/" title="思维的乐趣">思维的乐趣</a>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-05-28">2008-05-28</time>
-    <a href="http://williamlfang.github.com/cn/2008/05/28/confusing/" title="迷乱">迷乱</a>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-05-21">2008-05-21</time>
-    <a href="http://williamlfang.github.com/cn/2008/05/21/waiting-for-you/" title="寻找猪头的夏天">寻找猪头的夏天</a>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-03-24">2008-03-24</time>
-    <a href="http://williamlfang.github.com/cn/2008/03/24/lonely-dancing/" title="独自乱舞">独自乱舞</a>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-03-13">2008-03-13</time>
-    <a href="http://williamlfang.github.com/cn/2008/03/13/together/" title="一起的日子">一起的日子</a>
-
-</ul>
-
-<!-- #####################################################################
-<ul class="listing">
-
-  
-  
-    
-    <li class="listing-seperator">2014</li>
-  
-  <li class="listing-item">
-    <time datetime="2014-02-12">2014-02-12</time>
-    <a href="http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/" title="诸多事情">诸多事情</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2014-02-12">2014-02-12</time>
-    <a href="http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/" title="美联储的「博士系」">美联储的「博士系」</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2014-01-26">2014-01-26</time>
-    <a href="http://williamlfang.github.com/cn/2014/01/26/data-structure/" title="Data Structure">Data Structure</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2014-01-24">2014-01-24</time>
-    <a href="http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/" title="使用 Jekyll + knitr 发布博客">使用 Jekyll + knitr 发布博客</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2014-01-20">2014-01-20</time>
-    <a href="http://williamlfang.github.com/cn/2014/01/20/r-note/" title="Advanced R Programming">Advanced R Programming</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2014-01-18">2014-01-18</time>
-    <a href="http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/" title="WineQQ2013 可以使用">WineQQ2013 可以使用</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2014-01-18">2014-01-18</time>
-    <a href="http://williamlfang.github.com/cn/2014/01/18/img/" title="Images">Images</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2014-01-16">2014-01-16</time>
-    <a href="http://williamlfang.github.com/cn/2014/01/16/pandoc/" title="Linux Mint 安装 Pandoc">Linux Mint 安装 Pandoc</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2014-01-08">2014-01-08</time>
-    <a href="http://williamlfang.github.com/cn/2014/01/08/chinese-input/" title="Linux 中文输入法（fcitx）安装与设置">Linux 中文输入法（fcitx）安装与设置</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2014-01-05">2014-01-05</time>
-    <a href="http://williamlfang.github.com/cn/2014/01/05/goagent/" title="新系统的第一个软件">新系统的第一个软件</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2014-01-04">2014-01-04</time>
-    <a href="http://williamlfang.github.com/cn/2014/01/04/virtualbox/" title="在 Virutalbox 环境下安装虚拟机">在 Virutalbox 环境下安装虚拟机</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2014-01-03">2014-01-03</time>
-    <a href="http://williamlfang.github.com/cn/2014/01/03/github-jekyll/" title="Github 的一些设置技巧">Github 的一些设置技巧</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2014-01-02">2014-01-02</time>
-    <a href="http://williamlfang.github.com/cn/2014/01/02/window-linux/" title="本本的转型">本本的转型</a>
-  </li>
-
-  
-  
-    
-    <li class="listing-seperator">2013</li>
-  
-  <li class="listing-item">
-    <time datetime="2013-12-31">2013-12-31</time>
-    <a href="http://williamlfang.github.com/cn/2013/12/31/final-day/" title="2013年的最后一天">2013年的最后一天</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2013-07-27">2013-07-27</time>
-    <a href="http://williamlfang.github.com/cn/2013/07/27/old-times/" title="往事如烟灭">往事如烟灭</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2013-07-17">2013-07-17</time>
-    <a href="http://williamlfang.github.com/cn/2013/07/17/sicked/" title="生病了">生病了</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2013-07-14">2013-07-14</time>
-    <a href="http://williamlfang.github.com/cn/2013/07/14/to-be-a-man/" title="曾厝垵后厝85号的大男孩">曾厝垵后厝85号的大男孩</a>
-  </li>
-
-  
-  
-    
-    <li class="listing-seperator">2012</li>
-  
-  <li class="listing-item">
-    <time datetime="2012-07-02">2012-07-02</time>
-    <a href="http://williamlfang.github.com/cn/2012/07/02/loving/" title="我们都是一群被文字宠坏的小孩">我们都是一群被文字宠坏的小孩</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2012-05-14">2012-05-14</time>
-    <a href="http://williamlfang.github.com/cn/2012/05/14/ni-guang/" title="逆光">逆光</a>
-  </li>
-
-  
-  
-    
-    <li class="listing-seperator">2011</li>
-  
-  <li class="listing-item">
-    <time datetime="2011-01-15">2011-01-15</time>
-    <a href="http://williamlfang.github.com/cn/2011/01/15/one-semeter-ends/" title="一个学期结束了">一个学期结束了</a>
-  </li>
-
-  
-  
-    
-    <li class="listing-seperator">2010</li>
-  
-  <li class="listing-item">
-    <time datetime="2010-08-21">2010-08-21</time>
-    <a href="http://williamlfang.github.com/cn/2010/08/21/summer-gone/" title="盛夏的那些事">盛夏的那些事</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2010-06-25">2010-06-25</time>
-    <a href="http://williamlfang.github.com/cn/2010/06/25/nothing-meaningful/" title="存在的空虚">存在的空虚</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2010-05-26">2010-05-26</time>
-    <a href="http://williamlfang.github.com/cn/2010/05/26/graduation/" title="毕业啦">毕业啦</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2010-05-21">2010-05-21</time>
-    <a href="http://williamlfang.github.com/cn/2010/05/21/missing/" title="我怀念的">我怀念的</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2010-01-30">2010-01-30</time>
-    <a href="http://williamlfang.github.com/cn/2010/01/30/how-far/" title="永远有多远">永远有多远</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2010-01-17">2010-01-17</time>
-    <a href="http://williamlfang.github.com/cn/2010/01/17/only-me/" title="知我者">知我者</a>
-  </li>
-
-  
-  
-    
-    <li class="listing-seperator">2009</li>
-  
-  <li class="listing-item">
-    <time datetime="2009-11-20">2009-11-20</time>
-    <a href="http://williamlfang.github.com/cn/2009/11/20/angel/" title="Angel">Angel</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2009-11-11">2009-11-11</time>
-    <a href="http://williamlfang.github.com/cn/2009/11/11/lonely-love/" title="作品">作品</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2009-11-04">2009-11-04</time>
-    <a href="http://williamlfang.github.com/cn/2009/11/04/the-girl/" title="那女孩對我說">那女孩對我說</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2009-09-15">2009-09-15</time>
-    <a href="http://williamlfang.github.com/cn/2009/09/15/liu-nian/" title="流年">流年</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2009-03-14">2009-03-14</time>
-    <a href="http://williamlfang.github.com/cn/2009/03/14/my-love-for-you/" title="我爱主同时亦爱一位世人">我爱主同时亦爱一位世人</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2009-02-20">2009-02-20</time>
-    <a href="http://williamlfang.github.com/cn/2009/02/20/till-the-end/" title="Till the end">Till the end</a>
-  </li>
-
-  
-  
-    
-    <li class="listing-seperator">2008</li>
-  
-  <li class="listing-item">
-    <time datetime="2008-11-11">2008-11-11</time>
-    <a href="http://williamlfang.github.com/cn/2008/11/11/where-to-go/" title="在哪里">在哪里</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-08-14">2008-08-14</time>
-    <a href="http://williamlfang.github.com/cn/2008/08/14/year-arournd/" title="春夏秋冬">春夏秋冬</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-07-17">2008-07-17</time>
-    <a href="http://williamlfang.github.com/cn/2008/07/17/lost-in-shunde/" title="在顺德">在顺德</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-05-31">2008-05-31</time>
-    <a href="http://williamlfang.github.com/cn/2008/05/31/thinking/" title="思维的乐趣">思维的乐趣</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-05-28">2008-05-28</time>
-    <a href="http://williamlfang.github.com/cn/2008/05/28/confusing/" title="迷乱">迷乱</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-05-21">2008-05-21</time>
-    <a href="http://williamlfang.github.com/cn/2008/05/21/waiting-for-you/" title="寻找猪头的夏天">寻找猪头的夏天</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-03-24">2008-03-24</time>
-    <a href="http://williamlfang.github.com/cn/2008/03/24/lonely-dancing/" title="独自乱舞">独自乱舞</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2008-03-13">2008-03-13</time>
-    <a href="http://williamlfang.github.com/cn/2008/03/13/together/" title="一起的日子">一起的日子</a>
-  </li>
-
-  
-  
-    
-    <li class="listing-seperator">2007</li>
-  
-  <li class="listing-item">
-    <time datetime="2007-12-10">2007-12-10</time>
-    <a href="http://williamlfang.github.com/cn/2007/12/10/living/" title="继续生活">继续生活</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2007-11-14">2007-11-14</time>
-    <a href="http://williamlfang.github.com/cn/2007/11/14/strong/" title="最坚强">最坚强</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2007-07-24">2007-07-24</time>
-    <a href="http://williamlfang.github.com/cn/2007/07/24/first-year-at-uni/" title="大学一年祭">大学一年祭</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2007-05-25">2007-05-25</time>
-    <a href="http://williamlfang.github.com/cn/2007/05/25/healthy/" title="我希望好好的">我希望好好的</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2007-05-19">2007-05-19</time>
-    <a href="http://williamlfang.github.com/cn/2007/05/19/losing-my-dear-time/" title="流年逝">流年逝</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2007-05-19">2007-05-19</time>
-    <a href="http://williamlfang.github.com/cn/2007/05/19/always-there/" title="一直在身边">一直在身边</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2007-05-18">2007-05-18</time>
-    <a href="http://williamlfang.github.com/cn/2007/05/18/lonely-words/" title="流浪的文字">流浪的文字</a>
-  </li>
-
-  
-  
-  <li class="listing-item">
-    <time datetime="2007-05-15">2007-05-15</time>
-    <a href="http://williamlfang.github.com/cn/2007/05/15/time-flying/" title="一天又三年">一天又三年</a>
-  </li>
-
-</ul>
-    ######################################################################## -->
-
-
-<p style="line-height: 20%"> <br> </p>
-
-<!--   ==================================================================   -->
-<div id="post-pagination" class="paginator">
-
-  
-    
-    <a href="http://williamlfang.github.com/cn/page3"><<前页</a>
-    
-  
-
-      
-      <a href="http://williamlfang.github.com/cn/">1</a>
-      
-
-    
-      
-      <a href="http://williamlfang.github.com/cn/page2">2</a>
-      
-    
-      
-      <a href="http://williamlfang.github.com/cn/page3">3</a>
-      
-    
-      
-      <span class="current-page">4</span>
-      
-    
-      
-      <a href="http://williamlfang.github.com/cn/page5">5</a>
-      
-    
-
-  
-    <a class="next" href="http://williamlfang.github.com/cn/page5">后页>></a>
-  
-  (共48篇)
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2007/05/15/time-flying/">
+		<span class="year">2007</span>
+		<span class="day">15</span>
+		<span class="month">May</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2007/05/15/time-flying/" title="一天又三年">一天又三年</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>一天又三年地,我们从初中的懵懂跌跌撞撞地踏上高中的台阶,然后,又是一个的黑色三年,我们泪流满面地挥手告别专属青春的天空,就这样的,人生边从一个熟悉的舞台转移到另一个陌生的而即将熟悉的舞台,而这个周期似乎显得很短暂,一晃便是三个的春夏秋东.</p>
+
+<p>偶尔若水给我发邮件,里面只有一句简单的话:夏石,很多的时候我分明能感受到时光流水亲吻脸颊,滑落肌肤,然后碎地成片,片片烙印凌乱的记忆.</p>
+
+<p>记忆的画面在风起的夜晚开始褪色,苍白的只剩余下模糊的轮廓,在街头我们一起凝望天空,望见过往的那些风清云淡划破天空的脸,然后在巷尾我们开始无声啜泣,一起拖着被夕阳拉长的身影跌跌撞撞地迷失在伤城中.</p>
+
+<p>生活在记忆中的人似乎永远可以那么单纯而简单,永远可以天真无邪地一任何角度去仰望忧郁的天空,看得忧伤,看到心痛.</p>
+
+<p>背景永远是火树银花的绚丽,若水微笑灿如樱花,挥汗奔跑在尘土飞扬的迷雾中,小马很失落地埋头翻阅离奇的漫画直是摇头叹气,还有阿Ａ轮换着左手定则右手定则地分析一个物体高速运动后是否遵守相对论,感叹说如果我们可以告诉奔跑是否就能回到过去,落落为什么总是双手捧书埋头苦读不理他事我以前还以为她冷淡后来却发现她那样做只是想麻痹自己好让分手再见不是永远,还有老洋似乎永远都长不大眼瞳永远落满迷雾看了让人心疼,还有……</p>
+
+<p>记忆的幻城若隐若现,有很多的人在离我远去,遥远的只剩下片片的记忆可寻,像散落谩空的星辰,遥远伸手难及.</p>
+
+<p>然后是很多的人,很多的陌生人与我擦肩而过,在空际的平行里相遇着相识,相识了道别,道别成永远的伤口,在风清云淡时隐隐做痛.</p>
+
+<p>也许有一天我会微笑的灿若樱花地面对一起走过的人,然后一起翻阅褪色的记忆,时间就是这样一天又三年的流逝,一晃便告别了飞舞张扬的年代了,好象还是那么临近,却已经物是人非,散落天涯了.</p>
+
+		<a href="http://williamlfang.github.com/cn/2007/05/15/time-flying/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
 </div>
 
 
-</section>
 
 
+		
+		<div class="friends">
+			<div class="friends_info"><a id="friends" href="#" rel="nofollow"><span>我的小伙伴</span></a></div>
+			<div id="friends_list" class="friends_list">
+			<ul class="no-list">
+				<li><a href="http://www.inbiji.com/" title="好记性不如烂笔记" >in笔记</a></li>
+			</ul>
+			</div>
+			<a href="#" id="gc_close" rel="nofollow">X</a>
+		</div>
+		
+		
+		</div>
+		
+			<div id="more" class="align-center mt-2">
+				<a href="http://williamlfang.github.com/cn/page/" class="loadmore button button-orange w-30p" >查  看  更  多</a>
+			</div>
+		
+	</div>
 
-        </article>
-        <!--
-         <a style="position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top">
-            <img src="/assets/images/btt.png" />
-          </a>      
-        -->  
-
-        <div style="display:none;" class="back-to" id="toolBackTop">
-          <a title="返回顶部" onclick="window.scrollTo(0,0);return false;" href="#top" class="back-top">返回顶部</a>
-        </div>
-
-        <!--
-            <div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
-                <a id="rocket" href="#top" title="返回顶部" class="show"><i></i></a>
-            <script type="text/javascript" src="/media/js/common.js" charset="UTF-8"></script>
-            </div>
-       -->
-
-      </div>
-
-<footer>
-  <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> on <a href="http://pages.github.com">GitHub</a> | Copyright 2013 - 2014 by <a href="http://williamlfang.github.com">William Fang</a> | <span class="label label-info">2014-02-27 18:15:34</span></small></p>
-</footer>
-
-  </div>
-
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-33748333-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-
-  </body>
+	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
+		<div id="about" class="align-center">&copy; 2013-2014 Powered By Jekyll, Designed By <a href="http://williamlfang.github.io/">William Fang</a>.
+		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
+		<div class="radar"></div>
+		</div>
+	</div>
+<link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hibikai"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<script src="http://cdn.staticfile.org/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://cdn.staticfile.org/jqueryui/1.10.2/css/smoothness/jquery-ui-1.10.2.custom.min.css" type="text/css" media="all" />
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+</body>
 </html>
+

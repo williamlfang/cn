@@ -13,9 +13,11 @@ status: publish
 ---
  
 下午在浏览『华尔街见闻』的时候正好看到了这样一篇有意思的文章，大致介绍了美联储是如何从一个由实干家（如银行家与金融巨头）组成的俱乐部升级成由一帮[经济学博士引领的「学院派」](http://wallstreetcn.com/node/75851)。文章写的条理比较清楚的了，从成员的学位背景出发梳理了美联储的发展历程。诸位如果感兴趣可以前去看看。我这里主要是提供一个个人的随想而已。
- 
+
+<!-- more -->
+
 首先来一个「全家福」吧。
-![the fed](/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg)
+[![the fed](/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg)](/cn/assets/images/r-figures/2014-02-12-mei-lian-chu-de-bo-shi-xi/fed.jpg)
  
 文章谈到了对美联储决策有重要影响的几位「高官」的学历背景。目前新晋美联储主席的耶伦（Yellen）拥有 Yale 经济学博士学历，其在学术界有颇有建树。而那些身处高职的几位委员会成员（**FOMC**）均配有经济学博士学位，如 Stanley Fischer 就是前 **IMF** 的首席经济学家 [^1] 。而如果从历史的纵向来看，这个趋势就更加明显了：沃尔克当时还只是经济学硕士，到了格林斯潘后来获得博士学位，而前任伯南克就已经是一名正式的大学（宏观）经济学教授了。Blinder 是原 **FOMC** 委员，他对 **Fed** 的历史颇有研究，宣称：
  

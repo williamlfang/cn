@@ -2,243 +2,733 @@
 <articles>
     
     <article>
-        <title>诸多事情</title>
-        <url>http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/</url>
+        <title>入手NEXUS7 二代</title>
+        <url>http://williamlfang.github.com/cn/2014/02/23/nexus-7-two/</url>
     </article>
     
     <article>
-        <title>美联储的「博士系」</title>
-        <url>http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/</url>
+        <title>祝大家新年快乐</title>
+        <url>http://williamlfang.github.com/cn/2014/01/31/happy-chinese-year-2014/</url>
     </article>
     
     <article>
-        <title>Data Structure</title>
-        <url>http://williamlfang.github.com/cn/2014/01/26/data-structure/</url>
+        <title>宅</title>
+        <url>http://williamlfang.github.com/cn/2014/01/28/homebody/</url>
     </article>
     
     <article>
-        <title>使用 Jekyll + knitr 发布博客</title>
-        <url>http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/</url>
+        <title>七牛云存储使用感受</title>
+        <url>http://williamlfang.github.com/cn/2014/01/18/qiniu-feel/</url>
     </article>
     
     <article>
-        <title>Advanced R Programming</title>
-        <url>http://williamlfang.github.com/cn/2014/01/20/r-note/</url>
+        <title>一年又一年</title>
+        <url>http://williamlfang.github.com/cn/2014/01/01/year-a-year/</url>
     </article>
     
     <article>
-        <title>WineQQ2013 可以使用</title>
-        <url>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/</url>
+        <title>WordPress轻博客主题《风轻云淡》</title>
+        <url>http://williamlfang.github.com/cn/2013/12/20/a-wordpress-theme-fqyd/</url>
     </article>
     
     <article>
-        <title>Images</title>
-        <url>http://williamlfang.github.com/cn/2014/01/18/img/</url>
+        <title>天天像过年？</title>
+        <url>http://williamlfang.github.com/cn/2013/12/16/everyday-is-festival/</url>
     </article>
     
     <article>
-        <title>Linux Mint 安装 Pandoc</title>
-        <url>http://williamlfang.github.com/cn/2014/01/16/pandoc/</url>
+        <title>正方教务系统一键教学评价脚本</title>
+        <url>http://williamlfang.github.com/cn/2013/12/02/zhengfang-yijian/</url>
     </article>
     
     <article>
-        <title>Linux 中文输入法（fcitx）安装与设置</title>
-        <url>http://williamlfang.github.com/cn/2014/01/08/chinese-input/</url>
+        <title>修改了一个微博RSS生成工具</title>
+        <url>http://williamlfang.github.com/cn/2013/11/22/weibo-rss/</url>
     </article>
     
     <article>
-        <title>新系统的第一个软件</title>
-        <url>http://williamlfang.github.com/cn/2014/01/05/goagent/</url>
+        <title>nginx泛域名301重定向规则</title>
+        <url>http://williamlfang.github.com/cn/2013/11/13/the-nginx-pan-domain-301-redirect-rules/</url>
     </article>
     
     <article>
-        <title>在 Virutalbox 环境下安装虚拟机</title>
-        <url>http://williamlfang.github.com/cn/2014/01/04/virtualbox/</url>
+        <title>一次PPTV笔试</title>
+        <url>http://williamlfang.github.com/cn/2013/11/03/a-written-test/</url>
     </article>
     
     <article>
-        <title>Github 的一些设置技巧</title>
-        <url>http://williamlfang.github.com/cn/2014/01/03/github-jekyll/</url>
+        <title>听一首老歌</title>
+        <url>http://williamlfang.github.com/cn/2013/10/05/listen-a-old-song/</url>
     </article>
     
     <article>
-        <title>本本的转型</title>
-        <url>http://williamlfang.github.com/cn/2014/01/02/window-linux/</url>
+        <title>开始学习python</title>
+        <url>http://williamlfang.github.com/cn/2013/09/30/study-python/</url>
     </article>
     
     <article>
-        <title>2013年的最后一天</title>
-        <url>http://williamlfang.github.com/cn/2013/12/31/final-day/</url>
+        <title>大三</title>
+        <url>http://williamlfang.github.com/cn/2013/09/16/junior/</url>
     </article>
     
     <article>
-        <title>往事如烟灭</title>
-        <url>http://williamlfang.github.com/cn/2013/07/27/old-times/</url>
+        <title>越来越无聊的暑假</title>
+        <url>http://williamlfang.github.com/cn/2013/08/20/boring-summer-vacation/</url>
     </article>
     
     <article>
-        <title>生病了</title>
-        <url>http://williamlfang.github.com/cn/2013/07/17/sicked/</url>
+        <title>申请godaddy域名退款到支付宝</title>
+        <url>http://williamlfang.github.com/cn/2013/07/28/apply-money-from-godaddy-to-alipay/</url>
     </article>
     
     <article>
-        <title>曾厝垵后厝85号的大男孩</title>
-        <url>http://williamlfang.github.com/cn/2013/07/14/to-be-a-man/</url>
+        <title>openwrt折腾记（二）</title>
+        <url>http://williamlfang.github.com/cn/2013/07/19/play-openwrt-2/</url>
     </article>
     
     <article>
-        <title>我们都是一群被文字宠坏的小孩</title>
-        <url>http://williamlfang.github.com/cn/2012/07/02/loving/</url>
+        <title>拖延症</title>
+        <url>http://williamlfang.github.com/cn/2013/07/18/procrastination/</url>
     </article>
     
     <article>
-        <title>逆光</title>
-        <url>http://williamlfang.github.com/cn/2012/05/14/ni-guang/</url>
+        <title>openwrt折腾记(一)</title>
+        <url>http://williamlfang.github.com/cn/2013/06/25/play-openwrt-1/</url>
     </article>
     
     <article>
-        <title>一个学期结束了</title>
-        <url>http://williamlfang.github.com/cn/2011/01/15/one-semeter-ends/</url>
+        <title>来听听清朝国歌</title>
+        <url>http://williamlfang.github.com/cn/2013/06/14/qing-chao-guoge/</url>
     </article>
     
     <article>
-        <title>盛夏的那些事</title>
-        <url>http://williamlfang.github.com/cn/2010/08/21/summer-gone/</url>
+        <title>Ios 7 呵呵</title>
+        <url>http://williamlfang.github.com/cn/2013/06/13/ios7-hehe/</url>
     </article>
     
     <article>
-        <title>存在的空虚</title>
-        <url>http://williamlfang.github.com/cn/2010/06/25/nothing-meaningful/</url>
+        <title>博客换到了jekyll，托管在gitcafe</title>
+        <url>http://williamlfang.github.com/cn/2013/06/07/use-jekyll/</url>
     </article>
     
     <article>
-        <title>毕业啦</title>
-        <url>http://williamlfang.github.com/cn/2010/05/26/graduation/</url>
+        <title>南京申请亚青期间开放Facebook等社交媒体</title>
+        <url>http://williamlfang.github.com/cn/2013/06/04/nanjing-asian-youth-for-facebook-and-other-social-media-during-the-opening/</url>
     </article>
     
     <article>
-        <title>我怀念的</title>
-        <url>http://williamlfang.github.com/cn/2010/05/21/missing/</url>
+        <title>开始使用 linux 系统</title>
+        <url>http://williamlfang.github.com/cn/2013/06/01/started-using-linux-system/</url>
     </article>
     
     <article>
-        <title>永远有多远</title>
-        <url>http://williamlfang.github.com/cn/2010/01/30/how-far/</url>
+        <title>新的Rss地址，麻烦订阅的朋友换一下</title>
+        <url>http://williamlfang.github.com/cn/2013/05/28/rss-new-address-change-my-trouble-subscriptions-friend/</url>
     </article>
     
     <article>
-        <title>知我者</title>
-        <url>http://williamlfang.github.com/cn/2010/01/17/only-me/</url>
+        <title>boo.by美胸打分网站</title>
+        <url>http://williamlfang.github.com/cn/2013/05/17/booby/</url>
     </article>
     
     <article>
-        <title>Angel</title>
-        <url>http://williamlfang.github.com/cn/2009/11/20/angel/</url>
+        <title>爲上網貢獻一丁點力量</title>
+        <url>http://williamlfang.github.com/cn/2013/05/15/freedom-of-the-network/</url>
     </article>
     
     <article>
-        <title>作品</title>
-        <url>http://williamlfang.github.com/cn/2009/11/11/lonely-love/</url>
+        <title>一款简洁的Markdown编辑器</title>
+        <url>http://williamlfang.github.com/cn/2013/05/05/markdown-editor/</url>
     </article>
     
     <article>
-        <title>那女孩對我說</title>
-        <url>http://williamlfang.github.com/cn/2009/11/04/the-girl/</url>
+        <title>羽泉上海15周年【在一起】演唱会前半场视频</title>
+        <url>http://williamlfang.github.com/cn/2013/05/05/yu-quan-shanghai-15-anniversary-of-the-the-concert-first-half-of-the-game-video/</url>
     </article>
     
     <article>
-        <title>流年</title>
-        <url>http://williamlfang.github.com/cn/2009/09/15/liu-nian/</url>
+        <title>伪造新浪微博尾巴，拿来装逼</title>
+        <url>http://williamlfang.github.com/cn/2013/05/04/forged-the-sina-microblogging-tail-brought-loaded-to-force/</url>
     </article>
     
     <article>
-        <title>我爱主同时亦爱一位世人</title>
-        <url>http://williamlfang.github.com/cn/2009/03/14/my-love-for-you/</url>
+        <title>互联网上无隐私</title>
+        <url>http://williamlfang.github.com/cn/2013/04/28/no-privacy-on-the-internet/</url>
     </article>
     
     <article>
-        <title>Till the end</title>
-        <url>http://williamlfang.github.com/cn/2009/02/20/till-the-end/</url>
+        <title>五一一天假</title>
+        <url>http://williamlfang.github.com/cn/2013/04/27/51-day-off/</url>
     </article>
     
     <article>
-        <title>在哪里</title>
-        <url>http://williamlfang.github.com/cn/2008/11/11/where-to-go/</url>
+        <title>Metro界面下的分屏功能不错</title>
+        <url>http://williamlfang.github.com/cn/2013/04/24/good-split-screen-function-under-the-metro-interface/</url>
     </article>
     
     <article>
-        <title>春夏秋冬</title>
-        <url>http://williamlfang.github.com/cn/2008/08/14/year-arournd/</url>
+        <title>《烟花易冷》</title>
+        <url>http://williamlfang.github.com/cn/2013/02/27/fireworks-cool-easily/</url>
     </article>
     
     <article>
-        <title>在顺德</title>
-        <url>http://williamlfang.github.com/cn/2008/07/17/lost-in-shunde/</url>
+        <title>实拍南邮图书馆疯狂揪心一幕幕——开馆高潮</title>
+        <url>http://williamlfang.github.com/cn/2013/01/08/the-real-shot-nupt-library-madness-gripping-scenes-the-opening-climax/</url>
     </article>
     
     <article>
-        <title>思维的乐趣</title>
-        <url>http://williamlfang.github.com/cn/2008/05/31/thinking/</url>
+        <title>win7忘记分离vhd虚拟硬盘,无法开机</title>
+        <url>http://williamlfang.github.com/cn/2012/12/29/win7-forget-separation-vhd-virtual-hard-disk-can-not-boot/</url>
     </article>
     
     <article>
-        <title>迷乱</title>
-        <url>http://williamlfang.github.com/cn/2008/05/28/confusing/</url>
+        <title>这篇文章是用word写的</title>
+        <url>http://williamlfang.github.com/cn/2012/12/25/this-article-is-write-the-word/</url>
     </article>
     
     <article>
-        <title>寻找猪头的夏天</title>
-        <url>http://williamlfang.github.com/cn/2008/05/21/waiting-for-you/</url>
+        <title>黄昏</title>
+        <url>http://williamlfang.github.com/cn/2012/12/05/dusk/</url>
     </article>
     
     <article>
-        <title>独自乱舞</title>
-        <url>http://williamlfang.github.com/cn/2008/03/24/lonely-dancing/</url>
+        <title>释放你的酸爽Look-ICE BREAKERS</title>
+        <url>http://williamlfang.github.com/cn/2012/12/01/your-release-acid-shuang-look-ice-breakers/</url>
     </article>
     
     <article>
-        <title>一起的日子</title>
-        <url>http://williamlfang.github.com/cn/2008/03/13/together/</url>
+        <title>DHD G10 官方解锁，刷第三方rom无法启动</title>
+        <url>http://williamlfang.github.com/cn/2012/11/30/dhd-g10-the-official-unlock-the-brush-third-party-rom-not-start/</url>
     </article>
     
     <article>
-        <title>继续生活</title>
-        <url>http://williamlfang.github.com/cn/2007/12/10/living/</url>
+        <title>好久没有吃这么一碗削筋了</title>
+        <url>http://williamlfang.github.com/cn/2012/11/30/did-not-eat-for-a-long-time-so-a-bowl-cut-tendons/</url>
     </article>
     
     <article>
-        <title>最坚强</title>
-        <url>http://williamlfang.github.com/cn/2007/11/14/strong/</url>
+        <title>突发奇想，给实验题目画了个界面</title>
+        <url>http://williamlfang.github.com/cn/2012/11/29/whim-to-the-experimental-subject-drew-interface/</url>
     </article>
     
     <article>
-        <title>大学一年祭</title>
-        <url>http://williamlfang.github.com/cn/2007/07/24/first-year-at-uni/</url>
+        <title>实验课上的头疼啊</title>
+        <url>http://williamlfang.github.com/cn/2012/11/29/experimental-class-headache/</url>
     </article>
     
     <article>
-        <title>我希望好好的</title>
-        <url>http://williamlfang.github.com/cn/2007/05/25/healthy/</url>
+        <title>学校机房坑爹的网速</title>
+        <url>http://williamlfang.github.com/cn/2012/11/27/school-room-pit-father-network-speed-looks-so-much-open-web-pages-are-card/</url>
     </article>
     
     <article>
-        <title>流年逝</title>
-        <url>http://williamlfang.github.com/cn/2007/05/19/losing-my-dear-time/</url>
+        <title>两周实验课</title>
+        <url>http://williamlfang.github.com/cn/2012/11/26/two-weeks-experiment-course/</url>
     </article>
     
     <article>
-        <title>一直在身边</title>
-        <url>http://williamlfang.github.com/cn/2007/05/19/always-there/</url>
+        <title>去掉点点网右上角关注和登录标签</title>
+        <url>http://williamlfang.github.com/cn/2012/08/29/get-rid-of-the-little-mesh-upper-right-corner-of-concern-log-tab/</url>
     </article>
     
     <article>
-        <title>流浪的文字</title>
-        <url>http://williamlfang.github.com/cn/2007/05/18/lonely-words/</url>
+        <title>点点网提供独立域名备案啦</title>
+        <url>http://williamlfang.github.com/cn/2012/08/27/little-network-provides-independent-domain-name-for-the-record/</url>
     </article>
     
     <article>
-        <title>一天又三年</title>
-        <url>http://williamlfang.github.com/cn/2007/05/15/time-flying/</url>
+        <title>.CN域名开放个人注册 未备案仍不能DNS解析</title>
+        <url>http://williamlfang.github.com/cn/2012/05/29/cn-domain-name-and-opening-up-the-personal-registration-is-not-the-record-still-can-not-dns-resolution/</url>
+    </article>
+    
+    <article>
+        <title>LeWaOS For Milestone 里程碑的乐蛙OS</title>
+        <url>http://williamlfang.github.com/cn/2012/05/16/lewaos-for-milestone-milestones-le-frog-os/</url>
+    </article>
+    
+    <article>
+        <title>百度网盘邀请码</title>
+        <url>http://williamlfang.github.com/cn/2012/05/10/baidu-network-disk-invitation-code/</url>
+    </article>
+    
+    <article>
+        <title>青春，一直都在继续</title>
+        <url>http://williamlfang.github.com/cn/2012/01/30/youth-has-been-continued/</url>
+    </article>
+    
+    <article>
+        <title>淘宝指数邀请码</title>
+        <url>http://williamlfang.github.com/cn/2011/11/25/taobao-index-invitation-code/</url>
+    </article>
+    
+    <article>
+        <title>老男孩</title>
+        <url>http://williamlfang.github.com/cn/2011/10/10/old-boys/</url>
+    </article>
+    
+    <article>
+        <title>来南京这些天</title>
+        <url>http://williamlfang.github.com/cn/2011/09/17/to-nanjing-these-days/</url>
+    </article>
+    
+    <article>
+        <title>拿到录取通知书了</title>
+        <url>http://williamlfang.github.com/cn/2011/08/17/get-the-admission-notice-of-the/</url>
+    </article>
+    
+    <article>
+        <title>初玩vps</title>
+        <url>http://williamlfang.github.com/cn/2011/08/01/vps-early-play/</url>
+    </article>
+    
+    <article>
+        <title>两个月过去了 </title>
+        <url>http://williamlfang.github.com/cn/2011/07/31/two-months-later/</url>
+    </article>
+    
+    <article>
+        <title>ifttt山寨版，如果云邀请码发送</title>
+        <url>http://williamlfang.github.com/cn/2011/07/29/ifttt-cottage-if-you-send-an-invitation-code-cloud/</url>
+    </article>
+    
+    <article>
+        <title>我在考虑的问题——关于大学</title>
+        <url>http://williamlfang.github.com/cn/2011/07/11/i-consider-about-the-university/</url>
+    </article>
+    
+    <article>
+        <title>谢谢你的爱</title>
+        <url>http://williamlfang.github.com/cn/2011/06/10/thank-you-for-your-love/</url>
+    </article>
+    
+    <article>
+        <title>nuffnang拿福能千人斩只为进入中国</title>
+        <url>http://williamlfang.github.com/cn/2011/05/23/nuffnang/</url>
+    </article>
+    
+    <article>
+        <title>百度听邀请码</title>
+        <url>http://williamlfang.github.com/cn/2011/05/20/baidu-to-listen-to-an-invitation-code/</url>
+    </article>
+    
+    <article>
+        <title>就这点时间了</title>
+        <url>http://williamlfang.github.com/cn/2011/04/13/jiu-zhe-dian-shi-jian-liao/</url>
+    </article>
+    
+    <article>
+        <title>我也注册了微信</title>
+        <url>http://williamlfang.github.com/cn/2011/02/16/i-also-registered-the-micro-letters/</url>
+    </article>
+    
+    <article>
+        <title>小学同学聚会</title>
+        <url>http://williamlfang.github.com/cn/2011/02/07/school-reunion/</url>
+    </article>
+    
+    <article>
+        <title>亲爱的那不是爱情</title>
+        <url>http://williamlfang.github.com/cn/2011/01/04/dear-it-is-not-love/</url>
+    </article>
+    
+    <article>
+        <title>我的凡客体</title>
+        <url>http://williamlfang.github.com/cn/2010/11/13/where-the-object-of-my/</url>
+    </article>
+    
+    <article>
+        <title>“谷歌纵横”你敢玩吗？</title>
+        <url>http://williamlfang.github.com/cn/2010/10/25/google-latitude-do-you-dare-to-play/</url>
+    </article>
+    
+    <article>
+        <title>北京下雨了</title>
+        <url>http://williamlfang.github.com/cn/2010/10/22/beijing-rain/</url>
+    </article>
+    
+    <article>
+        <title>分享百度说吧邀请码</title>
+        <url>http://williamlfang.github.com/cn/2010/09/20/share-baidu-speak-invitation-code/</url>
+    </article>
+    
+    <article>
+        <title>分享百度偶像邀请码</title>
+        <url>http://williamlfang.github.com/cn/2010/09/18/share-baidu-idol-invitation-code/</url>
+    </article>
+    
+    <article>
+        <title>记凤翔中学“九六罢灶”事件</title>
+        <url>http://williamlfang.github.com/cn/2010/09/11/kee-fung-cheung-secondary-school-96-strike-kitchen-incident/</url>
+    </article>
+    
+    <article>
+        <title>我的小说情缘</title>
+        <url>http://williamlfang.github.com/cn/2010/08/16/my-novel-food-of-love/</url>
+    </article>
+    
+    <article>
+        <title>好歌推荐——《寂寞的季节 》</title>
+        <url>http://williamlfang.github.com/cn/2010/08/16/song-of-the-month-recommendation-lonely-season/</url>
+    </article>
+    
+    <article>
+        <title>收拾一下铺盖，去学校</title>
+        <url>http://williamlfang.github.com/cn/2010/07/31/tidy-blanket-to-school/</url>
+    </article>
+    
+    <article>
+        <title>我的高考试卷记录</title>
+        <url>http://williamlfang.github.com/cn/2010/07/31/my-record-of-college-entrance-examination-papers/</url>
+    </article>
+    
+    <article>
+        <title>博客转wordpress啦</title>
+        <url>http://williamlfang.github.com/cn/2010/07/22/transfer-wordpress-blog-rights/</url>
+    </article>
+    
+    <article>
+        <title>我改网名了——小五</title>
+        <url>http://williamlfang.github.com/cn/2010/07/02/ive-changed-my-screen-name-the-fifth/</url>
+    </article>
+    
+    <article>
+        <title>上善若水</title>
+        <url>http://williamlfang.github.com/cn/2010/07/01/of-charity/</url>
+    </article>
+    
+    <article>
+        <title>我考上二本了！</title>
+        <url>http://williamlfang.github.com/cn/2010/06/25/i-was-admitted-2-it/</url>
+    </article>
+    
+    <article>
+        <title>永远小孩子</title>
+        <url>http://williamlfang.github.com/cn/2010/06/21/always-children/</url>
+    </article>
+    
+    <article>
+        <title>你能区分小麦和韭菜吗？</title>
+        <url>http://williamlfang.github.com/cn/2010/06/21/can-you-distinguish-between-wheat-and-leek-it/</url>
+    </article>
+    
+    <article>
+        <title>高考结束了</title>
+        <url>http://williamlfang.github.com/cn/2010/06/08/entrance-end/</url>
+    </article>
+    
+    <article>
+        <title>我去高考了</title>
+        <url>http://williamlfang.github.com/cn/2010/06/05/i-went-to-the-college-entrance-examination/</url>
+    </article>
+    
+    <article>
+        <title>毕业了</title>
+        <url>http://williamlfang.github.com/cn/2010/06/04/graduate/</url>
+    </article>
+    
+    <article>
+        <title>无题</title>
+        <url>http://williamlfang.github.com/cn/2010/06/03/untitled/</url>
+    </article>
+    
+    <article>
+        <title>学业水平考试成绩全是A啦</title>
+        <url>http://williamlfang.github.com/cn/2010/05/23/academic-performance-test-scores-are-all-a-rights/</url>
+    </article>
+    
+    <article>
+        <title>好歌推荐——《说了再见》</title>
+        <url>http://williamlfang.github.com/cn/2010/05/22/song-of-the-month-recommendation-u0026quotsay-goodbyeu0026quot/</url>
+    </article>
+    
+    <article>
+        <title>好歌推荐——《难道》</title>
+        <url>http://williamlfang.github.com/cn/2010/05/22/nandao/</url>
+    </article>
+    
+    <article>
+        <title>好歌推荐——《最美》</title>
+        <url>http://williamlfang.github.com/cn/2010/05/22/song-of-the-month-recommendation-u0026quotbeautifulu0026quot/</url>
+    </article>
+    
+    <article>
+        <title>这个博客我会一直做下去</title>
+        <url>http://williamlfang.github.com/cn/2010/05/14/this-blog-i-will-always-do-so/</url>
+    </article>
+    
+    <article>
+        <title>开通了腾讯微博</title>
+        <url>http://williamlfang.github.com/cn/2010/04/25/tencent-launched-micro-bo/</url>
+    </article>
+    
+    <article>
+        <title>QQ农场就这样玩完了</title>
+        <url>http://williamlfang.github.com/cn/2010/04/11/qq-finish-off-the-farm-so/</url>
+    </article>
+    
+    <article>
+        <title>终于会翻墙了</title>
+        <url>http://williamlfang.github.com/cn/2010/04/03/finally-will-be-over-the-wall-of-the/</url>
+    </article>
+    
+    <article>
+        <title>愚人节快乐！</title>
+        <url>http://williamlfang.github.com/cn/2010/04/02/the-happy-foolu002639s-day/</url>
+    </article>
+    
+    <article>
+        <title>想起了地震时</title>
+        <url>http://williamlfang.github.com/cn/2010/03/31/thought-of-an-earthquake/</url>
+    </article>
+    
+    <article>
+        <title>好歌推荐——《Take me to your heart》</title>
+        <url>http://williamlfang.github.com/cn/2010/03/23/take-me-to-your-heart/</url>
+    </article>
+    
+    <article>
+        <title>好歌推荐——《难说再见》</title>
+        <url>http://williamlfang.github.com/cn/2010/02/24/hard-to-say-goodbye/</url>
+    </article>
+    
+    <article>
+        <title>送给大家一些clicki统计邀请码</title>
+        <url>http://williamlfang.github.com/cn/2010/02/18/statistics-give-you-some-clicki-invitation-code/</url>
+    </article>
+    
+    <article>
+        <title>没心情，郁闷!</title>
+        <url>http://williamlfang.github.com/cn/2010/02/07/not-in-the-mood-depressed/</url>
+    </article>
+    
+    <article>
+        <title>18岁的天空</title>
+        <url>http://williamlfang.github.com/cn/2010/01/27/18-sky/</url>
+    </article>
+    
+    <article>
+        <title>羽凡曾经说过的一段话</title>
+        <url>http://williamlfang.github.com/cn/2010/01/24/yu-has-said-the-passage-where/</url>
+    </article>
+    
+    <article>
+        <title>还是小孩子</title>
+        <url>http://williamlfang.github.com/cn/2010/01/08/or-children/</url>
+    </article>
+    
+    <article>
+        <title>Hello 2010   !</title>
+        <url>http://williamlfang.github.com/cn/2010/01/01/hello-2010/</url>
+    </article>
+    
+    <article>
+        <title>2009年12月31日，2009年最后一天</title>
+        <url>http://williamlfang.github.com/cn/2010/01/01/december-31-2009-the-last-day-of-2009/</url>
+    </article>
+    
+    <article>
+        <title>最想收到的礼物――羽·泉</title>
+        <url>http://williamlfang.github.com/cn/2009/12/25/most-like-to-receive-a-gift-yu-quan/</url>
+    </article>
+    
+    <article>
+        <title>争</title>
+        <url>http://williamlfang.github.com/cn/2009/12/23/dispute/</url>
+    </article>
+    
+    <article>
+        <title>博客获奖了，可惜没领到奖品!</title>
+        <url>http://williamlfang.github.com/cn/2009/12/19/blog-award-and-unfortunately-did-not-get-their-prize/</url>
+    </article>
+    
+    <article>
+        <title>曾经小孩子</title>
+        <url>http://williamlfang.github.com/cn/2009/12/15/have-children/</url>
+    </article>
+    
+    <article>
+        <title>好歌推荐——《贫嘴高中生的幸福生活》</title>
+        <url>http://williamlfang.github.com/cn/2009/12/12/wisecracking-high-school-a-happy-life/</url>
+    </article>
+    
+    <article>
+        <title>学业考试成绩又出来了</title>
+        <url>http://williamlfang.github.com/cn/2009/12/05/school-test-scores-came-out-again/</url>
+    </article>
+    
+    <article>
+        <title>等待</title>
+        <url>http://williamlfang.github.com/cn/2009/11/23/e7-ad-89-e5-be-85/</url>
+    </article>
+    
+    <article>
+        <title>传说中的凤翔中学的校本教材</title>
+        <url>http://williamlfang.github.com/cn/2009/11/22/legend-fengxiang-secondary-school-based-teaching-materials/</url>
+    </article>
+    
+    <article>
+        <title>五阶魔方，二阶魔方都结束了</title>
+        <url>http://williamlfang.github.com/cn/2009/11/14/fifth-order-magic-square-the-second-cube-all-over/</url>
+    </article>
+    
+    <article>
+        <title>恋爱名词的古诗词解释</title>
+        <url>http://williamlfang.github.com/cn/2009/11/06/interpretation-of-the-term-of-the-ancient-love-poems/</url>
+    </article>
+    
+    <article>
+        <title>关于爱情的古诗词</title>
+        <url>http://williamlfang.github.com/cn/2009/11/06/ancient-poems-about-love/</url>
+    </article>
+    
+    <article>
+        <title>一首歌,两种不同的风格</title>
+        <url>http://williamlfang.github.com/cn/2009/11/05/one-song-two-different-styles/</url>
+    </article>
+    
+    <article>
+        <title>四阶魔方也就这样结束了</title>
+        <url>http://williamlfang.github.com/cn/2009/10/31/rubiku002639s-revenge-so-it-was-concluded/</url>
+    </article>
+    
+    <article>
+        <title>花了两个多小时时间,终于学会了拼三角魔方</title>
+        <url>http://williamlfang.github.com/cn/2009/10/24/it-took-more-than-two-hours-time-and-finally-learned-to-spell-triangular-cube/</url>
+    </article>
+    
+    <article>
+        <title>好歌推荐——《路一直都在》</title>
+        <url>http://williamlfang.github.com/cn/2009/10/16/road-has-been-in/</url>
+    </article>
+    
+    <article>
+        <title>高三学生绝对真实的写照</title>
+        <url>http://williamlfang.github.com/cn/2009/09/27/absolutely-true-reflection-of-middle-school-students/</url>
+    </article>
+    
+    <article>
+        <title>“七夕”凤翔上空出现的彩虹...</title>
+        <url>http://williamlfang.github.com/cn/2009/08/30/u0026quottanabatau0026quot-appears-over-the-rainbow-fung-cheung/</url>
+    </article>
+    
+    <article>
+        <title>还记得你跟同桌说过的这些话吗?</title>
+        <url>http://williamlfang.github.com/cn/2009/08/18/remember-when-you-said-the-same-table-with-these-words/</url>
+    </article>
+    
+    <article>
+        <title>高中班主任给我的评语</title>
+        <url>http://williamlfang.github.com/cn/2009/08/07/high-school-class-teacheru002639s-comments-to-me/</url>
+    </article>
+    
+    <article>
+        <title>QQ邮箱被别人盗用了</title>
+        <url>http://williamlfang.github.com/cn/2009/06/21/qq-mailbox-has-been-stolen/</url>
+    </article>
+    
+    <article>
+        <title>两年前</title>
+        <url>http://williamlfang.github.com/cn/2009/06/19/two-years-ago/</url>
+    </article>
+    
+    <article>
+        <title>怎么这么不细心?</title>
+        <url>http://williamlfang.github.com/cn/2009/05/30/how-so-not-careful/</url>
+    </article>
+    
+    <article>
+        <title>端午节:粽子</title>
+        <url>http://williamlfang.github.com/cn/2009/05/28/dragon-boat-festival-dumplings/</url>
+    </article>
+    
+    <article>
+        <title>你的承诺</title>
+        <url>http://williamlfang.github.com/cn/2009/05/23/your-commitment/</url>
+    </article>
+    
+    <article>
+        <title>高二3班老师魔方大赛</title>
+        <url>http://williamlfang.github.com/cn/2009/05/20/3-rubiku002639s-cube-competition-sophomore-class-teacher/</url>
+    </article>
+    
+    <article>
+        <title>小记高二3班老师常用语</title>
+        <url>http://williamlfang.github.com/cn/2009/05/20/small-note-3-sophomore-english-class-the-teacher-used/</url>
+    </article>
+    
+    <article>
+        <title>新 ， 新 ， 新 ， 新 ！</title>
+        <url>http://williamlfang.github.com/cn/2009/05/16/new-new-new-new/</url>
+    </article>
+    
+    <article>
+        <title>这些事足以让我高兴,可我却高兴不起来!</title>
+        <url>http://williamlfang.github.com/cn/2009/04/25/these-things-enough-to-make-me-happy-but-i-was-not-happy/</url>
+    </article>
+    
+    <article>
+        <title>4月24日中午天空中出现彩色云彩了!</title>
+        <url>http://williamlfang.github.com/cn/2009/04/25/april-24-at-noon-in-the-sky-clouds-of-different-colors/</url>
+    </article>
+    
+    <article>
+        <title>教你把删除内存卡的东西复原回来</title>
+        <url>http://williamlfang.github.com/cn/2009/04/21/teach-you-to-remove-the-memory-card-back-what-recovery/</url>
+    </article>
+    
+    <article>
+        <title>我这是怎么了?我</title>
+        <url>http://williamlfang.github.com/cn/2009/04/07/this-is-how-i-was-i/</url>
+    </article>
+    
+    <article>
+        <title>学业水平考试成绩出来了</title>
+        <url>http://williamlfang.github.com/cn/2009/04/02/academic-proficiency-test-results-out/</url>
+    </article>
+    
+    <article>
+        <title>凤中微机室脱离控制的方法</title>
+        <url>http://williamlfang.github.com/cn/2009/03/26/phoenix-in-the-computer-room-from-the-control-method/</url>
+    </article>
+    
+    <article>
+        <title>下节课讲黄书</title>
+        <url>http://williamlfang.github.com/cn/2009/01/29/yellow-book-under-the-class-about/</url>
+    </article>
+    
+    <article>
+        <title>咱家</title>
+        <url>http://williamlfang.github.com/cn/2009/01/29/our-house/</url>
+    </article>
+    
+    <article>
+        <title>【菊花台】-(网络痴情版)</title>
+        <url>http://williamlfang.github.com/cn/2009/01/29/chrysanthemum-network-infatuation-edition/</url>
+    </article>
+    
+    <article>
+        <title>学生歌</title>
+        <url>http://williamlfang.github.com/cn/2009/01/29/student-songs/</url>
+    </article>
+    
+    <article>
+        <title>高一（13）班老师篮球賽</title>
+        <url>http://williamlfang.github.com/cn/2009/01/29/high-one-13-basketball-class-teacher/</url>
+    </article>
+    
+    <article>
+        <title>宝鸡方言</title>
+        <url>http://williamlfang.github.com/cn/2009/01/29/baoji-dialect/</url>
+    </article>
+    
+    <article>
+        <title>Bye 2008!</title>
+        <url>http://williamlfang.github.com/cn/2009/01/17/bye-2008/</url>
+    </article>
+    
+    <article>
+        <title>终于有了自己的博客！</title>
+        <url>http://williamlfang.github.com/cn/2009/01/17/finally-have-their-own-blog/</url>
     </article>
     
 </articles>

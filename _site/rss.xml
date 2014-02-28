@@ -4,32 +4,13 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-02-28 12:08:28 +0800</lastBuildDate>
-        <pubDate>2014-02-28 12:08:28 +0800</pubDate>
+        <lastBuildDate>2014-02-28 02:45:58 +0800</lastBuildDate>
+        <pubDate>2014-02-28 02:45:58 +0800</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
 　     　<generator>nju.pt</generator>
 
-
-        <item>
-                <title>入手NEXUS7 二代</title>
-                <description>&lt;p&gt;开学前在V2EX上看到有人求购NEXUS7二代，自己也有点心动，便在回复里找到一个靠谱的，发邮件联系，1000元顺利买到，16G Wi-Fi版本。&lt;br /&gt;
-&lt;a href=&quot;http://ww1.sinaimg.cn/large/4eda25f5gw1edtnv1zybuj20dw0afabx.jpg&quot;&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/bmiddle/4eda25f5gw1edtnv1zybuj20dw0afabx.jpg&quot; alt=&quot;Nexus7&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;!-- more --&gt;
-&lt;p&gt;拿到手打开看成色，很满意，基本可以说是95新。卖家是一个在豆瓣工作的人，猜测是比较文艺的人，机子也会保护的不错，所以才敢大胆下手的。&lt;/p&gt;
-
-&lt;p&gt;拿到手刷机肯定必须的，但是CM汉化的不完全，有点小强迫症，感觉不舒服。就去刷了魔趣的ROM（&lt;a href=&quot;http://download.mfunz.com/?device=flo&quot;&gt;传送门&lt;/a&gt;）,用着很不错。 魔趣是一个开源的ROM,类似于CM，不过是国内开发者。&lt;/p&gt;
-
-&lt;p&gt;原来的酷派5930太卡了，现在可以把里边的应用搬到平板上边了，手机就留着打电话，发短信、微信，聊QQ吧。电子书阅读也搬到平板上边了，搭配多看读电子书很舒服，再也不用担心在手机上看PDF滑来滑去了。&lt;/p&gt;
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
-                <link>http://williamlfang.github.com/cn/2014/02/23/nexus-7-two/</link>
-                <guid>http://williamlfang.github.com/cn/2014/02/23/nexus-7-two/</guid>
-                <pubDate>2014-02-23 22:02:52 +0800</pubDate>
-                <category>扯淡文章</category>
-　             　<author>ccbikai</author>
-        </item>
 
         <item>
                 <title>诸多事情</title>
@@ -71,7 +52,7 @@
                 <link>http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/</link>
                 <guid>http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/</guid>
                 <pubDate>2014-02-12 00:00:00 +0800</pubDate>
-                <category>yes</category>
+                <category>Personal</category>
 　             　<author>ccbikai</author>
         </item>
 
@@ -116,50 +97,7 @@
                 <link>http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/</link>
                 <guid>http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/</guid>
                 <pubDate>2014-02-12 00:00:00 +0800</pubDate>
-                <category>yes</category>
-　             　<author>ccbikai</author>
-        </item>
-
-        <item>
-                <title>祝大家新年快乐</title>
-                <description>&lt;p&gt;&lt;strong&gt;祝大家在新的一年里写代码没有BUG，事事顺心。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;!-- more --&gt;
-&lt;p&gt;昨晚给in笔记的所有评论者用插件群发了一封邮件。但是Lifememory Memory是读者却没有办法拿出邮件列表，后来想到了多说，导出评论的备份，然后用python提取出来邮箱地址。  扔一个Gists，需要的朋友自己拿。https://gist.github.com/ccbikai/8725349&lt;br /&gt;
-&lt;a href=&quot;http://ww1.sinaimg.cn/large/4eda25f5jw1ed20ekrnetj20hs0hs78u.jpg&quot;&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/bmiddle/4eda25f5jw1ed20ekrnetj20hs0hs78u.jpg&quot; alt=&quot;多说&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;邮件发送用的是sendcloud和mailgun,sendcloud一个账号每天可以发生300封，然后mailgun，每个域名可以发送300封。不过sendcloud在国内的到达率高，毕竟是国内的公司。&lt;/p&gt;
-
-&lt;p&gt;邮件发送时候做错两件事，一是in笔记和Life Memory的前300封邮件没有留博客地址，可能让大家都不知道是谁。还有一个严重的是，对mailgun不熟悉，不知道它群发里边会有所有邮箱地址，所以在大家的邮箱收件人里边好多邮箱，泄露了大家的邮箱地址，对大家说声对不起。下次发邮件一定调整代码，一封一封发送。&lt;/p&gt;
-
-&lt;p&gt;还有最近热火的微信红包，我一个都没有收到，难道我微信好友圈都是屌丝？&lt;/p&gt;
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
-                <link>http://williamlfang.github.com/cn/2014/01/31/happy-chinese-year-2014/</link>
-                <guid>http://williamlfang.github.com/cn/2014/01/31/happy-chinese-year-2014/</guid>
-                <pubDate>2014-01-31 10:11:33 +0800</pubDate>
-                <category>扯淡文章</category>
-　             　<author>ccbikai</author>
-        </item>
-
-        <item>
-                <title>宅</title>
-                <description>&lt;p&gt;不知不觉，寒假的一半已经过完，看书计划也没有跟得上，而且还给自己挖了好多坑。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-&lt;p&gt;不知道为什么今年寒假不喜欢出门了，几乎也没有找同学去玩，整体宅在家里连门也不出，真是大门不出二门不迈啊。我记得以前假期总爱出去玩了，难道是越长大越孤单了？&lt;/p&gt;
-
-&lt;p&gt;本来计划回家多看看书的，而且还给自己布置了几个任务，可是书看了两天就不看了，然后就玩起了手机。家里没网，所以流量早早就用光了，只能去淘宝买一张流量卡。暑假的时候9G的流量卡只要50多，可是现在过年就要100多了，翻了整整一倍啊。家里边联通的速度还不错，能达250+K/s,感觉已经满足了。可是我手机是电信的，还是没有流量玩。电脑共享了无线网络，但是手机连上就是上不了网，不知道是不是联通网卡的原因。最后尝试了好多方法，用代理的办法解决了。 电脑上装shadowssockes客户端，然后本地的1991端口就是局域网一个代理了，手机上用ProxyDroid连接代理，设置为全局代理，手机就可以上网了。由于电脑的shadowsocke连接的是国外的服务器，手机上直接可以上推了，感觉还挺爽。&lt;/p&gt;
-
-&lt;p&gt;这些天一直在看&lt;a href=&quot;http://www.zhihu.com/people/ccbikai&quot;&gt;知乎&lt;/a&gt;，越看越感到自己知道的少。没事的时候整理了一下RSS订阅，折腾了一下手机，给浏览器多装了几个插件，有时间写出来推荐一下。&lt;/p&gt;
-
-&lt;p&gt;想必好多人过年会被别人喊去修电脑，不想修的，你可以给装了Linux系统，以后再也不会找你修了。&lt;/p&gt;
-
-&lt;p&gt;马上就要过年了，给大家送个春节&lt;a href=&quot;http://www.meiziweibo.com/&quot;&gt;小福利&lt;/a&gt;，记得点赞噢！&lt;/p&gt;
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
-                <link>http://williamlfang.github.com/cn/2014/01/28/homebody/</link>
-                <guid>http://williamlfang.github.com/cn/2014/01/28/homebody/</guid>
-                <pubDate>2014-01-28 11:50:17 +0800</pubDate>
-                <category>扯淡文章</category>
+                <category>经济分析</category>
 　             　<author>ccbikai</author>
         </item>
 
@@ -809,7 +747,7 @@ df$x
                 <link>http://williamlfang.github.com/cn/2014/01/26/data-structure/</link>
                 <guid>http://williamlfang.github.com/cn/2014/01/26/data-structure/</guid>
                 <pubDate>2014-01-26 00:00:00 +0800</pubDate>
-                <category>yes</category>
+                <category>Programming</category>
 　             　<author>ccbikai</author>
         </item>
 
@@ -1056,7 +994,7 @@ plot(density(x))
                 <link>http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/</link>
                 <guid>http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/</guid>
                 <pubDate>2014-01-24 00:00:00 +0800</pubDate>
-                <category>yes</category>
+                <category>Tech</category>
 　             　<author>ccbikai</author>
         </item>
 
@@ -1169,31 +1107,7 @@ plot(density(x))
                 <link>http://williamlfang.github.com/cn/2014/01/20/r-note/</link>
                 <guid>http://williamlfang.github.com/cn/2014/01/20/r-note/</guid>
                 <pubDate>2014-01-20 00:00:00 +0800</pubDate>
-                <category>yes</category>
-　             　<author>ccbikai</author>
-        </item>
-
-        <item>
-                <title>七牛云存储使用感受</title>
-                <description>&lt;p&gt;&lt;a href=&quot;http://www.inbiji.com&quot;&gt;in笔记&lt;/a&gt;使用七牛云存储也已经将近三个月了，期间一直很稳定，图片加载速度很快，而且我也把网站备份放在上边。现在讲讲使用感受。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-&lt;p&gt;最开始使用七牛是为了给博客图片加速，原来用的是Inscapdns，但是速度不怎么样，受不了等待就切换到了七牛。切换过程基本上没有遇到问题，用的主要是七牛后台的源站加速，后台设置一下，然后在博客替换一下图片地址就好了，具体过程见《&lt;a href=&quot;http://www.inbiji.com/biji/using-seven-cattle-painless-wordpress-blog-for-your-bed-acceleration-diagram.html&quot;&gt;无痛使用七牛为你的WORDPRESS博客图床加速&lt;/a&gt;》。由于我经常修改博客模板就没有给css,js文件加速，只给图片加速。这样做有个好处，就是可以给博客图片在七牛做个备份，如果源站图片丢失（概率不大），可以去七牛找回来。七牛的图片只要你不删除，就一直在的，别担心七牛会出问题，他们的工程师也不是吃软饭的。&lt;/p&gt;
-
-&lt;p&gt;文章内图片加速搞定，加载速度很快，但是首页和分类等页面的缩略图还是原来的地址，这个也用七牛解决了。七牛不仅能存储图片，而且还可以在云端处理图片，使用方法也很简单，只需要在图片URL后边加入一些参数即可，可以生成缩略图，也可以加水印，还可以直接返回exif信息，具体使用方法看看官方文档，很简单。修改模板的图片地址，把缩略图的生成交给了七牛，给自己博客的小VPS（只用128M）节省点内存。七牛不仅可以处理图片，还可以音频，视频。而且比处理图片的功能还要强大，不过我暂时还用不到，有兴趣的同学可以去看官方文档。&lt;/p&gt;
-
-&lt;p&gt;以前的博客是备份到Dropbox的，但是Dropbox的空间太小，只有2G，用几天就满了。我把网站的备份也放在了七牛，用的是七牛的python SDK，不得不说七牛的SDK也做得不错，我只用了几行shell脚本，然后python调用七牛上传，加入cron定时，博客备份就搞定了，这样大概一个月七牛删除一下比较早的备份就行了。具体的实现过程我在&lt;a href=&quot;http://www.inbiji.com&quot;&gt;in笔记&lt;/a&gt;写了教程，需要的朋友去看看《&lt;a href=&quot;http://www.inbiji.com/biji/vps-backup-data-to-cloud-storage-seven-cattle.html&quot;&gt;备份vps数据到七牛云存储&lt;/a&gt;》，脚本在&lt;a href=&quot;https://github.com/ccbikai/backuptoqiniu&quot;&gt;github&lt;/a&gt;上边有开源。&lt;/p&gt;
-
-&lt;p&gt;目前用到的七牛的功能主要就这三个，不过我还准备做个小实验，就是用七牛统计博客订阅人数。准备在rss里边添加一张存储在七牛的图片，然后给存储仓库开启访问日志（图片单独存储在一个仓库），过段时间下载日志，用日志宝分析一下，就可以推算出大约有多少人在订阅我博客（嗯，我知道订阅的人肯定很少，要不您&lt;a href=&quot;http://feed.miantiao.me&quot;&gt;订阅&lt;/a&gt;一下?）。不过七牛的日志是按日分割生成的，要是能按大小分割生成就好了，貌似我的需求有点儿变态。&lt;/p&gt;
-
-&lt;p&gt;七牛每个账户也有一定的免费额度，够小博客使用，反正我是够用了。如果流量不够用，记得先去设置一下防盗链白名单。邀请其他人也是可以增加免费额度的，如果你要注册七牛，用我的邀请链接吧&lt;a href=&quot;http://126.am/qiniuyun&quot;&gt;http://126.am/qiniuyun&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;忘了说了，七牛还有一个公益CDN项目—— http://www.staticfile.org，里边的js,css库很全。&lt;/p&gt;
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
-                <link>http://williamlfang.github.com/cn/2014/01/18/qiniu-feel/</link>
-                <guid>http://williamlfang.github.com/cn/2014/01/18/qiniu-feel/</guid>
-                <pubDate>2014-01-18 16:23:45 +0800</pubDate>
-                <category>科技牛逼</category>
+                <category>Programming</category>
 　             　<author>ccbikai</author>
         </item>
 
@@ -1240,7 +1154,242 @@ plot(density(x))
                 <link>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/</link>
                 <guid>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/</guid>
                 <pubDate>2014-01-18 00:00:00 +0800</pubDate>
-                <category>yes</category>
+                <category>Tech</category>
+　             　<author>ccbikai</author>
+        </item>
+
+        <item>
+                <title>Images</title>
+                <description>&lt;p&gt;This thread will show you how to add a new images in Markdown through &lt;code&gt;relative path&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make sure that you have already set the &lt;code&gt;url&lt;/code&gt; correctly as &lt;code&gt;williamlfang.github.com&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Now that we wanna to add new images in the website as &lt;code&gt;williamlfang.github.com/cn&lt;/code&gt;, which is a &lt;code&gt;gh-pages&lt;/code&gt;. Unfortunely, all the &lt;code&gt;url&lt;/code&gt; links are directed to the main repo &lt;code&gt;williamlfang.github.com&lt;/code&gt; instead of the &lt;code&gt;williamlfang.github.com/cn&lt;/code&gt;. This is what the following to be utilized.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Suppose you have created a relative path containing folder as &lt;code&gt;assets/images/btt.png&lt;/code&gt;, all you need to do is to add the additional prelix &lt;code&gt;/cn&lt;/code&gt; alongsie the relative file path &lt;code&gt;assets/images/btt.png&lt;/code&gt;. See below as as example: &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;!&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;bottom&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;/cn/assets/images/btt.png&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;which gives
+&lt;img src=&quot;/cn/assets/images/btt.png&quot; alt=&quot;bottom&quot; /&gt;&lt;/p&gt;
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/01/18/img/</link>
+                <guid>http://williamlfang.github.com/cn/2014/01/18/img/</guid>
+                <pubDate>2014-01-18 00:00:00 +0800</pubDate>
+                <category></category>
+　             　<author>ccbikai</author>
+        </item>
+
+        <item>
+                <title>Linux Mint 安装 Pandoc</title>
+                <description>&lt;h2 id=&quot;linux-mint--pandoc&quot;&gt;下面介绍在 Linux Mint 系统下如何安装 pandoc。&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;如官网介绍，安装 pandoc
+ sudo apt-get install cabal-install
+ cabal update
+ cabal install pandoc&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;添加路径，
+ sudo gedit /etc/profile
+  在打开的文档最后输入
+ export PATH=/home/william/.cabal/bin:$PATH
+  再到 
+ cd /etc/
+ source profile&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;再次重新
+ cabal install pandoc pandoc-citeproc&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;查看是否安装成功
+ pandoc –version&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/01/16/pandoc/</link>
+                <guid>http://williamlfang.github.com/cn/2014/01/16/pandoc/</guid>
+                <pubDate>2014-01-16 00:00:00 +0800</pubDate>
+                <category>Tech</category>
+　             　<author>ccbikai</author>
+        </item>
+
+        <item>
+                <title>Linux 中文输入法（fcitx）安装与设置</title>
+                <description>&lt;p&gt;Linux （Mint，16 Petra）系统本身并没有默认安装中文输入法。为了在 Linux 操作系统下使用中文输入，需要自己添加。我倒腾了大半天的，终于明白过来这是怎么设置了。现在将全部的过程记录在下面，以备日后使用。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;首先是安装源，&lt;/p&gt;
+
+    &lt;p&gt;sudo add-apt-repository ppa:fcitx-team/nightly&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;更新&lt;/p&gt;
+
+    &lt;p&gt;sudo apt-get update&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装 fcitx，搜狗输入法，五笔（一般不用），以及双拼&lt;/p&gt;
+
+    &lt;p&gt;sudo apt-get install fcitx fcitx-sogoupinyin fcitx-table-wubi fcitx-pinyin&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;这个比较重要，可以先在终端输入 fcitx，看看是不是提示没有可用的前端，则需要安装如下 &lt;code&gt;fcitx-frontend-gtk3&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;sudo apt-get install fcitx-frontend-gtk3 fcitx-ui-classic&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;打开 fcitx config，如果提示 “fcitx 的 KCModule 未被找到 缺少”，则在Terminator输入&lt;/p&gt;
+
+    &lt;p&gt;sudo apt-get install kde-config-fcitx&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在 &lt;code&gt;fconfig&lt;/code&gt; 设置输入法即可使用。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;需要在 &lt;code&gt;/home&lt;/code&gt; 文件夹下面新建/修改 &lt;code&gt;.xprofile&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;export LC_ALL=zh_CN.utf8        &lt;br /&gt;
+export XMODIFIERS=@im=fcitx        &lt;br /&gt; 
+export QT_IM_MODULE=xim        &lt;br /&gt;
+export GTK_IM_MODULE=xim        &lt;br /&gt; 
+fcitx -d        &lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/01/08/chinese-input/</link>
+                <guid>http://williamlfang.github.com/cn/2014/01/08/chinese-input/</guid>
+                <pubDate>2014-01-08 00:00:00 +0800</pubDate>
+                <category>Tech</category>
+　             　<author>ccbikai</author>
+        </item>
+
+        <item>
+                <title>新系统的第一个软件</title>
+                <description>&lt;p&gt;最近由于电脑不是很稳定,装了几次系统.这个我之前也有谈过,如何从万恶的 MS 的 Windows 系统成功&lt;a href=&quot;http://williamlfang.github.io/cn/2014/01/window-2-linux/&quot;&gt;转型&lt;/a&gt;到自由软件与操作系统 Linux.经过这几次的装机经历,我也发现了这其中的一些pattern.比如,我今天要谈到的话题:
+&amp;gt; 谁是你的新系统的第一个软件呢?&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;对于这个问题的回答,估计该是千奇百怪的吧.对于典型的程序员,可能是先装一个 git, 然后在 &lt;em&gt;Emacs&lt;/em&gt; 下积极的编程.而对于一个游戏痴迷者,大概是某个武器装备吧.而对于我,在多次的装机之后,无一例外的,(竟然)!均是安装了 &lt;a href=&quot;https://code.google.com/p/goagent/&quot;&gt;GoAgent 科学上网神器&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;关于&lt;em&gt;科学上网&lt;/em&gt;,此处不必多言,如果诸君想要一窥究竟,可以在google上找找.我想说的是,为什么,这个普通的&lt;em&gt;翻墙&lt;/em&gt;工具,会成为新系统的第一位”业主”.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;我的青春旁白&lt;/h2&gt;
+
+&lt;p&gt;我向来愚钝,对于一些词汇,总是不能辨识.比如,这个词汇,”中国梦”.我一直不曾明白过,大概也不会明白了.&lt;/p&gt;
+
+&lt;p&gt;高中时,我怀疑自己有病.而且不仅仅是”我怀疑”这个初诊判断,我的老师也是这么认为的,说白日梦是一种病,得治,年轻人不要整天想着拯救世界红旗插遍美帝.可是,我当时就是这么一种精神状态,以为可以三年高考五年大学三年赶英五年超美,然后世界和平世态安定世人均等,我也可以冲着某某领导某某”长”(音,zhang,上声,意同高大上伟光正,异于短)说,这tm谁呀,我哥们.&lt;/p&gt;
+
+&lt;p&gt;然后我就被老师提着耳朵连打带骂赶鸭上架赶驴赴约般拜见心理医生.我说,医生,我有病,心里的.他贼兮兮的看着我说,没症状,不是心里的,是脑子的病.专业术语曰”心理”.我说,那就是呀,我有病,心里的.他说,不对,你心里的,没有病,你心理的,有病.&lt;/p&gt;
+
+&lt;p&gt;我说,那我心里的到底有没有病呢.他说,你心里的没有病,可是你心理的有病.&lt;/p&gt;
+
+&lt;p&gt;我们就这样争吵了一个下午.彼此都忘了最开始的症结.原来的我是会做白日梦的,原来的我是会有堂吉诃德的烦恼的维特的追忆似水流年的普鲁斯特的情人在敲打铁皮鼓的令人愉悦的忧伤的.可是那个下午过后,我像是决意要长大的奥斯卡,毅然丢弃了心爱的铁皮鼓,毅然开始乐观向上开始做一颗好的种子好的花朵好的公民.我的梦丢了,可是我的病也好了.&lt;/p&gt;
+
+&lt;p&gt;这个诊断报告一直保护了我走过三年的高中.因为有了它,我有病就像我的白日梦一样就成了一个历史一个过去一个不能遗忘的以往,而我没病给我保护给我遮羞布给我得以进入那个浩浩大学给我得以存活于这个泱泱大国.&lt;/p&gt;
+
+&lt;p&gt;多年后,我一直以为,梦是一种病,而且是一种叫做心理的病.对于这一点,当初还是非常学究范非常书生气的我查找了诸多名家,诸多著作.我还一副洗耳恭听卑躬屈膝的写笔记做总结.可是我满眼看到的,是有关梦的病与关于病的梦的论述,是有关身体健全心智不全躯体安康心理黯然刻画,是有关自由意志如何被独裁奸污被专断纳妾的记录.那时候,我有那么一个片段,回到过去那个有病的年代,回去那个到了要治病的年代,对着他们歇斯底里也罢痛哭流涕也罢,求求你们,放过那个孩子.他有病,可是真的不需要治.&lt;/p&gt;
+
+&lt;p&gt;对于这样一种类似没病的有病,”中国梦”最直观的解释,就是大家都回青春去,重走青春路.就像当年的有病的我,大家一起在做白日梦.以前我在学校里有病,因为白日梦在当初是属于疑难杂症乱象丛生,即使我背着老师偷偷溜进学校那个仅有的半个平方的播音室里,有点科普有点可笑向全校师生介绍F的梦的解析,可是他们依然不懂.至少我得到的惩罚告诉我他们不懂.他们说,这是一种病,一种臆想的病.&lt;/p&gt;
+
+&lt;p&gt;而现在,当我毅然学着当年那个书生学究的模样,想要研究”中国梦”之时,早已有伟大的教授与伟哥的叫兽在申请课题在申报遗迹.我想要试着研究者病一样的梦与梦一样的病,于是,我开始了在互联网的漫长冲浪在无人旷野的漫长流浪.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;我的互联网空白&lt;/h2&gt;
+
+&lt;p&gt;这个时代据说是”一个言论与集社自由”的好时代,我们在享受着犹如”忍者神龟”一般”龟网速”的同时,还在享受着天朝给予的各种”保护”.比如,某天有个小小的病毒侵入你的电脑,WOW,我们立马就有了防火墙的提醒,并在不知不觉中将其隔离,将其粉碎.此乃一劳永逸,不再整天提醒吊胆.再比如,某天你溜了个神,觉得是不是应该看看nyt整天都在评论神马玩意.于是,冒着被病毒侵入的危险,顶着被审查的暴风,你胆颤心惊而又小心翼翼的在你那个多年前早就不曾更新换待的IE浏览器输入一下符号&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http://www.nyt.com
+http://www.facebook.com
+http://www.twitter.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;叮咚….恭喜你,没有被电脑病毒侵入….因为有我们这个时代最伟大的软件设计–GFW的保护.你的一颗悬而又悬的心终于安定了.O(∩_∩)O哈哈~.你暗自庆幸着.原来无国外的网站竟然都一窝si的是病毒,善哉,善哉,多亏不曾打开过,多谢不曾浏览过,多喜没有腐蚀过…&lt;/p&gt;
+
+&lt;p&gt;很抱歉,我也曾今是众多号称是全球最庞大群体的”你”当中的一个,我也曾今为了侥幸躲过所谓”病毒与不良信息”的腐蚀而暗地窃喜过,我也曾今在茶余饭后有事没事的诅咒过那些有事没事天天设计所以”不良信息”的”美帝”,我也曾经在这有限的土地上观望这有限的雾霾幻想着无限的美梦得到无限的实现,我也曾经……&lt;/p&gt;
+
+&lt;p&gt;如果人为回首过去的无知而羞愧,那么,我愿永远的停留这个状态,在这千万中可能中的一个实现.因为过去的无知,足以让我愧对先贤的智慧,愧对自我的审判.&lt;/p&gt;
+
+&lt;p&gt;有一天,我也想多说的你一样,在心惊胆颤心跳提速心率不齐的情况下,打开了一个网页,也打开了一扇通往未知无限境地的危险抑或一扇引我走进更广阔苍穹的视窗.这一次,多亏那些大叔大”审”们的慷慨与仁慈,多谢在这一刻种种可能迹象中的一个处理随机过程实现的状态,一个不知天高地厚一个不通天朝美梦的孩子,在懵懵懂懂与莽莽撞撞间,如同童话里的爱丽斯之于仙界,我也来到了一个未知与未来的世界.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;我的自由独白&lt;/h2&gt;
+
+&lt;p&gt;传世纪之初,上帝说,要有人,于是世界多了亚当与夏娃.&lt;/p&gt;
+
+&lt;p&gt;我自知神力不比上帝,却也斗胆在互联网之初,说,要有自由,要有万能的自由.&lt;/p&gt;
+
+&lt;p&gt;可是,这个世界依然没有自由.因为他们如同一群奔跑在困境当中的野兽,争取着解放全世界,却最终挣扎着躺倒在猎人的枪口下.在有光之前,世界是黑的.在有互联网之后,自由便死光了.所有这个盛产网民的社会也盛产”黑客”.&lt;/p&gt;
+
+&lt;p&gt;我该感谢这些”黑客”,是他们让我看到原来世界是有光的.他们是谁,我不知道.我们彼此不曾谋面,也就省了在人潮拥挤的地铁站见着面隔着口罩相互寒暄.我们从来不打招呼,我们也从来不打群架,因为这个世界有很多的问题靠暴力与强拆是解决不了问题的,有很多的自由,越是抗争,越是抗取,越是早衰,越是早死.&lt;/p&gt;
+
+&lt;p&gt;后来,我也只是默默的躲进小楼,躲在小角,偶尔透过残留余光的视网膜,看看这个世界.&lt;/p&gt;
+
+&lt;p&gt;有些时候,我会通过goagent联系多年失散的朋友,在fb上看看近照是不是瘦了胖了高了怎么有人还矮了呢,在tw里也会想念那些远在天边的切切私语遗忘在某个不知名的接到.他们如同失落天涯的蒲公英,飘零在荒无管制的原野.可我却一直羡慕着羡慕着,唯独恨我这落地生根了的躯干,不远不近,囚禁在这无形的地牢里,守着这有形的长城,过着无期的日子,叹一口无尽的哀怨.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;### 附录:GoAgent设置说明
+—-
+GoAgent 为在天朝上网提供了一个小小的洞眼，让被墙的我们得以窥见外面自由的世界。&lt;/p&gt;
+
+&lt;p&gt;以下设置为个人经验,请谨慎借用.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建 &lt;a href=&quot;https://appengine.google.com/&quot;&gt;Google Appengine&lt;/a&gt; 的ID.一个ID每天上限流量为1GB,最多可以申请10个账号.这样就可以保证一天内有10GB的流量可供使用,基本能够保证一天的上网需要,看个Youtube或者浏览Facebook是没问题的.如我的
+&amp;gt; williamfang01|williamfang02|williamfang05|williamfang06|williamfang07|williamfang08| &lt;br /&gt;
+&amp;gt; williamfang09|williamfang1988|williamfang1989|williamlianfang&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;下载 &lt;a href=&quot;https://developers.google.com/appengine/downloads?hl=zh-cn&quot;&gt;Google App Engine SDK&lt;/a&gt;,并解压到一个 &lt;code&gt;/Goagent/go_appengine&lt;/code&gt; 的文件夹下面.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;下载 &lt;a href=&quot;https://code.google.com/p/goagent/&quot;&gt;GoAgent&lt;/a&gt;,将其解压到 &lt;code&gt;/Goagent/go_appengine&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;打开 &lt;code&gt;/Goagent/go_appengine/goagent-goagent-37d13a7/local/proxy.ini&lt;/code&gt;,在 &lt;code&gt;appid&lt;/code&gt; 中输入刚才申请的 ID 账号,保存.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;打开 Linux 终端机,填写ID,gmail密码,上传账号信息.
+&amp;gt; cd /home/william/Programs/Goagent/go_appengine/goagent-goagent-37d13a7/serve    &lt;br /&gt;
+&amp;gt; python uploader.zip&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;成功后会有提示,回车推出.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;现在可以到 &lt;code&gt;/local&lt;/code&gt; 下打开 &lt;code&gt;goagent-gtk.py&lt;/code&gt;,直接运行即可上网.也可以将其复制到桌面,以后直接双击即可.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在 chrome 中的配置.
+&amp;gt;+ 首先是通过 chrome store 安装 proxy
+&amp;gt;+ 点击设置,上传 &lt;code&gt;/local/SwitchyOptions.bak&lt;/code&gt;
+&amp;gt;+ 点击 chrome 的 setting, 安装证书 &lt;code&gt;/local/CA&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/01/05/goagent/</link>
+                <guid>http://williamlfang.github.com/cn/2014/01/05/goagent/</guid>
+                <pubDate>2014-01-05 00:00:00 +0800</pubDate>
+                <category></category>
 　             　<author>ccbikai</author>
         </item>
 

@@ -1,6 +1,6 @@
 <div class="post mt-2">
 	<div class="info box">
-		<a class="date" href="{{ page.url }}">
+		<a class="date" href="{{ site.url }}{{ page.url }}">
 		<span class="year">{{ page.date | date:"%Y" }}</span>
 		<span class="day">{{ page.date | date:"%d" }}</span>
 		<span class="month">{{ page.date | date:"%B" }}</span>
@@ -8,7 +8,7 @@
 		</a>
 	</div>
 	<div class="article">
-		<h3><a class="title font-orange mb-2" href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h3>
+		<h3><a class="title font-orange mb-2" href="{{ site.url }}{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h3>
 		<div class="content lh-150p font-16 pd-1 mg-2 radius-7">
 		{{ content }}
 		</div>

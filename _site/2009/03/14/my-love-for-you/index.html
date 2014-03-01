@@ -1,31 +1,1712 @@
 
+<!--
+
+===================================================================================
+	 _____    _____       ___   _____        _   _   _____   _____    _____  
+	|  _  \  | ____|     /   | |  _  \      | | | | | ____| |  _  \  | ____| 
+	| |_| |  | |__      / /| | | | | |      | |_| | | |__   | |_| |  | |__   
+	|  _  /  |  __|    / / | | | | | |      |  _  | |  __|  |  _  /  |  __|  
+	| | \ \  | |___   / /  | | | |_| |      | | | | | |___  | | \ \  | |___  
+	|_|  \_\ |_____| /_/   |_| |_____/      |_| |_| |_____| |_|  \_\ |_____| 
+
+==================================================================================
+	[Original] Copyright (C) Generously Distributed by: 2010 - 2014 Dandy Weng. 
+	Copyright (C) 2013 - 2014 William Fang. All Rights Reserved.
+	Version: 3.0
+	Modified by William Fang @Febuary, 2014, Xiamen, China
+-->
+
+
 <!DOCTYPE html>
-<!--
--->
-<html lang="zh-CN"/>
+<!--[if IE]>
+<html id="ie" lang="zh-CN">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="zh-CN">
+<!--<![endif]-->
 <head>
+<meta charset="UTF-8">
 
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
-	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
-	<meta name="author" content="william" />
-	<meta name="generator" content="Jekyll" />
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-	<meta name="keywords" content="" />
-	<meta name="description" content="我爱主同时亦爱一位世人" />
 
-	<meta charset="UTF-8"/>
-	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-	<meta content="yes" name="apple-mobile-web-app-capable">
-	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
-	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
 
-	<title> 方 莲 | William</title>
+<link href="/media/main/css/bootstrap/global.min.css" rel="stylesheet" media="screen" />
+<link href="/media/main/css/bootstrap/responsive.min.css" rel="stylesheet" media="screen" />
+<link href="/media/main/css/jquery-jvectormap-1.2.2.css" rel="stylesheet" media="screen" />
+<link href="/media/main/css/jquery.montage.css" rel="stylesheet" media="screen" />                <!-- ====== Montage effect  -->
 
-<!--
-	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
-	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
--->
+<script type="text/javascript" src="/media/main/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/media/main/js/pjax.js"></script>
+<script type="text/javascript" src="/media/main/js/jquery-jvectormap-1.2.2.min.js"></script>
+<script type="text/javascript" src="/media/main/js/jquery-jvectormap-cn-merc-cn.js"></script>
+<script type="text/javascript" src="/media/main/js/jquery-jvectormap-world-mill-en.js"></script>
+<script type="text/javascript" src="/media/main/js/jquery.montage.min.js"></script>
+
+<link href="/media/main/css/external.css" media="screen" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script type="text/javascript" src="http://dw-resources.qiniudn.com/js/html5.js"></script> 
+<![endif]-->
+
+<style>
+@charset "utf-8";
+
+/* = Designed and Developed by Dandy Weng 
+/* = Global
+----------------------------------------------- */
+body {
+	overflow-x: hidden;
+	background-color: #999;
+	background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD/4QCKRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAZKGAAcAAABWAAAALAAAAABVTklDT0RFAABJAG4AdABlAGwAKABSACkAIABKAFAARQBHACAATABpAGIAcgBhAHIAeQAsACAAdgBlAHIAcwBpAG8AbgAgADEALAA1ACwANAAsADMANv/+ACpJbnRlbChSKSBKUEVHIExpYnJhcnksIHZlcnNpb24gMSw1LDQsMzYA/9sAQwABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB/9sAQwEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB/8AAEQgAMgAyAwERAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A/l3eZC3MMQYmTBO9RzOrZwsYzjkcj5vbFAFZQnkxAeQAYVP3p/UHHMRz8p4oAv2qqkqqHjyJIyP9bxtkAPWIc4PB9e3qAVVTdJCC0R3g5YGQ4wDjgwc8DHTrz/FQA9WyJ2wnKry2OB50I7x84GP4unOM0AAc7WOyHnzh/q4zjAiPHB/A9txPPcAzHUM7sY7b5mZuVjB5JPIC4B9qALbTLsbdHLwrniUfdaWPb0fJGT25/EmgBqy/cUJNxby/el6lUh24/eEck8Z9PQ4oAvW1y4m/1c5/dMw4DZ2y8A/McnCgdSB68UARwySM1uFikypkGfs4cHCEnjk89f8Af7UAAM+yb9ycgJjFsneRAM/u8nBQ5GOoP4gBGZNvMZGRKOYAp5WE9o/fOeR796AK+8+g/I//ABFAGiITskYfZAPJbhVjHKtwcNEeuDj35BBxQBCWcfd8ghIGz/x7EkfL1yiHgdcj+EA0ATxSuuc7fkhl4VrftLKxyN4HOOgHf0oAgWQ+Yn7rI82UAYgzgx4/hk6YPqPmycegBCF3IT5LjcFU4A5PnFv4WbkAencdMZIBIkBABMB5MpJMY4BghOSdh/u54yfXOCKAKpQAkbF4OORg/iNvBoAuSCH7M+O0DfKssgOQZfWMAdR39Mc8kAhlWJhKURseUeA7NgthcZ8rPGcjqePqAATKqvv2qVzCx27ZMjLcbsRc9ew78UAKqeWynYx2tMDmK4AJCS8FvLTKgpnuTu7cZAIwv7vDEDPY+d8vy+b90jkYHbPHPPcAUDbGvz44JHzueGGD/Hgn2+70zjjABSOO8o/Mf/FH+ZoAuSKiRDYrHdFID8sg+ZQSw+XkjPHzfiTgUARKy+VN1zmJeYn7ynPUrn5QcZ4HXHTIBCpk6B926PgeW+7/AFqD+J/Rh+BoAWB5NzDr+8uOGjyN370EYOR7YweKALL7ZDjAHDZHyqqkqF/u4wPbk4OBigBMREJhVJ8lWyNitgbwQPkOeCfy9qAKTyR7mx03HHzIOMnsMAfTFAGrIqunEUh2lz0bADHvmMnjcexPB6cigCHaBFK/l/KbiMD5GA/5aPjLRjj+FufwagCqMAxMI5S37zJVsqBvt8f8sWwPm9ePWgBTxJJ8pBDv9PmZ/wCLaucgHJ9++TQBcBWRiGjGFcryx6cZz83dio+jY7UASWuw/wACgiHH8X99gOtwOuM8KQvpQBCYAx3bVGecfLxnnH+s7UATSj5P+2b/AKPHj8u1AFfOLVgOn2iL/wBBegCuGJkhBJI3yjBJx/rLX/E/maAHGR97/O/Rv4j/ANNvegCa3ll8w/vJPvL/ABt3kUHv3HB9uKAJraWQswMjkbGGC7Y+63vQAGSTJ+d+p/iP+NAA/9k=);
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+a:not(.btn) {
+	color: #00699E;
+	-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+	transition: 300ms;
+}
+
+a:hover:not(.btn),
+a:active:not(.btn) {
+	color: #9E0000;
+	text-decoration: none;
+	-webkit-transform: translateY(-8px);
+	-moz-transform: translateY(-8px);
+	transform: translateY(-8px);
+}
+
+img, p {
+	-webkit-touch-callout: none;
+}
+
+p, h4 {
+	font: 500 15px/1.8 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
+}
+
+h1, h2, h3, h4, h5, p, span {
+	cursor: default;
+}
+
+
+.padding-huge {
+	padding: 27px;
+}
+.padding-large {
+	padding: 45px;
+}
+.padding-middle {
+	padding: 25px;
+}
+.no-radius {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;	
+}
+p.wo:first-letter {
+	font-size: 115%;
+	padding-right: 1px;	
+}
+.relative {
+	position: relative;
+}
+.button {
+	margin: 20px auto;
+}
+hr.soften {
+	height: 1px;
+	margin: 30px 0;
+	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+	background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+	background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+	background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+	border: 0;
+}
+/* = Header
+----------------------------------------------- */
+#header-camarts-entry {
+	margin: 0;
+	text-align: center;
+	line-height: 35px;
+	font-size: 12px;
+}
+
+#header-camarts-entry a {
+	color: #999;
+	font: 500 12px/1.8 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
+	-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+	transition: 300ms;
+}
+
+#header-camarts-entry a:hover {
+	color: #fff;	
+}
+
+#header-camarts-entry .navbar-inner {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;	
+}
+
+#header-text {
+	position: absolute;
+	width: 100%;
+	z-index: 99999;	
+	text-rendering: optimizeLegibility;
+}
+
+#ie #header,
+#mobile #header {
+	background: url("../images/header-image.jpg") no-repeat;
+	background-size: 100%;
+	background-size: cover;
+	filter: alpha(opacity = 80) progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/header-image.jpg', sizingMethod='scale')\9;
+}
+
+#ie #handle,
+#mobile #handle {
+	display: none;
+	visibility: hidden;
+}
+
+.jumbotron {
+	position: relative;
+	padding: 30px 0;
+	width: 100%;
+	min-height: 280px;
+	color: #fff;
+	text-align: center;
+	/*
+	-webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+	   -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+			box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+	*/
+	-webkit-transition: all .8s ease-in-out;
+	   -moz-transition: all .8s ease-in-out;
+			transition: all .8s ease-in-out;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		    box-sizing: border-box;
+}
+
+.jumbotron h1 {
+	font-size: 60px;
+	font-weight: bold;
+	letter-spacing: -1px;
+	line-height: 1;
+	text-shadow: 0 1px 8px rgba(0,0,0,.6), 0 3px 30px rgba(0,0,0,.1);
+	margin-bottom: 20px;
+	z-index: 999;
+}
+
+.jumbotron h1 img {
+	max-width: 280px;
+}
+
+.jumbotron p {
+	color: #F3EFE8;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 1.5;
+	text-shadow: 1px 2px 3px rgba(0,0,0,.8), 1px 3px 20px rgba(0,0,0,.8);
+	z-index: 999;
+}
+
+.jumbotron a {
+	color: #fff;
+	color: rgba(255,255,255,.5);
+	-webkit-transition: all .5s ease-in-out;
+	   -moz-transition: all .5s ease-in-out;
+			transition: all .5s ease-in-out;
+}
+
+.jumbotron a.lead-link {
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.7);	
+}
+
+.jumbotron a:hover {
+	color: #fff;
+	text-shadow: 0 0 10px rgba(255,255,255,.25);
+}
+
+.jumbotron-extended {
+	height: 480px;
+}
+
+.jumbotron-shadow {
+	-webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.2), inset 0 -3px 7px rgba(0, 0, 0, 0.2), inset 0px -5px 50px 3px rgba(0, 0, 0, 0.5);
+	   -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.2), inset 0 -3px 7px rgba(0, 0, 0, 0.2), inset 0px -5px 50px 3px rgba(0, 0, 0, 0.5);
+			box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.2), inset 0 -3px 7px rgba(0, 0, 0, 0.2), inset 0px -5px 50px 3px rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron .am-container {
+	position: absolute;
+	top: 0;
+	margin: 0px auto;
+	/* background: rgba(0, 0, 0, 0.8) url("http://dw-resources.qiniudn.com/images/patterns/mooning.jpg") repeat;	 */
+	-webkit-transition: all 1s ease-in-out;
+	   -moz-transition: all 1s ease-in-out;
+			transition: all 1s ease-in-out;
+}
+.jumbotron .am-container a:hover {
+	
+}
+
+.jumbotron .am-wrapper {
+	box-shadow: 0px 1px 3px 1.5px rgba(0, 0, 0, 0.4);
+	/* opacity: .8; */
+	-webkit-transition: all .2s ease-in-out;
+	   -moz-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
+}
+
+.jumbotron .am-wrapper:hover {
+	z-index: 9999;
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 1px 8px 2px rgba(255, 255, 255, 0.8), 0px 5px 50px 10px rgba(255, 255, 255, 0.8);
+	-moz-box-shadow:    0px 1px 8px 2px rgba(255, 255, 255, 0.8), 0px 5px 50px 10px rgba(255, 255, 255, 0.8);
+	-ms-box-shadow:     0px 1px 8px 2px rgba(255, 255, 255, 0.8), 0px 5px 50px 10px rgba(255, 255, 255, 0.8);
+	-o-box-shadow:      0px 1px 8px 2px rgba(255, 255, 255, 0.8), 0px 5px 50px 10px rgba(255, 255, 255, 0.8);
+	box-shadow:         0px 1px 8px 2px rgba(255, 255, 255, 0.8), 0px 5px 50px 10px rgba(255, 255, 255, 0.8);	
+	/* === ==== === 照片效果设置 === === === ===*/
+	 -webkit-transform: scale(3.2);
+		-moz-transform: scale(3.2);
+    		 transform: scale(3.2);
+	/*
+	 -webkit-transform: scale(1.1);
+		-moz-transform: scale(1.1);
+    		 transform: scale(1.1);
+    	*/
+	/* === ==== === 照片效果设置 === === === ===*/
+}
+
+#handle {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;	 /* === === === 中间滑开的位置 === === ===*/
+	z-index: 1;
+}
+
+#handle, #handle img {
+	-webkit-transition: all .3s ease-in-out;
+	   -moz-transition: all .3s ease-in-out;
+	     -o-transition: all .3s ease-in-out;
+			transition: all .3s ease-in-out;
+}
+
+#handle-chevron {
+	width: 100px;    /*----------------------------------------------------------------------------------------- 中间滑开的位置*/
+	opacity: .8;      /* 透明化程度*/
+}
+
+#handle-chevron:hover {
+	opacity: .8;
+}
+
+#handle.actived {
+	bottom: -21px;
+	-webkit-transform: rotate(180deg);
+	   -moz-transform: rotate(180deg);
+		 -o-transform: rotate(180deg);
+			transform: rotate(180deg);
+}
+
+
+
+.montage-copyright a {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* === === == == == == == == 照片墙显示时其他部分变暗 == == == == == == */
+.shadow {
+	top: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 0, 0, 0.5)), color-stop(30%,rgba(0, 0, 0, 0.5)), color-stop(100%,rgba(0, 0, 0, .1)));
+	border-top: 1px solid #e0e0e0;	
+	z-index: -999;
+	/* z-index: -999; */
+}
+/* === === == == == == == == 照片墙显示时其他部分变暗 == == == == ==*/
+
+.shadow-main {
+	top: -1px;
+	border-top: #555 solid 1px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 0, 0, 0.7)), color-stop(20%,rgba(0, 0, 0, 0.5)), color-stop(100%,rgba(0, 0, 0, 0)));
+	z-index: 0;	
+}
+
+.blur {
+	-webkit-filter: blur(8px);
+}
+
+.blur-thinner {
+	-webkit-filter: blur(3px);
+}
+
+.under {
+	z-index: -9999;
+}
+
+.tooltip {
+	font: 300 12px/1.8 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
+	color: white;
+	z-index: 99999;
+}
+.tooltip.bottom {
+	margin-top: 8px;
+}
+
+/* = Components
+----------------------------------------------- */
+
+.main {
+	position: relative;
+	width: 100%;	
+	background: #999 url("http://dw-resources.qiniudn.com/images/patterns/white_wall_hash.jpg") repeat;
+	border-top: #E6E6E6 solid 1px;
+	-webkit-box-shadow: 0px 1px 8px 1.5px rgba(0, 0, 0, 0.35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25), 0px 5px 30px 3px rgba(0, 0, 0, 0.2) inset;
+	-moz-box-shadow:    0px 1px 8px 1.5px rgba(0, 0, 0, 0.35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25), 0px 5px 30px 3px rgba(0, 0, 0, 0.2) inset;
+	-ms-box-shadow:     0px 1px 8px 1.5px rgba(0, 0, 0, 0.35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25), 0px 5px 30px 3px rgba(0, 0, 0, 0.2) inset;
+	-o-box-shadow:      0px 1px 8px 1.5px rgba(0, 0, 0, 0.35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25), 0px 5px 30px 3px rgba(0, 0, 0, 0.2) inset;
+	box-shadow:         0px 1px 8px 1.5px rgba(0, 0, 0, 0.35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25), 0px 5px 30px 3px rgba(0, 0, 0, 0.2) inset;
+}
+
+.nav-maps {
+	width: 230px;
+	margin: auto;
+}
+
+.about {
+	margin-top: 50px;
+	margin-bottom: 80px;
+}
+
+.about p {
+	color: #666;
+	font: 500 13px/1.65 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
+}
+
+.about small {
+	color: #969696;
+	font-size: 10px;
+}
+
+.side-shadow {
+	position: absolute;
+	height: 100%;
+	width: 100px;
+	top: -1px;
+}
+
+.side-shadow.left {
+	left: 0;
+	background: -webkit-gradient(linear, 0 0, 100% 0, color-stop(0%,rgba(0, 0, 0, 0.25)), color-stop(30%,rgba(0, 0, 0, .1)), color-stop(100%,rgba(0, 0, 0, 0)));
+}
+
+.side-shadow.right {
+	right: 0;
+	background: -webkit-gradient(linear, 100% 0, 0 0, color-stop(0%,rgba(0, 0, 0, 0.25)), color-stop(30%,rgba(0, 0, 0, .1)), color-stop(100%,rgba(0, 0, 0, 0)));
+}
+
+#loading {
+	display: none;
+	position: fixed;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0.2, rgba(0, 0, 0, 0.8)), color-stop(0.50, rgba(0, 0, 0, 0.7)), color-stop(0.80, rgba(0, 0, 0, 0.6)) );
+	width: 100px;
+	height: 100px;
+	top: 50%;
+	margin-top: -80px;
+	left: 50%;
+	margin-left: -50px;
+	z-index: 99999;
+	color: #FFF;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.35), 1px 1px 50px 8px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.35), 1px 1px 50px 8px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.35), 1px 1px 50px 8px rgba(0, 0, 0, 0.4);
+	-webkit-animation: spinner-in 200ms linear 0 1 forwards;
+}
+
+#loading .spinner {
+	position: absolute;
+	max-width: 80px;
+	left: 10px;
+	top: -15px;
+}
+
+#loading span {
+	position: absolute;
+	display: block;
+	width: 100%;
+	bottom: 10px;
+	white-space: nowrap;
+	text-shadow: 1px 1px 3px #000;
+	font: 200 12px/2 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
+	color: #E5E5E5;
+	cursor: default;
+}
+
+@-webkit-keyframes spinner-in {
+	/*
+	0% {
+		-webkit-transform: translateY(60px);
+		-webkit-filter: blur(5px);
+	}
+	100% { 
+		-webkit-transform: translateY(0);
+		-webkit-filter: blur(1px);
+	}
+	*/
+	0% {
+		-webkit-filter: grayscale(0.8) blur(5px);
+	}
+	50% {
+		-webkit-filter: grayscale(0.3) blur(3px);
+	}
+	100% { 
+		-webkit-filter: none;
+	}
+}
+
+footer {
+	color: white;
+	color: rgba(255, 255, 255, 0.7);
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+	text-shadow: 0px 3px 5px #000;	
+}
+
+/* = Map Effects 
+----------------------------------------------- */
+
+#map {
+	height: 800px;
+	width: 100%;
+	background: url("http://williamlfang.qiniudn.com/assets/images/map_bg_fit.jpg");
+	background-size: cover;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.24) inset;
+	-moz-box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.24) inset;
+	box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.24) inset;
+}
+#map svg {
+	-webkit-animation: map-in 1s linear 0 1;
+	-webkit-border-top-right-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	-moz-border-top-right-radius: 6px;	
+	-moz-border-bottom-right-radius: 6px;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+#map path,
+#map circle {
+	-webkit-transition: all .25s linear;
+	-moz-transition: all .25s linear;
+	transition: all .25s linear;
+}
+
+@-webkit-keyframes map-in {
+	0% {
+		-webkit-filter: grayscale(0.8) blur(5px);
+	}
+	50% {
+		-webkit-filter: grayscale(0.3) blur(3px);
+	}
+	100% { 
+		-webkit-filter: none;
+	}
+}
+
+
+/* = Responsive
+----------------------------------------------- */
+@media (min-width: 1200px) {
+	.padding-huge {
+		padding: 65px;
+	}
+	.hero-unit {
+		background-position-y: 55%;
+	}
+	.panel {
+		margin-bottom: 140px;
+	}
+	.panel-description {
+		margin-bottom: 100px;
+	}
+	.description {	
+		margin-top: -245px;
+	}
+	.screenshots {
+		position: absolute;
+		margin-top: -63px;
+		margin-left: -50px;
+		width: 475px;
+	}
+	.screenshot-img {
+		max-width: 475px;
+	}
+	.iphone-mockup {
+		margin-top: 0;
+	}
+	.design {
+		padding: 0 0 25px 45px;
+	}
+	.programming {
+		padding: 0 35px 25px 0;
+	}
+	.ipad-news { 
+		max-width: 585px;
+	}
+	.ribbon-apple {
+		max-width: 80px;	
+	}
+	.sns-container {
+		float: left;
+	}
+	.sns-icon img {
+		-webkit-box-reflect: below 5px -webkit-gradient(linear, left top, left bottom, color-stop(10%,rgba(255, 255, 255, 0.0)), color-stop(80%,rgba(255, 255, 255, 0.10)), color-stop(100%,rgba(255, 255, 255, .3)));
+	}
+
+}
+ 
+@media (min-width: 768px) and (max-width: 979px) {
+	h1 {
+		font-size: 28.5px;
+	}
+	p {
+		font-size: 14px;
+		line-height: 1.8;
+	}
+	.block-left {
+		padding: 15px 5px 10px 35px;
+	}
+	.padding-large {
+		padding: 20px;
+	}
+	.ipad-news {
+		max-width: 500px;
+		margin-left: -140px;
+	}
+	.muiti-contact {
+		font-size: 45px;
+		line-height: 1.8;
+	}
+}
+
+
+@media (max-width: 979px) {
+	.navbar-fixed-top {
+		margin-bottom: 0;
+	}	
+	.navbar .btn-navbar {
+		position: absolute;
+		right: 10px;	
+	}
+	.collapse.in {
+		margin-top: 45px;
+	}
+	header {
+		margin-top: 0;
+	}
+	.description {
+		margin-top: -265px;
+	}
+	.panel {
+		margin-bottom: 60px;
+		overflow: hidden;
+	}
+	.panel-description {
+		margin-bottom: 60px;
+	}
+	.panel-description h4 {
+		font-size: 17px;
+		line-height: 1.8;
+	}
+	#map {
+		height: 400px;
+	}
+	.button {
+		margin: 5px auto;
+	}
+	.screenshots {
+		margin-top: 48px;
+		margin-left: -20px;
+	}
+	.iphone-mockup  {
+		height: 500px;
+		max-width: 400px;
+		margin-top: 0;
+	}
+	.ribbon-apple {
+		max-width: 65px;
+	}
+	.ribbon-version {
+		max-width: 120px;
+	}
+}
+
+@media (max-width: 767px) {
+	body {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.jumbotron {
+		padding: 10px 0;
+	}
+	.jumbotron p {
+		font-size: 15px;
+		line-height: 1.8;
+		text-align: left;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.jumbotron h1 {
+		margin-bottom: 20px;
+	}
+	#map {
+		height: 500px;
+		width: auto;
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	.about {
+		margin-top: 20px;
+		margin-bottom: 50px;	
+	}
+	.about .span6 {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+
+
+@media (max-device-width: 1024px) {
+	.sns-icon {
+		-webkit-filter: none;
+	}
+	.sns-icon:hover {
+		-webkit-filter: none;
+	}	
+	.sns-fadeout {
+		-webkit-filter: none;
+		opacity: 0.3;
+	}
+	a.thumbnail img {
+		-webkit-filter: none;
+	}
+	#photograph .carousel-inner:hover {
+		-webkit-filter: grayscale(0.8);
+		-webkit-transform: translateZ(0);
+	}
+}
+
+@media (max-width: 767px) {
+	body {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	h1 {
+		font-size: 32.5px;
+	}
+	.navbar-fixed-top,
+	.navbar-fixed-bottom,
+	.navbar-static-top {
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.hero-unit img {
+		max-width: 100%;
+	}
+	.description {
+		margin-top: -267px;
+	}
+	.block-left {
+		padding: 40px;
+	}
+	article.container {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	#map,
+	#map svg {
+		-webkit-border-bottom-left-radius: 6px;
+		-webkit-border-top-right-radius: 0;
+		-moz-border-bottom-left-radius: 6px;	
+		-moz-border-top-right-radius: 0;
+		border-bottom-left-radius: 6px;
+		border-top-right-radius: 0;
+	}
+	#photograph .carousel-inner, 
+	#photograph .carousel-inner > .item > img, 
+	#photograph .carousel-inner > .item > a > img {
+		-webkit-border-top-right-radius: 6px;
+		-webkit-border-bottom-left-radius: 0;
+		-moz-border-top-right-radius: 6px;
+		-moz-border-bottom-left-radius: 0;
+		border-top-right-radius: 6px;
+		border-bottom-left-radius: 0;
+	}
+	.button {
+		margin: 10px auto;
+	}
+	.screenshots {
+		position: relative;
+		margin: 20px auto 0;
+		max-width: 500px;
+	}
+	.design, 
+	.programming {
+		padding: 0 45px 0 45px;
+	}
+	.muiti-contact {
+		font-size: 40px;
+		line-height: 1.8;
+	}
+	.thumbnail {
+		border: none;
+	}
+	.ipad-news {
+		display: none;
+	}
+}
+
+@media (max-width: 620px) {
+	.muiti-contact {
+		font-size: 30px;
+		line-height: 1;
+	}
+	.sns-container {
+		max-width: 270px;
+	}	
+	.sns-icon {
+		margin: 0 10px 30px;
+		width: 45px;
+		
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;		
+	}
+	.sns-icon:before {
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+	}
+	
+	.sns-icon:hover:before {
+		background: -moz-linear-gradient(top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,.1) 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.3)), color-stop(100%,rgba(255,255,255,.1)));
+		background: linear-gradient(top, rgba(255,255,255,0.3) 0%,rgba(255,255,255,.1) 100%);
+	}
+	.sns-icon:after {
+		-webkit-border-top-left-radius: 8px;
+		-webkit-border-top-right-radius: 8px;
+		-moz-border-radius-topleft: 8px;
+		-moz-border-radius-topright: 8px;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+	}
+}
+
+@media (max-width: 480px) {
+	.padding-large {
+		padding: 25px;
+	}
+	.hero-unit {
+		background: url("http://databank.u.qiniudn.com/images/chahua_littleboy.jpg");
+	}
+	.panel {
+		margin-bottom: 35px;
+	}
+	.panel-description {
+		margin-bottom: 35px;
+	}
+	.panel-description h4 {
+		font-size: 15px;
+		line-height: 1.5;
+	}
+	.panel-description h5 {
+		color: rgba(0, 0, 0, 0.7);
+		font-size: 13.5px;
+		line-height: 1.5;
+		text-align: left;
+		margin-top: 20px;
+	}
+	.muiti-contact {
+		font-size: 25px;
+		line-height: 1;
+	}
+	.img-responsive {
+		max-width: 100%;
+	}
+
+}
+@media (max-width: 320px){
+	.padding-middle {
+		padding: 15px;
+	}
+	.block-left {
+		padding: 25px;
+	}
+	.hero-unit {
+		padding: 40px 0 60px;
+	}
+	.hero-unit img {
+		max-width: 280px;
+	}
+	hr.soften {
+		margin: 20px 0;
+	}
+	.description {
+		margin-top: -288px;
+	}	
+	article.container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.panel, 
+	#map,
+	#map svg, 
+	#photograph .carousel-inner, 
+	#photograph .carousel-inner > .item > img, 
+	#photograph .carousel-inner > .item > a > img {
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+	}
+	#map {
+		height: 230px;
+	}
+	.carousel-indicators {
+		display: none;
+	}
+	.design, 
+	.programming {
+		padding: 0 25px 0 25px;
+	}
+	.screenshots {
+		margin: 20px auto 0;
+	}
+	.muiti-contact {
+		font-size: 20px;
+		line-height: 1;
+	}	
+}
+
+@media (max-width: 290px){
+	.hero-unit img {
+		max-width: 100%;
+	}
+}
+
+@media -webkit-min-device-pixel-ratio: 2) { 
+
+}
+
+
+@media (max-width: 480px) {
+	p {
+		font: 500 13px/1.5 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
+	}
+	#header {
+		background: url("../images/header-image.jpg") no-repeat;
+		background-size: 100%;
+		background-size: cover;
+	}
+	#header-text {
+		position: relative;
+	}
+	.jumbotron {
+		min-height: 100%;
+	}
+	.jumbotron h1 img {
+		max-width: 230px;
+	}
+	#map {
+		height: 400px;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	footer {
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		text-align: left;
+	}
+	#handle, 
+	#header-shadow, 
+	#am-container, 
+	.am-wrapper {
+		display: none;
+		visibility: hidden;
+	}
+	
+}
+
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2), 
+only screen and (   min--moz-device-pixel-ratio: 2), 
+only screen and (     -o-min-device-pixel-ratio: 2/1), 
+only screen and (        min-device-pixel-ratio: 2), 
+only screen and (                min-resolution: 192dpi), 
+only screen and (                min-resolution: 2dppx) { 
+	body {
+		background: #e5e5e5 url("http://bcs.duapp.com/databank/images%2Fpatterns%2Fmooning%402x.jpg");
+		background-size: 400px 400px;
+	}
+	.panel {
+		background: #FFF url("http://bcs.duapp.com/databank/images%2Fpatterns%2Fwhite_wall_hash%402x.jpg");
+		background-size: 500px 500px;
+	}
+}
+/* = 动画 Animations
+----------------------------------------------- */
+
+@-webkit-keyframes title-in {
+	0% {
+		-webkit-transform: translateY(-50px);
+	}
+	80% { 
+		-webkit-transform: translateY(-5px);
+	}
+	90% { 
+		-webkit-transform: translateY(5px);
+	}
+	100% { 
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes description-in {
+	0% {
+		-webkit-transform: translateY(90px);
+	}
+	80% { 
+		-webkit-transform: translateY(5px);
+	}
+	90% { 
+		-webkit-transform: translateY(-5px);
+	}
+	100% { 
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes profile-img-hover {
+	0% {
+		-webkit-transform: rotate(0);
+	}
+	23% { 
+		-webkit-transform: rotate(18deg);
+	}
+	25% { 
+		-webkit-transform: rotate(20deg);
+	}
+	50% { 
+		-webkit-transform: rotate(0);
+	}
+	73% { 
+		-webkit-transform: rotate(-18deg);
+	}
+	75% { 
+		-webkit-transform: rotate(-20deg);
+	}
+	100% { 
+		-webkit-transform: rotate(0);
+	}
+}
+
+@-webkit-keyframes profile-img-active {
+	0% {
+		-webkit-transform: rotate(0);
+	}
+	100% { 
+		-webkit-transform: rotate(365deg);
+	}
+}
+
+@-webkit-keyframes profile-img-loading {
+	0% {
+		-webkit-filter: blur(5px);
+	}
+	100% { 
+		-webkit-filter: blur(1px);
+	}
+}
+
+@-webkit-keyframes spinner-in {
+	0% {
+		-webkit-filter: blur(5px);
+		-webkit-transform: translateY(60px);
+	}
+	100% { 
+		-webkit-filter: none;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes panel-in {
+	0% {
+		-webkit-filter: grayscale(0.8) blur(5px);
+		-webkit-transform: translateY(80px);
+	}
+	50% {
+		-webkit-filter: grayscale(0.3) blur(3px);
+		-webkit-transform: translateY(60px);
+	}
+	100% { 
+		-webkit-filter: none;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes map-in {
+	0% {
+		-webkit-filter: grayscale(0.8) blur(5px);
+	}
+	50% {
+		-webkit-filter: grayscale(0.3) blur(3px);
+	}
+	100% { 
+		-webkit-filter: none;
+	}
+}
+
+@-webkit-keyframes map-in {
+	0% {
+		-webkit-filter: grayscale(0.8) blur(5px);
+	}
+	100% { 
+		-webkit-filter: none;
+	}
+}
+
+@-webkit-keyframes sns-icon-hover {
+	0% {
+		-webkit-transform: scale(1.1) rotate(3deg) translateX(-2px);
+	}
+	100% { 
+		-webkit-transform: scale(1.1) rotate(-3deg) translateX(2px);
+	}
+}
+
+/* = Pseudo
+----------------------------------------------- */
+::-webkit-scrollbar {
+	width: 10px;
+	background: #cacaca url("http://williamlfang.qiniudn.com/assets/images/mooning.jpg");
+	opacity: .8;	
+	-webkit-transition: .25s;
+}
+::-webkit-scrollbar-button {
+	width: 10px;
+	height: 5px;
+	-webkit-transition: .25s;
+}
+::-webkit-scrollbar-track {
+	background: #cacaca url("http://williamlfang.qiniudn.com/assets/images/mooning.jpg");
+	/* border: thin solid lightgray; 
+	box-shadow: 0px 0px 3px #dfdfdf inset; */
+	border-radius: 10px;
+	-webkit-transition: .25s;
+}
+::-webkit-scrollbar-thumb {
+	background: #969696;
+	/* border: thin solid gray; */
+	border-radius: 10px;
+	-webkit-transition: .25s;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #7d7d7d;
+	-webkit-transition: .25s;
+}
+::-webkit-selection {
+    background: #d3d3d3; 
+    color: #555;
+}
+::-moz-selection {
+    background: #d3d3d3; 
+    color: #555;
+}
+::selection {
+    background: #d3d3d3; 
+    color: #555;
+}
+/* --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+
+/* = 框架 Panels
+----------------------------------------------- */
+.panel {
+	display: none;
+	background: #FFF url("http://bcs.duapp.com/databank/images%2Fpatterns%2Fwhite_wall_hash.jpg");
+	padding: 0px;
+	margin-bottom: 120px;
+	color: #333;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	/*
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0, .075);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+	*/
+	-webkit-animation: panel-in 1s linear 0 1;
+	-webkit-box-shadow: 0px 1px 8px 1.5px rgba(0, 0, 0, .35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow:    0px 1px 8px 1.5px rgba(0, 0, 0, .35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25);
+	-ms-box-shadow:     0px 1px 8px 1.5px rgba(0, 0, 0, .35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25);
+	-o-box-shadow:      0px 1px 8px 1.5px rgba(0, 0, 0, .35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25);
+	box-shadow:         0px 1px 8px 1.5px rgba(0, 0, 0, .35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25);
+}
+.panel h1, .panel h3 {
+	cursor: default;
+	background: -webkit-linear-gradient(top, rgba(70, 70, 70, 1) 0%,rgba(111, 111, 111, 1) 50%,rgba(10, 14, 10, 1) 51%,rgba(10, 8, 9, 1) 100%);
+	-webkit-box-reflect: below -7px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.2, transparent), to(rgba(3,3,3,.1)));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	transition: .5s;
+}
+.panel h3 {
+	-webkit-box-reflect: below -17px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.4, transparent), to(rgba(3,3,3,.2)));
+}
+/*
+.panel h1:hover {
+	background: -webkit-linear-gradient(top, rgba(70, 70, 70, 1) 0%,rgba(111, 111, 111, 1) 70%,rgba(10, 14, 10, 1) 71%,rgba(10, 8, 9, 1) 100%);
+	-webkit-box-reflect: below -2px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.4, transparent), to(rgba(3,3,3,.2)));	
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;	
+	-webkit-transform: translateY(-5px);
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	transition: .5s;
+}
+*/
+.panel-description {
+	background: rgba(255, 255, 255, 0.80);
+	color: #333;
+	padding: 0px;
+	margin-bottom: 80px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	text-shadow: 1px 1px 2px #FFF;
+	-webkit-box-shadow: 0px 1px 8px 1.5px rgba(0, 0, 0, 0.25), 0px 20px 70px 8px rgba(0, 0, 0, 0.05); 
+	-moz-box-shadow:    0px 1px 8px 1.5px rgba(0, 0, 0, 0.25), 0px 20px 70px 8px rgba(0, 0, 0, 0.05);
+	-ms-box-shadow:     0px 1px 8px 1.5px rgba(0, 0, 0, 0.25), 0px 20px 70px 8px rgba(0, 0, 0, 0.05);  
+	-o-box-shadow:      0px 1px 8px 1.5px rgba(0, 0, 0, 0.25), 0px 20px 70px 8px rgba(0, 0, 0, 0.05);
+	box-shadow:         0px 1px 8px 1.5px rgba(0, 0, 0, 0.25), 0px 20px 70px 8px rgba(0, 0, 0, 0.05);
+}
+.panel-description h3 {
+	font: 500 18px/1.8 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
+}
+.panel-description h4 {
+	color: rgba(0, 0, 0, 0.7);
+	font-size: 14.5px;
+	line-height: 1.5;
+}
+.button-text-panel a {
+	position: relative;
+	margin: 10px;
+}
+.block-left {
+	padding: 35px 10px 15px 45px
+}
+.design {
+	padding: 0 5px 15px 45px;
+}
+.programming {
+	padding: 0 20px 10px 0;
+}
+
+
+/* = 字体渲染 Fonts
+----------------------------------------------- */
+/*
+@font-face {
+	font-family: Minion;
+	src: url(/fonts/MinionPro-Semibold.otf);
+}
+*/
+
+
+/* = IE 8 以下 IE 8 or below
+----------------------------------------------- */
+
+.ie-alert {
+	position: fixed;
+	top: 50px;
+	width: 630px;
+	z-index: 9999;	
+}
+#ie8 .panel-description {
+	background: #FFF url("http://bcs.duapp.com/databank/images%2Fpatterns%2Fwhite_wall_hash.jpg");	
+}
+#ie8 .hover {
+	color: #000;
+}
+#ie8 .fadeout {
+	color: #CCC;
+}
+
+/* = 响应式 Responsive
+----------------------------------------------- */
+.nav a {
+	-webkit-transition: 500ms;
+	-moz-transition: 500ms;
+	transition: 500ms;
+}
+
+
+.hero-unit {
+	position: relative;
+	background: url("http://databank.u.qiniudn.com/images/hawaii_ship.jpg");
+	background-size: cover;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://databank.u.qiniudn.com/images/hawaii_ship.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://databank.u.qiniudn.com/images/hawaii_ship.jpg', sizingMethod='scale')";
+	color: #fff;
+	height: 480px;	
+	margin-bottom: 0;
+}
+.hero-unit h1 {
+	/* font: 88px Minion,'Optima', "Times New Roman", Times, serif; */
+	text-align: center;
+	text-shadow: 1px 1px 10px black;
+}
+.hero-unit img {
+	max-width: 500px;
+	-webkit-animation: title-in 1s ease-out 0 1 forwards;
+	-webkit-transition: 500ms;
+	-moz-transition: 500ms;
+	transition: 500ms;
+
+}
+.hero-unit img:hover {
+	-webkit-transform: translateY(-5px) scale(1.05) rotate(2deg);
+	-moz-transform: translateY(-5px) scale(1.05) rotate(2deg);
+	transform: translateY(-5px) scale(1.05) rotate(2deg);
+}
+.hero-unit .banner-link {
+	position: absolute;
+	right: 5px;
+	bottom: 8px;
+	font: 200 12px/1.8 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
+	text-align: right;
+	text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.hero-unit .banner-link a {
+	color: white;
+	color: rgba(255, 255, 255, 0.9);
+	-webkit-transition: 500ms;
+	-moz-transition: 500ms;
+	transition: 500ms;
+}
+.hero-unit .banner-link a:hover {
+	color: white;
+}
+.description {
+	position: relative;
+	margin-top: -267px;
+	-webkit-animation: description-in 1s ease-out 0 1 forwards;
+}
+.description h3, 
+.description h4 {
+	cursor: default;
+}
+#loading {
+	position: relative;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0.2, rgba(0, 0, 0, 0.8)), color-stop(0.50, rgba(0, 0, 0, 0.7)), color-stop(0.80, rgba(0, 0, 0, 0.6)) );
+	width: 100px;
+	height: 100px;
+	margin: 0px auto 80px;
+	color: #FFF;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.35), 1px 1px 50px 8px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.35), 1px 1px 50px 8px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.35), 1px 1px 50px 8px rgba(0, 0, 0, 0.4);
+	-webkit-animation: spinner-in 1s linear 0 1 forwards;
+}
+#loading .spinner {
+	position: absolute;
+	max-width: 80px;
+	left: 10px;
+	top: -15px;
+}
+#loading span {
+	position: absolute;
+	display: block;
+	width: 100%;
+	bottom: 10px;
+	white-space: nowrap;
+	text-shadow: 1px 1px 3px #000;
+	font-size: 12px;
+	font-weight: 200;
+	line-height: 2;
+	color: #E5E5E5;
+	cursor: default;
+}
+
+
+/* == == == == === === === === 双击 鼠标  === === === === === === ===
+img.profile {
+	max-width: 380px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	-webkit-transition: 500ms;
+	-moz-transition: 500ms;
+	transition: 500ms;
+	
+	-webkit-box-shadow: 0px 0px 2px 3px rgba(255, 255, 255, 0.7), 0px 0px 30px 8px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 0px 2px 3px rgba(255, 255, 255, 0.7), 0px 0px 30px 8px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 0px 2px 3px rgba(255, 255, 255, 0.7), 0px 0px 30px 8px rgba(0, 0, 0, 0.25);
+}
+  === === === === === 双击 鼠标 === === === === === === === === === ==== ===*/
+
+img.profile:hover {
+	-webkit-animation: profile-img-hover 1000ms ease-out 100ms infinite forwards;
+}
+img.profile:active {
+	-webkit-animation: profile-img-active 500ms linear 0 infinite forwards;
+}
+img.profile.loading {
+	/* -webkit-animation: profile-img-loading 500ms linear 0 infinite alternate; 这加载动画似乎在某些情况下会一直显示造成困扰，暂时先去掉 */
+}
+#aboutMaps small {
+	color: #969696;
+	font-size: 70%;
+}
+#aboutMaps .modal-header h3 {
+	-webkit-box-reflect: below -7px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.4, transparent), to(rgba(3,3,3,.2)));
+}
+.item {
+	max-height: 513px;
+}
+.carousel {
+	margin-bottom: 0;
+}
+#photograph .carousel-inner, 
+#photograph .carousel-inner > .item > img, 
+#photograph .carousel-inner > .item > a > img {
+	-webkit-transition: 500ms;
+	-moz-transition: 500ms;
+	transition: 500ms;		
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-moz-border-top-left-radius: 6px;	
+	-moz-border-bottom-left-radius: 6px;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+#photograph .carousel-inner:hover {
+	-webkit-filter: grayscale(0.8);
+	-webkit-transform: translateZ(0);
+}
+.carousel-indicators {
+	bottom: 20px;
+	right: 15px;
+	top: auto;
+}
+a.carousel-control:hover,
+a.carousel-control:focus,
+a.carousel-control {
+	color: #FFF;
+}
+.screenshots {
+	margin-top: 3px;
+	margin-left: -40px;
+}
+.screenshot-img {
+	max-width: 475px;
+}
+.iphone-mockup {
+	padding-right: 75px;
+	margin-top: 60px;
+}
+.screenshots .carousel-inner {
+	-webkit-border-bottom-right-radius: 6px;
+	-moz-border-bottom-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+.ribbon-apple {
+	position: absolute;
+	top: -5px;
+	right: 30px;
+	max-width: 70px;	
+}
+.ipad-news { 
+	max-width: 100%;
+}
+.muiti-contact {
+	font: 400 50px/1.8 'Quattrocento Sans', 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
+	text-align: center;
+	cursor: default;
+	color: rgba(0, 0, 0, 0.4);
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+	-webkit-user-select: text;
+}
+.hover {
+	color: rgba(0, 0, 0, 0.7);
+	text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.41);
+}
+.fadeout {
+	color: rgba(0, 0, 0, 0.1);
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+.muiti-contact,
+.hover,
+.fadeout,
+email,
+at,
+sns,
+web {
+	-webkit-transition: all .35s linear .2s;
+	-moz-transition: all .35s linear .2s;
+	transition: all .35s linear .2s;
+}
+.sns {
+	margin: 0 auto;
+	max-width: 1040px;
+}
+.sns-container {
+	position: relative;	
+	max-width: 520px;
+	margin: 0 auto;
+}
+
+.sns-icon {
+	position: relative;
+	border-radius: 13px;
+	margin: 0 30px 60px;
+	width: 70px;
+	float: left;
+	
+	-webkit-box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+	-moz-box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+	box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+ 
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+ 
+	-webkit-border-radius: 13px;
+	-moz-border-radius: 13px;
+	border-radius: 13px;
+	
+	-webkit-filter: blur(0) grayscale(0.2);
+	-webkit-transform: translateZ(0);
+}
+.sns-icon:hover {
+	-webkit-filter: none;
+	-webkit-animation: sns-icon-hover 100ms linear .8s infinite alternate;
+}
+.sns-icon:before {
+	position: absolute;
+	content: ' ';
+	width: 100%;
+	height: 50%;
+	top: 0;
+	left: 0;
+ 
+	-webkit-border-radius: 13px;
+	-moz-border-radius: 13px;
+	border-radius: 13px;
+	
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+ 
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,.1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(100%,rgba(255,255,255,.1)));
+	background: linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,.1) 100%);
+}
+.sns-icon:hover:before {
+	height: 0;
+	
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+	
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,.1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.3)), color-stop(100%,rgba(255,255,255,.1)));
+	background: linear-gradient(top, rgba(255,255,255,0.3) 0%,rgba(255,255,255,.1) 100%);}
+
+.sns-icon:after {
+	position: absolute;
+	content: ' ';
+	width: 100%;
+	height: 30px;
+	bottom: -31px;
+	left: 0;
+ 
+	-webkit-border-top-left-radius: 13px;
+	-webkit-border-top-right-radius: 13px;
+	-moz-border-radius-topleft: 13px;
+	-moz-border-radius-topright: 13px;
+	border-top-left-radius: 13px;
+	border-top-right-radius: 13px;
+ 
+	background: -moz-linear-gradient(top, rgba(230,230,230,.3) 0%, rgba(230,230,230,0) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(230,230,230,.3)), color-stop(100%,rgba(230,230,230,0)));
+	background: linear-gradient(top, rgba(230,230,230,.3) 0%,rgba(230,230,230,0) 100%);
+}
+.sns-icon img {
+	-webkit-box-reflect: below 5px -webkit-gradient(linear, left top, left bottom, color-stop(30%,rgba(255, 255, 255, 0.0)), color-stop(80%,rgba(255, 255, 255, 0.1)), color-stop(100%,rgba(255, 255, 255, .3)));
+}
+.sns-fadeout {
+	opacity: 0.5;
+	-webkit-filter: blur(5px) grayscale(0.6);
+}
+.ribbon-version {
+	position: absolute;
+	top: -11px;
+	right: -15px;
+	max-width: 150px;	
+}
+.img-responsive {
+	max-width: 350px;
+	-webkit-box-reflect: below -65px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.4, transparent), to(rgba(3,3,3,.2)));s
+}
+#about p:not(small) {
+	-webkit-box-reflect: below -13px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.4, transparent), to(rgba(3,3,3,.2)));
+}
+a.thumbnail {
+	color: #333;
+	text-decoration: none;
+}
+a.thumbnail:hover {
+	-webkit-box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.1),1px 1px 30px 5px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.1),1px 1px 30px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.1),1px 1px 30px 5px rgba(0, 0, 0, 0.2);
+	color: #333;
+
+}
+a.thumbnail img {
+	-webkit-filter: blur(1px) grayscale(0.8);
+	-webkit-transform: translateZ(0);
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	transition: .5s;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+a.thumbnail:hover img {
+	-webkit-filter: none;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	transition: .5s;
+}
+a.thumbnail h4 {
+	font-size: 24.5px;
+	line-height: 1;
+	-webkit-box-reflect: below -4px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.4, transparent), to(rgba(3,3,3,.2)));
+}
+a.thumbnail p {
+	font-size: 12px;
+	font-weight: 100;
+	line-height: 1.6;
+}
+a.thumbnail small {
+	font-size: 95%;
+}
+.statusbar {
+	position: relative;
+	height: 20px;
+	width: 100%;
+	background: #212121;
+	overflow: hidden;
+}
+#back-to-top {
+	width: 48px;
+	height: 48px;
+	right: 40px;
+	margin: 50px auto 20px;
+	background: white;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 24px;
+	box-shadow: 0px 1px 8px 1.5px rgba(0, 0, 0, 0.35), 0px 10px 70px 8px rgba(0, 0, 0, 0.20);
+	cursor: pointer;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-transition: background 300ms;
+	-moz-transition: background 300ms;
+	-ms-transition: background 300ms;
+	-o-transition: background 300ms;
+	transition: background 300ms;
+}
+#back-to-top:hover {
+	background: #9d9d9d;
+	background: rgba(255, 255, 255, 0.6);
+}
+#back-to-top #rocket path {
+	fill: #bbb;
+	-webkit-transition: all 300ms;
+	-moz-transition: all 300ms;
+	-ms-transition: all 300ms;
+	-o-transition: all 300ms;
+	transition: all 300ms;
+}
+#back-to-top:hover #rocket path {
+	fill: rgba(255, 102, 0, 0.76);
+}
+#back-to-top #rocket {
+    margin-top: 7px;
+}
+
+/* Back to top ==================================================================================*/
+a#go-top {
+  width:50px;
+  height:50px;
+  text-decoration:none;
+  opacity:0.5;
+  background: url("http://williamlfang.qiniudn.com/assets/images/back-top.png") no-repeat scroll 0 0 transparent;
+}
+a#go-top:hover {
+  background-position: -50px 0
+}
+
+.back-to {
+  bottom: 35px;
+  overflow: hidden;
+  position: fixed;
+  right: 10px;
+  width: 110px;
+  z-index: 999;
+}
+.back-to .back-top {
+  background: url("http://williamlfang.qiniudn.com/assets/images/back-top.png") no-repeat scroll 0 0 transparent;
+  display: block;
+  float: right;
+  height: 50px;
+  margin-left: 10px;
+  outline: 0 none;
+  text-indent: -9999em;
+  width: 50px;
+}
+.back-to .back-top:hover {
+  background-position: -50px 0
+}
+/************************************************************************************
+/* --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+</style>
+
 
 	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
 	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
@@ -40,55 +1721,502 @@
 	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
 	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
 	<script>hljs.initHighlightingOnLoad();</script>
-<!--=================================================================== -->
-<!-- mathjax config similar to math.stackexchange -->
 
-<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [ ['$$', '$$']],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
-    },
-    /*   方程编号 */
-    TeX: {
-            equationNumbers: {
-                autoNumber: ["AMS"],
-                useLabelIds: true
-            }
-        },
-        "HTML-CSS": {
-            linebreaks: {
-                automatic: true
-            },
-            scale: 100      /* 数学字体大小*/
-        },
-        SVG: {
-            linebreaks: {
-                automatic: true
-            }
-        }
-        /*   方程编号 */
-});
 
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
-</script>
-<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
-<!-- CDN upload request sent in private mail to generated-toc author -->
-<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
 
-<!--=================================================================== -->
 </head>
 
+  <!--=================================================================== -->
+  <!--=================================================================== -->
 
-<body>
+
+<body  data-spy="scroll" data-target=".navbar" onload="completed();" ontouchstart="">
+
+
+<div id="header-camarts-entry" class="navbar navbar-inverse hide">
+    <div class="navbar-inner">
+        <div class="container">
+             <br/>
+        	<a href="http://williamlfang.github.io/cn/" target="_blank">我的中文博客 »</a>
+        	<br/>
+        	<br/>
+        </div>
+    </div>
+</div>
+
+
+<header id="header" class="jumbotron jumbotron-shadow">
+    <div id="header-text" class="container header-elements">
+        <h1 id="title" class="header-elements"><img class="profile img-circle loading" src="http://williamlfang.qiniudn.com/assets/images/title.png" width="120" height="40"></h1>
+        <p id="subtitle" class="lead"> 方莲的个人网站 <br class="visible-desktop">
+        A Personal Website<br>
+        <!-- <a id="website-link" href="http://williamlfang.github.io/cn/" class="lead-link text-center" target="_blank" title="了解关于我的一切" data-toggle="tooltip" data-placement="bottom">进入我的个人网站 »</a></p>
+        -->
+          <a id="website-link" href="http://williamlfang.github.io/cn" target="_blank" title="了解关于我的一切" data-toggle="tooltip" data-placement="left" class="lead-link text-center">中文版 »</a>
+          	<strong> / </strong>
+
+           <a id="website-link" href=" " target="_blank" title="Learn More" data-toggle="tooltip" data-placement="bottom" class="lead-link text-center">English »</a>
+
+   </div>
+
+
+<div class="am-container under blur" id="am-container">
+<!-- ===================================================================================-->
+<a id='img_57' href='http://user.qzone.qq.com/564985882/4' title='「咪豆」厦门' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/psb.jpg'></a>
+
+			<script>
+			$('#img_57').hover(function(){
+				$('#img_57').tooltip('show');
+			});
+			</script>
+<!-- ===================================================================================-->
+<a id='baby001' href='http://user.qzone.qq.com/564985882/4' title='「咪豆」厦门' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/baby001.jpg'></a>
+
+			<script>
+			$('#baby001').hover(function(){
+				$('#baby001').tooltip('show');
+			});
+			</script>
+<!-- ===================================================================================-->
+<!-- ===================================================================================-->
+<a id='baby002' href='' title='「咪豆」厦门' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/baby002.jpg'></a>
+
+			<script>
+			$('#baby002').hover(function(){
+				$('#baby002').tooltip('show');
+			});
+			</script>
+<!-- ===================================================================================-->
+<!-- ===================================================================================-->
+<a id='baby003' href='' title='「咪豆」厦门' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/baby003.JPG'></a>
+
+			<script>
+			$('#baby003').hover(function(){
+				$('#baby003').tooltip('show');
+			});
+			</script>
+<!-- ===================================================================================-->
+<!-- ===================================================================================-->
+<a id='baby004' href='' title='「咪豆」厦门' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/baby004.JPG'></a>
+
+			<script>
+			$('#baby004').hover(function(){
+				$('#baby004').tooltip('show');
+			});
+			</script>
+<!-- ===================================================================================-->
+<!-- ===================================================================================-->
+<a id='baby005' href='' title='「咪豆」厦门' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/baby005.jpg'></a>
+
+			<script>
+			$('#baby005').hover(function(){
+				$('#baby005').tooltip('show');
+			});
+			</script>
+<!-- ===================================================================================-->
+<!-- ===================================================================================-->
+<a id='baby006' href='' title='「咪豆和妈妈在游戏」厦门 - 2013.09' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/baby006.jpg'></a>
+
+			<script>
+			$('#baby006').hover(function(){
+				$('#baby006').tooltip('show');
+			});
+			</script>
+<!-- ===================================================================================-->
+<!-- ===================================================================================-->
+<a id='baby007' href='' title='「咪豆在珍珠湾海滩」厦门 - 2013.11' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/baby007.jpg'></a>
+
+			<script>
+			$('#baby007').hover(function(){
+				$('#baby007').tooltip('show');
+			});
+			</script>
+<!-- ===================================================================================-->
+<!-- ===================================================================================-->
+<a id='baby008' href='' title='「外婆推着咪豆在海滩」厦门 - 2013.11' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/baby008.jpg'></a>
+
+			<script>
+			$('#baby008').hover(function(){
+				$('#baby008').tooltip('show');
+			});
+			</script>
+<!-- ===================================================================================-->
+<!-- ===================================================================================-->
+<a id='baby009' href='' title='「假小子模样」厦门 - 2013.11' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/baby009.jpg'></a>
+
+			<script>
+			$('#baby009').hover(function(){
+				$('#baby009').tooltip('show');
+			});
+			</script>
+<!-- ===================================================================================-->
+<!-- ===================================================================================-->
+<a id='baby010' href='' title='「看海去」厦门 - 2013.11' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/baby010.jpg'></a>
+
+			<script>
+			$('#baby010').hover(function(){
+				$('#baby010').tooltip('show');
+			});
+			</script>
+<!-- ===================================================================================-->
+<!-- ===================================================================================-->
+<a id='baby011' href='' title='「小妮子心情很好」厦门 - 2013.11' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/baby011.jpg'></a>
+
+			<script>
+			$('#baby011').hover(function(){
+				$('#baby011').tooltip('show');
+			});
+			</script>
+<!-- ===================================================================================-->
+<!-- ####################################################################################-->
+<a id='mami001' href='' title='「妈咪」厦门' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/mami001.JPG'></a>
+
+			<script>
+			$('#mami001').hover(function(){
+				$('#mami001').tooltip('show');
+			});
+			</script>
+<!-- ####################################################################################-->
+<!-- ####################################################################################-->
+<a id='mami002' href='' title='「妈咪」厦门' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/mami002.jpg'></a>
+
+			<script>
+			$('#mami002').hover(function(){
+				$('#mami002').tooltip('show');
+			});
+			</script>
+<!-- ####################################################################################-->
+<!-- ####################################################################################-->
+<a id='mami003' href='' title='「妈咪」厦门' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/mami003.jpg'></a>
+
+			<script>
+			$('#mami003').hover(function(){
+				$('#mami003').tooltip('show');
+			});
+			</script>
+<!-- ####################################################################################-->
+<!-- ####################################################################################-->
+<a id='mami004' href='' title='「妈咪」厦门' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/mami004.jpg'></a>
+
+			<script>
+			$('#mami004').hover(function(){
+				$('#mami004').tooltip('show');
+			});
+			</script>
+<!-- ####################################################################################-->
+<!-- ####################################################################################-->
+<a id='mami005' href='' title='「小猪」北京 - 2009.10' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/mami005.jpg'></a>
+
+			<script>
+			$('#mami005').hover(function(){
+				$('#mami005').tooltip('show');
+			});
+			</script>
+<!-- ####################################################################################-->
+<!-- ####################################################################################-->
+<a id='mami006' href='' title='「小猪摆萌」济南 大润发超市 - 2009.04' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/mami006.jpg'></a>
+
+			<script>
+			$('#mami006').hover(function(){
+				$('#mami006').tooltip('show');
+			});
+			</script>
+<!-- ####################################################################################-->
+<!-- ####################################################################################-->
+<a id='mami007' href='' title='「小猪摆萌」济南 山大 生科院前 - 2009.04' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/mami007.jpg'></a>
+
+			<script>
+			$('#mami007').hover(function(){
+				$('#mami007').tooltip('show');
+			});
+			</script>
+<!-- ####################################################################################-->
+<!-- ####################################################################################-->
+  <a id='mami010' href='' title='「小猪摆萌」天津 南开大学草坪 - 2008.07' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/mami010.JPG'></a>
+  
+  <script>
+  $('#mami010').hover(function(){
+    $('#mami010').tooltip('show');
+  });
+</script>
+  <!-- ####################################################################################-->
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<a id='DSC05063' href='' title='「石头在想什么呢」济南 山大南新区 - 2008.05' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/DSC05063.JPG'></a>
+
+      <script>
+    	$('#DSC05063').hover(function(){
+				$('#DSC05063').tooltip('show');
+			});
+			</script>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+
+  <!-- ####################################################################################-->
+  <a id='041' href='' title='「小猪摆萌」天津 商学院 - 2008.11' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/041.jpg'></a>
+  
+  <script>
+  $('#041').hover(function(){
+    $('#041').tooltip('show');
+  });
+</script>
+  <!-- ####################################################################################-->
+  <!-- ####################################################################################-->
+  <a id='DSC05798' href='' title='「美丽天使」济南 洪家楼教堂前 - 2009.04' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/DSC05798.JPG'></a>
+  
+  <script>
+  $('#DSC05798').hover(function(){
+    $('#DSC05798').tooltip('show');
+  });
+</script>
+  <!-- ####################################################################################-->
+  <!-- ####################################################################################-->
+  <a id='DSC05871' href='' title='「美丽天使」济南 洪家楼教堂前 - 2009.04' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/DSC05871.JPG'></a>
+  
+  <script>
+  $('#DSC05871').hover(function(){
+    $('#DSC05871').tooltip('show');
+  });
+</script>
+  <!-- ####################################################################################-->
+    <!-- ####################################################################################-->
+  <a id='DSC05811' href='' title='「远望洪家楼教堂」济南 洪家楼教堂前 - 2009.04' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/DSC05811.JPG'></a>
+  
+  <script>
+  $('#DSC05811').hover(function(){
+    $('#DSC05811').tooltip('show');
+  });
+</script>
+  <!-- ####################################################################################-->
+  <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#-->
+  <a id='DSC05820' href='' title='「猪头 & 石头」济南 泉城路 永和豆浆前 - 2009.04' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/DSC05820.JPG'></a>
+  
+  <script>
+  $('#DSC05820').hover(function(){
+    $('#DSC05820').tooltip('show');
+  });
+</script>
+  <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#-->
+  <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#-->
+  <a id='DSC05850' href='' title='「猪头 & 石头」济南 山大校园内 - 2009.04' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/DSC05850.JPG'></a>
+  
+  <script>
+  $('#DSC05850').hover(function(){
+    $('#DSC05850').tooltip('show');
+  });
+</script>
+  <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#-->
+  <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#-->
+  <a id='DSC05858' href='' title='「石头」济南 山大 - 2009.04' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/DSC05858.JPG'></a>
+  
+  <script>
+  $('#DSC05858').hover(function(){
+    $('#DSC05858').tooltip('show');
+  });
+</script>
+  <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#-->
+  <a id='DSC05033' href='' title='「石头」济南 山大小树林 - 2008.05' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/DSC05033.JPG'></a>
+  
+  <script>
+  $('#DSC05033').hover(function(){
+    $('#DSC05033').tooltip('show');
+  });
+</script>
+  <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#-->
+  <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#-->
+  <a id='DSC05052' href='' title='「小猪与小兔」济南 山大南新区 - 2008.05' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/DSC05052.JPG'></a>
+  
+  <script>
+  $('#DSC05052').hover(function(){
+    $('#DSC05052').tooltip('show');
+  });
+</script>
+  <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#-->
+  <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#-->
+  <a id='DSC05059' href='' title='「回首相望」济南 山大南新区 - 2008.05' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/DSC05059.JPG'></a>
+  
+  <script>
+  $('#DSC05059').hover(function(){
+    $('#DSC05059').tooltip('show');
+  });
+</script>
+  <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+  <!-- ####################################################################################-->
+  <a id='DSC05805' href='' title='「我们」济南 洪家楼教堂前 - 2009.04' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/DSC05805.JPG'></a>
+  
+  <script>
+  $('#DSC05805').hover(function(){
+    $('#DSC05805').tooltip('show');
+  });
+</script>
+  <!-- ####################################################################################-->
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<a id='DSC05081' href='' title='「你的镜头装下了我，我的心里一直有你」济南 泉城广场 - 2008.05' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/DSC05081.JPG'></a>
+
+      <script>
+      $('#DSC05081').hover(function(){
+				$('#DSC05081').tooltip('show');
+			});
+			</script>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<a id='IMG_0124' href='' title='「石头 & 猪头」广州 越秀公园 - 2009.08' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/IMG_0124.JPG'></a>
+
+      <script>
+      $('#IMG_0124').hover(function(){
+    		$('#IMG_0124').tooltip('show');
+			});
+			</script>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<a id='IMG_6769' href='' title='「石头 & 猪头」天津 外滩 - 2008.04' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/IMG_6769.JPG'></a>
+
+      <script>
+      $('#IMG_6769').hover(function(){
+      	$('#IMG_6769').tooltip('show');
+			});
+			</script>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<a id='IMG_6789' href='' title='「石头 & 猪头」天津 外滩 - 2008.04' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/IMG_6789.JPG'></a>
+
+      <script>
+      $('#IMG_6789').hover(function(){
+        $('#IMG_6789').tooltip('show');
+			});
+			</script>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<a id='dady001' href='' title='「石头」厦门' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/dady001.jpg'></a>
+
+			<script>
+			$('#dady001').hover(function(){
+				$('#dady001').tooltip('show');
+			});
+			</script>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<a id='stone001' href='' title='「石头」海滩，外婆家 - 2009' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/stone001.jpg'></a>
+
+			<script>
+			$('#stone001').hover(function(){
+				$('#stone001').tooltip('show');
+			});
+			</script>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<a id='stone002' href='' title='「石头」淄博 - 2008' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/stone002.jpg'></a>
+
+			<script>
+			$('#stone002').hover(function(){
+				$('#stone002').tooltip('show');
+			});
+			</script>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<a id='stone004' href='' title='「石头与小伙伴们」厦门 - 2012.05' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/stone004.jpg'></a>
+
+			<script>
+			$('#stone004').hover(function(){
+				$('#stone004').tooltip('show');
+			});
+			</script>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<a id='stone003' href='' title='「石头与小伙伴们」厦门 - 2012.04' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/stone003.jpg'></a>
+
+			<script>
+			$('#stone003').hover(function(){
+				$('#stone003').tooltip('show');
+			});
+			</script>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<a id='stone005' href='' title='「石头 & 猪头」 厦门 - 2012.05' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/stone005.jpg'></a>
+
+			<script>
+			$('#stone005').hover(function(){
+				$('#stone005').tooltip('show');
+			});
+			</script>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<a id='stone006' href='' title='「石头与一群不靠谱的小伙伴」济南 山大新校区- 2010.05' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/stone006.jpg'></a>
+
+			<script>
+			$('#stone006').hover(function(){
+				$('#stone006').tooltip('show');
+			});
+			</script>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<a id='friends002' href='' title='「吴绍伦」广东，顺德 - 2009' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/friends002.jpg'></a>
+
+			<script>
+			$('#friends002').hover(function(){
+				$('#friends002').tooltip('show');
+			});
+			</script>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<a id='friends001' href='' title='「吴绍伦」广东，顺德' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/friends001.jpg'></a>
+
+			<script>
+			$('#friends001').hover(function(){
+				$('#friends001').tooltip('show');
+			});
+			</script>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<a id='friends003' href='' title='「吴绍伦」广东，顺德' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/friends003.jpg'></a>
+
+			<script>
+			$('#friends003').hover(function(){
+				$('#friends003').tooltip('show');
+			});
+			</script>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<a id='father001' href='' title='「父亲与咪豆」厦门 - 2013.09' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/father001.jpg'></a>
+
+			<script>
+			$('#father001').hover(function(){
+				$('#father001').tooltip('show');
+			});
+			</script>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<a id='xm001' href='' title='「厦门的海」厦门 - 2011.06' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/xm001.jpg'></a>
+
+			<script>
+			$('#xm001').hover(function(){
+				$('#xm001').tooltip('show');
+			});
+			</script>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<a id='xm002' href='' title='「厦门的天」厦门 - 2010.08' target='_blank' data-toggle='tooltip' data-placement='bottom'><img src='http://williamlfang.qiniudn.com/assets/images/imgs/xm002.jpg'></a>
+
+			<script>
+			$('#xm002').hover(function(){
+				$('#xm002').tooltip('show');
+			});
+			</script>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+	<span class="montage-copyright">随机展示墙 <a href="javascript:;" onclick="javascript:window.location.reload()">刷新页面换一换</a> | <a href="http://williamlfang.github.io/cn/" target="_blank">&copy;2013-2014</a> <a href="http://williamlfang.github.io/cn/" target="_blank">William Fang&reg;</a></span>
+</div>
+
+    <div id="header-shadow" class="shadow"></div>
+
+    <div id="handle" class="hide">
+	<a href="javascript:;"><div id="icon-path"  title="Click to See More." data-toggle='tooltip' data-placement='bottom'><img id="handle-chevron" src="http://williamlfang.qiniudn.com/assets/images/chevron.png"></div></a>
+</header> 
+    </div>
+
+<div id="loading" class="text-center">
+    <img class="spinner" src="/images/spinner.gif">
+    <span>加载中</span>t
+</div>
+
+<div class="shadow"></div>
 
 	<div id="main" class="w-100p font-gray-dark">
 		<div class="nav nav-large nav-orange">
@@ -302,6 +2430,130 @@ $(document).ready(function() {
 		<div class="radar"></div>
 		</div>
 	</div>
+
+<script type="text/javascript" src="/media/main/css/bootstrap/scripts.min.js"></script>
+<script type="text/javascript">
+
+var $container 	= $('#am-container'),
+	$imgs		= $container.find('img').hide(),
+	totalImgs	= $imgs.length,
+	cnt			= 0;
+
+$imgs.each(function(i) {
+	var $img	= $(this);
+	$('<img/>').load(function() {
+		++cnt;
+		if( cnt === totalImgs ) {
+			$imgs.fadeIn();
+			$container.montage({
+				margin                  : 1, 
+				liquid                  : false, 		
+				fillLastRow				: false,
+				alternateHeight			: true,
+				alternateHeightRange    : {
+					min : 74.2,
+					max : 120
+				},
+			});
+		}
+	}).attr('src',$img.attr('src'));
+});	
+
+$(window).load(function(){
+	$('#handle').fadeIn();
+})
+
+function slideHeader(){
+	$('#header').toggleClass('jumbotron-extended jumbotron-shadow');
+	$('#handle').toggleClass('actived');
+	$('.jumbotron-extended').height($('#am-container').outerHeight(true)-60);
+	$('#am-container').toggleClass('blur under');
+	$('#header-camarts-entry').slideToggle(500);
+	$('#page-shadow').slideToggle(500);
+	$('#header-shadow').fadeToggle(1000);
+	$('.header-elements').fadeToggle(300, function(){
+		if(!$('#header').hasClass('jumbotron-extended')){		
+			$('#header').removeAttr('style');
+		}
+	});
+};
+
+$(function () {
+	$("#handle-chevron").hover(
+		function(){
+			if($('#am-container').hasClass('blur')){
+				$('#am-container').addClass('blur-thinner');
+			}
+		},
+		function(){
+			$('#am-container').removeClass('blur-thinner');
+	});
+});
+
+$('#header').dblclick(function(){
+	slideHeader();
+});
+
+$('#handle').click(function(){
+	slideHeader();
+});
+
+$('#website-link').hover(function(){
+	$('#website-link').tooltip('show');
+});
+
+/*
+
+$('#handle').click(function(){
+	$('#header').toggleClass('jumbotron-extended');
+	$('.jumbotron-extended').height($('#am-container').outerHeight(true)-80);
+	$('#am-container').toggleClass('blur under');
+	$('#header-camarts-entry').slideToggle(500);
+	$('#page-shadow').slideToggle(500);
+	$('.header-elements').fadeToggle(300, function(){
+		if(!$('#header').hasClass('jumbotron-extended')){		
+			$('#header').removeAttr('style');
+			$('#header-shadow').fadeToggle(1000);
+		}
+	});
+});
+
+*/
+
+$.pjax({
+     selector: 'a[href^="http://travel.dandyweng.com"]',
+     container: '#content', //内容替换的容器
+     show: 'fade', //展现的动画，支持默认和fade, 可以自定义动画方式，这里为自定义的function即可。
+     cache: true, //是否使用缓存
+     storage: true, //是否使用本地存储
+     titleSuffix: '', //标题后缀
+     filter: function(){},
+     callback: function(){
+		 //$('body').animate({scrollTop: $('body').offset().top}, 500);
+	 }
+})	 
+    $('#content').bind('pjax.start', function(){
+        $('#loading').show();
+    })
+    $('#content').bind('pjax.end', function(){
+        $('#loading').hide();
+    })
+</script>
+<p style="text-indent: -9999px;"><script src="http://s24.cnzz.com/stat.php?id=5620106&web_id=5620106" language="JavaScript"></script></p>
+
+
+<script type="text/javascript" src="/media/main/js/home.min.js"></script>
+
+<!-- Baidu Statistics -->
+<p style="text-indent: -9999px;"><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb4c6c0df76415ca14358f56e0f957de1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</p>
+
+<!-- CNZZ Statistics -->
+<p style="text-indent: -9999px;"><script src="http://s22.cnzz.com/z_stat.php?id=1000135599&web_id=1000135599" language="JavaScript"></script></p>
+
 <link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
 <script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
 <script type="text/javascript">
@@ -322,6 +2574,41 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+
+
 </body>
 </html>
 
+
+
+
+
+
+<!-- 2014.02.21: 图片下标
+<! Index:63
+a:not(.btn) {
+	color: #00699E;
+	/*-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+	transition: 300ms;
+	*/
+}
+
+.jumbotron a {
+	color: #fff;
+	color: rgba(255,255,255,.5);
+	/* -webkit-transition: all .5s ease-in-out;
+	   -moz-transition: all .5s ease-in-out;
+			transition: all .5s ease-in-out;
+			*/
+}
+<! index: 257
+.jumbotron .am-wrapper {
+	box-shadow: 0px 1px 3px 1.5px rgba(0, 0, 0, 0.4);
+	/* opacity: .8; */
+	/*-webkit-transition: all .2s ease-in-out;
+	   -moz-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
+			*/
+}
+-->

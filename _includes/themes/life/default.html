@@ -1,25 +1,33 @@
-<!DOCTYPE html>
 <!--
--->
-<html lang="zh-CN"/>
-<head>
 
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
+===================================================================================
+	 _____    _____       ___   _____        _   _   _____   _____    _____  
+	|  _  \  | ____|     /   | |  _  \      | | | | | ____| |  _  \  | ____| 
+	| |_| |  | |__      / /| | | | | |      | |_| | | |__   | |_| |  | |__   
+	|  _  /  |  __|    / / | | | | | |      |  _  | |  __|  |  _  /  |  __|  
+	| | \ \  | |___   / /  | | | |_| |      | | | | | |___  | | \ \  | |___  
+	|_|  \_\ |_____| /_/   |_| |_____/      |_| |_| |_____| |_|  \_\ |_____| 
+
+==================================================================================
+	[Original] Copyright (C) Generously Distributed by: 2010 - 2014 Dandy Weng. 
+	Copyright (C) 2013 - 2014 William Fang. All Rights Reserved.
+	Version: 3.0
+	Modified by William Fang @Febuary, 2014, Xiamen, China
+-->
+
+
+<!DOCTYPE html>
+<!--[if IE]>
+<html id="ie" lang="zh-CN">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="zh-CN">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+
+
+
 <link href="/media/main/css/bootstrap/global.min.css" rel="stylesheet" media="screen" />
 <link href="/media/main/css/bootstrap/responsive.min.css" rel="stylesheet" media="screen" />
 <link href="/media/main/css/jquery-jvectormap-1.2.2.css" rel="stylesheet" media="screen" />
@@ -33,7 +41,6 @@
 <script type="text/javascript" src="/media/main/js/jquery.montage.min.js"></script>
 
 <link href="/media/main/css/external.css" media="screen" rel="stylesheet" type="text/css">
-
 <!--[if lt IE 9]>
 <script type="text/javascript" src="http://dw-resources.qiniudn.com/js/html5.js"></script> 
 <![endif]-->
@@ -1698,44 +1705,7 @@ a#go-top:hover {
 /************************************************************************************
 /* --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 </style>
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
 
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
-	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
-	<meta name="author" content="{{ site.author.name }}" />
-	<meta name="generator" content="Jekyll" />
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-	<meta name="keywords" content="{% if page.tags and page.tags != '' %}{{ page.tags }}{% else %}{{ site.keywords }}{% endif %}" />
-	<meta name="description" content="{% if page.title and page.title != '' %}{{ page.title }}{% else %}{{ site.description }}{% endif %}" />
-
-	<meta charset="UTF-8"/>
-	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-	<meta content="yes" name="apple-mobile-web-app-capable">
-	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
-	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
-
-	<title> 方 莲 | William</title>
-
-<!--
-	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
-	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
--->
 
 	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
 	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
@@ -1750,72 +1720,29 @@ a#go-top:hover {
 	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
 	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
 	<script>hljs.initHighlightingOnLoad();</script>
-<!--=================================================================== -->
-<!-- mathjax config similar to math.stackexchange -->
 
-<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [ ['$$', '$$']],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
-    },
-    /*   方程编号 */
-    TeX: {
-            equationNumbers: {
-                autoNumber: ["AMS"],
-                useLabelIds: true
-            }
-        },
-        "HTML-CSS": {
-            linebreaks: {
-                automatic: true
-            },
-            scale: 100      /* 数学字体大小*/
-        },
-        SVG: {
-            linebreaks: {
-                automatic: true
-            }
-        }
-        /*   方程编号 */
-});
 
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
-</script>
-<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
-<!-- CDN upload request sent in private mail to generated-toc author -->
-<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
 
-<!--=================================================================== -->
 </head>
 
+  <!--=================================================================== -->
+  <!--=================================================================== -->
 
-<body>
 
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
+<body  data-spy="scroll" data-target=".navbar" onload="completed();" ontouchstart="">
+
+
+<div id="header-camarts-entry" class="navbar navbar-inverse hide">
+    <div class="navbar-inner">
+        <div class="container">
+             <br/>
+        	<a href="http://williamlfang.github.io/cn/" target="_blank">我的中文博客 »</a>
+        	<br/>
+        	<br/>
+        </div>
+    </div>
+</div>
+
 
 <header id="header" class="jumbotron jumbotron-shadow">
     <div id="header-text" class="container header-elements">
@@ -2288,22 +2215,7 @@ MathJax.Hub.Queue(function() {
     <span>加载中</span>t
 </div>
 
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
-<!-- ========================================================================================= -->
+<div class="shadow"></div>
 
 	<div id="main" class="w-100p font-gray-dark">
 		<div class="nav nav-large nav-orange">
@@ -2367,6 +2279,130 @@ MathJax.Hub.Queue(function() {
 		<div class="radar"></div>
 		</div>
 	</div>
+
+<script type="text/javascript" src="/media/main/css/bootstrap/scripts.min.js"></script>
+<script type="text/javascript">
+
+var $container 	= $('#am-container'),
+	$imgs		= $container.find('img').hide(),
+	totalImgs	= $imgs.length,
+	cnt			= 0;
+
+$imgs.each(function(i) {
+	var $img	= $(this);
+	$('<img/>').load(function() {
+		++cnt;
+		if( cnt === totalImgs ) {
+			$imgs.fadeIn();
+			$container.montage({
+				margin                  : 1, 
+				liquid                  : false, 		
+				fillLastRow				: false,
+				alternateHeight			: true,
+				alternateHeightRange    : {
+					min : 74.2,
+					max : 120
+				},
+			});
+		}
+	}).attr('src',$img.attr('src'));
+});	
+
+$(window).load(function(){
+	$('#handle').fadeIn();
+})
+
+function slideHeader(){
+	$('#header').toggleClass('jumbotron-extended jumbotron-shadow');
+	$('#handle').toggleClass('actived');
+	$('.jumbotron-extended').height($('#am-container').outerHeight(true)-60);
+	$('#am-container').toggleClass('blur under');
+	$('#header-camarts-entry').slideToggle(500);
+	$('#page-shadow').slideToggle(500);
+	$('#header-shadow').fadeToggle(1000);
+	$('.header-elements').fadeToggle(300, function(){
+		if(!$('#header').hasClass('jumbotron-extended')){		
+			$('#header').removeAttr('style');
+		}
+	});
+};
+
+$(function () {
+	$("#handle-chevron").hover(
+		function(){
+			if($('#am-container').hasClass('blur')){
+				$('#am-container').addClass('blur-thinner');
+			}
+		},
+		function(){
+			$('#am-container').removeClass('blur-thinner');
+	});
+});
+
+$('#header').dblclick(function(){
+	slideHeader();
+});
+
+$('#handle').click(function(){
+	slideHeader();
+});
+
+$('#website-link').hover(function(){
+	$('#website-link').tooltip('show');
+});
+
+/*
+
+$('#handle').click(function(){
+	$('#header').toggleClass('jumbotron-extended');
+	$('.jumbotron-extended').height($('#am-container').outerHeight(true)-80);
+	$('#am-container').toggleClass('blur under');
+	$('#header-camarts-entry').slideToggle(500);
+	$('#page-shadow').slideToggle(500);
+	$('.header-elements').fadeToggle(300, function(){
+		if(!$('#header').hasClass('jumbotron-extended')){		
+			$('#header').removeAttr('style');
+			$('#header-shadow').fadeToggle(1000);
+		}
+	});
+});
+
+*/
+
+$.pjax({
+     selector: 'a[href^="http://travel.dandyweng.com"]',
+     container: '#content', //内容替换的容器
+     show: 'fade', //展现的动画，支持默认和fade, 可以自定义动画方式，这里为自定义的function即可。
+     cache: true, //是否使用缓存
+     storage: true, //是否使用本地存储
+     titleSuffix: '', //标题后缀
+     filter: function(){},
+     callback: function(){
+		 //$('body').animate({scrollTop: $('body').offset().top}, 500);
+	 }
+})	 
+    $('#content').bind('pjax.start', function(){
+        $('#loading').show();
+    })
+    $('#content').bind('pjax.end', function(){
+        $('#loading').hide();
+    })
+</script>
+<p style="text-indent: -9999px;"><script src="http://s24.cnzz.com/stat.php?id=5620106&web_id=5620106" language="JavaScript"></script></p>
+
+
+<script type="text/javascript" src="/media/main/js/home.min.js"></script>
+
+<!-- Baidu Statistics -->
+<p style="text-indent: -9999px;"><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb4c6c0df76415ca14358f56e0f957de1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</p>
+
+<!-- CNZZ Statistics -->
+<p style="text-indent: -9999px;"><script src="http://s22.cnzz.com/z_stat.php?id=1000135599&web_id=1000135599" language="JavaScript"></script></p>
+
 <link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
 <script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
 <script type="text/javascript">
@@ -2387,5 +2423,41 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+
+
 </body>
 </html>
+
+
+
+
+
+
+<!-- 2014.02.21: 图片下标
+<! Index:63
+a:not(.btn) {
+	color: #00699E;
+	/*-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+	transition: 300ms;
+	*/
+}
+
+.jumbotron a {
+	color: #fff;
+	color: rgba(255,255,255,.5);
+	/* -webkit-transition: all .5s ease-in-out;
+	   -moz-transition: all .5s ease-in-out;
+			transition: all .5s ease-in-out;
+			*/
+}
+<! index: 257
+.jumbotron .am-wrapper {
+	box-shadow: 0px 1px 3px 1.5px rgba(0, 0, 0, 0.4);
+	/* opacity: .8; */
+	/*-webkit-transition: all .2s ease-in-out;
+	   -moz-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
+			*/
+}
+-->

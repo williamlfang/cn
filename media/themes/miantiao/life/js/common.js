@@ -151,7 +151,8 @@ $(".friends_list a").each(function(e){
 
 $(function() {
         $.ajax({
-            url: "http://miantiao.me/search.xml",
+          /* url: "http://miantiao.me/search.xml", */
+            url: "http://williamlfang.github.io/cn/search.xml",
             dataType: "xml",
             success: function( xmlResponse ) {
                 var data = $( "article", xmlResponse ).map(function() {

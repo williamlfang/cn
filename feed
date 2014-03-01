@@ -13,7 +13,7 @@ title : RSS Feed
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
-　     　<generator>miantiao.me</generator>
+　     　<generator>williamlfang.github.com/cn</generator>
 
 {% for post in site.posts %}
         <item>
@@ -22,8 +22,8 @@ title : RSS Feed
                 <link>{{ site.url }}{{ post.url }}</link>
                 <guid>{{ site.url }}{{ post.url }}</guid>
                 <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
-                <category>miantiao.me</category>
-　             　<author>ccbikai</author>
+                <category>williamlfang.github.com/cn</category>
+　             　<author>william</author>
         </item>
 {% endfor %}
 

@@ -1,4 +1,3 @@
-
 <!--
 
 ===================================================================================
@@ -1612,8 +1611,8 @@ a.thumbnail small {
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
 	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="William ATOM Feed" />
-	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/2010/05/26/graduation/" /> -->
-	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/2010/05/26/graduation/" />
+	<!-- <link rel="canonical" href="{% if page.is_index %}{{ site.url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}" /> -->
+	<link rel="canonical" href="{% if page.is_index %}http://williamlfang.github.io/cn/search.html{% else %}http://williamlfang.github.io/cn/search.html{{ page.url }}{% endif %}" />
 	<!-- <script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
 	-->
 	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
@@ -1674,34 +1673,20 @@ a.thumbnail small {
 	<div id="main" class="w-100p font-gray-dark">
 		<div class="nav nav-large nav-orange">
 			<div class="menu cleared">
-			<a title="首页" class="nav-item" href="http://williamlfang.github.com/cn/">首页</a>
+			<a title="首页" class="nav-item" href="{{ site.url }}/">首页</a>
 				<div class="nav-has-menu">
-					<a class="nav-item" href="http://williamlfang.github.com/cn/archives.html">归档</a>
+					<a class="nav-item" href="{{ site.url }}/archives.html">归档</a>
 						<div class="nav-menu">
-							
-							<a title="Time" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Time">Time</a>
-							
-							<a title="Love" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Love">Love</a>
-							
-							<a title="Campus" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Campus">Campus</a>
-							
-							<a title="Personal" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Personal">Personal</a>
-							
-							<a title="Life" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Life">Life</a>
-							
-							<a title="Tech" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Tech">Tech</a>
-							
-							<a title="Programming" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Programming">Programming</a>
-							
-							<a title="经济分析" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#经济分析">经济分析</a>
-							
+							{% for node in site.categories %}
+							<a title="{{ node[0] }}" class="nav-menu-item" href="{{ site.url }}/archives.html#{{ node[0] }}">{{ node[0] }}</a>
+							{% endfor %}
 						</div>
 				</div>
-			<a title="邻居" class="nav-item" href="http://williamlfang.github.com/cn/links.html">链接</a>
-			<a title="关于" class="nav-item" href="http://williamlfang.github.com/cn/about.html">关于</a>
-			<a title="留言" class="nav-item" href="http://williamlfang.github.com/cn/guestbook.html">留言</a>
+			<a title="邻居" class="nav-item" href="{{ site.url }}/links.html">链接</a>
+			<a title="关于" class="nav-item" href="{{ site.url }}/about.html">关于</a>
+			<a title="留言" class="nav-item" href="{{ site.url }}/guestbook.html">留言</a>
 				<div class="search right h-1">
-					<form method="get" id="searchform" action="http://williamlfang.github.com/cn/search.html">
+					<form method="get" id="searchform" action="{{ site.url }}/search.html">
 					<input type="text" name="q" id="search" size="13" value="" placeholder="你在找什么呢？" x-webkit-speech />
 					</form>
 				</div>
@@ -1709,145 +1694,34 @@ a.thumbnail small {
 		</div>
 
 	<div id="articles">
-		
+		{{ content }}
 
-<div class="post mt-2">
-
-	<div class="info box">
-		<a class="date" href="http://williamlfang.github.com/cn/2010/05/26/graduation/">
-		<span class="year">2010</span>
-		<span class="day">26</span>
-		<span class="month">May</span>
-		<span class="circle"></span>
-		</a>
-	</div>
-
-	<div class="article">
-		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2010/05/26/graduation/" title="毕业啦">毕业啦</a></h3>
-		<div class="content lh-150p font-16 pd-1 mg-2 radius-8">
-		<p>就像突然被人推了一下，还没来得及缓过紧张的情绪，还在迷恋校园浪漫的风景，却已经走在了大学时光的将至未至的尾巴。回首那些时光，从一个盛夏起点出发，前进，前进，一直奔跑着前进，在季节的幽谷里低吟，在青春的岁月里高歌，在人生的象牙塔沉思。有着这样的一段时光，漂泊在知识浩瀚的汪洋，穿梭于历史沧桑的街坊，一路沥风淋雨、披荆斩棘，却也满程暗香浮动、岁月如歌，然后在春夏秋冬的跑道上循环往复故地重游，一圈一圈不知疲倦的把青春的光年写在岁月的年轮里，把那些属于青春的激情岁月写在大地的沟壑里。</p>
-
-<p>多年回味，多少欣慰。</p>
-
-		<div class="post-end mt-1"><span><i></i>26 May 2010</span></div>
-		</div>
-	</div>
-
-	
-	<div class="tags pl-2 pr-2 mb-2 left">
-		<span class="tag">标签：
-		
-		<a class="button button-small button-orange" href="/tags.html#时间" title="时间">时间</a>
-		
-		</span>
-	</div>
-	
-
-	
-	<div class="categories pl-2 pr-2 mb-2 right">
-		<span class="categorie">分类：
-		
-		<a class="button button-small button-orange" href="http://williamlfang.github.com/cn/archives.html#Personal" title="Personal">Personal</a>
-		
-		</span>
-	</div>
-	
-
-	
-	<div class="cleared mt-2 pl-2 pr-2">
-		
-		<a class="button button-orange left" href="http://williamlfang.github.com/cn/2010/05/21/missing/" rel="prev" title="存在的空虚">←我怀念的</a>
-		
-		
-		<a class="button button-orange right" href="http://williamlfang.github.com/cn/2010/06/25/nothing-meaningful/" rel="next" title="存在的空虚">存在的空虚→</a>
-		
-	</div>
-
-	
-	<span id="btn_page_prev"><a href="http://williamlfang.github.com/cn/2010/05/21/missing/" rel="prev" title="Previous">
-	<span id="fanye" style="display: none;">
-		‹--
-	</span></a></span>
-	
-
-	
-	<span id="btn_page_next"><a href="http://williamlfang.github.com/cn/2010/06/25/nothing-meaningful/" rel="next" title="Next">
-	<span id="fanye" style="display: none;">
-		--›
-	</span></a></span>
-	
-	
-
-	<div id="hm_t_18226" class="radius-8 baidu"></div>
-
-	
-<!--=========================================================================-->
+		{% if page.is_index %}
 		<div class="friends">
-			<div class="friends_info"><a id="friends" href="#" rel="nofollow"><span>Contents</span></a></div>
+			<div class="friends_info"><a id="friends" href="#" rel="nofollow"><span>我的小伙伴</span></a></div>
 			<div id="friends_list" class="friends_list">
-				<script>
-// https://github.com/ghiculescu/jekyll-table-of-contents
-$(document).ready(function() {
-  var no_back_to_top_links = false
-
-  var headers = $('h1, h2, h3, h4, h5, h6').filter(function() {return this.id}), // get all headers with an ID
-      output = $('.toc');
-  if (!headers.length || headers.length < 3 || !output.length)
-    return;
-
-  var get_level = function(ele) { return parseInt(ele.nodeName.replace("H", ""), 10) }
-  var highest_level = headers.map(function(_, ele) { return get_level(ele) }).get().sort()[0]
-  // var return_to_top = '<i class="icon-arrow-up back-to-top"> ^ </i>'
-  var return_to_top = ''
-
-  var level = get_level(headers[0]), this_level, html = "<i></i> <ol>";
-  headers.on('click', function() {
-    if (!no_back_to_top_links) window.location.hash = this.id
-  }).addClass('clickable-header').each(function(_, header) {
-    this_level = get_level(header);
-    if (!no_back_to_top_links && this_level === highest_level) {
-      $(header).addClass('top-level-header').after(return_to_top)
-    }
-    if (this_level === level) // same level as before; same indenting
-      html += "<li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
-    else if (this_level < level) // higher level than before; end parent ol
-      html += "</li></ol></li><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
-    else if (this_level > level) // lower level than before; expand the previous to contain a ol
-      html += "<ol><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
-    level = this_level; // update for the next one
-  });
-  html += "</ol>";
-  if (!no_back_to_top_links) {
-    $(document).on('click', '.back-to-top', function() {
-      $(window).scrollTop(0)
-      window.location.hash = ''
-    })
-  }
-  output.hide().html(html).show('slow');
-});
-</script>
-<div class="toc"></div>
- 
-				<br />
+			<ul class="no-list">
+				<li><a href="http://www.inbiji.com/" title="好记性不如烂笔记" >in笔记</a></li>
+			</ul>
 			</div>
 			<a href="#" id="gc_close" rel="nofollow">X</a>
 		</div>
-<!--=========================================================================-->
-
-</div>
-	<div class="clear"></div>
-</div>
-
-
-
-		
+		{% endif %}
 		</div>
 
 
-		
+		{% if page.is_index %}
+			<div id="more" class="align-center mt-2">
+				<a href="http://williamlfang.github.io/cn/page{{ paginator.next_page }}/" class="loadmore button button-orange w-30p" >查  看  更  多</a>
+			</div>
+		{% endif %}
 
 	<!--
-		
+		{% if page.is_index %}
+			<div id="more" class="align-center mt-2">
+				<a href="{{ site.url }}/archives.html" class="moreloadmore button button-orange w-30p" > 查看所有文章 </a>
+			</div>
+		{% endif %}
 	-->
 
 	</div>

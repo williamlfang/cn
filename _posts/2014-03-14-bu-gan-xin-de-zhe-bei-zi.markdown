@@ -3,9 +3,8 @@ layout:   post
 title:    "不甘心的这辈子"
 category: 个人                                  
 tags:     
-		    - 时间  
-	 	    - 一辈子
-        - 生死
+- 时间  
+- 一辈子
 description: 
 published: true
 status: publish

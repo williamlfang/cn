@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-16 20:58:48 +0800</lastBuildDate>
-        <pubDate>2014-03-16 20:58:48 +0800</pubDate>
+        <lastBuildDate>2014-03-16 21:04:20 +0800</lastBuildDate>
+        <pubDate>2014-03-16 21:04:20 +0800</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -36,19 +36,19 @@ $$&lt;/p&gt;
 &lt;p&gt;首先，令 $Y_t = ln S_t$，由简单的偏微分求导得到
 $$
 \begin{align}
-\frac{ \partial Y }{ \partial t} &amp;amp;= 0 &lt;br /&gt;
-\frac{ \partial Y }{ \partial S} &amp;amp;= \frac{ 1 }{ S } &lt;br /&gt;
-\frac{ \partial^2 Y }{ \partial S^2} &amp;amp;= - \frac{ 1 }{ S^2 } &lt;br /&gt;
+\frac{ \partial Y }{ \partial t} &amp;amp;= 0 \nonumber&lt;br /&gt;
+\frac{ \partial Y }{ \partial S} &amp;amp;= \frac{ 1 }{ S } \nonumber&lt;br /&gt;
+\frac{ \partial^2 Y }{ \partial S^2} &amp;amp;= - \frac{ 1 }{ S^2 } \nonumber&lt;br /&gt;
 \end{align}
 $$
 则根据 &lt;strong&gt;Ito 公式&lt;/strong&gt;，我们可以推出以下方程
 $$
 \begin{align}
  d \ln S_t = d Y_t 
-  &amp;amp;= \frac{ \partial Y }{ \partial t} dt + \frac{ \partial Y }{ \partial S} dS_t + \frac{1}{2} \frac{ \partial^2 Y }{ \partial S^2} dS_t dS_t &lt;br /&gt;
-  &amp;amp;= 0 · dt + \frac{ 1 }{ S_t } dS_t - \frac{1}{2} · \frac{ 1 }{ S_t^2 } dS_t dS_t &lt;br /&gt;
+  &amp;amp;= \frac{ \partial Y }{ \partial t} dt + \frac{ \partial Y }{ \partial S} dS_t + \frac{1}{2} \frac{ \partial^2 Y }{ \partial S^2} dS_t dS_t \nonumber&lt;br /&gt;
+  &amp;amp;= 0 · dt + \frac{ 1 }{ S_t } dS_t - \frac{1}{2} · \frac{ 1 }{ S_t^2 } dS_t dS_t \nonumber&lt;br /&gt;
   &amp;amp;=  \frac{ 1 }{ S_t } · S_t · (\mu dt + \sigma dW_t) - \frac{1}{2} · \frac{ 1 }{ S_t^2 } · \sigma^2 S_t^2 dt
- &lt;br /&gt;
+ \nonumber&lt;br /&gt;
   &amp;amp;= (\mu - \frac{1}{2} \sigma^2) dt + \sigma dW_t. &lt;br /&gt;
 \end{align}
 $$
@@ -108,7 +108,7 @@ $$
 \begin{align}
   \frac{\partial M&lt;em&gt;{X}(\tau)}{\partial \tau}|&lt;/em&gt;{\tau = 0} 
   &amp;amp;=   \frac{\partial}{\partial \tau} E[ e^{x\tau}] |&lt;em&gt;{\tau = 0}&lt;br /&gt;
-  =  E[ x · e^{x\tau}] |&lt;/em&gt;{\tau = 0}    &lt;br /&gt;
+  =  E[ x · e^{x\tau}] |&lt;/em&gt;{\tau = 0}    \nonumber&lt;br /&gt;
   &amp;amp;= E[x] &lt;br /&gt;
    \frac{\partial ^2 M&lt;em&gt;{X}(\tau)}{\partial \tau ^2 }|&lt;/em&gt;{\tau = 0} 
  &amp;amp;= E[x^2] &lt;br /&gt;
@@ -158,8 +158,8 @@ $$&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
  \begin{align}
-  E[S^2] &amp;= E[e^{y\tau}]|_{\tau = 2}  = \exp\{ 2 \tilde{\mu}  + 2 \tilde{\sigma}^2  \} \\
-  &amp;= \exp\{ 2 [Y_0 + (\mu - \frac{1}{2} \sigma^2) t ] + 2 \sigma^2 t \}   \\
+  E[S^2] &amp;= E[e^{y\tau}]|_{\tau = 2}  = \exp\{ 2 \tilde{\mu}  + 2 \tilde{\sigma}^2  \} \nonumber\\
+  &amp;= \exp\{ 2 [Y_0 + (\mu - \frac{1}{2} \sigma^2) t ] + 2 \sigma^2 t \}   \nonumber\\
   &amp;= S_0^2 · \exp\{ 2 \mu t + \sigma^2 t\}
  \end{align}
  %]]&gt;&lt;/script&gt;

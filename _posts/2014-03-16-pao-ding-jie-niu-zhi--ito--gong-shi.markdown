@@ -33,19 +33,19 @@ $$
 首先，令 $Y_t = ln S_t$，由简单的偏微分求导得到
 $$
 \begin{align}
-\frac{ \partial Y }{ \partial t} &= 0 \\
-\frac{ \partial Y }{ \partial S} &= \frac{ 1 }{ S } \\
-\frac{ \partial^2 Y }{ \partial S^2} &= - \frac{ 1 }{ S^2 } \\
+\frac{ \partial Y }{ \partial t} &= 0 \nonumber\\
+\frac{ \partial Y }{ \partial S} &= \frac{ 1 }{ S } \nonumber\\
+\frac{ \partial^2 Y }{ \partial S^2} &= - \frac{ 1 }{ S^2 } \nonumber\\
 \end{align}
 $$
 则根据 **Ito 公式**，我们可以推出以下方程
 $$
 \begin{align}
  d \ln S_t = d Y_t 
-  &= \frac{ \partial Y }{ \partial t} dt + \frac{ \partial Y }{ \partial S} dS_t + \frac{1}{2} \frac{ \partial^2 Y }{ \partial S^2} dS_t dS_t \\
-  &= 0 · dt + \frac{ 1 }{ S_t } dS_t - \frac{1}{2} · \frac{ 1 }{ S_t^2 } dS_t dS_t \\
+  &= \frac{ \partial Y }{ \partial t} dt + \frac{ \partial Y }{ \partial S} dS_t + \frac{1}{2} \frac{ \partial^2 Y }{ \partial S^2} dS_t dS_t \nonumber\\
+  &= 0 · dt + \frac{ 1 }{ S_t } dS_t - \frac{1}{2} · \frac{ 1 }{ S_t^2 } dS_t dS_t \nonumber\\
   &=  \frac{ 1 }{ S_t } · S_t · (\mu dt + \sigma dW_t) - \frac{1}{2} · \frac{ 1 }{ S_t^2 } · \sigma^2 S_t^2 dt
- \\
+ \nonumber\\
   &= (\mu - \frac{1}{2} \sigma^2) dt + \sigma dW_t. \\
 \end{align}
 $$
@@ -105,7 +105,7 @@ $$
 \begin{align}
   \frac{\partial M_{X}(\tau)}{\partial \tau}|_{\tau = 0} 
   &=   \frac{\partial}{\partial \tau} E[ e^{x\tau}] |_{\tau = 0}  
-  =  E[ x · e^{x\tau}] |_{\tau = 0}    \\
+  =  E[ x · e^{x\tau}] |_{\tau = 0}    \nonumber\\
   &= E[x] \\
    \frac{\partial ^2 M_{X}(\tau)}{\partial \tau ^2 }|_{\tau = 0} 
  &= E[x^2] \\
@@ -154,8 +154,8 @@ $$
  
 $$
  \begin{align}
-  E[S^2] &= E[e^{y\tau}]|_{\tau = 2}  = \exp\{ 2 \tilde{\mu}  + 2 \tilde{\sigma}^2  \} \\
-  &= \exp\{ 2 [Y_0 + (\mu - \frac{1}{2} \sigma^2) t ] + 2 \sigma^2 t \}   \\
+  E[S^2] &= E[e^{y\tau}]|_{\tau = 2}  = \exp\{ 2 \tilde{\mu}  + 2 \tilde{\sigma}^2  \} \nonumber\\
+  &= \exp\{ 2 [Y_0 + (\mu - \frac{1}{2} \sigma^2) t ] + 2 \sigma^2 t \}   \nonumber\\
   &= S_0^2 · \exp\{ 2 \mu t + \sigma^2 t\}
  \end{align}
 $$

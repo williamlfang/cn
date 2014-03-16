@@ -171,19 +171,19 @@ $$</p>
 <p>首先，令 $Y_t = ln S_t$，由简单的偏微分求导得到
 $$
 \begin{align}
-\frac{ \partial Y }{ \partial t} &amp;= 0 <br />
-\frac{ \partial Y }{ \partial S} &amp;= \frac{ 1 }{ S } <br />
-\frac{ \partial^2 Y }{ \partial S^2} &amp;= - \frac{ 1 }{ S^2 } <br />
+\frac{ \partial Y }{ \partial t} &amp;= 0 \nonumber<br />
+\frac{ \partial Y }{ \partial S} &amp;= \frac{ 1 }{ S } \nonumber<br />
+\frac{ \partial^2 Y }{ \partial S^2} &amp;= - \frac{ 1 }{ S^2 } \nonumber<br />
 \end{align}
 $$
 则根据 <strong>Ito 公式</strong>，我们可以推出以下方程
 $$
 \begin{align}
  d \ln S_t = d Y_t 
-  &amp;= \frac{ \partial Y }{ \partial t} dt + \frac{ \partial Y }{ \partial S} dS_t + \frac{1}{2} \frac{ \partial^2 Y }{ \partial S^2} dS_t dS_t <br />
-  &amp;= 0 · dt + \frac{ 1 }{ S_t } dS_t - \frac{1}{2} · \frac{ 1 }{ S_t^2 } dS_t dS_t <br />
+  &amp;= \frac{ \partial Y }{ \partial t} dt + \frac{ \partial Y }{ \partial S} dS_t + \frac{1}{2} \frac{ \partial^2 Y }{ \partial S^2} dS_t dS_t \nonumber<br />
+  &amp;= 0 · dt + \frac{ 1 }{ S_t } dS_t - \frac{1}{2} · \frac{ 1 }{ S_t^2 } dS_t dS_t \nonumber<br />
   &amp;=  \frac{ 1 }{ S_t } · S_t · (\mu dt + \sigma dW_t) - \frac{1}{2} · \frac{ 1 }{ S_t^2 } · \sigma^2 S_t^2 dt
- <br />
+ \nonumber<br />
   &amp;= (\mu - \frac{1}{2} \sigma^2) dt + \sigma dW_t. <br />
 \end{align}
 $$
@@ -243,7 +243,7 @@ $$
 \begin{align}
   \frac{\partial M<em>{X}(\tau)}{\partial \tau}|</em>{\tau = 0} 
   &amp;=   \frac{\partial}{\partial \tau} E[ e^{x\tau}] |<em>{\tau = 0}<br />
-  =  E[ x · e^{x\tau}] |</em>{\tau = 0}    <br />
+  =  E[ x · e^{x\tau}] |</em>{\tau = 0}    \nonumber<br />
   &amp;= E[x] <br />
    \frac{\partial ^2 M<em>{X}(\tau)}{\partial \tau ^2 }|</em>{\tau = 0} 
  &amp;= E[x^2] <br />
@@ -293,8 +293,8 @@ $$</p>
 <script type="math/tex; mode=display">% <![CDATA[
 
  \begin{align}
-  E[S^2] &= E[e^{y\tau}]|_{\tau = 2}  = \exp\{ 2 \tilde{\mu}  + 2 \tilde{\sigma}^2  \} \\
-  &= \exp\{ 2 [Y_0 + (\mu - \frac{1}{2} \sigma^2) t ] + 2 \sigma^2 t \}   \\
+  E[S^2] &= E[e^{y\tau}]|_{\tau = 2}  = \exp\{ 2 \tilde{\mu}  + 2 \tilde{\sigma}^2  \} \nonumber\\
+  &= \exp\{ 2 [Y_0 + (\mu - \frac{1}{2} \sigma^2) t ] + 2 \sigma^2 t \}   \nonumber\\
   &= S_0^2 · \exp\{ 2 \mu t + \sigma^2 t\}
  \end{align}
  %]]></script>

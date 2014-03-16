@@ -32,30 +32,30 @@ $$
  
 首先，令 $Y_t = ln S_t$，由简单的偏微分求导得到
 $$
-\begin{align*}
+\begin{align}
 \frac{ \partial Y }{ \partial t} &= 0 \\
 \frac{ \partial Y }{ \partial S} &= \frac{ 1 }{ S } \\
 \frac{ \partial^2 Y }{ \partial S^2} &= - \frac{ 1 }{ S^2 } \\
-\end{align*}
+\end{align}
 $$
 则根据 **Ito 公式**，我们可以推出以下方程
 $$
-\begin{align*}
+\begin{align}
  d \ln S_t = d Y_t 
   &= \frac{ \partial Y }{ \partial t} dt + \frac{ \partial Y }{ \partial S} dS_t + \frac{1}{2} \frac{ \partial^2 Y }{ \partial S^2} dS_t dS_t \\
   &= 0 · dt + \frac{ 1 }{ S_t } dS_t - \frac{1}{2} · \frac{ 1 }{ S_t^2 } dS_t dS_t \\
   &=  \frac{ 1 }{ S_t } · S_t · (\mu dt + \sigma dW_t) - \frac{1}{2} · \frac{ 1 }{ S_t^2 } · \sigma^2 S_t^2 dt
  \\
   &= (\mu - \frac{1}{2} \sigma^2) dt + \sigma dW_t. \\
-\end{align*}
+\end{align}
 $$
 两边求积分，得到如下式子
 $$
-\begin{align*}
+\begin{align}
  \int_{0}^{t} d \ln S_u = \int_{0}^{t} d Y_u 
     &= \int_{0}^{t}  (\mu - \frac{1}{2} \sigma^2) du + \int_{0}^{t}  \sigma dW_u \\
 \Rightarrow \ln S_t - \ln S_0 = Y_t - Y_0 &= (\mu - \frac{1}{2} \sigma^2) t + \int_{0}^{t}  \sigma dW_u.
-\end{align*}
+\end{align}
 $$
 我们知道，**Brownian Motion** 表示在一定时间段内随机游走走过的路径，并且如果我们假定在初始阶段为 $W(0)=0$，那么，上面等式的最后一项是
 $$
@@ -102,7 +102,7 @@ $$
 $$
 其任一 $m-$ 阶的矩公式可以对 $\tau$ 在 $\tau = 0$ 处求 $m$ 次导数得到
 $$
-\begin{align*}
+\begin{align}
   \frac{\partial M_{X}(\tau)}{\partial \tau}|_{\tau = 0} 
   &=   \frac{\partial}{\partial \tau} E[ e^{x\tau}] |_{\tau = 0}  
   =  E[ x · e^{x\tau}] |_{\tau = 0}    \\
@@ -111,7 +111,7 @@ $$
  &= E[x^2] \\
  \frac{\partial ^m M_{X}(\tau)}{\partial \tau ^m }|_{\tau = 0} 
  &= E[x^m]
-\end{align*}
+\end{align}
 $$
 特别的，对于一个正态分布，$X \sim \mathcal{N}(\mu, \sigma^2)$，有
 $$
@@ -124,9 +124,9 @@ $$
  
 这个特征对于求一个「对数正态分布」十分有用。由$\eqref{gbm_norm}$
 $$
-\begin{align*}
+\begin{align}
   Y_t &\sim \mathcal{N}(  Y_0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) 
-\end{align*}
+\end{align}
 $$
 则其 MGF 为
 $$
@@ -138,44 +138,36 @@ $$
  
 因此，我们可以得到如下公式
 $$
-\boxed{
  \begin{align}
   E[S^{\tau}] &=  E[e^{y\tau}]  = \exp\{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 \}
  \end{align}
-}
 $$
  
 即，期望可以表示为
 $$
-\boxed{
  \begin{align}
   E[S_t] &=  E[e^{y\tau}]|_{\tau = 1}  = \exp\{ \tilde{\mu}  + \frac{1}{2} \tilde{\sigma}^2  \}  \nonumber\\
         &= \exp\{ Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \frac{1}{2} \sigma^2 t  \} \nonumber\\
         &= S_0 · e^{\mu t } \\
 \end{align}
-}
 $$
  
 $$
-\boxed{
- \begin{align*}
+ \begin{align}
   E[S^2] &= E[e^{y\tau}]|_{\tau = 2}  = \exp\{ 2 \tilde{\mu}  + 2 \tilde{\sigma}^2  \} \\
   &= \exp\{ 2 [Y_0 + (\mu - \frac{1}{2} \sigma^2) t ] + 2 \sigma^2 t \}   \\
   &= S_0^2 · \exp\{ 2 \mu t + \sigma^2 t\}
- \end{align*}
-}
+ \end{align}
 $$
  
 因此，$S_t$ 的方差可以表示为
 $$
-\boxed{
  \begin{align}
   Var[S_t] 
   &=   E[S^2] -  ( E[S] )^2 \nonumber\\
   &= S_0^2 · \exp\{ 2 \mu t + \sigma^2 t\} - S_0^2 · \exp\{ 2 \mu t \} \nonumber\\
   &= S_0^2 · e^{ 2 \mu t } · (e^{ \sigma^2 t - 1 })
  \end{align}
-}
 $$
  
  

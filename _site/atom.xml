@@ -4,7 +4,7 @@
  <title>方莲 | William</title>
  <link href="http://williamlfang.github.com/cn/" rel="self"/>
  <link href="http://williamlfang.github.com/cn"/>
- <updated>2014-03-16T20:53:19+08:00</updated>
+ <updated>2014-03-16T20:58:48+08:00</updated>
  <id>http://williamlfang.github.com/cn</id>
  <author>
    <name>william</name>
@@ -38,35 +38,35 @@ $$&lt;/p&gt;
 
 &lt;p&gt;首先，令 $Y_t = ln S_t$，由简单的偏微分求导得到
 $$
-\begin{align&lt;em&gt;}
+\begin{align}
 \frac{ \partial Y }{ \partial t} &amp;amp;= 0 &lt;br /&gt;
 \frac{ \partial Y }{ \partial S} &amp;amp;= \frac{ 1 }{ S } &lt;br /&gt;
 \frac{ \partial^2 Y }{ \partial S^2} &amp;amp;= - \frac{ 1 }{ S^2 } &lt;br /&gt;
-\end{align&lt;/em&gt;}
+\end{align}
 $$
 则根据 &lt;strong&gt;Ito 公式&lt;/strong&gt;，我们可以推出以下方程
 $$
-\begin{align&lt;em&gt;}
+\begin{align}
  d \ln S_t = d Y_t 
   &amp;amp;= \frac{ \partial Y }{ \partial t} dt + \frac{ \partial Y }{ \partial S} dS_t + \frac{1}{2} \frac{ \partial^2 Y }{ \partial S^2} dS_t dS_t &lt;br /&gt;
   &amp;amp;= 0 · dt + \frac{ 1 }{ S_t } dS_t - \frac{1}{2} · \frac{ 1 }{ S_t^2 } dS_t dS_t &lt;br /&gt;
   &amp;amp;=  \frac{ 1 }{ S_t } · S_t · (\mu dt + \sigma dW_t) - \frac{1}{2} · \frac{ 1 }{ S_t^2 } · \sigma^2 S_t^2 dt
  &lt;br /&gt;
   &amp;amp;= (\mu - \frac{1}{2} \sigma^2) dt + \sigma dW_t. &lt;br /&gt;
-\end{align&lt;/em&gt;}
+\end{align}
 $$
 两边求积分，得到如下式子
 $$
-\begin{align&lt;em&gt;}
- \int_{0}^{t} d \ln S_u = \int_{0}^{t} d Y_u 
-    &amp;amp;= \int_{0}^{t}  (\mu - \frac{1}{2} \sigma^2) du + \int_{0}^{t}  \sigma dW_u &lt;br /&gt;
-\Rightarrow \ln S_t - \ln S_0 = Y_t - Y_0 &amp;amp;= (\mu - \frac{1}{2} \sigma^2) t + \int_{0}^{t}  \sigma dW_u.
-\end{align&lt;/em&gt;}
+\begin{align}
+ \int&lt;em&gt;{0}^{t} d \ln S_u = \int&lt;/em&gt;{0}^{t} d Y_u 
+    &amp;amp;= \int&lt;em&gt;{0}^{t}  (\mu - \frac{1}{2} \sigma^2) du + \int&lt;/em&gt;{0}^{t}  \sigma dW_u &lt;br /&gt;
+\Rightarrow \ln S_t - \ln S&lt;em&gt;0 = Y_t - Y&lt;/em&gt;0 &amp;amp;= (\mu - \frac{1}{2} \sigma^2) t + \int&lt;em&gt;{0}^{t}  \sigma dW_u.
+\end{align}
 $$
 我们知道，&lt;strong&gt;Brownian Motion&lt;/strong&gt; 表示在一定时间段内随机游走走过的路径，并且如果我们假定在初始阶段为 $W(0)=0$，那么，上面等式的最后一项是
 $$
 \begin{align}
-\int&lt;em&gt;{0}^{t}  \sigma dW_u &amp;amp;= \sigma (W_t - W&lt;/em&gt;0 ) = \sigma W_t.
+\int&lt;/em&gt;{0}^{t}  \sigma dW_u &amp;amp;= \sigma (W_t - W_0 ) = \sigma W_t.
 \end{align}
 $$&lt;/p&gt;
 
@@ -108,16 +108,16 @@ $$
 $$
 其任一 $m-$ 阶的矩公式可以对 $\tau$ 在 $\tau = 0$ 处求 $m$ 次导数得到
 $$
-\begin{align&lt;em&gt;}
-  \frac{\partial M_{X}(\tau)}{\partial \tau}|_{\tau = 0} 
-  &amp;amp;=   \frac{\partial}{\partial \tau} E[ e^{x\tau}] |_{\tau = 0}&lt;br /&gt;
-  =  E[ x · e^{x\tau}] |_{\tau = 0}    &lt;br /&gt;
+\begin{align}
+  \frac{\partial M&lt;em&gt;{X}(\tau)}{\partial \tau}|&lt;/em&gt;{\tau = 0} 
+  &amp;amp;=   \frac{\partial}{\partial \tau} E[ e^{x\tau}] |&lt;em&gt;{\tau = 0}&lt;br /&gt;
+  =  E[ x · e^{x\tau}] |&lt;/em&gt;{\tau = 0}    &lt;br /&gt;
   &amp;amp;= E[x] &lt;br /&gt;
-   \frac{\partial ^2 M_{X}(\tau)}{\partial \tau ^2 }|_{\tau = 0} 
+   \frac{\partial ^2 M&lt;em&gt;{X}(\tau)}{\partial \tau ^2 }|&lt;/em&gt;{\tau = 0} 
  &amp;amp;= E[x^2] &lt;br /&gt;
- \frac{\partial ^m M_{X}(\tau)}{\partial \tau ^m }|_{\tau = 0} 
+ \frac{\partial ^m M&lt;em&gt;{X}(\tau)}{\partial \tau ^m }|&lt;/em&gt;{\tau = 0} 
  &amp;amp;= E[x^m]
-\end{align&lt;/em&gt;}
+\end{align}
 $$
 特别的，对于一个正态分布，$X \sim \mathcal{N}(\mu, \sigma^2)$，有
 $$
@@ -130,59 +130,51 @@ $$&lt;/p&gt;
 
 &lt;p&gt;这个特征对于求一个「对数正态分布」十分有用。由$\eqref{gbm_norm}$
 $$
-\begin{align&lt;em&gt;}
-  Y_t &amp;amp;\sim \mathcal{N}(  Y_0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) 
-\end{align&lt;/em&gt;}
+\begin{align}
+  Y_t &amp;amp;\sim \mathcal{N}(  Y&lt;em&gt;0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) 
+\end{align}
 $$
 则其 MGF 为
 $$
 \begin{align}
- M&lt;em&gt;{Y}(\tau) &amp;amp;= E[e^{y\tau}] = \exp{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 },
+ M&lt;/em&gt;{Y}(\tau) &amp;amp;= E[e^{y\tau}] = \exp{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 },
 \end{align}
 $$
-其中，$\tilde{\mu} = Y&lt;/em&gt;0 + (\mu - \frac{1}{2} \sigma^2) t$，$\tilde{\sigma}^2= \sigma ^2 t$ .&lt;/p&gt;
+其中，$\tilde{\mu} = Y_0 + (\mu - \frac{1}{2} \sigma^2) t$，$\tilde{\sigma}^2= \sigma ^2 t$ .&lt;/p&gt;
 
 &lt;p&gt;因此，我们可以得到如下公式
 $$
-\boxed{
  \begin{align}
   E[S^{\tau}] &amp;amp;=  E[e^{y\tau}]  = \exp{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 }
  \end{align}
-}
 $$&lt;/p&gt;
 
 &lt;p&gt;即，期望可以表示为
 $$
-\boxed{
  \begin{align}
   E[S_t] &amp;amp;=  E[e^{y\tau}]|&lt;em&gt;{\tau = 1}  = \exp{ \tilde{\mu}  + \frac{1}{2} \tilde{\sigma}^2  }  \nonumber&lt;br /&gt;
         &amp;amp;= \exp{ Y&lt;/em&gt;0 + (\mu - \frac{1}{2} \sigma^2) t + \frac{1}{2} \sigma^2 t  } \nonumber&lt;br /&gt;
         &amp;amp;= S_0 · e^{\mu t } &lt;br /&gt;
 \end{align}
-}
 $$&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
-\boxed{
- \begin{align*}
+ \begin{align}
   E[S^2] &amp;= E[e^{y\tau}]|_{\tau = 2}  = \exp\{ 2 \tilde{\mu}  + 2 \tilde{\sigma}^2  \} \\
   &amp;= \exp\{ 2 [Y_0 + (\mu - \frac{1}{2} \sigma^2) t ] + 2 \sigma^2 t \}   \\
   &amp;= S_0^2 · \exp\{ 2 \mu t + \sigma^2 t\}
- \end{align*}
-}
+ \end{align}
  %]]&gt;&lt;/script&gt;
 
 &lt;p&gt;因此，$S_t$ 的方差可以表示为
 $$
-\boxed{
  \begin{align}
   Var[S_t] 
   &amp;amp;=   E[S^2] -  ( E[S] )^2 \nonumber&lt;br /&gt;
   &amp;amp;= S&lt;em&gt;0^2 · \exp{ 2 \mu t + \sigma^2 t} - S&lt;/em&gt;0^2 · \exp{ 2 \mu t } \nonumber&lt;br /&gt;
   &amp;amp;= S_0^2 · e^{ 2 \mu t } · (e^{ \sigma^2 t - 1 })
  \end{align}
-}
 $$&lt;/p&gt;
 
 <img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>

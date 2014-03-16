@@ -11,8 +11,8 @@
 	<meta name="author" content="william" />
 	<meta name="generator" content="Jekyll" />
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-	<meta name="keywords" content="日子咪豆随想" />
-	<meta name="description" content="诸多事情" />
+	<meta name="keywords" content="Ito股票价格" />
+	<meta name="description" content="庖丁解牛之 Ito 公式" />
 
 	<meta charset="UTF-8"/>
 	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
@@ -32,8 +32,8 @@
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
 	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="William ATOM Feed" />
-	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/" /> -->
-	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/2014/02/12/zhu-duo-shi-qing/" />
+	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/" /> -->
+	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/" />
 	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
 
 	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
@@ -138,53 +138,187 @@ MathJax.Hub.Queue(function() {
 <div class="post mt-2">
 
 	<div class="info box">
-		<a class="date" href="http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/">
+		<a class="date" href="http://williamlfang.github.com/cn/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/">
 		<span class="year">2014</span>
-		<span class="day">12</span>
-		<span class="month">February</span>
+		<span class="day">16</span>
+		<span class="month">March</span>
 		<span class="circle"></span>
 		</a>
 	</div>
 
 	<div class="article">
-		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/" title="诸多事情">诸多事情</a></h3>
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/" title="庖丁解牛之 Ito 公式">庖丁解牛之 Ito 公式</a></h3>
 		<div class="content lh-150p font-16 pd-1 mg-2 radius-8">
-		<p>想着有一段时间没有码字了，指尖竟然有些生疏。其实每次打开笔记本，总是想着要有千言万语诉说，那种浓厚的情绪像是一次乘坐列车的远行去拜见一位老友，漫长的路途上早就打好了腹稿构造了完整的画面，可是真正见面了，我们却什么也不说，只是静静的凝望彼此，一言不发。我是有着千般感情万种思绪，却像是失去了老友多年消息总是联系不上了，我愈要赴会，却不知该买到何站的列车。</p>
+		<p>假设股票价格的变化服从以下运动方程（随机微分方程，SDE）：
+$$
+\begin{align}
+ d S_t = \mu S_t dt + \sigma S_t dW_t,
+\end{align}
+$$
+其中 $dW_t$ 是一个（连续的）<strong>Brownian motion</strong>，$W_t \sim \mathcal{N} (0, t)$。等价的，我们可以得到股票价格变化率：
+$$
+\begin{align}
+ d \ln S_t = \frac{ d S_t }{ S_t } = \mu dt + \sigma dW_t.
+\end{align}
+$$</p>
 
-<blockquote>
-  <p>此情可待成追忆，只是当时已惘然。</p>
-</blockquote>
+<p>下面我们来推到股票价格 $S_t$ 的动态方程，这主要是使用著名的 <strong>Ito 公式</strong>。过于理论的东西我在这里不推导了，主要是利用一个简单的例子来说明如何使用 <strong>Ito 公式</strong> 解 <strong>SDE</strong> 类问题。</p>
 
 <!-- more -->
 
-<h2 id="section">一场团圆的春节</h2>
+<h2 id="ito-">Ito 公式求解</h2>
 
-<p>这个春节过得平淡，安静的出奇。本来嘛，厦门就是一个旅游的城市，人来人往，车水马龙，热闹喧嚣，浮华尘世，这个本该就是这座城市的标志。可是真正到了春节，却也少了人，不见了往日的喧嚣。这座城市一下子变得可爱，如含蓄的姑娘，像待放的花苞，羞羞答答的。大抵是政府的规定只为贪图省事（baoli zhifa），我们的城市在春节期间竟然不允许燃放烟花。只是冷冷清清的城市，在这个孤孤单单的季节里，多少显得有点委屈。</p>
+<p>首先，令 $Y_t = ln S_t$，由简单的偏微分求导得到
+$$
+\begin{align}
+\frac{ \partial Y }{ \partial t} &amp;= 0 <br />
+\frac{ \partial Y }{ \partial S} &amp;= \frac{ 1 }{ S } <br />
+\frac{ \partial^2 Y }{ \partial S^2} &amp;= - \frac{ 1 }{ S^2 } <br />
+\end{align}
+$$
+则根据 <strong>Ito 公式</strong>，我们可以推出以下方程
+$$
+\begin{align}
+ d \ln S_t = d Y_t 
+  &amp;= \frac{ \partial Y }{ \partial t} dt + \frac{ \partial Y }{ \partial S} dS_t + \frac{1}{2} \frac{ \partial^2 Y }{ \partial S^2} dS_t dS_t <br />
+  &amp;= 0 · dt + \frac{ 1 }{ S_t } dS_t - \frac{1}{2} · \frac{ 1 }{ S_t^2 } dS_t dS_t <br />
+  &amp;=  \frac{ 1 }{ S_t } · S_t · (\mu dt + \sigma dW_t) - \frac{1}{2} · \frac{ 1 }{ S_t^2 } · \sigma^2 S_t^2 dt
+ <br />
+  &amp;= (\mu - \frac{1}{2} \sigma^2) dt + \sigma dW_t. <br />
+\end{align}
+$$
+两边求积分，得到如下式子
+$$
+\begin{align}
+ \int<em>{0}^{t} d \ln S_u = \int</em>{0}^{t} d Y_u 
+    &amp;= \int<em>{0}^{t}  (\mu - \frac{1}{2} \sigma^2) du + \int</em>{0}^{t}  \sigma dW_u <br />
+\Rightarrow \ln S_t - \ln S<em>0 = Y_t - Y</em>0 &amp;= (\mu - \frac{1}{2} \sigma^2) t + \int<em>{0}^{t}  \sigma dW_u.
+\end{align}
+$$
+我们知道，<strong>Brownian Motion</strong> 表示在一定时间段内随机游走走过的路径，并且如果我们假定在初始阶段为 $W(0)=0$，那么，上面等式的最后一项是
+$$
+\begin{align}
+\int</em>{0}^{t}  \sigma dW_u &amp;= \sigma (W_t - W_0 ) = \sigma W_t.
+\end{align}
+$$</p>
 
-<p>不过几日的天气倒是也好。阳光灿烂如孩童的笑脸天真无瑕，暖心的却不热烈，滑落在皮肤生怕破碎。有一天猪头提议全家动身前去东坪山晒太阳，只为了这一刻的阳光弥足珍贵。是啊，往前每每在老家过年，春节这几天几乎都是阴雨连天，难得的出现这么晴朗的天气。南方的小渔村更添了几分冷意，空气了充斥了水气的冰冻，像是凝结的薄幕。更有那些象征喜庆的鞭炮在燃放过后四处挥舞的烟雾，掺杂在冰晶的半空，久久不散，犹如仙境。一个人常年在外旅居，此刻见了这般景象，竟有一些感伤，仿佛这是一股催泪剂，流浪的酸楚与归家的喜悦一齐涌上眼角，润湿了眼眶。</p>
+<p>因此，我们有
+$$
+\begin{align}
+ \ln S_t - \ln S<em>0 = Y_t - Y</em>0 &amp;= (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t <br />
+  \Rightarrow Y_t &amp;= Y<em>0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t <br />
+ \Rightarrow S_t &amp;= S</em>0 · \exp{  (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t  }.
+\end{align}
+$$</p>
 
-<p>今天春节并没有回老家过春节。年前和猪头商量了一下，决定邀请家中两位老人来厦团聚。一来是我们也没有那么多时间，本来她的假期就少得可怜，这来来回回的在路上费的时间多，也够折腾人（航班经常改道，火车时而晚点），小咪豆也不大适合舟车劳顿，怕了出了漏子；二来，我们也想让老人家出来走走，毕竟厦门这个春节的天气真的是好的惹人疼爱，招人喜欢，而且在这边我们两个都比较熟悉，平时出来旅游吃饭都挺方便的。于是乎，我们家今年便最终在厦门团聚了。</p>
+<h2 id="section">几何布朗运动</h2>
 
-<h2 id="section-1">一次未行的聚会</h2>
+<p>我们知道，对于任何一个正态分布做线性转换后依然服从正态分布。由于布朗运动 $W_t \sim \mathcal{N} (0, t)$，则
+$$
+\begin{align}
+  Y_t &amp;= Y<em>0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t <br />
+\Rightarrow E[Y_t|Y</em>0] &amp;= E[ Y<em>0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t] <br />
+                       &amp;= Y</em>0 + (\mu - \frac{1}{2} \sigma^2) t + \underbrace{E[\sigma W_t]}<em>{0} = Y</em>0 + (\mu - \frac{1}{2} \sigma^2) t <br />
+\Rightarrow Var[Y_t|Y<em>0] &amp;= Var [\sigma W_t] = \sigma^2 Var(Wt) = \sigma^2 ·t <br />
+\Rightarrow Y_t &amp;\sim \mathcal{N}(  Y</em>0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) \label{gbm_norm}
+\end{align} 
+$$</p>
 
-<p>掐指一算，现在离初中毕业已经十年了。十年可算是一个大时期，我从一个毛头小伙子到一个丈夫与一个孩子的父亲。走过的这十年，一直都坎坎坷坷，曲曲折折。人生本当如此，历经风雨，奋斗不止，在晚年回首方有可念之处。可是这十年来，我总是那么的羡慕当初的那个纯真的孩子，一脸惘然的朝向未知的旅途，却也满心的勇气。</p>
+<p>那么，$\ln S_t = Y_t$ 则服从 <strong>正态分布</strong>，则 $S_t = e^{Y_t}$服从 <em>log-normal disctribution</em>，即 $\ln S_t \sim \mathcal{N} (E[S_t], Var[S_t])$.</p>
 
-<p>初中的校园坐落在一个海滩湾处。小，而且年代久远，当时又正值人口峰值，我们的学校里竟然漫漫的都是人。这业已脱离了我对学校的概念，原先的小学人少，地大，小伙伴们总是有各种玩趣之地可去。可是现在，我只能在教室里待着，不能出去，稍不小心，便有人在走廊里撞到了。在这个拥挤甚至可以说是臃肿的校园里，我却感到无尽的孤单。人与人的会面，往往加深了心与心的分裂。愈多的人，愈感孤单。这种在人多之处说体会到的孤单，长年累月的陪伴着我，阴魂不散，挥之不去。</p>
+<p>下面我们来推导 $S_t$ 的分布特征。</p>
 
-<p>初中唯一让我着迷的事情，是数学课本里那些由符号与方程编写而成的美丽世界。它们像极了天际线在昏黄夜晚的轮廓，淡淡的泛着氤氲。很多时候，我愿凝视这个虚无缥缈却深埋心底的幻城，痴痴的美梦着，想要得到那个神秘的答案。</p>
+<h3 id="moment-generation-function">Moment Generation Function</h3>
 
-<p>无数的小时里，我把自己深埋在那些符号里，不吭一声。我的这种孤傲与孤单，将周边的同学都隔离起来了，不再联系。其实，我只是不说一句话；其实，我只是一直都孤单着。</p>
+<p>我们知道，对于对任何一个随机变量建模，往往需要假设该变量服从某一类随机过程，而这个随机过程由分布函数（distribution function）给定。可是，有些时候，我们并不一定需要知道整个分布函数的具体形式，而只是关注该随机变量的几个「统计特征」，如一阶矩、二阶矩等。下面要介绍的「矩条件生成函数」就针对这种情况提出的。随机变量的矩条件可以在 <strong>Moment Generation Function</strong> (MGF) 十分方便的推导出来。比如，对于正态分布，我们只需要知道一阶矩和二阶矩条件就可以对变量做统计推断（method of moment, MM，还有更一般的 GMM）。</p>
 
-<p>很多的年头里，我不曾与我的那些小伙伴们联络。</p>
+<p>对于一个<strong>可测空间</strong> $(\Omega, \mathcal{F}, P)$，随机变量 $X \in \sigma(\mathcal{F})$ 的 MGF 定义为
+$$
+\begin{align}
+ M<em>{X}(\tau) &amp;= E[ e^{x\tau}] = \int</em>{\Omega} e^{x(\omega)\tau} dP(\omega)
+\end{align}
+$$
+其任一 $m-$ 阶的矩公式可以对 $\tau$ 在 $\tau = 0$ 处求 $m$ 次导数得到
+$$
+\begin{align}
+  \frac{\partial M<em>{X}(\tau)}{\partial \tau}|</em>{\tau = 0} 
+  &amp;=   \frac{\partial}{\partial \tau} E[ e^{x\tau}] |<em>{\tau = 0}<br />
+  =  E[ x · e^{x\tau}] |</em>{\tau = 0}    <br />
+  &amp;= E[x] <br />
+   \frac{\partial ^2 M<em>{X}(\tau)}{\partial \tau ^2 }|</em>{\tau = 0} 
+ &amp;= E[x^2] <br />
+ \frac{\partial ^m M<em>{X}(\tau)}{\partial \tau ^m }|</em>{\tau = 0} 
+ &amp;= E[x^m]
+\end{align}
+$$
+特别的，对于一个正态分布，$X \sim \mathcal{N}(\mu, \sigma^2)$，有
+$$
+\begin{align}
+  M_{X}(\tau) &amp;= E[ e^{x\tau}] = \exp{ \mu \tau + \frac{1}{2} \sigma^2 \tau^2 }
+\end{align} <br />
+$$</p>
 
-<p>今年突然听娜姐给我电话（我也不知她何来家里的号码），说是春节会有同学聚会，毕竟许多人已经不见整十年，希望此次可以相聚会面。可是，这次命运又在捉弄玩笑，今年正值全家都齐来厦门团聚，并没有计划会老家。而家中尚有小咪豆需要照顾，故而此次聚会也无奈不能成行。</p>
+<h3 id="section-1">期望与方差</h3>
 
-<h2 id="section-2">一个未果的问题</h2>
+<p>这个特征对于求一个「对数正态分布」十分有用。由$\ref{gbm_norm}$
+$$
+\begin{align}
+  Y_t &amp;\sim \mathcal{N}(  Y<em>0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) 
+\end{align}
+$$
+则其 MGF 为
+$$
+\begin{align}
+ M</em>{Y}(\tau) &amp;= E[e^{y\tau}] = \exp{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 },
+\end{align}
+$$
+其中，$\tilde{\mu} = Y_0 + (\mu - \frac{1}{2} \sigma^2) t$，$\tilde{\sigma}^2= \sigma ^2 t$ .</p>
 
-<p>有一个悬而未解的问题，未果，不便诉说。</p>
+<p>因此，我们可以得到如下公式
+$$
+\boxed{
+ \begin{align}
+  E[S^{\tau}] &amp;=  E[e^{y\tau}]  = \exp{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 }
+ \end{align}
+}
+$$</p>
+
+<p>即，期望可以表示为
+$$
+\boxed{
+ \begin{align}
+  E[S_t] &amp;=  E[e^{y\tau}]|<em>{\tau = 1}  = \exp{ \tilde{\mu}  + \frac{1}{2} \tilde{\sigma}^2  }  <br />
+        &amp;= \exp{ Y</em>0 + (\mu - \frac{1}{2} \sigma^2) t + \frac{1}{2} \sigma^2 t  } <br />
+        &amp;= S_0 · e^{\mu t } <br />
+\end{align}
+}
+$$</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\boxed{
+ \begin{align}
+  E[S^2] &= E[e^{y\tau}]|_{\tau = 2}  = \exp\{ 2 \tilde{\mu}  + 2 \tilde{\sigma}^2  \} \\
+  &= \exp\{ 2 [Y_0 + (\mu - \frac{1}{2} \sigma^2) t ] + 2 \sigma^2 t \}   \\
+  &= S_0^2 · \exp\{ 2 \mu t + \sigma^2 t\}
+ \end{align}
+}
+ %]]></script>
+
+<p>因此，$S_t$ 的方差可以表示为
+$$
+\boxed{
+ \begin{align}
+  Var[S_t] 
+  &amp;=   E[S^2] -  ( E[S] )^2 <br />
+  &amp;= S<em>0^2 · \exp{ 2 \mu t + \sigma^2 t} - S</em>0^2 · \exp{ 2 \mu t } <br />
+  &amp;= S_0^2 · e^{ 2 \mu t } · (e^{ \sigma^2 t - 1 })
+ \end{align}
+}
+$$</p>
 
 
-		<div class="post-end mt-1"><span><i></i>12 February 2014</span></div>
+		<div class="post-end mt-1"><span><i></i>16 March 2014</span></div>
 		</div>
 	</div>
 
@@ -192,11 +326,11 @@ MathJax.Hub.Queue(function() {
 	<div class="tags pl-2 pr-2 mb-2 left">
 		<span class="tag">标签：
 		
-		<a class="button button-small button-orange" href="/tags.html#日子" title="日子">日子</a>
+		<a class="button button-small button-orange" href="/tags.html#Ito" title="Ito">Ito</a>
 		
-		<a class="button button-small button-orange" href="/tags.html#咪豆" title="咪豆">咪豆</a>
+		<a class="button button-small button-orange" href="/tags.html#股票" title="股票">股票</a>
 		
-		<a class="button button-small button-orange" href="/tags.html#随想" title="随想">随想</a>
+		<a class="button button-small button-orange" href="/tags.html#价格" title="价格">价格</a>
 		
 		</span>
 	</div>
@@ -206,7 +340,7 @@ MathJax.Hub.Queue(function() {
 	<div class="categories pl-2 pr-2 mb-2 right">
 		<span class="categorie">分类：
 		
-		<a class="button button-small button-orange" href="http://williamlfang.github.com/cn/archives.html#Personal" title="Personal">Personal</a>
+		<a class="button button-small button-orange" href="http://williamlfang.github.com/cn/archives.html#金融数学" title="金融数学">金融数学</a>
 		
 		</span>
 	</div>
@@ -215,22 +349,22 @@ MathJax.Hub.Queue(function() {
 	
 	<div class="cleared mt-2 pl-2 pr-2">
 		
-		<a class="button button-orange left" href="http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/" rel="prev" title="不甘心的这辈子">←美联储的「博士系」</a>
+		<a class="button button-orange left" href="http://williamlfang.github.com/cn/2014/03/14/bu-gan-xin-de-zhe-bei-zi/" rel="prev" title="庖丁解牛之 Ito 公式">←不甘心的这辈子</a>
 		
 		
-		<a class="button button-orange right" href="http://williamlfang.github.com/cn/2014/03/14/bu-gan-xin-de-zhe-bei-zi/" rel="next" title="不甘心的这辈子">不甘心的这辈子→</a>
+		<a class="button button-orange right" href="http://williamlfang.github.com/cn/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/" rel="next" title="庖丁解牛之 Ito 公式">庖丁解牛之 Ito 公式→</a>
 		
 	</div>
 
 	
-	<span id="btn_page_prev"><a href="http://williamlfang.github.com/cn/2014/02/12/mei-lian-chu-de-bo-shi-xi/" rel="prev" title="Previous">
+	<span id="btn_page_prev"><a href="http://williamlfang.github.com/cn/2014/03/14/bu-gan-xin-de-zhe-bei-zi/" rel="prev" title="Previous">
 	<span id="fanye" style="display: none;">
 		‹--
 	</span></a></span>
 	
 
 	
-	<span id="btn_page_next"><a href="http://williamlfang.github.com/cn/2014/03/14/bu-gan-xin-de-zhe-bei-zi/" rel="next" title="Next">
+	<span id="btn_page_next"><a href="http://williamlfang.github.com/cn/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/" rel="next" title="Next">
 	<span id="fanye" style="display: none;">
 		--›
 	</span></a></span>

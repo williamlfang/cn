@@ -100,7 +100,7 @@ $$
  M_{X}(\tau) &= E[ e^{x\tau}] = \int_{\Omega} e^{x(\omega)\tau} dP(\omega)
 \end{align}
 $$
-其任一 $m-$ 阶的矩公式可以对 $\tau$ 在 $\tau = 0$ 处求 $m$ 次倒数得到
+其任一 $m-$ 阶的矩公式可以对 $\tau$ 在 $\tau = 0$ 处求 $m$ 次导数得到
 $$
 \begin{align}
   \frac{\partial M_{X}(\tau)}{\partial \tau}|_{\tau = 0} 
@@ -119,7 +119,64 @@ $$
   M_{X}(\tau) &= E[ e^{x\tau}] = \exp\{ \mu \tau + \frac{1}{2} \sigma^2 \tau^2 \}
 \end{align} \\
 $$
-这个特征对于求一个「对数正态分布」十分有用。$\ref{gbm_norm}$
+
+### 期望与方差
+
+这个特征对于求一个「对数正态分布」十分有用。由$\ref{gbm_norm}$
+$$
+\begin{align}
+  Y_t &\sim \mathcal{N}(  Y_0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) 
+\end{align}
+$$
+则其 MGF 为
+$$
+\begin{align}
+ M_{Y}(\tau) &= E[e^{y\tau}] = \exp\{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 \},
+\end{align}
+$$
+其中，$\tilde{\mu} = Y_0 + (\mu - \frac{1}{2} \sigma^2) t$，$\tilde{\sigma}^2= \sigma ^2 t$ .
+
+因此，我们可以得到如下公式
+$$
+\boxed{
+ \begin{align}
+  E[S^{\tau}] &=  E[e^{y\tau}]  = \exp\{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 \}
+ \end{align}
+}
+$$
+
+即，期望可以表示为
+$$
+\boxed{
+ \begin{align}
+  E[S_t] &=  E[e^{y\tau}]|_{\tau = 1}  = \exp\{ \tilde{\mu}  + \frac{1}{2} \tilde{\sigma}^2  \}  \\
+        &= \exp\{ Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \frac{1}{2} \sigma^2 t  \} \\
+        &= S_0 · e^{\mu t } \\
+\end{align}
+}
+$$
+
+$$
+\boxed{
+ \begin{align}
+  E[S^2] &= E[e^{y\tau}]|_{\tau = 2}  = \exp\{ 2 \tilde{\mu}  + 2 \tilde{\sigma}^2  \} \\
+  &= \exp\{ 2 [Y_0 + (\mu - \frac{1}{2} \sigma^2) t ] + 2 \sigma^2 t \}   \\
+  &= S_0^2 · \exp\{ 2 \mu t + \sigma^2 t\}
+ \end{align}
+}
+$$
+
+因此，$S_t$ 的方差可以表示为
+$$
+\boxed{
+ \begin{align}
+  Var[S_t] 
+  &=   E[S^2] -  ( E[S] )^2 \\
+  &= S_0^2 · \exp\{ 2 \mu t + \sigma^2 t\} - S_0^2 · \exp\{ 2 \mu t \} \\
+  &= S_0^2 · e^{ 2 \mu t } · (e^{ \sigma^2 t - 1 })
+ \end{align}
+}
+$$
 
 
 

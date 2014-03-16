@@ -7,10 +7,10 @@ tags:
 - 股票
 - 价格
 description: 
-published: false
-status:    process
+published: true
+status: publish
 ---
-
+ 
 假设股票价格的变化服从以下运动方程（随机微分方程，SDE）：
 $$
 \begin{align}
@@ -23,13 +23,13 @@ $$
  d \ln S_t = \frac{ d S_t }{ S_t } = \mu dt + \sigma dW_t.
 \end{align}
 $$
-
+ 
 下面我们来推到股票价格 $S_t$ 的动态方程，这主要是使用著名的 **Ito 公式**。过于理论的东西我在这里不推导了，主要是利用一个简单的例子来说明如何使用 **Ito 公式** 解 **SDE** 类问题。
-
+ 
 <!-- more -->
-
+ 
 ## Ito 公式求解
-
+ 
 首先，令 $Y_t = ln S_t$，由简单的偏微分求导得到
 $$
 \begin{align}
@@ -63,7 +63,7 @@ $$
 \int_{0}^{t}  \sigma dW_u &= \sigma (W_t - W_0 ) = \sigma W_t.
 \end{align}
 $$
-
+ 
 因此，我们有
 $$
 \begin{align}
@@ -72,9 +72,9 @@ $$
  \Rightarrow S_t &= S_0 · \exp\{  (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t  \}.
 \end{align}
 $$
-
+ 
 ## 几何布朗运动
-
+ 
 我们知道，对于任何一个正态分布做线性转换后依然服从正态分布。由于布朗运动 $W_t \sim \mathcal{N} (0, t)$，则
 $$
 \begin{align}
@@ -85,15 +85,15 @@ $$
 \Rightarrow Y_t &\sim \mathcal{N}(  Y_0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) \label{gbm_norm}
 \end{align} 
 $$
-
+ 
 那么，$\ln S_t = Y_t$ 则服从 **正态分布**，则 $S_t = e^{Y_t}$服从 *log-normal disctribution*，即 $\ln S_t \sim \mathcal{N} (E[S_t], Var[S_t])$.
-
+ 
 下面我们来推导 $S_t$ 的分布特征。
-
+ 
 ### Moment Generation Function
-
+ 
 我们知道，对于对任何一个随机变量建模，往往需要假设该变量服从某一类随机过程，而这个随机过程由分布函数（distribution function）给定。可是，有些时候，我们并不一定需要知道整个分布函数的具体形式，而只是关注该随机变量的几个「统计特征」，如一阶矩、二阶矩等。下面要介绍的「矩条件生成函数」就针对这种情况提出的。随机变量的矩条件可以在 **Moment Generation Function** (MGF) 十分方便的推导出来。比如，对于正态分布，我们只需要知道一阶矩和二阶矩条件就可以对变量做统计推断（method of moment, MM，还有更一般的 GMM）。
-
+ 
 对于一个**可测空间** $(\Omega, \mathcal{F}, P)$，随机变量 $X \in \sigma(\mathcal{F})$ 的 MGF 定义为
 $$
 \begin{align}
@@ -119,9 +119,9 @@ $$
   M_{X}(\tau) &= E[ e^{x\tau}] = \exp\{ \mu \tau + \frac{1}{2} \sigma^2 \tau^2 \}
 \end{align} \\
 $$
-
+ 
 ### 期望与方差
-
+ 
 这个特征对于求一个「对数正态分布」十分有用。由$\ref{gbm_norm}$
 $$
 \begin{align}
@@ -135,7 +135,7 @@ $$
 \end{align}
 $$
 其中，$\tilde{\mu} = Y_0 + (\mu - \frac{1}{2} \sigma^2) t$，$\tilde{\sigma}^2= \sigma ^2 t$ .
-
+ 
 因此，我们可以得到如下公式
 $$
 \boxed{
@@ -144,7 +144,7 @@ $$
  \end{align}
 }
 $$
-
+ 
 即，期望可以表示为
 $$
 \boxed{
@@ -155,7 +155,7 @@ $$
 \end{align}
 }
 $$
-
+ 
 $$
 \boxed{
  \begin{align}
@@ -165,7 +165,7 @@ $$
  \end{align}
 }
 $$
-
+ 
 因此，$S_t$ 的方差可以表示为
 $$
 \boxed{
@@ -177,14 +177,14 @@ $$
  \end{align}
 }
 $$
-
-
-
-
-
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

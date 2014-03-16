@@ -162,7 +162,7 @@ $$
 \end{align}
 $$</p>
 
-<p>下面我们来推到股票价格 $S_t$ 的动态方程，这主要是使用著名的 <strong>Ito 公式</strong>。过于理论的东西我在这里不推导了，主要是利用一个简单的例子来说明如何使用 <strong>Ito 公式</strong> 解 <strong>SDE</strong> 类问题。</p>
+<p>下面我们来推导股票价格 $S_t$ 的动态方程，这主要是使用著名的 <strong>Ito 公式</strong>。过于理论的东西我在这里不推导了，主要是利用一个简单的例子来说明如何使用 <strong>Ito 公式</strong> 解 <strong>SDE</strong> 类问题。</p>
 
 <!-- more -->
 
@@ -171,9 +171,9 @@ $$</p>
 <p>首先，令 $Y_t = ln S_t$，由简单的偏微分求导得到
 $$
 \begin{align}
-\frac{ \partial Y }{ \partial t} &amp;= 0 \nonumber<br />
-\frac{ \partial Y }{ \partial S} &amp;= \frac{ 1 }{ S } \nonumber<br />
-\frac{ \partial^2 Y }{ \partial S^2} &amp;= - \frac{ 1 }{ S^2 } \nonumber<br />
+\frac{ \partial Y }{ \partial t} &amp;= 0  <br />
+\frac{ \partial Y }{ \partial S} &amp;= \frac{ 1 }{ S }  <br />
+\frac{ \partial^2 Y }{ \partial S^2} &amp;= - \frac{ 1 }{ S^2 }  <br />
 \end{align}
 $$
 则根据 <strong>Ito 公式</strong>，我们可以推出以下方程

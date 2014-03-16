@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-16T21:04:20+08:00</lastBuildDate>
-        <pubDate>2014-03-16T21:04:20+08:00</pubDate>
+        <lastBuildDate>2014-03-16T21:07:10+08:00</lastBuildDate>
+        <pubDate>2014-03-16T21:07:10+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -27,7 +27,7 @@ $$
 \end{align}
 $$&lt;/p&gt;
 
-&lt;p&gt;下面我们来推到股票价格 $S_t$ 的动态方程，这主要是使用著名的 &lt;strong&gt;Ito 公式&lt;/strong&gt;。过于理论的东西我在这里不推导了，主要是利用一个简单的例子来说明如何使用 &lt;strong&gt;Ito 公式&lt;/strong&gt; 解 &lt;strong&gt;SDE&lt;/strong&gt; 类问题。&lt;/p&gt;
+&lt;p&gt;下面我们来推导股票价格 $S_t$ 的动态方程，这主要是使用著名的 &lt;strong&gt;Ito 公式&lt;/strong&gt;。过于理论的东西我在这里不推导了，主要是利用一个简单的例子来说明如何使用 &lt;strong&gt;Ito 公式&lt;/strong&gt; 解 &lt;strong&gt;SDE&lt;/strong&gt; 类问题。&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -36,9 +36,9 @@ $$&lt;/p&gt;
 &lt;p&gt;首先，令 $Y_t = ln S_t$，由简单的偏微分求导得到
 $$
 \begin{align}
-\frac{ \partial Y }{ \partial t} &amp;amp;= 0 \nonumber&lt;br /&gt;
-\frac{ \partial Y }{ \partial S} &amp;amp;= \frac{ 1 }{ S } \nonumber&lt;br /&gt;
-\frac{ \partial^2 Y }{ \partial S^2} &amp;amp;= - \frac{ 1 }{ S^2 } \nonumber&lt;br /&gt;
+\frac{ \partial Y }{ \partial t} &amp;amp;= 0  &lt;br /&gt;
+\frac{ \partial Y }{ \partial S} &amp;amp;= \frac{ 1 }{ S }  &lt;br /&gt;
+\frac{ \partial^2 Y }{ \partial S^2} &amp;amp;= - \frac{ 1 }{ S^2 }  &lt;br /&gt;
 \end{align}
 $$
 则根据 &lt;strong&gt;Ito 公式&lt;/strong&gt;，我们可以推出以下方程

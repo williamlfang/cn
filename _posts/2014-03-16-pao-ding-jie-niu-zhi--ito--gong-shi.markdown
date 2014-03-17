@@ -234,7 +234,7 @@ $$
 由$\eqref{oup}$得到
 $$
  \begin{align}
-   X(t)  &= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) . \nonumber
+  X(t)  &= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) . \nonumber
  \end{align}
 $$
 则其期望可以表示为
@@ -321,7 +321,7 @@ $$
  \end{align}
 $$
  
-- 而第二向可以有布朗运动的独立增量性质消除，
+- 而第二向可以由布朗运动的独立增量性质消除，
 $$
  \begin{align}
    & E\bigg[ 
@@ -330,7 +330,7 @@ $$
     =& E\bigg[ 
           \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) 
           \bigg] 
-          +
+          ·
        E\bigg[ 
          \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
           \bigg] 

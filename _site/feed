@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-17T11:39:03+08:00</lastBuildDate>
-        <pubDate>2014-03-17T11:39:03+08:00</pubDate>
+        <lastBuildDate>2014-03-17T11:46:40+08:00</lastBuildDate>
+        <pubDate>2014-03-17T11:46:40+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -246,7 +246,7 @@ $$&lt;/p&gt;
 &lt;p&gt;由$\eqref{oup}$得到
 $$
  \begin{align}
-   X(t)  &amp;amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int&lt;em&gt;{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) . \nonumber
+  X(t)  &amp;amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int&lt;em&gt;{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) . \nonumber
  \end{align}
 $$
 则其期望可以表示为
@@ -341,7 +341,7 @@ $$
 $$&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;而第二向可以有布朗运动的独立增量性质消除，
+    &lt;p&gt;而第二向可以由布朗运动的独立增量性质消除，
 $$
  \begin{align}
  &amp;amp; E\bigg[ 
@@ -350,7 +350,7 @@ $$
   =&amp;amp; E\bigg[ 
         \int&lt;em&gt;{t}^{s}   e^{-\kappa (s-u)} dW(u) 
         \bigg] 
-        +
+        ·
      E\bigg[ 
        \int&lt;/em&gt;{0}^{t}  e^{-\kappa (t-v)} dW(v)
         \bigg] 

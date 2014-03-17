@@ -71,8 +71,8 @@ task :post do
     post.puts "title:    \"#{title.gsub(/-/,' ')}\""
     post.puts "category:  "
     post.puts "tags:     
-		    - 
-	 	    - "
+		- 
+	 	- "
     post.puts 'description: '
     post.puts "published: false"
     post.puts "status:    process"

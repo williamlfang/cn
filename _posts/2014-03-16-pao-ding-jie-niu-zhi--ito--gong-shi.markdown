@@ -221,10 +221,10 @@ $$
  \begin{align}
    e^{\kappa t } X(t) - X(0) - \int_{0}^{t} \kappa X(u) e^{\kappa u} du
    &= 
-   - \int_{0}^{t} \kappa X(u) e^{\kappa u} du + \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)    \\
+   -\int_{0}^{t} \kappa X(u) e^{\kappa u} du + \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)  \nonumber \\
    e^{\kappa t } X(t) - X(0)
    &= 
-   \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)    \\
+   \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)   \nonumber \\
 \Rightarrow 
     X(t)  &= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{oup} \\
  \end{align}

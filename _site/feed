@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-17T11:37:23+08:00</lastBuildDate>
-        <pubDate>2014-03-17T11:37:23+08:00</pubDate>
+        <lastBuildDate>2014-03-17T11:39:03+08:00</lastBuildDate>
+        <pubDate>2014-03-17T11:39:03+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -229,18 +229,16 @@ $$&lt;/p&gt;
     &lt;p&gt;对比$\eqref{lhs}$与$\eqref{rhs}$，
 $$
  \begin{align}
- e^{\kappa t } X(t) - X(0) - \int_{0}^{t} \kappa X(u) e^{\kappa u} du
- &amp;amp;= &lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;\int&lt;em&gt;{0}^{t} \kappa X(u) e^{\kappa u} du + \theta (e^{\kappa t} - 1) + \int&lt;/em&gt;{0}^{t}  \sigma  e^{\kappa u} dW(u)    &lt;br /&gt;
+ e^{\kappa t } X(t) - X(0) - \int&lt;em&gt;{0}^{t} \kappa X(u) e^{\kappa u} du
+ &amp;amp;= 
+ -\int&lt;/em&gt;{0}^{t} \kappa X(u) e^{\kappa u} du + \theta (e^{\kappa t} - 1) + \int&lt;em&gt;{0}^{t}  \sigma  e^{\kappa u} dW(u)  \nonumber &lt;br /&gt;
  e^{\kappa t } X(t) - X(0)
  &amp;amp;= 
- \theta (e^{\kappa t} - 1) + \int&lt;em&gt;{0}^{t}  \sigma  e^{\kappa u} dW(u)    &lt;br /&gt;
+ \theta (e^{\kappa t} - 1) + \int&lt;/em&gt;{0}^{t}  \sigma  e^{\kappa u} dW(u)   \nonumber &lt;br /&gt;
 \Rightarrow 
-  X(t)  &amp;amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int&lt;/em&gt;{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{oup} &lt;br /&gt;
+  X(t)  &amp;amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{oup} &lt;br /&gt;
  \end{align}
-$$&lt;/li&gt;
-    &lt;/ul&gt;
+$$&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 

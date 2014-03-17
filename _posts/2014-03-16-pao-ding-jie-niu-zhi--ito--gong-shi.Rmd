@@ -178,7 +178,7 @@ $$
   d X(t) &=  - \kappa (X(t) - \theta) d t + \sigma dW(t). \label{ou}
  \end{align}
 $$
-在式子\eqref{ou}中，我们注意到参数 $(\kappa, \theta, \sigma)$ 决定了整个随机过程的特征：
+在式子$\eqref{ou}$中，我们注意到参数 $(\kappa, \theta, \sigma)$ 决定了整个随机过程的特征：
 
 - $\kappa$：是随机过程的「变化率」，即控制了整个随机过程向长期均值回归的快慢程度;
 - $\theta$：代表了随机过程的「长期均值水平」，O-U 过程最显著的特征是其具有了「均值回复」，即在变化率 $\kappa$ 的控制下变量趋于稳定的状态。这个在利率期限结构建模中经常使用，如最早的 Vasicek 利率模型就是一个典型的 O-U 过程。
@@ -186,7 +186,7 @@ $$
 
 下面我们来求解显示解。
 
-首先对方程\eqref{ou}在区域 $[0, t]$ 进行积分得到
+首先对方程$\eqref{ou}$在区域 $[0, t]$ 进行积分得到
 $$
   \begin{align}
    \int_{0}^{t} d X(u) &= -\int_{0}^{t} \kappa X(u) du + \int_{0}^{t}  \kappa \theta du +  \int_{0}^{t}  \sigma  dW(u),
@@ -216,7 +216,7 @@ $$
  \end{align}
 $$
 
-- 对比\eqref{lhs}与\eqref{rhs}，
+- 对比$\eqref{lhs}$与$\eqref{rhs}$，
 $$
  \begin{align}
    e^{\kappa t } X(t) - X(0) - \int_{0}^{t} \kappa X(u) e^{\kappa u} du
@@ -231,7 +231,7 @@ $$
 $$
 
 ### 期望
-由\eqref{oup}得到
+由$\eqref{oup}$得到
 $$
  \begin{align}
    X(t)  &= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) . \nonumber
@@ -246,7 +246,7 @@ $$
 $$
 最后一项由 $W_t \sim \mathcal{N} (0, t)$ 得到。
 
-利用\eqref{exp}，我们可以求出 O-U 过程在长期的一个均值回复项，即
+利用$\eqref{exp}$，我们可以求出 O-U 过程在长期的一个均值回复项，即
 $$
  \begin{align}
    \lim_{t \rightarrow + \infty } e^{-\kappa t} (X(0)-\theta) + \theta = \theta.
@@ -279,7 +279,7 @@ $$
  \end{align}
 $$
 
-利用这两个性质，对于\eqref{cov}，如果 $s \geq t$ (反之，$s \leq t$，则令二者调换，即 $t=\min\{s,t\}$)，我们有
+利用这两个性质，对于$\eqref{cov}$，如果 $s \geq t$ (反之，$s \leq t$，则令二者调换，即 $t=\min\{s,t\}$)，我们有
 $$
  \begin{align}
    cov(X_s, X_t)
@@ -337,7 +337,7 @@ $$
     = 0 
  \end{align}
 $$
-因此，方程\eqref{cov1}变为
+因此，方程$\eqref{cov1}$变为
 $$
  \begin{align}
    cov(X_s, X_t)

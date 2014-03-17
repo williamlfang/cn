@@ -4,7 +4,7 @@
  <title>方莲 | William</title>
  <link href="http://williamlfang.github.com/cn/" rel="self"/>
  <link href="http://williamlfang.github.com/cn"/>
- <updated>2014-03-17T11:29:57+08:00</updated>
+ <updated>2014-03-17T11:33:03+08:00</updated>
  <id>http://williamlfang.github.com/cn</id>
  <author>
    <name>william</name>
@@ -185,7 +185,7 @@ $$
   d X(t) &amp;amp;=  - \kappa (X(t) - \theta) d t + \sigma dW(t). \label{ou}
  \end{align}
 $$
-在式子\eqref{ou}中，我们注意到参数 $(\kappa, \theta, \sigma)$ 决定了整个随机过程的特征：&lt;/p&gt;
+在式子$\eqref{ou}$中，我们注意到参数 $(\kappa, \theta, \sigma)$ 决定了整个随机过程的特征：&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;$\kappa$：是随机过程的「变化率」，即控制了整个随机过程向长期均值回归的快慢程度;&lt;/li&gt;
@@ -195,7 +195,7 @@ $$
 
 &lt;p&gt;下面我们来求解显示解。&lt;/p&gt;
 
-&lt;p&gt;首先对方程\eqref{ou}在区域 $[0, t]$ 进行积分得到
+&lt;p&gt;首先对方程$\eqref{ou}$在区域 $[0, t]$ 进行积分得到
 $$
   \begin{align}
    \int&lt;em&gt;{0}^{t} d X(u) &amp;amp;= -\int&lt;/em&gt;{0}^{t} \kappa X(u) du + \int&lt;em&gt;{0}^{t}  \kappa \theta du +  \int&lt;/em&gt;{0}^{t}  \sigma  dW(u),
@@ -229,7 +229,7 @@ $$
 $$&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;对比\eqref{lhs}与\eqref{rhs}，
+    &lt;p&gt;对比$\eqref{lhs}$与$\eqref{rhs}$，
 $$
  \begin{align}
  e^{\kappa t } X(t) - X(0) - \int_{0}^{t} \kappa X(u) e^{\kappa u} du
@@ -248,7 +248,7 @@ $$&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;section-2&quot;&gt;期望&lt;/h3&gt;
-&lt;p&gt;由\eqref{oup}得到
+&lt;p&gt;由$\eqref{oup}$得到
 $$
  \begin{align}
    X(t)  &amp;amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int&lt;em&gt;{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) . \nonumber
@@ -263,7 +263,7 @@ $$
 $$
 最后一项由 $W_t \sim \mathcal{N} (0, t)$ 得到。&lt;/p&gt;
 
-&lt;p&gt;利用\eqref{exp}，我们可以求出 O-U 过程在长期的一个均值回复项，即
+&lt;p&gt;利用$\eqref{exp}$，我们可以求出 O-U 过程在长期的一个均值回复项，即
 $$
  \begin{align}
    \lim_{t \rightarrow + \infty } e^{-\kappa t} (X(0)-\theta) + \theta = \theta.
@@ -301,7 +301,7 @@ $$&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;利用这两个性质，对于\eqref{cov}，如果 $s \geq t$ (反之，$s \leq t$，则令二者调换，即 $t=\min{s,t}$)，我们有
+&lt;p&gt;利用这两个性质，对于$\eqref{cov}$，如果 $s \geq t$ (反之，$s \leq t$，则令二者调换，即 $t=\min{s,t}$)，我们有
 $$
  \begin{align}
    cov(X_s, X_t)
@@ -362,7 +362,7 @@ $$
   = 0 
  \end{align}
 $$
-因此，方程\eqref{cov1}变为
+因此，方程$\eqref{cov1}$变为
 $$
  \begin{align}
  cov(X_s, X_t)

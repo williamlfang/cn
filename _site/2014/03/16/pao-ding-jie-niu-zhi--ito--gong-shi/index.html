@@ -372,7 +372,7 @@ $$
  &amp;= 
  \theta (e^{\kappa t} - 1) + \int<em>{0}^{t}  \sigma  e^{\kappa u} dW(u)  \nonumber <br />
 \Rightarrow 
-  X(t)  &amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int</em>{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{ouprocess} <br />
+  X(t)  &amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int</em>{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{oup} <br />
  \end{align}
 $$</li>
     </ul>
@@ -380,7 +380,7 @@ $$</li>
 </ul>
 
 <h3 id="section-2">期望</h3>
-<p>由\eqref{ouprocess}得到
+<p>由\eqref{oup}得到
 $$
  \begin{align}
    X(t)  &amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int<em>{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) . \nonumber
@@ -447,14 +447,15 @@ $$
     &amp;=  \sigma^2
     E\bigg[ 
           \int</em>{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int<em>{0}^{t}  e^{-\kappa (t-v)} dW(v) 
-          + \int</em>{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int<em>{0}^{t}  e^{-\kappa (t-v)} dW(v)
+           \nonumber <br />
+        &amp; \qquad + \int</em>{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int<em>{0}^{t}  e^{-\kappa (t-v)} dW(v)
             \bigg] <br />
      &amp;=  \sigma^2 \Bigg{
      E\bigg[ 
           \int</em>{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int<em>{0}^{t}  e^{-\kappa (t-v)} dW(v) 
           \bigg] 
-          +
-     E\bigg[ 
+          \nonumber <br />
+    &amp; \qquad +  E\bigg[ 
           \int</em>{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
           \bigg]<br />
     \Bigg}，    \label{cov1}   <br />
@@ -472,7 +473,7 @@ $$
   &amp;=
   E\bigg[ 
         \int_{0}^{t}  e^{-\kappa (s-u)} · e^{-\kappa (t-u)}  du 
-        \bigg]
+        \bigg] <br />
  \end{align}
 $$</p>
   </li>
@@ -480,10 +481,10 @@ $$</p>
     <p>而第二向可以有布朗运动的独立增量性质消除，
 $$
  \begin{align}
- E\bigg[ 
+ &amp; E\bigg[ 
         \int<em>{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int</em>{0}^{t}  e^{-\kappa (t-v)} dW(v)
-        \bigg] 
-  &amp;= E\bigg[ 
+        \bigg] &amp; \nonumber <br />
+  =&amp; E\bigg[ 
         \int<em>{t}^{s}   e^{-\kappa (s-u)} dW(u) 
         \bigg] 
         +

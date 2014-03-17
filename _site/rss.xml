@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-17 11:16:51 +0800</lastBuildDate>
-        <pubDate>2014-03-17 11:16:51 +0800</pubDate>
+        <lastBuildDate>2014-03-17 11:29:57 +0800</lastBuildDate>
+        <pubDate>2014-03-17 11:29:57 +0800</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -237,7 +237,7 @@ $$
  &amp;amp;= 
  \theta (e^{\kappa t} - 1) + \int&lt;em&gt;{0}^{t}  \sigma  e^{\kappa u} dW(u)  \nonumber &lt;br /&gt;
 \Rightarrow 
-  X(t)  &amp;amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int&lt;/em&gt;{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{ouprocess} &lt;br /&gt;
+  X(t)  &amp;amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int&lt;/em&gt;{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{oup} &lt;br /&gt;
  \end{align}
 $$&lt;/li&gt;
     &lt;/ul&gt;
@@ -245,7 +245,7 @@ $$&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;section-2&quot;&gt;期望&lt;/h3&gt;
-&lt;p&gt;由\eqref{ouprocess}得到
+&lt;p&gt;由\eqref{oup}得到
 $$
  \begin{align}
    X(t)  &amp;amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int&lt;em&gt;{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) . \nonumber
@@ -312,14 +312,15 @@ $$
     &amp;amp;=  \sigma^2
     E\bigg[ 
           \int&lt;/em&gt;{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int&lt;em&gt;{0}^{t}  e^{-\kappa (t-v)} dW(v) 
-          + \int&lt;/em&gt;{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int&lt;em&gt;{0}^{t}  e^{-\kappa (t-v)} dW(v)
+           \nonumber &lt;br /&gt;
+        &amp;amp; \qquad + \int&lt;/em&gt;{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int&lt;em&gt;{0}^{t}  e^{-\kappa (t-v)} dW(v)
             \bigg] &lt;br /&gt;
      &amp;amp;=  \sigma^2 \Bigg{
      E\bigg[ 
           \int&lt;/em&gt;{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int&lt;em&gt;{0}^{t}  e^{-\kappa (t-v)} dW(v) 
           \bigg] 
-          +
-     E\bigg[ 
+          \nonumber &lt;br /&gt;
+    &amp;amp; \qquad +  E\bigg[ 
           \int&lt;/em&gt;{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
           \bigg]&lt;br /&gt;
     \Bigg}，    \label{cov1}   &lt;br /&gt;
@@ -337,7 +338,7 @@ $$
   &amp;amp;=
   E\bigg[ 
         \int_{0}^{t}  e^{-\kappa (s-u)} · e^{-\kappa (t-u)}  du 
-        \bigg]
+        \bigg] &lt;br /&gt;
  \end{align}
 $$&lt;/p&gt;
   &lt;/li&gt;
@@ -345,10 +346,10 @@ $$&lt;/p&gt;
     &lt;p&gt;而第二向可以有布朗运动的独立增量性质消除，
 $$
  \begin{align}
- E\bigg[ 
+ &amp;amp; E\bigg[ 
         \int&lt;em&gt;{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int&lt;/em&gt;{0}^{t}  e^{-\kappa (t-v)} dW(v)
-        \bigg] 
-  &amp;amp;= E\bigg[ 
+        \bigg] &amp;amp; \nonumber &lt;br /&gt;
+  =&amp;amp; E\bigg[ 
         \int&lt;em&gt;{t}^{s}   e^{-\kappa (s-u)} dW(u) 
         \bigg] 
         +

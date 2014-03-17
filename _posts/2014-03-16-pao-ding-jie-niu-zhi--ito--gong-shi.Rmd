@@ -226,12 +226,12 @@ $$
    &= 
    \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)  \nonumber \\
 \Rightarrow 
-    X(t)  &= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{ouprocess} \\
+    X(t)  &= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{oup} \\
  \end{align}
 $$
 
 ### 期望
-由\eqref{ouprocess}得到
+由\eqref{oup}得到
 $$
  \begin{align}
    X(t)  &= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) . \nonumber
@@ -293,14 +293,15 @@ $$
     &=  \sigma^2
     E\bigg[ 
           \int_{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v) 
-          + \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
+           \nonumber \\
+        & \qquad + \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
             \bigg] \\
      &=  \sigma^2 \Bigg\{
      E\bigg[ 
           \int_{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v) 
           \bigg] 
-          +
-     E\bigg[ 
+          \nonumber \\
+    & \qquad +  E\bigg[ 
           \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
           \bigg]  
     \Bigg\}，    \label{cov1}   \\
@@ -316,17 +317,17 @@ $$
     &=
     E\bigg[ 
           \int_{0}^{t}  e^{-\kappa (s-u)} · e^{-\kappa (t-u)}  du 
-          \bigg]
+          \bigg] \\
  \end{align}
 $$
 
 - 而第二向可以有布朗运动的独立增量性质消除，
 $$
  \begin{align}
-   E\bigg[ 
+   & E\bigg[ 
           \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
-          \bigg] 
-    &= E\bigg[ 
+          \bigg] & \nonumber \\
+    =& E\bigg[ 
           \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) 
           \bigg] 
           +

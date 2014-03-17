@@ -170,6 +170,221 @@ $$
  \end{align}
 $$
  
+## O-U Process
+ 
+其实，我们同样可是使用这种方法来解一类更加广义的随机过程——O-U过程。这个过程为
+$$
+ \begin{align}
+  d X(t) &=  - \kappa (X(t) - \theta) d t + \sigma dW(t). \label{ou}
+ \end{align}
+$$
+在式子\eqref{ou}中，我们注意到参数 $(\kappa, \theta, \sigma)$ 决定了整个随机过程的特征：
+ 
+- $\kappa$：是随机过程的「变化率」，即控制了整个随机过程向长期均值回归的快慢程度;
+- $\theta$：代表了随机过程的「长期均值水平」，O-U 过程最显著的特征是其具有了「均值回复」，即在变化率 $\kappa$ 的控制下变量趋于稳定的状态。这个在利率期限结构建模中经常使用，如最早的 Vasicek 利率模型就是一个典型的 O-U 过程。
+- $\sigma$：表示随机过程的「瞬时方差」。
+ 
+下面我们来求解显示解。
+ 
+首先对方程\eqref{ou}在区域 $[0, t]$ 进行积分得到
+$$
+  \begin{align}
+   \int_{0}^{t} d X(u) &= -\int_{0}^{t} \kappa X(u) du + \int_{0}^{t}  \kappa \theta du +  \int_{0}^{t}  \sigma  dW(u),
+  \end{align}
+$$
+然后两边同时乘以 $e^{\kappa u}$ 得到
+$$
+\begin{align}
+    \int_{0}^{t} e^{\kappa u} d X(u) &= -\int_{0}^{t} \kappa X(u) e^{\kappa u} du + \int_{0}^{t}  \kappa \theta e^{\kappa u} du +  \int_{0}^{t} \sigma  e^{\kappa u} dW(u). \label{ou-int}
+\end{align}
+$$
+我们分开求解等式两边。
+ 
+- 先是对左边进行**分步积分**得到
+$$
+ \begin{align}
+   LHS &= e^{\kappa u} X(u) |_{u=0}^{t} - \int_{0}^{t} \kappa X(u) e^{\kappa u} du \nonumber \\
+   &= e^{\kappa t } X(t) - X(0) - \int_{0}^{t} \kappa X(u) e^{\kappa u} du . \label{lhs}
+ \end{align}
+$$
+ 
+- 同样的，我们也可以求出右边式子
+$$
+ \begin{align}
+   RHS &= - \int_{0}^{t} \kappa X(u) e^{\kappa u} du + \int_{0}^{t} \theta de^{\kappa u} + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u) \nonumber\\
+   &= - \int_{0}^{t} \kappa X(u) e^{\kappa u} du + \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)  \label{rhs}
+ \end{align}
+$$
+ 
+- 对比\eqref{lhs}与\eqref{rhs}，
+$$
+ \begin{align}
+   e^{\kappa t } X(t) - X(0) - \int_{0}^{t} \kappa X(u) e^{\kappa u} du
+   &= 
+   - \int_{0}^{t} \kappa X(u) e^{\kappa u} du + \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)  \nonumber \\
+   e^{\kappa t } X(t) - X(0)
+   &= 
+   \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)  \nonumber \\
+\Rightarrow 
+    X(t)  &= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{ouprocess} \\
+ \end{align}
+$$
+ 
+### 期望
+由\eqref{ouprocess}得到
+$$
+ \begin{align}
+   X(t)  &= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) . \nonumber
+ \end{align}
+$$
+则其期望可以表示为
+$$
+ \begin{align}
+   E[X(t)|X(0)] &= E[ e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) ] \nonumber \\
+   &= e^{-\kappa t} (X(0)-\theta) + \theta. \label{exp}
+ \end{align}
+$$
+最后一项由 $W_t \sim \mathcal{N} (0, t)$ 得到。
+ 
+利用\eqref{exp}，我们可以求出 O-U 过程在长期的一个均值回复项，即
+$$
+ \begin{align}
+   \lim_{t \rightarrow + \infty } e^{-\kappa t} (X(0)-\theta) + \theta = \theta.
+ \end{align}
+$$
+ 
+### 协方差
+ 
+任一区间内 $[s,t]$ 协方差可以由以下求出。
+$$
+ \begin{align}
+   cov(X_s, X_t) 
+   &= E[ (X_s-E[X_s])·(X_t-E[X_t])] \nonumber\\
+   &= \sigma^2 E\bigg[ 
+        \int_{0}^{s}    e^{-\kappa (s-u)} dW(u) ·
+         \int_{0}^{t}   e^{-\kappa (t-v)} dW(v)
+            \bigg] \label{cov}
+ \end{align}
+$$
+ 
+这里我们需要使用到两个基本的概念
+ 
+- 布朗运动的「独立增量」(indepdent increasement)，即任何一个布朗运动在不同期间内的增量是相互独立的，即对于区间 $[0,t], 0 \leq t_0 \leq t_1 \leq \cdots \leq t_n \leq t$, $W(t_1)-W(t_0)$, $W(t_2)-W(t_1)$,$\cdots$, $W(t_n)-W(t_{n-1})$ 是相互独立的增量过程。
+ 
+- **Ito Isometry** 性质：即对于一个布朗运动的独立增量，$dW_t$，有关其多项式有如下性质
+$$
+ \begin{align}
+   E\bigg[ \bigg( \int_{0}^{t} F(u) dW(u) \bigg)^2\bigg]
+   &= \int_{0}^{t} E \big[ F^2(u) \big] du
+ \end{align}
+$$
+ 
+利用这两个性质，对于\eqref{cov}，如果 $s \geq t$ (反之，$s \leq t$，则令二者调换，即 $t=\min\{s,t\}$)，我们有
+$$
+ \begin{align}
+   cov(X_s, X_t)
+   &=  \sigma^2
+   E\bigg[ 
+        \bigg( \int_{0}^{t}  e^{-\kappa (s-u)} dW(u)  + \int_{t}^{s}   e^{-\kappa (s-u)} dW(u)
+        \bigg)
+        ·
+         \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
+            \bigg] \\
+    &=  \sigma^2
+    E\bigg[ 
+          \int_{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v) 
+          + \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
+            \bigg] \\
+     &=  \sigma^2 \Bigg\{
+     E\bigg[ 
+          \int_{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v) 
+          \bigg] 
+          +
+     E\bigg[ 
+          \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
+          \bigg]  
+    \Bigg\}，    \label{cov1}   \\
+ \end{align}
+$$
+ 
+- 对于第一项我们需要使用 **Ito Isometry** 性质,
+$$
+ \begin{align}
+   E\bigg[ 
+          \int_{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v) 
+          \bigg]
+    &=
+    E\bigg[ 
+          \int_{0}^{t}  e^{-\kappa (s-u)} · e^{-\kappa (t-u)}  du 
+          \bigg]
+ \end{align}
+$$
+ 
+- 而第二向可以有布朗运动的独立增量性质消除，
+$$
+ \begin{align}
+   E\bigg[ 
+          \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
+          \bigg] 
+    &= E\bigg[ 
+          \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) 
+          \bigg] 
+          +
+       E\bigg[ 
+         \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
+          \bigg] 
+    = 0 
+ \end{align}
+$$
+因此，方程\eqref{cov1}变为
+$$
+ \begin{align}
+   cov(X_s, X_t)
+   &= \sigma^2 \Bigg\{
+     E\bigg[ 
+          \int_{0}^{t}  e^{-\kappa (s-u)} · e^{-\kappa (t-u)}  du 
+          \bigg]
+     \Bigg\}   \label{cov2} \\
+  &= \sigma^2 \Bigg\{
+      e^{-\kappa (s+t)}
+      E\bigg[ 
+          \int_{0}^{t}  e^{2\kappa u}  du 
+          \bigg]
+   \Bigg\}  
+    = \sigma^2 ·
+      e^{-\kappa (s+t)}
+      ·
+      \frac{1}{2\kappa}
+      ·  e^{2\kappa u}\bigg|_{u=0}^{t} \\
+    &= \frac{\sigma^2}{2\kappa} e^{-\kappa (s+t)} · \Bigg( e^{2\kappa t} -1 \Bigg).
+ \end{align}
+$$
+也就是说，对于任何一个协方差，我们都有
+$$
+ \begin{align}
+   cov(X_s, X_t) 
+   &= \frac{\sigma^2}{2\kappa} e^{-\kappa (s+t)} · \Bigg( e^{2\kappa · \min\{s,t\} } -1 \Bigg).
+ \end{align}
+$$
+ 
+### 方差
+ 
+方差也就是0阶协方差，
+$$
+ \begin{align}
+   Var(X_t)
+   &= cov(X_t, X_t)
+   = \frac{\sigma^2}{2\kappa} e^{-\kappa (t+t)} · \Bigg( e^{2\kappa · \min\{t,t\} } -1 \Bigg) \nonumber\\
+   &= \frac{\sigma^2}{2\kappa} \Bigg( 1 - e^{ -2\kappa t } \Bigg) 
+ \end{align}
+$$
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  

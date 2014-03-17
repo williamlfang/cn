@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-16T21:25:19+08:00</lastBuildDate>
-        <pubDate>2014-03-16T21:25:19+08:00</pubDate>
+        <lastBuildDate>2014-03-17T11:16:51+08:00</lastBuildDate>
+        <pubDate>2014-03-17T11:16:51+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -171,6 +171,235 @@ $$
   &amp;amp;=   E[S^2] -  ( E[S] )^2 \nonumber&lt;br /&gt;
   &amp;amp;= S&lt;em&gt;0^2 · \exp{ 2 \mu t + \sigma^2 t} - S&lt;/em&gt;0^2 · \exp{ 2 \mu t } \nonumber&lt;br /&gt;
   &amp;amp;= S_0^2 · e^{ 2 \mu t } · (e^{ \sigma^2 t - 1 })
+ \end{align}
+$$&lt;/p&gt;
+
+&lt;h2 id=&quot;o-u-process&quot;&gt;O-U Process&lt;/h2&gt;
+
+&lt;p&gt;其实，我们同样可是使用这种方法来解一类更加广义的随机过程——O-U过程。这个过程为
+$$
+ \begin{align}
+  d X(t) &amp;amp;=  - \kappa (X(t) - \theta) d t + \sigma dW(t). \label{ou}
+ \end{align}
+$$
+在式子\eqref{ou}中，我们注意到参数 $(\kappa, \theta, \sigma)$ 决定了整个随机过程的特征：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\kappa$：是随机过程的「变化率」，即控制了整个随机过程向长期均值回归的快慢程度;&lt;/li&gt;
+  &lt;li&gt;$\theta$：代表了随机过程的「长期均值水平」，O-U 过程最显著的特征是其具有了「均值回复」，即在变化率 $\kappa$ 的控制下变量趋于稳定的状态。这个在利率期限结构建模中经常使用，如最早的 Vasicek 利率模型就是一个典型的 O-U 过程。&lt;/li&gt;
+  &lt;li&gt;$\sigma$：表示随机过程的「瞬时方差」。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;下面我们来求解显示解。&lt;/p&gt;
+
+&lt;p&gt;首先对方程\eqref{ou}在区域 $[0, t]$ 进行积分得到
+$$
+  \begin{align}
+   \int&lt;em&gt;{0}^{t} d X(u) &amp;amp;= -\int&lt;/em&gt;{0}^{t} \kappa X(u) du + \int&lt;em&gt;{0}^{t}  \kappa \theta du +  \int&lt;/em&gt;{0}^{t}  \sigma  dW(u),
+  \end{align}
+$$
+然后两边同时乘以 $e^{\kappa u}$ 得到
+$$
+\begin{align}
+    \int&lt;em&gt;{0}^{t} e^{\kappa u} d X(u) &amp;amp;= -\int&lt;/em&gt;{0}^{t} \kappa X(u) e^{\kappa u} du + \int&lt;em&gt;{0}^{t}  \kappa \theta e^{\kappa u} du +  \int&lt;/em&gt;{0}^{t} \sigma  e^{\kappa u} dW(u). \label{ou-int}
+\end{align}
+$$
+我们分开求解等式两边。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;先是对左边进行&lt;strong&gt;分步积分&lt;/strong&gt;得到
+$$
+ \begin{align}
+ LHS &amp;amp;= e^{\kappa u} X(u) |&lt;em&gt;{u=0}^{t} - \int&lt;/em&gt;{0}^{t} \kappa X(u) e^{\kappa u} du \nonumber &lt;br /&gt;
+ &amp;amp;= e^{\kappa t } X(t) - X(0) - \int_{0}^{t} \kappa X(u) e^{\kappa u} du . \label{lhs}
+ \end{align}
+$$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;同样的，我们也可以求出右边式子
+$$
+ \begin{align}
+ RHS &amp;amp;= - \int&lt;em&gt;{0}^{t} \kappa X(u) e^{\kappa u} du + \int&lt;/em&gt;{0}^{t} \theta de^{\kappa u} + \int&lt;em&gt;{0}^{t}  \sigma  e^{\kappa u} dW(u) \nonumber&lt;br /&gt;
+ &amp;amp;= - \int&lt;/em&gt;{0}^{t} \kappa X(u) e^{\kappa u} du + \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)  \label{rhs}
+ \end{align}
+$$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;对比\eqref{lhs}与\eqref{rhs}，
+$$
+ \begin{align}
+ e^{\kappa t } X(t) - X(0) - \int_{0}^{t} \kappa X(u) e^{\kappa u} du
+ &amp;amp;= &lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;\int&lt;em&gt;{0}^{t} \kappa X(u) e^{\kappa u} du + \theta (e^{\kappa t} - 1) + \int&lt;/em&gt;{0}^{t}  \sigma  e^{\kappa u} dW(u)  \nonumber &lt;br /&gt;
+ e^{\kappa t } X(t) - X(0)
+ &amp;amp;= 
+ \theta (e^{\kappa t} - 1) + \int&lt;em&gt;{0}^{t}  \sigma  e^{\kappa u} dW(u)  \nonumber &lt;br /&gt;
+\Rightarrow 
+  X(t)  &amp;amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int&lt;/em&gt;{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{ouprocess} &lt;br /&gt;
+ \end{align}
+$$&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;期望&lt;/h3&gt;
+&lt;p&gt;由\eqref{ouprocess}得到
+$$
+ \begin{align}
+   X(t)  &amp;amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int&lt;em&gt;{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) . \nonumber
+ \end{align}
+$$
+则其期望可以表示为
+$$
+ \begin{align}
+   E[X(t)|X(0)] &amp;amp;= E[ e^{-\kappa t} (X(0)-\theta) + \theta + \int&lt;/em&gt;{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) ] \nonumber &lt;br /&gt;
+   &amp;amp;= e^{-\kappa t} (X(0)-\theta) + \theta. \label{exp}
+ \end{align}
+$$
+最后一项由 $W_t \sim \mathcal{N} (0, t)$ 得到。&lt;/p&gt;
+
+&lt;p&gt;利用\eqref{exp}，我们可以求出 O-U 过程在长期的一个均值回复项，即
+$$
+ \begin{align}
+   \lim_{t \rightarrow + \infty } e^{-\kappa t} (X(0)-\theta) + \theta = \theta.
+ \end{align}
+$$&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;协方差&lt;/h3&gt;
+
+&lt;p&gt;任一区间内 $[s,t]$ 协方差可以由以下求出。
+$$
+ \begin{align}
+   cov(X_s, X_t) 
+   &amp;amp;= E[ (X_s-E[X_s])·(X_t-E[X_t])] \nonumber&lt;br /&gt;
+   &amp;amp;= \sigma^2 E\bigg[ 
+        \int&lt;em&gt;{0}^{s}    e^{-\kappa (s-u)} dW(u) ·
+         \int&lt;/em&gt;{0}^{t}   e^{-\kappa (t-v)} dW(v)
+            \bigg] \label{cov}
+ \end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;这里我们需要使用到两个基本的概念&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;布朗运动的「独立增量」(indepdent increasement)，即任何一个布朗运动在不同期间内的增量是相互独立的，即对于区间 $[0,t], 0 \leq t&lt;em&gt;0 \leq t&lt;/em&gt;1 \leq \cdots \leq t_n \leq t$, $W(t&lt;em&gt;1)-W(t&lt;/em&gt;0)$, $W(t&lt;em&gt;2)-W(t&lt;/em&gt;1)$,$\cdots$, $W(t_n)-W(t_{n-1})$ 是相互独立的增量过程。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Ito Isometry&lt;/strong&gt; 性质：即对于一个布朗运动的独立增量，$dW_t$，有关其多项式有如下性质
+$$
+ \begin{align}
+ E\bigg[ \bigg( \int&lt;em&gt;{0}^{t} F(u) dW(u) \bigg)^2\bigg]
+ &amp;amp;= \int&lt;/em&gt;{0}^{t} E \big[ F^2(u) \big] du
+ \end{align}
+$$&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;利用这两个性质，对于\eqref{cov}，如果 $s \geq t$ (反之，$s \leq t$，则令二者调换，即 $t=\min{s,t}$)，我们有
+$$
+ \begin{align}
+   cov(X_s, X_t)
+   &amp;amp;=  \sigma^2
+   E\bigg[ 
+        \bigg( \int&lt;em&gt;{0}^{t}  e^{-\kappa (s-u)} dW(u)  + \int&lt;/em&gt;{t}^{s}   e^{-\kappa (s-u)} dW(u)
+        \bigg)
+        ·
+         \int&lt;em&gt;{0}^{t}  e^{-\kappa (t-v)} dW(v)
+            \bigg] &lt;br /&gt;
+    &amp;amp;=  \sigma^2
+    E\bigg[ 
+          \int&lt;/em&gt;{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int&lt;em&gt;{0}^{t}  e^{-\kappa (t-v)} dW(v) 
+          + \int&lt;/em&gt;{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int&lt;em&gt;{0}^{t}  e^{-\kappa (t-v)} dW(v)
+            \bigg] &lt;br /&gt;
+     &amp;amp;=  \sigma^2 \Bigg{
+     E\bigg[ 
+          \int&lt;/em&gt;{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int&lt;em&gt;{0}^{t}  e^{-\kappa (t-v)} dW(v) 
+          \bigg] 
+          +
+     E\bigg[ 
+          \int&lt;/em&gt;{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
+          \bigg]&lt;br /&gt;
+    \Bigg}，    \label{cov1}   &lt;br /&gt;
+ \end{align}
+$$&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;对于第一项我们需要使用 &lt;strong&gt;Ito Isometry&lt;/strong&gt; 性质,
+$$
+ \begin{align}
+ E\bigg[ 
+        \int&lt;em&gt;{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int&lt;/em&gt;{0}^{t}  e^{-\kappa (t-v)} dW(v) 
+        \bigg]
+  &amp;amp;=
+  E\bigg[ 
+        \int_{0}^{t}  e^{-\kappa (s-u)} · e^{-\kappa (t-u)}  du 
+        \bigg]
+ \end{align}
+$$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;而第二向可以有布朗运动的独立增量性质消除，
+$$
+ \begin{align}
+ E\bigg[ 
+        \int&lt;em&gt;{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int&lt;/em&gt;{0}^{t}  e^{-\kappa (t-v)} dW(v)
+        \bigg] 
+  &amp;amp;= E\bigg[ 
+        \int&lt;em&gt;{t}^{s}   e^{-\kappa (s-u)} dW(u) 
+        \bigg] 
+        +
+     E\bigg[ 
+       \int&lt;/em&gt;{0}^{t}  e^{-\kappa (t-v)} dW(v)
+        \bigg] 
+  = 0 
+ \end{align}
+$$
+因此，方程\eqref{cov1}变为
+$$
+ \begin{align}
+ cov(X_s, X_t)
+ &amp;amp;= \sigma^2 \Bigg{
+   E\bigg[ 
+        \int&lt;em&gt;{0}^{t}  e^{-\kappa (s-u)} · e^{-\kappa (t-u)}  du 
+        \bigg]
+   \Bigg}   \label{cov2} &lt;br /&gt;
+&amp;amp;= \sigma^2 \Bigg{
+    e^{-\kappa (s+t)}
+    E\bigg[ 
+        \int&lt;/em&gt;{0}^{t}  e^{2\kappa u}  du 
+        \bigg]
+ \Bigg}&lt;br /&gt;
+  = \sigma^2 ·
+    e^{-\kappa (s+t)}
+    ·
+    \frac{1}{2\kappa}
+    ·  e^{2\kappa u}\bigg|_{u=0}^{t} &lt;br /&gt;
+  &amp;amp;= \frac{\sigma^2}{2\kappa} e^{-\kappa (s+t)} · \Bigg( e^{2\kappa t} -1 \Bigg).
+ \end{align}
+$$
+也就是说，对于任何一个协方差，我们都有
+$$
+ \begin{align}
+ cov(X_s, X_t) 
+ &amp;amp;= \frac{\sigma^2}{2\kappa} e^{-\kappa (s+t)} · \Bigg( e^{2\kappa · \min{s,t} } -1 \Bigg).
+ \end{align}
+$$&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;方差&lt;/h3&gt;
+
+&lt;p&gt;方差也就是0阶协方差，
+$$
+ \begin{align}
+   Var(X_t)
+   &amp;amp;= cov(X_t, X_t)
+   = \frac{\sigma^2}{2\kappa} e^{-\kappa (t+t)} · \Bigg( e^{2\kappa · \min{t,t} } -1 \Bigg) \nonumber&lt;br /&gt;
+   &amp;amp;= \frac{\sigma^2}{2\kappa} \Bigg( 1 - e^{ -2\kappa t } \Bigg) 
  \end{align}
 $$&lt;/p&gt;
 

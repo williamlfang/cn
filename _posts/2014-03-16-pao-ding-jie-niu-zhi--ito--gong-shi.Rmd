@@ -226,7 +226,7 @@ $$
    &= 
    \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)  \nonumber \\
 \Rightarrow 
-    X(t)  &= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{ouprocess}
+    X(t)  &= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{ouprocess} \\
  \end{align}
 $$
 

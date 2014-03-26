@@ -4,7 +4,7 @@
  <title>方莲 | William</title>
  <link href="http://williamlfang.github.com/cn/" rel="self"/>
  <link href="http://williamlfang.github.com/cn"/>
- <updated>2014-03-26T22:09:46+08:00</updated>
+ <updated>2014-03-26T22:11:27+08:00</updated>
  <id>http://williamlfang.github.com/cn</id>
  <author>
    <name>william</name>
@@ -57,8 +57,7 @@ $$&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
 \begin{align}
- L(T,S) :=&amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big) \\
- \tau(T,S)L(T,S)  =&amp; \frac{1}{P(T,S)} - 1 \\ 
+ L(T,S) :=&amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big)  
 \end{align}
  %]]&gt;&lt;/script&gt;
 

@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-26T22:09:46+08:00</lastBuildDate>
-        <pubDate>2014-03-26T22:09:46+08:00</pubDate>
+        <lastBuildDate>2014-03-26T22:11:27+08:00</lastBuildDate>
+        <pubDate>2014-03-26T22:11:27+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -54,8 +54,7 @@ $$&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
 \begin{align}
- L(T,S) :=&amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big) \\
- \tau(T,S)L(T,S)  =&amp; \frac{1}{P(T,S)} - 1 \\ 
+ L(T,S) :=&amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big)  
 \end{align}
  %]]&gt;&lt;/script&gt;
 

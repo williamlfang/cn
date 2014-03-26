@@ -1,316 +1,451 @@
+
 <!DOCTYPE html>
-<!-- saved from url=(0014)about:internet -->
-<html>
+<!--
+-->
+<html lang="zh-CN"/>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta http-equiv="x-ua-compatible" content="IE=9" >
 
-<title>远期利率互换(FRA)</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+	<meta name="author" content="william" />
+	<meta name="generator" content="Jekyll" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<meta name="keywords" content="远期利率互换利率" />
+	<meta name="description" content="远期利率与互换利率" />
 
-<style type="text/css">
-body, td {
-   font-family: sans-serif;
-   background-color: white;
-   font-size: 12px;
-   margin: 8px;
-}
+	<meta charset="UTF-8"/>
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
 
-tt, code, pre {
-   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
-}
+	<title> 方 莲 | William</title>
 
-h1 { 
-   font-size:2.2em; 
-}
+<!--
+	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+-->
 
-h2 { 
-   font-size:1.8em; 
-}
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="William ATOM Feed" />
+	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/2014/03/26/yuan-qi-li-lv-yu-hu-huan-li-lv/" /> -->
+	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/2014/03/26/yuan-qi-li-lv-yu-hu-huan-li-lv/" />
+	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
 
-h3 { 
-   font-size:1.4em; 
-}
+	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
+	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
+	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
+	<script>hljs.initHighlightingOnLoad();</script>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
 
-h4 { 
-   font-size:1.0em; 
-}
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true,
+                extensions: ["AMSmath.js"]
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 90      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
+});
 
-h5 { 
-   font-size:0.9em; 
-}
-
-h6 { 
-   font-size:0.8em; 
-}
-
-a:visited {
-   color: rgb(50%, 0%, 50%);
-}
-
-pre {	
-   margin-top: 0;
-   max-width: 95%;
-   border: 1px solid #ccc;
-   white-space: pre-wrap;
-}
-
-pre code {
-   display: block; padding: 0.5em;
-}
-
-code.r, code.cpp {
-   background-color: #F8F8F8;
-}
-
-table, td, th {
-  border: none;
-}
-
-blockquote {
-   color:#666666;
-   margin:0;
-   padding-left: 1em;
-   border-left: 0.5em #EEE solid;
-}
-
-hr {
-   height: 0px;
-   border-bottom: none;
-   border-top-width: thin;
-   border-top-style: dotted;
-   border-top-color: #999999;
-}
-
-@media print {
-   * { 
-      background: transparent !important; 
-      color: black !important; 
-      filter:none !important; 
-      -ms-filter: none !important; 
-   }
-
-   body { 
-      font-size:12pt; 
-      max-width:100%; 
-   }
-       
-   a, a:visited { 
-      text-decoration: underline; 
-   }
-
-   hr { 
-      visibility: hidden;
-      page-break-before: always;
-   }
-
-   pre, blockquote { 
-      padding-right: 1em; 
-      page-break-inside: avoid; 
-   }
-
-   tr, img { 
-      page-break-inside: avoid; 
-   }
-
-   img { 
-      max-width: 100% !important; 
-   }
-
-   @page :left { 
-      margin: 15mm 20mm 15mm 10mm; 
-   }
-     
-   @page :right { 
-      margin: 15mm 10mm 15mm 20mm; 
-   }
-
-   p, h2, h3 { 
-      orphans: 3; widows: 3; 
-   }
-
-   h2, h3 { 
-      page-break-after: avoid; 
-   }
-}
-
-</style>
-
-
-
-<!-- MathJax scripts -->
-<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
 </script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
 
-
-
+<!--=================================================================== -->
 </head>
 
+
 <body>
-<hr/>
 
-<p>layout:   post
-title:    &ldquo;远期利率与互换利率&rdquo;
-category: 金融 
-tags:     </p>
+	<div id="main" class="w-100p font-gray-dark">
+		<div class="nav nav-large nav-orange">
+			<div class="menu cleared">
+			<a title="首页" class="nav-item" href="http://williamlfang.github.com/cn/">首页</a>
+				<div class="nav-has-menu">
+					<a class="nav-item" href="http://williamlfang.github.com/cn/archives.html">归档</a>
+						<div class="nav-menu">
+							
+							<a title="Time" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Time">Time</a>
+							
+							<a title="Love" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Love">Love</a>
+							
+							<a title="Campus" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Campus">Campus</a>
+							
+							<a title="Personal" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Personal">Personal</a>
+							
+							<a title="Life" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Life">Life</a>
+							
+							<a title="Tech" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Tech">Tech</a>
+							
+							<a title="Programming" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Programming">Programming</a>
+							
+							<a title="经济分析" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#经济分析">经济分析</a>
+							
+							<a title="个人" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#个人">个人</a>
+							
+							<a title="金融数学" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#金融数学">金融数学</a>
+							
+							<a title="金融" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#金融">金融</a>
+							
+						</div>
+				</div>
+			<a title="邻居" class="nav-item" href="http://williamlfang.github.com/cn/links.html">链接</a>
+			<a title="关于" class="nav-item" href="http://williamlfang.github.com/cn/about.html">关于</a>
+			<a title="留言" class="nav-item" href="http://williamlfang.github.com/cn/guestbook.html">留言</a>
+				<div class="search right h-1">
+					<form method="get" id="searchform" action="http://williamlfang.github.com/cn/search.html">
+					<input type="text" name="q" id="search" size="13" value="" placeholder="你在找什么呢？" x-webkit-speech />
+					</form>
+				</div>
+			</div>
+		</div>
+
+	<div id="articles">
+		
+
+<div class="post mt-2">
+
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2014/03/26/yuan-qi-li-lv-yu-hu-huan-li-lv/">
+		<span class="year">2014</span>
+		<span class="day">26</span>
+		<span class="month">March</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2014/03/26/yuan-qi-li-lv-yu-hu-huan-li-lv/" title="远期利率与互换利率">远期利率与互换利率</a></h3>
+		<div class="content lh-150p font-16 pd-1 mg-2 radius-8">
+		<p>下面我们来推导远期利率与互换利率。这两个利率变量常常在金融建模中有重要的作用。</p>
+
+<h2 id="fra">远期利率互换(FRA)</h2>
+
+<p>远期利率互换（Forward Rate Agreement）指的是这样一种金融合约，$FRA(t; T, S)$:</p>
 
 <ul>
-<li>远期利率</li>
-<li>互换利率
-description: 
-published: false
-status:    process
-&mdash;</li>
-</ul>
-
-<p>下面我们来推导远期利率与互换利率。这两个利率变量常常在金融建模中有重要的作用。</p>
-
-<h2>远期利率互换(FRA)</h2>
-
-<p>远期利率互换（Forward Rate Agreement）指的是这样一种金融合约，\( FRA(t; T, S) \):</p>
-
-<ul>
-<li>在 \( t \) 时期确定的；</li>
-<li>到 \( T \) 以事先约定的支付金额 \( K \);</li>
-<li>交割到期日为 \( S \) 的债券。</li>
+  <li>在 $t$ 时期确定的；</li>
+  <li>到 $T$ 以事先约定的支付金额 $K$;</li>
+  <li>交割到期日为 $S$ 的债券。</li>
 </ul>
 
 <p>其合约价值为
-\[ 
+$$
 \begin{align}
- V_{FRA} &= N P(t, S) \tau(T, S) \big[ K- L(T, S) \big], \label{value-fra}
+ V_{FRA} &amp;= N P(t, S) \tau(T, S) \big[ K- L(T, S) \big], \label{value-fra}
 \end{align}
- \]
-其中，\( \tau(T,S) \) 表示在两个时期的时间差，通常按照年为单位计算。\( L(T,S) \) 是简单复合利率，通常指的是<strong>LIBOR</strong>。下面我们来求得远期即期利率\( F(t;T,S) \)。</p>
+$$
+其中，$\tau(T,S)$ 表示在两个时期的时间差，通常按照年为单位计算。$L(T,S)$ 是简单复合利率，通常指的是<strong>LIBOR</strong>。下面我们来求得远期即期利率$F(t;T,S)$。</p>
 
-<p>由式子\( \eqref{value-fra} \)展开
-\[ 
+<!-- more -->
+
+<p>由式子$\eqref{value-fra}$展开
+$$
 \begin{align}
- V_{FRA} &= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \tau(T, S)  L(T, S) \Big].
+ V<em>{FRA} &amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \tau(T, S)  L(T, S) \Big].
 \end{align}
- \]
+$$
 根据无套利条件，我们有以下关系成立(详细推导见：Filipovic: Term Structure Model: A Graduate Course)
-\[ 
+$$
 \begin{align}
- P(t,S) &= P(t,T) P(T,S)
+ P(t,S) &amp;= P(t,T) P(T,S)
 \end{align}
- \]
+$$
 同时,我们有
-\[ 
+$$
 \begin{align*}
- L(T,S) :=& \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big) \\
- \tau(T,S)L(T,S)  =& \frac{1}{P(T,S)} - 1  
+ L(T,S) :=&amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big) <br />
+ \tau(T,S)L(T,S)  =&amp; \frac{1}{P(T,S)} - 1<br />
 \end{align*}
- \]
+$$
 因此，
-\[ 
+$$
 \begin{align}
- V_{FRA} &= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \tau(T, S)  L(T, S) \Big] \\
-   &= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \big(\frac{1}{P(T,S)} - 1 \big) \Big] \\
-   &= N  \Big[ P(t, S) \tau(T, S)  K -   \big(\frac{P(t, S)}{P(T,S)} - P(t, S) \big) \Big]  \\
-   &= N  \Big[ P(t, S) \tau(T, S)  K -   P(t,T)  + P(t, S)  \Big] 
+ V</em>{FRA} &amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \tau(T, S)  L(T, S) \Big] <br />
+   &amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \big(\frac{1}{P(T,S)} - 1 \big) \Big] <br />
+   &amp;= N  \Big[ P(t, S) \tau(T, S)  K -   \big(\frac{P(t, S)}{P(T,S)} - P(t, S) \big) \Big]  <br />
+   &amp;= N  \Big[ P(t, S) \tau(T, S)  K -   P(t,T)  + P(t, S)  \Big] 
 \end{align}
- \]</p>
+$$</p>
 
-<h2>远期即期利率</h2>
+<h2 id="section">远期即期利率</h2>
 
 <p>在无套利的要求下，远期即期利率（Future spot rate）必需满足一个「公平价格」的原则，即使得远期利率协议的价值为零的利率水平，则
-\[ 
+$$
 \begin{align}
- V_{FRA} &= 0 = N  \Big[ P(t, S) \tau(T, S)  F(t;T,S) -   P(t,T)  + P(t, S)  \Big] \\
+ V_{FRA} &amp;= 0 = N  \Big[ P(t, S) \tau(T, S)  F(t;T,S) -   P(t,T)  + P(t, S)  \Big] <br />
  \Rightarrow 
- F(t;T,S) &= \frac{1}{\tau(T,S)} \bigg[ \frac{P(t,T)}{P(t,S)} - 1 \bigg].
+ F(t;T,S) &amp;= \frac{1}{\tau(T,S)} \bigg[ \frac{P(t,T)}{P(t,S)} - 1 \bigg].
 \end{align}
- \]</p>
+$$</p>
 
-<h2>利率互换（IRS）</h2>
+<h2 id="irs">利率互换（IRS）</h2>
 
 <p>下面我们来介绍另外一种利率产品：利率互换（Interest Rate Swap,IRS):</p>
 
 <ul>
-<li>固定支付：约定在未来的一个时间段内按照合同约定的比例支付，假定该水平值为 \( K \)</li>
-<li>浮动利率：合同的另一方则需要根据合同拟采用的浮动利率水平来做对冲支付，一般而言，该浮动利率为短期简单复利的<strong>LIBOR</strong>, \( L(T_{i-1}, T_{i}) \)。</li>
+  <li>固定支付：约定在未来的一个时间段内按照合同约定的比例支付，假定该水平值为 $K$</li>
+  <li>浮动利率：合同的另一方则需要根据合同拟采用的浮动利率水平来做对冲支付，一般而言，该浮动利率为短期简单复利的<strong>LIBOR</strong>, $L(T<em>{i-1}, T</em>{i})$。</li>
 </ul>
 
-<p>我们记该时间段为 \( \mathcal{T} = \{ T_{\alpha}, T_{\alpha+1},\cdots,T_{\beta - 1}, T_{\beta}\} \)，\( \tau_{i} = \tau(T_{i-1}, T_{i}) \)，且有\( \mathcal{\tau} = \{ \tau_{\alpha + 1}, \tau_{\alpha+2},\cdots,\tau_{\beta - 1}, \tau_{\beta}\} \)。</p>
+<p>我们记该时间段为 $\mathcal{T} = { T<em>{\alpha}, T</em>{\alpha+1},\cdots,T<em>{\beta - 1}, T</em>{\beta}}$，$\tau<em>{i} = \tau(T</em>{i-1}, T<em>{i})$，且有$\mathcal{\tau} = { \tau</em>{\alpha + 1}, \tau<em>{\alpha+2},\cdots,\tau</em>{\beta - 1}, \tau_{\beta}}$。</p>
 
 <p>则我们可以得到 IRS 的合约价值为
-\[ 
+$$
 \begin{align}
- V_{IRS} &= \sum_{i=\alpha+1}^{\beta} D(t,T_i) N \tau_i \bigg[ K - L(T_{i-1}, T_{i}) \bigg] \label{value-irs}
+ V<em>{IRS} &amp;= \sum</em>{i=\alpha+1}^{\beta} D(t,T_i) N \tau_i \bigg[ K - L(T<em>{i-1}, T</em>{i}) \bigg] \label{value-irs}
 \end{align}
- \]</p>
+$$</p>
 
-<p>对比 \( \eqref{value-fra} \) 和 \( \eqref{value-irs} \)，我们不难发现，利率互换可以看作来一系列的远期利率协议的总和，即
-\[ 
+<p>对比 $\eqref{value-fra}$ 和 $\eqref{value-irs}$，我们不难发现，利率互换可以看作来一系列的远期利率协议的总和，即
+$$
 \begin{align}
-  V_{IRS} &= \sum_{i=\alpha+1}^{\beta} V_{FRA}  \\
-  &= \sum_{i=\alpha+1}^{\beta} N P(t, T_i) \tau_i \big[ K- F(t;T_{i-1},T_{i}) \big] \\
-  &= N \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i  K - N \boxed{ \sum_{i=\alpha+1}^{\beta} P(t, T_i) \tau_i F(t;T_{i-1},T_{i}) }.
+  V<em>{IRS} &amp;= \sum</em>{i=\alpha+1}^{\beta} V<em>{FRA}  <br />
+  &amp;= \sum</em>{i=\alpha+1}^{\beta} N P(t, T_i) \tau_i \big[ K- F(t;T<em>{i-1},T</em>{i}) \big] <br />
+  &amp;= N \sum<em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i  K - N \boxed{ \sum</em>{i=\alpha+1}^{\beta} P(t, T_i) \tau_i F(t;T<em>{i-1},T</em>{i}) }.
 \end{align}
- \]</p>
+$$</p>
 
 <p>对于方框内的式子，我们可以做如下运算
-\[ 
+$$
 \begin{align}
-\boxed{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i F(t;T_{i-1},T_{i})  } 
- &=\sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau(T_{i-1},T_{i}) \cdot \frac{1}{\tau(T_{i-1},T_{i})} \bigg[ \frac{P(t,T_{i-1})}{P(t,T_{i})} - 1 \bigg] \\
- &=\sum_{i=\alpha+1}^{\beta} \bigg[ P(t,T_{i-1}) - P(t,T_{i}) \bigg]  \\
- &= P(t,T_{\alpha}) - P(t,T_{\beta})
+\boxed{ \sum<em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i F(t;T</em>{i-1},T<em>{i})  } 
+ &amp;=\sum</em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau(T<em>{i-1},T</em>{i}) \cdot \frac{1}{\tau(T<em>{i-1},T</em>{i})} \bigg[ \frac{P(t,T<em>{i-1})}{P(t,T</em>{i})} - 1 \bigg] <br />
+ &amp;=\sum<em>{i=\alpha+1}^{\beta} \bigg[ P(t,T</em>{i-1}) - P(t,T<em>{i}) \bigg]  <br />
+ &amp;= P(t,T</em>{\alpha}) - P(t,T_{\beta})
 \end{align}
- \]</p>
+$$</p>
 
 <p>从而，
-\[ 
+$$
 \begin{align}
- V_{IRS} &=  N \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i  K - N \bigg( P(t,T_{\alpha}) - P(t,T_{\beta}) \bigg)
+ V<em>{IRS} &amp;=  N \sum</em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i  K - N \bigg( P(t,T<em>{\alpha}) - P(t,T</em>{\beta}) \bigg)
 \end{align}
- \]</p>
+$$</p>
 
-<h2>互换利率（Swap Rate）</h2>
+<h2 id="swap-rate">互换利率（Swap Rate）</h2>
 
 <p>同理，为来得到无套利条件，我们要求互换利率使得该利率互换的价值为零，即
-\[ 
+$$
 \begin{align}
- V_{IRS} &= 0 = N \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i   S_{\alpha, \beta} (t)  - N \bigg( P(t,T_{\alpha}) - P(t,T_{\beta}) \bigg) \\
+ V<em>{IRS} &amp;= 0 = N \sum</em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i   S<em>{\alpha, \beta} (t)  - N \bigg( P(t,T</em>{\alpha}) - P(t,T<em>{\beta}) \bigg) <br />
  \Rightarrow 
- S_{\alpha, \beta} (t) &= \frac{ P(t,T_{\alpha}) - P(t,T_{\beta}) }{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i }
+ S</em>{\alpha, \beta} (t) &amp;= \frac{ P(t,T<em>{\alpha}) - P(t,T</em>{\beta}) }{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i }
  \end{align}
- \]</p>
+$$</p>
 
 <p>对此，我们可以这样理解：</p>
 
 <ul>
-<li>首先，投资者为了对冲未来利率不确定所带来的影响，要求在未来的某个时间段内以固定的收益 \( P(t,T_{\alpha}) \) 提前买入债券，而将在更远的未来 \( T_{\beta} \) 抛售手里的债券，价值为\( P(t,T_{\beta}) \)，其总和的盈余收益为 \( P(t,T_{\alpha}) - P(t,T_{\beta}) \)。</li>
-<li>在合约期间，投资者放弃的机会成本总共为 \( \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i \)。</li>
-<li>因此，在满足市场无套利的条件下，互换利率因该使得该投资策略的超额收益率是零，即该投掷策略的收益与互换利率持平，是故
-\[ 
+  <li>首先，投资者为了对冲未来利率不确定所带来的影响，要求在未来的某个时间段内以固定的收益 $P(t,T<em>{\alpha})$ 提前买入债券，而将在更远的未来 $T</em>{\beta}$ 抛售手里的债券，价值为$P(t,T<em>{\beta})$，其总和的盈余收益为 $P(t,T</em>{\alpha}) - P(t,T_{\beta})$。</li>
+  <li>在合约期间，投资者放弃的机会成本总共为 $\sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i$。</li>
+  <li>因此，在满足市场无套利的条件下，互换利率因该使得该投资策略的超额收益率是零，即该投掷策略的收益与互换利率持平，是故
+$$
 \begin{align}
- S_{\alpha, \beta} (t) &= \frac{ P(t,T_{\alpha}) - P(t,T_{\beta}) }{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i   }
+ S<em>{\alpha, \beta} (t) &amp;= \frac{ P(t,T</em>{\alpha}) - P(t,T<em>{\beta}) }{ \sum</em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i   }
  \end{align}
- \]</li>
+$$</li>
 </ul>
 
-<h2>远期即期利率与远期互换利率的关系</h2>
+<h2 id="section-1">远期即期利率与远期互换利率的关系</h2>
 
 <p>我们知道任一两个债券价格可以通过远期即期利率产生联系，例如
-\[ 
+$$
 \begin{align}
- \frac{P(t,T_{k})}{P(t,T_{\alpha})}
- &= \frac{P(t,T_{\alpha + 1})}{P(t,T_{\alpha})} \cdot \frac{P(t,T_{\alpha + 2})}{P(t,T_{\alpha + 1})} \cdots \frac{P(t,T_{\beta})}{P(t,T_{\beta - 1})}  \\
- &= \prod_{j=\alpha+1}^{k} \frac{1}{1 + \tau_j F(t;T_{j-1}, T_j)}
+ \frac{P(t,T<em>{k})}{P(t,T</em>{\alpha})}
+ &amp;= \frac{P(t,T<em>{\alpha + 1})}{P(t,T</em>{\alpha})} \cdot \frac{P(t,T<em>{\alpha + 2})}{P(t,T</em>{\alpha + 1})} \cdots \frac{P(t,T<em>{\beta})}{P(t,T</em>{\beta - 1})}  <br />
+ &amp;= \prod<em>{j=\alpha+1}^{k} \frac{1}{1 + \tau_j F(t;T</em>{j-1}, T_j)}
 \end{align}
- \]</p>
+$$</p>
 
 <p>从而，我们也可以利用这个关系来推导得到远期即期利率与远期互换利率的关系
-\[ 
+$$
 \begin{align}
- S_{\alpha, \beta} (t) &= \frac{ P(t,T_{\alpha}) - P(t,T_{\beta}) }{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i  K } \\
- &= \frac{ 1 - \frac{P(t,T_{\beta})}{P(t,T_{\alpha})} }{ \sum_{i=\alpha+1}^{\beta} \tau_i \frac{P(t, T_i) }{ P(t,T_{\alpha}) } }  \\
- &= \frac{ 1 - \prod_{j=\alpha+1}^{\beta} \frac{1}{1 + \tau_j F(t;T_{j-1}, T_j)} }{ \sum_{i=\alpha+1}^{\beta} \tau_i \prod_{j=\alpha+1}^{i} \frac{1}{1 + \tau_j F(t;T_{j-1}, T_j)}  }  
+ S<em>{\alpha, \beta} (t) &amp;= \frac{ P(t,T</em>{\alpha}) - P(t,T<em>{\beta}) }{ \sum</em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i  K } <br />
+ &amp;= \frac{ 1 - \frac{P(t,T<em>{\beta})}{P(t,T</em>{\alpha})} }{ \sum<em>{i=\alpha+1}^{\beta} \tau_i \frac{P(t, T_i) }{ P(t,T</em>{\alpha}) } }  <br />
+ &amp;= \frac{ 1 - \prod<em>{j=\alpha+1}^{\beta} \frac{1}{1 + \tau_j F(t;T</em>{j-1}, T_j)} }{ \sum<em>{i=\alpha+1}^{\beta} \tau_i \prod</em>{j=\alpha+1}^{i} \frac{1}{1 + \tau_j F(t;T_{j-1}, T_j)}  }<br />
  \end{align}
- \]</p>
+$$</p>
 
+
+		<div class="post-end mt-1"><span><i></i>26 March 2014</span></div>
+		</div>
+	</div>
+
+	
+	<div class="tags pl-2 pr-2 mb-2 left">
+		<span class="tag">标签：
+		
+		<a class="button button-small button-orange" href="/tags.html#远期利率" title="远期利率">远期利率</a>
+		
+		<a class="button button-small button-orange" href="/tags.html#互换利率" title="互换利率">互换利率</a>
+		
+		</span>
+	</div>
+	
+
+	
+	<div class="categories pl-2 pr-2 mb-2 right">
+		<span class="categorie">分类：
+		
+		<a class="button button-small button-orange" href="http://williamlfang.github.com/cn/archives.html#金融" title="金融">金融</a>
+		
+		</span>
+	</div>
+	
+
+	
+	<div class="cleared mt-2 pl-2 pr-2">
+		
+		<a class="button button-orange left" href="http://williamlfang.github.com/cn/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/" rel="prev" title="">←庖丁解牛之 Ito 公式</a>
+		
+		
+	</div>
+
+	
+	<span id="btn_page_prev"><a href="http://williamlfang.github.com/cn/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/" rel="prev" title="Previous">
+	<span id="fanye" style="display: none;">
+		‹--
+	</span></a></span>
+	
+
+	
+	
+
+	<div id="hm_t_18226" class="radius-8 baidu"></div>
+
+	
+<!--=========================================================================-->
+		<div class="friends">
+			<div class="friends_info"><a id="friends" href="#" rel="nofollow"><span>Contents</span></a></div>
+			<div id="friends_list" class="friends_list">
+				<script>
+// https://github.com/ghiculescu/jekyll-table-of-contents
+$(document).ready(function() {
+  var no_back_to_top_links = false
+
+  var headers = $('h1, h2, h3, h4, h5, h6').filter(function() {return this.id}), // get all headers with an ID
+      output = $('.toc');
+  if (!headers.length || headers.length < 3 || !output.length)
+    return;
+
+  var get_level = function(ele) { return parseInt(ele.nodeName.replace("H", ""), 10) }
+  var highest_level = headers.map(function(_, ele) { return get_level(ele) }).get().sort()[0]
+  // var return_to_top = '<i class="icon-arrow-up back-to-top"> ^ </i>'
+  var return_to_top = ''
+
+  var level = get_level(headers[0]), this_level, html = "<i></i> <ol>";
+  headers.on('click', function() {
+    if (!no_back_to_top_links) window.location.hash = this.id
+  }).addClass('clickable-header').each(function(_, header) {
+    this_level = get_level(header);
+    if (!no_back_to_top_links && this_level === highest_level) {
+      $(header).addClass('top-level-header').after(return_to_top)
+    }
+    if (this_level === level) // same level as before; same indenting
+      html += "<li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level < level) // higher level than before; end parent ol
+      html += "</li></ol></li><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level > level) // lower level than before; expand the previous to contain a ol
+      html += "<ol><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    level = this_level; // update for the next one
+  });
+  html += "</ol>";
+  if (!no_back_to_top_links) {
+    $(document).on('click', '.back-to-top', function() {
+      $(window).scrollTop(0)
+      window.location.hash = ''
+    })
+  }
+  output.hide().html(html).show('slow');
+});
+</script>
+<div class="toc"></div>
+ 
+				<br />
+			</div>
+			<a href="#" id="gc_close" rel="nofollow">X</a>
+		</div>
+<!--=========================================================================-->
+
+</div>
+	<div class="clear"></div>
+</div>
+
+
+
+		
+		</div>
+
+
+		
+
+	<!--
+		
+	-->
+
+	</div>
+
+	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
+		<div id="about" class="align-center">&copy; 2013-2014 Powered By Jekyll, Designed By <a href="http://williamlfang.github.io/">William Fang</a>.
+		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
+		<div class="radar"></div>
+		</div>
+	</div>
+<link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hibikai"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<script src="http://cdn.staticfile.org/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://cdn.staticfile.org/jqueryui/1.10.2/css/smoothness/jquery-ui-1.10.2.custom.min.css" type="text/css" media="all" />
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
 </body>
-
 </html>
 

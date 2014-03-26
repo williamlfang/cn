@@ -77,7 +77,9 @@ $$
 - 固定支付：约定在未来的一个时间段内按照合同约定的比例支付，假定该水平值为 $K$
 - 浮动利率：合同的另一方则需要根据合同拟采用的浮动利率水平来做对冲支付，一般而言，该浮动利率为短期简单复利的**LIBOR**, $L(T_{i-1}, T_{i})$。
  
-我们记该时间段为 $\mathcal{T} = \{ T_{\alpha}, T_{\alpha+1},\cdots,T_{\beta - 1}, T_{\beta}\}$，$\tau_{i} = \tau(T_{i-1}, T_{i})$，且有$\mathcal{\tau} = \{ \tau_{\alpha + 1}, \tau_{\alpha+2},\cdots,\tau_{\beta - 1}, \tau_{\beta}\}$。
+我们记该时间段为 $$\mathcal{T} = \{ T_{\alpha}, T_{\alpha+1},\cdots,T_{\beta - 1}, T_{\beta}\}$，$\tau_{i} = \tau(T_{i-1}, T_{i}),$$
+且有
+$$\mathcal{\tau} = \{ \tau_{\alpha + 1}, \tau_{\alpha+2},\cdots,\tau_{\beta - 1}, \tau_{\beta}\}$$。
  
 则我们可以得到 IRS 的合约价值为
 $$
@@ -97,12 +99,12 @@ $$
  
 对于方框内的式子，我们可以做如下运算
 $$
-\begin{align}
-\boxed{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i F(t;T_{i-1},T_{i})  } 
+\begin{align*}
+& \boxed{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i F(t;T_{i-1},T_{i})  }  \\
  &=\sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau(T_{i-1},T_{i}) \cdot \frac{1}{\tau(T_{i-1},T_{i})} \bigg[ \frac{P(t,T_{i-1})}{P(t,T_{i})} - 1 \bigg] \\
  &=\sum_{i=\alpha+1}^{\beta} \bigg[ P(t,T_{i-1}) - P(t,T_{i}) \bigg]  \\
  &= P(t,T_{\alpha}) - P(t,T_{\beta})
-\end{align}
+\end{align*}
 $$
  
 从而，

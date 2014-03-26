@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-26 21:45:43 +0800</lastBuildDate>
-        <pubDate>2014-03-26 21:45:43 +0800</pubDate>
+        <lastBuildDate>2014-03-26 21:53:33 +0800</lastBuildDate>
+        <pubDate>2014-03-26 21:53:33 +0800</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -85,7 +85,9 @@ $$&lt;/p&gt;
   &lt;li&gt;浮动利率：合同的另一方则需要根据合同拟采用的浮动利率水平来做对冲支付，一般而言，该浮动利率为短期简单复利的&lt;strong&gt;LIBOR&lt;/strong&gt;, $L(T&lt;em&gt;{i-1}, T&lt;/em&gt;{i})$。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;我们记该时间段为 $\mathcal{T} = { T&lt;em&gt;{\alpha}, T&lt;/em&gt;{\alpha+1},\cdots,T&lt;em&gt;{\beta - 1}, T&lt;/em&gt;{\beta}}$，$\tau&lt;em&gt;{i} = \tau(T&lt;/em&gt;{i-1}, T&lt;em&gt;{i})$，且有$\mathcal{\tau} = { \tau&lt;/em&gt;{\alpha + 1}, \tau&lt;em&gt;{\alpha+2},\cdots,\tau&lt;/em&gt;{\beta - 1}, \tau_{\beta}}$。&lt;/p&gt;
+&lt;p&gt;我们记该时间段为 &lt;script type=&quot;math/tex&quot;&gt;\mathcal{T} = \{ T_{\alpha}, T_{\alpha+1},\cdots,T_{\beta - 1}, T_{\beta}\}$，$\tau_{i} = \tau(T_{i-1}, T_{i}),&lt;/script&gt;
+且有
+&lt;script type=&quot;math/tex&quot;&gt;\mathcal{\tau} = \{ \tau_{\alpha + 1}, \tau_{\alpha+2},\cdots,\tau_{\beta - 1}, \tau_{\beta}\}&lt;/script&gt;。&lt;/p&gt;
 
 &lt;p&gt;则我们可以得到 IRS 的合约价值为
 $$
@@ -105,12 +107,12 @@ $$&lt;/p&gt;
 
 &lt;p&gt;对于方框内的式子，我们可以做如下运算
 $$
-\begin{align}
-\boxed{ \sum&lt;em&gt;{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i F(t;T&lt;/em&gt;{i-1},T&lt;em&gt;{i})  } 
- &amp;amp;=\sum&lt;/em&gt;{i=\alpha+1}^{\beta}  P(t, T_i) \tau(T&lt;em&gt;{i-1},T&lt;/em&gt;{i}) \cdot \frac{1}{\tau(T&lt;em&gt;{i-1},T&lt;/em&gt;{i})} \bigg[ \frac{P(t,T&lt;em&gt;{i-1})}{P(t,T&lt;/em&gt;{i})} - 1 \bigg] &lt;br /&gt;
- &amp;amp;=\sum&lt;em&gt;{i=\alpha+1}^{\beta} \bigg[ P(t,T&lt;/em&gt;{i-1}) - P(t,T&lt;em&gt;{i}) \bigg]  &lt;br /&gt;
- &amp;amp;= P(t,T&lt;/em&gt;{\alpha}) - P(t,T_{\beta})
-\end{align}
+\begin{align&lt;em&gt;}
+&amp;amp; \boxed{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i F(t;T_{i-1},T_{i})  }  &lt;br /&gt;
+ &amp;amp;=\sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau(T_{i-1},T_{i}) \cdot \frac{1}{\tau(T_{i-1},T_{i})} \bigg[ \frac{P(t,T_{i-1})}{P(t,T_{i})} - 1 \bigg] &lt;br /&gt;
+ &amp;amp;=\sum_{i=\alpha+1}^{\beta} \bigg[ P(t,T_{i-1}) - P(t,T_{i}) \bigg]  &lt;br /&gt;
+ &amp;amp;= P(t,T_{\alpha}) - P(t,T_{\beta})
+\end{align&lt;/em&gt;}
 $$&lt;/p&gt;
 
 &lt;p&gt;从而，

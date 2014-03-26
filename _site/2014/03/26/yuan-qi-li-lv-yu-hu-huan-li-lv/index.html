@@ -222,7 +222,9 @@ $$</p>
   <li>浮动利率：合同的另一方则需要根据合同拟采用的浮动利率水平来做对冲支付，一般而言，该浮动利率为短期简单复利的<strong>LIBOR</strong>, $L(T<em>{i-1}, T</em>{i})$。</li>
 </ul>
 
-<p>我们记该时间段为 $\mathcal{T} = { T<em>{\alpha}, T</em>{\alpha+1},\cdots,T<em>{\beta - 1}, T</em>{\beta}}$，$\tau<em>{i} = \tau(T</em>{i-1}, T<em>{i})$，且有$\mathcal{\tau} = { \tau</em>{\alpha + 1}, \tau<em>{\alpha+2},\cdots,\tau</em>{\beta - 1}, \tau_{\beta}}$。</p>
+<p>我们记该时间段为 <script type="math/tex">\mathcal{T} = \{ T_{\alpha}, T_{\alpha+1},\cdots,T_{\beta - 1}, T_{\beta}\}$，$\tau_{i} = \tau(T_{i-1}, T_{i}),</script>
+且有
+<script type="math/tex">\mathcal{\tau} = \{ \tau_{\alpha + 1}, \tau_{\alpha+2},\cdots,\tau_{\beta - 1}, \tau_{\beta}\}</script>。</p>
 
 <p>则我们可以得到 IRS 的合约价值为
 $$
@@ -242,12 +244,12 @@ $$</p>
 
 <p>对于方框内的式子，我们可以做如下运算
 $$
-\begin{align}
-\boxed{ \sum<em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i F(t;T</em>{i-1},T<em>{i})  } 
- &amp;=\sum</em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau(T<em>{i-1},T</em>{i}) \cdot \frac{1}{\tau(T<em>{i-1},T</em>{i})} \bigg[ \frac{P(t,T<em>{i-1})}{P(t,T</em>{i})} - 1 \bigg] <br />
- &amp;=\sum<em>{i=\alpha+1}^{\beta} \bigg[ P(t,T</em>{i-1}) - P(t,T<em>{i}) \bigg]  <br />
- &amp;= P(t,T</em>{\alpha}) - P(t,T_{\beta})
-\end{align}
+\begin{align<em>}
+&amp; \boxed{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i F(t;T_{i-1},T_{i})  }  <br />
+ &amp;=\sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau(T_{i-1},T_{i}) \cdot \frac{1}{\tau(T_{i-1},T_{i})} \bigg[ \frac{P(t,T_{i-1})}{P(t,T_{i})} - 1 \bigg] <br />
+ &amp;=\sum_{i=\alpha+1}^{\beta} \bigg[ P(t,T_{i-1}) - P(t,T_{i}) \bigg]  <br />
+ &amp;= P(t,T_{\alpha}) - P(t,T_{\beta})
+\end{align</em>}
 $$</p>
 
 <p>从而，

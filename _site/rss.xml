@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-26 22:01:39 +0800</lastBuildDate>
-        <pubDate>2014-03-26 22:01:39 +0800</pubDate>
+        <lastBuildDate>2014-03-26 22:04:20 +0800</lastBuildDate>
+        <pubDate>2014-03-26 22:04:20 +0800</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -171,6 +171,18 @@ $$&lt;/p&gt;
                 <guid>http://williamlfang.github.com/cn/2014/03/26/yuan-qi-li-lv-yu-hu-huan-li-lv/</guid>
                 <pubDate>2014-03-26 00:00:00 +0800</pubDate>
                 <category>金融</category>
+　             　<author>ccbikai</author>
+        </item>
+
+        <item>
+                <title>落得白发苍茫</title>
+                <description>&lt;p&gt;不复年少惶惶，落得白发苍茫。&lt;/p&gt;
+
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/03/17/luo-de-bai-fa-cang-mang/</link>
+                <guid>http://williamlfang.github.com/cn/2014/03/17/luo-de-bai-fa-cang-mang/</guid>
+                <pubDate>2014-03-17 00:00:00 +0800</pubDate>
+                <category>个人</category>
 　             　<author>ccbikai</author>
         </item>
 
@@ -1749,36 +1761,6 @@ plot(density(x))
                 <guid>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/</guid>
                 <pubDate>2014-01-18 00:00:00 +0800</pubDate>
                 <category>Tech</category>
-　             　<author>ccbikai</author>
-        </item>
-
-        <item>
-                <title>Images</title>
-                <description>&lt;p&gt;This thread will show you how to add a new images in Markdown through &lt;code&gt;relative path&lt;/code&gt;.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Make sure that you have already set the &lt;code&gt;url&lt;/code&gt; correctly as &lt;code&gt;williamlfang.github.com&lt;/code&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Now that we wanna to add new images in the website as &lt;code&gt;williamlfang.github.com/cn&lt;/code&gt;, which is a &lt;code&gt;gh-pages&lt;/code&gt;. Unfortunely, all the &lt;code&gt;url&lt;/code&gt; links are directed to the main repo &lt;code&gt;williamlfang.github.com&lt;/code&gt; instead of the &lt;code&gt;williamlfang.github.com/cn&lt;/code&gt;. This is what the following to be utilized.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Suppose you have created a relative path containing folder as &lt;code&gt;assets/images/btt.png&lt;/code&gt;, all you need to do is to add the additional prelix &lt;code&gt;/cn&lt;/code&gt; alongsie the relative file path &lt;code&gt;assets/images/btt.png&lt;/code&gt;. See below as as example: &lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;!&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;bottom&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;/cn/assets/images/btt.png&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;which gives
-&lt;img src=&quot;/cn/assets/images/btt.png&quot; alt=&quot;bottom&quot; /&gt;&lt;/p&gt;
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
-                <link>http://williamlfang.github.com/cn/2014/01/18/img/</link>
-                <guid>http://williamlfang.github.com/cn/2014/01/18/img/</guid>
-                <pubDate>2014-01-18 00:00:00 +0800</pubDate>
-                <category></category>
 　             　<author>ccbikai</author>
         </item>
 

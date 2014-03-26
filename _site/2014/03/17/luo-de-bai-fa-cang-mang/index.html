@@ -11,8 +11,8 @@
 	<meta name="author" content="william" />
 	<meta name="generator" content="Jekyll" />
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-	<meta name="keywords" content="远期利率互换利率" />
-	<meta name="description" content="远期利率与互换利率" />
+	<meta name="keywords" content="年少白发" />
+	<meta name="description" content="落得白发苍茫" />
 
 	<meta charset="UTF-8"/>
 	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
@@ -32,8 +32,8 @@
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
 	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="William ATOM Feed" />
-	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/2014/03/26/yuan-qi-li-lv-yu-hu-huan-li-lv/" /> -->
-	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/2014/03/26/yuan-qi-li-lv-yu-hu-huan-li-lv/" />
+	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/2014/03/17/luo-de-bai-fa-cang-mang/" /> -->
+	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/2014/03/17/luo-de-bai-fa-cang-mang/" />
 	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
 
 	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
@@ -140,171 +140,21 @@ MathJax.Hub.Queue(function() {
 <div class="post mt-2">
 
 	<div class="info box">
-		<a class="date" href="http://williamlfang.github.com/cn/2014/03/26/yuan-qi-li-lv-yu-hu-huan-li-lv/">
+		<a class="date" href="http://williamlfang.github.com/cn/2014/03/17/luo-de-bai-fa-cang-mang/">
 		<span class="year">2014</span>
-		<span class="day">26</span>
+		<span class="day">17</span>
 		<span class="month">March</span>
 		<span class="circle"></span>
 		</a>
 	</div>
 
 	<div class="article">
-		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2014/03/26/yuan-qi-li-lv-yu-hu-huan-li-lv/" title="远期利率与互换利率">远期利率与互换利率</a></h3>
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2014/03/17/luo-de-bai-fa-cang-mang/" title="落得白发苍茫">落得白发苍茫</a></h3>
 		<div class="content lh-150p font-16 pd-1 mg-2 radius-8">
-		<p>下面我们来推导远期利率与互换利率。这两个利率变量常常在金融建模中有重要的作用。</p>
-
-<h2 id="fra">远期利率互换(FRA)</h2>
-
-<p>远期利率互换（Forward Rate Agreement）指的是这样一种金融合约，$FRA(t; T, S)$:</p>
-
-<ul>
-  <li>在 $t$ 时期确定的；</li>
-  <li>到 $T$ 以事先约定的支付金额 $K$;</li>
-  <li>交割到期日为 $S$ 的债券。</li>
-</ul>
-
-<p>其合约价值为
-$$
-\begin{align}
- V_{FRA} &amp;= N P(t, S) \tau(T, S) \big[ K- L(T, S) \big], \label{value-fra}
-\end{align}
-$$
-其中，$\tau(T,S)$ 表示在两个时期的时间差，通常按照年为单位计算。$L(T,S)$ 是简单复合利率，通常指的是<strong>LIBOR</strong>。下面我们来求得远期即期利率$F(t;T,S)$。</p>
-
-<!-- more -->
-
-<p>由式子$\eqref{value-fra}$展开
-$$
-\begin{align}
- V<em>{FRA} &amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \tau(T, S)  L(T, S) \Big].
-\end{align}
-$$
-根据无套利条件，我们有以下关系成立(详细推导见：Filipovic: Term Structure Model: A Graduate Course)
-$$
-\begin{align}
- P(t,S) &amp;= P(t,T) P(T,S)
-\end{align}
-$$
-同时,我们有
-$$
-\begin{align*}
- L(T,S) :=&amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big) <br />
- \tau(T,S)L(T,S)  =&amp; \frac{1}{P(T,S)} - 1 \ 
-\end{align*}
-$$
-因此，
-$$
-\begin{align}
- V</em>{FRA} &amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \tau(T, S)  L(T, S) \Big] <br />
-   &amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \big(\frac{1}{P(T,S)} - 1 \big) \Big] <br />
-   &amp;= N  \Big[ P(t, S) \tau(T, S)  K -   \big(\frac{P(t, S)}{P(T,S)} - P(t, S) \big) \Big]  <br />
-   &amp;= N  \Big[ P(t, S) \tau(T, S)  K -   P(t,T)  + P(t, S)  \Big] 
-\end{align}
-$$</p>
-
-<h2 id="section">远期即期利率</h2>
-
-<p>在无套利的要求下，远期即期利率（Future spot rate）必需满足一个「公平价格」的原则，即使得远期利率协议的价值为零的利率水平，则
-$$
-\begin{align}
- V_{FRA} &amp;= 0 = N  \Big[ P(t, S) \tau(T, S)  F(t;T,S) -   P(t,T)  + P(t, S)  \Big] <br />
- \Rightarrow 
- F(t;T,S) &amp;= \frac{1}{\tau(T,S)} \bigg[ \frac{P(t,T)}{P(t,S)} - 1 \bigg].
-\end{align}
-$$</p>
-
-<h2 id="irs">利率互换（IRS）</h2>
-
-<p>下面我们来介绍另外一种利率产品：利率互换（Interest Rate Swap,IRS):</p>
-
-<ul>
-  <li>固定支付：约定在未来的一个时间段内按照合同约定的比例支付，假定该水平值为 $K$</li>
-  <li>浮动利率：合同的另一方则需要根据合同拟采用的浮动利率水平来做对冲支付，一般而言，该浮动利率为短期简单复利的<strong>LIBOR</strong>, $L(T<em>{i-1}, T</em>{i})$。</li>
-</ul>
-
-<p>我们记该时间段为 $\mathcal{T} = { T<em>{\alpha}, T</em>{\alpha+1},\cdots,T<em>{\beta - 1}, T</em>{\beta}}$，$\tau<em>{i} = \tau(T</em>{i-1}, T<em>{i}),$
-且有
-$\mathcal{\tau} = { \tau</em>{\alpha + 1}, \tau<em>{\alpha+2},\cdots,\tau</em>{\beta - 1}, \tau_{\beta}}$。</p>
-
-<p>则我们可以得到 IRS 的合约价值为
-$$
-\begin{align}
- V<em>{IRS} &amp;= \sum</em>{i=\alpha+1}^{\beta} D(t,T_i) N \tau_i \bigg[ K - L(T<em>{i-1}, T</em>{i}) \bigg] \label{value-irs}
-\end{align}
-$$</p>
-
-<p>对比 $\eqref{value-fra}$ 和 $\eqref{value-irs}$，我们不难发现，利率互换可以看作来一系列的远期利率协议的总和，即
-$$
-\begin{align}
-  V<em>{IRS} &amp;= \sum</em>{i=\alpha+1}^{\beta} V<em>{FRA}  <br />
-  &amp;= \sum</em>{i=\alpha+1}^{\beta} N P(t, T_i) \tau_i \big[ K- F(t;T<em>{i-1},T</em>{i}) \big] <br />
-  &amp;= N \sum<em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i  K - N \boxed{ \sum</em>{i=\alpha+1}^{\beta} P(t, T_i) \tau_i F(t;T<em>{i-1},T</em>{i}) }.
-\end{align}
-$$</p>
-
-<p>对于方框内的式子，我们可以做如下运算
-$$
-\begin{align<em>}
-&amp; \boxed{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i F(t;T_{i-1},T_{i})  }  <br />
- =&amp; \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau(T_{i-1},T_{i}) \cdot \frac{1}{\tau(T_{i-1},T_{i})} \bigg[ \frac{P(t,T_{i-1})}{P(t,T_{i})} - 1 \bigg] <br />
- =&amp; \sum_{i=\alpha+1}^{\beta} \bigg[ P(t,T_{i-1}) - P(t,T_{i}) \bigg]  <br />
- =&amp;  P(t,T_{\alpha}) - P(t,T_{\beta})
-\end{align</em>}
-$$</p>
-
-<p>从而，
-$$
-\begin{align}
- V<em>{IRS} &amp;=  N \sum</em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i  K - N \bigg( P(t,T<em>{\alpha}) - P(t,T</em>{\beta}) \bigg)
-\end{align}
-$$</p>
-
-<h2 id="swap-rate">互换利率（Swap Rate）</h2>
-
-<p>同理，为来得到无套利条件，我们要求互换利率使得该利率互换的价值为零，即
-$$
-\begin{align}
- V<em>{IRS} &amp;= 0 = N \sum</em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i   S<em>{\alpha, \beta} (t)  - N \bigg( P(t,T</em>{\alpha}) - P(t,T<em>{\beta}) \bigg) <br />
- \Rightarrow 
- S</em>{\alpha, \beta} (t) &amp;= \frac{ P(t,T<em>{\alpha}) - P(t,T</em>{\beta}) }{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i }
- \end{align}
-$$</p>
-
-<p>对此，我们可以这样理解：</p>
-
-<ul>
-  <li>首先，投资者为了对冲未来利率不确定所带来的影响，要求在未来的某个时间段内以固定的收益 <script type="math/tex">P(t,T_{\alpha})</script> 提前买入债券，而将在更远的未来 <script type="math/tex">T_{\beta}</script> 抛售手里的债券，价值为$P(t,T_{\beta})$，其总和的盈余收益为 <script type="math/tex">P(t,T_{\alpha}) - P(t,T_{\beta})</script>。</li>
-  <li>在合约期间，投资者放弃的机会成本总共为 $\sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i$。</li>
-  <li>因此，在满足市场无套利的条件下，互换利率因该使得该投资策略的超额收益率是零，即该投掷策略的收益与互换利率持平，是故
-$$
-\begin{align}
- S<em>{\alpha, \beta} (t) &amp;= \frac{ P(t,T</em>{\alpha}) - P(t,T<em>{\beta}) }{ \sum</em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i   }
- \end{align}
-$$</li>
-</ul>
-
-<h2 id="section-1">远期即期利率与远期互换利率的关系</h2>
-
-<p>我们知道任一两个债券价格可以通过远期即期利率产生联系，例如
-$$
-\begin{align}
- \frac{P(t,T<em>{k})}{P(t,T</em>{\alpha})}
- &amp;= \frac{P(t,T<em>{\alpha + 1})}{P(t,T</em>{\alpha})} \cdot \frac{P(t,T<em>{\alpha + 2})}{P(t,T</em>{\alpha + 1})} \cdots \frac{P(t,T<em>{\beta})}{P(t,T</em>{\beta - 1})}  <br />
- &amp;= \prod<em>{j=\alpha+1}^{k} \frac{1}{1 + \tau_j F(t;T</em>{j-1}, T_j)}
-\end{align}
-$$</p>
-
-<p>从而，我们也可以利用这个关系来推导得到远期即期利率与远期互换利率的关系
-$$
-\begin{align}
- S<em>{\alpha, \beta} (t) &amp;= \frac{ P(t,T</em>{\alpha}) - P(t,T<em>{\beta}) }{ \sum</em>{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i  K } <br />
- &amp;= \frac{ 1 - \frac{P(t,T<em>{\beta})}{P(t,T</em>{\alpha})} }{ \sum<em>{i=\alpha+1}^{\beta} \tau_i \frac{P(t, T_i) }{ P(t,T</em>{\alpha}) } }  <br />
- &amp;= \frac{ 1 - \prod<em>{j=\alpha+1}^{\beta} \frac{1}{1 + \tau_j F(t;T</em>{j-1}, T_j)} }{ \sum<em>{i=\alpha+1}^{\beta} \tau_i \prod</em>{j=\alpha+1}^{i} \frac{1}{1 + \tau_j F(t;T_{j-1}, T_j)}  }<br />
- \end{align}
-$$</p>
+		<p>不复年少惶惶，落得白发苍茫。</p>
 
 
-		<div class="post-end mt-1"><span><i></i>26 March 2014</span></div>
+		<div class="post-end mt-1"><span><i></i>17 March 2014</span></div>
 		</div>
 	</div>
 
@@ -312,9 +162,9 @@ $$</p>
 	<div class="tags pl-2 pr-2 mb-2 left">
 		<span class="tag">标签：
 		
-		<a class="button button-small button-orange" href="/tags.html#远期利率" title="远期利率">远期利率</a>
+		<a class="button button-small button-orange" href="/tags.html#年少" title="年少">年少</a>
 		
-		<a class="button button-small button-orange" href="/tags.html#互换利率" title="互换利率">互换利率</a>
+		<a class="button button-small button-orange" href="/tags.html#白发" title="白发">白发</a>
 		
 		</span>
 	</div>
@@ -324,7 +174,7 @@ $$</p>
 	<div class="categories pl-2 pr-2 mb-2 right">
 		<span class="categorie">分类：
 		
-		<a class="button button-small button-orange" href="http://williamlfang.github.com/cn/archives.html#金融" title="金融">金融</a>
+		<a class="button button-small button-orange" href="http://williamlfang.github.com/cn/archives.html#个人" title="个人">个人</a>
 		
 		</span>
 	</div>
@@ -333,18 +183,25 @@ $$</p>
 	
 	<div class="cleared mt-2 pl-2 pr-2">
 		
-		<a class="button button-orange left" href="http://williamlfang.github.com/cn/2014/03/17/luo-de-bai-fa-cang-mang/" rel="prev" title="">←落得白发苍茫</a>
+		<a class="button button-orange left" href="http://williamlfang.github.com/cn/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/" rel="prev" title="远期利率与互换利率">←庖丁解牛之 Ito 公式</a>
 		
+		
+		<a class="button button-orange right" href="http://williamlfang.github.com/cn/2014/03/26/yuan-qi-li-lv-yu-hu-huan-li-lv/" rel="next" title="远期利率与互换利率">远期利率与互换利率→</a>
 		
 	</div>
 
 	
-	<span id="btn_page_prev"><a href="http://williamlfang.github.com/cn/2014/03/17/luo-de-bai-fa-cang-mang/" rel="prev" title="Previous">
+	<span id="btn_page_prev"><a href="http://williamlfang.github.com/cn/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/" rel="prev" title="Previous">
 	<span id="fanye" style="display: none;">
 		‹--
 	</span></a></span>
 	
 
+	
+	<span id="btn_page_next"><a href="http://williamlfang.github.com/cn/2014/03/26/yuan-qi-li-lv-yu-hu-huan-li-lv/" rel="next" title="Next">
+	<span id="fanye" style="display: none;">
+		--›
+	</span></a></span>
 	
 	
 

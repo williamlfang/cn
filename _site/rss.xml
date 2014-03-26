@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-26 22:08:17 +0800</lastBuildDate>
-        <pubDate>2014-03-26 22:08:17 +0800</pubDate>
+        <lastBuildDate>2014-03-26 22:09:46 +0800</lastBuildDate>
+        <pubDate>2014-03-26 22:09:46 +0800</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -39,7 +39,7 @@ $$
 &lt;p&gt;由式子$\eqref{value-fra}$展开
 $$
 \begin{align}
- V&lt;em&gt;{FRA} &amp;amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \tau(T, S)  L(T, S) \Big].
+ V_{FRA} &amp;amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \tau(T, S)  L(T, S) \Big].
 \end{align}
 $$
 根据无套利条件，我们有以下关系成立(详细推导见：Filipovic: Term Structure Model: A Graduate Course)
@@ -47,18 +47,22 @@ $$
 \begin{align}
  P(t,S) &amp;amp;= P(t,T) P(T,S)
 \end{align}
-$$
-同时,我们有
-$$
+$$&lt;/p&gt;
+
+&lt;p&gt;同时,我们有&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
 \begin{align}
- L(T,S) :=&amp;amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big) &lt;br /&gt;
- \tau(T,S)L(T,S)  =&amp;amp; \frac{1}{P(T,S)} - 1 \ 
+ L(T,S) :=&amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big) \\
+ \tau(T,S)L(T,S)  =&amp; \frac{1}{P(T,S)} - 1 \\ 
 \end{align}
-$$
-因此，
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;因此，
 $$
 \begin{align}
- V&lt;/em&gt;{FRA} &amp;amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \tau(T, S)  L(T, S) \Big] &lt;br /&gt;
+ V_{FRA} &amp;amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \tau(T, S)  L(T, S) \Big] &lt;br /&gt;
    &amp;amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \big(\frac{1}{P(T,S)} - 1 \big) \Big] &lt;br /&gt;
    &amp;amp;= N  \Big[ P(t, S) \tau(T, S)  K -   \big(\frac{P(t, S)}{P(T,S)} - P(t, S) \big) \Big]  &lt;br /&gt;
    &amp;amp;= N  \Big[ P(t, S) \tau(T, S)  K -   P(t,T)  + P(t, S)  \Big] 

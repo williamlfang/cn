@@ -8,4 +8,3 @@ git push origin gh-pages
 
 jekyll --server
 
-

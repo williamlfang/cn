@@ -4,13 +4,339 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-17 23:28:18 +0800</lastBuildDate>
-        <pubDate>2014-03-17 23:28:18 +0800</pubDate>
+        <lastBuildDate>2014-03-26 17:24:22 +0800</lastBuildDate>
+        <pubDate>2014-03-26 17:24:22 +0800</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
 　     　<generator>nju.pt</generator>
 
+
+        <item>
+                <title>Yuan Qi Li Lv Yu Hu Huan Li Lv</title>
+                <description>&lt;!DOCTYPE html&gt;
+&lt;!-- saved from url=(0014)about:internet --&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;/&gt;
+&lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=9&quot; &gt;
+
+&lt;title&gt;远期利率互换(FRA)&lt;/title&gt;
+
+&lt;style type=&quot;text/css&quot;&gt;
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+&lt;/style&gt;
+
+
+
+&lt;!-- MathJax scripts --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
+
+
+
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;hr/&gt;
+
+&lt;p&gt;layout:   post
+title:    &amp;ldquo;远期利率与互换利率&amp;rdquo;
+category: 金融 
+tags:     &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;远期利率&lt;/li&gt;
+&lt;li&gt;互换利率
+description: 
+published: false
+status:    process
+&amp;mdash;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;下面我们来推导远期利率与互换利率。这两个利率变量常常在金融建模中有重要的作用。&lt;/p&gt;
+
+&lt;h2&gt;远期利率互换(FRA)&lt;/h2&gt;
+
+&lt;p&gt;远期利率互换（Forward Rate Agreement）指的是这样一种金融合约，\( FRA(t; T, S) \):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在 \( t \) 时期确定的；&lt;/li&gt;
+&lt;li&gt;到 \( T \) 以事先约定的支付金额 \( K \);&lt;/li&gt;
+&lt;li&gt;交割到期日为 \( S \) 的债券。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;其合约价值为
+\[ 
+\begin{align}
+ V_{FRA} &amp;= N P(t, S) \tau(T, S) \big[ K- L(T, S) \big], \label{value-fra}
+\end{align}
+ \]
+其中，\( \tau(T,S) \) 表示在两个时期的时间差，通常按照年为单位计算。\( L(T,S) \) 是简单复合利率，通常指的是&lt;strong&gt;LIBOR&lt;/strong&gt;。下面我们来求得远期即期利率\( F(t;T,S) \)。&lt;/p&gt;
+
+&lt;p&gt;由式子\( \eqref{value-fra} \)展开
+\[ 
+\begin{align}
+ V_{FRA} &amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \tau(T, S)  L(T, S) \Big].
+\end{align}
+ \]
+根据无套利条件，我们有以下关系成立(详细推导见：Filipovic: Term Structure Model: A Graduate Course)
+\[ 
+\begin{align}
+ P(t,S) &amp;= P(t,T) P(T,S)
+\end{align}
+ \]
+同时,我们有
+\[ 
+\begin{align*}
+ L(T,S) :=&amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big) \\
+ \tau(T,S)L(T,S)  =&amp; \frac{1}{P(T,S)} - 1  
+\end{align*}
+ \]
+因此，
+\[ 
+\begin{align}
+ V_{FRA} &amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \tau(T, S)  L(T, S) \Big] \\
+   &amp;= N \Big[ P(t, S) \tau(T, S)  K - P(t, S) \big(\frac{1}{P(T,S)} - 1 \big) \Big] \\
+   &amp;= N  \Big[ P(t, S) \tau(T, S)  K -   \big(\frac{P(t, S)}{P(T,S)} - P(t, S) \big) \Big]  \\
+   &amp;= N  \Big[ P(t, S) \tau(T, S)  K -   P(t,T)  + P(t, S)  \Big] 
+\end{align}
+ \]&lt;/p&gt;
+
+&lt;h2&gt;远期即期利率&lt;/h2&gt;
+
+&lt;p&gt;在无套利的要求下，远期即期利率（Future spot rate）必需满足一个「公平价格」的原则，即使得远期利率协议的价值为零的利率水平，则
+\[ 
+\begin{align}
+ V_{FRA} &amp;= 0 = N  \Big[ P(t, S) \tau(T, S)  F(t;T,S) -   P(t,T)  + P(t, S)  \Big] \\
+ \Rightarrow 
+ F(t;T,S) &amp;= \frac{1}{\tau(T,S)} \bigg[ \frac{P(t,T)}{P(t,S)} - 1 \bigg].
+\end{align}
+ \]&lt;/p&gt;
+
+&lt;h2&gt;利率互换（IRS）&lt;/h2&gt;
+
+&lt;p&gt;下面我们来介绍另外一种利率产品：利率互换（Interest Rate Swap,IRS):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;固定支付：约定在未来的一个时间段内按照合同约定的比例支付，假定该水平值为 \( K \)&lt;/li&gt;
+&lt;li&gt;浮动利率：合同的另一方则需要根据合同拟采用的浮动利率水平来做对冲支付，一般而言，该浮动利率为短期简单复利的&lt;strong&gt;LIBOR&lt;/strong&gt;, \( L(T_{i-1}, T_{i}) \)。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我们记该时间段为 \( \mathcal{T} = \{ T_{\alpha}, T_{\alpha+1},\cdots,T_{\beta - 1}, T_{\beta}\} \)，\( \tau_{i} = \tau(T_{i-1}, T_{i}) \)，且有\( \mathcal{\tau} = \{ \tau_{\alpha + 1}, \tau_{\alpha+2},\cdots,\tau_{\beta - 1}, \tau_{\beta}\} \)。&lt;/p&gt;
+
+&lt;p&gt;则我们可以得到 IRS 的合约价值为
+\[ 
+\begin{align}
+ V_{IRS} &amp;= \sum_{i=\alpha+1}^{\beta} D(t,T_i) N \tau_i \bigg[ K - L(T_{i-1}, T_{i}) \bigg] \label{value-irs}
+\end{align}
+ \]&lt;/p&gt;
+
+&lt;p&gt;对比 \( \eqref{value-fra} \) 和 \( \eqref{value-irs} \)，我们不难发现，利率互换可以看作来一系列的远期利率协议的总和，即
+\[ 
+\begin{align}
+  V_{IRS} &amp;= \sum_{i=\alpha+1}^{\beta} V_{FRA}  \\
+  &amp;= \sum_{i=\alpha+1}^{\beta} N P(t, T_i) \tau_i \big[ K- F(t;T_{i-1},T_{i}) \big] \\
+  &amp;= N \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i  K - N \boxed{ \sum_{i=\alpha+1}^{\beta} P(t, T_i) \tau_i F(t;T_{i-1},T_{i}) }.
+\end{align}
+ \]&lt;/p&gt;
+
+&lt;p&gt;对于方框内的式子，我们可以做如下运算
+\[ 
+\begin{align}
+\boxed{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i F(t;T_{i-1},T_{i})  } 
+ &amp;=\sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau(T_{i-1},T_{i}) \cdot \frac{1}{\tau(T_{i-1},T_{i})} \bigg[ \frac{P(t,T_{i-1})}{P(t,T_{i})} - 1 \bigg] \\
+ &amp;=\sum_{i=\alpha+1}^{\beta} \bigg[ P(t,T_{i-1}) - P(t,T_{i}) \bigg]  \\
+ &amp;= P(t,T_{\alpha}) - P(t,T_{\beta})
+\end{align}
+ \]&lt;/p&gt;
+
+&lt;p&gt;从而，
+\[ 
+\begin{align}
+ V_{IRS} &amp;=  N \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i  K - N \bigg( P(t,T_{\alpha}) - P(t,T_{\beta}) \bigg)
+\end{align}
+ \]&lt;/p&gt;
+
+&lt;h2&gt;互换利率（Swap Rate）&lt;/h2&gt;
+
+&lt;p&gt;同理，为来得到无套利条件，我们要求互换利率使得该利率互换的价值为零，即
+\[ 
+\begin{align}
+ V_{IRS} &amp;= 0 = N \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i   S_{\alpha, \beta} (t)  - N \bigg( P(t,T_{\alpha}) - P(t,T_{\beta}) \bigg) \\
+ \Rightarrow 
+ S_{\alpha, \beta} (t) &amp;= \frac{ P(t,T_{\alpha}) - P(t,T_{\beta}) }{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i }
+ \end{align}
+ \]&lt;/p&gt;
+
+&lt;p&gt;对此，我们可以这样理解：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;首先，投资者为了对冲未来利率不确定所带来的影响，要求在未来的某个时间段内以固定的收益 \( P(t,T_{\alpha}) \) 提前买入债券，而将在更远的未来 \( T_{\beta} \) 抛售手里的债券，价值为\( P(t,T_{\beta}) \)，其总和的盈余收益为 \( P(t,T_{\alpha}) - P(t,T_{\beta}) \)。&lt;/li&gt;
+&lt;li&gt;在合约期间，投资者放弃的机会成本总共为 \( \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i \)。&lt;/li&gt;
+&lt;li&gt;因此，在满足市场无套利的条件下，互换利率因该使得该投资策略的超额收益率是零，即该投掷策略的收益与互换利率持平，是故
+\[ 
+\begin{align}
+ S_{\alpha, \beta} (t) &amp;= \frac{ P(t,T_{\alpha}) - P(t,T_{\beta}) }{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i   }
+ \end{align}
+ \]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;远期即期利率与远期互换利率的关系&lt;/h2&gt;
+
+&lt;p&gt;我们知道任一两个债券价格可以通过远期即期利率产生联系，例如
+\[ 
+\begin{align}
+ \frac{P(t,T_{k})}{P(t,T_{\alpha})}
+ &amp;= \frac{P(t,T_{\alpha + 1})}{P(t,T_{\alpha})} \cdot \frac{P(t,T_{\alpha + 2})}{P(t,T_{\alpha + 1})} \cdots \frac{P(t,T_{\beta})}{P(t,T_{\beta - 1})}  \\
+ &amp;= \prod_{j=\alpha+1}^{k} \frac{1}{1 + \tau_j F(t;T_{j-1}, T_j)}
+\end{align}
+ \]&lt;/p&gt;
+
+&lt;p&gt;从而，我们也可以利用这个关系来推导得到远期即期利率与远期互换利率的关系
+\[ 
+\begin{align}
+ S_{\alpha, \beta} (t) &amp;= \frac{ P(t,T_{\alpha}) - P(t,T_{\beta}) }{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i  K } \\
+ &amp;= \frac{ 1 - \frac{P(t,T_{\beta})}{P(t,T_{\alpha})} }{ \sum_{i=\alpha+1}^{\beta} \tau_i \frac{P(t, T_i) }{ P(t,T_{\alpha}) } }  \\
+ &amp;= \frac{ 1 - \prod_{j=\alpha+1}^{\beta} \frac{1}{1 + \tau_j F(t;T_{j-1}, T_j)} }{ \sum_{i=\alpha+1}^{\beta} \tau_i \prod_{j=\alpha+1}^{i} \frac{1}{1 + \tau_j F(t;T_{j-1}, T_j)}  }  
+ \end{align}
+ \]&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/03/26/yuan-qi-li-lv-yu-hu-huan-li-lv/</link>
+                <guid>http://williamlfang.github.com/cn/2014/03/26/yuan-qi-li-lv-yu-hu-huan-li-lv/</guid>
+                <pubDate>2014-03-26 00:00:00 +0800</pubDate>
+                <category></category>
+　             　<author>ccbikai</author>
+        </item>
 
         <item>
                 <title>落得白发苍茫</title>
@@ -1599,36 +1925,6 @@ plot(density(x))
                 <guid>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/</guid>
                 <pubDate>2014-01-18 00:00:00 +0800</pubDate>
                 <category>Tech</category>
-　             　<author>ccbikai</author>
-        </item>
-
-        <item>
-                <title>Images</title>
-                <description>&lt;p&gt;This thread will show you how to add a new images in Markdown through &lt;code&gt;relative path&lt;/code&gt;.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Make sure that you have already set the &lt;code&gt;url&lt;/code&gt; correctly as &lt;code&gt;williamlfang.github.com&lt;/code&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Now that we wanna to add new images in the website as &lt;code&gt;williamlfang.github.com/cn&lt;/code&gt;, which is a &lt;code&gt;gh-pages&lt;/code&gt;. Unfortunely, all the &lt;code&gt;url&lt;/code&gt; links are directed to the main repo &lt;code&gt;williamlfang.github.com&lt;/code&gt; instead of the &lt;code&gt;williamlfang.github.com/cn&lt;/code&gt;. This is what the following to be utilized.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Suppose you have created a relative path containing folder as &lt;code&gt;assets/images/btt.png&lt;/code&gt;, all you need to do is to add the additional prelix &lt;code&gt;/cn&lt;/code&gt; alongsie the relative file path &lt;code&gt;assets/images/btt.png&lt;/code&gt;. See below as as example: &lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;!&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;bottom&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;/cn/assets/images/btt.png&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;which gives
-&lt;img src=&quot;/cn/assets/images/btt.png&quot; alt=&quot;bottom&quot; /&gt;&lt;/p&gt;
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
-                <link>http://williamlfang.github.com/cn/2014/01/18/img/</link>
-                <guid>http://williamlfang.github.com/cn/2014/01/18/img/</guid>
-                <pubDate>2014-01-18 00:00:00 +0800</pubDate>
-                <category></category>
 　             　<author>ccbikai</author>
         </item>
 

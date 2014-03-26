@@ -4,13 +4,101 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-26T22:11:27+08:00</lastBuildDate>
-        <pubDate>2014-03-26T22:11:27+08:00</pubDate>
+        <lastBuildDate>2014-03-27T01:49:08+08:00</lastBuildDate>
+        <pubDate>2014-03-27T01:49:08+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
 　     　<generator>williamlfang.github.com/cn</generator>
 
+
+        <item>
+                <title>Page 183 184</title>
+                <description>&lt;p&gt;假定短期利率在风险中性测度下（等价鞅测度）服从以下随机过程
+$$
+\begin{align}
+ dr_t &amp;amp;= \theta dt + \sigma dW_t &lt;br /&gt;
+ \Rightarrow
+ \int&lt;em&gt;{s}^{t} dr_t &amp;amp;= \int&lt;/em&gt;{s}^{t} \theta dt + \int&lt;em&gt;{s}^{t}  \sigma dW_t &lt;br /&gt;
+  \Rightarrow
+  r(t) &amp;amp;= r(s) + \theta (t-s) + \sigma  \int&lt;/em&gt;{s}^{t}  dW_t &lt;br /&gt;
+\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;则在同样的等价鞅测度下，零息票债券的价格为
+$$
+\begin{align}
+ P(t,T) &amp;amp;= E^{Q}\bigg[ e^{ - \int_{t}^{T} r(u) du } \bigg| \mathcal{F}_t \bigg]
+\end{align}
+$$&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;同时，我们令 $X(t,T)$ 为一个有关短期利率的线性关系，我们在前面提过，短期利率 $\boxed{r(t)  = \cdots + \sigma  \int&lt;em&gt;{s}^{t}  dW_t}$ 是一个服从正太分布的变量（从布朗运动的正太分布特征得到），因而 $X(t,T)$ 也是一个服从正太分布的随机变量。
+$$
+\begin{align*}
+ X(t,T) &amp;amp;= \int&lt;/em&gt;{t}^{T} r(u) du = \int&lt;em&gt;{t}^{T} r(t) du + \int&lt;/em&gt;{t}^{T} \theta (u-t) du + \int&lt;em&gt;{t}^{T}  \sigma du \int&lt;/em&gt;{t}^{u}  dW&lt;em&gt;\epsilon &lt;br /&gt;
+ &amp;amp;= r(t)(T-t) + \frac{\theta}{2}(T-t)^2 + \int&lt;/em&gt;{t}^{T}  \sigma du \int&lt;em&gt;{t}^{u}  dW&lt;/em&gt;\epsilon &lt;br /&gt;
+ \Rightarrow
+ E\bigg[ X(t,T) \bigg| \mathcal{F}&lt;em&gt;t \bigg]
+ &amp;amp;= r(t)(T-t) + \frac{\theta}{2}(T-t)^2 + \int&lt;/em&gt;{t}^{T}  \sigma du \underbrace{ E\bigg[  \int&lt;em&gt;{t}^{u}  dW&lt;/em&gt;\epsilon}&lt;em&gt;{0}  \bigg] &lt;br /&gt;
+ &amp;amp;= r(t)(T-t) + \frac{\theta}{2}(T-t)^2  &lt;br /&gt;
+ \Rightarrow
+ Var\bigg[ X(t,T) \bigg| \mathcal{F}_t \bigg]
+ &amp;amp;= \sigma^2 E\bigg[ \int&lt;/em&gt;{t}^{T} du 
+      \bigg( \int&lt;em&gt;{t}^{u} dW&lt;/em&gt;{\epsilon} \cdot   \int&lt;em&gt;{t}^{v} dW&lt;/em&gt;{\epsilon}  \bigg) 
+      \int&lt;em&gt;{t}^{T} dv \bigg| \mathcal{F}_t \bigg] &lt;br /&gt;
+  &amp;amp;= \sigma^2 \int&lt;/em&gt;{t}^{T} du \int&lt;em&gt;{t}^{\min{u,v}} d\epsilon  \int&lt;/em&gt;{t}^{T} dv &lt;br /&gt;
+  &amp;amp;= 2 \sigma^2 \int&lt;em&gt;{t}^{v} (u-t) du \int&lt;/em&gt;{t}^{T} dv &lt;br /&gt;
+  &amp;amp;= 2 \sigma^2 \int&lt;em&gt;{t}^{T} \bigg( \frac{1}{2} u^2 - u t \bigg)\bigg|_t^v dv  &lt;br /&gt;
+  &amp;amp;= 2 \sigma^2 \int&lt;/em&gt;{t}^{T} \bigg( \frac{1}{2} v^2 - vt + \frac{1}{2} t^2 \bigg) dv &lt;br /&gt;
+  &amp;amp;= \sigma^2 \int_{t}^{T} (v-t)^2 dv &lt;br /&gt;
+  &amp;amp;= \frac{\sigma^2}{3} (v-t)^3\bigg|_t^T &lt;br /&gt;
+  &amp;amp;= \frac{\sigma^2}{3} (T-t)^3 &lt;br /&gt;
+  \Rightarrow
+  X(t,T) &amp;amp;\sim \mathcal{N}\bigg( r(t)(T-t) + \frac{\theta}{2}(T-t)^2, \frac{\sigma^2}{3} (T-t)^3 \bigg)
+\end{align*}
+$$&lt;/p&gt;
+
+&lt;p&gt;我们可以利用正太分布函数的矩阵生成函数来推导债券价格的公式。
+$$
+\begin{align}
+ P(t,T) &amp;amp;= E^{Q}\bigg[ e^{ - X(t,T) } \bigg| \mathcal{F}_t \bigg] &lt;br /&gt;
+ &amp;amp;= e^{ -\mu_X + \frac{1}{2} \sigma_X^2} &lt;br /&gt;
+ &amp;amp;= e^{ -r(t)(T-t) - \frac{\theta}{2}(T-t)^2 + \frac{\sigma^2}{6} (T-t)^3 } &lt;br /&gt;
+ &amp;amp;= A(t,T) e^{ -B(t,T) r(t) } &lt;br /&gt;
+ A(t,T)  &amp;amp;= e^{ - \frac{\theta}{2}(T-t)^2 + \frac{\sigma^2}{6} (T-t)^3  } &lt;br /&gt;
+ B(t,T)  &amp;amp;= (T-t)
+\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;下面我们来推导远期利率的公式。&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+ f(t,T) &amp;amp;= -\frac{\partial \ln P(t,T)}{ \partial T} &lt;br /&gt;
+ &amp;amp;= r_t + \theta(T-t) - \frac{\sigma^2}{2} (T-t)^2
+\end{align}
+$$
+根据 &lt;strong&gt;Ito formula&lt;/strong&gt;，有
+$$
+\begin{align}
+ df(t,T) &amp;amp;= \underbrace{f’&lt;em&gt;t}&lt;/em&gt;{-\theta + \sigma^2(T-t)} dt + \underbrace{f’&lt;em&gt;{r}}&lt;/em&gt;{1} dr_t  + \frac{1}{2} \underbrace{f’‘&lt;em&gt;{rr}}&lt;/em&gt;{0} dr_tdr_t  &lt;br /&gt;
+ &amp;amp;= \bigg[ -\theta + \sigma^2(T-t) \bigg] dt + \bigg( \theta dt + \sigma dW_t \bigg) &lt;br /&gt;
+ &amp;amp;= \boxed{
+   \sigma^2(T-t) dt +  \sigma dW_t
+ }
+\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;从以上关系可以看到，远期利率的漂移项依赖于短期利率的瞬时波动项，即$\mu_{f(t,T)} = \sigma^2(T-t)$，这个是典型的具有 &lt;strong&gt;HJM&lt;/strong&gt; 模型特征。我们将在下一回细解。&lt;/p&gt;
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/03/27/page-183-184/</link>
+                <guid>http://williamlfang.github.com/cn/2014/03/27/page-183-184/</guid>
+                <pubDate>2014-03-27T00:00:00+08:00</pubDate>
+                <category>williamlfang.github.com/cn</category>
+　             　<author>william</author>
+        </item>
 
         <item>
                 <title>远期利率与互换利率</title>
@@ -54,7 +142,8 @@ $$&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
 \begin{align}
- L(T,S) :=&amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big)  
+ L(T,S) :=&amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big) \\
+ \tau(T,S)L(T,S)  =&amp; \frac{1}{P(T,S)} - 1 \\ 
 \end{align}
  %]]&gt;&lt;/script&gt;
 

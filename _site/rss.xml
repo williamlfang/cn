@@ -4,13 +4,101 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-26 22:11:27 +0800</lastBuildDate>
-        <pubDate>2014-03-26 22:11:27 +0800</pubDate>
+        <lastBuildDate>2014-03-27 01:49:08 +0800</lastBuildDate>
+        <pubDate>2014-03-27 01:49:08 +0800</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
 　     　<generator>nju.pt</generator>
 
+
+        <item>
+                <title>Page 183 184</title>
+                <description>&lt;p&gt;假定短期利率在风险中性测度下（等价鞅测度）服从以下随机过程
+$$
+\begin{align}
+ dr_t &amp;amp;= \theta dt + \sigma dW_t &lt;br /&gt;
+ \Rightarrow
+ \int&lt;em&gt;{s}^{t} dr_t &amp;amp;= \int&lt;/em&gt;{s}^{t} \theta dt + \int&lt;em&gt;{s}^{t}  \sigma dW_t &lt;br /&gt;
+  \Rightarrow
+  r(t) &amp;amp;= r(s) + \theta (t-s) + \sigma  \int&lt;/em&gt;{s}^{t}  dW_t &lt;br /&gt;
+\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;则在同样的等价鞅测度下，零息票债券的价格为
+$$
+\begin{align}
+ P(t,T) &amp;amp;= E^{Q}\bigg[ e^{ - \int_{t}^{T} r(u) du } \bigg| \mathcal{F}_t \bigg]
+\end{align}
+$$&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;同时，我们令 $X(t,T)$ 为一个有关短期利率的线性关系，我们在前面提过，短期利率 $\boxed{r(t)  = \cdots + \sigma  \int&lt;em&gt;{s}^{t}  dW_t}$ 是一个服从正太分布的变量（从布朗运动的正太分布特征得到），因而 $X(t,T)$ 也是一个服从正太分布的随机变量。
+$$
+\begin{align*}
+ X(t,T) &amp;amp;= \int&lt;/em&gt;{t}^{T} r(u) du = \int&lt;em&gt;{t}^{T} r(t) du + \int&lt;/em&gt;{t}^{T} \theta (u-t) du + \int&lt;em&gt;{t}^{T}  \sigma du \int&lt;/em&gt;{t}^{u}  dW&lt;em&gt;\epsilon &lt;br /&gt;
+ &amp;amp;= r(t)(T-t) + \frac{\theta}{2}(T-t)^2 + \int&lt;/em&gt;{t}^{T}  \sigma du \int&lt;em&gt;{t}^{u}  dW&lt;/em&gt;\epsilon &lt;br /&gt;
+ \Rightarrow
+ E\bigg[ X(t,T) \bigg| \mathcal{F}&lt;em&gt;t \bigg]
+ &amp;amp;= r(t)(T-t) + \frac{\theta}{2}(T-t)^2 + \int&lt;/em&gt;{t}^{T}  \sigma du \underbrace{ E\bigg[  \int&lt;em&gt;{t}^{u}  dW&lt;/em&gt;\epsilon}&lt;em&gt;{0}  \bigg] &lt;br /&gt;
+ &amp;amp;= r(t)(T-t) + \frac{\theta}{2}(T-t)^2  &lt;br /&gt;
+ \Rightarrow
+ Var\bigg[ X(t,T) \bigg| \mathcal{F}_t \bigg]
+ &amp;amp;= \sigma^2 E\bigg[ \int&lt;/em&gt;{t}^{T} du 
+      \bigg( \int&lt;em&gt;{t}^{u} dW&lt;/em&gt;{\epsilon} \cdot   \int&lt;em&gt;{t}^{v} dW&lt;/em&gt;{\epsilon}  \bigg) 
+      \int&lt;em&gt;{t}^{T} dv \bigg| \mathcal{F}_t \bigg] &lt;br /&gt;
+  &amp;amp;= \sigma^2 \int&lt;/em&gt;{t}^{T} du \int&lt;em&gt;{t}^{\min{u,v}} d\epsilon  \int&lt;/em&gt;{t}^{T} dv &lt;br /&gt;
+  &amp;amp;= 2 \sigma^2 \int&lt;em&gt;{t}^{v} (u-t) du \int&lt;/em&gt;{t}^{T} dv &lt;br /&gt;
+  &amp;amp;= 2 \sigma^2 \int&lt;em&gt;{t}^{T} \bigg( \frac{1}{2} u^2 - u t \bigg)\bigg|_t^v dv  &lt;br /&gt;
+  &amp;amp;= 2 \sigma^2 \int&lt;/em&gt;{t}^{T} \bigg( \frac{1}{2} v^2 - vt + \frac{1}{2} t^2 \bigg) dv &lt;br /&gt;
+  &amp;amp;= \sigma^2 \int_{t}^{T} (v-t)^2 dv &lt;br /&gt;
+  &amp;amp;= \frac{\sigma^2}{3} (v-t)^3\bigg|_t^T &lt;br /&gt;
+  &amp;amp;= \frac{\sigma^2}{3} (T-t)^3 &lt;br /&gt;
+  \Rightarrow
+  X(t,T) &amp;amp;\sim \mathcal{N}\bigg( r(t)(T-t) + \frac{\theta}{2}(T-t)^2, \frac{\sigma^2}{3} (T-t)^3 \bigg)
+\end{align*}
+$$&lt;/p&gt;
+
+&lt;p&gt;我们可以利用正太分布函数的矩阵生成函数来推导债券价格的公式。
+$$
+\begin{align}
+ P(t,T) &amp;amp;= E^{Q}\bigg[ e^{ - X(t,T) } \bigg| \mathcal{F}_t \bigg] &lt;br /&gt;
+ &amp;amp;= e^{ -\mu_X + \frac{1}{2} \sigma_X^2} &lt;br /&gt;
+ &amp;amp;= e^{ -r(t)(T-t) - \frac{\theta}{2}(T-t)^2 + \frac{\sigma^2}{6} (T-t)^3 } &lt;br /&gt;
+ &amp;amp;= A(t,T) e^{ -B(t,T) r(t) } &lt;br /&gt;
+ A(t,T)  &amp;amp;= e^{ - \frac{\theta}{2}(T-t)^2 + \frac{\sigma^2}{6} (T-t)^3  } &lt;br /&gt;
+ B(t,T)  &amp;amp;= (T-t)
+\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;下面我们来推导远期利率的公式。&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+ f(t,T) &amp;amp;= -\frac{\partial \ln P(t,T)}{ \partial T} &lt;br /&gt;
+ &amp;amp;= r_t + \theta(T-t) - \frac{\sigma^2}{2} (T-t)^2
+\end{align}
+$$
+根据 &lt;strong&gt;Ito formula&lt;/strong&gt;，有
+$$
+\begin{align}
+ df(t,T) &amp;amp;= \underbrace{f’&lt;em&gt;t}&lt;/em&gt;{-\theta + \sigma^2(T-t)} dt + \underbrace{f’&lt;em&gt;{r}}&lt;/em&gt;{1} dr_t  + \frac{1}{2} \underbrace{f’‘&lt;em&gt;{rr}}&lt;/em&gt;{0} dr_tdr_t  &lt;br /&gt;
+ &amp;amp;= \bigg[ -\theta + \sigma^2(T-t) \bigg] dt + \bigg( \theta dt + \sigma dW_t \bigg) &lt;br /&gt;
+ &amp;amp;= \boxed{
+   \sigma^2(T-t) dt +  \sigma dW_t
+ }
+\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;从以上关系可以看到，远期利率的漂移项依赖于短期利率的瞬时波动项，即$\mu_{f(t,T)} = \sigma^2(T-t)$，这个是典型的具有 &lt;strong&gt;HJM&lt;/strong&gt; 模型特征。我们将在下一回细解。&lt;/p&gt;
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/03/27/page-183-184/</link>
+                <guid>http://williamlfang.github.com/cn/2014/03/27/page-183-184/</guid>
+                <pubDate>2014-03-27 00:00:00 +0800</pubDate>
+                <category>Finance</category>
+　             　<author>ccbikai</author>
+        </item>
 
         <item>
                 <title>远期利率与互换利率</title>
@@ -54,7 +142,8 @@ $$&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
 \begin{align}
- L(T,S) :=&amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big)  
+ L(T,S) :=&amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big) \\
+ \tau(T,S)L(T,S)  =&amp; \frac{1}{P(T,S)} - 1 \\ 
 \end{align}
  %]]&gt;&lt;/script&gt;
 
@@ -1715,53 +1804,6 @@ plot(density(x))
                 <guid>http://williamlfang.github.com/cn/2014/01/20/r-note/</guid>
                 <pubDate>2014-01-20 00:00:00 +0800</pubDate>
                 <category>Programming</category>
-　             　<author>ccbikai</author>
-        </item>
-
-        <item>
-                <title>WineQQ2013 可以使用</title>
-                <description>&lt;h2 id=&quot;qq-for-linux&quot;&gt;QQ for &lt;code&gt;Linux&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;想要在Linux操作系统下使用 &lt;code&gt;QQ&lt;/code&gt; 真的得费不少劲。我之前尝试通过 &lt;code&gt;WINE&lt;/code&gt; 来安装 &lt;code&gt;QQ2013&lt;/code&gt;，可是最终以失败结束。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;一方面是由于目前的 &lt;code&gt;WINE&lt;/code&gt; 技术还不是很好，对于一些商业软件支持力度不够，也不能完全模拟 &lt;code&gt;Windows&lt;/code&gt; 系统来安装 &lt;code&gt;.exe&lt;/code&gt; 的软件（如果完全取代了，怎么感觉又回到 &lt;code&gt;Windows&lt;/code&gt; 时代了呢…..），期间需要不停的下载相关而不必要的软件，大费人力与（电）脑力，而且终归落得个不能使用/中文乱码的惨淡结局。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;另一方面，&lt;code&gt;Tencent&lt;/code&gt; 公司也不会完全放弃 &lt;code&gt;QQ&lt;/code&gt; 的商业价值来满足开源爱好者的，他们满眼看到的是商业利益。&lt;code&gt;QQ&lt;/code&gt; 本身是一个具有黑暗魔法力量的软件，可以推送广告取得收入，可以不间断的搜索用户资料（先前有 3Q 大战及由此来），还能维护一个庞大的软件生态链。故此，虽然曾经有一段时间的 &lt;code&gt;QQ for Linux&lt;/code&gt; 的美好光景，却也一去不复返。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;我们现在想要在 Linux 上使用 &lt;code&gt;QQ&lt;/code&gt;，真可谓“斗智斗勇”，方能取得一丁点的成就。&lt;/p&gt;
-
-&lt;h2 id=&quot;qq&quot;&gt;虚拟机下使用 QQ&lt;/h2&gt;
-&lt;p&gt;我之前有在一篇关于虚拟机 &lt;a href=&quot;http://williamlfang.github.io/cn/2014/01/04/virtualbox/&quot;&gt;virtualbox&lt;/a&gt; 的文章中谈过可以利用虚拟机来运行 &lt;code&gt;Windows&lt;/code&gt; 操作系统，并在其使用 &lt;code&gt;QQ&lt;/code&gt; 等软件。可以，这也很不方便，为了使用一个软件大开虚拟机占用大量的内存，实属不值，何况对于一些老机子更是苦命。因此，我决定放弃这个既浪费资源又不讨好的想法，另辟蹊径。&lt;/p&gt;
-
-&lt;h2 id=&quot;wineqq&quot;&gt;WineQQ&lt;/h2&gt;
-&lt;p&gt;目前，由一个叫做 “LongeneTeam” 团队给广大的用户带来了福音。他们号称开发了史上最牛叉的、能够在 Linux 系统运行的 &lt;code&gt;wineQQ&lt;/code&gt;。其工作原理是：
-&amp;gt; 通过以deb的格式将 QQ 软件、Wine基本配置、有关字体以及一些必要的配件统统打包好，这样用户可以直接点击deb文件来安装、使用 QQ。&lt;/p&gt;
-
-&lt;p&gt;目前 wineQQ 的最新版本为 &lt;a href=&quot;http://www.longene.org/forum/viewtopic.php?t=4700&quot;&gt;wine-1.7.9&lt;/a&gt;。deb格式的软件可以在&lt;a href=&quot;http://pan.baidu.com/s/1hq83fWo&quot;&gt;这里&lt;/a&gt;或者&lt;a href=&quot;http://www.longene.org/download/WineQQ2013SP6-20140102-Longene.deb&quot;&gt;这里&lt;/a&gt;下载到。之后可以直接双击打开，经由 &lt;code&gt;Software Manager&lt;/code&gt; 确认系统密码后即可安装。完成之后在找到 &lt;code&gt;QQ&lt;/code&gt; 打开即可。
-&lt;img src=&quot;/cn/assets/images/QQ/qq.png&quot; alt=&quot;wineqq2013&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;问题之门及解决之道&lt;/h2&gt;
-&lt;p&gt;以下汇集了我在使用 wineQQ2013 过程中遇到的一些问题，以及相应的解决方法。欢迎补充。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;64位操作系统不能运行&lt;/h3&gt;
-&lt;p&gt;这个问题主要是由于原先只是在32位系统运行的 &lt;code&gt;wineQQ&lt;/code&gt; 需要安装配件。如下：&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; sudo apt-get install libc6-i386 
-&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; sudo apt-get install ia32-libs
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
-                <link>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/</link>
-                <guid>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/</guid>
-                <pubDate>2014-01-18 00:00:00 +0800</pubDate>
-                <category>Tech</category>
 　             　<author>ccbikai</author>
         </item>
 

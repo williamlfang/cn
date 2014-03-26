@@ -47,7 +47,8 @@ $$
  
 $$
 \begin{align}
- L(T,S) :=& \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big)  
+ L(T,S) :=& \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big) \\
+ \tau(T,S)L(T,S)  =& \frac{1}{P(T,S)} - 1 \\ 
 \end{align}
 $$
  

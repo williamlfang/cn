@@ -4,13 +4,23 @@
  <title>方莲 | William</title>
  <link href="http://williamlfang.github.com/cn/" rel="self"/>
  <link href="http://williamlfang.github.com/cn"/>
- <updated>2014-03-17T12:03:05+08:00</updated>
+ <updated>2014-03-17T23:28:18+08:00</updated>
  <id>http://williamlfang.github.com/cn</id>
  <author>
    <name>william</name>
    <email>william.lian.fang@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>落得白发苍茫</title>
+   <link href="http://williamlfang.github.com/cn/2014/03/17/luo-de-bai-fa-cang-mang/"/>
+   <updated>2014-03-17T00:00:00+08:00</updated>
+   <id>http://williamlfang.github.com/cn/2014/03/17/luo-de-bai-fa-cang-mang</id>
+   <content type="html">&lt;p&gt;不复年少惶惶，落得白发苍茫。&lt;/p&gt;
+
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
+ </entry>
  
  <entry>
    <title>庖丁解牛之 Ito 公式</title>
@@ -1599,42 +1609,6 @@ plot(density(x))
 
 &lt;p&gt;which gives
 &lt;img src=&quot;/cn/assets/images/btt.png&quot; alt=&quot;bottom&quot; /&gt;&lt;/p&gt;
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
- </entry>
- 
- <entry>
-   <title>Linux Mint 安装 Pandoc</title>
-   <link href="http://williamlfang.github.com/cn/2014/01/16/pandoc/"/>
-   <updated>2014-01-16T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/2014/01/16/pandoc</id>
-   <content type="html">&lt;h2 id=&quot;linux-mint--pandoc&quot;&gt;下面介绍在 Linux Mint 系统下如何安装 pandoc。&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;如官网介绍，安装 pandoc
- sudo apt-get install cabal-install
- cabal update
- cabal install pandoc&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;添加路径，
- sudo gedit /etc/profile
-  在打开的文档最后输入
- export PATH=/home/william/.cabal/bin:$PATH
-  再到 
- cd /etc/
- source profile&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;再次重新
- cabal install pandoc pandoc-citeproc&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;查看是否安装成功
- pandoc –version&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
 <img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
  </entry>
  

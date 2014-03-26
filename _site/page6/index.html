@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<!--
+-->
+<html lang="zh-CN"/>
+<head>
+
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+	<meta name="author" content="william" />
+	<meta name="generator" content="Jekyll" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+	<meta name="description" content="人生就像那旅程,谁知道转弯后的风光" />
+
+	<meta charset="UTF-8"/>
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+
+	<title> 方 莲 | William</title>
+
+<!--
+	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+-->
+
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="William ATOM Feed" />
+	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn" /> -->
+	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html" />
+	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
+
+	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
+	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
+	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
+	<script>hljs.initHighlightingOnLoad();</script>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true,
+                extensions: ["AMSmath.js"]
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 90      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+
+<!--=================================================================== -->
+</head>
+
+
+<body>
+
+	<div id="main" class="w-100p font-gray-dark">
+		<div class="nav nav-large nav-orange">
+			<div class="menu cleared">
+			<a title="首页" class="nav-item" href="http://williamlfang.github.com/cn/">首页</a>
+				<div class="nav-has-menu">
+					<a class="nav-item" href="http://williamlfang.github.com/cn/archives.html">归档</a>
+						<div class="nav-menu">
+							
+							<a title="Time" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Time">Time</a>
+							
+							<a title="Love" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Love">Love</a>
+							
+							<a title="Campus" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Campus">Campus</a>
+							
+							<a title="Personal" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Personal">Personal</a>
+							
+							<a title="Life" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Life">Life</a>
+							
+							<a title="Tech" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Tech">Tech</a>
+							
+							<a title="Programming" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Programming">Programming</a>
+							
+							<a title="经济分析" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#经济分析">经济分析</a>
+							
+							<a title="个人" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#个人">个人</a>
+							
+							<a title="金融数学" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#金融数学">金融数学</a>
+							
+						</div>
+				</div>
+			<a title="邻居" class="nav-item" href="http://williamlfang.github.com/cn/links.html">链接</a>
+			<a title="关于" class="nav-item" href="http://williamlfang.github.com/cn/about.html">关于</a>
+			<a title="留言" class="nav-item" href="http://williamlfang.github.com/cn/guestbook.html">留言</a>
+				<div class="search right h-1">
+					<form method="get" id="searchform" action="http://williamlfang.github.com/cn/search.html">
+					<input type="text" name="q" id="search" size="13" value="" placeholder="你在找什么呢？" x-webkit-speech />
+					</form>
+				</div>
+			</div>
+		</div>
+
+	<div id="articles">
+		
+  
+<div class="post mt-2">
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2007/05/15/time-flying/">
+		<span class="year">2007</span>
+		<span class="day">15</span>
+		<span class="month">May</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2007/05/15/time-flying/" title="一天又三年">一天又三年</a></h3>
+
+		<div class="content lh-150p font-16 mg-2 radius-8">
+		<p>一天又三年地,我们从初中的懵懂跌跌撞撞地踏上高中的台阶,然后,又是一个的黑色三年,我们泪流满面地挥手告别专属青春的天空,就这样的,人生边从一个熟悉的舞台转移到另一个陌生的而即将熟悉的舞台,而这个周期似乎显得很短暂,一晃便是三个的春夏秋东.</p>
+
+<p>偶尔若水给我发邮件,里面只有一句简单的话:夏石,很多的时候我分明能感受到时光流水亲吻脸颊,滑落肌肤,然后碎地成片,片片烙印凌乱的记忆.</p>
+
+<p>记忆的画面在风起的夜晚开始褪色,苍白的只剩余下模糊的轮廓,在街头我们一起凝望天空,望见过往的那些风清云淡划破天空的脸,然后在巷尾我们开始无声啜泣,一起拖着被夕阳拉长的身影跌跌撞撞地迷失在伤城中.</p>
+
+<p>生活在记忆中的人似乎永远可以那么单纯而简单,永远可以天真无邪地一任何角度去仰望忧郁的天空,看得忧伤,看到心痛.</p>
+
+<p>背景永远是火树银花的绚丽,若水微笑灿如樱花,挥汗奔跑在尘土飞扬的迷雾中,小马很失落地埋头翻阅离奇的漫画直是摇头叹气,还有阿Ａ轮换着左手定则右手定则地分析一个物体高速运动后是否遵守相对论,感叹说如果我们可以告诉奔跑是否就能回到过去,落落为什么总是双手捧书埋头苦读不理他事我以前还以为她冷淡后来却发现她那样做只是想麻痹自己好让分手再见不是永远,还有老洋似乎永远都长不大眼瞳永远落满迷雾看了让人心疼,还有……</p>
+
+<p>记忆的幻城若隐若现,有很多的人在离我远去,遥远的只剩下片片的记忆可寻,像散落谩空的星辰,遥远伸手难及.</p>
+
+<p>然后是很多的人,很多的陌生人与我擦肩而过,在空际的平行里相遇着相识,相识了道别,道别成永远的伤口,在风清云淡时隐隐做痛.</p>
+
+<p>也许有一天我会微笑的灿若樱花地面对一起走过的人,然后一起翻阅褪色的记忆,时间就是这样一天又三年的流逝,一晃便告别了飞舞张扬的年代了,好象还是那么临近,却已经物是人非,散落天涯了.</p>
+
+		<a href="http://williamlfang.github.com/cn/2007/05/15/time-flying/" class="more-link button button-orange radius-4 right mt-1">查看全文</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+
+
+
+		
+		<div class="friends">
+			<div class="friends_info"><a id="friends" href="#" rel="nofollow"><span>我的小伙伴</span></a></div>
+			<div id="friends_list" class="friends_list">
+			<ul class="no-list">
+				<li><a href="http://www.inbiji.com/" title="好记性不如烂笔记" >in笔记</a></li>
+			</ul>
+			</div>
+			<a href="#" id="gc_close" rel="nofollow">X</a>
+		</div>
+		
+		</div>
+
+
+		
+			<div id="more" class="align-center mt-2">
+				<a href="http://williamlfang.github.io/cn/page/" class="loadmore button button-orange w-30p" >查  看  更  多</a>
+			</div>
+		
+
+	<!--
+		
+			<div id="more" class="align-center mt-2">
+				<a href="http://williamlfang.github.com/cn/archives.html" class="moreloadmore button button-orange w-30p" > 查看所有文章 </a>
+			</div>
+		
+	-->
+
+	</div>
+
+	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
+		<div id="about" class="align-center">&copy; 2013-2014 Powered By Jekyll, Designed By <a href="http://williamlfang.github.io/">William Fang</a>.
+		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
+		<div class="radar"></div>
+		</div>
+	</div>
+<link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hibikai"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<script src="http://cdn.staticfile.org/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://cdn.staticfile.org/jqueryui/1.10.2/css/smoothness/jquery-ui-1.10.2.custom.min.css" type="text/css" media="all" />
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+</body>
+</html>
+

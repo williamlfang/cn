@@ -4,13 +4,25 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-17 12:03:05 +0800</lastBuildDate>
-        <pubDate>2014-03-17 12:03:05 +0800</pubDate>
+        <lastBuildDate>2014-03-17 23:28:18 +0800</lastBuildDate>
+        <pubDate>2014-03-17 23:28:18 +0800</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
 　     　<generator>nju.pt</generator>
 
+
+        <item>
+                <title>落得白发苍茫</title>
+                <description>&lt;p&gt;不复年少惶惶，落得白发苍茫。&lt;/p&gt;
+
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/03/17/luo-de-bai-fa-cang-mang/</link>
+                <guid>http://williamlfang.github.com/cn/2014/03/17/luo-de-bai-fa-cang-mang/</guid>
+                <pubDate>2014-03-17 00:00:00 +0800</pubDate>
+                <category>个人</category>
+　             　<author>ccbikai</author>
+        </item>
 
         <item>
                 <title>庖丁解牛之 Ito 公式</title>
@@ -1617,44 +1629,6 @@ plot(density(x))
                 <guid>http://williamlfang.github.com/cn/2014/01/18/img/</guid>
                 <pubDate>2014-01-18 00:00:00 +0800</pubDate>
                 <category></category>
-　             　<author>ccbikai</author>
-        </item>
-
-        <item>
-                <title>Linux Mint 安装 Pandoc</title>
-                <description>&lt;h2 id=&quot;linux-mint--pandoc&quot;&gt;下面介绍在 Linux Mint 系统下如何安装 pandoc。&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;如官网介绍，安装 pandoc
- sudo apt-get install cabal-install
- cabal update
- cabal install pandoc&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;添加路径，
- sudo gedit /etc/profile
-  在打开的文档最后输入
- export PATH=/home/william/.cabal/bin:$PATH
-  再到 
- cd /etc/
- source profile&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;再次重新
- cabal install pandoc pandoc-citeproc&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;查看是否安装成功
- pandoc –version&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
-                <link>http://williamlfang.github.com/cn/2014/01/16/pandoc/</link>
-                <guid>http://williamlfang.github.com/cn/2014/01/16/pandoc/</guid>
-                <pubDate>2014-01-16 00:00:00 +0800</pubDate>
-                <category>Tech</category>
 　             　<author>ccbikai</author>
         </item>
 

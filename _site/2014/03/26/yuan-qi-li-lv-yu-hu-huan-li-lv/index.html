@@ -189,7 +189,7 @@ $$
 $$
 \begin{align*}
  L(T,S) :=&amp; \frac{1}{\tau(T,S)}\Big( \frac{1}{P(T,S)} - 1 \Big) <br />
- \tau(T,S)L(T,S)  =&amp; \frac{1}{P(T,S)} - 1<br />
+ \tau(T,S)L(T,S)  =&amp; \frac{1}{P(T,S)} - 1 \ 
 \end{align*}
 $$
 因此，
@@ -246,9 +246,9 @@ $$</p>
 $$
 \begin{align<em>}
 &amp; \boxed{ \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i F(t;T_{i-1},T_{i})  }  <br />
- &amp;=\sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau(T_{i-1},T_{i}) \cdot \frac{1}{\tau(T_{i-1},T_{i})} \bigg[ \frac{P(t,T_{i-1})}{P(t,T_{i})} - 1 \bigg] <br />
- &amp;=\sum_{i=\alpha+1}^{\beta} \bigg[ P(t,T_{i-1}) - P(t,T_{i}) \bigg]  <br />
- &amp;= P(t,T_{\alpha}) - P(t,T_{\beta})
+ =&amp; \sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau(T_{i-1},T_{i}) \cdot \frac{1}{\tau(T_{i-1},T_{i})} \bigg[ \frac{P(t,T_{i-1})}{P(t,T_{i})} - 1 \bigg] <br />
+ =&amp; \sum_{i=\alpha+1}^{\beta} \bigg[ P(t,T_{i-1}) - P(t,T_{i}) \bigg]  <br />
+ =&amp;  P(t,T_{\alpha}) - P(t,T_{\beta})
 \end{align</em>}
 $$</p>
 
@@ -273,7 +273,7 @@ $$</p>
 <p>对此，我们可以这样理解：</p>
 
 <ul>
-  <li>首先，投资者为了对冲未来利率不确定所带来的影响，要求在未来的某个时间段内以固定的收益 $P(t,T<em>{\alpha})$ 提前买入债券，而将在更远的未来 $T</em>{\beta}$ 抛售手里的债券，价值为$P(t,T<em>{\beta})$，其总和的盈余收益为 $P(t,T</em>{\alpha}) - P(t,T_{\beta})$。</li>
+  <li>首先，投资者为了对冲未来利率不确定所带来的影响，要求在未来的某个时间段内以固定的收益 <script type="math/tex">P(t,T_{\alpha})</script> 提前买入债券，而将在更远的未来 <script type="math/tex">T_{\beta}</script> 抛售手里的债券，价值为$P(t,T_{\beta})$，其总和的盈余收益为 <script type="math/tex">P(t,T_{\alpha}) - P(t,T_{\beta})</script>。</li>
   <li>在合约期间，投资者放弃的机会成本总共为 $\sum_{i=\alpha+1}^{\beta}  P(t, T_i) \tau_i$。</li>
   <li>因此，在满足市场无套利的条件下，互换利率因该使得该投资策略的超额收益率是零，即该投掷策略的收益与互换利率持平，是故
 $$

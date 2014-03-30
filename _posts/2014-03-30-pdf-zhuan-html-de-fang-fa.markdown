@@ -47,8 +47,7 @@ status: publish
     pdf2htmlEX –help
     man pdf2htmlEX
     
-![pdf2htmlEX01](/cn/assets/images/r-figures/2014-03-30-pdf-zhuan-html-de-fang-fa/pdf2htmlEX01.png)
- 
+[![pdf2htmlEX01](/cn/assets/images/r-figures/2014-03-30-pdf-zhuan-html-de-fang-fa/pdf2htmlEX01.png)](/cn/assets/images/r-figures/2014-03-30-pdf-zhuan-html-de-fang-fa/pdf2htmlEX01.png)
 ## 使用
  
 现在，「万事具备」，只需要一个命令就可以实现：

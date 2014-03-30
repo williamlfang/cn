@@ -8,6 +8,8 @@ tags:
 - HTML
 - LaTeX
 description: 
+published: true
+status: publish
 ---
  
 今天本来是想要给公司人力资源部发送简历，顺便做了一些调改，是以附件的PDF格式呈送的。可是那边的却通知我说公司有规定，不能在邮件里直接打开附件（有时甚至会直接被视为病毒删除掉）。因此，我只好另寻方法，既能够满足我使用*LaTeX*制作简历的极客范，又能符合公司的客观规定。
@@ -43,13 +45,15 @@ description:
   同时，可以查看使用手册
   
     pdf2htmlEX –help
-    -man pdf2htmlEX
+    man pdf2htmlEX
+    
+[!pdf2htmlEX01](/cn/assets/images/r-figures/2014-03-30-pdf-zhuan-html-de-fang-fa/pdf2htmlEX01.png)
  
 ## 使用
  
 现在，「万事具备」，只需要一个命令就可以实现：
  
-    -pdf2htmlEX “test.pdf”
+    pdf2htmlEX “test.pdf”
     
     
     

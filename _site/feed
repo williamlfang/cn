@@ -4,13 +4,72 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-30T14:19:43+08:00</lastBuildDate>
-        <pubDate>2014-03-30T14:19:43+08:00</pubDate>
+        <lastBuildDate>2014-03-30T23:13:16+08:00</lastBuildDate>
+        <pubDate>2014-03-30T23:13:16+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
 　     　<generator>williamlfang.github.com/cn</generator>
 
+
+        <item>
+                <title>PDF转HTML的方法</title>
+                <description>&lt;p&gt;今天本来是想要给公司人力资源部发送简历，顺便做了一些调改，是以附件的PDF格式呈送的。可是那边的却通知我说公司有规定，不能在邮件里直接打开附件（有时甚至会直接被视为病毒删除掉）。因此，我只好另寻方法，既能够满足我使用&lt;em&gt;LaTeX&lt;/em&gt;制作简历的极客范，又能符合公司的客观规定。&lt;/p&gt;
+
+&lt;p&gt;一来我现在使用的系统是&lt;strong&gt;Linux Mint&lt;/strong&gt;，不存在说需要使用&lt;em&gt;Word&lt;/em&gt;制作简历的可能性，而且如果真的制作了，不也是一样需要以附件形式发送嘛——如果你非得使用Word制作简历，那么到时候就只能以「复制、粘贴」的方法写到邮件正文中。可是如此以来，所有的格式都消失了，而且由于&lt;strong&gt;Email&lt;/strong&gt;采用&lt;em&gt;Markup&lt;/em&gt;格式，到时候Word复制粘贴出来的文本几乎无法被正常显示，更不要说让挑剔的人力部来阅读邮件了。二者，我前面也提到了，我极度使用一切与&lt;strong&gt;TeX&lt;/strong&gt;相关的技术，这包括在&lt;strong&gt;R&lt;/strong&gt;中使用&lt;em&gt;knitr&lt;/em&gt;，在&lt;em&gt;Html&lt;/em&gt;网页中显示由&lt;strong&gt;LaTeX&lt;/strong&gt;生成的&lt;em&gt;pdf&lt;/em&gt;文档，使用&lt;em&gt;Pandoc&lt;/em&gt;转化&lt;em&gt;markdown&lt;/em&gt;为pdf输出等等。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;解决思路&lt;/h2&gt;
+
+&lt;p&gt;不怕有问题，我们需要相信强大的黑客社区与开源社区。针对我今天遇到的这个问题，其实已经有人早早就提出来了，而且还写了一个小程序来实现。&lt;/p&gt;
+
+&lt;p&gt;其实想法很简单：既然不让使用附件传送PDF格式的简历，那么，我们现在换一种思路，将其转化成&lt;em&gt;markup&lt;/em&gt;语言，然后在邮件正文就能够显示出来符合原来文件排版的简历内容了。这个问题放大了看，其实就是如何在浏览器中显示PDF文档。原来的解决思路是通过浏览器自带的阅读器来打开该格式的文档，比如Chrome等。然而，这对系统运行难免带来压力，有些时候Chrome打开一个PDF文件非常的卡，非常的慢。&lt;/p&gt;
+
+&lt;p&gt;由&lt;a href=&quot;http://www.cse.ust.hk/~luwang/&quot;&gt;Lu Wang&lt;/a&gt;开发的这个&lt;a href=&quot;https://github.com/coolwanglu/pdf2htmlEX&quot;&gt;&lt;strong&gt;pdf2htmlEX&lt;/strong&gt;&lt;/a&gt;正好解决了这个问题，实现了将PDF文件&lt;strong&gt;精确、无差&lt;/strong&gt;的转化为相应的HTML文件，整个过程支持&lt;strong&gt;LaTeX&lt;/strong&gt;语法，尤其适用与包含了&lt;strong&gt;LaTeX&lt;/strong&gt;数学公式的文档。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;首先，我们经过&lt;strong&gt;LaTeX&lt;/strong&gt;编译后得到了一个pdf简历。这里面既可以包括文字、图形、照片，又可以包括诸如数学公式、特殊符号在内的各种格式。&lt;/li&gt;
+  &lt;li&gt;然后，使用&lt;em&gt;pdf2htmlEX&lt;/em&gt;，实现「无缝对接」，得到了一个html文件。&lt;/li&gt;
+  &lt;li&gt;之后，我们便可以像对待其他html格式文件一样的，乐趣所需。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;安装方法&lt;/h2&gt;
+
+&lt;p&gt;在Linux中有两种安装方法，一种是直接在终端输入命令语句安装，另一种是自己按照各种依赖包一路安装到底。前者简单适用，后者过于复杂。我这里介绍如何使用前一种方法安装&lt;strong&gt;pdf2htmlEX&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-add-repository ppa:coolwanglu/pdf2htmlex
+sudo apt-get update
+sudo apt-get install pdf2htmlex
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装成功后，我们可以查看一下相应的版本&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo pdfhtmlex --version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;同时，可以查看使用手册&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pdf2htmlEX –help
+man pdf2htmlEX
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-30-pdf-zhuan-html-de-fang-fa/pdf2htmlEX01.png&quot;&gt;!pdf2htmlEX01&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;使用&lt;/h2&gt;
+
+&lt;p&gt;现在，「万事具备」，只需要一个命令就可以实现：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pdf2htmlEX “test.pdf”
+&lt;/code&gt;&lt;/pre&gt;
+
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/03/30/pdf-zhuan-html-de-fang-fa/</link>
+                <guid>http://williamlfang.github.com/cn/2014/03/30/pdf-zhuan-html-de-fang-fa/</guid>
+                <pubDate>2014-03-30T00:00:00+08:00</pubDate>
+                <category>williamlfang.github.com/cn</category>
+　             　<author>william</author>
+        </item>
 
         <item>
                 <title>Page 183 184</title>

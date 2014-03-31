@@ -133,8 +133,9 @@ status: publish
     
 [![cvex04](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex04.png)
   
-[![cvex05](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex05.png)
+[![cvex05](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex05.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex05.png)
  
+[![cvex06](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex06.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex06.png)
   
   
   

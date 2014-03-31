@@ -55,7 +55,7 @@ status: publish
  
   比如，我通常会选择在简历中添加 Google+、Facebook、新浪微薄等链接，方便 HR 直接跳转到更多的咨询。这点在传统的纸质简历中是难以想象到的。
   
-![cvex01](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png)
+![cvex01](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex01.png)
   
   再举个例子，我使用带有时间轴的标签，这个可以通过一下命令完成：
   
@@ -125,17 +125,16 @@ status: publish
  
   得到的现实效果如下
   
-[![cvex02](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex02.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex02.png)
+[![cvex02](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex02.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex02.png)
   
   这样，我们在给 HR 发送简历的时候，就可以使用 Thunderbird 的「插入 Html 」功能来实现网页版本的简历申请了。
   
-[![cvex03](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex03.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex03.png)
+[![cvex03](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex03.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex03.png)
     
-[![cvex04](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex04.png)
+[![cvex04](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex04.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex04.png)
   
-[![cvex05](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex05.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex05.png)
+[![cvex05](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex05.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex05.png)
  
-[![cvex06](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex06.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex06.png)
   
   
   

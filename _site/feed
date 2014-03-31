@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-30T23:32:53+08:00</lastBuildDate>
-        <pubDate>2014-03-30T23:32:53+08:00</pubDate>
+        <lastBuildDate>2014-03-30T23:33:24+08:00</lastBuildDate>
+        <pubDate>2014-03-30T23:33:24+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -54,8 +54,9 @@ sudo apt-get install pdf2htmlex
 man pdf2htmlEX
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-30-pdf-zhuan-html-de-fang-fa/pdf2htmlEX01.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-30-pdf-zhuan-html-de-fang-fa/pdf2htmlEX01.png&quot; alt=&quot;pdf2htmlEX01&quot; /&gt;&lt;/a&gt;
-## 使用&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-30-pdf-zhuan-html-de-fang-fa/pdf2htmlEX01.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-30-pdf-zhuan-html-de-fang-fa/pdf2htmlEX01.png&quot; alt=&quot;pdf2htmlEX01&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;使用&lt;/h2&gt;
 
 &lt;p&gt;现在，「万事具备」，只需要一个命令就可以实现：&lt;/p&gt;
 

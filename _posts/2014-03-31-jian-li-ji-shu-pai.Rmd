@@ -55,7 +55,7 @@ status:    process
 
   比如，我通常会选择在简历中添加 Google+、Facebook、新浪微薄等链接，方便 HR 直接跳转到更多的咨询。这点在传统的纸质简历中是难以想象到的。
   
-[![cn-ex01](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png)
+[![cv-ex01](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cv-ex01.png)
   
   再举个例子，我使用带有时间轴的标签，这个可以通过一下命令完成：
   
@@ -125,17 +125,16 @@ status:    process
 
   得到的现实效果如下
   
-[![cn-ex02](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex02.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex02.png)
+[![cv-ex02](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex02.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cv-ex02.png)
   
   这样，我们在给 HR 发送简历的时候，就可以使用 Thunderbird 的「插入 Html 」功能来实现网页版本的简历申请了。
   
-[![cn-ex03](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex03.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex03.png)
+[![cv-ex03](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex03.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cv-ex03.png)
     
-[![cn-ex04](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)
+[![cv-ex04](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cv-ex04.png)
   
-[![cn-ex05](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex05.png)
-    
-[![pdf2htmlEX01](/cn/assets/images/r-figures/2014-03-30-pdf-zhuan-html-de-fang-fa/pdf2htmlEX01.png)](/cn/assets/images/r-figures/2014-03-30-pdf-zhuan-html-de-fang-fa/pdf2htmlEX01.png)
+[![cv-ex05](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cv-ex05.png)
+
   
   
   

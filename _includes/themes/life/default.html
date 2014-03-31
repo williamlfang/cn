@@ -98,27 +98,16 @@ MathJax.Hub.Queue(function() {
 <style>
 @charset "utf-8";
 
-/* = Designed and Developed by Dandy Weng 
-/* = Global
------------------------------------------------ */
-body {
-  /* overflow-x: hidden; 
-  */
-  background-color: #999;
-  background-image:url(data:image/jpeg;base64,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);
-  /* -webkit-user-select: none;
-  */
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
 
 /* ========================================= 字体颜色 ================================================*/
+/* Head color
 a:not(.btn) {
   color: #00699E;
   -webkit-transition: 300ms;
   -moz-transition: 300ms;
   transition: 300ms;
 }
-
+*/
 a:hover:not(.btn),
 a:active:not(.btn) {
   color: #9E0000;
@@ -128,9 +117,7 @@ a:active:not(.btn) {
   transform: translateY(-8px);
 }
 
-img, p {
-  -webkit-touch-callout: none;
-}
+
 /* ========================================= 字体颜色 ================================================*/
 
 
@@ -369,74 +356,6 @@ img, p {
   /* Project: CV template;
  *Author: Richard Nyasha Kaseke;
  *Published on: http: //www.square.co.zw */
-html {
-  color: #444444;
-}
-
-body {
-  font-size: 1em;
-  line-height: 1.5;
-}
-
-::-moz-selection, ::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-img {
-  vertical-align: middle;
-}
-
-a {
-  color: #a5cf64;
-  list-style-type: none;
-  text-decoration: none;
-}
-
-ol, ul {
-  list-style: none;
-  padding: 0;
-}
-
-h1, h3 {
-  font-family: "Nunito", serif;
-}
-
-h3 {
-  margin: 0;
-  text-transform: uppercase;
-  font-size: 15px;             /*-------------------   H3:  --------------------------------*/
-}
-
-h4 {
-  color: #6db97a;
-  margin: 0;
-  font-size: 12px;
-}
-
-p {
-  margin: 0;
-  line-height: 2;
-}
-
-body {
-  background: white;
-  font-size: 14px;                          /* Font size:14px*/
-  font-family: "Quattrocento Sans", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  color: #333333;
-  text-shadow: 0 1px 0 white;
-  margin: 0;
-  padding: 0;
-}
-
 .main {
   margin: 0 auto;
   max-width: 900px;        /* ============ main width ===============*/
@@ -456,10 +375,10 @@ header {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100%;              /* 100%; */
+  height: 80%;              /* 100%; */
   background-position: center;
   margin: 0 auto;
-  min-height: 200px;
+  min-height: 150px;
   width: 100%;
 }
 header section {
@@ -489,20 +408,12 @@ header span {
 section {
   float: left;
   max-width: 700px;
-  width: 70%;          /* section width 70%*/
+  width: 100%;          /* section width 70%*/
   display: inline-block;
   margin: 0;
   padding: 0;
 }
 
-aside {
-  max-width: 250px;
-  width: 30%;         /* aside width 30%*/
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  float: right;
-}
 
 article {
   margin-bottom: 40px;
@@ -531,6 +442,11 @@ article h1 {
   margin: 0;
   background: url("http://williamlfang.qiniudn.com/cv/img/phone.png") no-repeat;
 }
+
+.contact .sns {
+  margin: 0;
+}
+
 
 .pic {
   float: right;
@@ -722,17 +638,15 @@ img {
         <a href="mailto:william.lian.fang@gmail.com" class="mail">Gmail Me</a>
         <a href="tel:+86 15060782961" class="phone">+86 150-6078-2961</a>
       </div>
-       <div class="contact">
-        <center>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!--
+      <div class="contact">
         <a href="https://www.facebook.com/profile.php?id=100006649868022"><div id="icon-facebook" class="sns-icon" title="Facebook"><img src="http://williamlfang.qiniudn.com/cv/img/facebooksns_icon_10.png"></div></a>
         <a href="gmail" target="_blank"><div id="icon-gmail" class="sns-icon" data-toggle="tooltip" title="Google"><img src="http://williamlfang.qiniudn.com/cv/img/google+sns_icon_14.png"></div></a>
         <a href="http://weibo.com/u/2270629193"><div id="icon-sinaweibo" class="sns-icon" data-toggle="tooltip" title="新浪微博"><img src="http://williamlfang.qiniudn.com/cv/img/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9Asns_icon_1.png"></div></a>
         <a ><div id="icon-qq" class="sns-icon" data-toggle="tooltip" title="QQ: 夏石"><img src="http://williamlfang.qiniudn.com/cv/img/QQ%E5%A5%BD%E5%8F%8Bsns_icon_24.png"></div></a>
         <a href=" "><div id="icon-wechat" class="sns-icon" data-toggle="tooltip" title="微信: william_fang"><img src="http://williamlfang.qiniudn.com/cv/img/%E5%BE%AE%E4%BF%A1sns_icon_22.png"></div></a>
-        <a href="gmail"><div id="icon-gmail" class="sns-icon" data-toggle="tooltip" title="查看PDF"><img src="http://williamlfang.qiniudn.com/cv/img/pdf-icon2.jpg"></div></a>
-        </center>
       </div>
+-->
     </section>
   </header>
 

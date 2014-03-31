@@ -4,13 +4,164 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-31 22:37:27 +0800</lastBuildDate>
-        <pubDate>2014-03-31 22:37:27 +0800</pubDate>
+        <lastBuildDate>2014-03-31 23:50:11 +0800</lastBuildDate>
+        <pubDate>2014-03-31 23:50:11 +0800</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
 　     　<generator>nju.pt</generator>
 
+
+        <item>
+                <title>简历技术派</title>
+                <description>&lt;p&gt;找工作至少要准备两种以上格式的简历，注意，这里值得不是中文或者英文的，而是具体的简历呈现的格式。&lt;/p&gt;
+
+&lt;p&gt;我非常不推荐使用 Word 来编辑简历，主要是因为&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;MS 经常对 office 进行更新，动不动的我们就得升级，可能你电脑的office已经升级到了 2013 年，可是你老板公司却只能使用 XP 的，这样HR可能就无法查收使用 word 制作的简历了&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;最要命的，我们经常发现本来已经调好各种格式的word简历，却在另外的一台电脑里莫名其妙的出现格式错误，与原来设计的完全不同，甚至有时还会出现乱码的情况。所以，找工作，远离MS啊。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;简历的两种境界&lt;/h2&gt;
+
+&lt;p&gt;我这里推荐使用两种文件格式来制作简历。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;首选当然是 LaTeX 啦。这个可是说是制作简历的神器，页面非常的美观，而且最后得到的 pdf 格式的文件通杀所有系统，能够完美无差的在不同的电脑、系统、环境中查看。再者，使用 LaTeX 本身也是一件拉风的事情，当 HR 在经过一整天的 Word 那丑陋而又抽风的格调后，相信第一眼看到完美的 pdf 会神清气爽的。（当然，简历最重要的要有「料」，如果你的能力与阅历本来就不甚了了，那可能真的埋踏了神器）。&lt;/p&gt;
+
+    &lt;p&gt;前段时间我使用 LaTeX 制作了一个带有时间标签的&lt;a href=&quot;http://williamlfang.qiniudn.com/cv/william_cn.pdf&quot;&gt;简历&lt;/a&gt;，里面可以对工作经历做时间上的排序，方便 HR 查看。颜色可以按照个人偏好选择。我使用的是金桔色，代表着「青春与活力」，希望自己在将来的工作中也「满腹热血」而非「满腹牢骚」，纵然「满腹经论」，好歹也得努力工作人家人「满脸幸福」。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;其次，我们可以尝试制作一个应用 Html5 技术的网页版简历，生成的文档可是直接加入到 Email 正文。现在好多公司由于保密问题，通常不接受带附件的简历，那么，有用一款可以直接在邮件中文里显示的简历页面，将使你受益颇多。而且，现在的 Html5 技术已经非常成熟，可以制作一个异常漂亮的简历页面，里面还可以提供相应的链接，使得单页的简历在内容上得到扩展，增加你的筹码。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;html5-&quot;&gt;Html5 制作简历&lt;/h2&gt;
+
+&lt;p&gt;我原来本是打算直接用先前制作好的 pdf 格式来转成 Html 代码（这个可以使用 &lt;strong&gt;pdf2htmlEX&lt;/strong&gt; 来实现，详见我的帖子，&lt;a href=&quot;http://williamlfang.github.io/cn/2014/03/30/pdf-zhuan-html-de-fang-fa/&quot;&gt;PDF转HTML的方法&lt;/a&gt;）。可是最后发现， 如果是直接将代码拷贝到邮件正文，根本就不可能被编译成 html（我在 Linux 系统下使用 Thunderbird）。因此，也就死了这条贪图便捷的心。还是乖乖的动手写代码吧。&lt;/p&gt;
+
+&lt;p&gt;思路还是蛮简单的，就是将 Html5 的代码全部放在一个邮件的文档里面。如果有外部链接，如图片、文件、音频等，这可以使用超链接的方式插入。全部代码包括几部分&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;表头部分：用于显示网页标题。&lt;/p&gt;
+
+    &lt;p&gt;&amp;lt;!DOCTYPE html&amp;gt;
+  &lt;!--[if lt IE 7]&gt;      &lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt; &lt;![endif]--&gt;
+  &lt;!--[if IE 7]&gt;         &lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&gt; &lt;![endif]--&gt;
+  &lt;!--[if IE 8]&gt;         &lt;html class=&quot;no-js lt-ie9&quot;&gt; &lt;![endif]--&gt;
+  &lt;!--[if gt IE 8]&gt;&lt;!--&gt; 
+  &amp;lt;html class=&quot;no-js&quot;&amp;gt; &lt;!--&lt;![endif]--&gt;&lt;/p&gt;
+    &lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+  &lt;title&gt;William · 方 莲&lt;/title&gt;  	&lt;!-- &lt;title&gt;My sweet one page CV&lt;/title&gt; --&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;
+ 
+&lt;/head&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;css&lt;/strong&gt;：使用 &lt;strong&gt;&lt;style type=&quot;text/css&quot;&gt; &lt;/style&gt;&lt;/strong&gt; 引入，主要控制页面格式、相应方式、动画顺序、字体、颜色等。这部分往往是比较难的部分，可以找网上的帖子来做参考，省去一笔不必要的时间浪费。&lt;/p&gt;
+
+    &lt;p&gt;比如，我通常会选择在简历中添加 Google+、Facebook、新浪微薄等链接，方便 HR 直接跳转到更多的咨询。这点在传统的纸质简历中是难以想象到的。&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png&quot; alt=&quot;cn-ex01&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;再举个例子，我使用带有时间轴的标签，这个可以通过一下命令完成：&lt;/p&gt;
+
+    &lt;p&gt;.time {
+  width: 20%;
+  display: inline;
+  float: left;
+  text-align: right;
+  width: 70px;
+  margin-right: 20px;
+  font-size: 15px;                              /* ————-   time font size ——————–*/
+  font-weight: bold;
+  }&lt;/p&gt;
+
+    &lt;p&gt;.timeline {
+  width: 80%;
+  display: inline-block;
+  }
+  .timeline .element {
+  margin: 0;
+  padding: 0 0 10px 20px;
+  border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   &lt;em&gt;/
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+  }
+  /&lt;/em&gt;
+  .timeline .element h3 {
+  display: inline-block;
+  }
+  */
+  .timeline .element:hover {
+  border-left: 4px solid #c2d9a1;
+  cursor: pointer;
+  }
+  .timeline .element:hover {
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+  }
+  .timeline .element::before {
+  content: “ “;
+  color: white;
+  background: white;
+  display: inline-block;
+  margin-left: -29px;
+  position: absolute;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 12px;
+  width: 12px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  }
+  .timeline .element ul {
+  list-style-type: square;
+  padding-left: 15px;
+  margin: 0;
+  }&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;快来快来看一看&lt;/h2&gt;
+
+&lt;p&gt;得到的现实效果如下&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex02.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex02.png&quot; alt=&quot;cn-ex02&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这样，我们在给 HR 发送简历的时候，就可以使用 Thunderbird 的「插入 Html 」功能来实现网页版本的简历申请了。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex03.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex03.png&quot; alt=&quot;cn-ex03&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png&quot; alt=&quot;cn-ex04&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex05.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png&quot; alt=&quot;cn-ex05&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/03/31/jian-li-ji-shu-pai/</link>
+                <guid>http://williamlfang.github.com/cn/2014/03/31/jian-li-ji-shu-pai/</guid>
+                <pubDate>2014-03-31 00:00:00 +0800</pubDate>
+                <category>Tech</category>
+　             　<author>ccbikai</author>
+        </item>
 
         <item>
                 <title>PDF转HTML的方法</title>
@@ -1503,253 +1654,6 @@ df$x
                 <guid>http://williamlfang.github.com/cn/2014/01/26/data-structure/</guid>
                 <pubDate>2014-01-26 00:00:00 +0800</pubDate>
                 <category>Programming</category>
-　             　<author>ccbikai</author>
-        </item>
-
-        <item>
-                <title>使用 Jekyll + knitr 发布博客</title>
-                <description>&lt;h2 id=&quot;section&quot;&gt;我的博客之旅&lt;/h2&gt;
-
-&lt;p&gt;这些天一直都在钻研如何在博客中加入可以执行 &lt;strong&gt;R&lt;/strong&gt; 程序代码的博客模板。我先前也有过写博客的经历，不过那时候使用的博客都是免费托管在其他的服务器中，一方面是缺乏可定制，大都是千篇一律的，无法满足「DIY」的需要，另一方面，也是主要的问题，这些博客网站很少有支持 &lt;strong&gt;LaTeX&lt;/strong&gt; 的数学输出，对于数学环境的支持不尽人意。我也就偶尔在写一些纯文字类的随想，不曾涉及专业领域的事情。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;后来我实在忍无可忍了，觉得找一个必须是支持 &lt;strong&gt;LaTeX&lt;/strong&gt; 代码的博客网站。这也就只有在 &lt;strong&gt;WordPress&lt;/strong&gt; 上了。我也尝试了使用一段时间。一开始发现还真是方便，直接使用 &lt;strong&gt;LaTeX&lt;/strong&gt; 代码产生数学编译环境，如此一来便可以在上面多说点专业领域的话了。可是，后来我发现在 &lt;strong&gt;WordPress&lt;/strong&gt; 上管理博客与修改模板是一件多么痛苦的事情，既需要更改模板，而且每次改完了发现不是自己想要的效果，又得重新再做。如此一来，光花费在博客网站的维护时间竟然占用了多数。如此不堪重负。&lt;/p&gt;
-
-&lt;p&gt;后来我开始尝试在使用  &lt;strong&gt;R&lt;/strong&gt; 做统计分析，也陆陆续续的写了一些小程序。我的想法是，将 &lt;strong&gt;R&lt;/strong&gt; 强大的数据分析与绘图能力与 &lt;strong&gt;LaTeX&lt;/strong&gt; 超级优美的数学编辑水平结合一起，从而生成既有分析又有数据、既有文本又有图表的文档。后来发现这个想法别人早已实现，那就是 &lt;code&gt;Sweave&lt;/code&gt;，支持在 &lt;strong&gt;LaTeX&lt;/strong&gt; 使用 &lt;strong&gt;R&lt;/strong&gt; 代码 （或者倒过来说，在 &lt;strong&gt;R&lt;/strong&gt; 中使用 &lt;strong&gt;LaTeX&lt;/strong&gt; 语法），并且直接输出结果。再后来，我接着发现这个原来还有『豪华升级版』，那就是我今天要给各位介绍的 &lt;code&gt;knitr&lt;/code&gt;，一个更加强大的支持 &lt;strong&gt;LaTeX&lt;/strong&gt; 编译环境的 &lt;strong&gt;R&lt;/strong&gt; 软件包。&lt;/p&gt;
-
-&lt;p&gt;可是，有时候我不大喜欢 &lt;strong&gt;LaTeX&lt;/strong&gt; 的一点在于，永远都需要那么复杂的插入代码环境，比如，当需要使用「强调」的时候，还得非常复杂而琐碎的键入 &lt;code&gt;\emph{}&lt;/code&gt;，这个让我实在崩溃，因为毕竟我很多时候都是在使用纯文本输入，只是少数地方使用数学公式表达。那么，我想要的就是，需要强调了，就键入 &lt;em&gt;斜体强调&lt;/em&gt;，或者 &lt;strong&gt;粗体强调&lt;/strong&gt;。如此一来，写博客就非常的轻松了。&lt;/p&gt;
-
-&lt;p&gt;于是我在某个凌晨「毅然决然」的将博客编译语言再次转移阵地。这一次，我需要&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;简单：写博客就是写博客，随心所欲，没有多余的格式。在写作过程中，我仅仅需要关心文本，专注于思想表达。&lt;/li&gt;
-  &lt;li&gt;支持 &lt;strong&gt;R&lt;/strong&gt; 代码，能够直接产生计算结果，插入图形。而且最好的是，别人看到这个代码还觉得不错，可以自己在电脑上重复输出结果。&lt;/li&gt;
-  &lt;li&gt;具有良好的定制特征，我可以根据个人偏好设置网页界面，并且需要很好的可持续维护性。&lt;/li&gt;
-  &lt;li&gt;最后是能够记录我在不同时间段写作的备份，方便随时「倒带」。这样我就不用担心删除当下文字段落后以后就找不回来，而且最好是告诉我具体的细节。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;github--jekyll--knitr--rmarkdown&quot;&gt;Github + Jekyll + knitr + Rmarkdown&lt;/h2&gt;
-
-&lt;p&gt;我就抱着这样的「苛刻要求」去找「谷哥」。出乎意料的是，竟然如此简单的就得到需要的解决方案了：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Github + Jekyll + Rmarkdown&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这是一个完美的方案！完全实现了我需要的多种服务：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Github&lt;/strong&gt; 用于托管代码与博客。&lt;strong&gt;Git&lt;/strong&gt; 是一款优秀的版本管理软件（VCS），由现在的 &lt;strong&gt;Linux&lt;/strong&gt; 开发团队在维护。而 &lt;strong&gt;Github&lt;/strong&gt; 就相当于一个网罗世界优秀程序员的「Facebook」，汇集了目前几乎所有的开源项目。&lt;/p&gt;
-
-    &lt;p&gt;现在，我可以通过将代码与博客托管到 &lt;strong&gt;Github&lt;/strong&gt; 上，实现版本的系统检测，方便网站运行。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Jekyll&lt;/strong&gt; 为我的博客网站提供了静态编译，将其打包为 &lt;em&gt;Html&lt;/em&gt; 然后发布在托管的网站上。而且 &lt;strong&gt;Jekyll&lt;/strong&gt; 提供了一系列的模板与模块，方便个人定制网站。与其他博客网站不同，经常动不动的就蹦出一个广告，&lt;strong&gt;Jekyll&lt;/strong&gt; 编制的网站上面不会有多余的信息，我只陈列需要分享的内容。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;最后，就是 &lt;strong&gt;knitr&lt;/strong&gt; 与 &lt;strong&gt;Rmardown&lt;/strong&gt; 可以轻松的实现博客撰写。现在，我需要做的就是使用 &lt;strong&gt;Markdown&lt;/strong&gt; 语法输入，然后在需要 &lt;strong&gt;R&lt;/strong&gt; 的地方直接插入代码即可。一篇完整的博客就是我沿着自己的想法一路写到底，中间不会有其他的打扰，不要反复的插入格式命令。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;rmarkdown&quot;&gt;使用 &lt;strong&gt;Rmarkdown&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;下面，我介绍一下如何实现将 &lt;strong&gt;R&lt;/strong&gt; 代码编译为网页 &lt;strong&gt;Markdown&lt;/strong&gt; 格式。由于 &lt;strong&gt;Jekyll&lt;/strong&gt; 支持将 &lt;strong&gt;Markdown&lt;/strong&gt; 编译成 &lt;strong&gt;Html&lt;/strong&gt; 网页，因此，我们就可以很方便的将 &lt;strong&gt;R&lt;/strong&gt; 文件编译成 &lt;strong&gt;Html&lt;/strong&gt; 并发布到 &lt;strong&gt;Github&lt;/strong&gt; 上面了。我主要参考了 Jason Bryer 的帖子， &lt;a href=&quot;http://jason.bryer.org/posts/2012-12-10/Markdown_Jekyll_R_for_Blogging.html&quot;&gt;“Using (R) Markdown, Jekyll, &amp;amp; GitHub for a Website”&lt;/a&gt;。另外，由于这个帖子生成的图片存储在同样一个文件夹下面，有时我想找某个博客的图片时，会非常的不方便。于是我对其做了一个小小的修改，将经过 &lt;strong&gt;R&lt;/strong&gt; 产生的图片放在与帖子相对应的文件夹目录下，方便查找。比如，我有一个文档，&lt;code&gt;2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke.Rmd&lt;/code&gt;，那么，图片的存放目录应该是&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-dir&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-assets&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;– images&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;—- r-figures&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;—– 2014-01-24-shi-yong–rmarkdown–fa-biao-bo-ke&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;—— fig1.png&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;rmarkdownr&quot;&gt;建立一个 &lt;code&gt;rmarkdown.r&lt;/code&gt;&lt;/h3&gt;
-
-&lt;p&gt;首先是在主目录(&lt;code&gt;_posts&lt;/code&gt;)下面建立一个 &lt;code&gt;rmarkdown.r&lt;/code&gt; 文件，用于执行编译功能。主要用途就是实现将当前目录下所有的带 &lt;code&gt;.Rmd&lt;/code&gt; 文件转化为 &lt;code&gt;.md&lt;/code&gt; 格式，从而可以实现发布。下面是其主要内容，也可以在&lt;a href=&quot;/cn/_post/rmarkdwn.r&quot;&gt;这里&lt;/a&gt;下载。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#' This R script will process all R mardown files (those with in_ext file extention,
-#' .rmd by default) in the current working directory. Files with a status of
-#' 'processed' will be converted to markdown (with out_ext file extention, '.markdown'
-#' by default). It will change the published parameter to 'true' and change the
-#' status parameter to 'publish'.
-#' 
-#' @param dir the directory to process R Markdown files.
-#' @param images.dir the base directory where images will be generated.
-#' @param images.url
-#' @param out_ext the file extention to use for processed files.
-#' @param in_ext the file extention of input files to process.
-#' @param recursive should rmd files in subdirectories be processed.
-#' @return nothing.
-#' @author Jason Bryer &amp;lt;jason@bryer.org&amp;gt;
-convertRMarkdown &amp;lt;- function(dir=getwd(), images.dir=dir, images.url='/cn/assets/images/',
-  						 out_ext='.markdown', in_ext='.rmd', recursive=FALSE) {
-  	require(knitr, quietly=TRUE, warn.conflicts=FALSE)
-  	files &amp;lt;- list.files(path=dir, pattern=in_ext, ignore.case=TRUE, recursive=recursive)
-  	for(f in files) {
-  		message(paste(&quot;Processing &quot;, f, sep=''))
-  		content &amp;lt;- readLines(f)
-  	frontMatter &amp;lt;- which(substr(content, 1, 3) == '---')
-	  if(length(frontMatter) &amp;gt;= 2 &amp;amp; 1 %in% frontMatter) {
-		  statusLine &amp;lt;- which(substr(content, 1, 7) == 'status:')
-  		publishedLine &amp;lt;- which(substr(content, 1, 10) == 'published:')
-	  	if(statusLine &amp;gt; frontMatter[1] &amp;amp; statusLine &amp;lt; frontMatter[2]) {
-		  	status &amp;lt;- unlist(strsplit(content[statusLine], ':'))[2]
-  				status &amp;lt;- sub('[[:space:]]+$', '', status)
-  			status &amp;lt;- sub('^[[:space:]]+', '', status)
-	  		if(tolower(status) == 'process') {
-		  		#This is a bit of a hack but if a line has zero length (i.e. a
-			  	#black line), it will be removed in the resulting markdown file.
-				  #This will ensure that all line returns are retained.
-				content[nchar(content) == 0] &amp;lt;- ' '
-	  			message(paste('Processing ', f, sep=''))
-		  		content[statusLine] &amp;lt;- 'status: publish'
-			  	content[publishedLine] &amp;lt;- 'published: true'
-				  outFile &amp;lt;- paste(substr(f, 1, (nchar(f)-(nchar(in_ext)))), out_ext, sep='')
-  					render_markdown(strict=TRUE)
-  				opts_knit$set(out.format='markdown')
-	  			opts_knit$set(base.dir=images.dir)
-		  		opts_knit$set(base.url=images.url)
-  					##
-  				## 产生的图片存储位置 `/assets/images/r-figures/`
-	  			fig.path &amp;lt;- paste0(&quot;r-figures/&quot;, sub(&quot;.Rmd$&quot;, &quot;&quot;, basename(files)), &quot;/&quot;)
-		  		opts_chunk$set(fig.path = fig.path)
-			  	## opts_chunk$set(fig.cap = &quot;center&quot;)  ## figure position
-			    render_jekyll()     
-				  ##
-  					try(knit(text=content, output=outFile), silent=FALSE)
-  				} else {
-  					warning(paste(&quot;Not processing &quot;, f, &quot;, status is '&quot;, status, 
-  								&quot;'. Set status to 'process' to convert.&quot;, sep=''))
-  				}
-  			} else {
-  				warning(&quot;Status not found in front matter.&quot;)
-  			}
-  		} else {
-  			warning(&quot;No front matter found. Will not process this file.&quot;)
-  		}
-  	 }
-  	 invisible()
- }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;rmdsh&quot;&gt;建立可执行文本 &lt;code&gt;rmd.sh&lt;/code&gt;&lt;/h3&gt;
-
-&lt;p&gt;这个 &lt;code&gt;rmd.sh&lt;/code&gt; 也是存放在目录 &lt;code&gt;_posts&lt;/code&gt;, 主要就是&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;识别当前的目录，并将其赋予 &lt;code&gt;dir&lt;/code&gt; 参数&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;默认在 &lt;code&gt;Terminal&lt;/code&gt; 运行 &lt;code&gt;rmakrdown.r&lt;/code&gt; 的 &lt;code&gt;convertRmarkdown&lt;/code&gt; 函数，并输出经过转化的 &lt;code&gt;.markdown&lt;/code&gt; 文件。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;文本 &lt;code&gt;rmd.sh&lt;/code&gt; 可以&lt;a href=&quot;/cn/_post/rmd.sh&quot;&gt;下载&lt;/a&gt;，里面内容是&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;DIR=&quot;$( cd &quot;$( dirname &quot;${BASH_SOURCE[0]}&quot; )&quot; &amp;amp;&amp;amp; pwd )&quot;
-Rscript -e &quot;source('$DIR/rmarkdown.r'); convertRMarkdown(images.dir='../assets/images')&quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;yaml-&quot;&gt;添加 &lt;code&gt;YAML&lt;/code&gt; 标头&lt;/h3&gt;
-
-&lt;p&gt;最后，我们需要在 &lt;code&gt;.Rmd&lt;/code&gt; 文件标头添加以下命令：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;published: false
-status: process
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这个是因为：&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt; - First, the published parameter should be set to false so that Jekyll will not attempt to process the file. The convertRMarkdown function will change this parameter to true in the resulting Markdown file. &lt;/p&gt;
-  &lt;p&gt; - The second parameter, status, must be set to process for the convertRMarkdown function to convert the file. This is useful when working a draft of a document and you wish to not have the file converted. &lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;mathjax&quot;&gt;&lt;strong&gt;MathJax&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;如果想要让 &lt;strong&gt;Jekyll&lt;/strong&gt; 支持数学公式，我们还需要添加插件，&lt;strong&gt;MathJax&lt;/strong&gt;，然后使用 *markdown** 的编译设置为 &lt;strong&gt;kramdown&lt;/strong&gt;。我是这样配置的&lt;/p&gt;
-
-&lt;h4 id=&quot;kramdown&quot;&gt;添加 &lt;strong&gt;kramdown&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;由于我先前使用的是 &lt;em&gt;rdiscount&lt;/em&gt; 来编译 &lt;strong&gt;mardown&lt;/strong&gt; 语法，不能够支持对数学公式的输出。使用的替代是 &lt;strong&gt;kramdown&lt;/strong&gt;，一个更加强大的插件，支持 &lt;em&gt;pdf&lt;/em&gt;， &lt;em&gt;html&lt;/em&gt;，&lt;em&gt;LaTeX&lt;/em&gt; 等格式的转化。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;首先是在主目录文件夹找到 &lt;code&gt;_config-yml&lt;/code&gt; 打开，将 &lt;strong&gt;markdown&lt;/strong&gt; 默认的编译设置为 &lt;strong&gt;kramdown&lt;/strong&gt;。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在 &lt;code&gt;_layout&lt;/code&gt; 目录下面有 &lt;code&gt;post.html&lt;/code&gt; 的页面设置，我们需要在 &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 与 &lt;code&gt;&amp;lt;/head&amp;gt;&lt;/code&gt; 之间插入代码
-&lt;img src=&quot;/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/snapshot1.png&quot; alt=&quot;snapshot1.png&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;也就是在网页开启前使用 &lt;strong&gt;MathJax&lt;/strong&gt; 进行编译，支持对数学的输出。这里，我使用单个美元符号 &lt;code&gt;$&lt;/code&gt; 与 &lt;code&gt;$&lt;/code&gt; 输入 &lt;strong&gt;LaTeX&lt;/strong&gt; 代码，会在网页显示相应的 &lt;em&gt;行内公式&lt;/em&gt;，而使用一对的美元符号 &lt;code&gt;$$&lt;/code&gt; 与 &lt;code&gt;$$&lt;/code&gt; 来输入行间数学公式。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;例子&lt;/h3&gt;
-
-&lt;h4 id=&quot;section-2&quot;&gt;数学公式&lt;/h4&gt;
-
-&lt;p&gt;比如我只需要如下输入数学公式，$S = \sum_{i=1}^k x_i$，或者是&lt;script type=&quot;math/tex&quot;&gt;a^2 + b^2 = c^2&lt;/script&gt;&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{1}{\pi}=\frac{2\sqrt{2}}{9801}\sum_{k=0}^\infty\frac{(4k)!(1103+26390k)}{(k!)^4396^{4k}}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt; \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\ldots} } } } &lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-
-\begin{align}
-\mbox{Union: } &amp; A\cup B = \{x\mid x\in A \mbox{ or } x\in B\} \\
-\mbox{Concatenation: } &amp; A\circ B  = \{xy\mid x\in A \mbox{ and } y\in B\} \\
-\mbox{Star: } &amp; A^\star  = \{x_1x_2\ldots x_k \mid  k\geq 0 \mbox{ and each } x_i\in A\} \\
-\end{align}
- %]]&gt;&lt;/script&gt;
-
-&lt;h4 id=&quot;r&quot;&gt;&lt;strong&gt;R&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;再者，这个 &lt;code&gt;R&lt;/code&gt; 代码，我们可以直接生成图片。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;x = rnorm(100)
-plot(density(x))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-01-24-shi-yong--rmarkdown--fa-biao-bo-ke/fig1.png&quot; alt=&quot;plot of chunk fig1&quot; /&gt; &lt;/p&gt;
-
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
-                <link>http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/</link>
-                <guid>http://williamlfang.github.com/cn/2014/01/24/shi-yong--rmarkdown--fa-biao-bo-ke/</guid>
-                <pubDate>2014-01-24 00:00:00 +0800</pubDate>
-                <category>Tech</category>
 　             　<author>ccbikai</author>
         </item>
 

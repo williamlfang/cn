@@ -134,127 +134,6 @@ img, p {
 }
 /* ========================================= 字体颜色 ================================================*/
 
-/*
-p, h4 {
-  font: 500 15px/1.8 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
-}
-*/
-h1, h2, h3, h4, h5, p, span {
-  cursor: default;
-}
-
-
-.padding-huge {
-  padding: 27px;
-}
-.padding-large {
-  padding: 45px;
-}
-.padding-middle {
-  padding: 25px;
-}
-.no-radius {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0; 
-}
-p.wo:first-letter {
-  font-size: 115%;
-  padding-right: 1px; 
-}
-.relative {
-  position: relative;
-}
-.button {
-  margin: 20px auto;
-}
-hr.soften {
-  height: 1px;
-  margin: 30px 0;
-  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
-  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
-  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
-  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
-  border: 0;
-}
-/* = Header
------------------------------------------------ */
-#header-camarts-entry {
-  margin: 0;
-  text-align: center;
-  line-height: 35px;
-  font-size: 12px;
-}
-
-#header-camarts-entry a {
-  color: #999;
-  font: 500 12px/1.8 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
-  -webkit-transition: 300ms;
-  -moz-transition: 300ms;
-  transition: 300ms;
-}
-
-#header-camarts-entry a:hover {
-  color: #fff;  
-}
-
-#header-camarts-entry .navbar-inner {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0; 
-}
-
-#header-text {
-  position: absolute;
-  width: 100%;
-  z-index: 99999; 
-  text-rendering: optimizeLegibility;
-}
-
-#ie #header,
-#mobile #header {
-  background: url("../images/header-image.jpg") no-repeat;
-  background-size: 100%;
-  background-size: cover;
-  filter: alpha(opacity = 80) progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/header-image.jpg', sizingMethod='scale')\9;
-}
-
-#ie #handle,
-#mobile #handle {
-  display: none;
-  visibility: hidden;
-}
-
-
-#handle, #handle img {
-  -webkit-transition: all .3s ease-in-out;
-     -moz-transition: all .3s ease-in-out;
-       -o-transition: all .3s ease-in-out;
-      transition: all .3s ease-in-out;
-}
-
-#handle-chevron {
-  width: 100px;    /*----------------------------------------------------------------------------------------- 中间滑开的位置*/
-  opacity: .8;      /* 透明化程度*/
-}
-
-#handle-chevron:hover {
-  opacity: .8;
-}
-
-#handle.actived {
-  bottom: -21px;
-  -webkit-transform: rotate(180deg);
-     -moz-transform: rotate(180deg);
-     -o-transform: rotate(180deg);
-      transform: rotate(180deg);
-}
-
-
-
-.montage-copyright a {
-  color: rgba(255, 255, 255, 0.7);
-}
 
 
 /* = 动画 Animations
@@ -335,7 +214,7 @@ hr.soften {
 @-webkit-keyframes spinner-in {
   0% {
     -webkit-filter: blur(5px);
-    -webkit-transform: translateY(60px);
+    -webkit-transform: translateY(30px);           /* 60 -> 30 */
   }
   100% { 
     -webkit-filter: none;
@@ -843,14 +722,8 @@ img {
         <a href="http://williamlfang.github.com" class="link">Homepage</a>
         <a href="mailto:william.lian.fang@gmail.com" class="mail">Gmail Me</a>
         <a href="tel:+86 15060782961" class="phone">+86 150-6078-2961</a>
-      </div>
-       <div class="contact">
-        <a href="gmail" target="_blank"><div id="icon-gmail" class="sns-icon" data-toggle="tooltip" title="Google"><img src="http://williamlfang.qiniudn.com/cv/img/google+sns_icon_14.png"></div></a>
-        <a href="https://www.facebook.com/profile.php?id=100006649868022" target="_blank"><div id="icon-facebook" class="sns-icon" title="Facebook"><img src="http://williamlfang.qiniudn.com/cv/img/facebooksns_icon_10.png"></div></a>
+        </p>
         <a href="http://weibo.com/u/2270629193" target="_blank"><div id="icon-sinaweibo" class="sns-icon" data-toggle="tooltip" title="新浪微博"><img src="http://williamlfang.qiniudn.com/cv/img/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9Asns_icon_1.png"></div></a>
-        <a href=" " target="_blank"><div id="icon-qq" class="sns-icon" data-toggle="tooltip" title="QQ: 夏石"><img src="http://williamlfang.qiniudn.com/cv/img/QQ%E5%A5%BD%E5%8F%8Bsns_icon_24.png"></div></a>
-        <a href=" " target="_blank"><div id="icon-wechat" class="sns-icon" data-toggle="tooltip" title="微信: william_fang"><img src="http://williamlfang.qiniudn.com/cv/img/%E5%BE%AE%E4%BF%A1sns_icon_22.png"></div></a>
-        <a href="gmail" target="_blank"><div id="icon-gmail" class="sns-icon" data-toggle="tooltip" title="查看PDF"><img src="http://williamlfang.qiniudn.com/cv/img/pdf-icon2.jpg"></div></a>
       </div>
     </section>
   </header>

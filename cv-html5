@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>My sweet one page CV</title>
+  <meta name="viewport" content="width=device-width">
+  <style type="text/css">
+  /* Project: CV template;
+ *Author: Richard Nyasha Kaseke;
+ *Published on: http: //www.square.co.zw */
+html {
+  color: #444444;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+::-moz-selection, ::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a {
+  color: #a5cf64;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+ol, ul {
+  list-style: none;
+  padding: 0;
+}
+
+h1, h3 {
+  font-family: "Nunito", serif;
+}
+
+h3 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+h4 {
+  color: #6db97a;
+  margin: 0;
+  font-size: 11px;
+}
+
+p {
+  margin: 0;
+  line-height: 2;
+}
+
+body {
+  background: white;
+  font-size: 12px;
+  font-family: "Quattrocento Sans", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  color: #333333;
+  text-shadow: 0 1px 0 white;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 900px;
+  width: 100%;
+  padding: 20px;
+}
+
+header {
+  border-bottom: 6px solid #f1f1f1;
+  background: #222222 url("http://square.co.zw/tutorials/cv/img/blurry.jpg") center top no-repeat;
+  color: white;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 65%;
+  background-position: center;
+  margin: 0 auto;
+  min-height: 150px;
+  width: 100%;
+}
+header section {
+  float: none;
+  display: block;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+header h1 {
+  font-size: 45px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 0;
+}
+header span {
+  font-size: 20px;
+  margin-top: 20px;
+  display: block;
+  text-transform: lowercase;
+  font-family: "Dancing Script", cursive;
+}
+
+section {
+  float: left;
+  max-width: 700px;
+  width: 70%;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+aside {
+  max-width: 250px;
+  width: 30%;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+article {
+  margin-bottom: 40px;
+}
+article h1 {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.contact {
+  margin: 10px 0 20px 0;
+}
+.contact a {
+  color: white;
+  font-family: "Nunito", serif;
+  margin: 0 15px 0 0;
+  padding: 0 0 0 20px;
+}
+.contact .link {
+  background: url("http://square.co.zw/tutorials/cv/img/globe.png") no-repeat;
+}
+.contact .mail {
+  background: url("http://square.co.zw/tutorials/cv/img/mail.png") no-repeat;
+}
+.contact .phone {
+  margin: 0;
+  background: url("http://square.co.zw/tutorials/cv/img/phone.png") no-repeat;
+}
+
+.pic {
+  float: right;
+  margin: -70px 0 0 0;
+}
+
+#module {
+  width: 100%;
+}
+
+.time {
+  width: 20%;
+  display: inline;
+  float: left;
+  text-align: right;
+  width: 70px;
+  margin-right: 20px;
+}
+
+.timeline {
+  width: 80%;
+  display: inline-block;
+}
+.timeline .element {
+  margin: 0;
+  padding: 0 0 10px 20px;
+  border-left: 4px solid #f1f1f1;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+}
+.timeline .element h3 {
+  display: inline-block;
+}
+.timeline .element:hover {
+  border-left: 4px solid #c2d9a1;
+  cursor: pointer;
+}
+.timeline .element:hover {
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+}
+.timeline .element::before {
+  content: " ";
+  color: white;
+  background: white;
+  display: inline-block;
+  margin-left: -29px;
+  position: absolute;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 12px;
+  width: 12px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+}
+.timeline .element ul {
+  list-style-type: square;
+  padding-left: 15px;
+  margin: 0;
+}
+
+.level {
+  height: 4px;
+  background: #b7e5e2;
+  margin: 4px 0;
+}
+.level span {
+  display: block;
+  height: 100%;
+  background: #4ec5e0;
+  overflow: hidden;
+}
+
+blockquote {
+  margin: 0;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+blockquote:before {
+  color: #cccccc;
+  content: open-quote;
+  font-size: 40px;
+  line-height: 0.1;
+  margin-right: 10px;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto 9;
+}
+
+@media only screen and (max-width: 50em) {
+  section {
+    margin: 0 auto;
+    float: none;
+    width: 100%;
+    display: block;
+  }
+
+  .pic {
+    float: none;
+    display: block;
+  }
+
+  aside {
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    display: block;
+  }
+  aside article {
+    width: 33%;
+    padding: 0 10px;
+    display: inline-block;
+    float: left;
+  }
+}
+@media only screen and (max-width: 40em) {
+  header h1 {
+    font-size: 30px;
+  }
+
+  aside article {
+    width: 100%;
+    display: block;
+    float: left;
+  }
+
+  .timeline {
+    width: 65%;
+  }
+
+  .pic {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+</style>
+  <link href='http://fonts.googleapis.com/css?family=Nunito|Dancing+Script|Quattrocento+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <!-- Begin header section -->
+  <header>
+    <section class="main">
+      <h1>Supreme Chancellor Palpatine<span>website and graphic designer</span></h1>
+      <div class="contact">
+        <a href="http://www.bunnylover.com" class="link">www.bunnylover.com</a>
+        <a href="mailto:palpatine@bunnylover.com" class="mail">palpatine@bunnylover.com</a>
+        <a href="tel:+123456789" class="phone">123456789</a>
+      </div>
+    </section>
+  </header>
+  <!-- end the header section -->
+
+  <!-- begin main content area -->
+  <div class="main">
+    <!-- content CV sidebar area -->
+    <aside>
+      <!-- avatar goes here -->
+      <article>
+        <!-- <img src="http://b15.photo.store.qq.com/http_imgload.cgi?/rurl4_b=bec7e2a8a3db94a1ea7de8d184ceaa1ee0fc68488eeaaadd39f7378981e0b232957c2efdac2034506f09c400a33c9f7d7c9e21b74711a0cfc50aab243e91373f0ccaa3d2a8809d3f0beec588bb678f1f81171d65&a=14&b=15" alt="Profile picture" class="pic">
+        -->
+        <img src="http://square.co.zw/tutorials/cv/img/palpatine.png" alt="Profile picture" class="pic">
+      </article>
+
+      <!-- personal bio -->
+      <article>
+        <h3>Bio</h3>
+        <blockquote>
+          <p>A genius: a master of political and psychological manipulation, orchestrated a galaxy spanning conflict as a means to gain absolute power (along with the gratitude and love of the galaxy’s people) in the Galactic Republic through the Clone Wars. Enjoys long walks on the beach and playing with small fluffy bunnies.
+          </p>
+        </blockquote>
+      </article>
+
+      <!-- skills area -->
+      <article>
+        <h3>Proficiency</h3>
+        <p>Branding<div class="level"><span style="width: 25%"></span></div></p>
+        <p>Design<div class="level"><span style="width: 45%"></span></div></p>
+        <p>Development<div class="level"><span style="width: 100%"></span></div></p>
+        <p>Interface<div class="level"><span style="width: 80%"></span></div></p>
+        <p>Icon<div class="level"><span style="width: 95%"></span></div></p>
+      </article>
+    </aside>
+    <!-- end sidebar area-->
+
+    <!-- Left content area -->
+    <section>
+      <article>
+        <!-- content title -->
+        <h1>Education</h1>
+        <!-- module by year -->
+        <div id="module">
+          <div class="time">2000 - 2004</div>
+          <div class="timeline">
+            <!-- element within module -->
+            <div class="element">
+              <h3>Sith know-it-all</h3>
+              <h4>Africa university</h4>
+              <p>CGPA 4.0</p>
+            </div>
+            <!-- end element -->
+          </div>
+        </div>
+        <!-- end module -->
+
+        <!-- module by year -->
+        <div id="module">
+          <div class="time">1900 - 1904</div>
+          <div class="timeline">
+            <!-- element within module -->
+            <div class="element">
+              <h3>Bachelors degree in galactic conquest</h3>
+              <h4>University of Africa</h4>
+              <p>CGPA 1.0</p>
+            </div>
+            <!-- end element -->
+          </div>
+        </div>
+        <!-- end module -->
+
+        <!-- module by year -->
+        <div id="module">
+          <div class="time">240BC</div>
+          <div class="timeline">
+            <!-- element within module -->
+            <div class="element">
+              <h3>Master of the darkside</h3>
+              <h4>Africa university</h4>
+              <p>CGPA 4.0</p>
+            </div>
+            <!-- end element -->
+          </div>
+        </div>
+        <!-- end module -->
+      </article>
+
+      <article>
+        <h1>Work experience</h1>
+        <!-- begin module with multiple elements -->
+        <div id="module">
+          <div class="time">2000-2004</div>
+          <div class="timeline">
+            <div class="element">
+              <h3>Class monitor</h3>
+              <h4>A company</h4>
+              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            </div>
+
+            <div class="element">
+              <h3>Deathstar Mechanical Engineer</h3>
+              <h4>Another company</h4>
+              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            </div>
+          </div>
+        </div>
+        <!-- end module -->
+
+        <!-- module by year -->
+        <div id="module">
+          <div class="time">24BC</div>
+          <div class="timeline">
+            <!-- element within module -->
+            <div class="element">
+              <h3>Journalist at lorem ipsum</h3>
+              <h4>A sweet company</h4>
+              <ul>
+                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                <li>Aliquam tincidunt mauris eu risus.</li>
+                <li>Vestibulum auctor dapibus neque.</li>
+              </ul>
+            </div>
+            <!-- end element -->
+          </div>
+        </div>
+        <!-- end module -->
+      </article>
+    </section>
+  </div>
+</body>
+</html>

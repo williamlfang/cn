@@ -1,99 +1,16 @@
 <!DOCTYPE html>
-<!--
--->
-<html lang="zh-CN"/>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>William Fang Resume</title>		<!-- <title>My sweet one page CV</title> -->
+  <meta name="viewport" content="width=device-width">
 
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
-	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
-	<meta name="author" content="{{ site.author.name }}" />
-	<meta name="generator" content="Jekyll" />
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-	<meta name="keywords" content="{% if page.tags and page.tags != '' %}{{ page.tags }}{% else %}{{ site.keywords }}{% endif %}" />
-	<meta name="description" content="{% if page.title and page.title != '' %}{{ page.title }}{% else %}{{ site.description }}{% endif %}" />
-
-	<meta charset="UTF-8"/>
-	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-	<meta content="yes" name="apple-mobile-web-app-capable">
-	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
-	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
-
-	<title> 方 莲 | William</title>
-
-<!--
-	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
-	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
--->
-
-	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
-	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
-	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="William ATOM Feed" />
-	<!-- <link rel="canonical" href="{% if page.is_index %}{{ site.url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}" /> -->
-	<link rel="canonical" href="{% if page.is_index %}http://williamlfang.github.io/cn/search.html{% else %}http://williamlfang.github.io/cn/search.html{{ page.url }}{% endif %}" />
-	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
-
-	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
-	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
-	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
-	<script>hljs.initHighlightingOnLoad();</script>
-<!--=================================================================== -->
-<!-- mathjax config similar to math.stackexchange -->
-
-<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [ ['$$', '$$']],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
-    },
-    /*   方程编号 */
-    TeX: {
-            equationNumbers: {
-                autoNumber: ["AMS"],
-                useLabelIds: true,
-                extensions: ["AMSmath.js"]
-            }
-        },
-        "HTML-CSS": {
-            linebreaks: {
-                automatic: true
-            },
-            scale: 90      /* 数学字体大小*/
-        },
-        SVG: {
-            linebreaks: {
-                automatic: true
-            }
-        }
-        /*   方程编号 */
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
-</script>
-<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
-<!-- CDN upload request sent in private mail to generated-toc author -->
-<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
+  <!-- -------------------------------------------------------------------------------  -->
 
 <style>
 @charset "utf-8";
@@ -102,12 +19,10 @@ MathJax.Hub.Queue(function() {
 /* = Global
 ----------------------------------------------- */
 body {
-  /* overflow-x: hidden; 
-  */
+  overflow-x: hidden;
   background-color: #999;
   background-image:url(data:image/jpeg;base64,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);
-  /* -webkit-user-select: none;
-  */
+  -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
@@ -130,11 +45,11 @@ a:active:not(.btn) {
 img, p {
   -webkit-touch-callout: none;
 }
-/*
+
 p, h4 {
   font: 500 15px/1.8 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
 }
-*/
+
 h1, h2, h3, h4, h5, p, span {
   cursor: default;
 }
@@ -882,8 +797,392 @@ only screen and (                min-resolution: 2dppx) {
   }
 }
 
+/* = Pseudo
+----------------------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #cacaca url("http://williamlfang.qiniudn.com/assets/images/mooning.jpg");
+  opacity: .8;  
+  -webkit-transition: .25s;
+}
+::-webkit-scrollbar-button {
+  width: 10px;
+  height: 5px;
+  -webkit-transition: .25s;
+}
+::-webkit-scrollbar-track {
+  background: #cacaca url("http://williamlfang.qiniudn.com/assets/images/mooning.jpg");
+  /* border: thin solid lightgray; 
+  box-shadow: 0px 0px 3px #dfdfdf inset; */
+  border-radius: 10px;
+  -webkit-transition: .25s;
+}
+::-webkit-scrollbar-thumb {
+  background: #969696;
+  /* border: thin solid gray; */
+  border-radius: 10px;
+  -webkit-transition: .25s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7d7d7d;
+  -webkit-transition: .25s;
+}
+::-webkit-selection {
+    background: #d3d3d3; 
+    color: #555;
+}
+::-moz-selection {
+    background: #d3d3d3; 
+    color: #555;
+}
+::selection {
+    background: #d3d3d3; 
+    color: #555;
+}
+/* --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 
+
+/* = 框架 Panels
+----------------------------------------------- */
+.panel {
+  display: none;
+  background: #FFF url("http://bcs.duapp.com/databank/images%2Fpatterns%2Fwhite_wall_hash.jpg");
+  padding: 0px;
+  margin-bottom: 120px;
+  color: #333;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  /*
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0, .075);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+  */
+  -webkit-animation: panel-in 1s linear 0 1;
+  -webkit-box-shadow: 0px 1px 8px 1.5px rgba(0, 0, 0, .35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow:    0px 1px 8px 1.5px rgba(0, 0, 0, .35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25);
+  -ms-box-shadow:     0px 1px 8px 1.5px rgba(0, 0, 0, .35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25);
+  -o-box-shadow:      0px 1px 8px 1.5px rgba(0, 0, 0, .35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25);
+  box-shadow:         0px 1px 8px 1.5px rgba(0, 0, 0, .35), 0px 20px 70px 8px rgba(0, 0, 0, 0.25);
+}
+.panel h1, .panel h3 {
+  cursor: default;
+  background: -webkit-linear-gradient(top, rgba(70, 70, 70, 1) 0%,rgba(111, 111, 111, 1) 50%,rgba(10, 14, 10, 1) 51%,rgba(10, 8, 9, 1) 100%);
+  -webkit-box-reflect: below -7px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.2, transparent), to(rgba(3,3,3,.1)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  transition: .5s;
+}
+.panel h3 {
+  -webkit-box-reflect: below -17px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.4, transparent), to(rgba(3,3,3,.2)));
+}
+/*
+.panel h1:hover {
+  background: -webkit-linear-gradient(top, rgba(70, 70, 70, 1) 0%,rgba(111, 111, 111, 1) 70%,rgba(10, 14, 10, 1) 71%,rgba(10, 8, 9, 1) 100%);
+  -webkit-box-reflect: below -2px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.4, transparent), to(rgba(3,3,3,.2)));  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -webkit-transform: translateY(-5px);
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  transition: .5s;
+}
+*/
+.panel-description {
+  background: rgba(255, 255, 255, 0.80);
+  color: #333;
+  padding: 0px;
+  margin-bottom: 80px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  text-shadow: 1px 1px 2px #FFF;
+  -webkit-box-shadow: 0px 1px 8px 1.5px rgba(0, 0, 0, 0.25), 0px 20px 70px 8px rgba(0, 0, 0, 0.05); 
+  -moz-box-shadow:    0px 1px 8px 1.5px rgba(0, 0, 0, 0.25), 0px 20px 70px 8px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow:     0px 1px 8px 1.5px rgba(0, 0, 0, 0.25), 0px 20px 70px 8px rgba(0, 0, 0, 0.05);  
+  -o-box-shadow:      0px 1px 8px 1.5px rgba(0, 0, 0, 0.25), 0px 20px 70px 8px rgba(0, 0, 0, 0.05);
+  box-shadow:         0px 1px 8px 1.5px rgba(0, 0, 0, 0.25), 0px 20px 70px 8px rgba(0, 0, 0, 0.05);
+}
+.panel-description h3 {
+  font: 500 18px/1.8 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
+}
+.panel-description h4 {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+.button-text-panel a {
+  position: relative;
+  margin: 10px;
+}
+.block-left {
+  padding: 35px 10px 15px 45px
+}
+.design {
+  padding: 0 5px 15px 45px;
+}
+.programming {
+  padding: 0 20px 10px 0;
+}
+
+
+/* = 字体渲染 Fonts
+----------------------------------------------- */
+/*
+@font-face {
+  font-family: Minion;
+  src: url(/fonts/MinionPro-Semibold.otf);
+}
+*/
+
+
+/* = IE 8 以下 IE 8 or below
+----------------------------------------------- */
+
+.ie-alert {
+  position: fixed;
+  top: 50px;
+  width: 630px;
+  z-index: 9999;  
+}
+#ie8 .panel-description {
+  background: #FFF url("http://bcs.duapp.com/databank/images%2Fpatterns%2Fwhite_wall_hash.jpg");  
+}
+#ie8 .hover {
+  color: #000;
+}
+#ie8 .fadeout {
+  color: #CCC;
+}
+
+/* = 响应式 Responsive
+----------------------------------------------- */
+.nav a {
+  -webkit-transition: 500ms;
+  -moz-transition: 500ms;
+  transition: 500ms;
+}
+
+
+.hero-unit {
+  position: relative;
+  background: url("http://databank.u.qiniudn.com/images/hawaii_ship.jpg");
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://databank.u.qiniudn.com/images/hawaii_ship.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://databank.u.qiniudn.com/images/hawaii_ship.jpg', sizingMethod='scale')";
+  color: #fff;
+  height: 480px;  
+  margin-bottom: 0;
+}
+.hero-unit h1 {
+  /* font: 88px Minion,'Optima', "Times New Roman", Times, serif; */
+  text-align: center;
+  text-shadow: 1px 1px 10px black;
+}
+.hero-unit img {
+  max-width: 500px;
+  -webkit-animation: title-in 1s ease-out 0 1 forwards;
+  -webkit-transition: 500ms;
+  -moz-transition: 500ms;
+  transition: 500ms;
+
+}
+.hero-unit img:hover {
+  -webkit-transform: translateY(-5px) scale(1.05) rotate(2deg);
+  -moz-transform: translateY(-5px) scale(1.05) rotate(2deg);
+  transform: translateY(-5px) scale(1.05) rotate(2deg);
+}
+.hero-unit .banner-link {
+  position: absolute;
+  right: 5px;
+  bottom: 8px;
+  font: 200 12px/1.8 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
+  text-align: right;
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.hero-unit .banner-link a {
+  color: white;
+  color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: 500ms;
+  -moz-transition: 500ms;
+  transition: 500ms;
+}
+.hero-unit .banner-link a:hover {
+  color: white;
+}
+.description {
+  position: relative;
+  margin-top: -267px;
+  -webkit-animation: description-in 1s ease-out 0 1 forwards;
+}
+.description h3, 
+.description h4 {
+  cursor: default;
+}
+#loading {
+  position: relative;
+  background: -webkit-gradient( linear, left bottom, left top, color-stop(0.2, rgba(0, 0, 0, 0.8)), color-stop(0.50, rgba(0, 0, 0, 0.7)), color-stop(0.80, rgba(0, 0, 0, 0.6)) );
+  width: 100px;
+  height: 100px;
+  margin: 0px auto 80px;
+  color: #FFF;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.35), 1px 1px 50px 8px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.35), 1px 1px 50px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.35), 1px 1px 50px 8px rgba(0, 0, 0, 0.4);
+  -webkit-animation: spinner-in 1s linear 0 1 forwards;
+}
+#loading .spinner {
+  position: absolute;
+  max-width: 80px;
+  left: 10px;
+  top: -15px;
+}
+#loading span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 10px;
+  white-space: nowrap;
+  text-shadow: 1px 1px 3px #000;
+  font-size: 12px;
+  font-weight: 200;
+  line-height: 2;
+  color: #E5E5E5;
+  cursor: default;
+}
+
+
+/* == == == == === === === === 双击 鼠标  === === === === === === ===
+img.profile {
+  max-width: 380px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  -webkit-transition: 500ms;
+  -moz-transition: 500ms;
+  transition: 500ms;
+  
+  -webkit-box-shadow: 0px 0px 2px 3px rgba(255, 255, 255, 0.7), 0px 0px 30px 8px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 2px 3px rgba(255, 255, 255, 0.7), 0px 0px 30px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 2px 3px rgba(255, 255, 255, 0.7), 0px 0px 30px 8px rgba(0, 0, 0, 0.25);
+}
+  === === === === === 双击 鼠标 === === === === === === === === === ==== ===*/
+
+img.profile:hover {
+  -webkit-animation: profile-img-hover 1000ms ease-out 100ms infinite forwards;
+}
+img.profile:active {
+  -webkit-animation: profile-img-active 500ms linear 0 infinite forwards;
+}
+img.profile.loading {
+  /* -webkit-animation: profile-img-loading 500ms linear 0 infinite alternate; 这加载动画似乎在某些情况下会一直显示造成困扰，暂时先去掉 */
+}
+#aboutMaps small {
+  color: #969696;
+  font-size: 70%;
+}
+#aboutMaps .modal-header h3 {
+  -webkit-box-reflect: below -7px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.4, transparent), to(rgba(3,3,3,.2)));
+}
+.item {
+  max-height: 513px;
+}
+.carousel {
+  margin-bottom: 0;
+}
+#photograph .carousel-inner, 
+#photograph .carousel-inner > .item > img, 
+#photograph .carousel-inner > .item > a > img {
+  -webkit-transition: 500ms;
+  -moz-transition: 500ms;
+  transition: 500ms;    
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-top-left-radius: 6px; 
+  -moz-border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+#photograph .carousel-inner:hover {
+  -webkit-filter: grayscale(0.8);
+  -webkit-transform: translateZ(0);
+}
+.carousel-indicators {
+  bottom: 20px;
+  right: 15px;
+  top: auto;
+}
+a.carousel-control:hover,
+a.carousel-control:focus,
+a.carousel-control {
+  color: #FFF;
+}
+.screenshots {
+  margin-top: 3px;
+  margin-left: -40px;
+}
+.screenshot-img {
+  max-width: 475px;
+}
+.iphone-mockup {
+  padding-right: 75px;
+  margin-top: 60px;
+}
+.screenshots .carousel-inner {
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.ribbon-apple {
+  position: absolute;
+  top: -5px;
+  right: 30px;
+  max-width: 70px;  
+}
+.ipad-news { 
+  max-width: 100%;
+}
+.muiti-contact {
+  font: 400 50px/1.8 'Quattrocento Sans', 'Optima', 'Verdana', 'Microsoft Yahei', sans-serif;
+  text-align: center;
+  cursor: default;
+  color: rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  -webkit-user-select: text;
+}
+.hover {
+  color: rgba(0, 0, 0, 0.7);
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.41);
+}
+.fadeout {
+  color: rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+.muiti-contact,
+.hover,
+.fadeout,
+email,
+at,
+sns,
+web {
+  -webkit-transition: all .35s linear .2s;
+  -moz-transition: all .35s linear .2s;
+  transition: all .35s linear .2s;
+}
+.sns {
+  margin: 0 auto;
+  max-width: 1040px;
+}
+.sns-container {
+  position: relative; 
+  max-width: 520px;
+  margin: 0 auto;
+}
 /*===========================================================================================*/
 /*===========================================================================================*/
 /*===========================================================================================*/
@@ -893,7 +1192,7 @@ only screen and (                min-resolution: 2dppx) {
   position: relative;
   border-radius: 13px;
   margin: 0 30px 60px;
-  width: 40px;
+  width: 50px;
   float: left;
 /*===========================================================================================*/
 /*===========================================================================================*/
@@ -976,8 +1275,138 @@ only screen and (                min-resolution: 2dppx) {
   opacity: 0.5;
   -webkit-filter: blur(5px) grayscale(0.6);
 }
+.ribbon-version {
+  position: absolute;
+  top: -11px;
+  right: -15px;
+  max-width: 150px; 
+}
+.img-responsive {
+  max-width: 350px;
+  -webkit-box-reflect: below -65px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.4, transparent), to(rgba(3,3,3,.2)));s
+}
+#about p:not(small) {
+  -webkit-box-reflect: below -13px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.4, transparent), to(rgba(3,3,3,.2)));
+}
+a.thumbnail {
+  color: #333;
+  text-decoration: none;
+}
+a.thumbnail:hover {
+  -webkit-box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.1),1px 1px 30px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.1),1px 1px 30px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.1),1px 1px 30px 5px rgba(0, 0, 0, 0.2);
+  color: #333;
 
+}
+a.thumbnail img {
+  -webkit-filter: blur(1px) grayscale(0.8);
+  -webkit-transform: translateZ(0);
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  transition: .5s;
+  
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+a.thumbnail:hover img {
+  -webkit-filter: none;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  transition: .5s;
+}
+a.thumbnail h4 {
+  font-size: 24.5px;
+  line-height: 1;
+  -webkit-box-reflect: below -4px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.4, transparent), to(rgba(3,3,3,.2)));
+}
+a.thumbnail p {
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 1.6;
+}
+a.thumbnail small {
+  font-size: 95%;
+}
+.statusbar {
+  position: relative;
+  height: 20px;
+  width: 100%;
+  background: #212121;
+  overflow: hidden;
+}
+#back-to-top {
+  width: 48px;
+  height: 48px;
+  right: 40px;
+  margin: 50px auto 20px;
+  background: white;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0px 1px 8px 1.5px rgba(0, 0, 0, 0.35), 0px 10px 70px 8px rgba(0, 0, 0, 0.20);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-transition: background 300ms;
+  -moz-transition: background 300ms;
+  -ms-transition: background 300ms;
+  -o-transition: background 300ms;
+  transition: background 300ms;
+}
+#back-to-top:hover {
+  background: #9d9d9d;
+  background: rgba(255, 255, 255, 0.6);
+}
+#back-to-top #rocket path {
+  fill: #bbb;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+}
+#back-to-top:hover #rocket path {
+  fill: rgba(255, 102, 0, 0.76);
+}
+#back-to-top #rocket {
+    margin-top: 7px;
+}
 
+/* Back to top ==================================================================================*/
+a#go-top {
+  width:50px;
+  height:50px;
+  text-decoration:none;
+  opacity:0.5;
+  background: url("http://williamlfang.qiniudn.com/assets/images/back-top.png") no-repeat scroll 0 0 transparent;
+}
+a#go-top:hover {
+  background-position: -50px 0
+}
+
+.back-to {
+  bottom: 35px;
+  overflow: hidden;
+  position: fixed;
+  right: 10px;
+  width: 110px;
+  z-index: 999;
+}
+.back-to .back-top {
+  background: url("http://williamlfang.qiniudn.com/assets/images/back-top.png") no-repeat scroll 0 0 transparent;
+  display: block;
+  float: right;
+  height: 50px;
+  margin-left: 10px;
+  outline: 0 none;
+  text-indent: -9999em;
+  width: 50px;
+}
+.back-to .back-top:hover {
+  background-position: -50px 0
+}
+/************************************************************************************
 /* --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 </style>
   <!-- -------------------------------------------------------------------------------  -->
@@ -1028,13 +1457,13 @@ h1, h3 {
 h3 {
   margin: 0;
   text-transform: uppercase;
-  font-size: 15px;             /*-------------------   H3:  --------------------------------*/
+  font-size: 12px;
 }
 
 h4 {
   color: #6db97a;
   margin: 0;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 p {
@@ -1044,7 +1473,7 @@ p {
 
 body {
   background: white;
-  font-size: 14px;                          /* Font size:14px*/
+  font-size: 12px;
   font-family: "Quattrocento Sans", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
@@ -1056,7 +1485,7 @@ body {
 
 .main {
   margin: 0 auto;
-  max-width: 900px;        /* ============ main width ===============*/
+  max-width: 900px;
   width: 100%;
   padding: 20px;
 }
@@ -1093,20 +1522,17 @@ header h1 {
   margin-bottom: 0;
 }
 header span {
-  font-size: 25px;
+  font-size: 20px;
   margin-top: 20px;
   display: block;
   text-transform: lowercase;
-  /*
   font-family: "Dancing Script", cursive;
-  */
-  font-family: "KaiTi", cursive;
 }
 
 section {
   float: left;
   max-width: 700px;
-  width: 70%;          /* section width 70%*/
+  width: 70%;
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -1114,7 +1540,7 @@ section {
 
 aside {
   max-width: 250px;
-  width: 30%;         /* aside width 30%*/
+  width: 30%;
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -1165,8 +1591,6 @@ article h1 {
   text-align: right;
   width: 70px;
   margin-right: 20px;
-  font-size: 15px;                              /* -------------   time font size --------------------*/
-  font-weight: bold;
 }
 
 .timeline {
@@ -1176,17 +1600,15 @@ article h1 {
 .timeline .element {
   margin: 0;
   padding: 0 0 10px 20px;
-  border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   */
+  border-left: 4px solid #f1f1f1;
   -webkit-transition: 1s ease;
   -moz-transition: 1s ease;
   -o-transition: 1s ease;
   transition: 1s ease;
 }
-/*
 .timeline .element h3 {
   display: inline-block;
 }
-*/
 .timeline .element:hover {
   border-left: 4px solid #c2d9a1;
   cursor: pointer;
@@ -1303,40 +1725,15 @@ img {
 
 </style>
   <link href='http://fonts.googleapis.com/css?family=Nunito|Dancing+Script|Quattrocento+Sans' rel='stylesheet' type='text/css'>
-
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-<!--=================================================================== -->
-
-<!--=================================================================== -->
 </head>
-
-
 <body>
-
+  <!-- Begin header section -->
   <header>
     <section class="main">
       <h1>方  莲<span>厦门大学王亚南经济研究院</span></h1>
       <div class="contact">
         <a href="http://williamlfang.github.com" class="link">Homepage</a>
-        <a href="mailto:william.lian.fang@gmail.com" class="mail">Gmail Me</a>
+        <a href="mailto:william.lian.fang@gmail.com" class="mail">Contact</a>
         <a href="tel:+86 15060782961" class="phone">+86 150-6078-2961</a>
       </div>
        <div class="contact">
@@ -1345,92 +1742,135 @@ img {
         <a href="http://weibo.com/u/2270629193" target="_blank"><div id="icon-sinaweibo" class="sns-icon" data-toggle="tooltip" title="新浪微博"><img src="http://williamlfang.qiniudn.com/cv/img/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9Asns_icon_1.png"></div></a>
         <a href=" " target="_blank"><div id="icon-qq" class="sns-icon" data-toggle="tooltip" title="QQ: 夏石"><img src="http://williamlfang.qiniudn.com/cv/img/QQ%E5%A5%BD%E5%8F%8Bsns_icon_24.png"></div></a>
         <a href=" " target="_blank"><div id="icon-wechat" class="sns-icon" data-toggle="tooltip" title="微信: william_fang"><img src="http://williamlfang.qiniudn.com/cv/img/%E5%BE%AE%E4%BF%A1sns_icon_22.png"></div></a>
-        <a href="gmail" target="_blank"><div id="icon-gmail" class="sns-icon" data-toggle="tooltip" title="查看PDF"><img src="http://williamlfang.qiniudn.com/cv/img/pdf-icon2.jpg"></div></a>
       </div>
     </section>
   </header>
-  
-	<div id="main" class="w-100p font-gray-dark">
-		<div class="nav nav-large nav-orange">
-			<div class="menu cleared">
-			<a title="首页" class="nav-item" href="{{ site.url }}/">首页</a>
-				<div class="nav-has-menu">
-					<a class="nav-item" href="{{ site.url }}/archives.html">归档</a>
-						<div class="nav-menu">
-							{% for node in site.categories %}
-							<a title="{{ node[0] }}" class="nav-menu-item" href="{{ site.url }}/archives.html#{{ node[0] }}">{{ node[0] }}</a>
-							{% endfor %}
-						</div>
-				</div>
-			<a title="邻居" class="nav-item" href="{{ site.url }}/links.html">链接</a>
-			<a title="关于" class="nav-item" href="{{ site.url }}/about.html">关于</a>
-			<a title="留言" class="nav-item" href="{{ site.url }}/guestbook.html">留言</a>
-				<div class="search right h-1">
-					<form method="get" id="searchform" action="{{ site.url }}/search.html">
-					<input type="text" name="q" id="search" size="13" value="" placeholder="你在找什么呢？" x-webkit-speech />
-					</form>
-				</div>
-			</div>
-		</div>
+  <!-- end the header section -->
 
-	<div id="articles">
-		{{ content }}
+  <!-- begin main content area -->
+  <div class="main">
+    <!-- content CV sidebar area -->
+    <aside>
+      <!-- avatar goes here -->
+      <article>
+        <!-- <img src="http://b15.photo.store.qq.com/http_imgload.cgi?/rurl4_b=bec7e2a8a3db94a1ea7de8d184ceaa1ee0fc68488eeaaadd39f7378981e0b232957c2efdac2034506f09c400a33c9f7d7c9e21b74711a0cfc50aab243e91373f0ccaa3d2a8809d3f0beec588bb678f1f81171d65&a=14&b=15" alt="Profile picture" class="pic">
+        -->
+        <img src="http://williamlfang.qiniudn.com/assets/images/imgs/DSC05081.JPG" alt="Profile picture" class="pic">
+      </article>
 
-		{% if page.is_index %}
-		<div class="friends">
-			<div class="friends_info"><a id="friends" href="#" rel="nofollow"><span>我的小伙伴</span></a></div>
-			<div id="friends_list" class="friends_list">
-			<ul class="no-list">
-				<li><a href="http://www.inbiji.com/" title="好记性不如烂笔记" >in笔记</a></li>
-			</ul>
-			</div>
-			<a href="#" id="gc_close" rel="nofollow">X</a>
-		</div>
-		{% endif %}
-		</div>
+      <!-- personal bio -->
+      <article>
+        <h3>Bio</h3>
+        <blockquote>
+          <p>我是一名极客，相信并坚持『科技改变生活』的理念，长期关注互联网与虚拟金融的动态发展。我使用Linux操作系统，自学C语言编写程序，开发\LaTeX{}宏包编辑文档，使用R完成数据分析，通过Google获取最新资讯，借助Python处理文本，最近在学习Julia新型编程语言。
+          </p>
+        </blockquote>
+      </article>
 
+      <!-- skills area -->
+      <article>
+        <h3>Proficiency</h3>
+        <p>Branding<div class="level"><span style="width: 25%"></span></div></p>
+        <p>Design<div class="level"><span style="width: 45%"></span></div></p>
+        <p>Development<div class="level"><span style="width: 100%"></span></div></p>
+        <p>Interface<div class="level"><span style="width: 80%"></span></div></p>
+        <p>Icon<div class="level"><span style="width: 95%"></span></div></p>
+      </article>
+    </aside>
+    <!-- end sidebar area-->
 
-		{% if page.is_index %}
-			<div id="more" class="align-center mt-2">
-				<a href="http://williamlfang.github.io/cn/page{{ paginator.next_page }}/" class="loadmore button button-orange w-30p" >查  看  更  多</a>
-			</div>
-		{% endif %}
+    <!-- Left content area -->
+    <section>
+      <article>
+        <!-- content title -->
+        <h1>Education</h1>
+        <!-- module by year -->
+        <div id="module">
+          <div class="time">2000 - 2004</div>
+          <div class="timeline">
+            <!-- element within module -->
+            <div class="element">
+              <h3>Sith know-it-all</h3>
+              <h4>Africa university</h4>
+              <p>CGPA 4.0</p>
+            </div>
+            <!-- end element -->
+          </div>
+        </div>
+        <!-- end module -->
 
-	<!--
-		{% if page.is_index %}
-			<div id="more" class="align-center mt-2">
-				<a href="{{ site.url }}/archives.html" class="moreloadmore button button-orange w-30p" > 查看所有文章 </a>
-			</div>
-		{% endif %}
-	-->
+        <!-- module by year -->
+        <div id="module">
+          <div class="time">1900 - 1904</div>
+          <div class="timeline">
+            <!-- element within module -->
+            <div class="element">
+              <h3>Bachelors degree in galactic conquest</h3>
+              <h4>University of Africa</h4>
+              <p>CGPA 1.0</p>
+            </div>
+            <!-- end element -->
+          </div>
+        </div>
+        <!-- end module -->
 
-	</div>
+        <!-- module by year -->
+        <div id="module">
+          <div class="time">240BC</div>
+          <div class="timeline">
+            <!-- element within module -->
+            <div class="element">
+              <h3>Master of the darkside</h3>
+              <h4>Africa university</h4>
+              <p>CGPA 4.0</p>
+            </div>
+            <!-- end element -->
+          </div>
+        </div>
+        <!-- end module -->
+      </article>
 
-	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
-		<div id="about" class="align-center">&copy; 2013-2014 Powered By Jekyll, Designed By <a href="http://williamlfang.github.io/">William Fang</a>.
-		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
-		<div class="radar"></div>
-		</div>
-	</div>
-<link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
-<script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
-<script type="text/javascript">
-	var duoshuoQuery = {short_name:"hibikai"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0]
-		|| document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-</script>
-<script src="http://cdn.staticfile.org/jqueryui/1.10.2/jquery-ui.min.js"></script>
-<link rel="stylesheet" href="http://cdn.staticfile.org/jqueryui/1.10.2/css/smoothness/jquery-ui-1.10.2.custom.min.css" type="text/css" media="all" />
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+      <article>
+        <h1>Work experience</h1>
+        <!-- begin module with multiple elements -->
+        <div id="module">
+          <div class="time">2000-2004</div>
+          <div class="timeline">
+            <div class="element">
+              <h3>Class monitor</h3>
+              <h4>A company</h4>
+              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            </div>
+
+            <div class="element">
+              <h3>Deathstar Mechanical Engineer</h3>
+              <h4>Another company</h4>
+              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+            </div>
+          </div>
+        </div>
+        <!-- end module -->
+
+        <!-- module by year -->
+        <div id="module">
+          <div class="time">24BC</div>
+          <div class="timeline">
+            <!-- element within module -->
+            <div class="element">
+              <h3>Journalist at lorem ipsum</h3>
+              <h4>A sweet company</h4>
+              <ul>
+                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                <li>Aliquam tincidunt mauris eu risus.</li>
+                <li>Vestibulum auctor dapibus neque.</li>
+              </ul>
+            </div>
+            <!-- end element -->
+          </div>
+        </div>
+        <!-- end module -->
+      </article>
+    </section>
+  </div>
 </body>
 </html>

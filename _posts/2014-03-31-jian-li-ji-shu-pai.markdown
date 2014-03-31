@@ -15,9 +15,9 @@ status: publish
  
 我非常不推荐使用 Word 来编辑简历，主要是因为
  
-- MS 经常对 office 进行更新，动不动的我们就得升级，可能你电脑的office已经升级到了 2013 年，可是你老板公司却只能使用 XP 的，这样HR可能就无法查收使用 word 制作的简历了
+- MS 经常对 office 进行更新，动不动的我们就得升级，可能你电脑的 office 已经升级到了 2013 年，可是你老板公司却只能使用 XP 的，这样HR可能就无法查收使用 word 制作的简历了
  
-- 最要命的，我们经常发现本来已经调好各种格式的word简历，却在另外的一台电脑里莫名其妙的出现格式错误，与原来设计的完全不同，甚至有时还会出现乱码的情况。所以，找工作，远离MS啊。
+- 最要命的，我们经常发现本来已经调好各种格式 的word 简历，却在另外的一台电脑里莫名其妙的出现格式错误，与原来设计的完全不同，甚至有时还会出现乱码的情况。所以，找工作，远离 MS 啊。
  
 ## 简历的两种境界
  
@@ -27,7 +27,7 @@ status: publish
  
 - 首选当然是 LaTeX 啦。这个可是说是制作简历的神器，页面非常的美观，而且最后得到的 pdf 格式的文件通杀所有系统，能够完美无差的在不同的电脑、系统、环境中查看。再者，使用 LaTeX 本身也是一件拉风的事情，当 HR 在经过一整天的 Word 那丑陋而又抽风的格调后，相信第一眼看到完美的 pdf 会神清气爽的。（当然，简历最重要的要有「料」，如果你的能力与阅历本来就不甚了了，那可能真的埋踏了神器）。
     
-  前段时间我使用 LaTeX 制作了一个带有时间标签的[简历](http://williamlfang.qiniudn.com/cv/william_cn.pdf)，里面可以对工作经历做时间上的排序，方便 HR 查看。颜色可以按照个人偏好选择。我使用的是金桔色，代表着「青春与活力」，希望自己在将来的工作中也「满腹热血」而非「满腹牢骚」，纵然「满腹经论」，好歹也得努力工作人家人「满脸幸福」。
+  前段时间我使用 LaTeX 制作了一个带有时间标签的[简历](http://williamlfang.qiniudn.com/cv/william_cn.pdf)，里面可以对工作经历做时间上的排序，方便 HR 查看。颜色可以按照个人偏好选择。我使用的是金桔色，代表着「青春与活力」，希望自己在将来的工作中也「满腹热血」而非「满腹牢骚」，纵然「满腹经论」，好歹也得努力工作让家人「满脸幸福」。
  
 - 其次，我们可以尝试制作一个应用 Html5 技术的网页版简历，生成的文档可是直接加入到 Email 正文。现在好多公司由于保密问题，通常不接受带附件的简历，那么，有用一款可以直接在邮件中文里显示的简历页面，将使你受益颇多。而且，现在的 Html5 技术已经非常成熟，可以制作一个异常漂亮的简历页面，里面还可以提供相应的链接，使得单页的简历在内容上得到扩展，增加你的筹码。
  
@@ -55,7 +55,7 @@ status: publish
  
   比如，我通常会选择在简历中添加 Google+、Facebook、新浪微薄等链接，方便 HR 直接跳转到更多的咨询。这点在传统的纸质简历中是难以想象到的。
   
-![cvex01](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex01.png)
+[![cvex01](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex01.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex01.png)
   
   再举个例子，我使用带有时间轴的标签，这个可以通过一下命令完成：
   
@@ -66,7 +66,7 @@ status: publish
       text-align: right;
       width: 70px;
       margin-right: 20px;
-      font-size: 15px;                              /* -------------   time font size --------------------*/
+      font-size: 15px;      /* -------------   time font size --------------------*/
       font-weight: bold;
       }
       
@@ -77,7 +77,7 @@ status: publish
       .timeline .element {
       margin: 0;
       padding: 0 0 10px 20px;
-      border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   */
+      border-left: 4px solid #4ec5e0;   /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   */
       -webkit-transition: 1s ease;
       -moz-transition: 1s ease;
       -o-transition: 1s ease;
@@ -123,7 +123,7 @@ status: publish
  
 ## 快来快来看一看
  
-  得到的现实效果如下
+  得到的显示效果如下
   
 [![cvex02](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex02.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cvex02.png)
   

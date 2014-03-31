@@ -135,6 +135,7 @@ status: publish
   
 [![cn-ex05](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex05.png)
     
+[![pdf2htmlEX01](/cn/assets/images/r-figures/2014-03-30-pdf-zhuan-html-de-fang-fa/pdf2htmlEX01.png)](/cn/assets/images/r-figures/2014-03-30-pdf-zhuan-html-de-fang-fa/pdf2htmlEX01.png)
   
   
   

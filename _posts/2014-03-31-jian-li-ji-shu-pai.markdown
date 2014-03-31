@@ -39,17 +39,17 @@ status: publish
  
 - 表头部分：用于显示网页标题。
  
-    <!DOCTYPE html>
-    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-    <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-    <!--[if gt IE 8]><!--> 
-    <html class="no-js"> <!--<![endif]-->
-    <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>William · 方 莲</title>  	<!-- <title>My sweet one page CV</title> -->
-    <meta name="viewport" content="width=device-width">
+        <!DOCTYPE html>
+        <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+        <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+        <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+        <!--[if gt IE 8]><!--> 
+        <html class="no-js"> <!--<![endif]-->
+        <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>William · 方 莲</title>  	<!-- <title>My sweet one page CV</title> -->
+        <meta name="viewport" content="width=device-width">
  
 - **css**：使用 **<style type="text/css"> </style>** 引入，主要控制页面格式、相应方式、动画顺序、字体、颜色等。这部分往往是比较难的部分，可以找网上的帖子来做参考，省去一笔不必要的时间浪费。
  

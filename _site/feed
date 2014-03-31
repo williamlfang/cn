@@ -4,13 +4,317 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-31T23:54:43+08:00</lastBuildDate>
-        <pubDate>2014-03-31T23:54:43+08:00</pubDate>
+        <lastBuildDate>2014-03-31T23:56:44+08:00</lastBuildDate>
+        <pubDate>2014-03-31T23:56:44+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
 　     　<generator>williamlfang.github.com/cn</generator>
 
+
+        <item>
+                <title>Jian Li Ji Shu Pai</title>
+                <description>&lt;!DOCTYPE html&gt;
+&lt;!-- saved from url=(0014)about:internet --&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;/&gt;
+&lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;IE=9&quot; &gt;
+
+&lt;title&gt;简历的两种境界&lt;/title&gt;
+
+&lt;style type=&quot;text/css&quot;&gt;
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+&lt;/style&gt;
+
+
+
+
+
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;hr/&gt;
+
+&lt;p&gt;layout:   post
+title:    &amp;ldquo;简历技术派&amp;rdquo;
+category: Tech 
+tags:     &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;简历&lt;/li&gt;
+&lt;li&gt;LaTeX&lt;/li&gt;
+&lt;li&gt;Html
+description: 
+published: true
+status: publish
+&amp;mdash;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;找工作至少要准备两种以上格式的简历，注意，这里值得不是中文或者英文的，而是具体的简历呈现的格式。&lt;/p&gt;
+
+&lt;p&gt;我非常不推荐使用 Word 来编辑简历，主要是因为&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;MS 经常对 office 进行更新，动不动的我们就得升级，可能你电脑的office已经升级到了 2013 年，可是你老板公司却只能使用 XP 的，这样HR可能就无法查收使用 word 制作的简历了&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;最要命的，我们经常发现本来已经调好各种格式的word简历，却在另外的一台电脑里莫名其妙的出现格式错误，与原来设计的完全不同，甚至有时还会出现乱码的情况。所以，找工作，远离MS啊。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;简历的两种境界&lt;/h2&gt;
+
+&lt;p&gt;我这里推荐使用两种文件格式来制作简历。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;首选当然是 LaTeX 啦。这个可是说是制作简历的神器，页面非常的美观，而且最后得到的 pdf 格式的文件通杀所有系统，能够完美无差的在不同的电脑、系统、环境中查看。再者，使用 LaTeX 本身也是一件拉风的事情，当 HR 在经过一整天的 Word 那丑陋而又抽风的格调后，相信第一眼看到完美的 pdf 会神清气爽的。（当然，简历最重要的要有「料」，如果你的能力与阅历本来就不甚了了，那可能真的埋踏了神器）。&lt;/p&gt;
+
+&lt;p&gt;前段时间我使用 LaTeX 制作了一个带有时间标签的&lt;a href=&quot;http://williamlfang.qiniudn.com/cv/william_cn.pdf&quot;&gt;简历&lt;/a&gt;，里面可以对工作经历做时间上的排序，方便 HR 查看。颜色可以按照个人偏好选择。我使用的是金桔色，代表着「青春与活力」，希望自己在将来的工作中也「满腹热血」而非「满腹牢骚」，纵然「满腹经论」，好歹也得努力工作人家人「满脸幸福」。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;其次，我们可以尝试制作一个应用 Html5 技术的网页版简历，生成的文档可是直接加入到 Email 正文。现在好多公司由于保密问题，通常不接受带附件的简历，那么，有用一款可以直接在邮件中文里显示的简历页面，将使你受益颇多。而且，现在的 Html5 技术已经非常成熟，可以制作一个异常漂亮的简历页面，里面还可以提供相应的链接，使得单页的简历在内容上得到扩展，增加你的筹码。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Html5 制作简历&lt;/h2&gt;
+
+&lt;p&gt;我原来本是打算直接用先前制作好的 pdf 格式来转成 Html 代码（这个可以使用 &lt;strong&gt;pdf2htmlEX&lt;/strong&gt; 来实现，详见我的帖子，&lt;a href=&quot;http://williamlfang.github.io/cn/2014/03/30/pdf-zhuan-html-de-fang-fa/&quot;&gt;PDF转HTML的方法&lt;/a&gt;）。可是最后发现， 如果是直接将代码拷贝到邮件正文，根本就不可能被编译成 html（我在 Linux 系统下使用 Thunderbird）。因此，也就死了这条贪图便捷的心。还是乖乖的动手写代码吧。&lt;/p&gt;
+
+&lt;p&gt;思路还是蛮简单的，就是将 Html5 的代码全部放在一个邮件的文档里面。如果有外部链接，如图片、文件、音频等，这可以使用超链接的方式插入。全部代码包括几部分&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;表头部分：用于显示网页标题。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;!--[if lt IE 7]&amp;gt;      &amp;lt;html class=&amp;quot;no-js lt-ie9 lt-ie8 lt-ie7&amp;quot;&amp;gt; &amp;lt;![endif]--&amp;gt;
+&amp;lt;!--[if IE 7]&amp;gt;         &amp;lt;html class=&amp;quot;no-js lt-ie9 lt-ie8&amp;quot;&amp;gt; &amp;lt;![endif]--&amp;gt;
+&amp;lt;!--[if IE 8]&amp;gt;         &amp;lt;html class=&amp;quot;no-js lt-ie9&amp;quot;&amp;gt; &amp;lt;![endif]--&amp;gt;
+&amp;lt;!--[if gt IE 8]&amp;gt;&amp;lt;!--&amp;gt; 
+&amp;lt;html class=&amp;quot;no-js&amp;quot;&amp;gt; &amp;lt;!--&amp;lt;![endif]--&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+&amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge,chrome=1&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;William · 方 莲&amp;lt;/title&amp;gt;   &amp;lt;!-- &amp;lt;title&amp;gt;My sweet one page CV&amp;lt;/title&amp;gt; --&amp;gt;
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;css&lt;/strong&gt;：使用 &lt;strong&gt;&lt;style type=&quot;text/css&quot;&gt; &lt;/style&gt;&lt;/strong&gt; 引入，主要控制页面格式、相应方式、动画顺序、字体、颜色等。这部分往往是比较难的部分，可以找网上的帖子来做参考，省去一笔不必要的时间浪费。&lt;/p&gt;
+
+&lt;p&gt;比如，我通常会选择在简历中添加 Google+、Facebook、新浪微薄等链接，方便 HR 直接跳转到更多的咨询。这点在传统的纸质简历中是难以想象到的。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png&quot; alt=&quot;cn-ex01&quot;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;再举个例子，我使用带有时间轴的标签，这个可以通过一下命令完成：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  .time {
+  width: 20%;
+  display: inline;
+  float: left;
+  text-align: right;
+  width: 70px;
+  margin-right: 20px;
+  font-size: 15px;                              /* -------------   time font size --------------------*/
+  font-weight: bold;
+  }
+
+  .timeline {
+  width: 80%;
+  display: inline-block;
+  }
+  .timeline .element {
+  margin: 0;
+  padding: 0 0 10px 20px;
+  border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   */
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+  }
+  /*
+  .timeline .element h3 {
+  display: inline-block;
+  }
+  */
+  .timeline .element:hover {
+  border-left: 4px solid #c2d9a1;
+  cursor: pointer;
+  }
+  .timeline .element:hover {
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+  }
+  .timeline .element::before {
+   content: &amp;quot; &amp;quot;;
+  color: white;
+  background: white;
+  display: inline-block;
+  margin-left: -29px;
+  position: absolute;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 12px;
+  width: 12px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  }
+  .timeline .element ul {
+  list-style-type: square;
+  padding-left: 15px;
+  margin: 0;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;快来快来看一看&lt;/h2&gt;
+
+&lt;p&gt;得到的现实效果如下&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex02.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex02.png&quot; alt=&quot;cn-ex02&quot;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这样，我们在给 HR 发送简历的时候，就可以使用 Thunderbird 的「插入 Html 」功能来实现网页版本的简历申请了。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex03.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex03.png&quot; alt=&quot;cn-ex03&quot;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png&quot; alt=&quot;cn-ex04&quot;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex05.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png&quot; alt=&quot;cn-ex05&quot;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/03/31/jian-li-ji-shu-pai/</link>
+                <guid>http://williamlfang.github.com/cn/2014/03/31/jian-li-ji-shu-pai/</guid>
+                <pubDate>2014-03-31T00:00:00+08:00</pubDate>
+                <category>williamlfang.github.com/cn</category>
+　             　<author>william</author>
+        </item>
 
         <item>
                 <title>简历技术派</title>
@@ -54,19 +358,18 @@
   &lt;li&gt;
     &lt;p&gt;表头部分：用于显示网页标题。&lt;/p&gt;
 
-    &lt;p&gt;&amp;lt;!DOCTYPE html&amp;gt;
-  &lt;!--[if lt IE 7]&gt;      &lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt; &lt;![endif]--&gt;
-  &lt;!--[if IE 7]&gt;         &lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&gt; &lt;![endif]--&gt;
-  &lt;!--[if IE 8]&gt;         &lt;html class=&quot;no-js lt-ie9&quot;&gt; &lt;![endif]--&gt;
-  &lt;!--[if gt IE 8]&gt;&lt;!--&gt; 
-  &amp;lt;html class=&quot;no-js&quot;&amp;gt; &lt;!--&lt;![endif]--&gt;&lt;/p&gt;
-    &lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot; /&gt;
-  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
-  &lt;title&gt;William · 方 莲&lt;/title&gt;  	&lt;!-- &lt;title&gt;My sweet one page CV&lt;/title&gt; --&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;
- 
-&lt;/head&gt;
+    &lt;pre&gt;&lt;code&gt;  &amp;lt;!DOCTYPE html&amp;gt;
+  &amp;lt;!--[if lt IE 7]&amp;gt;      &amp;lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&amp;gt; &amp;lt;![endif]--&amp;gt;
+  &amp;lt;!--[if IE 7]&amp;gt;         &amp;lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&amp;gt; &amp;lt;![endif]--&amp;gt;
+  &amp;lt;!--[if IE 8]&amp;gt;         &amp;lt;html class=&quot;no-js lt-ie9&quot;&amp;gt; &amp;lt;![endif]--&amp;gt;
+  &amp;lt;!--[if gt IE 8]&amp;gt;&amp;lt;!--&amp;gt; 
+  &amp;lt;html class=&quot;no-js&quot;&amp;gt; &amp;lt;!--&amp;lt;![endif]--&amp;gt;
+  &amp;lt;head&amp;gt;
+  &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;
+  &amp;lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&amp;gt;
+  &amp;lt;title&amp;gt;William · 方 莲&amp;lt;/title&amp;gt;  	&amp;lt;!-- &amp;lt;title&amp;gt;My sweet one page CV&amp;lt;/title&amp;gt; --&amp;gt;
+  &amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;css&lt;/strong&gt;：使用 &lt;strong&gt;&lt;style type=&quot;text/css&quot;&gt; &lt;/style&gt;&lt;/strong&gt; 引入，主要控制页面格式、相应方式、动画顺序、字体、颜色等。这部分往往是比较难的部分，可以找网上的帖子来做参考，省去一笔不必要的时间浪费。&lt;/p&gt;

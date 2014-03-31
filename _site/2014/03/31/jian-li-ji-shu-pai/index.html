@@ -772,36 +772,38 @@ img {
     <p><strong>css</strong>：使用 <strong><style type="text/css"> </style></strong> 引入，主要控制页面格式、相应方式、动画顺序、字体、颜色等。这部分往往是比较难的部分，可以找网上的帖子来做参考，省去一笔不必要的时间浪费。</p>
 
     <p>比如，我通常会选择在简历中添加 Google+、Facebook、新浪微薄等链接，方便 HR 直接跳转到更多的咨询。这点在传统的纸质简历中是难以想象到的。</p>
+  </li>
+</ul>
 
-    <p><a href="/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png"><img src="/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png" alt="cn-ex01" /></a></p>
+<p><a href="/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png"><img src="/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png" alt="cn-ex01" /></a></p>
 
-    <p>再举个例子，我使用带有时间轴的标签，这个可以通过一下命令完成：</p>
+<p>再举个例子，我使用带有时间轴的标签，这个可以通过一下命令完成：</p>
 
-    <p>.time {
+<pre><code>  .time {
   width: 20%;
   display: inline;
   float: left;
   text-align: right;
   width: 70px;
   margin-right: 20px;
-  font-size: 15px;                              /* ————-   time font size ——————–*/
+  font-size: 15px;                              /* -------------   time font size --------------------*/
   font-weight: bold;
-  }</p>
-
-    <p>.timeline {
+  }
+  
+  .timeline {
   width: 80%;
   display: inline-block;
   }
   .timeline .element {
   margin: 0;
   padding: 0 0 10px 20px;
-  border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   <em>/
+  border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   */
   -webkit-transition: 1s ease;
   -moz-transition: 1s ease;
   -o-transition: 1s ease;
   transition: 1s ease;
   }
-  /</em>
+  /*
   .timeline .element h3 {
   display: inline-block;
   }
@@ -817,7 +819,7 @@ img {
   transition: 1s ease;
   }
   .timeline .element::before {
-  content: “ “;
+   content: " ";
   color: white;
   background: white;
   display: inline-block;
@@ -837,9 +839,8 @@ img {
   list-style-type: square;
   padding-left: 15px;
   margin: 0;
-  }</p>
-  </li>
-</ul>
+  }
+</code></pre>
 
 <h2 id="section-1">快来快来看一看</h2>
 

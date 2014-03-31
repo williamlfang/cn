@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-03-31T23:53:33+08:00</lastBuildDate>
-        <pubDate>2014-03-31T23:53:33+08:00</pubDate>
+        <lastBuildDate>2014-03-31T23:54:43+08:00</lastBuildDate>
+        <pubDate>2014-03-31T23:54:43+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -72,36 +72,38 @@
     &lt;p&gt;&lt;strong&gt;css&lt;/strong&gt;：使用 &lt;strong&gt;&lt;style type=&quot;text/css&quot;&gt; &lt;/style&gt;&lt;/strong&gt; 引入，主要控制页面格式、相应方式、动画顺序、字体、颜色等。这部分往往是比较难的部分，可以找网上的帖子来做参考，省去一笔不必要的时间浪费。&lt;/p&gt;
 
     &lt;p&gt;比如，我通常会选择在简历中添加 Google+、Facebook、新浪微薄等链接，方便 HR 直接跳转到更多的咨询。这点在传统的纸质简历中是难以想象到的。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png&quot; alt=&quot;cn-ex01&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png&quot; alt=&quot;cn-ex01&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-    &lt;p&gt;再举个例子，我使用带有时间轴的标签，这个可以通过一下命令完成：&lt;/p&gt;
+&lt;p&gt;再举个例子，我使用带有时间轴的标签，这个可以通过一下命令完成：&lt;/p&gt;
 
-    &lt;p&gt;.time {
+&lt;pre&gt;&lt;code&gt;  .time {
   width: 20%;
   display: inline;
   float: left;
   text-align: right;
   width: 70px;
   margin-right: 20px;
-  font-size: 15px;                              /* ————-   time font size ——————–*/
+  font-size: 15px;                              /* -------------   time font size --------------------*/
   font-weight: bold;
-  }&lt;/p&gt;
-
-    &lt;p&gt;.timeline {
+  }
+  
+  .timeline {
   width: 80%;
   display: inline-block;
   }
   .timeline .element {
   margin: 0;
   padding: 0 0 10px 20px;
-  border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   &lt;em&gt;/
+  border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   */
   -webkit-transition: 1s ease;
   -moz-transition: 1s ease;
   -o-transition: 1s ease;
   transition: 1s ease;
   }
-  /&lt;/em&gt;
+  /*
   .timeline .element h3 {
   display: inline-block;
   }
@@ -117,7 +119,7 @@
   transition: 1s ease;
   }
   .timeline .element::before {
-  content: “ “;
+   content: &quot; &quot;;
   color: white;
   background: white;
   display: inline-block;
@@ -137,9 +139,8 @@
   list-style-type: square;
   padding-left: 15px;
   margin: 0;
-  }&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+  }
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;快来快来看一看&lt;/h2&gt;
 

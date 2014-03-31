@@ -55,85 +55,85 @@ status:    process
 
   比如，我通常会选择在简历中添加 Google+、Facebook、新浪微薄等链接，方便 HR 直接跳转到更多的咨询。这点在传统的纸质简历中是难以想象到的。
   
-  [![cn-ex01](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png)
+[![cn-ex01](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex01.png)
   
   再举个例子，我使用带有时间轴的标签，这个可以通过一下命令完成：
   
-    .time {
-    width: 20%;
-    display: inline;
-    float: left;
-    text-align: right;
-    width: 70px;
-    margin-right: 20px;
-    font-size: 15px;                              /* -------------   time font size --------------------*/
-    font-weight: bold;
-    }
-    
-    .timeline {
-    width: 80%;
-    display: inline-block;
-    }
-    .timeline .element {
-    margin: 0;
-    padding: 0 0 10px 20px;
-    border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   */
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
-    }
-    /*
-    .timeline .element h3 {
-    display: inline-block;
-    }
-    */
-    .timeline .element:hover {
-    border-left: 4px solid #c2d9a1;
-    cursor: pointer;
-    }
-    .timeline .element:hover {
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
-    }
-    .timeline .element::before {
-    content: " ";
-    color: white;
-    background: white;
-    display: inline-block;
-    margin-left: -29px;
-    position: absolute;
-    padding: 0;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    height: 12px;
-    width: 12px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
-    border-radius: 6px;
-    }
-    .timeline .element ul {
-    list-style-type: square;
-    padding-left: 15px;
-    margin: 0;
-    }
+      .time {
+      width: 20%;
+      display: inline;
+      float: left;
+      text-align: right;
+      width: 70px;
+      margin-right: 20px;
+      font-size: 15px;                              /* -------------   time font size --------------------*/
+      font-weight: bold;
+      }
+      
+      .timeline {
+      width: 80%;
+      display: inline-block;
+      }
+      .timeline .element {
+      margin: 0;
+      padding: 0 0 10px 20px;
+      border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   */
+      -webkit-transition: 1s ease;
+      -moz-transition: 1s ease;
+      -o-transition: 1s ease;
+      transition: 1s ease;
+      }
+      /*
+      .timeline .element h3 {
+      display: inline-block;
+      }
+      */
+      .timeline .element:hover {
+      border-left: 4px solid #c2d9a1;
+      cursor: pointer;
+      }
+      .timeline .element:hover {
+      -webkit-transition: 1s ease;
+      -moz-transition: 1s ease;
+      -o-transition: 1s ease;
+      transition: 1s ease;
+      }
+      .timeline .element::before {
+       content: " ";
+      color: white;
+      background: white;
+      display: inline-block;
+      margin-left: -29px;
+      position: absolute;
+      padding: 0;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      height: 12px;
+      width: 12px;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+      -o-border-radius: 6px;
+      border-radius: 6px;
+      }
+      .timeline .element ul {
+      list-style-type: square;
+      padding-left: 15px;
+      margin: 0;
+      }
 
 ## 快来快来看一看
 
   得到的现实效果如下
   
-  [![cn-ex02](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex02.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex02.png)
+[![cn-ex02](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex02.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex02.png)
   
   这样，我们在给 HR 发送简历的时候，就可以使用 Thunderbird 的「插入 Html 」功能来实现网页版本的简历申请了。
   
-  [![cn-ex03](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex03.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex03.png)
+[![cn-ex03](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex03.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex03.png)
     
-  [![cn-ex04](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)
+[![cn-ex04](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)
   
-  [![cn-ex05](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex05.png)
+[![cn-ex05](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex04.png)](/cn/assets/images/r-figures/2014-03-31-jian-li-ji-shu-pai/cn-ex05.png)
     
   
   

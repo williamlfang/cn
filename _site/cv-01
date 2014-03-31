@@ -973,7 +973,7 @@ body {
 
 .main {
   margin: 0 auto;
-  max-width: 900px;        /* ============ main width ===============*/
+  max-width: 1000px;        /* ============ main width ===============*/
   width: 100%;
   padding: 20px;
 }
@@ -1023,7 +1023,7 @@ header span {
 section {
   float: left;
   max-width: 700px;
-  width: 70%;
+  width: 75%;          /* section width 70%*/
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -1031,7 +1031,7 @@ section {
 
 aside {
   max-width: 250px;
-  width: 30%;
+  width: 25%;         /* aside width 30%*/
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -1284,7 +1284,7 @@ img {
           <div class="timeline">
             <!-- element within module -->
             <div class="element">
-              <h3><a href="http://www.xmu.edu.cn/">厦门大学</a>；<a href="http://wise.xmu.edu.cn/default.aspx">王亚南经济研究院</a></h3>
+              <h3>王亚南经济研究院</h3>
               <h4>「硕士」：宏观金融模型（Macro-Finance），利率期限结构，应用宏观计量经济学</h4>
               <ul>
                 <li>学术部部长，校级优秀学生干事</li>
@@ -1308,7 +1308,7 @@ img {
           <div class="timeline">
             <!-- element within module -->
             <div class="element">
-              <h3><a href="http://www.sdu.edu.cn/">山东大学</a>；<a href="http://www.glxy.sdu.edu.cn/">管理学院</a></h3>
+              <h3>山东大学；管理学院</h3>
               <h4>「学士」：管理学大类，人力资源专业，组织结构设计，员工心理测评</h4>
                 <ul>
                   <li>大学四年排名：4/64，GPA：92.1/100</li>
@@ -1329,7 +1329,7 @@ img {
           <div class="time">2012.06 - 今</div>
           <div class="timeline">
             <div class="element">
-              <h3>厦门 <a href="",target="_blank",style="font-family:KaiTi;cursive;">咪豆+客栈</a></h3>
+              <h3>厦门咪豆+客栈</h3>
               <h4>学生创业</h4>
               <ul>
                 <li>前期工作准备充足（个人经历，好友讨论可行性，问卷调查，访谈），利用厦大学生的人脉资源，后期根据实际反馈做相应调整</li>
@@ -1352,7 +1352,7 @@ img {
           <div class="time">2009.07 - 2009.09</div>
           <div class="timeline">
             <div class="element">
-              <h3><a href="http://www.bgy.com.cn/china/index.aspx",target="_blank">广东碧桂园集团</a>，总办人力资源部</h3>
+              <h3>广东碧桂园集团，总办人力资源部</h3>
               <h4>网络招聘与员工素质拓展</h4>
               <ul>
                 <li>负责招聘网站维护，根据各部门要求筛选合格简历，并进一步安排电话面试</li>
@@ -1367,7 +1367,7 @@ img {
           <div class="time">2009.03 - 2009.06</div>
           <div class="timeline">
             <div class="element">
-              <h3><a href="http://www.tiens.com/",target="_blank">天狮（济南）有限责任公司</a>，人力资源部</h3>
+              <h3>天狮（济南）有限责任公司，人力资源部</h3>
               <h4>组织结构设计</h4>
               <ul>
                 <li>团队共同完成公司组织结构框架设计与薪酬管理重构，成果获得『优秀奖』</li>
@@ -1381,7 +1381,7 @@ img {
           <div class="time">2008.07 - 2008.09</div>
           <div class="timeline">
             <div class="element">
-              <h3><a href="http://www.bgy.com.cn/china/index.aspx",target="_blank">广东碧桂园集团</a>，统计部</h3>
+              <h3>广东碧桂园集团，统计部</h3>
               <h4>统计实习生</h4>
               <ul>
                 <li>核查各部门所提交数据，完成数据库录入和整理</li>
@@ -1416,7 +1416,7 @@ img {
           <div class="time">2011.09 - 2012.06</div>
           <div class="timeline">
             <div class="element">
-              <h3>硕士班助教（<a href="http://williamfang.weebly.com/advanced-macroeconomics-ii.html",target="_blank">高级宏观经济学</a>）、双学位助教</h3>
+              <h3>硕士班助教（高级宏观经济学）、双学位助教</h3>
               <h4>助教</h4>
               <ul>
                 <li>辅助任课老师编写课件及课堂所需的展示程序代码（使用 LaTeX 与 Matlab）</li>
@@ -1437,7 +1437,7 @@ img {
           <div class="time">2011.06 - 2011.07 </div>
           <div class="timeline">
             <div class="element">
-              <h3><a href="http://www.wise.xmu.edu.cn/2013summerschool/index.asp",target="_blank">WISE暑期学校与夏令营</a></h3>
+              <h3>WISE暑期学校与夏令营</h3>
               <h4>学生志愿者；辅导员</h4>
               <ul>
                 <li>担任暑期学校新闻报道组组长，负责接待讲座教授与来宾，全程审阅所有学术类采访</li>

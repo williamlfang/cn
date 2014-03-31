@@ -1099,9 +1099,11 @@ article h1 {
   -o-transition: 1s ease;
   transition: 1s ease;
 }
+/* ===========================================================================================================
 .timeline .element h3 {
   display: inline-block;
 }
+=============================================================================================================*/
 .timeline .element:hover {
   border-left: 4px solid #c2d9a1;
   cursor: pointer;

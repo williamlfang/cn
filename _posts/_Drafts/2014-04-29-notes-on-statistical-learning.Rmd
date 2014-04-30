@@ -1,0 +1,61 @@
+---
+layout:   post
+title:    "Notes on Statistical Learning"
+category:  统计
+tags:     
+- Statistical Learning
+- Data
+description: 
+published: false
+status:    process
+---
+
+## 前言
+
+这篇文章主要是关于我在学习 Statistical Learning 过程中的个人笔记，重点在于对概念打理解与例子的解释。希望未来可以一直持续的把这个方向做好，现在的统计学习与数据分析异常的火热，迅速的成为了当前数据分析的主要工具。
+
+## SL 是什么
+
+    统计学习其实就是使用统计方法来研究大数据的问题。
+    
+    Statistical learning refers to a set of tools for modeling and understanding complex datasets. It is a recently developed area in statistics and blends with parallel developments in computer science and, in particular, machine learning. The field encompasses many methods such as the lasso and sparse regression, classification and regression trees, and boosting and support vector machines.
+    
+这个定义十分打简洁，却道出啦 SL 的本质在于 **Statistical**，即我们需要加大对统计理论的研究，这样才能更好的理解数据的本质。其实，所谓打数据分析，根源也是在于我们对数据本质打日益重视。而这些就是统计理论的重点研究对象。只不过现在需要加入 Computer Science 等更多打技术手段而已。
+
+- Inference：通过统计推断获得自变量与应变量的关系，观察不同变量对应变量的影响。
+- Prediction：经过推断获得的统计关系，我们就可以使用观察到的新的数据来预测应变量摘未来的走势。这在经济、金融等诸方面有重要的实用意义。
+
+究竟是使用哪种模型，这要取决于我们最后对数据的分析目的。如果只是先要做一个数据的推断，看看哪些变量的影响因之，则可以使用简单易懂的线性模型即可。但如果想要提高预测的准确度，则需要使用一些更为复杂的非线性模型，这些模型往往涵盖啦更多的变量，函数关系也更为复杂，可以提供更多的信息，以提高对应变量预测的准确度。
+
+## 关于本书
+
+全称是 [An Introduction to Statistical Learning (ISL)]()，是作为 The Elements of Statistical Learning (ESL) 的姐妹篇。后者在 SL 领域备受好评，是一本具有一定高度与难度的统计学习专著。为了扩大更多的读者群体，原书的四位作者决定再写一本比较通俗、更多强调理解与应用、减少数学推理的教材，同时该书还配套提供了 **R** 的代码，更加丰富啦原书的体系。可以说，这是一个「压缩版」的 ESL，即 
+
+     a less technical and more accesible version of ESL.
+
+## A brief history of SL
+
+- 现在基本上每个论述统计发展历史的书籍都得从高斯创造的最小二乘法（method of least square），这个算是数据分析的鼻祖了。从这里出发，我们得到线性回归模型的 BLUE 性质，使得最小二乘法在数据分析的处理上显得十分精美。
+- 不过由于线性回归模型只是针对量化数据的处理（quantitative data），无法分析类别数据等其他非量化的数据结构，比如男女、增减问题等。后来 Fisher 提出使用 linear discriminant analysis 来处理这类的数据结构。这些逐渐演变成为后来我们经常使用的 *logistic regression*。
+- 之后，Nelder 和 Wedderburn 将这些用于处理量化数据与非量化数据结构的模型统一收编到 **generalized linear models**，实现了对非线性数据结构的分析处理。可以算是一个集大成者啦。
+- 然而，这些模型更多的将重点放在了对线性模型的分析，换句话说，这些模型无法处理非线性数据结构导致的复杂性。在 1980s，Breiman、Friedman、Olshen 和 Stone等人开始尝试使用非线性模型的方法，诸如 classification，regression trees， cross validation等。Hastie 和 Tibshirani 则使用 **generalized additive models** 实现了对 **generalized linear models** 的非线性拓展。
+- 其后，我们都知道，统计对数据的分析依赖与计算机技术的成熟。随着 **Mechine Learning** 等技术的发展，统计学界也开始使用一些计算机技术来分析大数据问题，比如现在十分火爆的 **R**，就是在利用计算机技术发展的成果来实现对大型、复杂数据模块的深度挖掘。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

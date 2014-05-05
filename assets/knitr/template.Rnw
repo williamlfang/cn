@@ -1,0 +1,59 @@
+\documentclass[color=green,mathpazo,titlestyle=hang]{elegantbook}
+
+\author{方 莲}
+\email{william.lian.fang@gmail.com}
+\zhtitle{统计学习}
+\zhend{}
+\entitle{Statistical Learning}
+\enend{Notes}
+\version{0.1}
+\myquote{Stay Hungray, Stay Foolish.}
+\logo{logo.pdf}
+\cover{cover.pdf}
+  
+%green color
+   \definecolor{main1}{RGB}{0,120,2}
+   \definecolor{seco1}{RGB}{230,90,7}
+   \definecolor{thid1}{RGB}{0,160,152}
+%cyan color
+   \definecolor{main2}{RGB}{0,175,152}
+   \definecolor{seco2}{RGB}{239,126,30}
+   \definecolor{thid2}{RGB}{120,8,13}
+%blue color
+   \definecolor{main3}{RGB}{20,50,104}
+   \definecolor{seco3}{RGB}{180,50,131}
+   \definecolor{thid3}{RGB}{7,127,128}
+
+\usepackage{makecell}
+\usepackage{lipsum}
+\usepackage{texnames}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+<<myknitr, child='set/rknitr.Rnw', eval=TRUE>>=
+options(replace.assign = TRUE)
+render_listings()
+@
+
+\maketitle
+\tableofcontents
+\mainmatter
+\chapter{ElegantBook 模板的由来}
+\section{快速入门}
+ 有两种运行方式,分别是:
+\begin{itemize}
+\item 交互模式: 在这种模式下,只需在终端窗口的命令行输入 , 即可开始一个 对话. 特别的,在Windows系统下,直接点击 图标来启动 .
+\item 批处理模式: 自动运行一个文件.
+\end{itemize}
+<<>>=
+x = rnorm(1000)
+y = 3 * x + 5 
+plot(x,y)
+@
+
+
+
+\end{document}

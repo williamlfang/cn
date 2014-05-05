@@ -1,0 +1,125 @@
+\documentclass[color=green,mathpazo,titlestyle=hang]{elegantbook}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.251, 0.251, 0.251}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0,0.533,0.298}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0,0.533,0.298}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{1,0.314,0.314}{#1}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0.251,0.251,0.251}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.251,0.251,0.251}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.502,0.627,0.188}{#1}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.424,0.345}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.188,0.631,0.533}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.6,0,0}{#1}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+\author{方 莲}
+\email{william.lian.fang@gmail.com}
+\zhtitle{统计学习}
+\zhend{}
+\entitle{Statistical Learning}
+\enend{Notes}
+\version{0.1}
+\myquote{Stay Hungray, Stay Foolish.}
+\logo{logo.pdf}
+\cover{cover.pdf}
+  
+%green color
+   \definecolor{main1}{RGB}{0,120,2}
+   \definecolor{seco1}{RGB}{230,90,7}
+   \definecolor{thid1}{RGB}{0,160,152}
+%cyan color
+   \definecolor{main2}{RGB}{0,175,152}
+   \definecolor{seco2}{RGB}{239,126,30}
+   \definecolor{thid2}{RGB}{120,8,13}
+%blue color
+   \definecolor{main3}{RGB}{20,50,104}
+   \definecolor{seco3}{RGB}{180,50,131}
+   \definecolor{thid3}{RGB}{7,127,128}
+
+\usepackage{makecell}
+\usepackage{lipsum}
+\usepackage{texnames}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+
+%<knitr: GLOBAL SETTING>========================================================
+
+
+
+
+%>knitr: GLOBAL SETTING<========================================================
+
+
+\maketitle
+\tableofcontents
+\mainmatter
+\chapter{ElegantBook 模板的由来}
+\section{快速入门}
+ 有两种运行方式,分别是:
+\begin{itemize}
+\item 交互模式: 在这种模式下,只需在终端窗口的命令行输入 , 即可开始一个 对话. 特别的,在Windows系统下,直接点击 图标来启动 .
+\item 批处理模式: 自动运行一个文件.
+\end{itemize}
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{1, 0.957, 0.91}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{x} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlnum{1000}\hlstd{)}
+\hlstd{y} \hlkwb{<-} \hlnum{3} \hlopt{*} \hlstd{x} \hlopt{+} \hlnum{5}
+\hlkwd{plot}\hlstd{(x, y)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{figure/listings-unnamed-chunk-1} 
+
+}
+
+
+
+\end{knitrout}
+
+
+
+
+\end{document}

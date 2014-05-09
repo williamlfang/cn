@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.4.25)  5 MAY 2014 08:55
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.4.25)  5 MAY 2014 20:08
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1251,8 +1251,8 @@ File: xeCJK.cfg 2013/07/06 v3.2.4 Configuration file for xeCJK package
 . fontspec info: "defining-font"
 . 
 . Font family '华文中宋(0)' created for font '华文中宋' with options
-. [Mapping=tex-text,Script={CJK},BoldFont={黑体},BoldItalicFont={黑体},BoldSlantedF
-ont={黑体},ItalicFont={楷体},SlantedFont={楷体}].
+. [Mapping=tex-text,Script={CJK},BoldFont={*},ItalicFont={楷体},BoldItalicFont={*
+},SlantedFont={楷体},BoldSlantedFont={楷体}].
 . 
 . This font family consists of the following shapes:
 . 
@@ -1260,7 +1260,7 @@ ont={黑体},ItalicFont={楷体},SlantedFont={楷体}].
 . <->"华文中宋/ICU:script=hani;language=DFLT;mapping=tex-text;"
 . 
 . * 'bold' with NFSS spec.:
-. <->"黑体/ICU:script=hani;language=DFLT;mapping=tex-text;"
+. <->"华文中宋/ICU:script=hani;language=DFLT;mapping=tex-text;"
 . 
 . * 'italic' with NFSS spec.:
 . <->"楷体/ICU:script=hani;language=DFLT;mapping=tex-text;"
@@ -1269,10 +1269,10 @@ ont={黑体},ItalicFont={楷体},SlantedFont={楷体}].
 . <->"楷体/ICU:script=hani;language=DFLT;mapping=tex-text;"
 . 
 . * 'bold italic' with NFSS spec.:
-. <->"黑体/ICU:script=hani;language=DFLT;mapping=tex-text;"
+. <->"华文中宋/ICU:script=hani;language=DFLT;mapping=tex-text;"
 . 
 . * 'sl/' with NFSS spec.:
-. <->"黑体/ICU:script=hani;language=DFLT;mapping=tex-text;"
+. <->"楷体/ICU:script=hani;language=DFLT;mapping=tex-text;"
 .................................................
 \g_fontspec_family_Adobe Garamond Pro_int=\count171
 .................................................
@@ -1686,7 +1686,14 @@ Package: lipsum 2011/04/14 v1.2 150 paragraphs of Lorem Ipsum dummy text
 )
 (/usr/share/texlive/texmf-dist/tex/generic/misc/texnames.sty
 This is texnames.sty, Version 1.10 <02 March 1998>
-) (/usr/share/R/share/texmf/tex/latex/upquote.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/share/texlive/texmf-dist/tex/latex/marginnote/marginnote.sty
+Package: marginnote 2012/03/29 v1.1i non floating margin notes for LaTeX
+\c@mn@abspage=\count201
+)
+(/usr/share/R/share/texmf/tex/latex/upquote.sty
 Package: upquote 2003/08/11 v1.1 Covington's upright-quote modification to verb
 atim and verb
 
@@ -1773,40 +1780,40 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 )) (./template.aux)
 \openout1 = `template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 84.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 84.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 89.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 89.
 
 (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 84.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 89.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    ... okay on input line 89.
 \AtBeginShipoutBox=\box77
-Package hyperref Info: Link coloring ON on input line 84.
+Package hyperref Info: Link coloring ON on input line 89.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1814,16 +1821,21 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count201
+Normal \count register pool exhausted, switching to extended pool.
+\c@section@level=\count277
 )
-LaTeX Info: Redefining \ref on input line 84.
-LaTeX Info: Redefining \pageref on input line 84.
-LaTeX Info: Redefining \nameref on input line 84.
+LaTeX Info: Redefining \ref on input line 89.
+LaTeX Info: Redefining \pageref on input line 89.
+LaTeX Info: Redefining \nameref on input line 89.
 
 (./template.out) (./template.out)
 \@outlinefile=\write4
 \openout4 = `template.out'.
 
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\LaTeX' on input line 89.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1864,7 +1876,7 @@ Package caption Info: End \AtBeginDocument code.
 *************************************************
 * LaTeX warning: "xparse/redefine-command"
 * 
-* Redefining document command \Pifont with arg. spec. 'm' on line 84.
+* Redefining document command \Pifont with arg. spec. 'm' on line 89.
 *************************************************
 ABD: EveryShipout initializing macros
 Package lastpage Info: Please have a look at the pageslts package at
@@ -1873,9 +1885,57 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             or
 (lastpage)             http://www.ctan.org/tex-archive/ 
 (lastpage)             install/macros/latex/contrib/pageslts.tds.zip
-(lastpage)             ! on input line 84.
-Normal \count register pool exhausted, switching to extended pool.
-\g_fontspec_family_方正苏新诗柳楷简体_int=\count277
+(lastpage)             ! on input line 89.
+Package marginnote Info: \pdfoutput not 0 and \pdflastxpos available.
+(marginnote)             Extended position detection mode activated.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 100.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 100
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 100
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 100
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 100
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 100.
+
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 25.92514pt on input line 100.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 21.61124pt on input line 100.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 15.0049pt on input line 100.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 25.92514pt on input line 100.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 21.61124pt on input line 100.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 15.0049pt on input line 100.
+\g_fontspec_family_方正苏新诗柳楷简体_int=\count278
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1904,61 +1964,27 @@ Normal \count register pool exhausted, switching to extended pool.
 . <->"方正苏新诗柳楷简体/ICU:script=hani;language=DFLT;mapping=tex-text;"
 .................................................
 File: ./figure/logo.pdf Graphic file (type QTm)
- <use  "./figure/logo.pdf" >
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 95.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
-File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
-)
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 95.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
-File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
-)
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 95.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
-File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
-)
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 95.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
-File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
-)
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 95.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
-File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
-)
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 95.
-
-(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
+<use  "./figure/logo.pdf" >
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 95.
+(Font)              scaled to size 12.50409pt on input line 100.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 95.
+(Font)              scaled to size 9.37807pt on input line 100.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 95.
+(Font)              scaled to size 7.29405pt on input line 100.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 95.
+(Font)              scaled to size 12.50409pt on input line 100.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 95.
+(Font)              scaled to size 9.37807pt on input line 100.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 95.
+(Font)              scaled to size 7.29405pt on input line 100.
 File: ./figure/cover.pdf Graphic file (type QTm)
-
-<use  "./figure/cover.pdf" > [1
+ <use  "./figure/cover.pdf" > [1
 
 ]
 File: ./figure/greenbase.pdf Graphic file (type QTm)
- <use  "./figure/greenbase.pdf" >
-(./template.toc)
+
+<use  "./figure/greenbase.pdf" > (./template.toc)
 \tf@toc=\write5
 \openout5 = `template.toc'.
 
@@ -1968,7 +1994,7 @@ File: ./figure/greenbase.pdf Graphic file (type QTm)
 第 1章 1.
 File: ./figure/greenbase.pdf Graphic file (type QTm)
 <use  "./figure/greenbase.pdf" >
-\g_fontspec_family_方正中等线简体_int=\count278
+\g_fontspec_family_方正中等线简体_int=\count279
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1996,54 +2022,32 @@ ont={黑体},ItalicFont={*},SlantedFont={*}].
 . * 'sl/' with NFSS spec.:
 . <->"黑体/ICU:script=hani;language=DFLT;mapping=tex-text;"
 .................................................
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family '方正中等线简体(1)' created for font '方正中等线简体' with options
-. [Mapping=tex-text,Script={CJK},BoldFont={*},ItalicFont={*},BoldItalicFont={*}
-,SlantedFont={*},BoldSlantedFont={*}].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"方正中等线简体/ICU:script=hani;language=DFLT;mapping=tex-text;"
-. 
-. * 'bold' with NFSS spec.:
-. <->"方正中等线简体/ICU:script=hani;language=DFLT;mapping=tex-text;"
-. 
-. * 'italic' with NFSS spec.:
-. <->"方正中等线简体/ICU:script=hani;language=DFLT;mapping=tex-text;"
-. 
-. * 'sl/' with NFSS spec.:
-. <->"方正中等线简体/ICU:script=hani;language=DFLT;mapping=tex-text;"
-. 
-. * 'bold italic' with NFSS spec.:
-. <->"方正中等线简体/ICU:script=hani;language=DFLT;mapping=tex-text;"
-. 
-. * 'sl/' with NFSS spec.:
-. <->"方正中等线简体/ICU:script=hani;language=DFLT;mapping=tex-text;"
-.................................................
-File: figure/listings-unnamed-chunk-1.pdf Graphic file (type QTm)
- <use  "figure/listings-unnamed-chunk-1.pdf" >
-
-AED: lastpage setting LastPage
-[1
+ [1
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 125.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 125.
+File: ./figure/greenbase.pdf Graphic file (type QTm)
+ <use  "./figure/greenbase.pdf" > [2]
+第 2章 2.
+File: ./figure/greenbase.pdf Graphic file (type QTm)
+<use  "./figure/greenbase.pdf" > 
+AED: lastpage setting LastPage
+[3
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
  (./template.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 125.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 125.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 149.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 149.
  ) 
 Here is how much of TeX's memory you used:
- 37191 strings out of 493934
- 749434 string characters out of 6150767
- 870164 words of memory out of 5000000
- 39808 multiletter control sequences out of 15000+600000
- 12824 words of font info for 89 fonts, out of 8000000 for 9000
+ 37308 strings out of 493934
+ 752563 string characters out of 6150767
+ 886894 words of memory out of 5000000
+ 39926 multiletter control sequences out of 15000+600000
+ 20229 words of font info for 115 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 63i,11n,59p,954b,655s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,14n,59p,954b,362s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on template.pdf (3 pages).
+Output written on template.pdf (5 pages).

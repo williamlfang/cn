@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Open-Science-Thesis</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h2>Open-Science-Thesis</h2>
+
+<h3>About</h3>
+
+<p>The Open-Science-Thesis
+<a href="https://github.com/cpfaff/Open-Science-Thesis">repository</a> contains a LaTeX
+document scaffold (or project) which is thought to be forked and used for
+scientific thesis writing on GitHub. The document combines the typesetting
+capabilities of LaTeX with the R programming language for statistics, using the
+<a href="http://yihui.name/knitr/">Knitr</a> R package. This combination allows to create
+executable documents that enhance the reproducibility of your research
+documents.</p>
+
+<p>The Open-Science-Thesis offers a clean and logical folder structure and lots of
+examples of typical typesetting requirements to help you typeset your thesis.
+It comes with a makefile that helps you to compile, clean and archive the
+document. For an example see the PDF file inside of the repository or have a
+look into the sections below.</p>
+
+<h3>Development Note</h3>
+
+<p>This project is still in lively development and the commands, environments and
+the layout provided by the LaTeX class are subject to change. You might also
+find the current version in master branch in unstable state so a compilation to
+PDF is not possible!</p>
+
+<h3>Use LaTeX-Class only</h3>
+
+<p>If you do not like to use the complete document scaffold presented here you can
+also only use the LaTeX-Class as document class in your documents. You need to
+<a href="http://bit.ly/1dowUNP">download</a> the class file save it next to your
+<code>document.tex</code> file and then include and load it in your preamble with:</p>
+
+<pre><code class="latex">\documentclass[options]{open_science_thesis}
+...
+</code></pre>
+
+<h2>User interface</h2>
+
+<p>The open_science_thesis latex class is based on several fine LaTeX packages and
+serves you a nice and clean user interface to handle most of your typesetting
+requirements. You can handle line spacing, justification and various other
+parameters globally by class options. Additionally there are a handful of
+commands that you can use in your preamble to set content, control the color or
+size of literally any element in your document.</p>
+
+<ul>
+<li>Example for the user interface:</li>
+</ul>
+
+<pre><code class="latex">% set the conent of a field
+\ostSetContent{Title}{This is the title of my document}
+
+% set the stlye of a field
+\ostSetSize{Title}{\Huge}
+\ostSetFont{Title}{\itshape}
+\ostSetColor{Title}{green}
+</code></pre>
+
+<p>There is also a one line command that does the styling.</p>
+
+<pre><code class="latex">\ostSetStyle{&lt;name&gt;}{&lt;size&gt;}{&lt;font&gt;}{&lt;colorname&gt;}
+% e.g for the title like above
+\ostSetStyle{Title}{\Huge}{\itshape}{green}
+</code></pre>
+
+<p>As you can see you can set content, font and color on of an element by using
+its name, here the <code>Title</code> that appears on the documents title-page is set to
+be in huge and italic letters and appears in green. To find more names of
+elements you can modify read through the sections below.</p>
+
+<p>One note about commands provided by the class: You can distinguish between
+commands that go into your preamble and the ones you can use in your document
+body by their casing. While the camel case commands always have to go into the
+preamble the small case only commands are suitable for your document body.</p>
+
+<h3>Title pages</h3>
+
+<p>In order to get a title-page you need to set the contents of the title-page
+fields in your preamble. As the class defines defaults for the fields you need
+to set the content to empty if you decide not to use a field.</p>
+
+<pre><code class="latex">\ostSetContent{Title}{My own title}
+\ostSetContent{Subtitle}{The subtitle}
+\ostSetContent{Authors}{Authors}
+\ostSetContent{Date}{10.10.1983}
+\ostSetContent{AdvisorOne}{Advisor: \\ Markus Muggel\\ Hogstreet 1\\ Telephone 1234234}
+\ostSetContent{AdvisorTwo}{Alexus Quercus\\ Hogstreet 1\\ Telephone 1234234}
+% example where advisor two is not used
+\ostSetContent{AdvisorTwo}{}
+</code></pre>
+
+<p>In your document body then use the command <code>\maketitle</code> to print out the
+title-page. There is also an alias called <code>\printtitlepage</code> which does exactly
+the same.</p>
+
+<pre><code class="latex">\begin{document}
+    \maketitle
+    % alias: \printtitlepage
+\end{document}
+</code></pre>
+
+<p>You can change the title-page layout to one of four predefined styles via a
+class option:</p>
+
+<pre><code class="latex">\documentclass[titlepagetheme=vertical]{open_science_thesis}
+</code></pre>
+
+<p>Some of the title-page have additional fields or setter commands associated
+with them which are listed along with the layout theme examples below.</p>
+
+<ul>
+<li>vertical</li>
+</ul>
+
+<pre><code class="latex">% set the text on the bar
+\ostSetContent{TextOnBar}{Text on vertical bar}
+\ostSetFont{TextOnBar}{\Huge}
+\ostSetColor{TextOnBar}{red}
+</code></pre>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/titlepage_vertical_blue.png" alt="vertical"/></p>
+
+<ul>
+<li>horizontal</li>
+</ul>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/titlepage_horizontal_blue.png" alt="horizontal"/></p>
+
+<ul>
+<li>image</li>
+</ul>
+
+<pre><code class="latex">% set image
+\ostSetImage{TitlepageBackground}{pathto/image.png}
+% or with options
+\ostSetImage[width=5cm, voffset=1cm, hoffset=1cm]{TitlepageBackground}{pathto/image.png}
+</code></pre>
+
+<p>Sets up a text centered image for title-page background.</p>
+
+<ul>
+<li><code>width</code> adjust with of the image</li>
+<li><code>voffset</code> adjust image vertically</li>
+<li><code>hoffset</code> adjust image horizontally</li>
+</ul>
+
+<pre><code class="latex">% set opacity of overlay for better reading of title content
+% set between 0-1
+\ostSetOpacity{TitleOverlay}{0.7}
+
+% set color of overlay
+\ostSetColor{TitleOverlay}{gray}
+</code></pre>
+
+<p>Sets up the color and the opacity of an overlay between the background image
+and the title-page contents. This can help make the contents better readable.
+This defaults to white and an opacity of 70 percent.</p>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/titlepage_image_blue.png" alt="image"/></p>
+
+<ul>
+<li>plain</li>
+</ul>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/titlepage_plain_blue.png" alt="plain"/></p>
+
+<h4>Colors and fonts</h4>
+
+<p>You can set the font shapes sizes and colors on the title page:</p>
+
+<ul>
+<li>colors</li>
+</ul>
+
+<pre><code class="latex">\ostSetColor{Title}{SteelBlue}
+\ostSetColor{Subtitle}{SteelBlue}
+\ostSetColor{Authors}{SteelBlue}
+\ostSetColor{Date}{SteelBlue}
+\ostSetColor{Advisor}{SteelBlue}
+</code></pre>
+
+<ul>
+<li>fonts</li>
+</ul>
+
+<pre><code class="latex">\ostSetFont{Title}{\Huge}
+\ostSetFont{Subtitle}{\Large\bfseries}
+\ostSetFont{Authors}{...}
+\ostSetFont{Date}{...}
+\ostSetFont{Advisor}{...}
+</code></pre>
+
+<h3>Table of Contents</h3>
+
+<p>You can create your table of contents, the list of figures and the list of
+tables as usual using the commands shown below.</p>
+
+<pre><code>\tableofcontents
+\listoffigures
+\listoftables
+</code></pre>
+
+<p>Additionally there is a convenient replacement that creates all these tables
+for you. This convenient alternative will also create a list of revision notes
+when the document is compiled in revision mode (see below).</p>
+
+<pre><code class="latex">\makeallcontenttables
+% alias: \printallcontenttables
+</code></pre>
+
+<ul>
+<li>fancy main tocs</li>
+</ul>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/toc_fancy_blue.png" alt="fancytoc"/></p>
+
+<ul>
+<li>Nice formatted parts and partial table of contents either on part</li>
+</ul>
+
+<pre><code class="latex">\documentclass[toctosection=part]{open_science_thesis}
+</code></pre>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/overview_parttoc.png" alt="parttocs"/></p>
+
+<ul>
+<li>or chapter sections</li>
+</ul>
+
+<pre><code class="latex">\documentclass[toctosection=chapter]{open_science_thesis}
+</code></pre>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/overview_chaptertoc.png" alt="chaptertocs"/></p>
+
+<h3>Lettrines + coloring</h3>
+
+<p>The class comes with four predefined color schemes. You can choose by class option:</p>
+
+<pre><code class="latex">\documentclass[colortheme=orange]{open_science_thesis}
+</code></pre>
+
+<ul>
+<li>orange</li>
+</ul>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/overview_colortheme_orange.png" alt="orange"/></p>
+
+<ul>
+<li>blue</li>
+</ul>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/overview_colortheme_blue.png" alt="blue"/></p>
+
+<ul>
+<li>green</li>
+</ul>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/overview_colortheme_green.png" alt="green"/></p>
+
+<ul>
+<li>red</li>
+</ul>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/overview_colortheme_red.png" alt="red"/></p>
+
+<h4>Own color theme</h4>
+
+<p>You can set the color of almost any element in the document. The most prominent
+elements that follow the color theme are the title page elements, sections and
+the label for the captions. You can set your own color theme by setting the
+following elements colors in your preamble:</p>
+
+<pre><code class="latex">\ostSetColor{Title}{DarkOrange}
+\ostSetColor{Subtitle}{DarkOrange}
+\ostSetColor{ChapterHeader}{DarkOrange}
+\ostSetColor{SectionHeader}{DarkOrange}
+\ostSetColor{SubsectionHeader}{DarkOrange}
+\ostSetColor{SubSubsectionHeader}{DarkOrange}
+\ostSetColor{ParagraphHeader}{DarkOrange}
+\ostSetColor{CaptionLabel}{DarkOrange}
+</code></pre>
+
+<p>Other elements you can change directly:</p>
+
+<pre><code class="latex">\ostSetColor{TitleRule}{black}
+\ostSetColor{TitleRuleVertical}{black}
+\ostSetColor{TextOnBar}{black}
+\ostSetColor{TocRule}{black}
+\ostSetColor{PartialToc}{black}
+\ostSetColor{TitleOverlay}{white}
+\ostSetColor{ImageFrame}{black}
+\ostSetColor{Title}{black}
+\ostSetColor{Subtitle}{black}
+\ostSetColor{Authors}{black}
+\ostSetColor{Institution}{black}
+\ostSetColor{Advisors}{black}
+\ostSetColor{Date}{black}
+\ostSetColor{MarginNote}{black}
+\ostSetColor{Advisors}{black}
+\ostSetColor{CaptionLabel}{black}
+\ostSetColor{PartHeader}{black}
+\ostSetColor{PartHeaderNumber}{black}
+\ostSetColor{ChapterHeader}{black}
+\ostSetColor{ChapterHeaderNumber}{black}
+\ostSetColor{SectionHeader}{black}
+\ostSetColor{SectionHeaderNumber}{black}
+\ostSetColor{SubsectionHeader}{black}
+\ostSetColor{SubsectionHeaderNumber}{black}
+\ostSetColor{SubSubsectionHeader}{black}
+\ostSetColor{SubSubsectionHeaderNumber}{black}
+\ostSetColor{ParagraphHeader}{black}
+\ostSetColor{ParagraphHeaderNumber}{black}
+\ostSetColor{Lettrine}{black}
+\ostSetColor{LineNumber}{black}
+\ostSetColor{HeaderRule}{black}
+\ostSetColor{FooterRule}{black}
+\ostSetColor{HeaderMarks}{black}
+\ostSetColor{PageNumber}{black}
+\ostSetColor{PageNumberSurrounding}{black}
+\ostSetColor{Links}{black}
+\ostSetColor{CitationLinks}{black}
+\ostSetColor{FileLinks}{black}
+\ostSetColor{MenuLinks}{black}
+\ostSetColor{URLLinks}{black}
+</code></pre>
+
+<p>The colors for the solarize themed code listings are protected in the class.
+You can change them for example using a style file. That you include into the
+preamble then. Or use the <code>\makeatletter .... \makeatother</code> combination in your
+preamble to allow the use of at to set them:</p>
+
+<pre><code class="latex">\makeatletter
+\ostSetColor{@ListingBackground}{gray}
+\ostSetColor{@ListingBase00}{gray}
+\ostSetColor{@ListingBase01}{gray}
+\ostSetColor{@ListingBase02}{gray}
+\ostSetColor{@ListingBase03}{gray}
+\ostSetColor{@ListingBase0}{gray}
+\ostSetColor{@ListingBase1}{gray}
+\ostSetColor{@ListingBase2}{gray}
+\ostSetColor{@ListingBase3}{gray}
+\ostSetColor{@ListingYellow}{gray}
+\ostSetColor{@ListingOrange}{gray}
+\ostSetColor{@ListingRed}{gray}
+\ostSetColor{@ListingMagenta}{gray}
+\ostSetColor{@ListingViolet}{gray}
+\ostSetColor{@ListingBlue}{gray}
+\ostSetColor{@ListingCyan}{gray}
+\ostSetColor{@ListingGreen}{gray}
+\makeatother
+</code></pre>
+
+<h3>Fonts</h3>
+
+<p>You can modify fonts globally by class option.</p>
+
+<pre><code class="latex">\documentclass[fontchoice={lmodern, libertine, times, palatino, utopia}]{open_science_thesis}
+% defaults to libertine fonts
+</code></pre>
+
+<h3>Global formatting</h3>
+
+<p>You can change the line spacing globally by <code>linespacing</code> class option.</p>
+
+<pre><code class="latex">\documentclass[linespacing={onehalfspacing, doublespacing}]{open_science_thesis}
+</code></pre>
+
+<ul>
+<li><code>onehalfspacing</code> switches globally to one and half space</li>
+<li><code>doublespacing</code> switches globally double space</li>
+</ul>
+
+<p>But globally does not mean it affects all elements. I is selectively applied to
+some elements only. It does not affect the title-page or any of the table of
+contents neither the margin notes nor bullet, numbered or description lists.
+There is also no space adjustment applied to the affidavit and the bibliography
+content. If you prefer to have the line spacing applied on any content in you
+document you need to disable <code>sensitivespacing</code>.</p>
+
+<pre><code class="latex">\documentclass[sentivspacing=false]{open_science_thesis}
+</code></pre>
+
+<p>You can change the justification globally by the <code>justification</code> class option.</p>
+
+<pre><code class="latex">\documentclass[justification={centered, raggedleft, raggedright}]{open_science_thesis}
+</code></pre>
+
+<h3>Float control</h3>
+
+<p>You can add float barriers to various headers so you get a better control over
+floats. That will ensure floats will not float over one of these and will just
+printed out before latex goes on with next sectioning.</p>
+
+<pre><code class="latex">\documentclass[addfloatbarrierto={part, chapter, section}]{open_science_thesis}
+</code></pre>
+
+<h3>Bibliography (based on biblatex)</h3>
+
+<p>You can modify the style of your bibliography:</p>
+
+<pre><code class="latex">\documentclass[style=, citestyle=, bibstyle=, natbib=]{open_science_thesis}
+</code></pre>
+
+<p>Then add a bibliography file <code>*.bib</code> in your preamble</p>
+
+<pre><code class="latex">\ostAddBibliography{path/to/test.bib}
+</code></pre>
+
+<h3>Lists (spacing and symbols)</h3>
+
+<ul>
+<li><code>compactlist</code> gives you more compact lists</li>
+<li><code>fancylist</code> redefines the spacing and symbols used in lists</li>
+</ul>
+
+<pre><code class="latex">\documentclass[compactlist={true,false}, fancylist={true,false}]{open_science_thesis}
+</code></pre>
+
+<h3>Quotations</h3>
+
+<pre><code class="latex">\barquote[author=test]{You nice quote}
+% author is optional
+</code></pre>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/focus_quotation_orange.png" alt="quotations"/></p>
+
+<h3>Frames for images</h3>
+
+<pre><code class="latex">\framedfigure[placement={H,h,t,b,p}, label=yourlabel]{\includegraphics...}{caption}
+</code></pre>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/focus_image_framed_orange.png" alt="imageframed"/></p>
+
+<h3>Tables (booktabs)</h3>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/focus_table_orange.png" alt="table"/></p>
+
+<h3>Code Listings (in solarized color theme)</h3>
+
+<p>The code listings follow the solarized color theme by default.</p>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/oneside_color_orange_listing.png" alt="code"/></p>
+
+<p>You can typeset inline code listings that follow the same style using the command below.</p>
+
+<pre><code class="latex">\inlinecode{a+b=c}
+</code></pre>
+
+<p>You can change the inline code box style globally between <code>tikz</code> and <code>simple</code>
+with:</p>
+
+<pre><code class="latex">\documentclass[inlinecodestyle={round, box, plain}]{open_science_thesis}
+</code></pre>
+
+<p>While tikz resembles the first of the two shown in the example figure above and
+simple the second style and plain is not shown here but has nothing around it.</p>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/inline_listings.png" alt="code"/></p>
+
+<h3>Revisions (based on todonotes)</h3>
+
+<p>Set up revisors:</p>
+
+<pre><code class="latex">\ostSetRevisor{Claas}
+</code></pre>
+
+<p>Then you can comment using revisor name in the document.</p>
+
+<pre><code class="latex">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum \Claas{This is so nice}
+</code></pre>
+
+<p>You can compile the document in revision mode. This will set up the page to be
+larger but keeps the typesetting area the same. Additionally line numbers are
+enabled and comments from revisors (see above) are shown as side notes. If you
+remove the option again then the comments of revisors are ignored.</p>
+
+<pre><code class="latex">\documentclass[revision=true]{open_science_thesis}
+</code></pre>
+
+<ul>
+<li>Displays</li>
+</ul>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/revision_example_note.png" alt="revision"/></p>
+
+<p>This mechanism is picking colors automatically for 5 different revisors.</p>
+
+<h3>Header and footer (fancyhdr)</h3>
+
+<p>Header and footer are setup by the open science thesis with predefined
+parameters. If you are not happy with the styling you can change the
+fontattributes with the commands below:</p>
+
+<pre><code class="latex">\ostSetSize{HeaderMarks}{\Large}
+\ostSetFont{HeaderMarks}{\scshape}
+\ostSetColor{HeaderMarks}{red}
+
+\ostSetSize{FooterMarks}{\Large}
+\ostSetFont{FooterMarks}{\itshape}
+\ostSetColor{FooterMarks}{green}
+</code></pre>
+
+<p>If you are not happy with the content in the header and footer marks you can
+setup the fields with the commands below. As thhe fancyhdr package offers a
+very nice interface to do this it operates direcly on its commands.</p>
+
+<pre><code class="latex">\ostHeaderSetup{&lt;places comma separated&gt;}{&lt;content&gt;}
+\ostFooterSetup{&lt;places comma separated&gt;}{&lt;content&gt;}
+</code></pre>
+
+<p>The setup of size, font and color of the header and footer marks as shown above
+will also apply to your setup with these comands.</p>
+
+<p>An example:</p>
+
+<pre><code class="latex">\ostHeaderSetup{LO,RE}{testcontent}
+\ostHeaderSetup{RO,LE}{the other}
+\ostHeaderSetup{C}{the center}
+\ostFooterSetup{LO,RE}{testcontent}
+\ostFooterSetup{RO,LE}{the other}
+\ostFooterSetup{C}{the center}
+</code></pre>
+
+<p>As placments are allowed:</p>
+
+<ul>
+<li><p>for twoside documents:</p>
+
+<ul>
+<li><code>LO</code> left odd</li>
+<li><code>LE</code> left even</li>
+<li><code>RO</code> right odd</li>
+<li><code>RE</code> right even</li>
+<li><code>C</code> center</li>
+</ul></li>
+<li><p>for oneside documents:</p>
+
+<ul>
+<li><code>L</code> left</li>
+<li><code>R</code> right</li>
+<li><code>C</code> center</li>
+</ul></li>
+</ul>
+
+<p>Header and footer rules can be changed by following commands.</p>
+
+<pre><code class="latex">\ostSetHeight{HeaderRule}{3pt}
+\ostSetColor{HeaderRule}{red}
+% width is not settable atm
+
+\ostSetHeight{FooterRule}{3pt}
+\ostSetColor{FooterRule}{red}
+% width is not settable atm
+</code></pre>
+
+<h3>Affidavit</h3>
+
+<p>You can set up a predefined affidavit using one single command.</p>
+
+<pre><code class="latex">\makeaffidavit
+% alias: \printaffidavit
+</code></pre>
+
+<p><img src="https://raw.github.com/wiki/cpfaff/Open-Science-Thesis/figures/affidavit_page.png" alt="revision"/></p>
+
+<p>The contents of the affidavit can be changed with:</p>
+
+<pre><code class="latex">\ostSetContent{AffidavitName}{Declaration}
+\ostSetContent{AffidavitText}{This work has been done by me and nobody else!}
+\ostSetContent{AffidavitDate}{19.11.1981}
+\ostSetContent{AffidavitLocation}{Stuttgart}
+</code></pre>
+
+<h3>Set predefined names</h3>
+
+<p>LaTeX has some built in names that follow the language you use with the babel
+package. You can change the names with:</p>
+
+<pre><code class="latex">\ostSetContent{TableOfContentsName}{Content}
+\ostSetContent{ListOfFiguresName}{Figures}
+\ostSetContent{ListOfTablesName}{Tables}
+\ostSetContent{BibliographyName}{Biblio}
+\ostSetContent{AffidavitName}{Declaration}
+</code></pre>
+
+<h2>See also</h2>
+
+<p>The Open-Science-Thesis is one of a series of document classes or project
+scaffolds. You might also be interested in one of the following repositories.</p>
+
+<ul>
+<li><a href="https://github.com/cpfaff/Open-Science-Paper">Open-Science-Paper</a></li>
+<li><a href="https://github.com/cpfaff/Open-Science-Poster">Open-Science-Poster</a></li>
+</ul>
+
+<h2>Self-promotion</h2>
+
+<p>Do you like the Open-Science-Thesis repository? You are welcome to follow me on
+<a href="https://github.com/cpfaff">GitHub</a> and or
+<a href="http://twitter.com/ctpfaff">Twitter</a>.</p>
+
+<h2>License</h2>
+
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.</p>
+
+<p><a href="https://bitdeli.com/free" title="Bitdeli Badge"><img src="https://d2weczhvl823v0.cloudfront.net/cpfaff/open-science-thesis/trend.png" alt="Bitdeli Badge"/></a></p>
+
+</body>
+
+</html>
+

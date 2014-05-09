@@ -1,0 +1,75 @@
+% !Mode:: "TeX:UTF-8"
+
+\chapter{收益率曲线预测}{Forecasting Yield Curve}
+\label{chap05}
+
+\ds 作为一个重要的影响因素与\ts 的长期均衡水平的波动存在着密切的关系。这类由\ds 的变动所引致的对\tsm 的影响只有在一个世代期限范畴内才能显现效果。\dsf 本身所具有的的稳定的可预测性特征有利于增强对未来\ts 的水平变动的预测能力。建立一个由人口因素驱动的\tsm 不仅能够有助于增强\tsm 的理论解释能力，为理解影响长期均衡状态利率水平提供良好的理论支持，而在由于\dsf 的可预测性，将进一步提高对未来\tsm 变动的预测能力，从而为政策制定和市场投资提供有效的信息价值。
+
+\section{预测模型}{Forecasting}
+
+首先需要对样本数据划分为两个子样本，一个从~1970:01~到~1989:12~，该子样本为模型参数估计；另一个从~1990:01~到~ 2000:12，作为样本为预测比较。
+
+\subsection{人口因素驱动的\dns}
+依据本文提出的由人口因素驱动的\dns ，对~$h$~期后的国债收益率做预测：
+ \begin{align}
+   \hat{y}_{t+h|t}(\tau) & = \hat{\omega}(\tau) MY_{t+h|t}(\tau)
+        + \hat{\beta}_{2,t+h|t} \big[\frac{1-e^{-\lambda \tau}} {\lambda \tau} \big]  + \hat{\beta}_{3,t+h|t}\big[\frac{1-e^{-\lambda \tau}} {\lambda \tau} - e^{-\lambda \tau} \big],
+ \end{align}
+ 式中，$[
+      \hat{\beta}_{2,t+h|t},
+       \hat{\beta}_{3,t+h|t},
+    ]'$
+ 由~$\mathbf{\hat{B}}_{t+h|t}$~的两个元素得到：
+  \begin{align}
+   \Delta\mathbf{\hat{B}}_{t+h|t}
+    &=\sum_{j=0}^{h-1}\mathbf{\hat{\Gamma}}^j \mathbf{\tilde{\mu}}
+     +\mathbf{\hat{\Gamma}}^h \Delta\mathbf{\hat{B}}_t.
+ \end{align}
+
+为了对比不同模型的预测效果，下面将介绍其他几种对收益率曲线的预测模型。
+
+\subsection{比较模型}
+目前文献资料已有相当多的关于收益率曲线预测的模型，这些模型各有利弊，能够为不同需求的预测目的提供相应的方案。这里仅介绍比较重要的一些\tsm。
+ \begin{compactenum}[(1)]
+ \item {\bf 随机游走模型}\\
+ 利率的随机游走模型（Random Walk）假定如果市场是有效的，则长期利率接近于随机游走。那么，提前~$h$~期的国债券收益率则应该为当期水平：
+     \begin{align}
+       \hat{y}_{t+h|t}(\tau)
+       &= y_{t}(\tau).
+     \end{align}
+也就是说，对未来做最好的预测就是当前的收益率水平。
+ \item {\bf 收益率的~AR(1)~模型} \\
+ 假定收益率服从~AR(1)~随机过程，即~$y_{t+1}(\tau)=\mu+\gamma y_{t}(\tau)+\eps_t$，那么，对未来收益率的预测则为
+     \begin{align}
+        \hat{y}_{t+h|t}(\tau)
+       &= \hat{\mu} + \hat{\gamma}^h y_{t}(\tau)
+     \end{align}
+ \item {\bf 收益率的~VAR(1)~模型}\\
+  在假定收益率服从~VAR(1)~随机过程的情况下，未来收益率可以通过如下方法得到预测：
+  \begin{align}
+     \hat{y}_{t+h|t}(\tau)
+       &= \hat{c} + \hat{\Xi}^h y_{t},
+  \end{align}
+ 式中，$\hat{\Xi}$~是一个协方差矩阵，可以通过对收益率向量做一阶滞后项回归得到。
+  \item{\bf 动态~Nelson-Siegel~模型}\\
+     \citeai{diebold2006forecasting}论证了\dns 所具有的一些特性，尤其是能够刻画出整个收益率曲线的动态特征，且在一阶向量自回归（VAR(1)）的情况下，模型的参数只需经过两步法就能得到估计。同时，该模型在预测方向尤为突出，优于一般的模型如利率随机游走模型（Random Walk Model）、收益率自回归模型（AR(1)）等模型，特别是\dns 在预测中长期收益率时均比其他模型有显著的提高。
+
+     在该模型中，对未来~$h$~期的收益率做预测可以通过预测模型参数的动态特征得到，即
+     \begin{align}
+    \hat{y}_{t+h|t}(\tau) &= \hat{\beta}_{1,t+h|t}
+        + \hat{\beta}_{2,t+h|t} \big[\frac{1-e^{-\lambda \tau}} {\lambda \tau} \big]
+        + \hat{\beta}_{3,t+h|t}\big[\frac{1-e^{-\lambda \tau}} {\lambda \tau} - e^{-\lambda  \tau} \big], \\
+    \mathbf{\hat{\beta}}_{t+h|t} &= \hat{\mathbf{\mu}} + \hat{\mathbf{\Gamma}}\mathbf{\hat{\beta}}_{t}, \nonumber
+  \end{align}
+  式中，$\mathbf{\beta}_t=(\beta_{1t},\beta_{2t},\beta_{3t})'$。
+ \end{compactenum}
+
+ 为了比较不同模型的预测效果，本文采用均方根误差（RMSE）作为评判准则：
+ \begin{align}
+   RMSE &= \sqrt{\frac{\sum \big(y_{t+h}(\tau)-y_{t+h|t}(\tau)\big)^2}{132}},
+ \end{align}
+ 式中~$y_{t+h}(\tau)$~为实际的债券收益率，$y_{t+h|t}(\tau)$~是模型预测的收益率，$n=132$~是样本区间~1990:01~到~ 2000:12~的观察点个数。
+
+%\section{预测结果}
+%{\Large \textcolor{red}{$\ldots$有待完善$\ldots$} }
+

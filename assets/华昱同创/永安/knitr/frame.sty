@@ -1,0 +1,1290 @@
+%%------------------------------------------------------------------------------------%%
+%%------------------------------------------------------------------------------------%%
+%% Content : Open-Science-Thesis LateX-Class 
+%% Use : Open-Sciene-Thesis formatting 
+%% Author : Claas-Thido Pfaff
+%%------------------------------------------------------------------------------------%%
+%%------------------------------------------------------------------------------------%%
+
+%%%-------------------------------------------------%%%
+%%% Class requires format %%%
+%%%-------------------------------------------------%%%
+
+
+%%%-------------------------------------------------%%%
+%%% List options %%%
+%%%-------------------------------------------------%%%
+
+
+\ifost@compactlist%
+  \let\itemize\compactitem%
+  \let\enditemize\endcompactitem%
+  \let\enumerate\compactenum%
+  \let\endenumerate\endcompactenum%
+  \let\description\compactdesc%
+  \let\enddescription\endcompactdesc%
+  \plpartopsep=\smallskipamount
+  \pltopsep=\smallskipamount
+  \ifost@setspacing
+    \ifost@sensitivespacing
+      \newcounter{listingdepth}
+      \setcounter{listingdepth}{0}
+      \preto{\itemize}{%
+	\ifnum\thelistingdepth=0
+	  \begin{onehalfspace}
+	\fi%
+	\addtocounter{listingdepth}{1}
+      }  
+      \g@addto@macro{\enditemize}{%
+	\ifnum\thelistingdepth=1
+	  \end{onehalfspace}
+	\fi%
+	\addtocounter{listingdepth}{-1}
+      }
+      \preto{\enumerate}{%
+	\ifnum\thelistingdepth=0
+	  \begin{onehalfspace}
+	\fi%
+	\addtocounter{listingdepth}{1}
+      }  
+      \g@addto@macro{\endenumerate}{%
+	\ifnum\thelistingdepth=1
+	  \end{onehalfspace}
+	\fi%
+	\addtocounter{listingdepth}{-1}
+      }
+      \preto{\description}{%
+	\ifnum\thelistingdepth=0
+	  \begin{onehalfspace}
+	\fi%
+	\addtocounter{listingdepth}{1}
+      }  
+      \g@addto@macro{\enddescription}{%
+	\ifnum\thelistingdepth=1
+	  \end{onehalfspace}
+	\fi%
+	\addtocounter{listingdepth}{-1}
+      }
+    \fi%
+  \fi%
+\fi%
+
+\ifost@fancylist%
+  \newlength{\ostLengthListIndenti} 
+  \setlength{\ostLengthListIndenti}{1.5em}
+  \newcommand{\ostSymbolItemizei}{$\circ$}
+  % \newcommand{\ostSymbolEnuneratei}{1.}
+  \newlength{\ostLengthListIndentii} 
+  \setlength{\ostLengthListIndentii}{1em}
+  \newcommand{\ostSymbolItemizeii}{\textbullet}
+  % \newcommand{\ostSymbolEnunerateii}{a)}
+  \newlength{\ostLengthListIndentiii} 
+  \setlength{\ostLengthListIndentiii}{0.9em}
+  \newcommand{\ostSymbolItemizeiii}{\textperiodcentered}
+  % \newcommand{\ostSymbolEnunerateii}{i.}
+  \newlength{\ostLengthListIndentiv}
+  \setlength{\ostLengthListIndentiv}{1.2em}
+  \newcommand{\ostSymbolItemizeiv}{--}
+  % \newcommand{\ostSymbolEnunerateii}{A)}
+  \newlength{\ostLengthListIndentv}
+  \setlength{\ostLengthListIndentv}{1em}
+  \newlength{\ostLengthListIndentvi}
+  \setlength{\ostLengthListIndentvi}{1em}
+
+  \setdefaultitem{\ostSymbolItemizei}{\ostSymbolItemizeii}{\ostSymbolItemizeiii}{\ostSymbolItemizeiv}%
+  \setdefaultleftmargin{\ostLengthListIndenti}{\ostLengthListIndentii}{\ostLengthListIndentiii}{\ostLengthListIndentiv}{\ostLengthListIndentv}{\ostLengthListIndentvi}%
+  \setdefaultenum{1.}{a)}{i.}{A)}%
+\fi
+
+%%%-------------------------------------------------%%%
+%%% Graphic options %%%
+%%%-------------------------------------------------%%%
+
+%% Use and create graphics %%
+\RequirePackage{graphicx}
+\RequirePackage{eso-pic} 
+\RequirePackage{overpic}
+\RequirePackage{tikz}
+\RequirePackage{subcaption} 
+
+% Load some tikz libraries
+\usetikzlibrary{spy,external,automata,patterns,shadows.blur,trees,mindmap,arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+%% Define tikz styles %% 
+
+\ifost@color
+  \tikzstyle{imageframe} = [rectangle, rounded corners, draw=ostColorImageFrame, thick, fill=white] 
+\else%
+  \tikzstyle{imageframe} = [rectangle, rounded corners, draw=ostColorImageFrame, fill=white]
+\fi
+
+\tikzstyle{signbackground} = [rectangle, fill=white, fill opacity=0.7, text opacity=1, rounded corners]
+\tikzstyle{listinline} = [rectangle, inner sep = 2pt, rounded corners, draw=ostColorInlineCodeFrame, fill=ostColorInlineCodeBackground] 
+\tikzstyle{titlepageoverlay} = [rectangle, fill=ostColorTitleOverlay, fill opacity=\ostOpacityTitleOverlay, text opacity=1, rounded corners]
+
+%%%-------------------------------------------------%%%
+%%% Control floatings and captions %%%
+%%%-------------------------------------------------%%%
+
+\RequirePackage{float} 
+
+\ifost@floatbarrier
+  \RequirePackage{placeins}
+\fi
+
+\ifost@floatafter
+  \RequirePackage{flafter}
+\fi
+
+% \newcommand{\ostFontCaption}{small, it}
+
+%% Control caption layout %%
+\RequirePackage[format=plain, margin=7pt, font={small,it}, labelformat=default, labelfont=bf]{caption}
+
+\ifost@color
+  \captionsetup{labelfont={color=ostColorCaptionLabel,bf}}
+\fi
+
+%% where to put this?
+\RequirePackage{marginnote}
+
+\ifost@setspacing
+  \ifost@sensitivespacing
+    \renewcommand*{\marginfont}{\singlespacing\color{ostColorMarginNote}\ostSizeMarginNote\ostFontMarginNote}
+  \fi
+\else
+  \renewcommand*{\marginfont}{\color{ostColorMarginNote}\ostSizeMarginNote\ostFontMarginNote}
+\fi
+
+%%%-------------------------------------------------%%%
+%%% Table related options %%%
+%%%-------------------------------------------------%%%
+
+%% Professional tables %%
+
+\RequirePackage{booktabs}
+
+% useage:
+%	\toprule
+%	\midrule
+%	\bottomrule
+% 	\cmidrule{from column #. - to column #}
+
+%% More column types %%
+
+\RequirePackage{tabularx}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+% usage:
+%  R{column width} for raggedright column in certain width
+%  C{column width} for centered column in certain width
+
+%% Collapse fields rowise %%
+
+\RequirePackage{multirow}
+
+% usage:
+%  Horizontal aggregation of table cells
+%	 \multicolumn{count of columns}{alignment}{text}
+
+%  Vertical aggregation of table cells  
+%	 \multirow{count of rows}{width}{text}
+
+%% Tables over multiple pages %%
+\RequirePackage{longtable}
+
+%%%-------------------------------------------------%%%
+%%% Multi column documents %%%
+%%%-------------------------------------------------%%%
+
+\RequirePackage{multicol}
+
+% \newlength{\ostLengthColumnSeparator} 
+% \setlength{\ostLengthColumnSeparator}{10pt} 
+% \AtBeginDocument{\setlength\columnsep{\ostLengthColumnSeparator{}}}
+
+% \newcommand{\ostColumnCount}{2} 
+% \newcommand{\ostSetColumnCount}[1]{\def\ostColumnCount{#1}} 
+
+% \newcommand{\ostColumnLayoutControlBegin}{
+  % \ifnum\ostColumnCount\le1 
+    % \relax 
+  % \else 
+    % \begin{multicols}{\ostColumnCount{}}
+  % \fi
+% }
+
+% \newcommand{\ostColumnLayoutControlEnd}{
+  % \ifnum\ostColumnCount=1 
+    % \relax 
+  % \else 
+    % \end{multicols}
+  % \fi
+% }
+
+% wrapper for the column layout in the root document
+% \newenvironment{ostColumLayout}{%
+  % \ostColumnLayoutControlBegin{}%
+% }{%
+  % \ostColumnLayoutControlEnd{}%
+% }
+
+%%%-------------------------------------------------%%%
+%%% Bibliography %%%
+%%%-------------------------------------------------%%%
+
+\RequirePackage{biblatex}
+
+\let\ostAddBibliography\addbibresource
+
+\ifost@setspacing
+  \ifost@sensitivespacing
+    \preto{\printbibliography}{%
+      \singlespacing
+    }  
+  \fi
+\fi
+
+% usage:
+%  \citet{jon90} ⇒ Jones et al. (1990)
+%  \citet[chap.~2]{jon90} ⇒ Jones et al. (1990, chap. 2)
+%  \citep{jon90} ⇒ (Jones et al., 1990)
+%  \citep[chap.~2]{jon90} ⇒ (Jones et al., 1990, chap. 2)
+%  \citep[see][]{jon90} ⇒ (see Jones et al., 1990)
+%  \citep[see][chap.~2]{jon90} ⇒ (see Jones et al., 1990, chap. 2)
+%  \citet*{jon90} ⇒ Jones, Baker, and Williams (1990)
+%  \citep*{jon90} ⇒ (Jones, Baker, and Williams, 1990)
+
+%%%-------------------------------------------------%%%
+%%% Typesetting of units %%%
+%%%-------------------------------------------------%%%
+
+\RequirePackage{siunitx}
+
+% usage:
+%  \si{kg.m/s^2}
+%  \num{12345}
+%  \num{0,1234}
+%  \num{.12345}
+%  \ang{12.3}
+%  \ang{1;2;3}
+%  \ang{;;-1}
+%  \SI{-29}{\degreeCelsius}   
+%  \SI{30000}{\kilogram}
+
+%%%-------------------------------------------------%%%
+%%% Display LaTeX code and compiled output %%%
+%%%-------------------------------------------------%%%
+
+\RequirePackage{showexpl}
+
+%%%-------------------------------------------------%%%
+%%% Options for references in the document %%%
+%%%-------------------------------------------------%%%
+
+\RequirePackage{prettyref}
+
+\newrefformat{fig}{figure~\ref{#1}}
+\newrefformat{Fig}{Figure~\lowercase{\ref{#1}}}
+\newrefformat{cha}{chapter~\ref{#1}}
+\newrefformat{Cha}{Chapter~\lowercase{\ref{#1}}}
+\newrefformat{sec}{chapter~\ref{#1}}
+\newrefformat{Sec}{Chapter~\lowercase{\ref{#1}}}
+\newrefformat{sub}{chapter~\ref{#1}}
+\newrefformat{Sub}{Chapter~\lowercase{\ref{#1}}}
+\newrefformat{subs}{chapter~\ref{#1}}
+\newrefformat{Subs}{Chapter~\lowercase{\ref{#1}}}
+\newrefformat{tab}{table~\ref{#1}}
+\newrefformat{Tab}{Table~\lowercase{\ref{#1}}}
+\newrefformat{lst}{listing~\ref{#1}}
+\newrefformat{Lst}{Listing~\lowercase{\ref{#1}}}
+\newrefformat{equ}{equation~\ref{#1}}
+\newrefformat{Equ}{Equation~\lowercase{\ref{#1}}}
+
+% Usage:
+%  \prettyref{fig:my_figure_label}
+%  \prettyref{Fig:my_figure_label}
+
+%%%-------------------------------------------------%%%
+%%% Code listings %%%
+%%%-------------------------------------------------%%%
+
+\RequirePackage{listings}
+\RequirePackage{lstautogobble}
+
+% \RequirePackage[scaled=0.83]{beramono}
+
+\lstset{%
+   upquote=true,%
+   % columns=fixed,%
+   columns=fullflexible,
+   tabsize=2,%
+   autogobble=true,
+   showstringspaces=false,%
+   flexiblecolumns=true,%
+   extendedchars=true,%
+   breaklines=true,%
+   numbers=left,% 
+   backgroundcolor=\color{ostColor@ListingBackground},%
+   stepnumber=1,%
+   numbersep=7pt,%
+   xleftmargin=10pt,%
+   % rulesepcolor=\color{ostColor@ListingBase03},%
+   % numberblanklines=true,%
+   numberstyle=\tiny\color{ostColor@ListingBase01},%
+   basicstyle=\ifost@setspacing\ifost@sensitivespacing\singlespacing\fi\fi\ostSize@ListingBasic\ostFont@ListingBasic,%
+   keywordstyle=\color{ostColor@ListingGreen},%
+   stringstyle=\color{ostColor@ListingCyan}\ttfamily,%
+   identifierstyle=\color{ostColor@ListingBlue},%
+   commentstyle=\color{ostColor@ListingBase01},%
+   emphstyle=\color{ostColor@ListingRed}
+}
+
+\lstset{literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\'e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\EUR}}1 {£}{{\pounds}}1 {~}{{\textasciitilde}}1
+}
+
+\ifost@inlinecodestyleround
+  \newcommand{\inlinecode}[1]{\raisebox{-0.27em}{\begin{tikzpicture}\node[listinline]{\lstinline|#1|};\end{tikzpicture}}}
+\fi%
+
+\ifost@inlinecodestylebox
+  \newcommand{\inlinecode}[1]{\colorbox{ostColor@ListingBackground}{\lstinline|#1|}}
+\fi%
+
+\ifost@inlinecodestyleplain
+  \newcommand{\inlinecode}[1]{\lstinline|#1|}
+\fi%
+
+% Usage: 
+%       \inlinecode{a=a+b} 
+
+%%%-------------------------------------------------%%%
+%%% Bar-Quote  %%%
+%%%-------------------------------------------------%%%
+
+\providecommand*{\ostQuoteAuthor}{}
+\define@key{ostQuote}{author}{\renewcommand*\ostQuoteAuthor{#1}}
+\presetkeys{ostQuote}{author=}{}%
+
+\newdimen\ostHeightQuoteRule
+\newdimen\ostWidthQuoteRule 
+\newdimen\ostLengthQuoteRuleSep 
+\ostLengthQuoteRuleSep=-2.3em
+
+\ifost@color%
+  \ostWidthQuoteRule=5pt
+\else%
+  \ostWidthQuoteRule=2pt 
+\fi%
+
+\newcommand{\ostQuoteRule}{\textcolor{ostColorQuoteRule}{\rule{\ostWidthQuoteRule}{\ostHeightQuoteRule}}}
+
+\newcommand{\ostquote}[2][]{
+  \setkeys{ostQuote}{#1} 
+  \def\ost@temp{\begin{minipage}{0.8\textwidth}% 
+      {\small #2 \ifdefempty{\ostQuoteAuthor}{\relax}{\\[0.5em] \raggedright{\textbf{--}~\textit{\ostQuoteAuthor}~\textbf{--}}}}
+    \end{minipage}
+  }%
+  \settototalheight\ostHeightQuoteRule\ost@temp
+  \begin{center}
+    \begin{minipage}{0.1\textwidth}
+      \ostQuoteRule{}
+    \end{minipage}
+    \hspace{\ostLengthQuoteRuleSep}
+    \begin{minipage}{0.8\textwidth}
+      {\small #2 \ifdefempty{\ostQuoteAuthor}{\relax}{\\[0.5em] \raggedright{\textbf{--}~\textit{\ostQuoteAuthor}~\textbf{--}}}}
+    \end{minipage}
+  \end{center}
+}
+% provide alias
+\let\barquote\ostquote
+
+\g@addto@macro{\frontmatter}{
+  \ost@chapterwithtocfalse
+}
+
+\g@addto@macro{\mainmatter}{
+  \ost@chapterwithtoctrue
+}
+
+\g@addto@macro{\appendix}{
+  \ost@chapterwithtocfalse
+  \ifost@addstopcontenttoappendix% 
+    \stopcontents
+  \fi
+}
+
+\g@addto@macro{\backmatter}{
+  \ost@chapterwithtocfalse
+}
+
+\preto{\tableofcontents}{
+  \microtypesetup{protrusion=false}
+  \ifost@setspacing
+    \ifost@sensitivespacing
+    \begin{singlespace}
+    \fi
+  \fi
+  \hypersetup{linkcolor=black} 
+  \ost@chapterwithtocfalse
+}  
+\g@addto@macro{\tableofcontents}{
+  \hypersetup{linkcolor=ostColorLinks} 
+  \ost@chapterwithtocfalse
+  \ifost@setspacing
+    \ifost@sensitivespacing
+    \end{singlespace}
+    \fi
+  \fi
+  \microtypesetup{protrusion=true}
+}
+
+\preto{\listoffigures}{%
+  \microtypesetup{protrusion=false}
+  \ifost@setspacing%
+    \ifost@sensitivespacing%
+      \begin{singlespace}
+    \fi%
+  \fi%
+  \hypersetup{linkcolor=black} 
+  \ost@chapterwithtocfalse%
+} 
+\g@addto@macro{\listoffigures}{%
+  \hypersetup{linkcolor=ostColorLinks} 
+  \ifost@setspacing
+    \ifost@sensitivespacing
+    \end{singlespace}
+    \fi
+  \fi
+  \microtypesetup{protrusion=true}
+}
+
+\preto{\listoftables}{
+  \microtypesetup{protrusion=false}
+  \ifost@setspacing
+    \ifost@sensitivespacing
+    \begin{singlespace}
+    \fi
+  \fi
+  \hypersetup{linkcolor=black} 
+} 
+\g@addto@macro{\listoftables}{
+  \hypersetup{linkcolor=ostColorLinks} 
+  \ifost@setspacing
+    \ifost@sensitivespacing
+    \end{singlespace}
+    \fi
+  \fi
+  \microtypesetup{protrusion=false}
+}
+
+\newenvironment{ostPartialToc}{%
+  \ifost@setspacing
+    \ifost@sensitivespacing
+      \begin{singlespace}
+    \fi
+  \fi
+  \hypersetup{linkcolor=black}
+}{%
+  \hypersetup{linkcolor=ostColorLinks}
+  \ifost@setspacing
+    \ifost@sensitivespacing
+    \end{singlespace}
+    \fi
+  \fi
+}
+
+%%%-------------------------------------------------%%%
+%%% Definition of affidavit %%%
+%%%-------------------------------------------------%%%
+
+\newcommand{\ostAffidavitText}{
+    I hereby declare that this document has been written only by the undersigned
+    and without any assistance from third parties. Furthermore, I confirm that no
+    sources have been used in the preparation of this document other than those
+    indicated in the thesis itself. 
+}
+
+% \AtBeginDocument{
+  % \iflanguage{ngerman}{\ostSetAffidavitText{
+    % Hiermit erkläre ich, dass ich die vorliegende Hausarbeit selbständig verfasst
+    % und keine anderen als die angegebenen Hilfsmittel benutzt habe. Die Stellen
+    % der Hausarbeit, die anderen Quellen im Wortlaut oder dem Sinn nach entnommen
+    % wurden, sind durch Angaben der Herkunft kenntlich gemacht. Dies gilt auch für
+    % Zeichnungen, Skizzen, bildliche Darstellungen sowie für Quellen aus dem
+    % Internet.
+  % }}{\relax} 
+% }
+
+\newcommand{\ostAffidavitDate}{}
+\newcommand{\ostAffidavitLocation}{}
+\newcommand{\ostAffidavitSignatureLine}{\noindent Date:\ifdefempty{\ostAffidavitDate}{\textcolor{gray}{\dotfill}}{~\ostAffidavitDate},\hspace{0.7em}Location:\ifdefempty{\ostAffidavitLocation}{\textcolor{gray}{\dotfill}}{~\ostAffidavitLocation},\hspace{0.7em}Signature:\textcolor{gray}{\dotfill}}
+\newcommand{\ostAffidavitName}{Affidavit}
+\newcommand{\affidavitsectioning}{chapter}
+
+\define@key{ostAffidavit}{sectioning}{\def\affidavitsectioning{#1}}
+\presetkeys{ostAffidavit}{sectioning=chapter}{}%
+
+\newcommand{\makeaffidavit}[1][]{
+  \setkeys{ostAffidavit}{#1} 
+  \ifost@setspacing
+    \ifost@sensitivespacing
+    \begin{singlespace}
+    \fi
+  \fi
+  \csname\affidavitsectioning\endcsname{\ostAffidavitName} 
+  \ostAffidavitText{} 
+
+  \vspace{4\baselineskip}
+  \ostAffidavitSignatureLine{}
+  \ifost@setspacing
+    \ifost@sensitivespacing
+    \end{singlespace}
+    \fi
+  \fi
+}
+
+\let\printaffidavit\makeaffidavit
+
+%%%-------------------------------------------------%%%
+%%% Definition of titlepage %%%
+%%%-------------------------------------------------%%%
+
+% lengths (between objects)
+
+\newlength{\ostLengthTitleSpacerTitleRuleUpper} 
+\setlength{\ostLengthTitleSpacerTitleRuleUpper}{2em} 
+\newlength{\ostLengthTitleSpacerTitleRuleLower} 
+\setlength{\ostLengthTitleSpacerTitleRuleLower}{2em} 
+
+% dimensions (are part of an object)
+
+\newlength{\ostWidthTitleRuleHorizontal}
+\setlength{\ostWidthTitleRuleHorizontal}{\linewidth}
+\newlength{\ostHeightTitleRuleHorizontal}
+\setlength{\ostHeightTitleRuleHorizontal}{3pt}
+
+\newlength{\ostWidthTitleRuleVertical}
+\setlength{\ostWidthTitleRuleVertical}{3pt}
+\newlength{\ostHeightTitleRuleVertical}
+\setlength{\ostHeightTitleRuleVertical}{\textheight}
+
+\newlength{\ostLengthBackgroundPicVoffset} 
+\setlength\ostLengthBackgroundPicVoffset{0pt}
+\newlength{\ostLengthBackgroundPicHoffset} 
+\setlength\ostLengthBackgroundPicHoffset{0pt}
+
+% getter and setter
+\newcommand{\ostTitleStretchAbove}{\vspace*{\stretch{1}}}  
+\newcommand{\ostSetTitleStretchAbove}[1]{\def\ostTitleStretchAbove{#1}} 
+\newcommand{\ostTitleStretchBelow}{\vspace*{\stretch{2}}} 
+\newcommand{\ostSetTitleStretchBelow}[1]{\def\ostTitleStretchBelow{#1}} 
+\newcommand{\ostTitleSpacerTitleRuleUpper}{\vspace{\ostLengthTitleSpacerTitleRuleUpper}}
+\newcommand{\ostTitleSpacerTitleRuleLower}{\vspace{\ostLengthTitleSpacerTitleRuleLower}}
+
+\providecommand*{\widthOfTitlepageImage}{}
+
+\define@key{ostSetImage}{width}{\renewcommand*\widthOfTitlepageImage{#1}}
+\define@key{ostSetImage}{voffset}{\setlength\ostLengthBackgroundPicVoffset{#1}}
+\define@key{ostSetImage}{hoffset}{\setlength\ostLengthBackgroundPicHoffset{#1}}
+\presetkeys{ostSetImage}{width=\textwidth, voffset=0pt, hoffset=0pt}{}%
+\newsavebox\ostImageTitlepageBackground
+\newcommand{\ostSetImage}[3][]{%
+    \setkeys{ostSetImage}{#1}
+    \expandafter\savebox\csname ostImage#2\endcsname{\IfFileExists{#3}{\includegraphics[width=\widthOfTitlepageImage, keepaspectratio]{#3}}{\scalebox{2}{\color{ostColorWarnings}Image file not found or set!}}}
+}
+\newcommand{\ostTitlePageBackgroundPic}[1]{
+  \AddToShipoutPicture*{\AtTextCenter{%
+    \hspace*{\ostLengthBackgroundPicHoffset}\raisebox{\ostLengthBackgroundPicVoffset}{\makebox(0,0){\ostTitleStretchAbove{}\usebox\ostImageTitlepageBackground\ostTitleStretchBelow{}
+}}}}}
+\ostSetImage{TitlepageBackground}{ost/graphics/ostTitlePageBackground.pdf}
+
+% \begin{tikzpicture}[remember picture, overlay]
+% \node at (current page.north west){%
+% \begin{tikzpicture}[overlay]
+% \node[draw,anchor=west] at (0mm,0mm) {Some text};
+% \end{tikzpicture}
+% };
+% \end{tikzpicture}
+
+% \def\@oddhead{%
+% \setlength\unitlength{1mm}%
+% \begin{picture}(0,0)%
+% \put(120,20){\fbox{A LOGO HERE}}%
+% \put(-10,-200){\framebox(150,200)[tl]{}}%
+% \end{picture}\hfill}
+
+% \AtBeginShipout{%
+  % \ifthenelse{\isodd{\value{page}}}%
+    % { 
+  % \AddToShipoutPicture*{%
+    % \AtPageLowerLeft{%
+      % \rotatebox{90}{%
+          % \begin{minipage}{\paperheight}
+            % \colorbox{black!05}{\parbox{\paperheight-2\fboxsep-2\fboxrule}{
+              % \vspace{5pt}
+                % \ostTextOnBar
+              % \vspace{5pt}
+            % }
+          % }
+          % \end{minipage} %
+        % }
+      % } %
+  % }
+    % }%
+    % {
+  % \AddToShipoutPicture*{%
+    % \AtPageLowerLeft{%
+      % \makebox[41cm]{\rotatebox{90}{%
+          % \begin{minipage}{\paperheight}
+            % \colorbox{black!05}{\parbox{\paperheight-2\fboxsep-2\fboxrule}{
+              % \vspace{5pt}
+                % \ostTextOnBar
+              % \vspace{5pt}
+            % }
+          % }
+          % \end{minipage} %
+        % }}
+      % } %
+  % }
+% }%
+% }
+
+\newcommand{\ostTitleRule}{\textcolor{ostColorTitleRuleHorizontal}{\noindent\rule{\ostWidthTitleRuleHorizontal}{\ostHeightTitleRuleHorizontal}}}
+\newcommand{\ostTitle}{The open science thesis} 
+\newcommand{\ostSubtitle}{This is a subtitle}
+\newcommand{\ostAuthors}{Author one\textsuperscript{1,2,a} and Author two\textsuperscript{2}, \ldots} 
+\newcommand{\ostInsitution}{University of XY, Department Z} 
+\newcommand{\ostEmail}[1]{\href{mailto:#1}{\ostSizeEmail\ostFontEmail\color{ostColorEmail}#1}} 
+\newcommand{\ostDate}{\today} 
+\newcommand{\ostTextOnBar}{\textcolor{LightGray}{Open~-~}\textcolor{gray}{Science}\textcolor{LightGray}{~-~Thesis}} 
+\newcommand{\ostAdvisorOne}{Advisor:\\ Prof. Dr. M. Sickel\\Phone: 0234 97 38 59 1\\Fax: 0341 97 38 54 9\\E-Mail: \ostEmail{sickel@uni-fubar.de}}
+\newcommand{\ostAdvisorTwo}{PD Dr. L. Dark\\Phone: 0234 44 36 33 9\\Fax: 0323 44 38 22 9\\E-Mail: \ostEmail{dark@uni-baz.de}}
+
+\ifost@titlepagebackgroundimage%
+
+\newcommand{\ostMakeTitle}{% 
+  \ifost@setspacing%
+    \ifost@sensitivespacing%
+    \begin{singlespace}
+    \fi%
+  \fi%
+  \begin{titlepage}
+    \ostTitlePageBackgroundPic{}
+    {\centering% 
+      \ostTitleStretchAbove{} 
+      {\begin{tikzpicture}\node[titlepageoverlay]{\begin{minipage}{\textwidth}\begin{center} 
+      {\par\ifdefempty{\ostTitle}{\relax}{\color{ostColorTitle}{{\noindent\ostSizeTitle\ostFontTitle\ostTitle}}\par}}\vspace{\baselineskip}   
+      {\ifdefempty{\ostSubtitle}{\relax}{\color{ostColorSubtitle}{{\noindent\ostSizeSubtitle\ostFontSubtitle\ostSubtitle}}\par}}\vspace{\baselineskip}
+      {\ifdefempty{\ostAuthors}{\relax}{\color{ostColorAuthors}{{\noindent\ostSizeAuthors\ostFontAuthors\ostAuthors}}\par}}
+      {\ifdefempty{\ostInsitution}{\relax}{\color{ostColorInstitution}{{\noindent\ostSizeInstitution\ostFontInstitution\ostInsitution}}}\par}
+      {\ifdefempty{\ostDate}{\relax}{\color{ostColorDate}{{\noindent\ostSizeDate\ostFontDate\ostDate}}}\par}
+      \ostGitInfoLine{} 
+      \end{center}\end{minipage}};\end{tikzpicture}}\\
+      \ostTitleStretchBelow{} 
+      {\par\ifdefempty{\ostAdvisorOne}{\relax}{\begin{tikzpicture}\node[titlepageoverlay]{\begin{minipage}{\textwidth} \begin{center}{\color{ostColorAdvisors}\ostSizeAdvisors\ostFontAdvisors\ostAdvisorOne}\end{center}\end{minipage}};\end{tikzpicture}}\par} 
+      \vspace{\baselineskip}
+      {\par\ifdefempty{\ostAdvisorTwo}{\relax}{\begin{tikzpicture}\node[titlepageoverlay]{\begin{minipage}{\textwidth} \begin{center}{\color{ostColorAdvisors}\ostSizeAdvisors\ostFontAdvisors\ostAdvisorTwo}\end{center}\end{minipage}};\end{tikzpicture}}\par} 
+    }      
+  \end{titlepage}
+  \ifost@setspacing%
+    \ifost@sensitivespacing%
+    \end{singlespace}
+    \fi%
+  \fi%
+}
+\fi%
+
+\ifost@titlepagehorizontal  
+\newcommand{\ostMakeTitle}{% 
+  \ifost@setspacing%
+    \ifost@sensitivespacing%
+    \begin{singlespace}
+    \fi%
+  \fi%
+  \begin{titlepage}
+    {\centering% 
+      \ostTitleStretchAbove{}
+      \ostTitleRule{}%
+      \ostTitleSpacerTitleRuleUpper{}
+      {\par\ifdefempty{\ostTitle}{\relax}{\color{ostColorTitle}{{\noindent\ostSizeTitle\ostFontTitle\ostTitle}}\par}}\vspace{\baselineskip}   
+      {\ifdefempty{\ostSubtitle}{\relax}{\color{ostColorSubtitle}{{\noindent\ostSizeSubtitle\ostFontSubtitle\ostSubtitle}}\par}}\vspace{\baselineskip}
+      {\ifdefempty{\ostAuthors}{\relax}{\color{ostColorAuthors}{{\noindent\ostSizeAuthors\ostFontAuthors\ostAuthors}}\par}}
+      {\ifdefempty{\ostInsitution}{\relax}{\color{ostColorInstitution}{{\noindent\ostSizeInstitution\ostFontInstitution\ostInsitution}}}\par}
+      {\ifdefempty{\ostDate}{\relax}{\color{ostColorDate}{{\noindent\ostSizeDate\ostFontDate\ostDate}}}\par}
+      \ostGitInfoLine{}
+      \vspace{-1\baselineskip}
+      \ostTitleSpacerTitleRuleLower{} 
+      \ostTitleRule{}%
+      \ostTitleStretchBelow{}
+      {\par\ifdefempty{\ostAdvisorOne}{\relax}{\color{ostColorAdvisors}{{\ostSizeAdvisors\ostFontAdvisors\ostAdvisorOne}}}\par} 
+      \vspace{\baselineskip}
+      {\par\ifdefempty{\ostAdvisorTwo}{\relax}{\color{ostColorAdvisors}{{\ostSizeAdvisors\ostFontAdvisors\ostAdvisorTwo}}}\par} 
+    }      
+  \end{titlepage} 
+  \ifost@setspacing%
+    \ifost@sensitivespacing%
+      \end{singlespace}
+    \fi%
+  \fi%
+}
+\fi
+
+\ifost@titlepageplain
+\newcommand{\ostMakeTitle}{% 
+  \ifost@setspacing%
+    \ifost@sensitivespacing%
+      \begin{singlespace}
+    \fi%
+  \fi%
+  \begin{titlepage}
+    {\centering%
+      \ostTitleStretchAbove{}
+      {\par\ifdefempty{\ostTitle}{\relax}{\color{ostColorTitle}{{\noindent\ostSizeTitle\ostFontTitle\ostTitle}}\par}}\vspace{\baselineskip}   
+      {\ifdefempty{\ostSubtitle}{\relax}{\color{ostColorSubtitle}{{\noindent\ostSizeSubtitle\ostFontSubtitle\ostSubtitle}}\par}}\vspace{\baselineskip}
+      {\ifdefempty{\ostAuthors}{\relax}{\color{ostColorAuthors}{{\noindent\ostSizeAuthors\ostFontAuthors\ostAuthors}}\par}}
+      {\ifdefempty{\ostInsitution}{\relax}{\color{ostColorInstitution}{{\noindent\ostSizeInstitution\ostFontInstitution\ostInsitution}}}\par}
+      {\ifdefempty{\ostDate}{\relax}{\color{ostColorDate}{{\noindent\ostSizeDate\ostFontDate\ostDate}}}\par}
+      \ostGitInfoLine{} 
+      \ostTitleStretchBelow{} 
+      {\par\ifdefempty{\ostAdvisorOne}{\relax}{\color{ostColorAdvisors}{{\ostSizeAdvisors\ostFontAdvisors\ostAdvisorOne}}}\par} 
+      \vspace{\baselineskip}
+      {\par\ifdefempty{\ostAdvisorTwo}{\relax}{\color{ostColorAdvisors}{{\ostSizeAdvisors\ostFontAdvisors\ostAdvisorTwo}}}\par} 
+    }
+  \end{titlepage}
+  \ifost@setspacing%
+    \ifost@sensitivespacing%
+      \end{singlespace}
+    \fi%
+  \fi%
+}
+\fi%
+
+\ifost@titlepagevertical%
+\newcommand{\ostMakeTitle}{% 
+  \ifost@setspacing%
+    \ifost@sensitivespacing%
+    \begin{singlespace}
+    \fi%
+  \fi%
+  \begin{titlepage}
+    \mbox{
+      \hspace*{0.2\textwidth}
+      \rotatebox{90}{{\ostSizeTextOnBar\ostFontTextOnBar\color{ostColorTextOnBar}\ostTextOnBar}}
+      \textcolor{ostColorTitleRuleVertical}{\rule{\ostWidthTitleRuleVertical}{\ostHeightTitleRuleVertical}}
+      \hspace*{0.05\textwidth}
+      \parbox[b]{0.75\textwidth}{
+	{\par\ifdefempty{\ostTitle}{\relax}{\color{ostColorTitle}{{\noindent\ostSizeTitle\ostFontTitle\ostTitle}}\par}}\vspace{\baselineskip}   
+	{\ifdefempty{\ostSubtitle}{\relax}{\color{ostColorSubtitle}{{\noindent\ostSizeSubtitle\ostFontSubtitle\ostSubtitle}}\par}}\vspace{\baselineskip}
+	{\ifdefempty{\ostAuthors}{\relax}{\color{ostColorAuthors}{{\noindent\ostSizeAuthors\ostFontAuthors\ostAuthors}}\par}}
+	{\ifdefempty{\ostInsitution}{\relax}{\color{ostColorInstitution}{{\noindent\ostSizeInstitution\ostFontInstitution\ostInsitution}}}\par}
+	{\ifdefempty{\ostDate}{\relax}{\color{ostColorDate}{{\noindent\ostSizeDate\ostFontDate\ostDate}}}\par}
+        \ostGitInfoLine{}
+	\vspace{0.2\textheight}
+	{\par\ifdefempty{\ostAdvisorOne}{\vspace{4\baselineskip}}{\color{ostColorAdvisors}{{\ostSizeAdvisors\ostFontAdvisors\ostAdvisorOne}}}\par}\vspace{\baselineskip}
+	{\par\ifdefempty{\ostAdvisorTwo}{\vspace{4\baselineskip}}{\color{ostColorAdvisors}{{\ostSizeAdvisors\ostFontAdvisors\ostAdvisorTwo}}}\par} 
+      }
+    }
+  \end{titlepage}
+  \ifost@setspacing%
+    \ifost@sensitivespacing%
+    \end{singlespace}
+    \fi%
+  \fi%
+}
+\fi% 
+
+% new definition old macro
+\let\maketitle\ostMakeTitle
+\let\printtitlepage\ostMakeTitle
+
+%Set the Environments for Textsizes etc
+\newenvironment{smallpar}{\par\small}{\par}
+\newenvironment{centerpar}{\par\center}{\par}
+\newenvironment{hugepar}{\par\huge}{\par}
+
+% make the figure environment expand arguments first
+\let\tmpfigure\figure
+\let\endtmpfigure\endfigure
+\renewenvironment{figure}[1][htbp]{%
+   \expandafter\tmpfigure\expandafter[#1]%
+}{%
+   \endtmpfigure
+}
+
+\providecommand*{\placement}{}
+\providecommand*{\envwidth}{}
+\providecommand*{\mappath}{}
+\providecommand*{\picturepath}{}
+\providecommand*{\overlaytextname}{}
+\providecommand*{\envlabel}{}
+\providecommand*{\envcaption}{}
+
+\define@key{framedfigureOverlay}{placement}{\renewcommand*\placement{#1}}
+\define@key{framedfigureOverlay}{width}{\renewcommand*\envwidth{#1}}
+\define@key{framedfigureOverlay}{mappath}{\renewcommand*\mappath{#1}}
+\define@key{framedfigureOverlay}{picpath}{\renewcommand*\picturepath{#1}}
+\define@key{framedfigureOverlay}{overlaytext}{\renewcommand*\overlaytextname{#1}}
+\define@key{framedfigureOverlay}{label}{\renewcommand*\envlabel{#1}}
+
+\presetkeys{framedfigureOverlay}{placement=H, width=0.95\textwidth, label=fig:DefaultLabel}{}%
+
+\providecommand{\framedfigureOverlay}[2][]{
+  \setkeys{framedfigureOverlay}{#1}
+  \begin{figure}[\placement]
+    \centering
+    \begin{tikzpicture}
+      \node[imageframe]{%
+        \begin{minipage}{0.47\textwidth}%
+          \begin{centerpar}
+            \begin{overpic}[keepaspectratio, keepaspectratio, trim=1.2cm 5.2cm 1.2cm 5.2cm, clip, width=\textwidth]{\mappath}
+              \ifdefempty{\picturepath}{ 
+                \ifdefempty{\overlaytextname}{  
+                  \relax
+                }{
+                  \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
+                    \emph{\overlaytextname}\end{center}\end{minipage}};\end{tikzpicture}}  
+                  }
+                }{
+                  \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
+                    \includegraphics[trim=0cm 0cm 0cm 0cm, clip, width=1cm]{\picturepath} \emph{\overlaytextname}\end{center}\end{minipage}};\end{tikzpicture}}  
+                  }
+                \end{overpic}
+              \end{centerpar}
+            \end{minipage}
+          };
+        \end{tikzpicture}
+        \captionbelow{#2}
+        \label{\envlabel}
+      \end{figure}
+    }
+
+\WithSuffix\providecommand\framedfigureOverlay*[2][]{
+  \setkeys{framedfigureOverlay}{#1}
+  \begin{figure*}
+    \centering
+    \begin{tikzpicture}
+      \node[imageframe]{%
+        \begin{minipage}{\textwidth}%
+          \begin{centerpar}
+            \begin{overpic}[keepaspectratio, keepaspectratio, trim=1.2cm 5.2cm 1.2cm 5.2cm, clip, width=\textwidth]{\mappath}
+              \ifdefempty{\picturepath}{ 
+                \ifdefempty{\overlaytextname}{  
+                  \relax
+                }{
+                  \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
+                    \emph{\overlaytextname}\end{center}\end{minipage}};\end{tikzpicture}}  
+                 }
+                }{
+                  \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
+                    \includegraphics[trim=0cm 0cm 0cm 0cm, clip, width=1cm]{\picturepath} \emph{\overlaytextname}\end{center}\end{minipage}};\end{tikzpicture}}  
+                 }
+                \end{overpic}
+              \end{centerpar}
+            \end{minipage}
+          };
+        \end{tikzpicture}
+        \captionbelow{#2}
+        \label{\envlabel}
+      \end{figure*}
+    }
+
+% \framedfigureOverlay*[% 
+	% mappath=ost/graphics/MapPelargoniumSidoides.pdf,% 
+	% picpath=ost/graphics/Pelargoniumsidoides.png,%
+	% overlaytext=Pelargonium sidoides,%
+	% label=fig:KaplandPelargonie]{%  
+	% Distribution of Pelargonium sidoides. Die maps was created from data
+	% available via Global Biodiversity Information Facility database.  The
+	% distribution is restricted to regions in Lesotho and South Africa.
+	% (Rot).}  
+
+% \framedfigureOverlay[% 
+	% mappath=ost/graphics/MapPelargoniumSidoides.pdf,%
+	% label=fig:KaplandPelargonie]{%   
+	% Distribution of Pelargonium sidoides. Die maps was created from data
+	% available via Global Biodiversity Information Facility database.  The
+	% distribution is restricted to regions in Lesotho and South Africa.
+	% (Rot).}  
+
+\define@key{framedfigure}{placement}{\renewcommand*\placement{#1}}
+\define@key{framedfigure}{label}{\renewcommand*\envlabel{#1}}
+\presetkeys{framedfigure}{placement = htbp, label=none}{}%
+
+\providecommand\framedfigure[3][]{
+\setkeys{framedfigure}{#1}
+  \begin{figure}[\placement]
+    \centering
+    \begin{tikzpicture}
+      \node[imageframe]{%
+        \begin{minipage}{0.97\columnwidth}
+          \begin{center} 
+            #2
+          \end{center}
+        \end{minipage}
+      };
+    \end{tikzpicture}
+    \captionbelow{#3}
+    \label{\envlabel}
+  \end{figure}
+} 
+
+\WithSuffix\providecommand\framedfigure*[3][]{%
+\setkeys{framedfigure}{#1}
+  \begin{figure*}[H]
+    \centering
+    \begin{tikzpicture}
+      \node[imageframe]{%
+        \begin{minipage}{0.97\textwidth}
+          \begin{center} 
+            #2
+          \end{center}
+        \end{minipage}
+      };
+    \end{tikzpicture}
+    \captionbelow{#3}
+    \label{\envlabel}
+  \end{figure*}
+} 
+
+% Usage: 
+
+% \framedfigure[label=type:name]{%
+  % % Content here
+% }{Caption here}
+
+% Example usage:  
+
+% \ b dfigure*[label=fig:distmatwo]{   
+% <<distmap_two, fig.width=10, fig.height=5, echo=FALSE, message=FALSE>>=   
+  % ost_distmap(species=c('Accipiter erythronemius', 'Junco hyemalis', 'Aix sponsa'))
+% @  
+% }{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+  % commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+  % dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+  % pellentesque eu, pretium quis, sem.}
+
+\define@key{ostTableEnv}{placement}{\renewcommand*\placement{#1}}
+\define@key{ostTableEnv}{label}{\renewcommand*\envlabel{#1}}
+\presetkeys{ostTableEnv}{placement = H, label = nolabel}{}%
+
+\providecommand\ostTableEnv[3][]{
+\setkeys{ostTableEnv}{#1}
+\begin{table}[H]
+  \centering
+  \label{\envlabel}
+  \caption{#3}
+  {\small  
+    #2
+  }
+\end{table} 
+} 
+
+\WithSuffix\providecommand\ostTableEnv*[3][]{
+\setkeys{ostTableEnv}{#1}
+\begin{table*}
+  \centering
+  \label{\envlabel}
+  \caption{#3}
+  {\small  
+    #2
+  }
+\end{table*} 
+} 
+
+\lstnewenvironment{ostCodeEnv}[1][]{
+  \vspace{.5em}
+  \lstset{#1}
+}{
+  \vspace{.5em}
+} 
+
+% usage: 
+
+% \begin{ostCodeEnv}[options]
+  % a + b = c
+% \end{ostCodeEnv}
+
+% example usage: 
+
+% \begin{ostCodeEnv}[language = Ruby, label = code:testlabel]
+  % a + b = c
+% \end{ostCodeEnv}
+
+%%%-------------------------------------------------%%%
+%%% Typographical options of the headings %%%
+%%%-------------------------------------------------%%%
+
+\RequirePackage[noindentafter,calcwidth, compact]{titlesec}  
+
+% Note: This are the default values
+
+% \titleformat{\chapter}[display]
+% {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge} 
+% \titleformat{\section} 
+% {\normalfont\Large\bfseries}{\thesection}{1em}{} 
+% \titleformat{\subsection}
+% {\normalfont\large\bfseries}{\thesubsection}{1em}{} 
+% \titleformat{\subsubsection}
+% {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{} 
+% \titleformat{\paragraph}[runin]
+% {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+% \titleformat{\subparagraph}[runin]
+% {\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+% \titlespacing*{\chapter} {0pt}{50pt}{40pt}
+% \titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+% \titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% \titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% \titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
+% \titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
+
+% \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before-code>}[<after-code>]
+% hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
+
+% \ifost@addtoctopart%
+  % \titleformat{\part}[display]%
+  % {\sffamily}%
+  % {\filleft{\fontsize{110}{70}\selectfont\textcolor{ostColorPartHeaderNumber}%
+  % {\bfseries\thepart}}}%
+  % {-2ex}%
+  % {\filleft\fontsize{50}{70}\selectfont\color{ostColorPartHeader}\bfseries}%
+  % [\vspace*{4pc}{\ostSizePartialTocPart\ostFontPartialTocPart \begin{ostPartialToc}\startcontents\printcontents{p-}{0}{}\end{ostPartialToc}}\thispagestyle{empty}]
+% \else%
+  % \titleformat{\part}[display]%
+  % {\sffamily}% influences all content 
+  % {\filleft\fontsize{110}{70}\selectfont\color{ostColorPartHeaderNumber}\bfseries\thepart}% that is the part number
+  % {-2ex}%
+  % {\filleft\fontsize{50}{70}\selectfont\color{ostColorPartHeader}\bfseries}% that is influencing the header
+  % [\thispagestyle{empty}]
+% \fi%
+
+\ifost@addtoctopart%
+  \titleformat{\part}[display]%
+  {\sffamily}%
+  {\ostSizePartHeaderNumber\color{ostColorPartHeaderNumber}\ostFontPartHeaderNumber\thepart}%
+  {-2ex}%
+  {\ostSizePartHeader\color{ostColorPartHeader}\ostFontPartHeader}%
+  [\vspace*{4pc}{\ostSizePartialTocPart\ostFontPartialTocPart \begin{ostPartialToc}\startcontents\printcontents{p-}{0}{}\end{ostPartialToc}}\thispagestyle{empty}]
+\else%
+  \titleformat{\part}[display]%
+  {\sffamily}% influences all content 
+  {\ostSizePartHeaderNumber\color{ostColorPartHeaderNumber}\ostFontPartHeaderNumber\thepart}% that is the part number
+  {-2ex}%
+  {\ostSizePartHeader\color{ostColorPartHeader}\ostFontPartHeader}% that is influencing the header
+  [\thispagestyle{empty}]
+\fi%
+
+\ifost@sectionnumbers% 
+  \ifost@addtoctochapter%
+    \titleformat{\chapter}
+    {\color{ostColorChapterHeader}\ostSizeChapterHeader\ostFontChapterHeader}
+    {\color{ostColorChapterHeaderNumber}\thechapter}
+    {0.5em}
+    {\ostSizeChapterHeaderNumber\ostFontChapterHeaderNumber}
+    [\ifost@chapterwithtoc\vspace*{3pc}{\color{ostColorPartialToc}\ostSizePartialTocChapter\ostFontPartialTocChapter \begin{ostPartialToc}\startcontents\printcontents{p-}{1}{}\end{ostPartialToc}}\fi \thispagestyle{pageStyleChapter}]
+
+    \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+  \else%
+    \titleformat{\chapter}
+    {\color{ostColorChapterHeader}\ostSizeChapterHeader\ostFontChapterHeader}
+    {\color{ostColorChapterHeaderNumber}\thechapter}
+    {0.5em}
+    {\ostSizeChapterHeaderNumber\ostFontChapterHeaderNumber}
+    [\thispagestyle{pageStyleChapter}]
+    \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+  \fi%
+
+  \titleformat{\section}
+  {\color{ostColorSectionHeader}\ostSizeSectionHeader\ostFontSectionHeader}
+  {\color{ostColorSectionHeaderNumber}\thesection}
+  {0.5em}
+  {\ostSizeSectionHeaderNumber\ostFontSectionHeaderNumber}
+  \titlespacing*{\section}
+  {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
+
+  \titleformat{\subsection}
+  {\color{ostColorSubsectionHeader}\ostSizeSubsectionHeader\ostFontSubsectionHeader}
+  {\color{ostColorSubsectionHeaderNumber}\thesubsection}
+  {0.5em}
+  {\ostSizeSubsectionHeaderNumber\ostFontSubsectionHeaderNumber}
+  \titlespacing*{\subsection}
+  {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
+
+  \titleformat{\subsubsection}
+  {\color{ostColorSubSubsectionHeader}\ostSizeSubSubsectionHeader\ostFontSubSubsectionHeader}
+  {\color{ostColorSubSubsectionHeaderNumber}\thesubsubsection}
+  {0.5em}
+  {\ostSizeSubSubsectionHeaderNumber\ostFontSubSubsectionHeaderNumber}
+  \titlespacing*{\subsubsection}
+  {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
+
+  \titleformat{\paragraph}[runin]
+  {\color{ostColorParagraphHeader}\ostSizeParagraphHeader\ostFontParagraphHeader}
+  {\color{ostColorParagraphHeaderNumber}\theparagraph}
+  {0.5em}
+  {\ostSizeParagraphHeaderNumber\ostFontParagraphHeaderNumber}
+  \titlespacing*{\paragraph}
+  {0pt}{3.25ex plus 1ex minus 0.2ex}{1em}
+\else%  
+  
+  \ifost@addtoctochapter%
+    \titleformat{\chapter}
+    {\color{ostColorChapterHeader}\ostSizeChapterHeader\ostFontChapterHeader}
+    {\color{ostColorChapterHeaderNumber}}
+    {0em}
+    {}
+    [\ifost@chapterwithtoc\vspace*{3pc}{\color{ostColorPartialToc}\ostSizePartialTocChapter\ostFontPartialTocChapter \begin{ostPartialToc}\startcontents\printcontents{p-}{1}{}\end{ostPartialToc}} \fi \thispagestyle{pageStyleChapter}]
+    \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+  \else%
+    \titleformat{\chapter}
+    {\color{ostColorChapterHeader}\ostSizeChapterHeader\ostFontChapterHeader}
+    {}
+    {0em}
+    {}
+    [\thispagestyle{pageStyleChapter}]
+    \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+  \fi%
+
+  \titleformat{\section}
+  {\color{ostColorSectionHeader}\ostSizeSectionHeader\ostFontSectionHeader}
+  {}{0em}{}
+  \titlespacing*{\section}
+  {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
+
+  \titleformat{\subsection}
+  {\color{ostColorSubsectionHeader}\ostSizeSubsectionHeader\ostFontSubsectionHeader}{}{0em}{}
+  \titlespacing*{\subsection}
+  {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
+
+  \titleformat{\subsubsection}
+  {\color{ostColorSubsectionHeader}\ostSizeSubSubsectionHeader\ostFontSubSubsectionHeader}{}{0em}{}
+  \titlespacing*{\subsection}
+  {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
+
+  \titleformat{\paragraph}[runin]
+  {\color{ostColorParagraphHeader}\ostSizeParagraphHeader\ostFontParagraphHeader}{}{0em}{}
+  \titlespacing*{\paragraph}
+  {0pt}{3.25ex plus 1ex minus 0.2ex}{1em}
+\fi%
+
+\ifost@floatbarrierpart
+  \preto{\part}{%
+    \FloatBarrier
+  }  
+\fi
+
+\ifost@floatbarrierchapter
+  \preto{\chapter}{%
+    \FloatBarrier
+  }  
+\fi
+
+\ifost@floatbarriersection
+  \preto{\section}{%
+    \FloatBarrier
+  }  
+\fi
+
+% style of tocs 
+\ifost@fancytocs%
+  \RequirePackage{titletoc}
+  % \titlecontents{<section>}
+		% [<left>]
+		% {<above-code>}
+		% {<numbered-entry-format>}
+		% {<numberless-entry-format>}
+		% {<filler-page-format>}[<below-code>]
+
+  \contentsmargin{1.8em} 
+  \newlength{\ostLengthTocRuleWidth}
+  \setlength{\ostLengthTocRuleWidth}{1.8pt}
+  \newcommand{\ostTocRule}{\textcolor{ostColorTocRule}{\noindent\rule{\linewidth}{\ostLengthTocRuleWidth}}}
+
+  \titlecontents{part}
+  [0em]
+  {\addvspace{2pc}}
+  {\ostSizeTocPart\ostFontTocPart\contentslabel{0em}}
+  {\ostSizeTocPart\ostFontTocPart}
+  {\titlerule*{}\bfseries\contentspage}[\vspace{-0.7em}\ostTocRule\thispagestyle{pageStyleToc}]
+
+  \titlecontents{chapter}
+  [1.5em]
+  {\addvspace{0.7pc}}
+  {\ostSizeTocChapter\ostFontTocChapter\contentslabel{1em}}
+  {\ostSizeTocChapter\ostFontTocChapter\hspace*{-1em}}
+  {\titlerule*{}\contentspage}[\thispagestyle{pageStyleToc}]
+
+  \titlecontents{p-chapter}
+  [1.5em]
+  {\addvspace{0.7pc}}
+  {\ostSizeTocPChapter\ostFontTocPChapter\contentslabel{1em}}
+  {\ostSizeTocPChapter\ostFontTocPChapter\hspace*{-1.5em}}
+  {\titlerule*[0.7em]{.}\contentspage}
+  [\thispagestyle{pageStyleToc}]
+
+  \titlecontents{section}
+  [3em]
+  {\ostFontTocSection\ostSizeTocSection}
+  {\ostFontTocSection\ostSizeTocSection\contentslabel{1.6em}}
+  {}
+  {\titlerule*[0.7em]{.}\contentspage}
+  [\thispagestyle{pageStyleToc}]
+
+  \titlecontents{p-section}
+  [3em]
+  {\ostSizeTocPSection\ostFontTocPSection}
+  {\ostSizeTocPSection\ostFontTocPSection\contentslabel{1.6em}}
+  {}
+  {\titlerule*[0.7em]{.}\contentspage}[\thispagestyle{pageStyleToc}]
+  
+  \titlecontents{subsection}
+  [5em]
+  {\ostSizeTocSubsection\ostFontTocSubsection}
+  {\ostSizeTocSubsection\ostFontTocSubsection\contentslabel{2.3em}}
+  {}
+  {\titlerule*[0.7em]{.}\contentspage}[\thispagestyle{pageStyleToc}]
+
+  \titlecontents{p-subsection}[5em]
+  {\ostSizeTocPSubsection\ostFontTocPSubsection}
+  {\ostSizeTocPSubsection\ostFontTocPSubsection\contentslabel{2.3em}}{}
+  {\titlerule*[0.7em]{.}\contentspage}[\thispagestyle{pageStyleToc}]
+
+  \titlecontents{figure}[2em]
+  {\ostSizeTocFigure\ostFontTocFigure\addvspace{1pc}}
+  {\ostSizeTocFigure\ostFontTocFigure\contentslabel{2em}}{}
+  {~\titlerule*[0.7em]{.}\contentspage}[\thispagestyle{pageStyleToc}]
+
+  \titlecontents{table}[2em]
+  {\ostSizeTocTable\ostFontTocTable\addvspace{1pc}}
+  {\ostSizeTocTable\ostFontTocTable\contentslabel{2em}}{}
+  {\titlerule*[0.7em]{.}\contentspage}[\thispagestyle{pageStyleToc}]
+\fi%
+
+% create all content tables
+\def\makeallcontenttables{
+  \tableofcontents%
+  \listoffigures%
+  \listoftables%
+  \ifost@revision%
+    \listofrevisions%
+  \fi%
+}
+\let\printallcontenttables\makeallcontenttables%
+

@@ -1,0 +1,186 @@
+% !Mode:: "TeX:UTF-8"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[refpage]{nomencl} %refeq
+
+\makenomenclature
+%% \nomenclature{$XXX$}{YYY}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% XX‘s(2000):author's + year
+\makeatletter
+ \newcommand{\citex}[1]{%
+ \citeauthor{#1}'s\citeyearpar{#1}%
+ }
+\makeatother
+%% XX (2000):author+year
+\makeatletter
+ \newcommand{\citeay}[1]{% cite author+year
+ ~\citeauthor{#1}~\citeyearpar{#1}~%
+ }
+\makeatother
+%% XX (1):author+index
+\makeatletter
+ \newcommand{\citeai}[1]{% cite author+index
+ ~\citeauthor{#1}~(\citeyear{#1})~\cite{#1}~%
+ }
+\makeatother
+%% \cite{}: (1)
+%% \upcite{}: (1)
+%% XX: author
+\makeatletter
+\newcommand{\citeath}[1]{~\citeauthor{#1}~}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{paralist}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------罗马数字---------------------%
+\usepackage{nicefrac}
+\usepackage{amsmath,bm} % \bm
+\usepackage{algorithmic}
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+\usepackage{cases}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\eps}{\varepsilon}
+%% 图标的数学公式
+%\usepackage[font=small,format=plain,labelfont=bf,up,
+%  textfont=normal,up,justification=justified,singlelinecheck=false]{caption}
+%\usepackage{caption,sansmath}
+%\DeclareCaptionFont{sansmath}{\sansmath}
+%\captionsetup{textfont={sansmath}}%sf
+
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.5}
+\arrayrulewidth=0.8pt
+\tabcolsep=12pt
+
+\usepackage{multicol}
+\usepackage{threeparttable}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[table]{xcolor}
+\definecolor{mygray}{gray}{.9}
+\definecolor{mypink}{rgb}{.99,.91,.95}
+\definecolor{mycyan}{cmyk}{.3,0,0,0}
+
+\usepackage{datetime}
+ 
+%\xxivtime \, \today
+%\ampmtime\, \today
+%\oclock\, \today
+%\thistime\, \today
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%=========英文封面=========%%
+
+%%定义设置英文封面内容的命令。
+\newcommand\englishtitle[1]{\def\XMUT@value@englishtitle{#1}}
+\newcommand\englishauthor[1]{\def\XMUT@value@englishauthor{#1}}
+\newcommand\englishadvisor[1]{\def\XMUT@value@englishadvisor{#1}}
+\newcommand\englishinstitute[1]{\def\XMUT@value@englishinstitute{#1}}
+\newcommand\englishdate[1]{\def\XMUT@value@englishdate{#1}}
+\newcommand\englishdegree[1]{\def\XMUT@value@englishdegree{#1}}
+\newcommand\englishmajor[1]{\def\XMUT@value@englishmajor{#1}}
+
+%%生成英文封面。
+\newcommand\makeenglishtitle{%
+  \cleardoublepage
+  \thispagestyle{empty}
+  \begin{center}
+	\vspace*{20pt}
+	  \sf\zihao{-1} \XMUT@value@englishtitle
+	\vskip \stretch{1}
+	  \bf\zihao{4} \XMUT@value@englishauthor
+	\vskip \stretch{1}
+	  \normalfont\zihao{4} \XMUT@label@englishadvisor
+	\vskip 3pt
+	  \normalfont\zihao{4} \XMUT@value@englishadvisor
+	\vskip \stretch{2}
+	  \normalfont\normalsize \XMUT@value@englishinstitute
+	\vskip 30pt
+	  \normalfont\normalsize \XMUT@value@englishdate
+	\vskip 20pt
+	  \it\normalsize \XMUT@label@englishstatement
+  \end{center}
+  \clearpage
+  \if@twoside
+	\thispagestyle{empty}
+	\cleardoublepage
+  \fi
+}
+
+%% 英文封面上的标签内容。
+%%
+%% labels in the english title page
+%%
+\def\XMUT@label@englishadvisor{Supervisor:}
+\def\XMUT@label@englishstatement{Submitted in total fulfilment
+  of the requirements for the degree of \XMUT@value@englishdegree \\
+  in \XMUT@value@englishmajor}
+%%
+%% 英文封面的填写内容。
+%%
+%% string values filled in the english title page
+%%
+\def\XMUT@value@englishtitle{(English Title of Thesis)}
+\def\XMUT@value@englishauthor{(Author Name)}
+\def\XMUT@value@englishadvisor{(Supervisor's Name)}
+\def\XMUT@value@englishinstitute{(Institute Name)}
+\def\XMUT@value@englishdate{%
+  \ifcase\month\or
+    January\or February\or March\or April\or May\or June\or
+    July\or August\or September\or October\or November\or December\fi
+  , \number\year}
+\def\XMUT@value@englishdegree{Ph.D.}
+\def\XMUT@value@englishmajor{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%<-		粘贴源代码		<-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{listings}                % 粘贴源代码
+\lstset{
+language=R,                          %% R 
+basicstyle=\footnotesize\ttfamily,
+commentstyle=\ttfamily\color{gray},  %% 注释
+numbers=left,                        %% 显示前面的序号
+numbersep=1em,
+%numberstyle=\ttfamily\color{myorange}\tiny,
+numberstyle=\ttfamily\tiny,
+stepnumber=1,                        %% 序号增加值
+frame=shadowbox,                    %% single,
+rulesepcolor=\color{red!20!green!20!blue!20},
+escapeinside=``, 
+xleftmargin=2em,
+xrightmargin=2em, 
+aboveskip=1em,
+belowskip=-2em,
+breaklines=true,
+showspaces=false,
+showstringspaces=false,   %% 在listing的代码输出中不显示"空格"
+showtabs=false,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+breakatwhitespace=false,
+backgroundcolor=\color{yellow!10},
+title=\lstname,
+keywordstyle=\color{blue},
+columns=flexible,
+morekeywords={maketitle},
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%<-		粘贴源代码		<-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{setspace}
+\onehalfspacing
+%\doublespacing
+\parskip 0.5\baselineskip
+\usepackage{ifthen}
+% set linkcolor to blue for ebook :)

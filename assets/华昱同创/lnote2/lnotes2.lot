@@ -1,0 +1,23 @@
+\gdef \the@ipfilectr {@-1}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-2}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-3}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-4}
+\addvspace {10\p@ }
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-5}
+\addvspace {10\p@ }
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-6}
+\addvspace {10\p@ }
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-7}
+\addvspace {10\p@ }
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-8}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces 数字排版工作流程及主要工具\relax }}{2}{table.caption.9}
+\contentsline {table}{\numberline {1.2}{\ignorespaces T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor 1000 发行版与编辑器\relax }}{13}{table.caption.10}
+\gdef \the@ipfilectr {}

@@ -50,8 +50,7 @@
 \usepackage{alltt}
 
 \definecolor{themecolor}{RGB}{0,120,2}% % theme color
-\newcommand{\filepath}{files/evei/chapters}
-\include{william}
+%\newcommand{\filepath}{files/evei/chapters}
 
 \usepackage{lipsum}
 % **************************************
@@ -65,7 +64,7 @@
 % **************************************
 % -> color
 % **************************************
-\usepackage{set/mycolor}
+\usepackage{../../set/mycolor}
 % **************************************
 % <- color
 % **************************************
@@ -75,10 +74,6 @@
 % **************************************
 \usepackage{booktabs,longtable,multirow,tabularx,warpcol}
 \usepackage{threeparttable}
-
-\renewcommand{\arraystretch}{1.5}
-\arrayrulewidth=0.8pt
-\tabcolsep=12pt
 % **************************************
 % Structure
 % **************************************
@@ -153,7 +148,34 @@
 \usepackage{packages/ldemo}
 
 %\usepackage{framed}
-%\usepackage{set/mymdframed} 
+\usepackage{set/mymdframed}
+\usepackage{marginnote}
+
+%%
+\makeatletter
+ \newcommand{\cneqref}[1]{%
+ 方程（\ref{#1}）%
+ }
+\makeatother
+%%
+%%
+\makeatletter
+ \newcommand{\tabref}[1]{%
+ 表（\ref{#1}）%
+ }
+\makeatother
+%%
+%%
+\makeatletter
+ \newcommand{\figref}[1]{%
+ 图（\ref{#1}）%
+ }
+\makeatother
+%%
+
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{8pt}
+
 %\renewcommand{\labelitemi}{\ensuremath{\bullet}}% xunicode changes the bullet
 
 \makeatletter
@@ -211,8 +233,8 @@
 
 
 \frontmatter
-\include{\filepath/front}                     % Front cover and title page
-\include{\filepath/copyright}
+\include{chapters/front}                     % Front cover and title page
+\include{chapters/copyright}
 
 % Open right pages: title, dedication, TOC
 \makeatletter
@@ -241,7 +263,9 @@
 \addtolength{\belowcaptionskip}{-3pt}
 \setlength{\parindent}{2em}
 
-\include{chapters/abstract}
+%\include{\filepath/abstract}
+%\include{chapters/preface}
+%\include{chapters/acknowledgements}
 
 \makeatletter
 \@openrectotrue  
@@ -250,8 +274,11 @@
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername: #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection: #1}}
 
-% \input{\filepath/index}
-%\include{\filepath/chapter01}
-
-
+%\input{chapters/index}
+\include{chapters/chapter01}
+%\include{\filepath/chapter02}
+%\include{\filepath/chapter03}
+%\include{\filepath/chapter04}
+%\include{\filepath/chapter05}
+%\include{\filepath/chapter06}
 \end{document}

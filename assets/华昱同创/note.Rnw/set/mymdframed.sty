@@ -60,6 +60,7 @@ innerrightmargin=5pt
 
 %%     
 \newenvironment{mdfbox}[1][]{%                              %%% mdfbox
+\vspace{2ex}
 \par                              %%% \par
  \footnotesize
   \ifstrempty{#1}%
@@ -105,6 +106,9 @@ innerrightmargin=5pt
              linewidth=2pt,topline=true,
              frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
    \begin{mdframed}[]\relax%
+	  \setlength{\parindent}{1.8em}
+	        \vspace{-2ex}
+	      {\color{myorange} $ \blacksquare $}\hspace{1.8ex}\scriptsize\kai
    }{\end{mdframed}}
 %%
 

@@ -1,0 +1,10 @@
+\gdef \the@ipfilectr {@-1}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-2}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-3}
+\contentsline {chapter}{摘\hspace {2em}要}{vi}{chapter*.4}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-4}
+\contentsline {chapter}{\numberline {1}时间序列分析}{1}{chapter.1}
+\gdef \the@ipfilectr {}

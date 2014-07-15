@@ -1,0 +1,5 @@
+sudo apt-get install rake
+
+sudo gem install hz2py
+
+rake post title="这是一个例子"

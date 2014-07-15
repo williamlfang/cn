@@ -1,0 +1,72 @@
+---
+layout:   post
+title:    "使用Quantmod下载沪深股票数据及分析"
+category: 工作 
+tags:     
+- R
+- quantmod
+- 沪深股市
+description: 
+published: false
+status:    process
+---
+
+今天来到公司上班，本来是想安装软件来查看股市行情以及个股变动情况。由于前几天笔记本不知原因、不明就理的「罢工」，导致我又得重新安装系统和所需的软件。话说回来，其实我们大都习惯了通过证券公司开发的软件来查看昨日行情走势，我们也大都习以为惯了，平时要是真遇到什么小问题，也大都能忍则忍，并不太在乎真实的使用感受。所有的“user-friendly”，大概也就谈谈罢了。
+
+早上有同事跟我反应说，她在查看股市，尤其是个股情况，看到满屏幕花花绿绿的数据，本来就不怎么清醒的脑袋又开始昏昏欲睡了。我又跟她简短的聊了几句，发现其实她对沪深股市最想要得到的就是综合指数以及个股股价的走势，那些买家成交量、K线图形、最大最小变化数据等等，基本上是冗余的信息，不仅不能增进她对股市行情的整体判断，反而会干扰她的分析。现实中，我们经常遇到过量的数据信息输入往往起不到辅助决策的作用。
+
+针对这位同事反应的问题。我大概有几点思考的。
+
+<!-- more -->
+
+ - 首先，我们的交易软件其实可以根据不同客户的信息异质性需求，为他们提供「私人定制」的信息套件。比如有些客户可能会比较习惯寻找共同行业版块中几个典型企业作为分析的着手，根据对行业里各个上市公司的总体分析，能够获得对个股走势的宏观判断与整体认识。再比如，有些客户可能只是想知道在过去的几个周期里面个股股价的总体趋势，他不想要看到诸如成交量、买卖双方、K线、蜡烛图等等。那么，我们在做客户服务时，其实可以从客户需求的角度来思考，并且从产品设计、软件架构、服务流程等一一入手，做到「能用、有用、实用、好用」的全新服务层次。
+ 
+ - 接着上面的一点，我发现自己所在的金顾部门需要改进的几个方面。
+ 
+  * 首先，我们需要一定的技能能力，这包括但不限于专业理论知识储备、对市场实务体系的深刻了解、对产品特性的独到把握、具备一定等级程度的量化分析技能、掌握至少一个以上的编程语言。
+  
+  * 说到专业，毋庸置疑，我们需要对现代金融理论的发展脉络及其发展前沿具有扎实的理论功力。现代金融的发展包括资产定价（Asset Pricing）与公司金融（Corporate Finance）两大模块。从金顾的职能角色上看，我们至少需要知道目前有哪些比较成功的可用于理解股票市场波动与演变的理论模型，比如 CAPM、C-CAPM、APT 等，清楚的知道公司的财务分析报表如何为分析上市公司未来股价提供有价值的信息。
+  
+  * 而关于量化分析的方法，我个人比较推荐大家能够学习一些比较使用的编程语言，比如善于处理数据统计分析与图形化展示的 R 语言，专注矩阵分析与模拟的 Matlab 系统，能用用于处理大量互联网数据的 Python 等。尤其是 R，既是一种编译环境，也是一种数据编程语言，是免费开源项目，网上具有非常丰富的软件包可供免费下载使用。可以说，R 是目前分析数据与图形绘制的最好的编程语言，没有之一。
+  
+
+今天的主题是关于如何使用 R 中的一款优秀的有些「过分」的开源软件包，**quantmod**。quantmod包：Quantitative Financial Modelling Framework。其目的在于为量化交易者提供一个进行建模的平台，目前的主要功能是获取交易数据进行处理并绘制交易图形。
+
+ - 首先，我们先去 Yahoo Finance 上面找到不同指数或者个股对应的股票名称或者股票代码。比如，我们现在想要看看上证指数的基本情况，那么，其所对应的名称是 「**^ SSEC**」。或者是深圳 A 股，对应的代码是「**^ SZSA**」对于股票代码，这里需要区分沪市和深市的情况，在相应的代码后面添加「**.ss**」或者是「**.sz**」。比如，对于在沪市交易的浦发银行，其股票代码为 **600000**，则可以取 **600000.ss**。比如，我们查看在深圳上市的「招商地产」，其股票代码在深市为 **000024**，则可以取 **000024.sz**。
+ 
+ - 其次，我们使用函数 **getSymbols()** 来获取需要运用于后续分析的金融数据。则可以使用命令
+ 
+      上海综合 <-getSymbols("^SSEC",from = "2004-01-01", ## 上海综合指数
+                to = Sys.Date(),src = "yahoo",auto.assign=FALSE)
+      chartSeries(上海综合, theme = theme.black)
+
+[![plot of chunk 上海综合](/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/上海综合.png)](/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/上海综合.png) 
+
+      深圳A股 <-getSymbols("^SZSA",from = "2014-01-01", 
+                  to = Sys.Date(),src = "yahoo",auto.assign=FALSE)
+      chartSeries(深圳A股, theme = theme.black, TA = "addEnvelop()")
+
+[![plot of chunk 深圳A股](/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/深圳A股.png)](/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/深圳A股.png) 
+ 
+ - 对于个股，我们也举一个简单的例子。比如招商地产，000024.sz
+ 
+      招商地产 <- getSymbols("000024.sz", from = "2000-01-01", ## 招商地产
+                to = Sys.Date(),src = "yahoo",auto.assign=FALSE)
+      chartSeries(招商地产, theme = theme.black)
+      candleChart(招商地产, theme = theme.black)
+      
+[![plot of chunk 深圳A股](/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/招商地产.png)](/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/招商地产.png)
+
+ - 通常，如果有些客户可能会对技术分析比较喜欢，想要在图形中使用一些基本的技术分析指标。通常，这个可以使用 **addXXX()** 来实现。比如添加包螺线，可以使用 **addEnvelope()**。
+ 
+      神州泰越 <- getSymbols("300002.sz", from = "2000-01-01", 
+                to = Sys.Date(),src = "yahoo",auto.assign=FALSE)
+      chartSeries(神州泰越, theme = theme.black,
+                  TA = "addVo(); addSMA(); addEnvelope();
+                  addMACD(); addMomentum(); addROC()")
+      # addLines(h=100, col = "white") ## mean(神州泰越[,1])
+      # addLines(h=200, col = "white") ## mean(神州泰越[,1])
+      addLines(v=932)
+
+      
+[![plot of chunk 神州泰越](/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/神州泰越.png)](/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/神州泰越.png)

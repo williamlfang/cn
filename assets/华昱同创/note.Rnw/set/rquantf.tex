@@ -1,53 +1,4 @@
-\documentclass[a4paper,10pt]{book}\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
-\makeatletter
-\def\maxwidth{ %
-  \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\makeatother
-
-\definecolor{fgcolor}{rgb}{0.251, 0.251, 0.251}
-\newcommand{\hlnum}[1]{\textcolor[rgb]{0,0.533,0.298}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0,0.533,0.298}{#1}}%
-\newcommand{\hlcom}[1]{\textcolor[rgb]{1,0.314,0.314}{#1}}%
-\newcommand{\hlopt}[1]{\textcolor[rgb]{0.251,0.251,0.251}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.251,0.251,0.251}{#1}}%
-\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.502,0.627,0.188}{#1}}%
-\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.424,0.345}{#1}}%
-\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.188,0.631,0.533}{#1}}%
-\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.6,0,0}{#1}}%
-
-\usepackage{framed}
-\makeatletter
-\newenvironment{kframe}{%
- \def\at@end@of@kframe{}%
- \ifinner\ifhmode%
-  \def\at@end@of@kframe{\end{minipage}}%
-  \begin{minipage}{\columnwidth}%
- \fi\fi%
- \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
- \colorbox{shadecolor}{##1}\hskip-\fboxsep
-     % There is no \\@totalrightmargin, so:
-     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
- \MakeFramed {\advance\hsize-\width
-   \@totalleftmargin\z@ \linewidth\hsize
-   \@setminipage}}%
- {\par\unskip\endMakeFramed%
- \at@end@of@kframe}
-\makeatother
-
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
-
-\usepackage{alltt}
+\documentclass[a4paper,10pt]{book}
 
 \definecolor{themecolor}{RGB}{0,120,2}% % theme color
 
@@ -202,60 +153,7 @@
 \makeatletter
  \newcommand{\rcode}[1]{\textsf{#1}}
 \makeatother
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 
 \begin{document}
 
-%<knitr: GLOBAL SETTING>========================================================
 
-
-
-
-%>knitr: GLOBAL SETTING<========================================================
-
-
-\frontmatter
-\include{chapters/front}                     % Front cover and title page
-\include{chapters/copyright}
-
-% Open right pages: title, dedication, TOC
-\makeatletter
-\@openrectotrue
-\makeatother
-
-
-
-% TOC, LOF, LOT
-\tableofcontents
-
-% Open any pages: LOF, LOT, forward, preface, acknowledgements, abbreviations
-\makeatletter
-\@openrectofalse
-\makeatother
-
-\listoffigures
-\listoftables
-% \listoflcode
-
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\onehalfspacing
-\let\oldparskip\parskip
-\addtolength{\parskip}{3pt}
-\addtolength{\abovecaptionskip}{-3pt}
-\addtolength{\belowcaptionskip}{-3pt}
-\setlength{\parindent}{2em}
-
-\include{chapters/abstract}
-%\include{chapters/preface}
-%\include{chapters/acknowledgements}
-
-\makeatletter
-\@openrectotrue  
-\makeatother
-\mainmatter
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername: #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection: #1}}
-
-%\input{chapters/index}
-\include{chapters/chapter01}
-\end{document}

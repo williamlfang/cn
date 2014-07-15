@@ -173,6 +173,7 @@
 % **************************************
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 <<myknitr, child='set/rknitr.Rnw', eval=TRUE>>=
 options(replace.assign = TRUE)
 render_listings()

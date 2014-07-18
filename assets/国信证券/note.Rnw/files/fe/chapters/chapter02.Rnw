@@ -15,21 +15,443 @@ render_listings()
 
 \chapter{统计与金融}
 
-\smalltodol{这里我特指滥觞于 Markowitz（1952）、大量使用数学尤其是概率统计理论与随机过程方法的金融理论与实证金融研究}{现代金融}的发展主要是借力统计技术的提高。从对风险的概率特征的描述开始，整个金融理论体系都是使用概率理论与统计方法来阐述的。Markowitz 的资产组合理论成功运用方差 （variance） 来刻画一项资产在时间范围内不确定性的量化指标，到最成功的运用统计随机思想的 Black-Scholes 期权定价公式，在整个金融领域都随处可见统计思想。因此，在深入理解整个金融市场之前，我们需要对描述其动态特征的概率统计理论有一定的掌握。
+\smalltodoc{这里我特指滥觞于 Markowitz（1952）、大量使用数学尤其是概率统计理论与随机过程方法的金融理论与实证金融研究}{现代金融}的发展主要是借力统计技术的提高。从对风险的概率特征的描述开始，整个金融理论体系都是使用概率理论与统计方法来阐述的。Markowitz 的资产组合理论成功运用方差 （variance） 来刻画一项资产在时间范围内不确定性的量化指标，到最成功的运用统计随机思想的 Black-Scholes 期权定价公式，在整个金融领域都随处可见统计思想。因此，在深入理解整个金融市场之前，我们需要对描述其动态特征的概率统计理论有一定的掌握。对于金融市场建模，目前大概需要用到的数学理论有：\smalltodom{个人强烈推荐 Taleb 写的 Fooled by Randomness。作者本人从科班出生，主要研究概率与统计思想。这是一个「神奇的书」，文学与数学兼谈，是一本从概率视角与金融交易员的角度看这个市场（与世界）的畅销书。}
+\begin{compactitem}
+\item 测度论框架下构建概率理论：与经典理论将概率解释为随机数出现的频率的极限值不同，现代概率论更多的从测度论的视角把概率当作一种可以衡量的 \emph{Lebegue} 积分，即在样本空间上的一段「测量」。
+\item 随机过程论，尤其是布朗运动与 Ito 随机过程。
+\item 统计理论，需要掌握诸如回归分析、参数估计、统计推断、拟合分析等基本的分析技术，理解 Mento Carlo 方法做模拟的思路。
+\end{compactitem}
 
-
+\section{风险测量}
+风险指的是由于未来时间的不确定性导致金融变量在样本空间内的变动情况，即无法事先预知该变量出现的确切数值，而只知道其所属的整个样本概率空间。概率论使用实值函数映射来表示变量的不确定，即 $\{X \big{|} X(\omega)\in \mathcal{R}, \omega \in \Omega\}$。一项资产投资的风险可以理解为投资者对该资产未来预期收益的不确定性，即这笔投资可能远远超过初始投资额度，带来正值的投资回报；也可能由于不可预期的风险导致该资产回报小于原始投资成本，给投资者造成损失。因此，利用概率理论的「随机变量」这个重要的概念能够把投资者对未来不确定的担忧进行量化处理。这种对尚未发生事件的量化，可以是基于金融市场的历史数据而推断得到的客观证据，也可能是投资者自身的主管评价。通常的，前者被当作「经典」的概率理论，而后者则被贴上了「贝叶斯统计」，尽管这个标签其实也是「名不副、其不实」。\smalltodom{Bayesian Statistics}
 \begin{mdfbox}[Risk Measure]
 [P1.] Risk means uncertainty in future returns from an investment, in particular, that the investment could earn less than the expted return and even results in a loss, that is, a negative return. Risk is often measured by the standart deviation of the return, which we also call the \emph{volatility}. Recently there has been a trend toward measuring risk by value-at-risk (VaR) and expected shortfall (ES). These focus on large losses and are more direct indications of financial risk than the standard deviatin of the return.
 \end{mdfbox}
 
-对于为何我们在处理金融实证研究时主要是针对资产（股票、债券、衍生品等）回报率，可以参考经典的 Compbell,Lo and Makinley 的 "The Econometrics of Financial Markets" 已经解释的十分到位。这是因为：
+\section{收益率}
+对于为何我们在处理金融实证研究时主要是针对资产（股票、债券、衍生品等）回报率，可以参考经典的 Compbell,Lo and Makinley 的 "The Econometrics of Financial Markets" 已经解释的十分到位。\smalltodom{另外，我们也可以 Tsay 的 Financial Times Series Analysis 中发现类似的讨论。对于资产回报率的研究，能够逆向推断出资产价值。因此，我们看到绝大部分的文献都在讨论收益率的随机特征。}
+这是因为：
 \begin{compactitem}
 \item 收益率衡量的是在单位投资数量上所获得的投资回报，是一个相对的概念，与投资规模大小没有关系。因而这有利于比较不同投资规模、投资期限的资产给予投资者的风险补偿。
-\item 收益率与股票价格相比在统计特征上更加方便。首先是收益率反映了股票价格微小的变动情况，比较服从随机过程对数据平稳性的要求；其次，收益率还是一个
+\item 收益率同股票价格相比在统计特征上更加方便。收益率反映了股票价格微小的变动情况，比较服从随机过程对数据平稳性的要求。
 \end{compactitem}
 
-\section{需要注意的问题}
-Ruppert 提到的几个在处理量化分析时需要注意的问题，我个人觉得都十分的在理。
+\subsection{简单净收益率}
+一个单位时间内的\smalltodol{simple gross return：简单毛收益率}{简单毛收益率}被定义为资产相对于初始投入所获得的增减的程度
+\begin{align}
+ 1 + R_t &= \frac{P_t}{P_{t-1}}.
+\end{align}
+则\smalltodol{simple net return：简单净收益率}{简单净收益率} $R_t$ 为
+\begin{align}
+ R_t &= \frac{P_t}{P_{t-1}} - 1 = \frac{P_t - P_{t-1}}{P_{t-1}}.
+\end{align}
+由于期末价格 $P_t \geq 0$，因此简单收益率的下限是 $R_t \geq -1$。
+
+\subsection{k 期收益率}
+同样的，我们可以定义一个在 k 期内的资产收益率，
+\begin{align}
+1  + R_t[k] &= \frac{P_t}{P_{t-k}} 
+		= \frac{P_t}{P_{t-1}} \cdot \frac{P_{t-1}}{P_{t-2}} \cdots \frac{P_{t-(k-1)}}{P_{t-k}}
+		= \prod_{j = 0}^{k-1} \big( 1 + R_{t-j} \big)
+\end{align}
+
+\subsection{单期对数收益率}
+{\kai 对数收益率} 也称作\smalltodol{continuously compounded return}{「连续复合收益率」}
+\begin{align}
+r_t &= \log(1+R_t) = \log(\frac{P_t}{P_{t-1}}) =  p_t - p_{t-1}.
+\end{align}
+式中 $p = \log(P)$。
+
+\subsection{k 期对数收益率}
+使用对数收益率的一个好处在于我们可以将一个 k 期的对数收益率化解为 k 个单期收益率的叠加，即
+\begin{align}
+r_t[k] &= \log(1 + R_t[k]) = \log\Big( \prod_{j = 0}^{k-1} \big( 1 + R_{t-j}  \big)\Big) 
+	   = \sum_{j = 0}^{k-1} r_{t-j} 
+\end{align}
+
+
+\begin{mdffigure}[万科A股]
+<<echo=TRUE, eval=TRUE>>=
+<<>>=
+rtn <- function(stock.code, from = "2000-01-01"){
+  y <- getSymbols(stock.code, from = from, auto.assign = FALSE)
+  rtn <- diff(log(Cl(y)), 1) *100
+  rtn <- rtn[-1]
+}
+
+chartSeries(rtn("000002.sz"), name = "万科A：收益率")
+abline(h= 0, col = "red", lwd = 2, lty = "dashed")
+
+plot(density(rtn("000002.sz")), main = "万科股票收益率分布图", col = "blue", lwd = 3)
+lines(density(rnorm(1000, 0, 2)), col = "red", lwd = 2, lty = "dashed")
+@
+\mdffigurenote{说明}{%
+万科A股数据来自 quantmod() 函数通过对 Yahoo Finance 股票市场的网页读取。
+}%
+\end{mdffigure}
+
+
+\section{布朗运动}
+\smalltodol{Brownian Motion}{布朗运动}，也称做「维纳过程」，最初指的是由生物学家布朗先生观测到花粉粒子在水中相互碰撞所形成的不规则的运动轨迹，后来经由 Bachelier 将其成功运用到股票市场，反映了股票价格变化的高度随机性特征。布朗运动是一个正态分布的独立增量连续随机过程。一个随机过程 $\{W(t)\}$ 是一个布朗运动，如果它具有如下特性：
+\begin{compactenum}
+\item 初始状态 $W(0) = 0$。
+\item 连续但不可微，即 $$\Delta W(t) = W(t+\Delta t ) - W(t) = \eps\sqrt{\Delta t}.$$ 其中，随机变量$\eps \sim \mathcal{N}(0,1)$.
+\item 独立增量过程：对于 $0 \leq t_1 \leq t_2 \leq \cdots \leq t_n$，增量 $W(t_2) - W(t_1)$、$W(t_3) - W(t_2)$、$\cdots$、$W(t_n) - W(t_{n-1})$ 是相互独立的。
+\end{compactenum}
+
+\begin{mdffigure}[几何布朗运动模拟]
+<<>>=
+t <- 0:100  # time
+sig2 <- 0.01
+## first, simulate a set of random deviates
+x <- rnorm(n = length(t) - 1, sd = sqrt(sig2))
+## now compute their cumulative sum
+x <- c(0, cumsum(x))
+plot(t, x, type = "l", ylim = c(-2, 2), col = "red")
+@
+\end{mdffigure}
+
+
+\subsection{随机游走模型}
+对于一个服从随机鞅过程的变量，无法预先确切知道其可能在下一期出现的实现值，我们有
+\begin{align}
+\E[Y_{t+1}\big{|}Y_t] &= Y_t.
+\end{align}
+
+一个\smalltodol{Randow Walk Model：随机游走模型}{随机游走模型}是一个随机鞅过程，服从
+\begin{align}
+Y_{t+1} &= Y_t + \eps_{t+1}.
+\end{align}
+随机游走最初指的是醉汉在深夜步行在街道所经历的轨迹，一般而言，这种步行路径往往飘忽不定，有可能向左，也有可能向右，无法准确判断其下一步可能迈向哪个具体的位置。在股票市场中，我们无法准确的预测下一期的股票价格会如何波动，因此，常常使用随机游走过程来比喻股票的不可预知特征。
+
+\subsection{几何布朗运动}
+这里，我们使用具体的 $S_t$ 来表示股票价格，并且假定期初始状态价格 $S_0$ 是给定的，是在建模时已经实现的随机变量值。那么，在持有期内的股票累计收益率，$r_t[t]$，可以表示为
+\begin{align}
+r_t[t] &= \log\Big( \frac{S_t}{S_0} \Big) = \sum_{j = 0}^{t-1} r_{t-j}.
+\end{align}
+则可以推出
+\begin{align}
+S_t &= S_0 \cdot \exp{r_t[t]} = S_0 \cdot \exp{\sum_{j = 0}^{t-1} r_{t-j}}
+\end{align}
+
+我们知道，正态分布具有线性叠加的特征，即
+\begin{align}
+X &= \sum_{i = 1}^{k} X_i \sim \mathcal{N} (\sum_{i = 1}^{k} \mu_i, \sum_{i = 1}^{k} \sigma_i^2),\\
+X_i &\sim \mathcal{N} (\mu_i, \sigma_i^2)\nonumber 
+\end{align}
+
+因此，如果我们假设股票的对数收益率服从正态分布，$r_t \sim \mathcal{N} (\mu, \sigma^2)$，则有
+\begin{align}
+\log\Big( \frac{S_t}{S_0} \Big)  
+  &= r_t[t] = \sum_{j = 0}^{t-1} r_{t-j}
+   \sim \mathcal{N} (t \mu, t \sigma^2).
+\end{align}
+我们称 $S_t$ 服从一个对数正态分布，又名「几何布朗运动」，其参数集为 $\bm{\theta} = \{\mu, \sigma \}$。
+
+\section{随机微分方程}
+
+微分方程描述了关于自变量函数变化轨迹的动态特征，如物理学中的加速度与能量的关系。由于早期的微分方程主要是用于解运动方程的问题，是处于牛顿力学里面通常假定一个完美、没有摩擦的理想世界。这导致其无法捕捉到客观世界的随机性特征。顾名思义，随机微分方程就是在微分方程中加入随机项，使得其能够更好解释随机项如何影响因变量的动态变化。在金融研究中，我们通常假设股票价格的变化服从以下运动方程（随机微分方程，SDE）
+\begin{align*}
+ d S_t = \mu S_t dt + \sigma S_t dW_t,
+\end{align*}
+其中 $dW_t$ 是一个（连续的）\emph{Brownian motion}，$W_t \sim \mathcal{N} (0, t)$。等价的，我们可以得到股票价格变化率：
+\begin{align}
+   d \ln S_t &= \frac{ d S_t }{ S_t } = \mu dt + \sigma dW_t.
+\end{align}
+ 
+下面我们来推导股票价格 $S_t$ 的动态方程，这主要是使用著名的 Ito 公式。过于理论的东西我在这里不推导了，主要是利用一个简单的例子来说明如何使用 Ito 公式 解 SDE 类问题。
+
+\subsection{Ito-Doeblin 公式}
+
+首先，令 $Y_t = \ln S_t$，对其分别做简单的偏微分求导得到
+\begin{align*}
+\frac{ \partial Y }{ \partial t} &= 0  \\
+\frac{ \partial Y }{ \partial S} &= \frac{ 1 }{ S }  \\
+\frac{ \partial^2 Y }{ \partial S^2} &= - \frac{ 1 }{ S^2 }  \\
+\end{align*}
+则根据 \smalltodoc{早期的文献叫做 Ito 公式，是以日本著名的数学家伊藤清在开创随机过程、尤其是随机积分方面的伟大成就。Ito 据说是在华尔街最为响亮的日本名字了，在很长一段时间内，Ito 一直受到追捧。直到近几年人们在巴黎艺术学院清理文件时发现一封近乎于60年前寄给数学家 Poincare 的通讯信封，里面详细记录了另一位伟大而爱国的年轻数学家 Wolfgang Doeblin 独立创造的随机积分理论。这个足足比 Ito 公式早了将近30年。后来有一部电影纪录片讲述了年轻数学家英年早逝的悲壮故事，"Mathematician Rediscovered"。为了共同纪念两位数学家的研究，国际数学会将原先的 Ito 公式改名为 Ito-Doeblin 公式。}{Ito-Doeblin} 公式，我们可以推出以下方程
+\begin{align*}
+ d \ln S_t = d Y_t 
+  &= \frac{ \partial Y }{ \partial t} dt + \frac{ \partial Y }{ \partial S} dS_t + \frac{1}{2} \frac{ \partial^2 Y }{ \partial S^2} dS_t dS_t \nonumber\\
+  &= 0 · dt + \frac{ 1 }{ S_t } dS_t - \frac{1}{2} · \frac{ 1 }{ S_t^2 } dS_t dS_t \nonumber\\
+  &=  \frac{ 1 }{ S_t } · S_t · (\mu dt + \sigma dW_t) - \frac{1}{2} · \frac{ 1 }{ S_t^2 } · \sigma^2 S_t^2 dt
+ \nonumber\\
+  &= (\mu - \frac{1}{2} \sigma^2) dt + \sigma dW_t. \\
+\end{align*}
+在区间$[0, t]$内对上式两边求积分，得到如下式子
+\begin{align*}
+ \int_{0}^{t} d \ln S_u = \int_{0}^{t} d Y_u 
+    &= \int_{0}^{t}  (\mu - \frac{1}{2} \sigma^2) du + \int_{0}^{t}  \sigma dW_u \\
+\Rightarrow \ln S_t - \ln S_0 = Y_t - Y_0 &= (\mu - \frac{1}{2} \sigma^2) t + \int_{0}^{t}  \sigma dW_u.
+\end{align*}
+
+我们知道，Brownian Motion 表示在一定时间段内随机游走走过的路径，并且如果我们假定在初始阶段为 $W(0)=0$，那么，上面等式的最后一项是
+\begin{align*}
+\int_{0}^{t}  \sigma dW_u &= \sigma (W_t - W_0 ) = \sigma W_t.
+\end{align*}
+因此，可以得到
+\begin{align*}
+ \ln S_t - \ln S_0 = Y_t - Y_0 &= (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t \nonumber\\
+  \Rightarrow Y_t &= Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t \nonumber\\
+ \Rightarrow S_t &= S_0 · \exp\{  (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t  \}.
+\end{align*}
+
+\subsection{分布特征}
+ 
+我们知道，对于任何一个正态分布做线性转换后依然服从正态分布。由于布朗运动 $W_t \sim \mathcal{N} (0, t)$，则
+\begin{align}
+  Y_t &= Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t \nonumber\\
+\Rightarrow \E[Y_t|Y_0] &= \E[ Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t] \nonumber\\
+                       &= Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \underbrace{\E[\sigma W_t]}_{0} = Y_0 + (\mu - \frac{1}{2} \sigma^2) t \\
+\Rightarrow \Var[Y_t|Y_0] &= \Var [\sigma W_t] = \sigma^2 \Var(Wt) = \sigma^2 ·t \nonumber\\
+\Rightarrow Y_t &\sim \mathcal{N}(  Y_0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) \label{gbm_norm}
+\end{align} 
+ 
+那么，$\ln S_t = Y_t$ 则服从 **正态分布**，则 $S_t = e^{Y_t}$服从 \emph{log-normal disctribution}，即 $\ln S_t \sim \mathcal{N} (\E[S_t], \Var[S_t])$.
+ 
+下面我们来推导 $S_t$ 的分布特征。
+ 
+\subsection{ Moment Generation Function}
+ 
+我们知道，对于对任何一个随机变量建模，往往需要假设该变量服从某一类随机过程，而这个随机过程由分布函数（distribution function）给定。可是，有些时候，我们并不一定需要知道整个分布函数的具体形式，而只是关注该随机变量的几个「统计特征」，如一阶矩、二阶矩等。下面要介绍的「矩条件生成函数」就针对这种情况提出的。随机变量的矩条件可以在 **Moment Generation Function** (MGF) 十分方便的推导出来。比如，对于正态分布，我们只需要知道一阶矩和二阶矩条件就可以对变量做统计推断（method of moment, MM，还有更一般的 GMM）。对于一个可测空间 $(\Omega, \mathcal{F}, P)$，随机变量 $X \in \sigma(\mathcal{F})$ 的 MGF 定义为
+\begin{align*}
+ M_{X}(\tau) &= \E[ e^{x\tau}] = \int_{\Omega} e^{x(\omega)\tau} dP(\omega)
+\end{align*}
+其任一 $m-$ 阶的矩公式可以对 $\tau$ 在 $\tau = 0$ 处求 $m$ 次导数得到
+\begin{align*}
+  \frac{\partial M_{X}(\tau)}{\partial \tau}|_{\tau = 0} 
+  &=   \frac{\partial}{\partial \tau} \E[ e^{x\tau}] |_{\tau = 0}  
+  =  \E[ x · e^{x\tau}] |_{\tau = 0}    \nonumber\\
+  &= \E[x] \\
+   \frac{\partial ^2 M_{X}(\tau)}{\partial \tau ^2 }|_{\tau = 0} 
+ &= \E[x^2] \\
+ \frac{\partial ^m M_{X}(\tau)}{\partial \tau ^m }|_{\tau = 0} 
+ &= \E[x^m]
+\end{align*}
+
+特别的，对于一个正态分布，$X \sim \mathcal{N}(\mu, \sigma^2)$，有
+\begin{align*}
+  M_{X}(\tau) &= \E[ e^{x\tau}] = \exp\{ \mu \tau + \frac{1}{2} \sigma^2 \tau^2 \}
+\end{align*} 
+
+\subsection{期望与方差}
+ 
+这个特征对于求一个「对数正态分布」十分有用。由$\eqref{gbm_norm}$
+\begin{align*}
+  Y_t &\sim \mathcal{N}(  Y_0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) 
+\end{align*}
+
+则其 MGF 为
+\begin{align*}
+ M_{Y}(\tau) &= \E[e^{y\tau}] = \exp\{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 \},
+\end{align*}
+其中，$\tilde{\mu} = Y_0 + (\mu - \frac{1}{2} \sigma^2) t$，$\tilde{\sigma}^2= \sigma ^2 t$ .
+因此，我们可以得到如下公式
+ \begin{align*}
+  \E[S^{\tau}] &=  \E[e^{y\tau}]  = \exp\{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 \}
+ \end{align*}
+即，期望可以表示为
+ \begin{align*}
+  \E[S_t] &=  \E[e^{y\tau}]|_{\tau = 1}  = \exp\{ \tilde{\mu}  + \frac{1}{2} \tilde{\sigma}^2  \}  
+          = \exp\{ Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \frac{1}{2} \sigma^2 t  \} 
+          = S_0 · e^{\mu t } \\
+  \E[S^2] &= \E[e^{y\tau}]|_{\tau = 2}  = \exp\{ 2 \tilde{\mu}  + 2 \tilde{\sigma}^2  \} 
+          = \exp\{ 2 [Y_0 + (\mu - \frac{1}{2} \sigma^2) t ] + 2 \sigma^2 t \}    
+          = S_0^2 · \exp\{ 2 \mu t + \sigma^2 t\}
+ \end{align*}
+
+因此，$S_t$ 的方差可以表示为
+ \begin{align}
+  \Var[S_t] 
+  &=   \E[S^2] -  ( \E[S] )^2 
+  = S_0^2 · \exp\{ 2 \mu t + \sigma^2 t\} - S_0^2 · \exp\{ 2 \mu t \} 
+  = S_0^2 · e^{ 2 \mu t } · (e^{ \sigma^2 t - 1 })
+ \end{align}
+
+\subsection{O-U Process}
+ 
+其实，我们同样可是使用这种方法来解一类更加广义的随机过程——O-U过程。这个过程为
+ \begin{align}
+  d X(t) &=  - \kappa (X(t) - \theta) d t + \sigma dW(t). \label{ou}
+ \end{align}
+在式子$\eqref{ou}$中，我们注意到参数 $(\kappa, \theta, \sigma)$ 决定了整个随机过程的特征：
+ \begin{compactitem}
+ \item $\kappa$：是随机过程的「变化率」，即控制了整个随机过程向长期均值回归的快慢程度;
+ \item $\theta$：代表了随机过程的「长期均值水平」，O-U 过程最显著的特征是其具有了「均值回复」，即在变化率 $\kappa$ 的控制下变量趋于稳定的状态。这个在利率期限结构建模中经常使用，如最早的 Vasicek 利率模型就是一个典型的 O-U 过程。
+ \item $\sigma$：表示随机过程的「瞬时方差」。
+ \end{compactitem}
+ 
+下面我们来求解显示解。
+ 
+首先对方程$\eqref{ou}$在区域 $[0, t]$ 进行积分得到
+  \begin{align*}
+   \int_{0}^{t} d X(u) &= -\int_{0}^{t} \kappa X(u) du + \int_{0}^{t}  \kappa \theta du +  \int_{0}^{t}  \sigma  dW(u),
+  \end{align*}
+然后两边同时乘以 $e^{\kappa u}$ 得到
+\begin{align}
+    \int_{0}^{t} e^{\kappa u} d X(u) &= -\int_{0}^{t} \kappa X(u) e^{\kappa u} du + \int_{0}^{t}  \kappa \theta e^{\kappa u} du +  \int_{0}^{t} \sigma  e^{\kappa u} dW(u). \label{ou-int}
+\end{align}
+
+我们分开求解等式两边。
+\begin{compactenum}
+\item 先是对左边进行{\kai 分步积分}得到
+ \begin{align}
+   LHS &= e^{\kappa u} X(u) |_{u=0}^{t} - \int_{0}^{t} \kappa X(u) e^{\kappa u} du 
+   = e^{\kappa t } X(t) - X(0) - \int_{0}^{t} \kappa X(u) e^{\kappa u} du . \label{lhs}
+ \end{align} 
+ \item 同样的，我们也可以求出右边式子
+ \begin{align}
+   RHS &= - \int_{0}^{t} \kappa X(u) e^{\kappa u} du + \int_{0}^{t} \theta de^{\kappa u} + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u) \nonumber\\
+   &= - \int_{0}^{t} \kappa X(u) e^{\kappa u} du + \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)  \label{rhs}
+ \end{align}
+ \item  对比$\eqref{lhs}$与$\eqref{rhs}$，
+ \begin{align}
+   e^{\kappa t } X(t) - X(0) - \int_{0}^{t} \kappa X(u) e^{\kappa u} du
+   &= 
+   -\int_{0}^{t} \kappa X(u) e^{\kappa u} du + \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)  \nonumber \\
+   e^{\kappa t } X(t) - X(0)
+   &= 
+   \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)   \nonumber \\
+\Rightarrow 
+    X(t)  &= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{oup} 
+ \end{align}
+ \end{compactenum}
+
+\subsection{期望}
+由$\eqref{oup}$得到
+ \begin{align*}
+  X(t)  &= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) . \nonumber
+ \end{align*}
+则其期望可以表示为
+ \begin{align}
+   \E[X(t)|X(0)] &= \E[ e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) ] \nonumber \\
+   &= e^{-\kappa t} (X(0)-\theta) + \theta. \label{exp}
+ \end{align}
+最后一项由 $W_t \sim \mathcal{N} (0, t)$ 得到。
+ 
+利用$\eqref{exp}$，我们可以求出 O-U 过程在长期的一个均值回复项，即
+ \begin{align*}
+   \lim_{t \rightarrow + \infty } e^{-\kappa t} (X(0)-\theta) + \theta = \theta.
+ \end{align*}
+ 
+\subsection{协方差}
+ 
+任一区间内 $[s,t]$ 协方差可以由以下求出。
+ \begin{align}
+   \Cov(X_s, X_t) 
+   &= \E[ (X_s-\E[X_s])·(X_t-\E[X_t])] \nonumber\\
+   &= \sigma^2 \E\bigg[ 
+        \int_{0}^{s}    e^{-\kappa (s-u)} dW(u) ·
+         \int_{0}^{t}   e^{-\kappa (t-v)} dW(v)
+            \bigg] \label{cov}
+ \end{align}
+
+这里我们需要使用到两个基本的概念
+\begin{compactitem}
+ \item 布朗运动的「独立增量」(indepdent increasement)，即任何一个布朗运动在不同期间内的增量是相互独立的，即对于区间 $[0,t], 0 \leq t_0 \leq t_1 \leq \cdots \leq t_n \leq t$, $W(t_1)-W(t_0)$, $W(t_2)-W(t_1)$,$\cdots$, $W(t_n)-W(t_{n-1})$ 是相互独立的增量过程。
+ \item Ito Isometry 性质：即对于一个布朗运动的独立增量，$dW_t$，有关其多项式有如下性质
+ \begin{align*}
+   \E\bigg[ \bigg( \int_{0}^{t} F(u) dW(u) \bigg)^2\bigg]
+   &= \int_{0}^{t} \E \big[ F^2(u) \big] du
+ \end{align*}
+\end{compactitem}
+
+利用这两个性质，对于$\eqref{cov}$，如果 $s \geq t$ (反之，$s \leq t$，则令二者调换，即 $t=\min\{s,t\}$)，我们有
+ \begin{align}
+   \Cov(X_s, X_t)
+   &=  \sigma^2
+   \E\bigg[ 
+        \bigg( \int_{0}^{t}  e^{-\kappa (s-u)} dW(u)  + \int_{t}^{s}   e^{-\kappa (s-u)} dW(u)
+        \bigg)
+        ·
+         \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
+            \bigg] \\
+    &=  \sigma^2
+    \E\bigg[ 
+          \int_{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v) 
+           \nonumber \\
+        & \qquad + \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
+            \bigg] \\
+     &=  \sigma^2 \Bigg\{
+     \E\bigg[ 
+          \int_{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v) 
+          \bigg] 
+          \nonumber \\
+    & \qquad +  \E\bigg[ 
+          \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
+          \bigg]  
+    \Bigg\}，    \label{cov1}   
+ \end{align}
+\begin{compactitem}
+\item 对于第一项我们需要使用  Ito Isometry  性质,
+ \begin{align*}
+   \E\bigg[ 
+          \int_{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v) 
+          \bigg]
+    &=
+    \E\bigg[ 
+          \int_{0}^{t}  e^{-\kappa (s-u)} · e^{-\kappa (t-u)}  du 
+          \bigg] \\
+ \end{align*}
+ 
+\item 而第二向可以由布朗运动的独立增量性质消除，
+ \begin{align*}
+   & \E\bigg[ 
+          \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
+          \bigg] & \nonumber \\
+    =& \E\bigg[ 
+          \int_{t}^{s}   e^{-\kappa (s-u)} dW(u) 
+          \bigg] 
+          ·
+       \E\bigg[ 
+         \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
+          \bigg] 
+    = 0 
+ \end{align*}
+
+因此，方程$\eqref{cov1}$变为
+ \begin{align*}
+   \Cov(X_s, X_t)
+   &= \sigma^2 \Bigg\{
+     \E\bigg[ 
+          \int_{0}^{t}  e^{-\kappa (s-u)} · e^{-\kappa (t-u)}  du 
+          \bigg]
+     \Bigg\}   \label{cov2} \\
+  &= \sigma^2 \Bigg\{
+      e^{-\kappa (s+t)}
+      \E\bigg[ 
+          \int_{0}^{t}  e^{2\kappa u}  du 
+          \bigg]
+   \Bigg\}  
+    = \sigma^2 ·
+      e^{-\kappa (s+t)}
+      ·
+      \frac{1}{2\kappa}
+      ·  e^{2\kappa u}\bigg|_{u=0}^{t} \\
+    &= \frac{\sigma^2}{2\kappa} e^{-\kappa (s+t)} · \Bigg( e^{2\kappa t} -1 \Bigg).
+ \end{align*}
+\end{compactitem}
+
+也就是说，对于任何一个协方差，我们都有
+ \begin{align*}
+   \Cov(X_s, X_t) 
+   &= \frac{\sigma^2}{2\kappa} e^{-\kappa (s+t)} · \Bigg( e^{2\kappa · \min\{s,t\} } -1 \Bigg).
+ \end{align*}
+
+\subsection{方差}
+ 
+方差也就是0阶协方差，
+ \begin{align*}
+   \Var(X_t)
+   &= \Cov(X_t, X_t)
+   = \frac{\sigma^2}{2\kappa} e^{-\kappa (t+t)} · \Bigg( e^{2\kappa · \min\{t,t\} } -1 \Bigg) \nonumber\\
+   &= \frac{\sigma^2}{2\kappa} \Bigg( 1 - e^{ -2\kappa t } \Bigg) 
+ \end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{有关统计模型的思考}
+
+这里我简单说说对运用统计模型在金融分析中的理解。此处纯属个人观点，与公司无关。。。。。。
+\smalltodom{Ruppert 提到的几个在处理量化分析时需要注意的问题，我个人觉得都十分的在理。}
 
 模型是对现实的简要、精辟而不失去其关键信息的数学描述。有关如何将统计模型运用到数量金融分析当中，我们应该多加思考，而不是一味的盲目追随模型。
 \begin{compactitem}
@@ -39,36 +461,19 @@ Ruppert 提到的几个在处理量化分析时需要注意的问题，我个人
 \item 模型的不确定性。我们知道，任何一个模型对只是对问题的无限逼近的选择，由经济体自发生成系统均衡时的客观数据无法道出其产生的内在机制。我们经济计量学家也只是通过这些显现的测量数据来「推断」其内在的随机过程。因此，任何一个模型都具有不完美的内在缺陷。模型的这样不确定性分析要求我们通过比较不同模型的分析结果来尽可能的选择一个合理的模型。现在，我们已经可以借助 Baysian 方法来比较多个复杂模型的分析结果。
 \item 金融数据并不一定（甚至完全不是）{\kai 正态分布}。我们原来在课本里学习到的大多数金融理论都把资产回报率假设为一个服从正态高斯分布的随机过程，从而可以利用高斯分布计算风险概率及相应的方差。可是真实的金融数据并非是一个服从常态的高斯分布。比如，股票的回报率往往具有「偏峰」（skewness）、「后尾」（fat tail）的特点，左右两边的分布是不对称的，而且表现出波动率聚集（volatility clustering）。很明显的，这些特征有别于正态高斯分布。往往的，一个可能的备选方案是 t-distribution。
 
-<<>>=
-rtn <- function(stock.code, from = "2013-01-01"){
-  y <- getSymbols(stock.code, from = from, auto.assign = FALSE)
-  rtn <- diff(log(Cl(y)), 1) *100
-  rtn <- rtn[-1]
-}
+\item 金融数据的方差往往不是固定的，而是{\kai 时变}的。我们知道，正态高斯分布有两个参数，$\mathcal{N}(\mu, \sigma^2)$。如果假定收益率服从高斯分布，则暗含着假定其方差是固定的。可是我们往往看到金融数据的方差是随着时间变化的，尤其在一些特定的时点上，股票市场的波动往往高的惊人。比如，1987年的黑色星期四，整个 NSE 股票下跌了近 30\%。为了处理时变的方差，我们需要引入如  ARCH、GARCH、Voatility Model 等。
 
-chartSeries(rtn("000002.sz"), name = "万科A：收益率")
-abline(h= 0, col = "red", lwd = 2, lty = "dashed")
-
-plot(density(rtn("000002.sz")), main = "万科股票收益率", col = "blue", lwd = 3)
-lines(density(rnorm(1000, 0, 2)), col = "red", lwd = 2, lty = "dashed")
-@
-
-\item 金融数据的方差往往不是固定的，而是{\kai 时变}的。我们知道，正太高斯分布有两个参数，$\mathcal{N}(\mu, \sigma^2)$。如果假定收益率服从高斯分布，则暗含着假定其方差是固定的。可是我们往往看到金融数据的方差是随着时间变化的，尤其在一些特定的时点上，股票市场的波动往往高的惊人。比如，1987年的黑色星期四，整个 NSE 股票下跌了近 30\%。为了处理时变的方差，我们需要引入如  ARCH、GARCH、Voatility Model 等。
-
-<<>>=
+\begin{mdffigure}[S\&P500 指数变动率情况]
+<<echo=TRUE, eval=TRUE>>=
 chartSeries(rtn("^GSPC", from = "1980-01-01"), name = "Change in S&P500") ## 画图
 abline(h = 0, col = "red", lwd = 2, lty = "dashed")
 @
+\mdffigurenote{说明}{%
+从这个图形可以看出，金融数据的变动率往往存在着「聚集出现」的现象，即一个较高的波动率往往会导致下一个时期更加可能的出现较高的波动情况。金融市场的这种时变的波动率特征要求我们需要特别处理。
+}%
+\vspace{-1ex}
+\end{mdffigure}
 
 \end{compactitem}
-
-
-
-
-
-
-
-
-
 
 

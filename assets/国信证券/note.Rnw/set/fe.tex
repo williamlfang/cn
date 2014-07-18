@@ -156,58 +156,5 @@
 
 \begin{document}
 %\SweaveOpts{concordance=TRUE}
-<<myknitr, child='../../set/rknitr.Rnw', eval=TRUE>>=
-options(replace.assign = TRUE)
-render_listings()
-@
-
-\frontmatter         
-\include{chapters/front}                     % Front cover and title page
-%\include{chapters/copyright}
-
-% Open right pages: title, dedication, TOC
-\makeatletter
-\@openrectotrue
-\makeatother
 
 
-
-% TOC, LOF, LOT
-\tableofcontents
-
-% Open any pages: LOF, LOT, forward, preface, acknowledgements, abbreviations
-\makeatletter
-\@openrectofalse
-\makeatother
-
-%\listoffigures
-%\listoftables
-% \listoflcode
-
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\onehalfspacing
-\let\oldparskip\parskip
-\addtolength{\parskip}{3pt}
-\addtolength{\abovecaptionskip}{-3pt}
-\addtolength{\belowcaptionskip}{-3pt}
-\setlength{\parindent}{2em}
-
-%\include{chapters/abstract}
-%\include{chapters/preface}
-%\include{chapters/acknowledgements}
-
-\makeatletter
-\@openrectotrue  
-\makeatother
-\mainmatter
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername: #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection: #1}}
-
-%\input{chapters/index}
-
-
-\input{chapter01}
-\input{chapter02}
-%\input{explory-data}
-
-\end{document}

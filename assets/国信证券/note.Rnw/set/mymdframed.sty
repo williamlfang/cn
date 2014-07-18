@@ -190,3 +190,82 @@ innerleftmargin=10pt,
 innerrightmargin=10pt} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%     
+%\newcounter{example}[subsection]    % [section]    
+\newcounter{mdffig}[subsection]
+\newenvironment{mdffigure}[1][]{%                                %%% mdfexample
+\vspace{2ex}
+\par                              %%% \par
+\footnotesize
+ \stepcounter{mdffig}%
+  \ifstrempty{#1}%
+  {\mdfsetup{%
+    frametitle={%
+      \noindent
+      \normalfont\sffamily\color{mythemecolor}
+       \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=myorange]
+        {\sffamily\textcolor{white}{Figure~\arabic{chapter}.\arabic{section}.\themdffig：~#1}};},%    
+        %{\strut Example~\theexample};},%
+         backgroundcolor=mygray,%
+        shadow=true,
+		shadowsize = 2pt,
+		shadowcolor = myorange,
+		roundcorner=12pt,
+		skipabove = 0pt,
+		skipbelow = 5pt,
+		innertopmargin=10pt,
+		innerbottommargin=10pt,
+		innerleftmargin=10pt,
+		innerrightmargin=10pt}
+  }%
+  {\mdfsetup{%
+     frametitle={%
+      \noindent
+       \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=mythemecolor]
+       {\sffamily\textcolor{white}{Figure~\arabic{chapter}.\arabic{section}.\themdffig：~#1}};},%   
+                 %% {\strut Example~\theexample:~#1};},%
+        backgroundcolor=mygray,%
+        shadow=true,
+		shadowsize = 2pt,
+		shadowcolor = myorange,
+		roundcorner=12pt,
+		skipabove = 0pt,
+		skipbelow = 5pt,
+		innertopmargin=10pt,
+		innerbottommargin=10pt,
+		innerleftmargin=10pt,
+		innerrightmargin=10pt}%
+   }%
+   \mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+             linewidth=2pt,topline=true,
+             frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+   \vspace{-3ex}
+   }{\end{mdframed}}
+%%%%%%%%%%%%%%%%%%% 
+\newcommand{\mdffigurenote}[2]{
+\setlength{\parindent}{0ex}
+	        \vspace{-0.5ex}
+	      {\color{myorange} $ \blacksquare $}\hspace{-.5ex}
+	      {\small%\footnotesize%\scriptsize
+	      \kai #1}
+	     \hspace{1ex}{\scriptsize #2}
+	     \vspace{-1.5ex}
+}

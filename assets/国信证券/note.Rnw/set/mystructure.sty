@@ -82,7 +82,15 @@
                                \scriptsize 
                                \kai{#2}\vspace{-2.5ex}
                                \end{spacing}}}
-
+                                                              
+\newcommand{\smalltodom}[2][]{\todo[caption={#2}, noline, color=blue!20]%
+                          {\begin{spacing}{1} 
+                          \scriptsize 
+                          \kai{#2} 
+                          \vspace{-2.5ex}
+                          \end{spacing} 
+                          }}
+                                                        
 \newcommand{\notenolist}[2][]{\smalltodo[nolist,color=myorange,#1]{{\textcolor{red}{W.F.}:} #2}}
 \newcommand{\notefn}[2][]{%  To be used in footnotes (and in floats)
 \renewcommand{\marginpar}{\marginnote}%

@@ -1,4 +1,4 @@
-cd /home/william/cn
+cd /media/william/Storage/Github/cn
 git add . -A
 git commit -m "Added notes for $(date)"
 

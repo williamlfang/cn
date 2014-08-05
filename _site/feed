@@ -4,13 +4,383 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-04-01T00:37:23+08:00</lastBuildDate>
-        <pubDate>2014-04-01T00:37:23+08:00</pubDate>
+        <lastBuildDate>2014-08-05T13:48:54+08:00</lastBuildDate>
+        <pubDate>2014-08-05T13:48:54+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
 　     　<generator>williamlfang.github.com/cn</generator>
 
+
+        <item>
+                <title>军工行业重点覆盖公司</title>
+                <description>&lt;p&gt;以下是与军工版块相关联的上市公司：
+&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;公司简称&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;股票代码&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;公司简称&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;股票代码&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;中国卫星&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;600118&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;航天晨光&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;600501&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;光电股份&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;600184&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;洪都航空&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;600316&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;航天电子&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;600879&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;航空动力&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;600893&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;卫士通&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;002268&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;中航飞机&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;000768&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;航天电器&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;002025&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;成发科技&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;600391&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;东华测试&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;300354&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;中航光电&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;002179&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;烽火电子&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;000561&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;海格通信&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;002465&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;振芯科技&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;300101&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;中航电子&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;600372&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;中国重工&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;601989&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;哈飞股份&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;600038&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;海特高新&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;002023&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;四创电子&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;600990&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;国睿科技&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;600562&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;航天信息&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;600271&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/08/05/jun-gong-xing-ye-zhong-dian-fu-gai-gong-si/</link>
+                <guid>http://williamlfang.github.com/cn/2014/08/05/jun-gong-xing-ye-zhong-dian-fu-gai-gong-si/</guid>
+                <pubDate>2014-08-05T00:00:00+08:00</pubDate>
+                <category>williamlfang.github.com/cn</category>
+　             　<author>william</author>
+        </item>
+
+        <item>
+                <title>ggplot2入门之qplot</title>
+                <description>&lt;p&gt;据说 &lt;code&gt;R&lt;/code&gt; 中那些优秀的扩展包（packages）都可以独立成一个新的统计软件，成为独霸一方的「草莽大王」，都值得我们为此「大书特书」一番。比如，时下我们会深入介绍的这款专门由于制作漂亮而不失矜持、俏丽而不失内涵、简单而不失充实的扩展包 – &lt;code&gt;ggplot2&lt;/code&gt;。然而，如果你只是把我们今天的主角简单的看作是一款为数据画图的工具的话，那么这就有失偏颇了。乍一看，似乎我们传统的思维是把数据的可（zuo）视（tu）化（xing）仅仅作为统计分析的一个附属品，权做为说明而做的图形展现。这就好比是一场豪华婚礼中只能配得的「伴娘」，虽然自身也是穿衣戴宝的，却始终不能为大家器重。不知大家有没有想过，如果我们可以同时把数据的统计分析结果与数据直观特征图形结合在一起，通过这两者的交互印证，使得分析的结果更加具有说服力。说的更加直白一些，往往有些数据的特征是无法使用自然或者数理语言简明扼要的说清楚的，这时候就需要图形化的展示来提供更加充足的信息。也就是说，利用对数据制作「量体裁衣」的可视化展现，可以为我们的提供更加全面的信息，也在一定程度上为后期的数据统计分析提供直观的印象。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;数据可视化的基本思想&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ggplot2&lt;/code&gt; 能够使用简单的语法将数据的属性特征以图形可视化的形式展示出来，丰富了我们对数据的直观影响。不过，需要注意的，&lt;code&gt;ggplot2&lt;/code&gt; 只是提供了一套静态的图形输出，尤其是适合与 PDF 格式的文件。但在现在互联网与移动屏的可视化时代，难免显得有点力不从心，无法满足我们对交互式图形的诉求。因此， Rstudio 公司后来在 Xie Yihui 同学的领导下，开发了适合与显示器屏幕的动态交互式图形输出包—— &lt;code&gt;Shiny&lt;/code&gt;，以满足互联网移动屏幕的新要求。这个我们在今后介绍如何使用 \R 开发网页时再具体介绍。&lt;/p&gt;
+
+&lt;p&gt;因此，Hadley 一上来就开宗明义的「提醒」大家不要仅仅把  &lt;code&gt;ggplot2&lt;/code&gt; 当作是一个绘图工具而已：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; `ggplot2` is a `R` package for producing statistical, or data, graphics, **but it is unlike most other graphics packages because it has a deep underlying grammer**.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里所说的图形的「语法」（grammer），最早由 Wilkinson 提出，大体的思想是把一个数据图形看作由描述数据不同特征的属性所构成的套装，通过对不同组件的选择，来达到想要（甚至是想不到）的套装效果。这其中，不同的属性组件包括了：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;数据：通常要求数据结构是 &lt;code&gt;data.frame&lt;/code&gt;。所谓的「裸数据」，就是未经任何修改的原始数据。&lt;/li&gt;
+  &lt;li&gt;几何对象：&lt;code&gt;geom&lt;/code&gt; , 希望以直观的几何图形来显示数据特征，如点、线条等。&lt;/li&gt;
+  &lt;li&gt;统计转换：&lt;code&gt;stat&lt;/code&gt;,以数据统计分析的结果展示在图形中，这比传统的将统计输出单独展现具有更加直观的认识。&lt;/li&gt;
+  &lt;li&gt;scales：&lt;/li&gt;
+  &lt;li&gt;坐标系统：&lt;code&gt;coord&lt;/code&gt;, 描述了如何将数据通过多维图形展现出来。&lt;/li&gt;
+  &lt;li&gt;分页展示：&lt;code&gt;facet&lt;/code&gt;,  就是把不同组别的数据通过分页的形式表示出来，这相当于做了一次 subsetting 的分组。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;用法说明&lt;/h2&gt;
+
+&lt;p&gt;下面，我们来具体看看如何使用 &lt;code&gt;qplot&lt;/code&gt; 绘制精美的数据可视化图形。
+&lt;code&gt;qplot&lt;/code&gt; 的基本用法和 &lt;code&gt;plot&lt;/code&gt; 大体类似。主要的参数输入有：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;数据：主要是使用 $x$ 和 $y$ 作为两个坐标轴，并且指定数据框类数据 \rcode{data}；&lt;/li&gt;
+  &lt;li&gt;图形修饰：这个主要是通过 \rcode{aesthetics} 参数来完成，包括了
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;color&lt;/code&gt;：使用不同的颜色来区分数据&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;size&lt;/code&gt;：利用形状来区分数据&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;fill&lt;/code&gt;：主要是在进行 &lt;code&gt;histogram&lt;/code&gt; 和 &lt;code&gt;density&lt;/code&gt; 的时候用于填充不同的数据，使得各种数据的比例更加直观明显。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;几何形状方面：利用 &lt;code&gt;geom&lt;/code&gt; 来控制输出的图形几何形状，包括了
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;geom = &quot;point&quot;&lt;/code&gt;：作为默认设置，以点的形式画图；&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;geom = &quot;line&quot;&lt;/code&gt;：以线条的样子输出，通常适用于&lt;strong&gt;时间序列数据&lt;/strong&gt;；&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;geom = &quot;smooth&quot;&lt;/code&gt;：使用统计拟合输出；
+ &amp;gt; &lt;code&gt;geom = &quot;path&quot;&lt;/code&gt;：与时间序列类似，但是按照数据的先后顺序输出；
+ &amp;gt; &lt;code&gt;geom = &quot;boxplot&quot;&lt;/code&gt;：输出传统统计学角度的「箱叶图」，以五个&lt;strong&gt;quantile&lt;/strong&gt; 作标记；
+ &amp;gt; &lt;code&gt;geom = &quot;jitter&quot;&lt;/code&gt;：类似于「箱叶图」，但是更加突出数据的分散描述，可以使用 &lt;code&gt;alpha = I ()&lt;/code&gt; 来控制分散的透明程度；
+ &amp;gt; &lt;code&gt;geom = &quot;histogram&quot;&lt;/code&gt;：柱状图，可以使用参数 &lt;code&gt;binwidth&lt;/code&gt; 来控制间隔大小；
+ &amp;gt; &lt;code&gt;geom = &quot;density&quot;&lt;/code&gt;：概率分布图；&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;我们可以通过使用 &lt;code&gt;help(qplot)&lt;/code&gt; 命令来查看其基本的函数结构：&lt;/p&gt;
+
+    &lt;p&gt;qplot(x, y = NULL, …, data, facets = NULL, margins = FALSE,
+    geom = “auto”, stat = list(NULL), position = list(NULL), xlim = c(NA,
+    NA), ylim = c(NA, NA), log = “”, main = NULL,
+    xlab = deparse(substitute(x)), ylab = deparse(substitute(y)), asp = NA)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;通过使用几个简单的例子，我们想要看看具体是如何操作的。使用的数据是由自带的钻石品质的数据框。 该数据库一共包含了 $10$ 个变量的数据，共计 $53,940$ 次观测值。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;str(diamonds)
+
+## 'data.frame':	53940 obs. of  10 variables:
+##  $ carat  : num  0.23 0.21 0.23 0.29 0.31 0.24 0.24 0.26 0.22 0.23 ...
+##  $ cut    : Ord.factor w/ 5 levels &quot;Fair&quot;&amp;lt;&quot;Good&quot;&amp;lt;..: 5 4 2 4 2 3 3 3 1 3 ...
+##  $ color  : Ord.factor w/ 7 levels &quot;D&quot;&amp;lt;&quot;E&quot;&amp;lt;&quot;F&quot;&amp;lt;&quot;G&quot;&amp;lt;..: 2 2 2 6 7 7 6 5 2 5 ...
+##  $ clarity: Ord.factor w/ 8 levels &quot;I1&quot;&amp;lt;&quot;SI2&quot;&amp;lt;&quot;SI1&quot;&amp;lt;..: 2 3 5 4 2 6 7 3 4 5 ...
+##  $ depth  : num  61.5 59.8 56.9 62.4 63.3 62.8 62.3 61.9 65.1 59.4 ...
+##  $ table  : num  55 61 65 58 58 57 57 55 61 61 ...
+##  $ price  : int  326 326 327 334 335 336 336 337 337 338 ...
+##  $ x      : num  3.95 3.89 4.05 4.2 4.34 3.94 3.95 4.07 3.87 4 ...
+##  $ y      : num  3.98 3.84 4.07 4.23 4.35 3.96 3.98 4.11 3.78 4.05 ...
+##  $ z      : num  2.43 2.31 2.31 2.63 2.75 2.48 2.47 2.53 2.49 2.39 ...
+
+head(diamonds)
+
+##   carat       cut color clarity depth table price    x    y    z
+## 1  0.23     Ideal     E     SI2  61.5    55   326 3.95 3.98 2.43
+## 2  0.21   Premium     E     SI1  59.8    61   326 3.89 3.84 2.31
+## 3  0.23      Good     E     VS1  56.9    65   327 4.05 4.07 2.31
+## 4  0.29   Premium     I     VS2  62.4    58   334 4.20 4.23 2.63
+## 5  0.31      Good     J     SI2  63.3    58   335 4.34 4.35 2.75
+## 6  0.24 Very Good     J    VVS2  62.8    57   336 3.94 3.96 2.48
+
+typeof(diamonds)
+
+## [1] &quot;list&quot;
+
+df &amp;lt;- diamonds 我们以钻石的重量（carat）与其相应的价格作为分析入手，自觉立马会告诉我们，一颗同等品质的钻石，其重量越大，则相应的价格就越高，换句话说，价格与重量应该是一个递增函数的关系。
+
+  qplot(x = carat, y = price, data = df)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-3.png&quot; alt=&quot;plot of chunk unnamed-chunk-3&quot; /&gt; 
+可以看出，钻石的价格与其重量呈现指数型递增关系的。因此，我们可以对其做一个对数变换，希望得到一个线性的函数关系。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  qplot(x = log(carat), y = log(price), data = df)  ## qplot() 支持对变量函数的输入
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-4.png&quot; alt=&quot;plot of chunk unnamed-chunk-4&quot; /&gt; 
+果不其然，这是一个非常完美的线性关系。不过我们也需要警惕图形的「过分拟合」。这是后话，以后有机会再探讨 &lt;/p&gt;
+
+&lt;p&gt;此外，我们可以使用 &lt;code&gt;color&lt;/code&gt; 参数来控制第三个变量（一般是分类变量）来查看钻石的颜色是否也会影响其价格。具体的命令如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  qplot(x = carat, y = price, data = df, color = color)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-5.png&quot; alt=&quot;plot of chunk unnamed-chunk-5&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;同样的，使用 &lt;code&gt;shape&lt;/code&gt; 来查看形状效果&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  qplot(x = carat, y = price, data = df, shape = cut, color = color)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-6.png&quot; alt=&quot;plot of chunk unnamed-chunk-6&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;以上我们介绍了如何控制「修饰」成分命令下面，我们来查看一下如何控制图形输出的「几何」形状。这个主要是通过 &lt;code&gt;geom&lt;/code&gt; 来实现的。&lt;/p&gt;
+
+&lt;p&gt;使用 &lt;code&gt;smooth&lt;/code&gt; 制作拟合。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x = carat, y = price, data = df, geom = c(&quot;point&quot;, &quot;smooth&quot;), color = color)
+
+## geom_smooth: method=&quot;auto&quot; and size of largest group is &amp;gt;=1000, so using gam with formula: y ~ s(x, bs = &quot;cs&quot;). Use 'method = x' to change the smoothing method.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-7.png&quot; alt=&quot;plot of chunk unnamed-chunk-7&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;这个是「箱叶图」&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x = color, y = price, data = df, geom = &quot;boxplot&quot;, color = color)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-8.png&quot; alt=&quot;plot of chunk unnamed-chunk-8&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;再来一个&lt;code&gt;jitter&lt;/code&gt;，同时我们使用参数 &lt;code&gt;alpha = I()&lt;/code&gt; 来控制渐变的效果。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x = color, y = price, data = df, geom = &quot;jitter&quot;, alpha = I(1/5))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-9.png&quot; alt=&quot;plot of chunk unnamed-chunk-9&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;或者我们想要一个柱状图，则可以使用命令&lt;code&gt;histogram&lt;/code&gt;， 同时使用参数 &lt;code&gt;binwidth&lt;/code&gt; 来控制间距，使用 &lt;code&gt;fill&lt;/code&gt; 来填。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x = carat, data = df, geom = &quot;histogram&quot;, binwidth = .05, fill = color)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-10.png&quot; alt=&quot;plot of chunk unnamed-chunk-10&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;或者来一个概率分布图，使用 &lt;code&gt;geom = &quot;density&quot;&lt;/code&gt; 来实现&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x = price, data = df, geom = &quot;density&quot;, color = color)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-11.png&quot; alt=&quot;plot of chunk unnamed-chunk-11&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;在实证金融数据分析中，我们经常会遇到形形色色的时间序列数据，对于时间序列数据，我们可以使用 &lt;code&gt;geom = &quot;line&quot;&lt;/code&gt; 或者 &lt;code&gt;geom = &quot;path&quot;&lt;/code&gt; 来表明数据随时间变化的特征。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;df2 &amp;lt;- data.frame(x = seq(1, 100), y = rnorm(100))
+qplot(x, y, data = df2, geom=c(&quot;point&quot;,&quot;line&quot;), col = &quot;red&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-12.png&quot; alt=&quot;plot of chunk unnamed-chunk-12&quot; /&gt; &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;df3 &amp;lt;- data.frame(x = rnorm(1000), y = rnorm(1000))
+qplot(x, y, data = df3, geom=c(&quot;point&quot;,&quot;line&quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-131.png&quot; alt=&quot;plot of chunk unnamed-chunk-13&quot; /&gt; &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x, y, data = df3, geom=c(&quot;point&quot;,&quot;path&quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-132.png&quot; alt=&quot;plot of chunk unnamed-chunk-13&quot; /&gt; 
+&lt;code&gt;geom = &quot;line&quot;&lt;/code&gt; 与 &lt;code&gt;geom = &quot;path&quot;&lt;/code&gt; 的差别在于前者使用了时间序列数据是按照一定的观测值顺序排列的，而后者则仅仅是按照数据的呈现方式出现。这个需要我们反思在七十年代的时候美国经济学术界内轰轰烈烈的激战是否存在「Philips Curve」，即政府是否存在可以协调经济通胀率与失业率的良方。原先的数据只是按照数据简单的排序，并没有考虑到收集数据内在的时间先后顺序，从而得出通胀率与失业率可替代的结论。而后来这个经过 Friedman 等人的卓越工作，才揭示了原来政府的这套政策是行不通的，原因在于人们是具有理性预期的，如果真的按照政府的经济政策来实施，则会发生「替换性选择」，最终导致政策无效。这个就是典型的使用数据制作「path」图形的案例。}&lt;/p&gt;
+
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/08/04/ggplot2-ru-men-zhi-qplot/</link>
+                <guid>http://williamlfang.github.com/cn/2014/08/04/ggplot2-ru-men-zhi-qplot/</guid>
+                <pubDate>2014-08-04T00:00:00+08:00</pubDate>
+                <category>williamlfang.github.com/cn</category>
+　             　<author>william</author>
+        </item>
+
+        <item>
+                <title>使用Quantmod下载沪深股票数据及分析</title>
+                <description>&lt;p&gt;今天来到公司上班，本来是想安装软件来查看股市行情以及个股变动情况。由于前几天笔记本不知原因、不明就理的「罢工」，导致我又得重新安装系统和所需的软件。话说回来，其实我们大都习惯了通过证券公司开发的软件来查看昨日行情走势，我们也大都习以为惯了，平时要是真遇到什么小问题，也大都能忍则忍，并不太在乎真实的使用感受。所有的“user-friendly”，大概也就谈谈罢了。&lt;/p&gt;
+
+&lt;p&gt;早上有同事跟我反应说，她在查看股市，尤其是个股情况，看到满屏幕花花绿绿的数据，本来就不怎么清醒的脑袋又开始昏昏欲睡了。我又跟她简短的聊了几句，发现其实她对沪深股市最想要得到的就是综合指数以及个股股价的走势，那些买家成交量、K线图形、最大最小变化数据等等，基本上是冗余的信息，不仅不能增进她对股市行情的整体判断，反而会干扰她的分析。现实中，我们经常遇到过量的数据信息输入往往起不到辅助决策的作用。&lt;/p&gt;
+
+&lt;p&gt;针对这位同事反应的问题。我大概有几点思考的。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;首先，我们的交易软件其实可以根据不同客户的信息异质性需求，为他们提供「私人定制」的信息套件。比如有些客户可能会比较习惯寻找共同行业版块中几个典型企业作为分析的着手，根据对行业里各个上市公司的总体分析，能够获得对个股走势的宏观判断与整体认识。再比如，有些客户可能只是想知道在过去的几个周期里面个股股价的总体趋势，他不想要看到诸如成交量、买卖双方、K线、蜡烛图等等。那么，我们在做客户服务时，其实可以从客户需求的角度来思考，并且从产品设计、软件架构、服务流程等一一入手，做到「能用、有用、实用、好用」的全新服务层次。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;接着上面的一点，我发现自己所在的金顾部门需要改进的几个方面。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;首先，我们需要一定的技能能力，这包括但不限于专业理论知识储备、对市场实务体系的深刻了解、对产品特性的独到把握、具备一定等级程度的量化分析技能、掌握至少一个以上的编程语言。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;说到专业，毋庸置疑，我们需要对现代金融理论的发展脉络及其发展前沿具有扎实的理论功力。现代金融的发展包括资产定价（Asset Pricing）与公司金融（Corporate Finance）两大模块。从金顾的职能角色上看，我们至少需要知道目前有哪些比较成功的可用于理解股票市场波动与演变的理论模型，比如 CAPM、C-CAPM、APT 等，清楚的知道公司的财务分析报表如何为分析上市公司未来股价提供有价值的信息。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;而关于量化分析的方法，我个人比较推荐大家能够学习一些比较实用的编程语言，比如善于处理数据统计分析与图形化展示的 R 语言，专注矩阵分析与模拟的 Matlab 系统，能用用于处理大量互联网数据的 Python 等。尤其是 R，既是一种编译环境，也是一种数据编程语言，是免费开源项目，网上具有非常丰富的软件包可供免费下载使用。可以说，R 是目前分析数据与图形绘制的最好的编程语言，没有之一。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;今天的主题是关于如何使用 R 中的一款优秀的有些「过分」的开源软件包，&lt;strong&gt;quantmod&lt;/strong&gt;。quantmod包：Quantitative Financial Modelling Framework。其目的在于为量化交易者提供一个进行建模的平台，目前的主要功能是获取交易数据进行处理并绘制交易图形。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;首先，我们先去 Yahoo Finance 上面找到不同指数或者个股对应的股票名称或者股票代码。比如，我们现在想要看看上证指数的基本情况，那么，其所对应的名称是 「&lt;strong&gt;^ SSEC&lt;/strong&gt;」。或者是深圳 A 股，对应的代码是「&lt;strong&gt;^ SZSA&lt;/strong&gt;」对于股票代码，这里需要区分沪市和深市的情况，在相应的代码后面添加「&lt;strong&gt;.ss&lt;/strong&gt;」或者是「&lt;strong&gt;.sz&lt;/strong&gt;」。比如，对于在沪市交易的浦发银行，其股票代码为 &lt;strong&gt;600000&lt;/strong&gt;，则可以取 &lt;strong&gt;600000.ss&lt;/strong&gt;。比如，我们查看在深圳上市的「招商地产」，其股票代码在深市为 &lt;strong&gt;000024&lt;/strong&gt;，则可以取 &lt;strong&gt;000024.sz&lt;/strong&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;其次，我们使用函数 &lt;strong&gt;getSymbols()&lt;/strong&gt; 来获取需要运用于后续分析的金融数据。则可以使用命令&lt;/p&gt;
+
+    &lt;p&gt;上海综合 &amp;lt;-getSymbols(“^SSEC”,from = “2004-01-01”, ## 上海综合指数
+             to = Sys.Date(),src = “yahoo”,auto.assign=FALSE)
+   chartSeries(上海综合, theme = theme.black)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/上海综合.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/上海综合.png&quot; alt=&quot;plot of chunk 上海综合&quot; /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  深圳A股 &amp;lt;-getSymbols(&quot;^SZSA&quot;,from = &quot;2014-01-01&quot;, 
+              to = Sys.Date(),src = &quot;yahoo&quot;,auto.assign=FALSE)
+  chartSeries(深圳A股, theme = theme.black, TA = &quot;addEnvelop()&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/深圳A股.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/深圳A股.png&quot; alt=&quot;plot of chunk 深圳A股&quot; /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;对于个股，我们也举一个简单的例子。比如招商地产，000024.sz&lt;/p&gt;
+
+    &lt;p&gt;招商地产 &amp;lt;- getSymbols(“000024.sz”, from = “2000-01-01”, ## 招商地产
+             to = Sys.Date(),src = “yahoo”,auto.assign=FALSE)
+   chartSeries(招商地产, theme = theme.black)
+   candleChart(招商地产, theme = theme.black,
+               TA = “addVo(); addSMA(); addEnvelope();
+               addMACD(); addMomentum(); addROC()”)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/招商地产.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/招商地产.png&quot; alt=&quot;plot of chunk 深圳A股&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;通常，如果有些客户可能会对技术分析比较喜欢，想要在图形中使用一些基本的技术分析指标。通常，这个可以使用 &lt;strong&gt;addXXX()&lt;/strong&gt; 来实现。比如添加包螺线，可以使用 &lt;strong&gt;addEnvelope()&lt;/strong&gt;。&lt;/p&gt;
+
+    &lt;p&gt;神州泰越 &amp;lt;- getSymbols(“300002.sz”, from = “2013-01-01”, 
+             to = Sys.Date(),src = “yahoo”,auto.assign=FALSE)
+   chartSeries(神州泰越, theme = theme.white,
+               TA = “addVo(); addSMA(); addEnvelope();
+               addMACD(); addMomentum(); addROC()”)
+   # addLines(h=100, col = “white”) ## mean(神州泰越[,1])
+   # addLines(h=200, col = “white”) ## mean(神州泰越[,1])
+   addLines(v = which(神州泰越[,4] == max(神州泰越[,4])), 
+             col = “gray”)             &lt;br /&gt;
+   #addLines(v = which(神州泰越[“2014-01-01/”,4] == max(神州泰越[“2014-01-01/”,4])), col = “blue”)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/神州泰越.png&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-07-09-shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/神州泰越.png&quot; alt=&quot;plot of chunk 神州泰越&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
+                <link>http://williamlfang.github.com/cn/2014/07/09/shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/</link>
+                <guid>http://williamlfang.github.com/cn/2014/07/09/shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/</guid>
+                <pubDate>2014-07-09T00:00:00+08:00</pubDate>
+                <category>williamlfang.github.com/cn</category>
+　             　<author>william</author>
+        </item>
 
         <item>
                 <title>简历技术派</title>
@@ -531,7 +901,7 @@ $$
 \begin{align}
  \int&lt;em&gt;{0}^{t} d \ln S_u = \int&lt;/em&gt;{0}^{t} d Y_u 
     &amp;amp;= \int&lt;em&gt;{0}^{t}  (\mu - \frac{1}{2} \sigma^2) du + \int&lt;/em&gt;{0}^{t}  \sigma dW_u &lt;br /&gt;
-\Rightarrow \ln S_t - \ln S&lt;em&gt;0 = Y_t - Y&lt;/em&gt;0 &amp;amp;= (\mu - \frac{1}{2} \sigma^2) t + \int&lt;em&gt;{0}^{t}  \sigma dW_u.
+\Rightarrow \ln S_t - \ln S_0 = Y_t - Y_0 &amp;amp;= (\mu - \frac{1}{2} \sigma^2) t + \int&lt;em&gt;{0}^{t}  \sigma dW_u.
 \end{align}
 $$
 我们知道，&lt;strong&gt;Brownian Motion&lt;/strong&gt; 表示在一定时间段内随机游走走过的路径，并且如果我们假定在初始阶段为 $W(0)=0$，那么，上面等式的最后一项是
@@ -544,9 +914,9 @@ $$&lt;/p&gt;
 &lt;p&gt;因此，我们有
 $$
 \begin{align}
- \ln S_t - \ln S&lt;em&gt;0 = Y_t - Y&lt;/em&gt;0 &amp;amp;= (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t \nonumber&lt;br /&gt;
-  \Rightarrow Y_t &amp;amp;= Y&lt;em&gt;0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t \nonumber&lt;br /&gt;
- \Rightarrow S_t &amp;amp;= S&lt;/em&gt;0 · \exp{  (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t  }.
+ \ln S_t - \ln S_0 = Y_t - Y_0 &amp;amp;= (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t \nonumber&lt;br /&gt;
+  \Rightarrow Y_t &amp;amp;= Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t \nonumber&lt;br /&gt;
+ \Rightarrow S_t &amp;amp;= S_0 · \exp{  (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t  }.
 \end{align}
 $$&lt;/p&gt;
 
@@ -555,11 +925,11 @@ $$&lt;/p&gt;
 &lt;p&gt;我们知道，对于任何一个正态分布做线性转换后依然服从正态分布。由于布朗运动 $W_t \sim \mathcal{N} (0, t)$，则
 $$
 \begin{align}
-  Y_t &amp;amp;= Y&lt;em&gt;0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t \nonumber&lt;br /&gt;
-\Rightarrow E[Y_t|Y&lt;/em&gt;0] &amp;amp;= E[ Y&lt;em&gt;0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t] \nonumber&lt;br /&gt;
-                       &amp;amp;= Y&lt;/em&gt;0 + (\mu - \frac{1}{2} \sigma^2) t + \underbrace{E[\sigma W_t]}&lt;em&gt;{0} = Y&lt;/em&gt;0 + (\mu - \frac{1}{2} \sigma^2) t &lt;br /&gt;
-\Rightarrow Var[Y_t|Y&lt;em&gt;0] &amp;amp;= Var [\sigma W_t] = \sigma^2 Var(Wt) = \sigma^2 ·t \nonumber&lt;br /&gt;
-\Rightarrow Y_t &amp;amp;\sim \mathcal{N}(  Y&lt;/em&gt;0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) \label{gbm_norm}
+  Y_t &amp;amp;= Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t \nonumber&lt;br /&gt;
+\Rightarrow E[Y_t|Y_0] &amp;amp;= E[ Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t] \nonumber&lt;br /&gt;
+                       &amp;amp;= Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \underbrace{E[\sigma W_t]}_{0} = Y_0 + (\mu - \frac{1}{2} \sigma^2) t &lt;br /&gt;
+\Rightarrow Var[Y_t|Y_0] &amp;amp;= Var [\sigma W_t] = \sigma^2 Var(Wt) = \sigma^2 ·t \nonumber&lt;br /&gt;
+\Rightarrow Y_t &amp;amp;\sim \mathcal{N}(  Y_0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) \label{gbm_norm}
 \end{align} 
 $$&lt;/p&gt;
 
@@ -602,13 +972,13 @@ $$&lt;/p&gt;
 &lt;p&gt;这个特征对于求一个「对数正态分布」十分有用。由$\eqref{gbm_norm}$
 $$
 \begin{align}
-  Y_t &amp;amp;\sim \mathcal{N}(  Y&lt;em&gt;0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) 
+  Y_t &amp;amp;\sim \mathcal{N}(  Y_0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) 
 \end{align}
 $$
 则其 MGF 为
 $$
 \begin{align}
- M&lt;/em&gt;{Y}(\tau) &amp;amp;= E[e^{y\tau}] = \exp{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 },
+ M_{Y}(\tau) &amp;amp;= E[e^{y\tau}] = \exp{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 },
 \end{align}
 $$
 其中，$\tilde{\mu} = Y_0 + (\mu - \frac{1}{2} \sigma^2) t$，$\tilde{\sigma}^2= \sigma ^2 t$ .&lt;/p&gt;
@@ -623,8 +993,8 @@ $$&lt;/p&gt;
 &lt;p&gt;即，期望可以表示为
 $$
  \begin{align}
-  E[S_t] &amp;amp;=  E[e^{y\tau}]|&lt;em&gt;{\tau = 1}  = \exp{ \tilde{\mu}  + \frac{1}{2} \tilde{\sigma}^2  }  \nonumber&lt;br /&gt;
-        &amp;amp;= \exp{ Y&lt;/em&gt;0 + (\mu - \frac{1}{2} \sigma^2) t + \frac{1}{2} \sigma^2 t  } \nonumber&lt;br /&gt;
+  E[S_t] &amp;amp;=  E[e^{y\tau}]|_{\tau = 1}  = \exp{ \tilde{\mu}  + \frac{1}{2} \tilde{\sigma}^2  }  \nonumber&lt;br /&gt;
+        &amp;amp;= \exp{ Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \frac{1}{2} \sigma^2 t  } \nonumber&lt;br /&gt;
         &amp;amp;= S_0 · e^{\mu t } &lt;br /&gt;
 \end{align}
 $$&lt;/p&gt;
@@ -643,7 +1013,7 @@ $$
  \begin{align}
   Var[S_t] 
   &amp;amp;=   E[S^2] -  ( E[S] )^2 \nonumber&lt;br /&gt;
-  &amp;amp;= S&lt;em&gt;0^2 · \exp{ 2 \mu t + \sigma^2 t} - S&lt;/em&gt;0^2 · \exp{ 2 \mu t } \nonumber&lt;br /&gt;
+  &amp;amp;= S_0^2 · \exp{ 2 \mu t + \sigma^2 t} - S_0^2 · \exp{ 2 \mu t } \nonumber&lt;br /&gt;
   &amp;amp;= S_0^2 · e^{ 2 \mu t } · (e^{ \sigma^2 t - 1 })
  \end{align}
 $$&lt;/p&gt;
@@ -757,7 +1127,7 @@ $$&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;布朗运动的「独立增量」(indepdent increasement)，即任何一个布朗运动在不同期间内的增量是相互独立的，即对于区间 $[0,t], 0 \leq t&lt;em&gt;0 \leq t&lt;/em&gt;1 \leq \cdots \leq t_n \leq t$, $W(t&lt;em&gt;1)-W(t&lt;/em&gt;0)$, $W(t&lt;em&gt;2)-W(t&lt;/em&gt;1)$,$\cdots$, $W(t_n)-W(t_{n-1})$ 是相互独立的增量过程。&lt;/p&gt;
+    &lt;p&gt;布朗运动的「独立增量」(indepdent increasement)，即任何一个布朗运动在不同期间内的增量是相互独立的，即对于区间 $[0,t], 0 \leq t_0 \leq t_1 \leq \cdots \leq t_n \leq t$, $W(t_1)-W(t_0)$, $W(t_2)-W(t_1)$,$\cdots$, $W(t_n)-W(t_{n-1})$ 是相互独立的增量过程。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;Ito Isometry&lt;/strong&gt; 性质：即对于一个布朗运动的独立增量，$dW_t$，有关其多项式有如下性质
@@ -2051,11 +2421,6 @@ plot(density(x))
 &lt;h3 id=&quot;section-1&quot;&gt;64位操作系统不能运行&lt;/h3&gt;
 &lt;p&gt;这个问题主要是由于原先只是在32位系统运行的 &lt;code&gt;wineQQ&lt;/code&gt; 需要安装配件。如下：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; sudo apt-get install libc6-i386 
-&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; sudo apt-get install ia32-libs
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
 <img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
                 <link>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/</link>
                 <guid>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/</guid>
@@ -2079,10 +2444,6 @@ plot(density(x))
     &lt;p&gt;Suppose you have created a relative path containing folder as &lt;code&gt;assets/images/btt.png&lt;/code&gt;, all you need to do is to add the additional prelix &lt;code&gt;/cn&lt;/code&gt; alongsie the relative file path &lt;code&gt;assets/images/btt.png&lt;/code&gt;. See below as as example: &lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;!&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;bottom&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;/cn/assets/images/btt.png&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;which gives
 &lt;img src=&quot;/cn/assets/images/btt.png&quot; alt=&quot;bottom&quot; /&gt;&lt;/p&gt;

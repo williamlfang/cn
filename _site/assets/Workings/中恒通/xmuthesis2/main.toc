@@ -1,0 +1,11 @@
+\contentsline {chapter}{摘\hskip 1em\relax 要}{I}{section*.1}
+\contentsline {chapter}{英文摘要}{III}{section*.2}
+\contentsline {chapter}{目\hskip 1em\relax {}录}{V}{section*.3}
+\contentsline {chapter}{英文目录}{VII}{section*.4}
+\contentsline {chapter}{\numberline {第\xCJKnumber {1}章}\hspace {-1.1em}简要的说明}{1}{chapter.1}
+\contentsline {chapter}{\numberline {第\xCJKnumber {2}章}\hspace {-1.1em}示例}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}用PGF画图}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}表格}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}参考文献的加入}{9}{section.2.3}
+\contentsline {chapter}{硕士期间发表的论文}{11}{section*.9}
+\contentsline {chapter}{致\hskip 1em\relax {}谢}{13}{section*.10}

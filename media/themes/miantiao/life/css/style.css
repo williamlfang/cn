@@ -186,7 +186,9 @@ input#search {
 	border-radius:50%;
 }
 .year {
+	/*
 	font-size:2px;
+	*/
 	padding:12px 0 0px 0px;
 }
 
@@ -197,7 +199,9 @@ input#search {
 	padding:0px 0 0 0px;
 }
 .month {
+	/*
 	font-size:2px;
+	*/
 	padding:0px 0  0  0px;
 }
 .circle {

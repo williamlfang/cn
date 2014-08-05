@@ -1,0 +1,113 @@
+%=================页面==========================%
+%                                               %
+%-----------------------------------------------%
+%\usepackage[left=24.8mm,right=3in, top=45.4mm,bottom=1.5in,footnotesep=0.5in, headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip]{geometry}
+             
+%\usepackage[left=2in,right=3in,top=1.5in,bottom=1.5in,inner=2.5in,outer=2.5in,includehead,includefoot,footnotesep=0.3in,marginparsep=8.2mm,marginparwidth=49.4mm]{geometry}
+        %  The inner (outer) margin is the left (right) margin on odd pages and right (left) margin on even pages.
+%\usepackage[left=1in,right=1in,top=0.5in,botto5m=0.5in,inner=1.2in,outer=1.2in,includehead,includefoot,footnotesep=0.3in]{geometry}
+        %  The inner (outer) margin is the left (right) margin on odd pages and right (left) margin on even pages.
+        
+\usepackage[paperwidth=210mm,
+            paperheight=297mm,
+            left=1in,
+            right=3in,
+            top=1.2in,
+            bottom=1.2in,
+            outer = 1in,
+            outer=2in,
+            textwidth=345pt,
+            marginparsep=35pt,      %%%%%%%%%%%%%%%%%%%%
+            marginparwidth=500pt,
+            footskip=50pt]
+           {geometry}
+
+\setlength{\marginparwidth}{1in}
+\setlength{\abovedisplayskip}{.1pt}
+\setlength{\belowdisplayskip}{.1pt}
+\pagestyle{plain}
+\renewcommand{\baselinestretch}{1.2}     %%%%%% 调整行间距
+\setlength{\parskip}{1ex}                %%%%%% 调整段落间距
+%------------------------------------------------------------------------------------------%
+%%%%%%%%%%% 中文书签中文复制 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[hyperfootnotes=true,
+            colorlinks=true,
+            citecolor=red,
+            linkcolor=blue,
+            anchorcolor=green,
+            urlcolor=blue,
+%% 与attachfile2冲突           pdfauthor={wangfan},%作者
+%%            pdfkeywords={latex},%关键词
+%%            pdfsubject={latex},%主题
+%%            pdftitle={handbook of latex},%标题
+            CJKbookmarks=true,
+            pdfborder={0 0 0},
+            pdfpagelabels=true,%%%%%%%%显示pdf的bookmarks
+            bookmarksnumbered=true,
+            bookmarksopen=false,
+            xetex,
+            bookmarksnumbered, 
+            pdfencoding=auto, 
+            pdfpagelayout=TwoPageRight,
+			breaklinks, 
+			linkcolor=RoyalBlue, 
+            ]{hyperref}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multicol}               % need etex
+
+ 
+ \usepackage{everyshi}% http://ctan.org/pkg/everyshi
+\usepackage{xifthen}% http://ctan.org/pkg/xifthen
+
+\EveryShipout{%
+  \ifthenelse{\isodd{\value{page}}}%
+    {\global\marginparsep=52pt}% Odd page
+    {\global\marginparsep=10pt}% Even page
+}
+\usepackage[textwidth=4cm,shadow,colorinlistoftodos]{todonotes}%   %% todo 
+
+% Define note commands
+\newcommand{\smalltodoc}[2][]{\todo[caption={#2}, size=\scriptsize, fancyline, color=green!20, #1]%
+                               {\begin{spacing}{1}
+                               %\hspace{-2pt}\textcolor{red}{W.F.}:\hspace{1pt} 
+                               \scriptsize 
+                               \kai{#2}\vspace{-2.5ex}
+                               \end{spacing}}}
+
+\newcommand{\smalltodol}[2][]{\todo[caption={#2}, size=\scriptsize, color=red!20, #1]%
+                               {\begin{spacing}{1}
+                               %\hspace{-2pt}\textcolor{red}{W.F.}:\hspace{1pt} 
+                               \scriptsize 
+                               \kai{#2}\vspace{-2.5ex}
+                               \end{spacing}}}
+                                                              
+\newcommand{\smalltodom}[2][]{\todo[caption={#2}, noline, color=blue!20]%
+                          {\begin{spacing}{1} 
+                          \scriptsize 
+                          \kai{#2} 
+                          \vspace{-2.5ex}
+                          \end{spacing} 
+                          }}
+                                                        
+\newcommand{\notenolist}[2][]{\smalltodo[nolist,color=myorange,#1]{{\textcolor{red}{W.F.}:} #2}}
+\newcommand{\notefn}[2][]{%  To be used in footnotes (and in floats)
+\renewcommand{\marginpar}{\marginnote}%
+\smalltodo[color=myorange,#1]{{\bfseries{\calligra{%
+     \tiny{\textcolor{white}{\rule{1pt}{1pt}}\hspace{-7pt}\textcolor{red}{W.F.}}}}}:\hspace{1pt}#2}%
+\renewcommand{\marginpar}{\oldmarginpar}}
+%\newcommand{\tnote}[1]{\ifnotes{{\colorbox{yellow}{{\color{red}#1}}}}{}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%<-		\todo:note		<-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% itemize 的间距
+\usepackage{paralist} 
+\let\itemize\compactitem 
+\let\enditemize\endcompactitem 
+\let\enumerate\compactenum 
+\let\endenumerate\endcompactenum 
+\let\description\compactdesc 
+\let\enddescription\endcompactdesc
+\setlength{\pltopsep}{.5ex}            %%%%%%%%%%%%%%%% itemize 与段落的间距
+%------------------------------------------------------------------------------------------%

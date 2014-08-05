@@ -1,0 +1,47 @@
+\documentclass[a4paper,10pt,twoside]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{set/math_article}
+\usepackage{set/note}
+\usepackage{set/mymdframed}
+\usepackage{set/zhfontcfg_article}
+%<NEW:COMMAND>=================================================================
+\newcommand{\fts}{Financial Time Series}
+\newcommand{\ftsa}{Financial Time Series Analysis}
+\newcommand{\R}{\textbf{R~}}
+\setlength{\abovecaptionskip}{-5pt} 
+\setlength{\belowcaptionskip}{0pt}
+%>NEW:COMMAND<=================================================================
+%<BEGIN:DOCUMENT>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{Sweave}
+\begin{document}
+\input{Template_knitr-concordance}
+
+%<TITLE INFO>===================================================================
+%%
+\title{Using R}
+\include{set/authorinfo}
+%>TITLE INFO<==================================================================
+\maketitle
+\tableofcontents
+%>TITLE INFO<==================================================================
+
+
+%--------------------------------------------------------------------------------
+%  BIBLIOGRAPHY
+%--------------------------------------------------------------------------------
+%\addcontentsline{toc}{section}{\textcolor{myorange}{参考文献}}  %%% 添加参考文献
+%\bibliographystyle{plainnat}             %% 先用plaintnat生成bibentry后再换econ
+%\setcitestyle{aysep={},yysep={;}} 
+%\bibliography{E:/Bibliography/R-books}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------------------------------------------------------------------------------
+%  INDEX
+%--------------------------------------------------------------------------------
+\cleardoublepage
+\setlength{\columnsep}{0.75cm}
+\addcontentsline{toc}{section}{\textcolor{myorange}{索引}}
+\printindex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+

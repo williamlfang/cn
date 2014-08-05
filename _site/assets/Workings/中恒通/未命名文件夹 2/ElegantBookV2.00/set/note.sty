@@ -1,0 +1,674 @@
+%-----------------------------------------------%
+\setlength{\parindent}{2em}
+\usepackage{fancyhdr,fancybox,boxedminipage}
+\usepackage{lipsum}
+\usepackage{tikz}
+\usepackage[tikz]{bclogo}   %% 制作漂亮的提示框
+\usepackage[refpage]{nomencl} %refeq
+%-----------------------------------------------%
+\usepackage{pgfplots}
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+	% Gauss function, parameters mu and sigma
+%-----------------------------------------------%
+\usepackage[authoryear,super,square]{natbib}
+\usepackage{bibentry}
+\nobibliography*
+\usepackage{verbatim}
+\usepackage[T1]{fontenc}
+%\usepackage{emerald}   %% \ECFMovieola
+\usepackage{calligra}  %% \calligra
+\usepackage{lettrine}                % 首字下沉，命令\lettrine
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% <-  全局主题,色调       ->                                                       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{mythemecolor}{RGB}{243,102,25} % theme color
+\definecolor{mygray}{gray}{.9}
+\definecolor{mypink}{rgb}{.99,.91,.95}
+\definecolor{mycyan}{cmyk}{.3,0,0,0}
+\definecolor{myorange}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% <-  全局主题,色调       ->                                                       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tbf}{\textbf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ->  各种命令 newcommand 与 renewcommand <-                                      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thefootnote}{[{\arabic{footnote}}]}% footnote格式
+%-----------------------------------------------%
+%                                               %
+%=================页面==========================%
+%                                               %
+%-----------------------------------------------%
+\usepackage[left=1in,right=1in,top=0.5in,bottom=0.5in,inner=1.2in,outer=1.2in,includehead,includefoot,footnotesep=0.3in]{geometry}
+        %  The inner (outer) margin is the left (right) margin on odd pages and right (left) margin on even pages.
+\setlength{\marginparwidth}{1in}
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\pagestyle{plain}
+\renewcommand{\baselinestretch}{1.2}     %%%%%% 调整行间距
+\setlength{\parskip}{1ex}                %%%%%% 调整段落间距
+%%%%%%%%%%%%%%%% itemize 的间距
+\usepackage{paralist} 
+\let\itemize\compactitem 
+\let\enditemize\endcompactitem 
+\let\enumerate\compactenum 
+\let\endenumerate\endcompactenum 
+\let\description\compactdesc 
+\let\enddescription\endcompactdesc
+\setlength{\pltopsep}{1ex}            %%%%%%%%%%%%%%%% itemize 与段落的间距
+%------------------------------------------------------------------------------------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%->		versionPO		->%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Usage: place either of the following near the start of your file:
+%     \includeversion{NAME}
+%     \excludeversion{NAME}
+% Here, "NAME" is any name you choose. The first one indicates that text
+% between \begin{NAME} and \end{NAME} will be processed in the normal way.
+% The second indicates that text between \begin{NAME} and \end{NAME} will
+% be totally deleted.
+\@ifundefined{verbatim@@@}{\input{verbatim.sty}}{}
+%###########################################################################################
+\def\includeversion#1{%
+  \expandafter\def\csname #1\endcsname{}%
+  \expandafter\def\csname end#1\endcsname{}%
+  \expandafter\let\csname not-#1\endcsname\comment
+  \expandafter\let\csname endnot-#1\endcsname\endcomment
+  \expandafter\def\csname if#1\endcsname##1##2{##1}
+}
+\def\excludeversion#1{%
+  \expandafter\let\csname #1\endcsname\comment
+  \expandafter\let\csname end#1\endcsname\endcomment
+  \expandafter\def\csname not-#1\endcsname{}%
+  \expandafter\def\csname endnot-#1\endcsname{}%
+  \expandafter\def\csname if#1\endcsname##1##2{##2}
+}
+%###########################################################################################
+% These next lines allow including or excluding different versions of text
+% using versionPO.sty
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%->		versionPO		->%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{setspace}           % Allows easy changes to line spacing 
+\usepackage{marginnote}         % Used with todonotes package
+\usepackage{enumerate}           % List formatting commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%->		\todo:note		->%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\includeversion{notes}		% Include notes?
+%\excludeversion{notes}
+\excludeversion{comment}
+\includeversion{links}          % Turn hyperlinks on?
+\excludeversion{submit}		% Format for conference submission?
+\includeversion{toc}		% Include table of contents?
+
+% Turn off hyperlinking if links is excluded
+\iflinks{}{\hypersetup{draft=true}}
+
+% Notes options
+\ifnotes{%
+\usepackage[textwidth=1.0in,shadow,colorinlistoftodos]{todonotes}%   %% todo 
+}{%
+\usepackage[disable]{todonotes}%
+}
+
+% Allow todonotes inside footnotes without blowing up LaTeX
+% Next command works but now notes can overlap. Instead, we'll define 
+% a special footnote note command that performs this redefinition.
+%\renewcommand{\marginpar}{\marginnote}%
+
+% Save original definition of \marginpar
+\let\oldmarginpar\marginpar
+
+% Workaround for todonotes problem with natbib (To Do list title comes out wrong)
+\makeatletter\let\chapter\@undefined\makeatother % Undefine \chapter for todonotes
+
+% Define note commands
+\newcommand{\smalltodo}[2][] {\todo[caption={#2}, size=\scriptsize, fancyline, #1]%
+                               {\begin{spacing}{.5}#2\end{spacing}}}
+\newcommand{\note}[2][]{\smalltodo[color=green!30,#1]{{\bf{\calligra{%   % myorange
+     \tiny{\textcolor{white}{\rule{1pt}{1pt}}\hspace{-7pt}\textcolor{red}{W.F.}}}}}:\hspace{1pt}#2}}
+\newcommand{\notenolist}[2][]{\smalltodo[nolist,color=myorange,#1]{{\textcolor{red}{W.F.}:} #2}}
+\newcommand{\notefn}[2][]{%  To be used in footnotes (and in floats)
+\renewcommand{\marginpar}{\marginnote}%
+\smalltodo[color=myorange,#1]{{\bf{\calligra{%
+     \tiny{\textcolor{white}{\rule{1pt}{1pt}}\hspace{-7pt}\textcolor{red}{W.F.}}}}}:\hspace{1pt}#2}%
+\renewcommand{\marginpar}{\oldmarginpar}}
+\newcommand{\tnote}[1]{\ifnotes{{\colorbox{yellow}{{\color{red}#1}}}}{}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%<-		\todo:note		<-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%================= 例子 框架 =======================%     
+% ------- CREATE A COMMAND CALLED NICEBOX TO MAKE NICE BOXES
+\tikzstyle{nicebox}=[draw=gray!100, fill=gray!10, very thick, rectangle, inner sep=4pt, inner ysep=16pt]
+\tikzstyle{niceboxtitle}=[draw=gray!100, fill=white, text=black, very thick, rectangle]
+\tikzstyle{outputbox}=[draw=gray!20, fill=white,  thick, rectangle, inner sep=2pt, inner ysep=8pt]
+
+\newcommand\nicebox[2]{
+   {\par\centering
+   \begin{tikzpicture}
+      \node [nicebox](box){
+         \begin{minipage}{0.98\textwidth}\centering
+         \begin{minipage}{0.95\textwidth}
+			#2
+         \end{minipage}\end{minipage}};
+      \node[niceboxtitle, right=10pt] at (box.north west) {\small\textbf{#1}};
+   \end{tikzpicture}\par}
+}
+
+\newcommand\outputbox[1]{
+   {\par\centering
+   \begin{tikzpicture}
+      \node [outputbox](box){
+         \begin{minipage}{\textwidth}\centering
+         \begin{minipage}{0.95\textwidth}
+			#1
+         \end{minipage}\end{minipage}};
+   \end{tikzpicture}\par}
+}
+                                        %
+% ------- CREATE AN ENVIRONMENT CALLED EXAMPLEBOX, FOR EXAMPLES
+\newsavebox{\mybox}
+\newcounter{examplebox}[section]
+
+\makeatletter
+\newenvironment{examplebox}[1][]{
+   \footnotesize                   %% 小号字体
+   \stepcounter{examplebox}%
+   \def\niceboxlabel{\thesection.\arabic{examplebox}}%
+   \def\@currentlabel{Example \niceboxlabel}
+   \def\@exampletitle{#1}
+   \renewcommand\makelabel[1]{Example \thesection.\arabic{examplebox}}%    
+   \begin{lrbox}{\mybox}\begin{minipage}{0.94\textwidth}%
+   }%
+   {%
+    \end{minipage}\end{lrbox}%
+    \par\nicebox{Tips \niceboxlabel\if!\@exampletitle!\else: \@exampletitle\fi}{\usebox{\mybox}}} 
+                             % 显示的名称：Tips，后面是计数
+% ------- CREATE AN ENVIRONMENT CALLED EXAMPLEBOX, FOR EXAMPLES
+% ------- CREATE AN ENVIRONMENT CALLED EXAMPLEBOX, FOR EXAMPLES
+\newcounter{exampleboxno}[section]
+
+\makeatletter
+\newenvironment{exampleboxno}[1][]{
+   \footnotesize                  %% 小号字体
+   \stepcounter{exampleboxno}%
+   \def\niceboxlabel{\thesection.\arabic{exampleboxno}}%
+   \def\@currentlabel{Example \niceboxlabel}
+   \def\@exampletitle{#1}
+   \renewcommand\makelabel[1]{Example \thesection.\arabic{exampleboxno}}%    
+   \begin{lrbox}{\mybox}\begin{minipage}{0.94\textwidth}%
+   }%
+   {%
+    \end{minipage}\end{lrbox}%
+    \par\nicebox{\@exampletitle}{\usebox{\mybox}}} 
+                             % 显示的名称：Tips，后面是计数
+% ------- CREATE AN ENVIRONMENT CALLED EXAMPLEBOX, FOR EXAMPLES
+
+%% 以下是使用的例子
+\begin{comment} 
+\begin{examplebox}[计数]
+\begin{lstlisting}
+\newcounter{mycounter}
+\setcounter{mycounter}{1}
+\arabic{mycounter}, \alph{mycounter}, \Alph{mycounter},
+\roman{mycounter}, \Roman{mycounter}
+
+\stepcounter{mycounter}
+\arabic{mycounter}, \alph{mycounter}, \Alph{mycounter},
+\roman{mycounter}, \Roman{mycounter}
+\end{lstlisting}
+This has the following output: \medskip
+
+\outputbox{
+\newcounter{mycounter}
+\setcounter{mycounter}{1}
+\arabic{mycounter}, \alph{mycounter}, \Alph{mycounter},
+\roman{mycounter}, \Roman{mycounter}
+
+\stepcounter{mycounter}
+\arabic{mycounter}, \alph{mycounter}, \Alph{mycounter},
+\roman{mycounter}, \Roman{mycounter}
+}
+\end{examplebox}
+\end{comment} 
+% ------- CREATE AN ENVIRONMENT CALLED EXAMPLEBOX, FOR EXAMPLES
+%================= 例子 框架 =======================%     
+%-----------------------------------------------%
+\usepackage{colortbl}
+     \renewcommand{\arraystretch}{1.5}
+\arrayrulewidth=0.8pt
+\tabcolsep=12pt
+\usepackage{pdfpages}       % pdf生成
+%\usepackage{ccmap}          % 可复制pdf
+%%%%%%%%%%% 中文书签中文复制 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[hyperfootnotes=true,
+            colorlinks=true,
+            citecolor=red,
+            linkcolor=blue,
+            anchorcolor=green,
+            urlcolor=blue,
+%% 与attachfile2冲突           pdfauthor={wangfan},%作者
+%%            pdfkeywords={latex},%关键词
+%%            pdfsubject={latex},%主题
+%%            pdftitle={handbook of latex},%标题
+            CJKbookmarks=true,
+            pdfborder={0 0 0},
+            pdfpagelabels=true,%%%%%%%%显示pdf的bookmarks
+            bookmarksnumbered=true,
+            bookmarksopen=false,
+            xetex,
+            ]{hyperref}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[normalem]{ulem}
+               % 宏包来强调文本（删除线) \uline \uuline \uwave
+\usepackage{soul} %%% 文本高亮
+%-----------------------------------------------%
+%                                               %                                %
+%=================图表==========================%
+%                                               %
+%-----------------------------------------------%
+\usepackage{tabularx}         % 作图package
+\usepackage{longtable}
+\usepackage{nonfloat}
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.5}
+\arrayrulewidth=0.8pt
+\tabcolsep=12pt
+%      
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ->	使用LaTeX输入键盘按钮	   <- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*\keystroke[1]{%
+  \tikz[baseline=(key.base)]
+    \node[%
+      draw,
+      fill=white,
+      drop shadow={shadow xshift=0.25ex,shadow yshift=-0.25ex,fill=black,opacity=0.75},
+      rectangle,
+      rounded corners=2pt,
+      inner sep=1pt,
+      line width=0.5pt,
+      font=\scriptsize\sffamily
+    ](key) {#1\strut}
+  ;
+}        
+%使用方法
+%   \keystroke{Esc}                     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% <-	使用LaTeX输入键盘按钮	   -> %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%================================================================================%%
+\makeatletter
+ \newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\makeatother
+
+\makeatletter
+ \newcommand{\red}[1]{\textcolor{red}{#1}}
+\makeatother
+
+\makeatletter
+ \newcommand{\eb}[1]{\emph{\textbf{#1}}}
+\makeatother
+
+\makeatletter
+ \renewcommand{\mp}[1]{\marginpar{%
+    \footnotesize{\red{\Ovalbox{#1} } } } }
+\makeatother
+
+\newcommand{\E}{\mathbb{E}}
+
+\newcommand{\eps}{\varepsilon}
+
+% =========== box边框的设置 ==============================%
+\newcommand*{\boxedcolor}{red}
+\makeatletter
+\renewcommand{\boxed}[1]{\textcolor{\boxedcolor}{%
+  \fbox{\normalcolor\m@th$\displaystyle#1$}}}
+\makeatother
+% =======================================================%
+
+\makeatletter
+ \newcommand{\ttl}[1]{\noindent
+ \textbf{---} \emph{\textcolor{blue}{#1}}
+ \textbf{---}\newline}
+\makeatother
+%%================================================================================%%
+\usepackage{paralist}%{compactitem}
+%%================================================================%%
+\newcommand{\mb}{\mbox}
+\newcommand{\ra}{\quad \Rightarrow \quad }
+\newcommand{\Ra}{\Rightarrow}
+
+\makeatletter
+ \newcommand{\rmb}[1]
+ {\mbox{\Ovalbox{\red{#1}}} \quad}
+\makeatother
+
+%%======================  参考文献格式   =================================%%
+%\usepackage{cite}
+%\def\citepunct{], [}
+%\def\citedash{]—[}
+%%======================  参考文献格式   =================================%%
+\usepackage{bibentry}
+
+\makeatletter
+ \newcommand{\citex}[1]{%
+ \citeauthor{#1}'s\citeyearpar{#1}%
+ }
+\makeatother
+%%======================  目录格式   =================================%%
+\usepackage{titlesec,titletoc}
+\contentsmargin{1cm} % Removes the default margin  与页码的距离
+%       \titleformat{\chapter}[display]
+%             {\normalfont\Large\bfseries}{\thechapter}{11pt}{\Large}
+%             \titlespacing*{\chapter}{0pt}{0pt}{15pt} %left, beforesep, aftersep, right
+
+       \titleformat{\section}
+             {\normalfont\large\bfseries}{\thesection}{11pt}{\large}
+			\titlespacing*{\section}{2pt}{2.5ex plus 1ex minus .2ex}{1.5ex plus -.2ex}
+%			
+       \titleformat{\subsection}
+            {\normalfont\large\bfseries}{\thesubsection}{10pt}{\large}
+             \titlespacing*{\subsection}{-2pt}{1.5ex plus 1ex minus .2ex}{1.5ex plus -.2ex}
+
+\titlecontents{section}[4em] % Left Indentation
+{\addvspace{8pt}\bfseries} % Spacing and font options for sections
+{\contentslabel[\thecontentslabel]{2em}} % Section number
+{\hspace{-4em}}
+{\;\color{black}\titlerule*[.5pc]{.}\thecontentspage} % Page number
+[]
+
+% Subsection text styling
+\titlecontents{subsection}[6em] % Indentation
+{\addvspace{2pt}\small} % Spacing and font options for subsections
+{\contentslabel[\thecontentslabel]{2em}} % Subsection number
+{\hspace{-4em}}
+{\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+[] 
+
+
+% Subsubsection text styling
+\titlecontents{subsubsection}[8em] % Indentation
+{\addvspace{0pt}\small} % Spacing and font options for subsections
+{\contentslabel[\thecontentslabel]{3em}} % Subsection number
+{\hspace{-4em}}
+{\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+[] 
+
+%%======================  附录格式   =================================%%
+    \usepackage[page,title,titletoc,header]{appendix}
+    %\begin{appendices}
+    %\renewcommand{\thechapter}{\Alph{chapter}.}
+     % \chapter{First appendix}
+    % some text...
+     % \chapter{Second appendix}
+    % some more text
+    %\end{appendices}
+%%======================  附录格式   =================================%%
+%%======================  目录格式   =================================%%
+\usepackage{datetime}
+\usepackage{scrtime}
+%\xxivtime \, \today
+%\ampmtime\, \today
+%\oclock\, \today
+%\thistime\, \today
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%<-		自定义 Verbatim 环境		<-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% 抄录环境 %%%%%%%%%%%%%
+\usepackage{fancyvrb,sverb}
+%%%%%%%%%%%% 抄录环境 %%%%%%%%%%%%%
+
+\DefineVerbatimEnvironment{VimVBshcmd}{Verbatim}
+  {gobble=0,rulecolor=\color{black},formatcom=\color{blue},samepage=true,numbers=none,numbersep=0mm, frame=single,framerule=0.1pt,label=\LaTeX \quad 命令 ,fontsize=\small}
+\DefineVerbatimEnvironment{latexcmd}{Verbatim}
+  {gobble=0,rulecolor=\color{black},formatcom=\color{blue},samepage=true,numbers=none,numbersep=0mm, frame=single,framerule=0.1pt,label=\LaTeX \quad 命令 ,fontsize=\small}
+\DefineVerbatimEnvironment{asycmd}{Verbatim}
+  {gobble=0,rulecolor=\color{black},formatcom=\color{blue},samepage=true,numbers=none,numbersep=0mm, frame=single,framerule=0.1pt,label=ASY ~~代码  ,fontsize=\small}
+\DefineVerbatimEnvironment{cmd}{Verbatim}
+  {gobble=0,rulecolor=\color{black},formatcom=\color{blue},samepage=true,numbers=none,numbersep=0mm, frame=single,framerule=0.1pt,label= 代码命令  ,fontsize=\small}
+%参考了 VIM 7.2 手册代码
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%<-		自定义 Verbatim 环境		<-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%<-		粘贴源代码		<-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{listings}                % 粘贴源代码
+\lstset{
+language=R,                          %% R 
+basicstyle=\footnotesize\ttfamily,
+commentstyle=\ttfamily\color{gray},  %% 注释
+numbers=left,                        %% 显示前面的序号
+numbersep=1em,
+numberstyle=\ttfamily\color{myorange}\tiny,
+stepnumber=1,                        %% 序号增加值
+frame=shadowbox,                    %% single,
+rulesepcolor=\color{red!20!green!20!blue!20},
+escapeinside=``, 
+xleftmargin=2em,
+xrightmargin=2em, 
+aboveskip=1em,
+belowskip=-2em,
+breaklines=true,
+showspaces=false,
+showstringspaces=false,   %% 在listing的代码输出中不显示"空格"
+showtabs=false,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+breakatwhitespace=false,
+backgroundcolor=\color{yellow!10},
+title=\lstname,
+keywordstyle=\color{blue},
+columns=flexible,
+morekeywords={maketitle},
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%<-		粘贴源代码		<-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%==========================================================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%==========================================================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%<-		index       		->%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{makeidx} % Required to make an index
+\makeindex % Tells LaTeX to create the files required for indexing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%->		index        		<-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%==========================================================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ->		Section		  <-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------
+%	SECTION NUMBERING IN THE MARGIN
+%----------------------------------------------------------------------------------------
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\llap{\textcolor{myorange}{\csname the#1\endcsname}\hspace{1em}}}  
+%%                  
+\renewcommand{\section}{\@startsection{section}{1}{\z@}
+{-4ex \@plus -1ex \@minus -.4ex}
+{1ex \@plus.2ex }
+{\normalfont\large\sffamily\bfseries}}
+\renewcommand{\subsection}{\@startsection {subsection}{2}{\z@}
+{-3ex \@plus -0.1ex \@minus -.4ex}
+{0.5ex \@plus.2ex }
+{\normalfont\sffamily\bfseries}}
+\renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}
+{-2ex \@plus -0.1ex \@minus -.2ex}
+{0.2ex \@plus.2ex }
+{\normalfont\small\sffamily\bfseries}}                        
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
+{-2ex \@plus-.2ex \@minus .2ex}
+{0.1ex}
+{\normalfont\small\sffamily\bfseries}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% <-		Section		   -> %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% <-		Heading		   ->  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\usepackage{fancyhdr} % Required for header and footer configuration
+%
+\pagestyle{fancy}
+%
+\makeatletter
+\renewcommand{\sectionmark}[1]{\markboth{\if@mainmatter \fi#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesection~~~#1}}
+
+\makeatother
+%----------------------------------
+%\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries #1}{}} 
+% Chapter text font settings
+%\renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} 
+% Section text font settings
+%----------------------------------
+%\renewcommand{\sectionmark}[1]{\markboth{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} 
+% Section text font settings
+%\renewcommand{\subsectionmark}[1]{\markright{\sffamily\normalsize\thesubsection\hspace{5pt}#1}{}} 
+% SubSection text font settings
+\fancyhf{} 
+\fancyhead[LE,RO]{\sffamily\normalsize\thepage} % Font setting for the page number in the header
+\fancyhead[RE]{\sffamily\normalsize\leftmark}              % SECTION章节名
+\fancyhead[LO]{\sffamily\normalsize\rightmark}             % SUBSECTION章节名
+\renewcommand{\headrulewidth}{0.5pt}   % Width of the rule under the header
+\addtolength{\headheight}{2.5pt}       % Increase the spacing around the header slightly
+\renewcommand{\footrulewidth}{0pt}     % Removes the rule in the footer
+\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} 
+% Style for when a plain pagestyle is specified
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ->		Heading		  <-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% <-		留白  		   -> %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Removes the header from odd empty pages at the end of chapters
+% Removes the header from odd empty pages at the end of chapters
+\makeatletter
+\renewcommand{\cleardoublepage}{
+\clearpage\ifodd\c@page\else
+\hbox{}
+\vspace*{\fill}
+\thispagestyle{empty}
+\newpage
+\fi}
+\end{comment}
+%%
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesubsection\hspace{5pt}#1}{}} 
+\fancyhf{}
+\fancyhead[LE,RO]{\sffamily\small\thepage}
+\fancyhead[RE]{\sffamily\small{WilliamFang}}   %\leftmark
+\fancyhead[LO]{\sffamily\rightmark}
+\fancypagestyle{plain}{             % set header and footer of plain pages
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyfoot[LE,RO]{\thepage}
+}
+
+\makeatletter
+\renewcommand{\cleardoublepage}{
+    \clearpage
+    \if@twoside \ifodd 
+        \c@page
+    \else
+        \if@openrecto 
+            \thispagestyle{empty}
+            \vspace*{\fill}
+            \begin{center}
+                留白
+            \end{center}
+            \vspace{\fill}
+            \newpage
+            \if@twocolumn
+                \newpage
+            \fi
+        \fi 
+    \fi\fi
+}
+
+\newif\if@openrecto
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ->		留白  		   <- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% <-		Heading		   -> %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% <-		引用：myquote   -> %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usetikzlibrary{backgrounds}
+\makeatletter
+%%
+\tikzset{%
+  fancy quotes/.style={
+    text width=\fq@width pt,
+    align=justify,
+    inner sep=1em,
+    anchor=north west,
+    minimum width=\textwidth,
+  },
+  fancy quotes width/.initial={.8\textwidth},
+  fancy quotes marks/.style={
+    scale=8,
+    text=white,
+    inner sep=0pt,
+  },
+  fancy quotes opening/.style={
+    fancy quotes marks,
+  },
+  fancy quotes closing/.style={
+    fancy quotes marks,
+  },
+  fancy quotes background/.style={
+    show background rectangle,
+    inner frame xsep=0pt,
+    background rectangle/.style={
+      fill=mycyan,                      %% background color = mycyan
+      rounded corners,
+    },
+  }
+}
+%%
+
+%%
+\newenvironment{myquote}[2][]{%
+\par
+\noindent                     % noindent
+%
+\tikzpicture[fancy quotes background]
+\node[fancy quotes opening,anchor=north west] (fq@ul) at (0,0) {“};         %% 位置在east
+\tikz@scan@one@point\pgfutil@firstofone(fq@ul.east)
+\pgfmathsetmacro{\fq@width}{\textwidth - 2*\pgf@x}
+\node[fancy quotes,#1] (fq@txt) at (fq@ul.north west) \bgroup [\emph{Page.}\boxed{#2}]\hspace{2ex}}    %% begin
+{
+\egroup;
+\node[overlay,fancy quotes closing,anchor=east] at (fq@txt.south east) {”};  %% 位置在east
+\endtikzpicture}
+%%
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ->		引用：myquote   <- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

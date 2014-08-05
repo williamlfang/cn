@@ -1,0 +1,187 @@
+%%
+\usepackage{framed,{mdframed}}
+%% 整段文本高亮
+\colorlet{shadecolor}{yellow}
+%\begin{shaded}
+%
+%\end{shaded}
+%%
+\mdfdefinestyle{mdfexplain}{%                  %%%%% style = mdfexplain
+font=\footnotesize,
+rightline=true,
+linecolor=blue!20,%
+linewidth=2pt,
+frametitlerule=true,
+frametitlerulecolor=green,
+frametitlerulewidth=0pt,
+frametitlebackgroundcolor=myorange,
+repeatframetitle = false,
+frametitlefont = \noindent\normalfont\bf\sffamily\color{white},    
+frametitlealignment=\noindent\raggedright,
+backgroundcolor=mygray,
+shadow=true,
+shadowsize = 2pt,
+shadowcolor = myorange,
+roundcorner=12pt,
+skipabove = 0pt,
+skipbelow = 5pt,
+innertopmargin=10pt,
+innerbottommargin=10pt,
+innerleftmargin=10pt,
+innerrightmargin=10pt
+}
+%
+
+%%
+\mdfdefinestyle{mdfitem}{%                              %%%%% style = mdfitem
+font=\footnotesize,
+linecolor=black!30,%
+linewidth=.5pt,
+frametitlerule=false,
+%frametitlerulecolor=green,
+%frametitlerulewidth=0pt,
+frametitlebackgroundcolor=mygray,
+%repeatframetitle = false,
+frametitlealignment=\noindent\raggedright,
+frametitlefont = \noindent\normalfont\sffamily\color{mythemecolor},                  %%%default=\normalfont\bfseries
+%backgroundcolor=mygray,
+shadow=false,
+shadowsize = 0pt,
+shadowcolor = myorange,
+roundcorner=12pt,
+skipabove = 0pt,
+skipbelow = 0pt,
+innertopmargin=5pt,
+innerbottommargin=10pt,
+innerleftmargin=10pt,
+innerrightmargin=5pt
+}
+%
+
+%%     
+\newenvironment{mdfbox}[1][]{%                              %%% mdfbox
+\par                              %%% \par
+ \footnotesize
+  \ifstrempty{#1}%
+  {\mdfsetup{%
+    frametitle={%
+    \noindent
+       \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=myorange]
+        {\sffamily\textcolor{white}{}};},%
+        backgroundcolor=mygray,%
+        shadow=true,
+		shadowsize = 2pt,
+		shadowcolor = myorange,
+		roundcorner=12pt,
+		skipabove = 0pt,
+		skipbelow = 5pt,
+		innertopmargin=10pt,
+		innerbottommargin=10pt,
+		innerleftmargin=10pt,
+		innerrightmargin=10pt
+        }%
+  }%
+  {\mdfsetup{%
+     frametitle={%
+      \noindent
+       \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=myorange]
+        {\sffamily\textcolor{white}{#1}};},%
+        backgroundcolor=mygray,%
+        shadow=true,
+		shadowsize = 2pt,
+		shadowcolor = myorange,
+		roundcorner=12pt,
+		skipabove = 0pt,
+		skipbelow = 5pt,
+		innertopmargin=10pt,
+		innerbottommargin=10pt,
+		innerleftmargin=10pt,
+		innerrightmargin=10pt
+        }%
+   }%
+   \mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+             linewidth=2pt,topline=true,
+             frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+   }{\end{mdframed}}
+%%
+
+\newcounter{example}[subsection]    % [section]    
+\newenvironment{mdfexample}[1][]{%                                %%% mdfexample
+\par                              %%% \par
+\footnotesize
+ \stepcounter{example}%
+  \ifstrempty{#1}%
+  {\mdfsetup{%
+    frametitle={%
+      \noindent
+      \normalfont\sffamily\color{mythemecolor}
+       \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=myorange]
+        {\sffamily\textcolor{white}{Example~\arabic{section}.\arabic{subsection}.\theexample}};},%    
+        %{\strut Example~\theexample};},%
+         backgroundcolor=mygray,%
+        shadow=true,
+		shadowsize = 2pt,
+		shadowcolor = myorange,
+		roundcorner=12pt,
+		skipabove = 0pt,
+		skipbelow = 5pt,
+		innertopmargin=10pt,
+		innerbottommargin=10pt,
+		innerleftmargin=10pt,
+		innerrightmargin=10pt}
+  }%
+  {\mdfsetup{%
+     frametitle={%
+      \noindent
+       \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=mythemecolor]
+       {\sffamily\textcolor{white}{Example~\arabic{section}.\arabic{subsection}.\theexample:~#1}};},%   
+                 %% {\strut Example~\theexample:~#1};},%
+        backgroundcolor=mygray,%
+        shadow=true,
+		shadowsize = 2pt,
+		shadowcolor = myorange,
+		roundcorner=12pt,
+		skipabove = 0pt,
+		skipbelow = 5pt,
+		innertopmargin=10pt,
+		innerbottommargin=10pt,
+		innerleftmargin=10pt,
+		innerrightmargin=10pt}%
+   }%
+   \mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+             linewidth=2pt,topline=true,
+             frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+   \begin{mdframed}[]\relax%
+   }{\end{mdframed}}
+%%
+%xelatex编译的时候会报出：
+%! LaTeX Error: Command \nobreakspace unavailable in encoding T1.
+%【解决方案】
+%这个错误是由 xunicode 造成的，xunicode对空格进行了重定义，可以把其定义改为原始定义即可，
+\DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ } 
+%%
+\mdfdefinestyle{mdfhl}%  %%% mdfhl
+{
+font=\footnotesize,
+topline=false,
+bottomline=false,
+rightline=false,
+leftline = true,
+linecolor=myorange,
+linewidth=2pt,
+backgroundcolor=mycyan,
+roundcorner=12pt,
+skipabove = 5pt,
+skipbelow = 5pt,
+innertopmargin=10pt,
+innerbottommargin=10pt,
+innerleftmargin=10pt,
+innerrightmargin=10pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tcolorbox}

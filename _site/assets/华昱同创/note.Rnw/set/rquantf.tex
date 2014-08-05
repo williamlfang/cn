@@ -1,0 +1,159 @@
+\documentclass[a4paper,10pt]{book}
+
+\definecolor{themecolor}{RGB}{0,120,2}% % theme color
+
+\usepackage{lipsum}
+% **************************************
+% Graphics
+% **************************************
+\usepackage{adjustbox}
+\usepackage{graphicx, rotating}
+%\usepackage[svgnames, table]{xcolor}% put before pstricks, textpos, tikz
+%\DeclareGraphicsRule{.mps}{eps}{.mps}{}
+\graphicspath{{figure/}{img/}}
+% **************************************
+% -> color
+% **************************************
+\usepackage{../../set/mycolor}
+% **************************************
+% <- color
+% **************************************
+
+% **************************************
+% Table
+% **************************************
+\usepackage{booktabs,longtable,multirow,tabularx,warpcol}
+\usepackage{threeparttable}
+% **************************************
+% Structure
+% **************************************
+\usepackage{../../set/mystructure}
+% **************************************
+% <- Structure
+% **************************************
+
+\usepackage{multind}
+\makeindex{people}
+\makeindex{org}
+%\usepackage{titlesec}
+\RequirePackage[center,pagestyles]{titlesec}
+
+\newcommand{\company}{厦门怡惟服饰股份有限公司}             %%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\project}{}             %%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\lnotesversion}{1.0}             %%%%%%%%%%%%%%%%%%%%%
+\newcommand{\lnotesdate}{2014年5月}          %%%%%%%%%%%%%%%%%%%%%%
+
+
+% **************************************
+% -> Languagues and Fonts
+% **************************************
+\usepackage{../../set/zhfonts-book}
+% **************************************
+% <- Languagues and Fonts
+% **************************************
+\usepackage{comment}
+\begin{comment}
+\makeatletter
+\renewcommand{\tableofcontents}{%
+\setlength{\columnsep}{2.5em}
+%\setlength{\columnseprule}{.8pt}
+\begin{multicols}{2}[\chapter*{\contentsname}]%
+    \@starttoc{toc}%
+\end{multicols}}
+\makeatother
+\end{comment}
+% **************************************
+% Format
+% **************************************
+\usepackage{calc}
+\usepackage{indentfirst,setspace}
+
+%\setlist[1]{labelindent=0.5\parindent,leftmargin=\parindent}
+
+\usepackage{fancyvrb,listings,verbatim}
+
+\VerbatimFootnotes
+\usepackage{../../packages/ldemo}
+
+%\usepackage{framed}
+\usepackage{../../set/mymdframed}
+\usepackage{marginnote}
+
+%%
+\makeatletter
+ \newcommand{\cneqref}[1]{%
+ 方程（\ref{#1}）%
+ }
+\makeatother
+%%
+%%
+\makeatletter
+ \newcommand{\tabref}[1]{%
+ 表（\ref{#1}）%
+ }
+\makeatother
+%%
+%%
+\makeatletter
+ \newcommand{\figref}[1]{%
+ 图（\ref{#1}）%
+ }
+\makeatother
+%%
+
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{8pt}
+
+%\renewcommand{\labelitemi}{\ensuremath{\bullet}}% xunicode changes the bullet
+
+\makeatletter
+\renewenvironment{quotation}{
+    \list{}{
+        \listparindent 2em
+        \itemindent    \listparindent
+        \rightmargin   \leftmargin
+        \parsep        \z@ \@plus\p@
+    }
+    \item
+}{
+    \endlist
+}
+\makeatother
+
+% **************************************
+% -> Layout
+% **************************************
+\usepackage{../../set/myfancy}
+\usepackage{sidenotes}
+
+% ----- Title Style -----
+\newcommand*{\base}[1]{
+ \includegraphics[scale=0.3]{../../imgs/greenbase.pdf}        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ }
+
+% **************************************
+% <- Layout
+% **************************************
+
+% **************************************
+% Bibliography
+% **************************************
+\usepackage{chapterbib}
+\usepackage[sectionbib,super,square,sort&compress]{natbib}
+
+% **************************************
+% -> Math
+% **************************************
+\usepackage{../../set/math-book}
+% **************************************
+% <- Math
+% **************************************
+
+\newcommand{\R}{\textsf{R}}
+\makeatletter
+ \newcommand{\rcode}[1]{\textsf{#1}}
+\makeatother
+
+\begin{document}
+
+

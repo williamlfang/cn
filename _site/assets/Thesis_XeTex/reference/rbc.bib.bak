@@ -1,0 +1,6467 @@
+% This file was created with JabRef 2.7.
+% Encoding: GBK
+
+@STRING{aer = {American Economic Review}}
+
+@STRING{aerp = {American Economic Review Proceedings}}
+
+@STRING{ap = {Academic Press}}
+
+@STRING{aut = {Automn}}
+
+@STRING{aw = {Addison--Wesley}}
+
+@STRING{bj = {Bell Journal}}
+
+@STRING{cdr = {Cahier de recherche}}
+
+@STRING{cerpe = {Centre de Recherche sur les Politiques \'Economiques, Universit\'e
+	du Qu\'ebec \`a Montr\'eal}}
+
+@STRING{cje = {Canadian Journal of Economics}}
+
+@STRING{cr = {Carnegie Rochester Conference Series on Public Policy}}
+
+@STRING{crefe = {Centre de Recherche sur l'Emploi et les Fluctuations \'Economiques,
+	Universit\'e du Qu\'ebec \`a Montr\'eal}}
+
+@STRING{cup = {Cambridge University Press}}
+
+@STRING{deep = {D\'{e}partement d'\'{e}conom\'{e}trie et d'\'{e}conomie politique,
+	Universit\'{e} de Lausanne}}
+
+@STRING{dp = {Discussion paper}}
+
+@STRING{eco = {Econometrica}}
+
+@STRING{eer = {European Economic Review}}
+
+@STRING{efa = {European Finance Association}}
+
+@STRING{el = {Economics Letters}}
+
+@STRING{faj = {Financial Analyst Journal}}
+
+@STRING{fal = {Fall}}
+
+@STRING{fm = {Financial Management}}
+
+@STRING{gsia = {Graduate School of Industrial Administration, Carnegie Mellon University}}
+
+@STRING{hup = {Harvard University Press}}
+
+@STRING{iem = {Institute for Empirical Macroeconomics, Federal Reserve Bank of Minneapolis}}
+
+@STRING{ier = {International Economic Review}}
+
+@STRING{jae = {Journal of Accounting and Economics}}
+
+@STRING{jb = {Journal of Business}}
+
+@STRING{jbes = {Journal of Business and Economic Statistics}}
+
+@STRING{jbf = {Journal of Banking and Finance}}
+
+@STRING{jbfa = {Journal of Business Finance and Accounting}}
+
+@STRING{je = {Journal of Econometrics}}
+
+@STRING{jeb = {Journal of Economics and Business}}
+
+@STRING{jedc = {Journal of Economic Dynamics and Control}}
+
+@STRING{jei = {Journal of Economic Issues}}
+
+@STRING{jel = {Journal of Economic Literature}}
+
+@STRING{jep = {Journal of Economic Perspectives}}
+
+@STRING{jet = {Journal of Economic Theory}}
+
+@STRING{jf = {Journal of Finance}}
+
+@STRING{jfe = {Journal of Financial Economics}}
+
+@STRING{jfqa = {Journal of Financial and Quantitative Analysis}}
+
+@STRING{jie = {Journal of International Economics}}
+
+@STRING{jimf = {Journal of International Money and Finance}}
+
+@STRING{jm = {Journal of Management}}
+
+@STRING{jmae = {Journal of Mathemathical Economics}}
+
+@STRING{jmcb = {Journal of Money, Credit and Banking}}
+
+@STRING{jmoe = {Journal of Monetary Economics}}
+
+@STRING{jpe = {Journal of Political Economy}}
+
+@STRING{jpm = {Journal of Portfolio Management}}
+
+@STRING{jpub = {Journal of Public Economics}}
+
+@STRING{kap = {Kluwer Academic Publishers}}
+
+@STRING{mf = {Mathematical Finance}}
+
+@STRING{mh = {McGraw--Hill}}
+
+@STRING{mitp = {MIT--Press}}
+
+@STRING{mnqr = {Federal Reserve Bank of Minneapolis Quarterly Review}}
+
+@STRING{mnrd = {Federal Reserve Bank of Minneapolis Research Department}}
+
+@STRING{ms = {Management Science}}
+
+@STRING{nber = {National Bureau of Economic Research}}
+
+@STRING{nh = {North--Holland}}
+
+@STRING{ph = {Prentice--Hall}}
+
+@STRING{pup = {Princeton University Press}}
+
+@STRING{qje = {Quarterly Journal of Economics}}
+
+@STRING{rcer = {Rochester Center for Economic Research, University of Rochester}}
+
+@STRING{reas = {Review of Economics and Statistics}}
+
+@STRING{res = {Review of Economic Studies}}
+
+@STRING{rfm = {Review of Futures Markets}}
+
+@STRING{rfs = {Review of Financial Studies}}
+
+@STRING{rj = {Rand Journal}}
+
+@STRING{rp = {Research paper}}
+
+@STRING{sje = {Scandinavian Journal of Economics}}
+
+@STRING{spa = {Stochastic Processes and Their Applications}}
+
+@STRING{spr = {Spring}}
+
+@STRING{sr = {Staff report}}
+
+@STRING{sum = {Summer}}
+
+@STRING{sv = {Springer--Verlag}}
+
+@STRING{ucp = {The University of Chicago Press}}
+
+@STRING{uqam = {Universit\'e du Qu\'ebec \`a Montr\`eal}}
+
+@STRING{win = {Winter}}
+
+@STRING{wp = {Working paper}}
+
+@INCOLLECTION{BKKIII,
+  author = {David K. Backus and Patrick J. Kehoe and Finn E. Kydland},
+  title = {International Business Cycles: \uppercase{T}heory and Evidence},
+  chapter = {11},
+  crossref = {Cooley-95}
+}
+
+@INCOLLECTION{Chari-Christiano-Kehoe-95,
+  author = {V. V. Chari and Lawrence J. Christiano and Patrick J. Kehoe},
+  title = {Policy analysis in business cycle models},
+  chapter = {12},
+  crossref = {Cooley-95}
+}
+
+@INCOLLECTION{Cooley-Hansen-95,
+  author = {Thomas F. Cooley and Gary D. Hansen},
+  title = {Money and the business cycle},
+  chapter = {7},
+  crossref = {Cooley-95}
+}
+
+@INCOLLECTION{Cooley-Prescott-95,
+  author = {Thomas F. Cooley and Edward C. Prescott},
+  title = {Economic growth and business cycles},
+  chapter = {1},
+  crossref = {Cooley-95}
+}
+
+@INCOLLECTION{Danthine-Donaldson-95-nonoptimal,
+  author = {Jean-Pierre Danthine and John B. Donaldson},
+  title = {Computing equilibria of non-optimal economies},
+  chapter = {3},
+  crossref = {Cooley-95}
+}
+
+@INCOLLECTION{Danthine-Donaldson-95-nonwalras,
+  author = {Jean-Pierre Danthine and John B. Donaldson},
+  title = {Non-\uppercase{W}alrasian economies},
+  chapter = {8},
+  crossref = {Cooley-95}
+}
+
+@INCOLLECTION{Greenwood-Rogerson-Wright-95,
+  author = {Jeremy Greenwood and Richard Rogerson and Randall Wright},
+  title = {Household production in real business cycle theory},
+  chapter = {6},
+  crossref = {Cooley-95}
+}
+
+@INCOLLECTION{Hansen-Prescott-95,
+  author = {Gary D. Hansen and Edward C. Prescott},
+  title = {Recursive Methods for Computing Equilibria of Business Cycle Models},
+  chapter = {2},
+  crossref = {Cooley-95}
+}
+
+@INCOLLECTION{Kydland-95-labor,
+  author = {Finn E. Kydland},
+  title = {Business cycles and aggregate labor market fluctuations},
+  chapter = {5},
+  crossref = {Cooley-95}
+}
+
+@INPROCEEDINGS{Kydland-Prescott-91-hn-2,
+  author = {Finn E. Kydland and Edward C. Prescott},
+  title = {Hours and Employment Variation in Business Cycle Theory},
+  pages = {107-127},
+  crossref = {Thygesen-Velupillai-Zambelli-91}
+}
+
+@INPROCEEDINGS{Lippi-Reichlin-91,
+  author = {Marco Lippi and Lucrezia Reichlin},
+  title = {Permanent and transitory components in macroeconomics},
+  year = {1991},
+  pages = {331-367},
+  crossref = {Thygesen-Velupillai-Zambelli-91}
+}
+
+@INCOLLECTION{Rotemberg-Woodford-95,
+  author = {Julio Rotemberg and Michael Woodford},
+  title = {Dynamic general equilibrium models with imperfectly competitive product
+	markets},
+  chapter = {9},
+  crossref = {Cooley-95}
+}
+
+@INCOLLECTION{Rouwenhorst-95,
+  author = {Geert Rouwenhorst},
+  title = {Asset pricing implications of equilibrium business cycle models},
+  chapter = {10},
+  crossref = {Cooley-95}
+}
+
+@INCOLLECTION{Rios-Rull-95-hetero,
+  author = {Jos{\'e} V{\'{\i}}ctor R{\'{\i}}os-Rull},
+  title = {Models with Heterogeneous Agents},
+  chapter = {4},
+  crossref = {Cooley-95}
+}
+
+@INPROCEEDINGS{Velupillai-91,
+  author = {Kumaraswamy Velupillai},
+  title = {Theories of the trade cycle: \uppercase{A}nalytical and conceptual
+	perspectives and perplexities},
+  pages = {3-38},
+  crossref = {Thygesen-Velupillai-Zambelli-91}
+}
+
+@TECHREPORT{Castaneda-Diaz-Gimenez-Rios-Rull-95,
+  author = {Ana Casta\~.{n}eda and Javier D\'{\i}az-Gim\'enez and Jos\'e-V\'{\i}ctor
+	R\'{\i}os-Rull},
+  title = {Unemployment dynamics, aggregate fluctuations and income distribution},
+  institution = {Federal Reserve Bank of Philadelphia},
+  year = {1995},
+  type = wp,
+  number = {95-9}
+}
+
+@TECHREPORT{deLong-90,
+  author = {Bradford J. {de Long}},
+  title = {"Liquidation" Cycles: \uppercase{O}ld-Fashioned Real Business Cycle
+	Theory and the \uppercase{G}reat \uppercase{D}epression},
+  institution = nber,
+  year = {1990},
+  type = wp,
+  number = {3546},
+  month = dec
+}
+
+@ARTICLE{vanWincoop-95,
+  author = {Eric {van Wincoop}},
+  title = {A multi-country real business cycle model with heterogeneous agents},
+  journal = sje,
+  year = {1995},
+  pages = {forthcoming}
+}
+
+@TECHREPORT{denHaan-96-prices,
+  author = {Wouter J. {den Haan}},
+  title = {The comovements between real activity and prices at different business
+	cycle frequencies},
+  institution = nber,
+  year = {1996},
+  type = wp,
+  number = {5553},
+  month = apr
+}
+
+@UNPUBLISHED{denHaan-95-dispersion,
+  author = {Wouter J. {den Haan}},
+  title = {Aggregate shocks and cross-sectional dispersion},
+  month = sep,
+  year = {1995},
+  institution = {UCSD}
+}
+
+@ARTICLE{denHaan-Marcet-94,
+  author = {Wouter J. {den Haan} and Albert Marcet},
+  title = {Accuracy in simulations},
+  journal = res,
+  year = {1994},
+  volume = {61},
+  pages = {3--18},
+  number = {1},
+  month = jan
+}
+
+@ARTICLE{denHaan-Marcet-90,
+  author = {Wouter J. {den Haan} and Albert Marcet},
+  title = {Solving the stochastic growth model by parametrizing expectations},
+  journal = jbes,
+  year = {1990},
+  volume = {8},
+  pages = {31--34},
+  number = {1},
+  month = jan
+}
+
+@UNPUBLISHED{Otker-92,
+  author = {{\.I}nci {\"O}tker},
+  title = {The welfare implications of fiscal policy with distortionary taxation
+	and uncertainty},
+  note = gsia,
+  month = sep,
+  year = {1992}
+}
+
+@ARTICLE{Imrohoroglu-92,
+  author = {Ay{\c{s}}e {\.I}mrohoro\u{g}lu},
+  title = {The Welfare Cost of Inflation under Imperfect Insurance},
+  journal = jedc,
+  year = {1992},
+  volume = {16},
+  pages = {79-91}
+}
+
+@ARTICLE{Imrohoroglu-89,
+  author = {Ay{\c{s}}e {\.I}mrohoro\u{g}lu},
+  title = {Cost of Business Cycles with Indivisibilities and Liquidity Constraints},
+  journal = jpe,
+  year = {1989},
+  volume = {97},
+  pages = {1364-1383},
+  number = {6},
+  month = dec
+}
+
+@UNPUBLISHED{Imrohoroglu-Imrohoroglu-Joines-94,
+  author = {Ay{\c{s}}e {\.I}mrohoro\u{g}lu and Selahattin {\.I}mrohoro\u{g}lu
+	and Douglas H. Joines},
+  title = {The effect of tax-favored retirement accounts on capital accumulation
+	and welfare},
+  note = {University of Southern California},
+  month = jul,
+  year = {1994}
+}
+
+@ARTICLE{Imrohoroglu-Prescott-91-altern,
+  author = {Ay{\c{s}}e {\.I}mrohoro\u{g}lu and Edward C. Prescott},
+  title = {Evaluating the Welfare Effects of Alternative Monetary Arrangements},
+  journal = mnqr,
+  year = {1991},
+  volume = {15},
+  pages = {3-10},
+  number = {3},
+  month = sum
+}
+
+@ARTICLE{Imrohoroglu-Prescott-91-seign,
+  author = {Ay{\c{s}}e {\.I}mrohoro\u{g}lu and Edward C. Prescott},
+  title = {Seignorage as a Tax: {A} Quantitative Evaluation},
+  journal = jmcb,
+  year = {1991},
+  volume = {23},
+  pages = {462-475},
+  number = {3 Part 2},
+  month = aug
+}
+
+@ARTICLE{Imrohoroglu-94,
+  author = {Selahattin {\.I}mrohoro\u{g}lu},
+  title = {A recursive forward simulation methopd for solving nonlinear rational
+	expectations models},
+  journal = jedc,
+  year = {1994},
+  volume = {18},
+  pages = {1051--1068},
+  number = {6},
+  month = nov
+}
+
+@ARTICLE{afifa,
+  author = {Khazri Afifa},
+  title = {Real Business Cycles Theory},
+  journal = {ECON 320: LECTURE NOTES},
+  year = {2008},
+  timestamp = {2012.03.27}
+}
+
+@ARTICLE{Ahmed-Ickes-Wang-Yoo-93,
+  author = {Shaghil Ahmed and Barry W. Ickes and Ping Wang and Byung Sam Yoo},
+  title = {International Business Cycles},
+  journal = aer,
+  year = {1993},
+  volume = {83},
+  pages = {335-359},
+  number = {3},
+  month = jun
+}
+
+@ARTICLE{Ahmed-Murthy-94,
+  author = {Shaghil Ahmed and Radha Murthy},
+  title = {Money, output, and real business cycles in a small open economy},
+  journal = cje,
+  year = {1994},
+  volume = {27},
+  pages = {982--993},
+  number = {4},
+  month = nov
+}
+
+@ARTICLE{Ahmed-Park-94,
+  author = {Shagil Ahmed and Jae Ha Park},
+  title = {Sources of Macroeconomic Fluctuations in Small Open Economies},
+  journal = {Journal of Macroeconomics},
+  year = {1994},
+  volume = {16},
+  pages = {1--36}
+}
+
+@ARTICLE{Aiyagari-94,
+  author = {S. Rao Aiyagari},
+  title = {Uninsured idiosyncratic risk and aggregate savings},
+  journal = qje,
+  year = {1994},
+  pages = {659--684},
+  month = aug
+}
+
+@ARTICLE{Aiyagari-93,
+  author = {S. Rao Aiyagari},
+  title = {On the contribution of technology shocks to business cycles},
+  journal = mnqr,
+  year = {1993},
+  volume = {18},
+  pages = {22-34},
+  number = {1},
+  month = win
+}
+
+@ARTICLE{Aiyagari-92,
+  author = {S. Rao Aiyagari},
+  title = {A new method for determining the contribution of technology shocks
+	to business cycles},
+  journal = mnqr,
+  year = {1992},
+  volume = {18},
+  pages = {22--34}
+}
+
+@ARTICLE{Aiyagari-88,
+  author = {S. Rao Aiyagari},
+  title = {Economic fluctuations without shocks to fundamentals; or, does the
+	styock market dance to its own music?},
+  journal = mnqr,
+  year = {1988},
+  volume = {12},
+  number = {1},
+  month = win
+}
+
+@ARTICLE{Aiyagari-Christiano-Eichenbaum-92,
+  author = {S. Rao Aiyagari and Lawrence J. Christiano and Martin Eichenbaum},
+  title = {The Output, Employment and Interest Rate Effects of Government Consumption},
+  journal = jmoe,
+  year = {1992},
+  volume = {30},
+  pages = {73-86},
+  number = {1},
+  month = oct
+}
+
+@TECHREPORT{Aiyagari-McGrattan-94,
+  author = {S. Rao Aiyagari and Ellen R. McGrattan},
+  title = {The optimal quantity of debt},
+  institution = mnrd,
+  year = {1994},
+  type = wp,
+  number = {538},
+  month = dec
+}
+
+@MASTERSTHESIS{Allaire-94,
+  author = {Sylvie Allaire},
+  title = {Une comparaison entre les cycles \'economiques des \uppercase{\'E}tats-\uppercase{U}nis
+	et du \uppercase{C}anada et les principaux mod\`eles th\'eoriques
+	du cycle},
+  school = uqam,
+  year = {1994},
+  month = dec
+}
+
+@ARTICLE{Altig-Carlstrom-91,
+  author = {David Altig and Charles T. Carlstrom},
+  title = {Inflation, personal taxes, and Real output: \uppercase{A} dynamic
+	analysis},
+  journal = jmcb,
+  year = {1991},
+  volume = {23},
+  pages = {547-571},
+  number = {3 Part 2},
+  month = aug
+}
+
+@ARTICLE{Altman-92,
+  author = { Morris Altman},
+  title = {Business Cycle Volatility in Developed Market Economies, 1870-1986:
+	\uppercase{R}evisions and Conjectures},
+  journal = {Eastern Economic Journal},
+  year = {1992},
+  volume = {18},
+  pages = {259--275}
+}
+
+@ARTICLE{Altug-89,
+  author = {Sumru Altug},
+  title = {Time-to-build and aggregate fluctuations: \uppercase{S}ome new evidence},
+  journal = ier,
+  year = {1989},
+  volume = {30},
+  pages = {889--920},
+  month = nov
+}
+
+@BOOK{Altug-Labadie-94,
+  title = {Dynamic Choice and Asset Models},
+  publisher = {Academic Press},
+  year = {1994},
+  author = {Sumru Altug and Pamela Labadie}
+}
+
+@ARTICLE{Altug-Miller-90,
+  author = {Sumru Altug and Robert A. Miller},
+  title = {Household choices in equilibrium},
+  journal = eco,
+  year = {1990},
+  volume = {58},
+  pages = {543--570},
+  number = {3},
+  month = may
+}
+
+@TECHREPORT{Alvarez-Fitzgerald-92,
+  author = {Fernando Alvarez and Terry Fitzgerald},
+  title = {Banking in Computable general equilibrium economies: \uppercase{T}echnical
+	appendices \uppercase{I} and \uppercase{II}},
+  institution = mnrd,
+  year = {1992},
+  type = {Staff report},
+  number = {155},
+  month = oct
+}
+
+@TECHREPORT{Ambler-91,
+  author = {Steve Ambler},
+  title = {Les mod\`eles du cycle \'economique face \`a la corr\'elation productivit\'e-emploi},
+  institution = cerpe,
+  year = {1991},
+  type = cdr,
+  number = {69},
+  month = may
+}
+
+@ARTICLE{Ambler-Cardia-95,
+  author = {Steve Ambler and Emanuela Cardia},
+  title = {Les mod\`eles r\'ecents de la transmission internationale du cycle
+	\'economique},
+  journal = {Actualit\'e \'economique: revue d'analyse \'economique},
+  year = {1995},
+  volume = {71},
+  pages = {193--217},
+  number = {2},
+  month = jun
+}
+
+@TECHREPORT{Ambler-Cardia-93,
+  author = {Steve Ambler and Emanuela Cardia},
+  title = {The cyclical behavior of wages and profits under imperfect competition},
+  institution = crefe,
+  year = {1993},
+  type = cdr,
+  number = {18},
+  month = aug
+}
+
+@INPROCEEDINGS{Ambler-Cardia-Phaneuf-93,
+  author = {Steven Ambler and Emanuela Cardia and Louis Phaneuf},
+  title = {Contrats de salaire, croissance endog\`ene et fluctuations},
+  booktitle = {Macro\'economie, d\'eveloppements r\'ecents},
+  year = {1993},
+  editor = {Pierre Malgrange and Lise Salvas-Bronsard},
+  publisher = {Economica \& Presses de l'Universit\'e du Qu\'ebec}
+}
+
+@UNPUBLISHED{ACZ-sectoral,
+  author = {Steven Ambler and Emanuela Cardia and Christian Zimmermann},
+  title = {Intermediate Goods and the International Business Cycle},
+  note = crefe,
+  month = oct,
+  year = {1995}
+}
+
+@ARTICLE{Ambler-Paquet-96,
+  author = {Steve Ambler and Alain Paquet},
+  title = {Fiscal spending shocks, endogenous government spending and real business
+	cycles},
+  journal = jedc,
+  year = {1996},
+  volume = {20},
+  pages = {237--256},
+  number = {1--3},
+  month = jan
+}
+
+@ARTICLE{Ambler-Paquet-94-deprec,
+  author = {Steve Ambler and Alain Paquet},
+  title = {Stochastic depreciation and the business cycle},
+  journal = ier,
+  year = {1994},
+  volume = {35},
+  pages = {101--116},
+  number = {1},
+  month = feb
+}
+
+@ARTICLE{Ambler-Paquet-92-esp,
+  author = {Steve Ambler and Alain Paquet},
+  title = {El gasto p\'ublico y la paradoja de la productividad-horas trabajadas},
+  journal = {Cuadernos Econ\'omicos},
+  year = {1992},
+  volume = {51},
+  pages = {133--149}
+}
+
+@ARTICLE{Ambler-Phaneuf-94,
+  author = {Steve Ambler and Louis Phaneuf},
+  title = {Mod\`eles du cycle \'economique et march\'e du travail},
+  journal = {Revue \'economique},
+  year = {1994},
+  volume = {45},
+  pages = {1065--1078},
+  number = {4},
+  month = jul
+}
+
+@ARTICLE{Ambler-Phaneuf-92,
+  author = {Steve Ambler and Louis Phaneuf},
+  title = {Wage contracts and business cycle models},
+  journal = eer,
+  year = {1992},
+  volume = {36},
+  pages = {783-800},
+  number = {4},
+  month = may
+}
+
+@TECHREPORT{Ambler-Phaneuf-Girard-93,
+  author = {Steve Ambler and Louis Phaneuf and \'Eric Girard},
+  title = {D\'epenses publiques et cycle \'economique},
+  institution = crefe,
+  year = {1993},
+  type = cdr,
+  number = {21},
+  month = nov
+}
+
+@UNPUBLISHED{Ambler-Phaneuf-Sauthier-95,
+  author = {Steve Ambler and Louis Phaneuf and Marianne Sauthier},
+  title = {Money, taxes and business fluctuations},
+  note = crefe,
+  month = feb,
+  year = {1995}
+}
+
+@ARTICLE{Andersen-91,
+  author = { Torben M. Andersen},
+  title = {Comment on F. E. Kydland and E. C. Prescott, "The Econometrics of
+	the General Equilibrium Approach to Business Cycles"},
+  journal = sje,
+  year = {1991},
+  pages = {179--184},
+  number = {2}
+}
+
+@TECHREPORT{Anderson-Hansen-McGrattan-Sargent-95,
+  author = {Evan W. Anderson and Lars Peter Hansen and Ellen R. McGrattan and
+	Thomas J. sargent},
+  title = {On the mechanics of forming and estimating dynamic linear economies},
+  institution = mnrd,
+  year = {1995},
+  type = sr,
+  number = {198},
+  month = sep
+}
+
+@ARTICLE{Andolfatto-96,
+  author = {David Andolfatto},
+  title = {Business Cycles and Labor-Market Search},
+  journal = aer,
+  year = {1996},
+  volume = {86},
+  pages = {112--132},
+  number = {1},
+  month = mar
+}
+
+@UNPUBLISHED{Andolfatto-Gomme-95,
+  author = {David Andolfatto and Paul Gomme},
+  title = {Learning to believe in monetary policy},
+  month = sep,
+  year = {1995}
+}
+
+@UNPUBLISHED{Andolfatto-Gomme-94,
+  author = {David Andolfatto and Paul Gomme},
+  title = {Search unemployment in a real business cycle model},
+  note = {Simon Fraser University},
+  month = oct,
+  year = {1994}
+}
+
+@TECHREPORT{Angrist-90,
+  author = {Joshua D. Angrist},
+  title = {Does Labor Supply explain Fluctuations in Average Hours Worked?},
+  institution = nber,
+  year = {1990},
+  type = wp,
+  number = {3312},
+  month = mar
+}
+
+@ARTICLE{Ardeni-Gallegati-91,
+  author = { Giorgio Ardeni and Mauro Gallegati},
+  title = {Long-Term Trends and Cycles in the Italian Economy},
+  journal = {Giornale degli Economisti e Annali di Economia},
+  year = {1991},
+  volume = {50},
+  pages = {193--235}
+}
+
+@UNPUBLISHED{Asea-Zak-95,
+  author = {Patrick K. Asea and Paul J. Zak},
+  title = {Does time-to-build lead to cycles in deterministic growth models?},
+  month = nov,
+  year = {1995}
+}
+
+@BOOK{Azariadis-93,
+  title = {Intertemporal Macroeconomics},
+  publisher = {Blackwell},
+  year = {1993},
+  author = {Costas Azariadis}
+}
+
+@ARTICLE{Benassy-95,
+  author = {Jean-Pascal B\'enassy},
+  title = {Money and Wage Contracts in an Optimizing Model of the Business Cycle},
+  journal = jmoe,
+  year = {1995},
+  volume = {35},
+  pages = {303--315}
+}
+
+@ARTICLE{Backus-93,
+  author = {David K. Backus},
+  title = {Interpreting Comovements in the Trade Balance and the Terms of Trade},
+  journal = jie,
+  year = {1993},
+  volume = {34},
+  pages = {375--387}
+}
+
+@ARTICLE{Backus-Kehoe-92,
+  author = {David K. Backus and Patrick J. Kehoe},
+  title = {International Evidence on the Historical Properties of Business Cycles},
+  journal = aer,
+  year = {1992},
+  volume = {82},
+  pages = {864-888},
+  number = {4},
+  month = sep
+}
+
+@ARTICLE{BKKII,
+  author = {David K. Backus and Patrick J. Kehoe and Finn E. Kydland},
+  title = {Dynamics of the Trade Balance and the Terms of Trade: \uppercase{T}he
+	\uppercase{J}-Curve?},
+  journal = aer,
+  year = {1994},
+  volume = {84},
+  pages = {84--103},
+  number = {1},
+  month = mar
+}
+
+@ARTICLE{BKKIIIb,
+  author = {David K. Backus and Patrick J. Kehoe and Finn E. Kydland},
+  title = {International business cycles: \uppercase{t}heory and evidence},
+  journal = mnqr,
+  year = {1993},
+  volume = {17},
+  pages = {14--29},
+  number = {4},
+  month = fal
+}
+
+@ARTICLE{BKKI,
+  author = {David K. Backus and Patrick J. Kehoe and Finn E. Kydland},
+  title = {International Real Business Cycles},
+  journal = jpe,
+  year = {1992},
+  volume = {100},
+  pages = {745-775},
+  number = {4},
+  month = aug
+}
+
+@TECHREPORT{BKKIIIa,
+  author = {David K. Backus and Patrick J. Kehoe and Finn E. Kydland},
+  title = {Relative price movements in dynamic general equilibrium models of
+	international trade},
+  institution = {Federal Reserve Bank of Cleveland},
+  year = {1992},
+  type = wp,
+  number = {9213},
+  month = nov
+}
+
+@TECHREPORT{BKKIIIc,
+  author = {David K. Backus and Patrick J. Kehoe and Finn E. Kydland},
+  title = {Relative price movements in dynamic general equilibrium models of
+	international trade},
+  institution = {Stern School of Business, New York University},
+  year = {1992},
+  type = wp,
+  number = {EC-92-25},
+  month = aug
+}
+
+@ARTICLE{Backus-Smith-93,
+  author = {David K. Backus and Gregor W. Smith},
+  title = {Consumption and real exchange rates in dynamic economies with non-traded
+	gooods},
+  journal = jie,
+  year = {1993},
+  volume = {35},
+  pages = {297--316},
+  number = {3-4},
+  month = nov
+}
+
+@UNPUBLISHED{Baily-Bartelsman-Haltiwanger-95,
+  author = {Martin Neil Bailey and Eric J. Bartelsman and John Haltiwanger},
+  title = {Labor productivity: structural change and cyclical dynamics},
+  month = mar,
+  year = {1995}
+}
+
+@ARTICLE{Bak-Chen-Scheinkman-Woodford-93,
+  author = {Per Bak and Kan Chen and Jos\'e Scheinkman and Michael Woodford},
+  title = {Aggregate Fluctuations from Independent Sectoral Shocks: \uppercase{S}elf-Organized
+	Criticality in a Model of Production and Inventory Dynamics},
+  journal = {Ricerche Economiche},
+  year = {1993},
+  volume = {47},
+  pages = {3--30}
+}
+
+@TECHREPORT{Balke-Fomby-91,
+  author = {Nathan S. Balke and Thomas B. Fomby},
+  title = {Large shocks, small shocks and economics fluctuations: \uppercase{O}utliers
+	in macroeconomic times series},
+  institution = {Federal Reserve bank of Dallas},
+  year = {1991},
+  type = rp,
+  number = {9101},
+  month = feb
+}
+
+@TECHREPORT{Balke-Wynne-93,
+  author = {Nathan S. Balke and Mark A. Wynne},
+  title = {Recessions and recoveries in real business cycle models: \uppercase{D}o
+	real business cycle models generate cyclical behavior?},
+  institution = {Federal Reserve Bank of Dallas},
+  year = {1993},
+  type = {Research paper},
+  number = {9322},
+  month = jun
+}
+
+@TECHREPORT{Bar-Ilan-Sulem-Zanello-92,
+  author = {Avner {Bar-Ilan} and Agnes Sulem and Allesandro Zanello},
+  title = {Time to build and Capacity Choice},
+  institution = {Department of Economics, Dartmouth College},
+  year = {1992},
+  type = wp,
+  number = {92--8},
+  month = jun
+}
+
+@ARTICLE{Barsky-Miron-89,
+  author = {Robert B. Barnsky and Jeffrey A. Miron},
+  title = {The Seasonal and the Business Cycle},
+  journal = jpe,
+  year = {1989},
+  volume = {97},
+  pages = {503--534}
+}
+
+@INPROCEEDINGS{Barro-86,
+  author = {Robert J. Barro},
+  title = {Comment to `\uppercase{D}o equilibrium real Business cycle theories
+	explain postwar \uppercase{U.S.} business cycles'},
+  booktitle = {\uppercase{NBER} Macroeconomics annual},
+  year = {1986},
+  volume = {1},
+  pages = {135-139},
+  organization = nber,
+  publisher = mitp
+}
+
+@ARTICLE{Barro-King-84,
+  author = {Robert J. Barro and Robert G. King},
+  title = {Time-separable Preferences and Intertemporal Substitution Models
+	of Business Cycles},
+  journal = qje,
+  year = {1984},
+  volume = {99},
+  pages = {817--839}
+}
+
+@ARTICLE{Basu-90,
+  author = {Parantap Basu},
+  title = {Business Cycles with Endogenous Growth: \uppercase{A} Parametric
+	Example},
+  journal = {Journal of Macroeconomics},
+  year = {1990},
+  pages = {475--481}
+}
+
+@TECHREPORT{Basu-93-intermediate,
+  author = {Susanto Basu},
+  title = {Intermediate Goods and Business Cycles: \uppercase{I}mplications
+	for Productivity and Welfare},
+  institution = {Department of Economics, University of Michigan},
+  year = {1993},
+  type = wp,
+  number = {93--23},
+  month = sep
+}
+
+@TECHREPORT{Basu-93-overhead,
+  author = {Susanto Basu},
+  title = {Procyclical productivity: \uppercase{O}verhead inputs or cyclical
+	utilization?},
+  institution = {Department of Economics, University of Michigan},
+  year = {1993},
+  type = wp,
+  month = dec
+}
+
+@INCOLLECTION{Baxter-95,
+  author = {Marianne Baxter},
+  title = {International Trade and Business Cycles},
+  booktitle = {Handbook of International Economics},
+  publisher = {Elsevier Science B.V.},
+  year = {1995},
+  editor = {Gene Grossman and Ken Rogoff},
+  volume = {III},
+  chapter = {35},
+  pages = {1801--1864}
+}
+
+@TECHREPORT{Baxter-93,
+  author = {Marianne Baxter},
+  title = {Are Consumer Durables Important for Business Cycles?},
+  institution = rcer,
+  year = {1993},
+  type = wp,
+  number = {342},
+  month = feb
+}
+
+@TECHREPORT{Baxter-92-fisc,
+  author = {Marianne Baxter},
+  title = {Financial market linkages and the international transmission of fiscal
+	policy},
+  institution = rcer,
+  year = {1992},
+  type = wp,
+  number = {336},
+  month = nov
+}
+
+@ARTICLE{Baxter-92-ricardo,
+  author = {Marianne Baxter},
+  title = {Fiscal Policy, Specialization, and Trade in the two-sector Model:
+	\uppercase{T}he return of \uppercase{R}icardo?},
+  journal = jpe,
+  year = {1992},
+  volume = {100},
+  pages = {713-744},
+  number = {4},
+  month = aug
+}
+
+@ARTICLE{Baxter-91-approx,
+  author = {Marianne Baxter},
+  title = {Approximating suboptimal dynamic equilibria: \uppercase{A}n \uppercase{E}uler
+	equation approach},
+  journal = jmoe,
+  year = {1991},
+  volume = {27},
+  pages = {173-200}
+}
+
+@ARTICLE{Baxter-91-exchange,
+  author = {Marianne Baxter},
+  title = {Business Cycles, Stylized Facts, and the Exchange Rate Regime: \uppercase{E}vidence
+	from the \uppercase{U}nited \uppercase{S}tates},
+  journal = jimf,
+  year = {1991},
+  volume = {10},
+  pages = {71--88}
+}
+
+@ARTICLE{Baxter-89,
+  author = {Marianne Baxter},
+  title = {Money and market incompleteness in overlapping generations models},
+  journal = jmoe,
+  year = {1989},
+  volume = {24},
+  pages = {69--92}
+}
+
+@ARTICLE{Baxter-Crucini-95,
+  author = {Marianne Baxter and Mario J. Crucini},
+  title = {Business cycles and the asset structure of foreign trade},
+  journal = ier,
+  year = {1995},
+  pages = {forthcoming}
+}
+
+@ARTICLE{Baxter-Crucini-93,
+  author = {Marianne Baxter and Mario J. Crucini},
+  title = {Explaining Saving--Investment Correlations},
+  journal = aer,
+  year = {1993},
+  volume = {83},
+  pages = {416-436},
+  number = {3},
+  month = jun
+}
+
+@ARTICLE{Baxter-Crucini-Rouwenhorst-90,
+  author = {Marianne Baxter and Mario J. Crucini and K. Geert Rouwenhorst},
+  title = {Solving the stochastic growth model by a dicrete-state-space, \uppercase{E}uler-equation
+	approach},
+  journal = jbes,
+  year = {1990},
+  volume = {8},
+  pages = {19--21},
+  number = {1},
+  month = jan
+}
+
+@UNPUBLISHED{Baxter-Jermann-94,
+  author = {Marianne Baxter and Urban Jermann},
+  title = {The international diversification puzzle is worse than you think},
+  year = {1994}
+}
+
+@TECHREPORT{Baxter-King-95,
+  author = {Marianne Baxter and Robert G. King},
+  title = {Measuring business ccles: Approximate band-pass filters for economic
+	time series},
+  institution = nber,
+  year = {1995},
+  type = wp,
+  number = {5022},
+  month = feb
+}
+
+@ARTICLE{Baxter-King-93,
+  author = {Marianne Baxter and Robert G. King},
+  title = {Fiscal policy in general equilibrium},
+  journal = aer,
+  year = {1993},
+  volume = {83},
+  pages = {315-334},
+  number = {3},
+  month = jun
+}
+
+@TECHREPORT{Baxter-King-91,
+  author = {Marianne Baxter and Robert G. King},
+  title = {Productive externalities and cyclical volatility},
+  institution = iem,
+  year = {1991},
+  type = dp,
+  number = {53},
+  month = nov
+}
+
+@ARTICLE{Baxter-Stockman-89,
+  author = {Marianne Baxter and Alan C. Stockman},
+  title = {Business Cycles and the Exchange-Rate Regime: \uppercase{S}ome International
+	Evidence},
+  journal = jmoe,
+  year = {1989},
+  volume = {23},
+  pages = {377-400}
+}
+
+@ARTICLE{Beaudry-DiNardo-91,
+  author = {Paul Beaudry and John Di\uppercase{N}ardo},
+  title = {The Effect of Implicit Contracts on the Movement of Wages over the
+	Business Cycle: \uppercase{E}vidence from Micro Data},
+  journal = jpe,
+  year = {1991},
+  volume = {99},
+  pages = {665-688},
+  number = {4},
+  month = aug
+}
+
+@UNPUBLISHED{Beaudry-Guay-94,
+  author = {Paul Beaudry and Alain Guay},
+  title = {What do interest rates reveal about the functioning of real business
+	cycle models?},
+  note = {University of British Columbia},
+  month = nov,
+  year = {1994}
+}
+
+@ARTICLE{Beaudry-Koop-93,
+  author = {Paul Beaudry and Gary Koop},
+  title = {Do Recessions Permanently Change Output?},
+  journal = jmoe,
+  year = {1993},
+  volume = {31},
+  pages = {149--163}
+}
+
+@ARTICLE{Beaulieu-MacKie-Miron-92,
+  author = { Joseph J. Beaulieu and Jeffrey K. MacKie-Mason and Jeffrey A. Miron},
+  title = {Why do Countries and Industries with Large Seasonal Cycles have also
+	Large Business Cycles?},
+  journal = qje,
+  year = {1992},
+  pages = {621--656}
+}
+
+@ARTICLE{Beaulieu-Miron-92,
+  author = {Joseph J. Beaulieu and Jeffrey A. Miron},
+  title = {A Cross Country Comparison of Seasonal Cycles and Business Cycles},
+  journal = {The Economic Journal},
+  year = {1992},
+  volume = {102},
+  pages = {772--788},
+  month = jul
+}
+
+@TECHREPORT{Beaulieu-Miron-90,
+  author = {Joseph J. Beaulieu and Jeffrey A. Miron},
+  title = {The Seasonal Cycle in \uppercase{U.S.} Manufacturing},
+  institution = nber,
+  year = {1990},
+  type = wp,
+  number = {3450},
+  month = sep
+}
+
+@ARTICLE{Bec-94,
+  author = {Fr\'ed\'erique Bec},
+  title = {La transmission internationale des fluctuations. Une explication
+	de la corr\'elation crois\'ee des consommations},
+  journal = {Revue \'Economique},
+  year = {1994},
+  volume = {45},
+  pages = {89--114},
+  number = {1},
+  month = jan
+}
+
+@UNPUBLISHED{Belaisch-95,
+  author = {Agn\`es Belaisch},
+  title = {Finance, failure and Fluctuations},
+  note = {New York University},
+  month = oct,
+  year = {1995}
+}
+
+@BOOK{Bellman-57,
+  title = {Dynamic programming},
+  publisher = {Princeton University Press},
+  year = {1957},
+  author = {Richard Bellman}
+}
+
+@ARTICLE{Benhabib-Jovanovic-91,
+  author = {Jess Benhabib and Boyan Jovanovic},
+  title = {Externalities and growth accounting},
+  journal = aer,
+  year = {1991},
+  volume = {81},
+  pages = {82--113},
+  number = {1},
+  month = mar
+}
+
+@ARTICLE{Benhabib-Rogerson-Wright-91,
+  author = {Jess Benhabib and Richard Rogerson and Randall Wright},
+  title = {Homework in Macroeconomics: \uppercase{H}ousehold Production and
+	Aggregate Fluctuations},
+  journal = jpe,
+  year = {1991},
+  volume = {99},
+  pages = {1166-1187},
+  number = {6},
+  month = dec
+}
+
+@ARTICLE{Benhabib-Rustichini-94,
+  author = {Jess Benhabib and Aldo Rustichini},
+  title = {A note on a new class of slutions to dynamic programming problems
+	arising in economic growth},
+  journal = jedc,
+  year = {1994},
+  volume = {18},
+  pages = {807--813},
+  number = {3/4},
+  month = {May/July}
+}
+
+@TECHREPORT{Benhabib-Velasco-95,
+  author = {Jess Benhabib and Andr\'es Velasco},
+  title = {On the economics of fiscal populism in an open economy},
+  institution = iem,
+  year = {1995},
+  type = dp,
+  number = {97},
+  month = jan
+}
+
+@ARTICLE{Bentolila-92-esp,
+  author = {Samuel Bentolila},
+  title = {Oferta, demanda y costes de ajuste: la demanda de trabajo en la industria
+	europea},
+  journal = {Cuadernos Econ\'omicos},
+  year = {1992},
+  volume = {51},
+  pages = {197--223}
+}
+
+@ARTICLE{Benveniste-Scheinkman-79,
+  author = {Lawrence M. Benveniste and Jos\'e A. Scheinkman},
+  title = {On the differentiability of the value function in dynamic models
+	of economics},
+  journal = eco,
+  year = {1979},
+  volume = {47},
+  pages = {727--732}
+}
+
+@ARTICLE{Bergman-Jonung-93,
+  author = {Michael Bergman and Lars Jonung},
+  title = {The Business Cycle Has Not Been Dampened: \uppercase{T}he Case of
+	\uppercase{S}weden and the \uppercase{U}nited \uppercase{S}tates
+	1873--1988},
+  journal = {Scandinavian Economic History Review},
+  year = {1993},
+  volume = {41},
+  pages = {18--36}
+}
+
+@ARTICLE{Bernanke-Parkinson-91,
+  author = {Ben S. Bernanke and Martin L. Parkinson},
+  title = {Procyclical Labor Productivity and Competing Theories of the Business
+	Cycle: \uppercase{S}ome Evidence from Intervar \uppercase{U.S.} Manufacturing
+	Industries},
+  journal = jmoe,
+  year = {1991},
+  volume = {99},
+  pages = {439-459},
+  number = {3},
+  month = jun
+}
+
+@ARTICLE{Beveridge-Nelson-81,
+  author = {Stephen Beveridge and Charles R. Nelson},
+  title = {A new approach to decomposition of economic times series into permanent
+	and transitory components with particular attention to measurement
+	of the `business cycle'},
+  journal = jmoe,
+  year = {1981},
+  volume = {7},
+  pages = {151-174},
+  number = {1},
+  month = mar
+}
+
+@ARTICLE{Bianconi-95,
+  author = {Marcelo Bianconi},
+  title = {On Dynamic Real Trade Models},
+  journal = el,
+  year = {1995},
+  volume = {47},
+  pages = {47--52}
+}
+
+@ARTICLE{Bils-Cho-94,
+  author = {Mark Bils and Jang-Ok Cho},
+  title = {Cyclical factor utilization},
+  journal = jmoe,
+  year = {1994},
+  volume = {33},
+  pages = {319--354},
+  number = {2},
+  month = apr
+}
+
+@UNPUBLISHED{Bils-Kahn-96,
+  author = {Mark Bils and James Kahn},
+  title = {What inventory behavior tells us about the nature of business cycles},
+  note = {University of Rochester},
+  month = mar,
+  year = {1996}
+}
+
+@UNPUBLISHED{Bils-Klenow-95,
+  author = {Mark Bils and Peter J. Klenow},
+  title = {Uncovering Curvature - \uppercase{T}ests of competing business cycle
+	models},
+  month = mar,
+  year = {1995}
+}
+
+@ARTICLE{Bizer-Judd-89,
+  author = {David S. Bizer and Kenneth L. Judd},
+  title = {Taxation and Uncertainty},
+  journal = aerp,
+  year = {1989},
+  volume = {79},
+  pages = {331-336},
+  number = {2},
+  month = may
+}
+
+@ARTICLE{Blackburn-Ravn-92-facts,
+  author = {Keith Blackburn and Morten O. Ravn},
+  title = {Business Cycles in the \uppercase{U}nited \uppercase{K}ingdom: \uppercase{F}acts
+	and fictions},
+  journal = {Economica},
+  year = {1992},
+  volume = {59},
+  pages = {383-401}
+}
+
+@TECHREPORT{Blackburn-Ravn-92-small,
+  author = {Keith Blackburn and Morten O. Ravn},
+  title = {Business Cycles in the \uppercase{U.K.: A} Small Open Economy in
+	an Interdependent World},
+  institution = {Centre for International Economics, Institute of Economics, University
+	of Aarhus},
+  year = {1992},
+  type = {Memo},
+  number = { 1992-12}
+}
+
+@TECHREPORT{Blackburn-Ravn-91-intern,
+  author = {Keith Blackburn and Morten Overgaard Ravn},
+  title = {Contemporary macroeconomic fluctuations: \uppercase{A}n international
+	perspective},
+  institution = {{\O}konomisk Institut, Aarhus Universitet},
+  year = {1991},
+  type = {Memo},
+  number = {1991-12},
+  month = jan
+}
+
+@TECHREPORT{Blackburn-Ravn-91-univar,
+  author = {Keith Blackburn and Morten Overgaard Ravn},
+  title = {Univariate Detrending of macroeconomic time series},
+  institution = {Department of Economics, University of Southampton},
+  year = {1991},
+  type = dp,
+  number = {9112}
+}
+
+@ARTICLE{Blackwell-65,
+  author = {David Blackwell},
+  title = {Discounted dynamic programming},
+  journal = {Annals of Mathematical Statistics},
+  year = {1965},
+  volume = {36},
+  pages = {226--235}
+}
+
+@ARTICLE{Blanchard-89,
+  author = {Olivier Jean Blanchard},
+  title = {A Traditional Interpretation of Macroeconomic Fluctuations},
+  journal = aer,
+  year = {1989},
+  volume = {79},
+  pages = {1146--1164}
+}
+
+@BOOK{Blanchard-Fischer-89,
+  title = {Lectures on Macroeconomics},
+  publisher = mitp,
+  year = {1989},
+  author = {Olivier Jean Blanchard and Stanley Fischer}
+}
+
+@ARTICLE{Blanchard-Quah-89,
+  author = {Olivier Jean Blanchard and Danny Quah},
+  title = {The Dynamic Effects of Aggregate Demand and Supply Disturbances},
+  journal = aer,
+  year = {1989},
+  volume = {79},
+  pages = {655--673}
+}
+
+@UNPUBLISHED{Boileau-96,
+  author = {Martin Boileau},
+  title = {Understanding the persistence properties of international macroeconomic
+	aggregates},
+  note = {University of Toronto},
+  month = mar,
+  year = {1996}
+}
+
+@UNPUBLISHED{Boileau-94-growth,
+  author = {Martin Boileau},
+  title = {Growth and the international transmission of business cycles},
+  note = {University of British Columbia},
+  month = jan,
+  year = {1994}
+}
+
+@UNPUBLISHED{Boileau-94-longrun,
+  author = {Martin Boileau},
+  title = {Explaining long-run properties of international macroeconomic aggregates},
+  note = {University of British Columbia},
+  month = mar,
+  year = {1994}
+}
+
+@ARTICLE{Boldrin-91,
+  author = {Michele Boldrin},
+  title = {Perfectly competitive models of endogenous business fluctuations},
+  journal = eer,
+  year = {1991},
+  volume = {35},
+  pages = {300-305}
+}
+
+@UNPUBLISHED{Boldrin-Christiano-Fisher-95,
+  author = {Michele Boldrin and Lawrence J. Christiano and Jonas D.M. Fisher},
+  title = {Asset pricing lessons for Modelling business cycles},
+  month = aug,
+  year = {1995}
+}
+
+@ARTICLE{Boldrin-Horvath-94,
+  author = {Michele Boldrin and Michael Horvath},
+  title = {Labor contracts and business cycles},
+  journal = {Studies in Non-Linear Dynamics and Econometrics},
+  year = {1994},
+  volume = {0},
+  number = {0},
+  month = nov
+}
+
+@UNPUBLISHED{Bona-Santos-94,
+  author = {Jerry L. Bona and Manuel S. Santos},
+  title = {On the role of computation in economic theory},
+  month = mar,
+  year = {1994}
+}
+
+@BOOK{Border-85,
+  title = {Fixed-point theorems with applications to economics and game theory},
+  publisher = cup,
+  year = {1985},
+  author = {Kim C. Border}
+}
+
+@ARTICLE{Boschen-Mills-88,
+  author = {John F. Boschen and Leonard O. Mills},
+  title = {Tests of the Relation between Money and Output in the Real Business
+	Cycle Model},
+  journal = jmoe,
+  year = {1988},
+  volume = {22},
+  pages = {355--374}
+}
+
+@ARTICLE{Bowden-Martin-92,
+  author = {Roger J. Bowden and Vance L. Martin},
+  title = {No, Business Cycles are not all alike: \uppercase{T}he \uppercase{U}nited
+	\uppercase{S}tates and \uppercase{A}ustralia Compared},
+  journal = {Australian Economic Papers},
+  year = {1992},
+  volume = {31},
+  pages = {385--398}
+}
+
+@ARTICLE{Brandner-Neusser-94,
+  author = {Peter Brandner and Klaus Neusser},
+  title = {Business Cycles in Open Economies: \uppercase{A} reply},
+  journal = {Weltwirtschaftliches Archiv},
+  year = {1994},
+  volume = {130},
+  pages = {630--633}
+}
+
+@ARTICLE{Brandner-Neusser-92,
+  author = {Peter Brandner and Klaus Neusser},
+  title = {Business Cycles in Open Economies: \uppercase{S}tylized facts for
+	\uppercase{A}ustria and \uppercase{G}ermany},
+  journal = {Weltwirtschaftliches Archiv},
+  year = {1992},
+  volume = {128},
+  pages = {67--87},
+  number = {1}
+}
+
+@ARTICLE{Braun-94,
+  author = {R. Anton Braun},
+  title = {Tax disturbances and real economic activity in the postwar \uppercase{U}nited
+	\uppercase{S}tates},
+  journal = jmoe,
+  year = {1994},
+  volume = {33},
+  pages = {441--462},
+  number = {3},
+  month = jun
+}
+
+@PHDTHESIS{Braun-90,
+  author = {R. Anton Braun},
+  title = {The dynamic interaction of distirtionary taxes and aggregate variables
+	in postwar \uppercase{U.S.} data},
+  school = {Carnegie Mellon University},
+  year = {1990}
+}
+
+@ARTICLE{Braun-Evans-95,
+  author = {R. Anton Braun and Charles L. Evans},
+  title = {Seasonality and equilibrium business cycle theories},
+  journal = jedc,
+  year = {1995},
+  volume = {19},
+  pages = {503--531}
+}
+
+@TECHREPORT{Braun-Evans-91,
+  author = {R. Anton Braun and Charles L. Evans},
+  title = {Seasonal \uppercase{S}olow residual and \uppercase{C}hristmas: \uppercase{A}
+	case for labor hoarding and increasing returns},
+  institution = {The Thomas Jefferson Center for Political Economy, University of
+	Virginia},
+  year = {1991},
+  type = dp,
+  number = {227},
+  month = aug
+}
+
+@TECHREPORT{Braun-McGrattan-93,
+  author = {R. Anton Braun and Ellen R. McGrattan},
+  title = {The effects of government purchases on employment and hours},
+  institution = mnrd,
+  year = {1993},
+  type = wp,
+  number = {519},
+  month = oct
+}
+
+@ARTICLE{Brock-Mirman-72,
+  author = {William A. Brock and Leonard J. Mirman},
+  title = {Optimal economic growth and uncertainty: \uppercase{T}he discounted
+	case},
+  journal = jet,
+  year = {1972},
+  volume = {4},
+  pages = {479--513}
+}
+
+@ARTICLE{Brunner-Meltzer-86,
+  author = {Karl Brunner and Allan H. Meltzer},
+  title = {Real Business Cycles, Real Exchange Rates, and Actual Policies},
+  journal = cr,
+  year = {1986},
+  volume = {25},
+  pages = {1-10},
+  month = aut
+}
+
+@TECHREPORT{Bruno-94,
+  author = {Catherine Bruno},
+  title = {Cycle r\'eel en \'economie ouverte: une revue de la litt\'erature},
+  institution = {Observatoire Fran\c{c}ais des Conjonctures \'Economiques},
+  year = {1994},
+  number = {94-02},
+  month = may
+}
+
+@TECHREPORT{Burdett-Wright-94,
+  author = {K. Burdett and Randall Wright},
+  title = {Two-sided search},
+  institution = mnrd,
+  year = {1994},
+  type = sr,
+  number = {169}
+}
+
+@BOOK{Burns-Mitchell-46,
+  title = {Measuring business cycles},
+  publisher = nber,
+  year = {1946},
+  author = {Arthur F. Burns and Wesley Clair Mitchell}
+}
+
+@INCOLLECTION{Burnside-Eichenbaum-Rebelo-95,
+  author = {Craig Burnside and Martin Eichenbaum and S{\'e}rgio Rebelo},
+  title = {Capital Utilization and Returns to Scale},
+  booktitle = {NBER Macroeconomics Annual},
+  publisher = mitp,
+  year = {1995},
+  editor = {Stanley Fischer and Julio J. Rotemberg},
+  volume = {10},
+  pages = {67--123},
+  month = oct
+}
+
+@ARTICLE{Burnside-Eichebaum-Rebelo-96,
+  author = {Craig Burnside and Martin Eichenbaum and S{\'e}rgio Rebelo},
+  title = {Sectoral \uppercase{S}olow residuals},
+  journal = eer,
+  year = {1996},
+  volume = {40},
+  pages = {861--869},
+  number = {3--5},
+  month = apr
+}
+
+@TECHREPORT{Burnside-Eichenbaum-Rebelo-94,
+  author = {Craig Burnside and Martin Eichenbaum and S{\'e}rgio Rebelo},
+  title = {Factor Hoarding and the Propagation of Business Cycle Shocks},
+  institution = nber,
+  year = {1994},
+  type = wp,
+  number = {4675},
+  month = mar
+}
+
+@ARTICLE{Burnside-Eichenbaum-Rebelo-93,
+  author = {Craig Burnside and Martin Eichenbaum and S{\'e}rgio Rebelo},
+  title = {Labor Hoarding and the Business Cycle},
+  journal = jpe,
+  year = {1993},
+  volume = {101},
+  pages = {245-273},
+  number = {2},
+  month = apr
+}
+
+@TECHREPORT{Burnside-Eichenbaum-Rebelo-90,
+  author = {Craig Burnside and Martin Eichenbaum and S{\'e}rgio Rebelo},
+  title = {Labor Hoarding and the Business Cycle},
+  institution = nber,
+  year = {90},
+  type = wp,
+  number = {3556},
+  month = dec
+}
+
+@ARTICLE{Caballero-Lyons-92,
+  author = {Ricardo J. Caballero and Richard K. Lyons},
+  title = {External effects in \uppercase{U.S.} procyclical productivity},
+  journal = jmoe,
+  year = {1992},
+  volume = {29},
+  pages = {209-226},
+  number = {2},
+  month = apr
+}
+
+@ARTICLE{Canova-94,
+  author = {Fabio Canova},
+  title = {Detrending and turning points},
+  journal = eer,
+  year = {1994},
+  volume = {38},
+  pages = {614--623},
+  number = {3/4},
+  month = apr
+}
+
+@TECHREPORT{Canova-93,
+  author = {Fabio Canova},
+  title = {Sources and Propagation of International Business Cycles: \uppercase{C}ommon
+	Shocks or Transmission?},
+  institution = {Centre for Economic Policy Research},
+  year = {1993},
+  type = dp,
+  number = {781},
+  month = jun
+}
+
+@TECHREPORT{Canova-92,
+  author = {Fabio Canova},
+  title = {Three Tests for the Existence of Cycles in Time Series},
+  institution = {European University Institute},
+  year = {1992},
+  type = wp,
+  number = {92/78},
+  month = feb
+}
+
+@TECHREPORT{Canova-91,
+  author = {Fabio Canova},
+  title = {Detrending and Business Cycle Facts},
+  institution = {European University Institute},
+  year = {1991},
+  type = wp
+}
+
+@ARTICLE{Canova-Denicolo-95,
+  author = {Fabio Canova and Gianni {De Nicol\'o}},
+  title = {Stock returns and real activity: \uppercase{A} structural approach},
+  journal = eer,
+  year = {1995},
+  volume = {39},
+  pages = {981--1015},
+  number = {5},
+  month = may
+}
+
+@TECHREPORT{Canova-Dellas-90,
+  author = {Fabio Canova and Harris Dellas},
+  title = {Trade Interdependence and the International Business Cycle},
+  institution = {Department of Economics, Brown University},
+  year = {1990},
+  type = wp,
+  number = {90-12},
+  month = mar
+}
+
+@UNPUBLISHED{Canova-Finn-Pagan-91,
+  author = {Fabio Canova and Mary Finn and A. R. Pagan},
+  title = {Econometric Issues in the Analysis of Equilibrium Models},
+  month = sep,
+  year = {1991}
+}
+
+@ARTICLE{Canova-Ghysels-94,
+  author = {Fabio Canova and Eric Ghysels},
+  title = {Changes in Seasonal Patterns - Are they Cyclical?},
+  journal = jedc,
+  year = {1994},
+  volume = {18},
+  pages = {1143--1171}
+}
+
+@ARTICLE{Canova-Ravn-96,
+  author = {Fabio Canova and Morten O. Ravn},
+  title = {International Consumption Risk Sharing},
+  journal = ier,
+  year = {forthcoming}
+}
+
+@TECHREPORT{Canova-Ravn-93,
+  author = {Fabio Canova and Morten O. Ravn},
+  title = {International Consumption Risk Sharing},
+  institution = {European University Institute},
+  year = {1993},
+  month = aug
+}
+
+@UNPUBLISHED{Canova-Ubide-95,
+  author = {Fabio Canova and Angel J. Ubide},
+  title = {Household production and international comovements},
+  note = {European University Institute},
+  year = {1995}
+}
+
+@ARTICLE{Cantor-Mark-88,
+  author = {Richard Cantor and Nelson C. Mark},
+  title = {The International Transmission of Real Business Cycles},
+  journal = ier,
+  year = {1988},
+  volume = {29},
+  pages = {493-507},
+  number = {3},
+  month = aug
+}
+
+@ARTICLE{Cantor-Mark-87,
+  author = {Richard Cantor and Nelson C. Mark},
+  title = {International Debt and World Business Fluctuations},
+  journal = jimf,
+  year = {1987},
+  volume = {6},
+  pages = {153-165}
+}
+
+@ARTICLE{Caporale-93,
+  author = {Guglielmo Maria Caporale},
+  title = {Productivity Shocks and Business Cycles},
+  journal = {Applied Economics},
+  year = {1993},
+  volume = {25},
+  pages = {1065--1070}
+}
+
+@ARTICLE{Caporale-94,
+  author = {Tony Caporale},
+  title = {The Role of Real and Monetary Shocks in Explaining Business Cycle
+	Fluctuations},
+  journal = {Applied Economics},
+  year = {1994},
+  volume = {26},
+  pages = {831--836}
+}
+
+@ARTICLE{Cardia-95,
+  author = {Emanuela Cardia},
+  title = {The effects of fiscal policies in a general equilibrium model with
+	nominal wage control},
+  journal = el,
+  year = {1995},
+  volume = {49},
+  pages = {69--75},
+  number = {1},
+  month = jul
+}
+
+@ARTICLE{Cardia-91,
+  author = {Emanuela Cardia},
+  title = {The dynamics of a small open economy in response to monetary, fiscal,
+	and productivity shocks},
+  journal = jmoe,
+  year = {1991},
+  volume = {28},
+  pages = {411--434},
+  number = {3}
+}
+
+@ARTICLE{Cass-65,
+  author = {David Cass},
+  title = {Optimum growth in an aggregative model of capital accumulation},
+  journal = res,
+  year = {1965},
+  volume = {32},
+  pages = {233--240}
+}
+
+@UNPUBLISHED{Ceria-Rios-Rull-94,
+  author = {Sebastian Ceria and Jos\'e-V\'{\i}ctor R\'{\i}os-Rull},
+  title = {On the existence, uniqueness, and computability of non-optimal recursive
+	equilibria in linear quadratic economies},
+  note = gsia,
+  month = sep,
+  year = {1994}
+}
+
+@UNPUBLISHED{Cerny-Lazarova-94,
+  author = {Ales Cerny and Stepana Lazarova},
+  title = {Growth and Business Cycles in \uppercase{C}zechoslovakia According
+	to the Basic Neoclassical \uppercase{RBC} Model},
+  note = {CERGE-EI, Prague},
+  month = apr,
+  year = {1994}
+}
+
+@ARTICLE{Cha-93,
+  author = {Baekin Cha},
+  title = {Dynamic effects of a terms-of-trade shock on a small open economy},
+  journal = el,
+  year = {1993},
+  volume = {43},
+  pages = {205--209}
+}
+
+@ARTICLE{Chadha-Prasad-94,
+  author = {Bankim Chadha and Eswar Prasad},
+  title = {Are prices countercyclical?: \uppercase{E}vidence from the \uppercase{G}-7},
+  journal = jmoe,
+  year = {1994},
+  volume = {34},
+  pages = {239--257},
+  number = {2},
+  month = oct
+}
+
+@UNPUBLISHED{Chang-92,
+  author = {Ly-June Chang},
+  title = {Business Cycles with Distorting Taxes and Disaggregated Capital Markets},
+  note = {Graduate School of Management, Rutgers University},
+  month = apr,
+  year = {1992}
+}
+
+@ARTICLE{Chari-Christiano-Kehoe-94-fisc,
+  author = {V. V. Chari and Lawrence J. Christiano and Patrick J. Kehoe},
+  title = {Optimal fiscal policy in a business cycle model},
+  journal = jpe,
+  year = {1994},
+  volume = {102},
+  pages = {617--652},
+  number = {4},
+  month = aug
+}
+
+@TECHREPORT{Chari-Christiano-Kehoe-91,
+  author = {V. V. Chari and Lawrence J. Christiano and Patrick J. Kehoe},
+  title = {Optimal fiscal and monetary policy: \uppercase{S}ome recent results},
+  institution = mnrd,
+  year = {1991},
+  type = sr,
+  number = {147},
+  month = nov
+}
+
+@TECHREPORT{Chari-Christiano-Kehoe-91-matlab,
+  author = {V. V. Chari and Lawrence J. Christiano and Patrick J. Kehoe},
+  title = {Writup of \uppercase{MATLAB} function rule.m},
+  institution = mnrd,
+  year = {1991},
+  type = wp,
+  number = {472},
+  month = jan
+}
+
+@ARTICLE{Chatterjee-Ravikumar-92,
+  author = {Satyajit Chatterjee and B. Ravikumar},
+  title = {A neoclassical model of seasonal fluctuation},
+  journal = jmoe,
+  year = {1992},
+  volume = {29},
+  pages = {59-86},
+  number = {1},
+  month = feb
+}
+
+@ARTICLE{Checci-89,
+  author = {Daniele Checchi},
+  title = {Economic interdependence and structural change: \uppercase{A}n investigation
+	on business cycle transmission},
+  journal = {International Review of Applied Economics},
+  year = {1989},
+  volume = {3},
+  pages = {57-88},
+  number = {1},
+  month = jan
+}
+
+@TECHREPORT{Cheng-Dinopoulos-91,
+  author = {Leonard K. Cheng and Elias Dinopoulos},
+  title = {International \uppercase{S}chumpeterian Business Cycles and Economic
+	Growth},
+  institution = {Department of Economics, University of Florida},
+  year = {1991},
+  type = wp,
+  month = may
+}
+
+@TECHREPORT{Chin-Miller-95,
+  author = {Dan Chin and Preston J. Miller},
+  title = {Fixed vs. Floating Exchange Rates: A dynamic general Equilibrium
+	Analysis},
+  institution = mnrd,
+  year = {1995},
+  type = sr,
+  number = {194},
+  month = jul
+}
+
+@ARTICLE{Cho-93,
+  author = {Jang-Ok Cho},
+  title = {Money and the business cycle with one-period nominal contracts},
+  journal = cje,
+  year = {1993},
+  volume = {26},
+  pages = {638--659},
+  number = {3},
+  month = aug
+}
+
+@TECHREPORT{Cho-90,
+  author = {Jang-Ok Cho},
+  title = {Market Structure and the Business Cycle},
+  institution = {Institute for Economic Reseach, Queens's University},
+  year = {1990},
+  type = dp,
+  number = {789},
+  month = may
+}
+
+@ARTICLE{Cho-Cooley-95,
+  author = {Jang-Ok Cho and Thomas F. Cooley},
+  title = {The Business Cycle with Nominal Contracts},
+  journal = {Economic Theory},
+  year = {1995},
+  pages = {Forthcoming}
+}
+
+@ARTICLE{Cho-Cooley-94,
+  author = {Jang-Ok Cho and Thomas F. Cooley},
+  title = {Employment and hours over the business cycle},
+  journal = jedc,
+  year = {1994},
+  volume = {18},
+  pages = {411--432}
+}
+
+@ARTICLE{Cho-Cooley-92-esp,
+  author = {Jang-Ok Cho and Thomas F. Cooley},
+  title = {Empleo y horas: un enfoque de ciclos econ\'omicos},
+  journal = {Cuadernos Econ\'omicos},
+  year = {1992},
+  volume = {51},
+  pages = {79--98}
+}
+
+@UNPUBLISHED{Cho-Cooley-Phaneuf-94,
+  author = {Jang-Ok Cho and Thomas F. Cooley and Louis Phaneuf},
+  title = {The welfare cost of nominal wage contracting},
+  month = feb,
+  year = {1994}
+}
+
+@ARTICLE{Cho-Phaneuf-95,
+  author = {Jang-Ok Cho and Louis Phaneuf},
+  title = {Monnaie et cycles},
+  journal = {L'Actualit\'e \'Economique},
+  year = {1995},
+  volume = {71},
+  pages = {163--192},
+  number = {2},
+  month = jun
+}
+
+@TECHREPORT{Cho-Phaneuf-93-gov,
+  author = {Jang-Ok Cho and Louis Phaneuf},
+  title = {A business cycle model with nominal wage contracts and government},
+  institution = iem,
+  year = {1993},
+  type = dp,
+  number = {80},
+  month = feb
+}
+
+@UNPUBLISHED{Cho-Phaneuf-93-optimal,
+  author = {Jang-Ok Cho and Louis Phaneuf},
+  title = {Optimal wage indexation and aggregate fluctuations},
+  month = dec,
+  year = {1993}
+}
+
+@ARTICLE{Cho-Rogerson-92-esp,
+  author = {Jang-Ok Cho and Richard Rogerson},
+  title = {Reparto de riesgos, trabajo indivible y fluctuaciones agregadas},
+  journal = {Cuadernos Econ\'omicos},
+  year = {1992},
+  volume = {51},
+  pages = {25--35}
+}
+
+@TECHREPORT{Cho-Rogerson-90,
+  author = {Jang-Ok Cho and Richard Rogerson},
+  title = {Risk Sharing, Indivisible Labor and Aggregate Fluctuations},
+  institution = {Institute for Economic Reseach, Queens's University},
+  year = {1990},
+  type = dp,
+  number = {787},
+  month = aug
+}
+
+@ARTICLE{Cho-Rogerson-88,
+  author = {Jang-Ok Cho and Richard Rogerson},
+  title = {Family Labor Supply and Aggregate Fluctuations},
+  journal = jmoe,
+  year = {1988},
+  volume = {21},
+  pages = {233--245}
+}
+
+@ARTICLE{Chow-93,
+  author = {Gregory C. Chow},
+  title = {Optimal control without solving the \uppercase{B}ellman equation},
+  journal = jedc,
+  year = {1993},
+  volume = {17},
+  pages = {621--630}
+}
+
+@ARTICLE{Chow-92-dyn,
+  author = {Gregory C. Chow},
+  title = {Dynamic optimization without dynamic programming},
+  journal = {Economic Modelling},
+  year = {1992},
+  volume = {9},
+  pages = {3-9},
+  number = {1},
+  month = jan
+}
+
+@TECHREPORT{Chow-92-stat,
+  author = {Gregory C. Chow},
+  title = {Statistical Estimation and Testing of a Real Business Cycle Model},
+  institution = {Econometric Research Program, Princeton University},
+  year = {1992},
+  type = {Research Memorandum},
+  number = {365},
+  month = mar
+}
+
+@UNPUBLISHED{Chow-91,
+  author = {Gregory C. Chow},
+  title = {Statistical estimation and testing of a real business cycle model},
+  month = aug,
+  year = {1991}
+}
+
+@ARTICLE{Chowdhury-McGibany-Nourzad-94,
+  author = {Abdur R. Chowdhury and James M. McGibany and Farrokh Nourzad},
+  title = {Non-Nested Tests of three Competing Theories of Business Cycles},
+  journal = {Applied Economics},
+  year = {1994},
+  volume = {26},
+  pages = {527--534}
+}
+
+@ARTICLE{christiano2002solving,
+  author = {Christiano, Lawrence J.},
+  title = {Solving dynamic equilibrium models by a method of undetermined coefficients},
+  journal = {Computational Economics},
+  year = {2002},
+  volume = {20},
+  pages = {21--55},
+  number = {1},
+  publisher = {Springer}
+}
+
+@ARTICLE{Christiano-91,
+  author = {Lawrence J. Christiano},
+  title = {Modeling the Liquidity Effect of a Monetary Shock},
+  journal = mnqr,
+  year = {1991},
+  volume = {15},
+  pages = {3-34},
+  number = {1},
+  month = win
+}
+
+@ARTICLE{Christiano-90-long,
+  author = {Lawrence J. Christiano},
+  title = {Linear-quadratic approximation and value-function iteration: \uppercase{A}
+	comparison},
+  journal = jbes,
+  year = {1990},
+  volume = {8},
+  pages = {99--113},
+  number = {1},
+  month = jan
+}
+
+@ARTICLE{Christiano-90-short,
+  author = {Lawrence J. Christiano},
+  title = {Solving the stochastic growth model by linear-quadratic approximation
+	and by value-function iteration},
+  journal = jbes,
+  year = {1990},
+  volume = {8},
+  pages = {23--26},
+  number = {1},
+  month = jan
+}
+
+@ARTICLE{Christiano-88,
+  author = {Lawrence J. Christiano},
+  title = {Why does inventory investment fluctuate so much?},
+  journal = jmoe,
+  year = {1988},
+  volume = {21},
+  pages = {247-280},
+  number = {2}
+}
+
+@ARTICLE{Christiano-87,
+  author = {Lawrence J. Christiano},
+  title = {Why is consumption less volatile than income?},
+  journal = mnqr,
+  year = {1987},
+  volume = {11},
+  number = {4},
+  month = fal
+}
+
+@TECHREPORT{Christiano-87-a,
+  author = {Lawrence J. Christiano},
+  title = {Technical appendix to `\uppercase{W}hy does inventory investment
+	fluctuate so much?'},
+  institution = mnrd,
+  year = {1987},
+  type = wp,
+  number = {380}
+}
+
+@ARTICLE{Christiano-Eichenbaum-92-esp,
+  author = {Lawrence J. Christiano and Martin Eichenbaum},
+  title = {Teor\'{\i}as actuales de ciclos econ\'omicos reales y fluctuaciones
+	agregadas en el mercado de trabajo},
+  journal = {Cuadernos Econ\'omicos},
+  year = {1992},
+  volume = {51},
+  pages = {99--131}
+}
+
+@ARTICLE{Christiano-Eichenbaum-92-labor,
+  author = {Lawrence J. Christiano and Martin Eichenbaum},
+  title = {Current Real Business Cycle Theories and Aggregate Labor Market Fluctuations},
+  journal = aer,
+  year = {1992},
+  volume = {82},
+  pages = {430-450},
+  number = {3},
+  month = jun
+}
+
+@ARTICLE{Christiano-Eichenbaum-92-liquid,
+  author = {Lawrence J. Christiano and Martin Eichenbaum},
+  title = {Liquidity effects and the monetary transmission mechanism},
+  journal = aerp,
+  year = {1992},
+  volume = {82},
+  pages = {346-353},
+  number = {2},
+  month = may
+}
+
+@TECHREPORT{Christiano-Eichenbaum-92-monpolicy,
+  author = {Lawrence J. Christiano and Martin Eichenbaum},
+  title = {Liquidity effects, monetary policy, and the business cycle},
+  institution = iem,
+  year = {1992},
+  type = dp,
+  number = {70},
+  month = jul
+}
+
+@TECHREPORT{Christiano-Eichenbaum-91,
+  author = {Lawrence J. Christiano and Martin Eichenbaum},
+  title = {Technical Appendix for \uppercase{L}iquidity effects, monetary policy,
+	and the business cycle},
+  institution = mnrd,
+  year = {1991},
+  type = wp,
+  number = {478},
+  month = may
+}
+
+@ARTICLE{Christiano-Eichebaum-88,
+  author = {Lawrence J. Christiano and Martin Eichenbaum},
+  title = {Unit Roots in Real \uppercase{GNP: D}o we know and do we care?},
+  journal = cr,
+  year = {1990},
+  volume = {32},
+  pages = {7--62}
+}
+
+@TECHREPORT{Christiano-Eichenbaum-88,
+  author = {Lawrence J. Christiano and Martin Eichenbaum},
+  title = {Is theory really ahead of measurement?},
+  institution = nber,
+  year = {1988},
+  type = wp,
+  number = {2700}
+}
+
+@TECHREPORT{Christiano-Fisher-94,
+  author = {Lawrence J. Christiano and Jonas D. M. Fisher},
+  title = {Algorithms for solving dynamic models with occasionally binding constraints},
+  institution = mnrd,
+  year = {1994},
+  type = sr,
+  number = {171},
+  month = may
+}
+
+@TECHREPORT{Christiano-Fitzgerald-89,
+  author = {Lawrence J. Christiano and Terry J. Fitzgerald},
+  title = {The Magnitude of the Speculative Motive for Holding Inventories in
+	a Real Business Cycle Model},
+  institution = iem,
+  year = {1989},
+  type = dp,
+  number = {10},
+  month = jan
+}
+
+@ARTICLE{Christiano-Todd-96,
+  author = {Lawrence J. Christiano and Richard M. Todd},
+  title = {Time to plan and aggregate fluctuations},
+  journal = mnqr,
+  year = {1996},
+  volume = {20},
+  pages = {14--27},
+  number = {1},
+  month = win
+}
+
+@ARTICLE{Christodoulakis-Dimelis-Kollintzas-95,
+  author = {Nicos Christodoulakis and Sophia P. Dimelis and Tryphon Kollintzas},
+  title = {Comparisons of business cycles in \uppercase{G}reece and the \uppercase{EC:
+	I}diosyncracies and regularities},
+  journal = {Economica},
+  year = {1995},
+  volume = {62},
+  pages = {1--27}
+}
+
+@ARTICLE{Clark-87,
+  author = {Peter K. Clark},
+  title = {The cyclical component of \uppercase{U.S.} economic activity},
+  journal = qje,
+  year = {1987},
+  volume = {102},
+  pages = {797-814},
+  number = {4},
+  month = nov
+}
+
+@ARTICLE{Cochrane-95,
+  author = {John H. Cochrane},
+  title = {Shocks},
+  journal = cr,
+  year = {1995},
+  pages = {forthcoming}
+}
+
+@ARTICLE{Cogley-Nason-95-dyn,
+  author = {Timothey Cogley and James M. Nason},
+  title = {Output dynamics in real-business-cycle models},
+  journal = aer,
+  year = {1995},
+  volume = {85},
+  pages = {492--511},
+  number = {3},
+  month = jun
+}
+
+@ARTICLE{Cogley-Nason-95-hp,
+  author = {Timothy Cogley and James M. Nason},
+  title = {Effects of the \uppercase{H}odrick-\uppercase{P}rescott Filter on
+	Trend and Difference Stationary Time Series: \uppercase{I}mplications
+	for Business Cycle Research},
+  journal = jedc,
+  year = {1995},
+  volume = {19},
+  pages = {253--278}
+}
+
+@ARTICLE{Cogley-Nason-93,
+  author = {Timothey Cogley and James M. Nason},
+  title = {Impulse dynamics and propagation mechanisms in a real business cycle
+	model},
+  journal = el,
+  year = {1993},
+  volume = {43},
+  pages = {77--81},
+  number = {1}
+}
+
+@TECHREPORT{Cogley-Nason-92,
+  author = {Timothey Cogley and James M. Nason},
+  title = {Do real business cycle models pass the \uppercase{N}elson-\uppercase{P}losser
+	test?},
+  institution = {University of British Columbia},
+  year = {1992},
+  type = wp,
+  number = {92-24}
+}
+
+@ARTICLE{Coleman-93,
+  author = {Wilbur John {Coleman II}},
+  title = {Solving nonlinear dynamic models on parallel computers},
+  journal = jbes,
+  year = {1993},
+  volume = {11},
+  pages = {325--330},
+  number = {3},
+  month = jul
+}
+
+@ARTICLE{Coleman-90,
+  author = {Wilbur John {Coleman II}},
+  title = {Solving the Stochastic growth model by policy function iteration},
+  journal = jbes,
+  year = {1990},
+  volume = {8},
+  pages = {27-29},
+  number = {1},
+  month = jan
+}
+
+@UNPUBLISHED{Cooley-Greenwood-Yorukoglu-93,
+  author = {Thomas F. Cooley and Jeremy Greenwood and Mehmet Yorukoglu},
+  title = {The importance of the embodied question: \uppercase{V}intage capital
+	revisited},
+  note = {University of Rochester},
+  month = oct,
+  year = {1993}
+}
+
+@ARTICLE{Cooley-Hansen-92,
+  author = {Thomas F. Cooley and Gary D. Hansen},
+  title = {Tax distortions in a \uppercase{N}eoclassical economy},
+  journal = jet,
+  year = {1992},
+  volume = {58},
+  pages = {290--316},
+  month = dec
+}
+
+@ARTICLE{Cooley-Hansen-91,
+  author = {Thomas F. Cooley and Gary D. Hansen},
+  title = {The welfare costs of moderate inflations},
+  journal = jmcb,
+  year = {1991},
+  volume = {23},
+  pages = {483-503},
+  number = {3 Part 2},
+  month = aug
+}
+
+@ARTICLE{Cooley-Hansen-89,
+  author = {Thomas F. Cooley and Gary D. Hansen},
+  title = {Inflation tax in a real business cycle model},
+  journal = aer,
+  year = {1989},
+  volume = {79},
+  pages = {733--748}
+}
+
+@ARTICLE{Cooley-Hansen-Prescott-95,
+  author = {Thomas F. Cooley and Gary D. Hansen and Edward C. Prescott},
+  title = {Equilibrium business cycles with idle resources and variable capacity
+	utilization},
+  journal = {Economic Theory},
+  year = {1995},
+  volume = {6},
+  pages = {35--49}
+}
+
+@ARTICLE{Cooley-LeRoy-85,
+  author = {Thomas F. Cooley and Stephen F. LeRoy},
+  title = {Atheoretical Macroeceonomics-A Critique},
+  journal = jmoe,
+  year = {1985},
+  volume = {16},
+  pages = {283--308}
+}
+
+@UNPUBLISHED{Cooley-Ohanian-95,
+  author = {Thomas F. Cooley and Lee E. Ohanian},
+  title = {Post-War \uppercase{B}ritish growth and the lagacy of \uppercase{K}eynes},
+  month = jun,
+  year = {1995}
+}
+
+@ARTICLE{Cooley-Ohanian-91,
+  author = {Thomas F. Cooley and Lee E. Ohanian},
+  title = {The cyclical behavior of prices},
+  journal = jmoe,
+  year = {1991},
+  volume = {28},
+  pages = {25-60}
+}
+
+@ARTICLE{Cooper-Haltiwanger-92,
+  author = {Russell W. Cooper and John C. Haltiwanger},
+  title = {Macroeconomic implications of production bunching: \uppercase{F}actor
+	demand linkages},
+  journal = jmoe,
+  year = {1992},
+  volume = {30},
+  pages = {107-128},
+  number = {1},
+  month = oct
+}
+
+@ARTICLE{Cooper-Haltiwanger-90,
+  author = {Russell W. Cooper and John C. Haltiwanger},
+  title = {Inventories and the propagation of sectoral shocks},
+  journal = aer,
+  year = {1990},
+  volume = {80},
+  pages = {170--190},
+  number = {1},
+  month = mar
+}
+
+@UNPUBLISHED{Cooper-Johri-95,
+  author = {Russell W. Cooper and Alok Johri},
+  title = {Dynamic complementarities: \uppercase{A} quantitative analysis},
+  note = {Boston University},
+  month = jan,
+  year = {1995}
+}
+
+@INCOLLECTION{Correia-Neves-Rebelo-92-portugal,
+  author = {Isabel Horta Correia and Jo\~.{a}o {C\'esar das} Neves and S\'ergio
+	Rebelo},
+  title = {Business cycles in \uppercase{P}ortugal: \uppercase{T}heory and evidence},
+  booktitle = {The \uppercase{P}ortuguese economy towards 1992},
+  publisher = kap,
+  year = {1992},
+  editor = {Jo\~.{a}o Ferreira do Amaral and Diogo Lucena and Ant\'onio S. Mello},
+  pages = {1-64}
+}
+
+@ARTICLE{Correia-Neves-Rebelo-95,
+  author = {Isabel Horta Correia and Jo\~.{a}o {C\'esar das} Neves and S\'ergio
+	Rebelo},
+  title = {Business cycles in a small open economy},
+  journal = eer,
+  year = {1995},
+  volume = {39},
+  pages = {1089--1113},
+  number = {6},
+  month = jun
+}
+
+@ARTICLE{Correia-Neves-Rebelo-92-old,
+  author = {Isabel Horta Correia and Jo\~.{a}o {C\'esar das} Neves and S\'ergio
+	Rebelo},
+  title = {Business Cycles from 1850 to 1950: \uppercase{N}ew Facts about Old
+	Data},
+  journal = eer,
+  year = {1992},
+  volume = {36},
+  pages = {459--467}
+}
+
+@ARTICLE{Costello-93,
+  author = {Donna M. Costello},
+  title = {A cross-country, cross-industry comparison of productivity growth},
+  journal = jpe,
+  year = {1993},
+  volume = {101},
+  pages = {207-222},
+  number = {2},
+  month = apr
+}
+
+@UNPUBLISHED{Costello-Praschnik-93,
+  author = {Donna M. Costello and Jack Praschnik},
+  title = {Intermediate goods and the transmission of international business
+	cycles},
+  note = {University of Western Ontario},
+  year = {1993}
+}
+
+@ARTICLE{Cribari-Neto-93,
+  author = {Francisco Cribari-Neto},
+  title = {The Cyclical Component in \uppercase{B}rasilian \uppercase{GDP}},
+  journal = {Revista de Econometria},
+  year = {1993},
+  volume = {13},
+  pages = {1--22}
+}
+
+@UNPUBLISHED{Crucini-93,
+  author = {Mario Crucini},
+  title = {Country size and economic fluctuation},
+  note = {Ohio State University},
+  month = jun,
+  year = {1993}
+}
+
+@UNPUBLISHED{Crucini-Kahn-95,
+  author = {Mario Crucini and James Kahn},
+  title = {Tariffs and economic activity: Lessons from the Great Depression},
+  month = oct,
+  year = {1995}
+}
+
+@UNPUBLISHED{Crucini-Kahn-96,
+  author = {Mario Crucini and James A. Kahn},
+  title = {Inventories and Economic Fluctuations},
+  month = mar,
+  year = {1996}
+}
+
+@ARTICLE{Cushing-90,
+  author = {Matthew J. Cushing},
+  title = {Real Wages over the Business Cycle: \uppercase{A} Band Spectrum Approach},
+  journal = {Southern Economic Journal},
+  year = {1990},
+  volume = {56},
+  pages = {905--917}
+}
+
+@UNPUBLISHED{Diaz-Rios-Rull-91,
+  author = {Javier D\'{\i}az-Gim\'enez and Jos\'e-V\'{\i}ctor R\'{\i}os-Rull},
+  title = {Heterogeneous agents, capital accumulation and business cycles},
+  year = {1991}
+}
+
+@ARTICLE{Danthine-Donaldson-93,
+  author = {Jean-Pierre Danthine and John B. Donaldson},
+  title = {Methodoligical and Empirical Issues in Real Business Cycle Theory},
+  journal = eer,
+  year = {1993},
+  volume = {37},
+  pages = {1--35},
+  number = {1},
+  month = jan
+}
+
+@ARTICLE{Danthine-Donaldson-92,
+  author = {Jean-Pierre Danthine and John B. Donaldson},
+  title = {Risk Sharing in the Business Cycle},
+  journal = eer,
+  year = {1992},
+  volume = {36},
+  pages = {468--475}
+}
+
+@ARTICLE{Danthine-Donaldson-90,
+  author = {Jean-Pierre Danthine and John B. Donaldson},
+  title = {Efficiency Wages and the Business Cycle Puzzle},
+  journal = eer,
+  year = {1990},
+  volume = {34},
+  pages = {1275-1301}
+}
+
+@ARTICLE{Danthine-Donaldson-85,
+  author = {Jean-Pierre Danthine and John B. Donaldson},
+  title = {A note on the effects of capital income taxation on the dynamics
+	of a competitive economy},
+  journal = jpub,
+  year = {1985},
+  volume = {28},
+  pages = {255--265}
+}
+
+@ARTICLE{Danthine-Donaldson-Mehra-89,
+  author = {Jean-Pierre Danthine and John B. Donaldson and Rajnish Mehra},
+  title = {On some Computational Aspects of Equilibrium Business Cycle Theory},
+  journal = jedc,
+  year = {1989},
+  volume = {13},
+  pages = {449-470}
+}
+
+@ARTICLE{Danthine-Girardin-89,
+  author = {Jean-Pierre Danthine and Michel Girardin},
+  title = {Business Cycles in \uppercase{S}witzerland, a Comparative Study},
+  journal = eer,
+  year = {1989},
+  volume = {33},
+  pages = {31-50},
+  number = {1}
+}
+
+@ARTICLE{Davis-87,
+  author = {Steven J. Davis},
+  title = {Allocative Disturbances and Specific Capital in Real Business Cycle
+	Theories},
+  journal = aerp,
+  year = {1987},
+  volume = {77},
+  pages = {326--332},
+  number = {2},
+  month = may
+}
+
+@BOOK{Debreu-83,
+  title = {Mathematical economics: \uppercase{T}wenty papers of Gerard Debreu},
+  publisher = cup,
+  year = {1983},
+  author = {Gerard Debreu}
+}
+
+@BOOK{Debreu-59,
+  title = {Theory of value: \uppercase{A}n axiomatic analysis of economic equilibrium},
+  publisher = {Yale University Press},
+  year = {1959},
+  author = {Gerard Debreu},
+  volume = {17},
+  series = {Cowles Foundation Monograph}
+}
+
+@UNPUBLISHED{DeJong-Ingram-Whiteman-95,
+  author = {David N. DeJong and Beth F. Ingram and Charles H. Whiteman},
+  title = {Keynes vs. \uppercase{P}rescott and \uppercase{S}olow: \uppercase{I}entifying
+	sources of business cycle fluctuations},
+  month = mar,
+  year = {1995},
+  institution = {University of Iowa}
+}
+
+@ARTICLE{Dellas-86,
+  author = {Harris Dellas},
+  title = {A Real Model of the World Business Cycle},
+  journal = jimf,
+  year = {1986},
+  volume = {5},
+  pages = {381-394}
+}
+
+@ARTICLE{Devereux-Gregory-Smith-92,
+  author = {Michael B. Devereux and Allan W. Gregory and Gregor W. Smith},
+  title = {Realistic cross-country consumption correlations in a two-country,
+	equilibrium, business cycle model},
+  journal = jimf,
+  year = {1992},
+  volume = {11},
+  pages = {3--16},
+  number = {1}
+}
+
+@ARTICLE{Devereux-Head-Lapham-96,
+  author = {Michael B. Devereux and Allen C. Head and Beverly J. Lapham},
+  title = {Aggregate fluctuations with increasing returns to specialization
+	and scale},
+  journal = jedc,
+  year = {1996},
+  volume = {20},
+  pages = {627--656},
+  number = {4},
+  month = apr
+}
+
+@ARTICLE{Devereux-Head-Lapham-93-a,
+  author = {Michael B. Devereux and Allen C. Head and Beverly J. Lapham},
+  title = {Monopolistic competition, technology shocks, and aggregate fluctuations},
+  journal = el,
+  year = {1993},
+  pages = {57--61},
+  number = {1}
+}
+
+@TECHREPORT{Devereux-Head-Lapham-93-b,
+  author = {Michael B. Devereux and Allen C. Head and Beverly J. Lapham},
+  title = {Exit and entry, increasing returns to specialization, and business
+	cycles},
+  institution = {Institute for Economic Research, Queen's University},
+  year = {1993},
+  type = dp,
+  number = {871},
+  month = jan
+}
+
+@TECHREPORT{Devereux-Smith-91,
+  author = {Michael B. Devereux and Gregor W. Smith},
+  title = {International risk sharing and economic growth},
+  institution = {Institute for Economic Research, Queen's University},
+  year = {1991},
+  type = dp,
+  number = {829},
+  month = aug
+}
+
+@TECHREPORT{Diebold-Rudebusch-94,
+  author = {Francis X. Diebold and Glenn D. Rudebusch},
+  title = {Measuring Business Cycles: \uppercase{A} Modern Perspective},
+  institution = nber,
+  year = {1994},
+  type = wp,
+  number = {4643},
+  month = feb
+}
+
+@TECHREPORT{Diebold-Rudebusch-Sichel-90,
+  author = {Francis X. Diebold and Glenn D. Rudebusch and Daniel E. Sichel},
+  title = {International Evidence on Business Cycle Duration Dependence},
+  institution = iem,
+  year = {1990},
+  type = dp,
+  number = {31},
+  month = jul
+}
+
+@ARTICLE{Dolado-Sebastian-Valles-93,
+  author = {Juan Jos\'e Dolado and Miguel Sebastian and Javier Vall\'es},
+  title = {Cyclical Patterns of the \uppercase{S}panish Economy},
+  journal = {Investigaciones Econ\'omicas},
+  year = {1993},
+  volume = {17},
+  pages = {445--473}
+}
+
+@ARTICLE{Domowitz-Hubbard-Petersen-88,
+  author = {Ian Domowitz and R. Glenn Hubbard and Bruce C. Petersen},
+  title = {Market structure and cyclical fluctuations in \uppercase{U.S.} manufacturing},
+  journal = reas,
+  year = {1988},
+  volume = {70},
+  pages = {55-66},
+  number = {1},
+  month = feb
+}
+
+@ARTICLE{Dornbusch-90,
+  author = {Rudiger Dornbusch},
+  title = {The new classical macroeconomics and stabilization policy},
+  journal = aerp,
+  year = {1990},
+  volume = {80},
+  pages = {143-147},
+  number = {2},
+  month = may
+}
+
+@INCOLLECTION{Dotsey-King-87,
+  author = {Michael Dotsey and Robert G. King},
+  title = {Business Cycles},
+  booktitle = {The new \uppercase{P}algrave: \uppercase{A} dictionary of economics},
+  publisher = {W. W. Norton},
+  year = {1987},
+  editor = {John Eatwell and Murray Milgate and Peter Newman}
+}
+
+@ARTICLE{Dotsey-King-88,
+  author = {Michael Dotsey and Robert G. King},
+  title = {Rational Expectations Business Cycle Models: \uppercase{A} Survey},
+  journal = {Federal Reserve Band of Richmond},
+  year = {1988},
+  pages = {3--15},
+  month = {March/April}
+}
+
+@ARTICLE{Dotsey-Mao-92,
+  author = {Michael Dotsey and Ching Sheng Mao},
+  title = {How well do linear approximation methods work? \uppercase{T}he production
+	tax case},
+  journal = jmoe,
+  year = {1992},
+  volume = {29},
+  pages = {25-58},
+  number = {1},
+  month = feb
+}
+
+@ARTICLE{Dow-Olson-92,
+  author = {Dow, Jr., James P. and Lars J. Olson},
+  title = {Irreversibility and the behavior of aggregate stochastic growth models},
+  journal = jedc,
+  year = {1992},
+  volume = {16},
+  pages = {207-223}
+}
+
+@TECHREPORT{Dutta-Majumdar-Sundaram-91,
+  author = {Prajit Dutta and Mukul Majumdar and Rangarajan Sundaram},
+  title = {On the parametric continuity of dynamic programming problems},
+  institution = rcer,
+  year = {1991},
+  type = wp,
+  number = {269},
+  month = feb
+}
+
+@TECHREPORT{Diaz-90,
+  author = {Javier D{\'{\i}}az-Gim{\'e}nez},
+  title = {Business Cycle Fluctuations and the Cost of Insurance in Computable
+	Heterogeneous Agent Economies},
+  institution = {Southern European Economics Discussion Series},
+  year = {1990},
+  type = dp,
+  number = {88},
+  month = dec
+}
+
+@TECHREPORT{Diaz-Prescott-92,
+  author = {Javier D{\'{\i}}az-Gim{\'e}nez and Edward C. Prescott},
+  title = {Liquidity constraints in economies with aggregate fluctuations: {A}
+	quantitative exploration},
+  institution = mnrd,
+  year = {1992},
+  type = sr,
+  number = {149},
+  month = jan
+}
+
+@TECHREPORT{Diaz-Prescott-89,
+  author = {Javier D{\'{\i}}az-Gim{\'e}nez and Edward C. Prescott},
+  title = {Asset Returns in Computable General Equilibrium Heterogeneous Agent
+	Economies},
+  institution = mnrd,
+  year = {1989},
+  type = wp,
+  month = jun
+}
+
+@ARTICLE{Diaz-banking,
+  author = {Javier D{\'{\i}}az-Gim{\'e}nez and Edward C. Prescott and Fernando
+	Alvarez and Terry Fitzgerald},
+  title = {Banking in Computable General Equilibrium Economies},
+  journal = jedc,
+  year = {1992},
+  volume = {16},
+  pages = {533-559}
+}
+
+@UNPUBLISHED{Eberwein-Kollintzas-93,
+  author = {Curtis J. Eberwein and Tryphon Kollintzas},
+  title = {A dynamic model of bargaining in a unionized firm with irreversible
+	investment},
+  note = {Paper presented at a conference in August 1993 in Bergen, Norway},
+  month = may,
+  year = {1993}
+}
+
+@ARTICLE{Eichenbaum-91-tech,
+  author = {Martin Eichenbaum},
+  title = {Technology Shocks and the Business Cycle},
+  journal = {Federal Reserve Bank of Chicago Economic Perspectives},
+  year = {1991},
+  volume = {15},
+  pages = {14--32},
+  month = mar
+}
+
+@INPROCEEDINGS{Eichenbaum-Singleton-86,
+  author = {Martin Eichenbaum and Kenneth J. Singleton},
+  title = {Do equilibrium real business cycle theories explain postwar \uppercase{U.S.}
+	business cycles?},
+  booktitle = {\uppercase{NBER} Macroeconomics annual},
+  year = {1986},
+  editor = {Stanley Fischer},
+  volume = {1},
+  pages = {91-135},
+  organization = {National Bureau of Economic Research},
+  publisher = mitp
+}
+
+@ARTICLE{Eichenbaum-91-wisdom,
+  author = {Martin S. Eichenbaum},
+  title = {Real business cycle theory: \uppercase{W}isdom or whimsy?},
+  journal = jedc,
+  year = {1991},
+  volume = {15},
+  pages = {607-626}
+}
+
+@ARTICLE{Eichenbaum-Hansen-90,
+  author = {Martin S. Eichenbaum and Lars Peter Hansen},
+  title = {Estimating models with intertemporal substitution using aggregate
+	time series data},
+  journal = jbes,
+  year = {1990},
+  volume = {8},
+  pages = {53--69},
+  number = {1},
+  month = jan
+}
+
+@ARTICLE{Eichenbaum-Hansen-Singleton-88,
+  author = {Martin S. Eichenbaum and Lars Peter Hansen and Kenneth J. Singleton},
+  title = {A Time Series Analysis of Representative Agent Models of Consumption
+	and Leisure Choice under Uncertainty},
+  journal = qje,
+  year = {1988},
+  pages = {51-78},
+  month = feb
+}
+
+@ARTICLE{Elliott-Fatas-96,
+  author = {Graham Elliott and Antonio Fat\'as},
+  title = {International business cycles and the dynamics of the current account},
+  journal = eer,
+  year = {1996},
+  volume = {40},
+  pages = {361--387},
+  number = {2},
+  month = feb
+}
+
+@ARTICLE{engelhardt2011inventories,
+  author = {Lucas M. Engelhardt},
+  title = {Inventories, Business Cycles, and Variable Capital Utilization},
+  year = {2011},
+  institution = {Louis Working Paper 2009\% 010A}
+}
+
+@ARTICLE{Englund-Persson-Svensson-92,
+  author = {Peter Englund and Torsten Persson and Lars E. O. Svensson},
+  title = {Swedish business cycles: 1861-1988},
+  journal = jmoe,
+  year = {1992},
+  volume = {30},
+  pages = {343-371},
+  number = {3},
+  month = dec
+}
+
+@ARTICLE{Entorf-92,
+  author = {Horst Entorf},
+  title = {Real Business Cycles: \uppercase{I}s Neglecting Demand Shocks Justified?},
+  journal = {Empirical Economics},
+  year = {1992},
+  volume = {17},
+  pages = {463--484}
+}
+
+@ARTICLE{Entorf-91,
+  author = {Horst Entorf},
+  title = {Real Business Cycles under Test, a Multi-Country, Multi-Sector Exercise},
+  journal = eer,
+  year = {1991},
+  volume = {35},
+  pages = {933-969},
+  number = {4},
+  month = may
+}
+
+@ARTICLE{Evans-92,
+  author = {Charles L. Evans},
+  title = {Productivity shocks and real business cycle models},
+  journal = jmoe,
+  year = {1992},
+  volume = {29},
+  pages = {191-208},
+  number = {2},
+  month = apr
+}
+
+@UNPUBLISHED{Evans-Santos-93,
+  author = {Charles L. Evans and Fernando Santos},
+  title = {Productivity shocks in the \uppercase{G}-7 countries},
+  month = jun,
+  year = {1993}
+}
+
+@ARTICLE{Evans-Reichlin-94,
+  author = {George Evans and Lucrezia Reichlin},
+  title = {Information, forecasts, and measurement of the business cycle},
+  journal = jmoe,
+  year = {1994},
+  volume = {33},
+  pages = {233--254},
+  number = {2},
+  month = apr
+}
+
+@TECHREPORT{Fair-92,
+  author = {Ray C. Fair},
+  title = {The \uppercase{C}owles \uppercase{C}omission Approach, Real Business
+	Cycle Theories and New Keynesian Economics},
+  institution = nber,
+  year = {1992},
+  type = wp,
+  number = {3990}
+}
+
+@ARTICLE{Fairise-Henin-Langot-92,
+  author = {Xavier Fairise and Pierre-Yves H\'enin and Fran\c{c}ois Langot},
+  title = {Les mod\`eles de cycle r\'eel peuvent-ils expliquer les fluctuations
+	de l'emploi et de la productivit\'e?},
+  journal = {\'Economie et Pr\'evision},
+  year = {1992},
+  volume = {106},
+  pages = {23--40},
+  number = {5}
+}
+
+@ARTICLE{Fairise-Langot-94,
+  author = {Xavier Fairise and Fran\c{c}ois Langot},
+  title = {Labor productivity and the business cycle: \uppercase{C}an \uppercase{R.B.C.}
+	models be saved?},
+  journal = eer,
+  year = {1994},
+  volume = {38},
+  pages = {1581--1594},
+  number = {8},
+  month = oct
+}
+
+@BOOK{Farmer-93,
+  title = {The macroeconomics of Self-Fulfilling Prophecies},
+  publisher = mitp,
+  year = {1993},
+  author = {Roger E. A. Farmer}
+}
+
+@ARTICLE{Farmer-Guo-94,
+  author = {Roger E. A. Farmer and {J.-T.} Guo},
+  title = {Real business cycles and the animal spirits hypothesis},
+  journal = jet,
+  year = {1994},
+  volume = {63},
+  pages = {42--72},
+  number = {1},
+  month = jun
+}
+
+@ARTICLE{Fender-91,
+  author = {John Fender},
+  title = {Recent Books on Business Cycles},
+  journal = {Journal of Economic Surveys},
+  year = {1991},
+  volume = {5},
+  pages = {359--374}
+}
+
+@TECHREPORT{Ferri-90,
+  author = {Giovanni Ferri},
+  title = {Preferences and Technology in the Real Business Cycle},
+  institution = {Quaderni del Dipartimento di Economia Politica, Siena},
+  year = {1990},
+  month = dec
+}
+
+@UNPUBLISHED{Ferri-85,
+  author = {Giovanni Ferri},
+  title = {Time Structure of Technology and the Real Business Cycle},
+  note = {C.V. Star Center for Applied Economics, New York University},
+  month = may,
+  year = {1985}
+}
+
+@TECHREPORT{Finn-94,
+  author = {Mary G. Finn},
+  title = {Variance properties of \uppercase{S}olow's productivity residual
+	and their cyclical implications},
+  institution = {Federal Reserve Bank of Richmond},
+  year = {1994},
+  type = wp,
+  number = {94--1},
+  month = feb
+}
+
+@TECHREPORT{Finn-91,
+  author = {Mary G. Finn},
+  title = {Energy Price Shocks, Capacity Utilization and Business Cycle Fluctuations},
+  institution = iem,
+  year = {1991},
+  type = dp,
+  number = {50},
+  month = sep
+}
+
+@ARTICLE{Finn-90,
+  author = {Mary G. Finn},
+  title = {On Savings and Investment Dynamics in a Small Open Economy},
+  journal = jie,
+  year = {1990},
+  volume = {29},
+  pages = {1-21},
+  number = {1}
+}
+
+@ARTICLE{Fiorito-Kollintzas-94,
+  author = {Riccardo Fiorito and Tryphon Kollintzas},
+  title = {Stylized facts of business cycles in the \uppercase{G}7 from a real
+	business cycles perspective},
+  journal = eer,
+  year = {1994},
+  volume = {38},
+  pages = {235--269},
+  number = {2},
+  month = feb
+}
+
+@INCOLLECTION{Fischer-87,
+  author = {Stanley Fischer},
+  title = {New Classical Macroeconomics},
+  booktitle = {The new \uppercase{P}algrave: \uppercase{A} dictionary of economics},
+  publisher = {W. W. Norton},
+  year = {1987},
+  editor = {John Eatwell and Murray Milgate and Peter Newman}
+}
+
+@ARTICLE{Forni-91,
+  author = {Mario Forni},
+  title = {Trend, Cycle and "Fortitious Cancellations"-A Note on Trend-Cycle
+	Decomposition of Economic Time Series},
+  journal = {Ricerche Economiche},
+  year = {1991},
+  volume = {45},
+  pages = {115--119}
+}
+
+@ARTICLE{Franz-92,
+  author = {Wolfgang Franz},
+  title = {Neuere Makro\"okonomische Kontroversen},
+  journal = {Wirtschaftswissenschaftliches Studium},
+  year = {1992},
+  pages = {275--283}
+}
+
+@ARTICLE{French-Sichel-93,
+  author = {Mark W. French and Daniel E. Sichel},
+  title = {Cyclical Patterns in the Variance of Economic Activity},
+  journal = jbes,
+  year = {1993},
+  volume = {11},
+  pages = {113--119}
+}
+
+@ARTICLE{Froyen-Waud-88,
+  author = {Richard T. Froyen and Roger N. Waud},
+  title = {Real business cycles and the \uppercase{L}ucas paradigm},
+  journal = {Economic Inquiry},
+  year = {1988},
+  volume = {26},
+  pages = {183--201},
+  number = {2},
+  month = apr
+}
+
+@ARTICLE{Fukao-Otaki-93,
+  author = {Kyoji Fukao and Masayuki Otaki},
+  title = {Accumulation of human capital and the business cycle},
+  journal = jpe,
+  year = {1993},
+  volume = {101},
+  pages = {73-99},
+  number = {1},
+  month = feb
+}
+
+@TECHREPORT{Feve-Langot-94,
+  author = {Patric F{\`e}ve and Fran\c{c}ois Langot},
+  title = {The \uppercase{RBC} Model Through Statistical Inference: an Application
+	with French Data},
+  institution = {CREST (Centre de Recherche en Economie et Statistique)},
+  year = {1994},
+  type = {Document de travail},
+  number = {9432},
+  month = jan
+}
+
+@ARTICLE{Gagnon-90,
+  author = {Joseph E. Gagnon},
+  title = {Solving the stochastic growth model by deterministic extended path},
+  journal = jbes,
+  year = {1990},
+  volume = {8},
+  pages = {35--36},
+  number = {1},
+  month = jan
+}
+
+@ARTICLE{Gali-96,
+  author = {Jordi Gal\'{\i}},
+  title = {Unemployment in dynamic general equilibrium economies},
+  journal = eer,
+  year = {1996},
+  volume = {40},
+  pages = {839--845},
+  number = {3--5},
+  month = apr
+}
+
+@ARTICLE{Gali-94-gov,
+  author = {Jordi Gal\'{\i}},
+  title = {Government size and macroeconomic stability},
+  journal = eer,
+  year = {1994},
+  volume = {38},
+  pages = {117--132},
+  number = {1},
+  month = jan
+}
+
+@ARTICLE{Gali-94-monopol,
+  author = {Jordi Gal\'{\i}},
+  title = {Monopolistic competition, business cycles, and the competition of
+	aggregate demand},
+  journal = jet,
+  year = {1994},
+  volume = {63},
+  pages = {73--96},
+  number = {1},
+  month = jun
+}
+
+@ARTICLE{Gamber-Joutz-93,
+  author = {Edward N. Gamber and Frederick L. Joutz},
+  title = {The dynamic effect of aggregate demand and supply disturbances: \uppercase{C}omment},
+  journal = aer,
+  year = {1993},
+  volume = {83},
+  pages = {1387-1393},
+  number = {5},
+  month = dec
+}
+
+@ARTICLE{Garman-Richards-92,
+  author = {David M. Garman and Daniel J. Richards},
+  title = {Wage-Price Flexibility, Market Power, and the Cyclical Behavior of
+	Real Wages 1959-1980},
+  journal = qje,
+  year = {1992},
+  volume = {107},
+  pages = {1437--1449}
+}
+
+@UNPUBLISHED{Gavin-Kydland-95,
+  author = {William T. Gavin and Finn E. Kydland},
+  title = {Endogenous Money Supply and the Business Cycle},
+  month = dec,
+  year = {1995}
+}
+
+@ARTICLE{Gerlach-88,
+  author = {H. M. Stefan Gerlach},
+  title = {World Business Cycles under Fixed and Flexible Exchange Rates},
+  journal = jmcb,
+  year = {1988},
+  volume = {20},
+  pages = {621-632},
+  number = {4},
+  month = nov
+}
+
+@ARTICLE{Gerlach-90,
+  author = {Stefan Gerlach},
+  title = {International Business Cycles: \uppercase{A} Survey of Recent Empirical
+	Research},
+  journal = {Finanzmarkt und Portfolio-Management},
+  year = {1990},
+  volume = {4},
+  pages = {320--331}
+}
+
+@ARTICLE{Gerlach-89,
+  author = {Stefan Gerlach},
+  title = {Information, Persistence, and Real Business Cycles},
+  journal = jedc,
+  year = {1989},
+  volume = {13},
+  pages = {187--199}
+}
+
+@ARTICLE{Geweke-85,
+  author = {John Geweke},
+  title = {Macroeconomic modeling and the theory of the representative agent},
+  journal = aerp,
+  year = {1985},
+  volume = {75},
+  pages = {206-210},
+  number = {2},
+  month = may
+}
+
+@PHDTHESIS{Girardin-91,
+  author = {Michel Girardin},
+  title = {Cycles conjoncturels en \uppercase{S}uisse et aux \uppercase{E}tats-\uppercase{U}nis:
+	\uppercase{A}nalyse de composantes cycliques des principaux agr{\'e}gats
+	{\'e}conomiques et des {\'e}carts entre les taux de change et la
+	parit{\'e} du pouvoir d'achat},
+  school = {Ecole des HEC{,} Universit{\'e} de Lausanne},
+  year = {1991},
+  month = aug
+}
+
+@MASTERSTHESIS{Godbout-94,
+  author = {Marie-Jos\'ee Godbout},
+  title = {La corr\'elation inflation-ch\^omage dans un mod\`ele simul\'e num\'eriquement},
+  school = uqam,
+  year = {1994}
+}
+
+@TECHREPORT{Gomme-94,
+  author = {Paul Gomme},
+  title = {Shirking, unemployment and aggregate fluctuations},
+  institution = {Simon Fraser University},
+  year = {1994},
+  type = dp,
+  number = {94-01}
+}
+
+@ARTICLE{Gomme-93,
+  author = {Paul Gomme},
+  title = {Money and growth revisited: \uppercase{M}easuring the costs of inflation
+	in an endogenous growth model},
+  journal = jmoe,
+  year = {1993},
+  volume = {32},
+  pages = {51-77},
+  number = {1},
+  month = aug
+}
+
+@PHDTHESIS{Gomme-92,
+  author = {Paul Gomme},
+  title = {Two Essays in Real Business Cycle Theory},
+  school = {University of Western Ontario},
+  year = {1992}
+}
+
+@ARTICLE{Gomme-Greenwood-94,
+  author = {Paul Gomme and Jeremy Greenwood},
+  title = {On the cyclical allocation of risk},
+  journal = jedc,
+  year = {1994},
+  volume = {19},
+  pages = {91--124},
+  number = {1,2},
+  month = oct
+}
+
+@ARTICLE{Grandmont-91,
+  author = {Jean-Michel Grandmont},
+  title = {Expectations driven business cycles},
+  journal = eer,
+  year = {1991},
+  volume = {35},
+  pages = {293-299}
+}
+
+@ARTICLE{Greenwald-Stiglitz-88,
+  author = {Bruce C. Greenwald and Joseph E. Stiglitz},
+  title = {Examining Alternative Macroeconomic Theories},
+  journal = {Brookings Papers on Economic Activity},
+  year = {1988},
+  volume = {88},
+  pages = {207--270},
+  number = {1}
+}
+
+@ARTICLE{Greenwood-Hercowitz-91,
+  author = {Jeremy Greenwood and Zvi Hercowitz},
+  title = {The Allocation of Capital and Time Over the Business Cycle},
+  journal = jpe,
+  year = {1991},
+  volume = {99},
+  pages = {1188-1214},
+  number = {6},
+  month = dec
+}
+
+@ARTICLE{Greenwood-Hercowitz-Huffman-88,
+  author = {Jeremy Greenwood and Zvi Hercowitz and Gregory Huffman},
+  title = {Investment, Capacity Utilization, and the Real Business Cycle},
+  journal = aer,
+  year = {1988},
+  volume = {78},
+  pages = {402-417},
+  number = {3},
+  month = jun
+}
+
+@TECHREPORT{Greenwood-Hercowitz-Krusell-94,
+  author = {Jeremy Greenwood and Zvi Hercowitz and Per Krusell},
+  title = {Macroeconomic implications of investment-specific technological change},
+  institution = mnrd,
+  year = {1994},
+  type = wp,
+  month = jan
+}
+
+@TECHREPORT{Greenwood-Huffman-92,
+  author = {Jeremy Greenwood and Gregory W. Huffman},
+  title = {On the existence and uniqueness of nonoptimal equilibria in dynamic
+	stochastic economies},
+  institution = mnrd,
+  year = {1992},
+  type = sr,
+  number = {151},
+  month = jan
+}
+
+@ARTICLE{Greenwood-Huffman-91,
+  author = {Jeremy Greenwood and Gregory W. Huffman},
+  title = {Tax Analysis in a Real-Business-Cycle Model: \uppercase{O}n Measuring
+	\uppercase{H}arberger Triangles and \uppercase{O}kun Gaps},
+  journal = jmoe,
+  year = {1991},
+  volume = {27},
+  pages = {167-190}
+}
+
+@ARTICLE{Greenwood-Huffman-87,
+  author = {Jeremy Greenwood and Gregory W. Huffman},
+  title = {A dynamic equilibrium model of inflation and unemployment},
+  journal = jmoe,
+  year = {1987},
+  volume = {19},
+  pages = {203--228}
+}
+
+@TECHREPORT{Greenwood-MacDonald-Zhang-94,
+  author = {Jeremy Greenwood and Glenn M. MacDonald and Guang-Jia Zhang},
+  title = {The cyclical behavior of Job creation and job destruction: a sectoral
+	model},
+  institution = iem,
+  year = {1994},
+  type = dp,
+  number = {88},
+  month = feb
+}
+
+@ARTICLE{Greenwood-Rogerson-Wright-93,
+  author = {Jeremy Greenwood and Richard Rogerson and Randall Wright},
+  title = {Putting home economics into macroeconomics},
+  journal = mnqr,
+  year = {1993},
+  volume = {17},
+  pages = {2--11},
+  number = {3},
+  month = sum
+}
+
+@TECHREPORT{Gregory-Head-Raynauld-94,
+  author = {Allan W. Gregory and Allen C. Head and Jacques Raynauld},
+  title = {Measuring \uppercase{W}orld Business Cycles},
+  institution = {Queen's University, Kingston Institute of Economic Research},
+  year = {1994},
+  type = dp,
+  month = may
+}
+
+@INCOLLECTION{Gregory-Smith-93-maddala,
+  author = {Allan W. Gregory and Gregor W. Smith},
+  title = {Statistical Aspects of Calibration in Macroeconomis},
+  booktitle = {Handbook of Statistics},
+  publisher = {Elsevier},
+  year = {1993},
+  editor = {G. S. Maddala and C.R. Rao and H.D. Vinod},
+  volume = {11}
+}
+
+@UNPUBLISHED{Gregory-Smith-93,
+  author = {Allan W. Gregory and Gregor W. Smith},
+  title = {Measuring business cycles with business-cycle models},
+  note = {Queen's University},
+  month = oct,
+  year = {1993}
+}
+
+@ARTICLE{Gregory-Smith-91-a,
+  author = {Allan W. Gregory and Gregor W. Smith},
+  title = {Calibration as testing: \uppercase{I}nference in simulated macroeconomic
+	models},
+  journal = jbes,
+  year = {1991},
+  volume = {9},
+  pages = {297--303},
+  number = {3}
+}
+
+@TECHREPORT{Gregory-Smith-91-b,
+  author = {Allan W. Gregory and Gregor W. Smith},
+  title = {Calibration in macroeconomics},
+  institution = {Institute for Economic Research, Queen's University},
+  year = {1991},
+  type = dp,
+  number = {826},
+  month = jun
+}
+
+@ARTICLE{Grilli-Rogerson-92-esp,
+  author = {Vittorio Grilli and Richard Rogerson},
+  title = {Trabajo indivisible, experienca y asignaciones intertemporales},
+  journal = {Cuadernos Econ\'omicos},
+  year = {1992},
+  volume = {51},
+  pages = {37--50}
+}
+
+@ARTICLE{Grossman-Helpman-91,
+  author = {Gene M. Grossman and Elhanan Helpman},
+  title = {Trade, knowledge spillovers, and growth},
+  journal = eer,
+  year = {1991},
+  volume = {35},
+  pages = {517-526},
+  number = {2},
+  month = may
+}
+
+@UNPUBLISHED{Guay-St-Amant-96,
+  author = {Alain Guay and Pierre St-Amant},
+  title = {Do mechanical filters provide a good approximation of business cycles?},
+  month = jun,
+  year = {1996}
+}
+
+@ARTICLE{Hairault-92,
+  author = {Jean-Olivier Hairault},
+  title = {Pr\'esentation et \'evaluation du courant des cycles r\'eels},
+  journal = {\'Economie et Pr\'evision},
+  year = {1992},
+  volume = {106},
+  pages = {1--22}
+}
+
+@INCOLLECTION{Hall-90,
+  author = {Robert E. Hall},
+  title = {Invariance properties of \uppercase{S}olow's productivity residual},
+  booktitle = {Growth/Productivity/Unemployment: Essays to celebrate \uppercase{B}ob
+	\uppercase{S}olow's birthday},
+  publisher = mitp,
+  year = {1990},
+  editor = {Peter Diamond},
+  chapter = {5}
+}
+
+@ARTICLE{Hall-88,
+  author = {Robert E. Hall},
+  title = {Intertemporal substitution in consumption},
+  journal = jpe,
+  year = {1988},
+  volume = {96},
+  pages = {339--357},
+  number = {2},
+  month = apr
+}
+
+@ARTICLE{Hamilton-89,
+  author = {James D. Hamilton},
+  title = {A New Approach to the Economic Analysis of Nonstationary Time Series
+	and the Business Cycle},
+  journal = eco,
+  year = {1989},
+  volume = {57},
+  pages = {357--384}
+}
+
+@ARTICLE{Hansen-91,
+  author = {Gerd Hansen},
+  title = {Tests of Some Business Cycle Hypotheses under Rational Expectations},
+  journal = {Weltwirtschaftliches Archiv},
+  year = {1991},
+  volume = {127},
+  pages = {542-562},
+  number = {3}
+}
+
+@ARTICLE{Hansen-93,
+  author = {Gary D. Hansen},
+  title = {The Cyclical and Secular Behaviour of the Labour Input: \uppercase{C}omparing
+	Efficiency Units and Hours Worked},
+  journal = {Journal of Applied Econometrics},
+  year = {1993},
+  volume = {8},
+  pages = {71--80}
+}
+
+@TECHREPORT{Hansen-89,
+  author = {Gary D. Hansen},
+  title = {Technical progress and aggregate fluctuations},
+  institution = {UCLA},
+  year = {1989},
+  type = wp,
+  number = {546}
+}
+
+@ARTICLE{Hansen-85,
+  author = {Gary D. Hansen},
+  title = {Indivisible Labor and the Business Cycle},
+  journal = jmoe,
+  year = {1985},
+  volume = {16},
+  pages = {309-327}
+}
+
+@ARTICLE{Hansen-Imrohoroglu-92,
+  author = {Gary D. Hansen and Ay\c{s}e {\.I}mrohoro\u{g}lu},
+  title = {The Role of Unemployment Insurance in an Economy with Liquidity Constraints
+	and Moral Hazard},
+  journal = jpe,
+  year = {1992},
+  volume = {100},
+  pages = {118-142},
+  number = {1},
+  month = feb
+}
+
+@UNPUBLISHED{Hansen-Cooley-95,
+  author = {Gary D. Hansen and Thomas Cooley},
+  title = {Unanticipated money growth and business cycle},
+  year = {1995}
+}
+
+@ARTICLE{Hansen-Prescott-93,
+  author = {Gary D. Hansen and Edward C. Prescott},
+  title = {Did technology shocks cause the 1990-91 recession?},
+  journal = aerp,
+  year = {1993},
+  volume = {83},
+  pages = {280-285},
+  number = {2},
+  month = may
+}
+
+@ARTICLE{Hansen-Sargent-88,
+  author = {Gary D. Hansen and Thomas J. Sargent},
+  title = {Straight time and overtime in equilibrium},
+  journal = jmoe,
+  year = {1988},
+  volume = {21},
+  pages = {281-308},
+  number = {2/3},
+  month = mar # {/} # may
+}
+
+@ARTICLE{Hansen-Wright-92,
+  author = {Gary D. Hansen and Randall Wright},
+  title = {The Labor Market in Real Business Cycle Theory},
+  journal = mnqr,
+  year = {1992},
+  volume = {16},
+  pages = {2-12},
+  number = {2},
+  month = spr
+}
+
+@ARTICLE{Hansen-Wright-92-esp,
+  author = {Gary D. Hansen and Randall Wright},
+  title = {El maercado de trabajo en la teor\'{\i}a de los ciclos econ\'omicos
+	reales},
+  journal = {Cuadernos Econ\'omicos},
+  year = {1992},
+  volume = {51},
+  pages = {5--24}
+}
+
+@TECHREPORT{Hansen-McGrattan-Sargent-94,
+  author = {Lars Peter Hansen and Ellen R. McGrattan and Thomas J. Sargent},
+  title = {Mechanics of Forming and Estimating Dynamic Linear Economies},
+  institution = mnrd,
+  year = {1994},
+  type = sr,
+  number = {182},
+  month = sep
+}
+
+@BOOK{Harris-87,
+  title = {Dynamic Economic Analysis},
+  publisher = {Oxford University Press},
+  year = {1987},
+  author = {Milton Harris}
+}
+
+@ARTICLE{Harvey-Jaeger-93,
+  author = {A.C. Harvey and A. Jaeger},
+  title = {Detrending, Stylized Facts and the Business Cycle},
+  journal = {Journal of Applied Econometrics},
+  year = {1993},
+  volume = {8},
+  pages = {231--247}
+}
+
+@TECHREPORT{Hassler-93,
+  author = {John Hassler},
+  title = {Are they swinging together? \uppercase{A} Measure of linear Comovement
+	with an Application to \uppercase{S}wedish and Foreign Business Cycles},
+  institution = {Institute for International Economic Studies Stockholm University},
+  year = {1993},
+  type = {Seminar Paper},
+  number = {531},
+  month = feb
+}
+
+@TECHREPORT{Hassler-Lundvik-Persson-Soederlind-92,
+  author = {John Hassler and Petter Lundvik and Torsten Persson and Paul S{\"o}derlind},
+  title = {The \uppercase{S}wedish business cycle: \uppercase{S}tylized facts
+	over 130 years},
+  institution = iem,
+  year = {1992},
+  type = dp,
+  number = {63},
+  month = may
+}
+
+@ARTICLE{Head-95,
+  author = {Allen C. Head},
+  title = {Country sizw, aggregate fluctuations, and international risk sharing},
+  journal = cje,
+  year = {1995},
+  volume = {28},
+  pages = {1096--1119},
+  number = {4b},
+  month = nov
+}
+
+@ARTICLE{Hercowitz-Sampson-91,
+  author = {Zvi Hercowitz and Michael Sampson},
+  title = {Output growth, the real wage, and employment fluctuations},
+  journal = aer,
+  year = {1991},
+  volume = {81},
+  pages = {1215-1237},
+  number = {5},
+  month = dec
+}
+
+@ARTICLE{Ho-93,
+  author = {Wai-Ming Ho},
+  title = {Liquidity, exchanges rates, and business cycles},
+  journal = jmoe,
+  year = {1993},
+  volume = {32},
+  pages = {121-145},
+  number = {1},
+  month = aug
+}
+
+@UNPUBLISHED{Hodrick-Prescott-80,
+  author = {Robert Hodrick and Edward C. Prescott},
+  title = {Post-war \uppercase{U.S.} business cycles: \uppercase{A}n empirical
+	investigation},
+  note = gsia,
+  year = {1980}
+}
+
+@ARTICLE{Hoover-95,
+  author = {Kevin D. Hoover},
+  title = {Facts and artifacts: \uppercase{C}alibration and the empirical assessment
+	of real-business-cycle models},
+  journal = {Oxford Economic Papers},
+  year = {1995},
+  volume = {47},
+  pages = {24--44}
+}
+
+@ARTICLE{Horning-94,
+  author = {B. C. Horning},
+  title = {Labor hoarding and the business cycle},
+  journal = ier,
+  year = {1994},
+  volume = {35},
+  pages = {87--100},
+  number = {1},
+  month = feb
+}
+
+@ARTICLE{Hornstein-93,
+  author = {Andreas Hornstein},
+  title = {Monopolistic competition, increasing returns to scale, and the importance
+	of productivity shocks},
+  journal = jmoe,
+  year = {1993},
+  volume = {31},
+  pages = {299-316},
+  number = {3},
+  month = jun
+}
+
+@TECHREPORT{Hornstein-Praschnik-94,
+  author = {Andreas Hornstein and Jack Praschnik},
+  title = {Intermediate inputs and sectoral comovement in the business cycle},
+  institution = iem,
+  year = {1994},
+  type = dp,
+  number = {89},
+  month = mar
+}
+
+@ARTICLE{Hornstein-Prescott-92-esp,
+  author = {Andreas Hornstein and Edward C. Prescott},
+  title = {La planta en la teor\'{\i}a de equilibro general},
+  journal = {Cuadernos Econ\'omicos},
+  year = {1992},
+  volume = {51},
+  pages = {71--77}
+}
+
+@TECHREPORT{Hornstein-Prescott-89,
+  author = {Andreas Hornstein and Edward C. Prescott},
+  title = {The Firm and the Plant in General Equilibrium Theory},
+  institution = mnrd,
+  year = {1989},
+  type = {Staff reports},
+  number = {126},
+  month = nov
+}
+
+@UNPUBLISHED{Horvath-94,
+  author = {Michael T. K. Horvath},
+  title = {Circularity and cyclicality: \uppercase{A}ggregate fluctuations from
+	independent sectoral shocks},
+  note = {Northwestern University},
+  month = jan,
+  year = {1994}
+}
+
+@ARTICLE{Hotz-Kydland-Sedlacek-88,
+  author = {V. Joseph Hotz and Finn E. Kydland and Guilherme L. Sedlacek},
+  title = {Intertemporal preferences and labor supply},
+  journal = eco,
+  year = {1988},
+  volume = {56},
+  pages = {335--360},
+  number = {2},
+  month = mar
+}
+
+@ARTICLE{Howitt-88,
+  author = {Peter Howitt},
+  title = {Business cycles with costly search and recruiting},
+  journal = qje,
+  year = {1988},
+  volume = {103},
+  pages = {147--165}
+}
+
+@ARTICLE{Huffman-94,
+  author = {Gregory W. Huffman},
+  title = {A Primer on the Nature of Business Cycles},
+  journal = {Federal Reserve Bank of Dallas Economic Review},
+  year = {1994},
+  pages = {27--41}
+}
+
+@ARTICLE{Huffman-93,
+  author = {Gregory W. Huffman},
+  title = {An alternative neo-classical growth model with closed-form decision
+	rules},
+  journal = el,
+  year = {1993},
+  volume = {42},
+  pages = {59--63},
+  number = {1}
+}
+
+@ARTICLE{Huh-93,
+  author = {Chan G. Huh},
+  title = {Causality and correlations of output and nominal variables in a real
+	business cycle model},
+  journal = jmoe,
+  year = {1993},
+  volume = {32},
+  pages = {147--168},
+  number = {1},
+  month = aug
+}
+
+@ARTICLE{Huh-Trehan-91,
+  author = {Chan G. Huh and Bharat Trehan},
+  title = {Real Business Cycles: \uppercase{A} Selective Survey},
+  journal = {Federal Reserve Bank of San Francisco Economic Review},
+  year = {1991},
+  pages = {3-17},
+  month = spr
+}
+
+@ARTICLE{Hvidding-91,
+  author = {James M. Hvidding},
+  title = {Do Households Misperceive the Price Level? \uppercase{S}ome Evidence
+	from Survey Data},
+  journal = {Eastern Economic Journal},
+  year = {1991},
+  volume = {17},
+  pages = {72-74},
+  number = {1},
+  month = jan
+}
+
+@INCOLLECTION{Ingram-95,
+  author = {Beth Fisher Ingram},
+  title = {Recent Advances in Solving and Estimating Dynamic Econometric Models},
+  booktitle = {Macroeconometrics, Developments, Tensions and Prospects},
+  publisher = {Kluwer},
+  year = {1995},
+  editor = {Kevin D. Hoover},
+  number = {46},
+  series = {Recent Economic Thought},
+  chapter = {2}
+}
+
+@ARTICLE{Ingram-90,
+  author = {Beth Fisher Ingram},
+  title = {Solving the stochastic growth model by backsolving with an expanded
+	shock space},
+  journal = jbes,
+  year = {1990},
+  volume = {8},
+  pages = {37--38},
+  number = {1},
+  month = jan
+}
+
+@TECHREPORT{Ingram-Kocherlakota-Savin-95,
+  author = {Beth Fisher Ingram and Narayana R. Kocherlakota and N. E. Savin},
+  title = {Measuring the cyclical behavior of home production: \uppercase{A}
+	macroeconomic analysis},
+  institution = iem,
+  year = {1995},
+  type = dp,
+  number = {103},
+  month = aug
+}
+
+@ARTICLE{Ingram-Kocherlakota-Savin-94,
+  author = {Beth Fisher Ingram and Narayana R. Kocherlakota and N. E. Savin},
+  title = {Explaining business cycles: \uppercase{A} multiple-shock approach},
+  journal = jmoe,
+  year = {1994},
+  volume = {34},
+  pages = {415--428},
+  number = {3},
+  month = dec
+}
+
+@ARTICLE{Ingram-Whiteman-94,
+  author = {Beth Fisher Ingram and Charles H. Whiteman},
+  title = {Supplanting the `\uppercase{M}innesota' prior: \uppercase{F}orecasting
+	macroeconomic time series using real business cycle model priors},
+  journal = jmoe,
+  year = {1994},
+  volume = {34},
+  pages = {497--510},
+  number = {3},
+  month = dec
+}
+
+@ARTICLE{Ioannides-Taub-92,
+  author = {Yannis M. Ioannides and Bart Taub},
+  title = {On Dynamics with Time-to-build Investment Technology and non-time-separable
+	Leisure},
+  journal = jedc,
+  year = {1992},
+  volume = {14},
+  pages = {523--551}
+}
+
+@ARTICLE{Jaeger-84,
+  author = {Klaus Jaeger},
+  title = {Persistenz und zyklische Schwankungen der Unterbesch\"aftigung in
+	Gleichgewichtsmodellen mit rationalen Erwartungen},
+  journal = {Zeitschrift f\"ur Wirtschafts- und Sozialwissenschaften},
+  year = {1984},
+  pages = {645--673}
+}
+
+@PHDTHESIS{Jermann-94,
+  author = {Urban Jermann},
+  title = {Economic Fluctuations and asset returns: three applications of real
+	business cycle theory},
+  school = {Graduate Institute of International Studies, Geneva},
+  year = {1994}
+}
+
+@UNPUBLISHED{Jermann-91,
+  author = {Urban Jermann},
+  title = {Real Business Cycles in a Small Open Economy with Non-Traded Goods
+	and Non-Contingent Bonds},
+  month = dec,
+  year = {1991}
+}
+
+@ARTICLE{Jimeno-93,
+  author = {Juan F. Jimeno},
+  title = {The Relative Importance of Aggregate and Sector-Specific Shocks at
+	Explaining Aggregate and Sectoral Fluctuations},
+  journal = el,
+  year = {1993},
+  volume = {39},
+  pages = {381--385}
+}
+
+@UNPUBLISHED{Johri-95,
+  author = {Alok Johri},
+  title = {Markups and the seasonal cycle},
+  note = {McMaster University},
+  year = {1995}
+}
+
+@TECHREPORT{Judd-Trehan-93,
+  author = {John P. Judd and Bharat Trehan},
+  title = {The cyclical behavior od prices: \uppercase{I}nterpreting the evidence},
+  institution = {Federal Reserve Bank of San Francisco},
+  year = {1993},
+  type = wp,
+  number = {93-14},
+  month = dec
+}
+
+@ARTICLE{Judd-92,
+  author = {Kenneth L. Judd},
+  title = {Projection methods for solving aggregate growth models},
+  journal = jet,
+  year = {1992},
+  volume = {58},
+  pages = {410--452}
+}
+
+@TECHREPORT{Jump-89,
+  author = {Gregory V. Jump},
+  title = {Equilibrium in a two-country world with neoclassical production technologies
+	and national currencies},
+  institution = {Department of Economics and Institute for Policy Analysis, University
+	of Toronto},
+  year = {1989},
+  type = wp,
+  number = {8906}
+}
+
+@TECHREPORT{Kahn-90,
+  author = {James A. Kahn},
+  title = {The seasonal and cyclical behavior of inventories},
+  institution = rcer,
+  year = {1990},
+  type = wp,
+  number = {223},
+  month = feb
+}
+
+@ARTICLE{Kaskarelis-92,
+  author = {Ionnis A. Kaskarelis},
+  title = {Are there real or monetary business cycles in the \uppercase{U}nited
+	\uppercase{K}ingdom Economy?},
+  journal = {Rivista Internazionale di Scienze Economiche e Commerciali},
+  year = {1992},
+  volume = {39},
+  pages = {49-67},
+  number = {1}
+}
+
+@TECHREPORT{Keane-Prasad-91,
+  author = {Michael P. Keane and Eswar S. Prasad},
+  title = {The relation between skill levels and the cyclical variability of
+	employment, hours and wages},
+  institution = iem,
+  year = {1991},
+  type = dp,
+  number = {41},
+  month = may
+}
+
+@UNPUBLISHED{Kehoe-Levine-Romer-88,
+  author = {Timothy J. Kehoe and David K. Levine and Paul M. Romer},
+  title = {Characterizing Equilibria of Models with Externalities and Taxes
+	as Solutions to Optimization Problems},
+  month = oct,
+  year = {1988}
+}
+
+@ARTICLE{Kehoe-Prescott-95,
+  author = {Timothy J. Kehoe and Edward C. Prescott},
+  title = {Introduction to the \uppercase{S}ymposium: \uppercase{T}he discipline
+	of applied general equilibrium},
+  journal = {Economic Theory},
+  year = {1995},
+  volume = {6},
+  pages = {1--11}
+}
+
+@TECHREPORT{Khan-Ohanian-93,
+  author = {Aubhik Khan and Lee E. Ohnanian},
+  title = {Entry and exit in an equilibrium business cycle model},
+  institution = {University of Virginia},
+  year = {1993},
+  type = wp,
+  month = feb
+}
+
+@ARTICLE{Kim-Loungani-92,
+  author = {In-Moo Kim and Prakash Loungani},
+  title = {The role of energy in real business cycle models},
+  journal = jmoe,
+  year = {1992},
+  volume = {29},
+  pages = {173-190},
+  number = {2},
+  month = apr
+}
+
+@INCOLLECTION{King-91,
+  author = {Robert G. King},
+  title = {Value and Capital in the Equilibrium Business Cycle Programme},
+  booktitle = { Value and Capital - Fifty Years Later},
+  publisher = {McMillan},
+  year = {1991},
+  editor = {Lionel W. McKenzie and Stefano Zamagni},
+  volume = {94},
+  series = {IEA Conference}
+}
+
+@ARTICLE{King-93,
+  author = {Robert G. King},
+  title = {Will the \uppercase{N}ew \uppercase{K}eynesian \uppercase{M}acroeconomics
+	resurrect the \uppercase{IS-LM} model?},
+  journal = jep,
+  year = {1993},
+  volume = {7},
+  pages = {67-82},
+  number = {1},
+  month = win
+}
+
+@UNPUBLISHED{King-90,
+  author = {Robert G. King},
+  title = {Money and business cycles},
+  note = {University of Rochester},
+  year = {1990}
+}
+
+@ARTICLE{King-Plosser-94,
+  author = {Robert G. King and Charles I. Plosser},
+  title = {Real business cycles and the test of the \uppercase{A}delmans},
+  journal = jmoe,
+  year = {1994},
+  volume = {33},
+  pages = {405--438},
+  number = {2},
+  month = apr
+}
+
+@ARTICLE{King-Plosser-88,
+  author = {Robert G. King and Charles I. Plosser},
+  title = {Real Business Cycles-Introduction},
+  journal = jmoe,
+  year = {1988},
+  volume = {21},
+  pages = {191--193}
+}
+
+@ARTICLE{King-Plosser-84,
+  author = {Robert G. King and Charles I. Plosser},
+  title = {Money, credit and prices in a real business cycle model},
+  journal = aer,
+  year = {1984},
+  volume = {74},
+  pages = {363--380}
+}
+
+@ARTICLE{King-Plosser-Rebelo-88-I,
+  author = {Robert G. King and Charles I. Plosser and S{\'e}rgio T. Rebelo},
+  title = {Production, Growth and business cycles: \uppercase{I. T}he basic
+	neoclassical model},
+  journal = jmoe,
+  year = {1988},
+  volume = {21},
+  pages = {195-232},
+  number = {2/3}
+}
+
+@ARTICLE{King-Plosser-Rebelo-88-II,
+  author = {Robert G. King and Charles I. Plosser and S{\'e}rgio T. Rebelo},
+  title = {Production, Growth and business cycles: \uppercase{II. N}ew directions},
+  journal = jmoe,
+  year = {1988},
+  volume = {21},
+  pages = {309--343},
+  number = {2/3}
+}
+
+@TECHREPORT{King-Plosser-Rebelo-87,
+  author = {Robert G. King and Charles I. Plosser and S{\'e}rgio T. Rebelo},
+  title = {Production, Growth and business cycles: \uppercase{T}echnical appendix},
+  institution = {University of Rochester},
+  year = {1987},
+  type = {Unpublished manuscript},
+  month = may
+}
+
+@ARTICLE{King-Plosser-Stock-Watson-91,
+  author = {Robert G. King and Charles I. Plosser and James H. Stock and Mark
+	W. Watson},
+  title = {Stochastic trends and economic fluctuations},
+  journal = aer,
+  year = {1991},
+  volume = {81},
+  pages = {819-840},
+  number = {4},
+  month = sep
+}
+
+@ARTICLE{King-Rebelo-93-low,
+  author = {Robert G. King and S{\'e}rgio Rebelo},
+  title = {Low frequency filtering and real business cycle models},
+  journal = jedc,
+  year = {1993},
+  volume = {17},
+  pages = {207--231}
+}
+
+@ARTICLE{King-Rebelo-93-trans,
+  author = {Robert G. King and S{\'e}rgio Rebelo},
+  title = {Transitional dynamics and economic growth in the neoclassical model},
+  journal = aer,
+  year = {1993},
+  volume = {83},
+  pages = {908-931},
+  number = {4},
+  month = sep
+}
+
+@ARTICLE{King-Rebello-90,
+  author = {Robert G. King and S{\'e}rgio Rebelo},
+  title = {Public policy and economic growth: \uppercase{D}eveloping neoclassical
+	implications},
+  journal = jpe,
+  year = {1990},
+  volume = {98},
+  pages = {126-150}
+}
+
+@TECHREPORT{King-Watson-95,
+  author = {Robert G. King and Mark W. Watson},
+  title = {Money, Prices, Interest Rates and the Business Cycle},
+  institution = {Federal Reserve Bank of Chicago},
+  year = {1995},
+  type = wp,
+  number = {95-10},
+  month = jul
+}
+
+@ARTICLE{Kirman-92,
+  author = {Alan P. Kirman},
+  title = {Whom or What Does the Representative Individual Represent?},
+  journal = jep,
+  year = {1992},
+  volume = {6},
+  pages = {117-136},
+  number = {2},
+  month = spr
+}
+
+@ARTICLE{klein2000using,
+  author = {Paul Klein},
+  title = {Using the generalized Schur form to solve a multivariate linear rational
+	expectations model},
+  journal = {Journal of Economic Dynamics and Control},
+  year = {2000},
+  volume = {24},
+  pages = {1405--1423},
+  number = {10},
+  publisher = {Elsevier}
+}
+
+@UNPUBLISHED{Klein-96,
+  author = {Paul Klein},
+  title = {Stochastic fiscal policy and the swedish business cycle},
+  note = {University of Stockholm},
+  year = {1996}
+}
+
+@TECHREPORT{Kollmann-95,
+  author = {Robert Kollmann},
+  title = {Fiscal policy, productivity shocks and the \uppercase{U.S.} trade
+	balance deficit},
+  institution = iem,
+  year = {1995},
+  type = dp,
+  number = {98},
+  month = may
+}
+
+@UNPUBLISHED{Kollmann-92-consumption,
+  author = {Robert Kollmann},
+  title = {Consumption, real exchange rates, and the structure of international
+	asset markets},
+  note = {Universit\'e de Montr\'eal},
+  year = {1992}
+}
+
+@TECHREPORT{Kollmann-92-incomplete,
+  author = {Robert Kollmann},
+  title = {Incomplete Asset Markets and International Business Cycles},
+  institution = {Universit\'e de Montr\'eal, D\'epartement des sciences \'economiques},
+  year = {1992},
+  type = cdr,
+  number = {9231}
+}
+
+@PHDTHESIS{Kollmann-91,
+  author = {Robert Kollmann},
+  title = {Essays on International Business Cycles},
+  school = {University of Chicago},
+  year = {1991}
+}
+
+@UNPUBLISHED{Kouparitsas-95,
+  author = {Michael A. Kouparitsas},
+  title = {North-\uppercase{S}outh business cycles},
+  note = {University of Rochester},
+  month = jul,
+  year = {1995}
+}
+
+@UNPUBLISHED{Krusell-Ohanian-Rios-Rull-Violante-96,
+  author = {Per Krusell and Lee Ohanian and Jos\'e-V\'{\i}ctor R\'{\i}os-Rull
+	and Giovanni L. Violante},
+  title = {Capital-skill complementarity and inequality},
+  year = {1996}
+}
+
+@TECHREPORT{Krusell-Quadrini-Rios-Rull-94,
+  author = {Per Krusell and Vincenzo Quadrini and Jos\'e-V\'{\i}ctor R\'{\i}os-Rull},
+  title = {Politico-economic equilibrium and economic growth},
+  institution = {University of Pennsylvania},
+  year = {1994},
+  type = {CARESS Working paper},
+  number = {94-11},
+  month = mar
+}
+
+@UNPUBLISHED{Krusell-Rios-Rull-94,
+  author = {Per Krusell and Jos{\'e} V{\'{\i}}ctor R{\'{\i}}os-Rull},
+  title = {What constitutions promote capital accumulation? \uppercase{A} political-economy
+	approach},
+  month = oct,
+  year = {1994},
+  institution = {University of Pennsylvania}
+}
+
+@ARTICLE{Krusell-Smith-96,
+  author = {Per Krusell and Anthony A. {Smith, Jr.}},
+  title = {Rules of thumb in macroeconomic equilibrium -- \uppercase{A} quantitative
+	analysis},
+  journal = jedc,
+  year = {1996},
+  volume = {20},
+  pages = {527--558},
+  number = {4},
+  month = apr
+}
+
+@UNPUBLISHED{Krusell-Smith-94,
+  author = {Per Krusell and Anthony A. {Smith, Jr.}},
+  title = {Income and wealth heterogeneity, aggregate fluctuations, and the
+	representative agent},
+  month = jun,
+  year = {1994}
+}
+
+@INCOLLECTION{Kydland-89,
+  author = {Finn E. Kydland},
+  title = {Monetary policy in models with capital},
+  booktitle = {Dynamic policy games in economics},
+  publisher = {North-Holland},
+  year = {1989},
+  editor = {Frederick {van der Ploeg} and Art {de Zeeuw}},
+  number = {181},
+  series = {Contributions to economics analysis},
+  pages = {267-288}
+}
+
+@ARTICLE{Kydland-94-sedc,
+  author = {Finn E. Kydland},
+  title = {Heterogeneous agents in quantitative aggregate economic theory},
+  journal = jedc,
+  year = {1994},
+  volume = {18},
+  pages = {849--864},
+  number = {3/4},
+  month = {May/July}
+}
+
+@UNPUBLISHED{Kydland-93-encycl,
+  author = {Finn E. Kydland},
+  title = {Real business cycles},
+  note = {To be published in McGraw-Hill's Encyclopedia of Economics},
+  year = {1993}
+}
+
+@ARTICLE{Kydland-92,
+  author = {Finn E. Kydland},
+  title = {On the Econometrics of the World Business Cycles},
+  journal = eer,
+  year = {1992},
+  volume = {36},
+  pages = {476-482},
+  number = {2},
+  month = may
+}
+
+@TECHREPORT{Kydland-91,
+  author = {Finn E. Kydland},
+  title = {The Role of Money in a Business Cycle Model},
+  institution = iem,
+  year = {1991},
+  type = dp,
+  number = {23},
+  month = jan
+}
+
+@ARTICLE{Kydland-84,
+  author = {Finn E. Kydland},
+  title = {Labor-Force Heterogeneity and the Business Cycle},
+  journal = cr,
+  year = {1984},
+  volume = {21},
+  pages = {173-208},
+  month = aut
+}
+
+@INCOLLECTION{Kydland-Prescott-80,
+  author = {Finn E. Kydland and Edward C. Prescott},
+  title = {A Competitive Theory of Fluctuations and the Feasibility and Desirability
+	of Stabilization Policy},
+  booktitle = {Rational Expectations and Economic Policy},
+  year = {1980},
+  editor = {Stanley Fischer},
+  pages = {169--198}
+}
+
+@INCOLLECTION{Kydland-Prescott-95,
+  author = {Finn E. Kydland and Edward C. Prescott},
+  title = {The Econometrics of the General Equilibrium Approach to Business
+	Cycles},
+  booktitle = {Macroeconometrics, Developments, Tensions and Prospects},
+  publisher = {Kluwer},
+  year = {1995},
+  editor = {Kevin D. Hoover},
+  number = {46},
+  series = {Recent Economic Thought},
+  chapter = {5}
+}
+
+@TECHREPORT{Kydland-Prescott-94,
+  author = {Finn E. Kydland and Edward C. Prescott},
+  title = {The computational experiment as an econometric tool},
+  institution = mnrd,
+  year = {1994},
+  type = sr,
+  number = {178},
+  month = aug
+}
+
+@ARTICLE{Kydland-Prescott-93,
+  author = {Finn E. Kydland and Edward C. Prescott},
+  title = {Cyclical movements of the labor input and its implicit real wage},
+  journal = {Federal Reserve Bank of Cleveland Economic Review},
+  year = {1993},
+  volume = {29},
+  pages = {12-23},
+  number = {2},
+  month = {Quarter 2}
+}
+
+@ARTICLE{Kydland-Prescott-92-esp,
+  author = {Finn E. Kydland and Edward C. Prescott},
+  title = {La variaci\'on en las horas y el empleo en la teor\'{\i}a de los
+	ciclos reales},
+  journal = {Cuadernos Econ\'omicos},
+  year = {1992},
+  volume = {51},
+  pages = {51--70}
+}
+
+@ARTICLE{Kydland-Prescott-91-eco,
+  author = {Finn E. Kydland and Edward C. Prescott},
+  title = {The Econometrics of the General Equilibrium Approach to Business
+	Cycles},
+  journal = sje,
+  year = {1991},
+  volume = {93},
+  pages = {161-178},
+  number = {2}
+}
+
+@ARTICLE{Kydland-Prescott-91-hn,
+  author = {Finn E. Kydland and Edward C. Prescott},
+  title = {Hours and Employment Variation in Business Cycle Theory},
+  journal = {Economic Theory},
+  year = {1991},
+  volume = {1},
+  pages = {63-81},
+  number = {1}
+}
+
+@ARTICLE{Kydland-Prescott-90,
+  author = {Finn E. Kydland and Edward C. Prescott},
+  title = {Business cycles: \uppercase{R}eal Facts and a Monetary Myth},
+  journal = mnqr,
+  year = {1990},
+  volume = {14},
+  pages = {3-18},
+  number = {2},
+  month = spr
+}
+
+@ARTICLE{Kydland-Prescott-88,
+  author = {Finn E. Kydland and Edward C. Prescott},
+  title = {The Workweek of Capital and its Cyclical Implications},
+  journal = jmoe,
+  year = {1988},
+  volume = {21},
+  pages = {343-360}
+}
+
+@ARTICLE{Kydland-Prescott-82,
+  author = {Finn E. Kydland and Edward C. Prescott},
+  title = {Time to Build and Aggregate Fluctuations},
+  journal = eco,
+  year = {1982},
+  volume = {50},
+  pages = {1345-1370},
+  number = {6},
+  month = nov
+}
+
+@ARTICLE{Kydland-Prescott-77,
+  author = {Finn E. Kydland and Edward C. Prescott},
+  title = {Rules rather than discretion: \uppercase{T}he inconsistency of optimal
+	plans},
+  journal = jpe,
+  year = {1977},
+  volume = {85},
+  pages = {473-491}
+}
+
+@ARTICLE{Kursteiner-Rindisbacher-94,
+  author = {Guido K{\"u}rsteiner and Marcel Rindisbacher},
+  title = {Real Business Cycle Models - Some Evidence for \uppercase{S}witzerland},
+  journal = {Swiss Journal of Economics and Statistics},
+  year = {1994},
+  volume = {130},
+  pages = {21--43}
+}
+
+@ARTICLE{Labadie-94,
+  author = {Pamela Labadie},
+  title = {The terms structure of the interest rates over the business cycle},
+  journal = jedc,
+  year = {1994},
+  volume = {18},
+  pages = {671--697},
+  number = {3/4},
+  month = may
+}
+
+@ARTICLE{Labadie-90,
+  author = {Pamela Labadie},
+  title = {Solving the stochastic growth model by using a recursive mapping
+	based on least square projection},
+  journal = jbes,
+  year = {1990},
+  volume = {8},
+  pages = {39--40},
+  number = {1},
+  month = jan
+}
+
+@UNPUBLISHED{Lettau-Uhlig-95,
+  author = {Martin Lettau and Harald Uhlig},
+  title = {Can habit formation be reconciled with business cycle facts?},
+  note = {Tilburg University},
+  year = {1995}
+}
+
+@TECHREPORT{Lewis-93,
+  author = {Karen K. Lewis},
+  title = {What can explain the apparent lack of international consumption risk
+	sharing?},
+  institution = {University of Pennsylvania},
+  year = {1993},
+  type = wp,
+  month = jul
+}
+
+@INCOLLECTION{Lippi-94,
+  author = {Marco Lippi},
+  title = {Theory and Measurement of Economic Cycles: \uppercase{A} Recent Debate},
+  booktitle = {Is the Economic Cycle Still Alive? \uppercase{T}heory, Evidence and
+	Policies},
+  publisher = {Macmillan},
+  year = {1994},
+  editor = {Mario Baldassarri and Paolo Annunziato}
+}
+
+@ARTICLE{Lippi-Reichlin-94-common,
+  author = {Marco Lippi and Lucrezia Reichlin},
+  title = {Common and Uncommon Trends and Cycles},
+  journal = eer,
+  year = {1994},
+  volume = {38},
+  pages = {624--635}
+}
+
+@ARTICLE{Lippi-Reichlin-94-diffusion,
+  author = {Marco Lippi and Lucrezia Reichlin},
+  title = {Diffusion of technical change and the decomposition of output into
+	trend and cycle},
+  journal = res,
+  year = {1994},
+  volume = {61},
+  pages = {19--30},
+  number = {1},
+  month = jan
+}
+
+@ARTICLE{Long-Plosser-83,
+  author = {Long, Jr., John B. and Charles I. Plosser},
+  title = {Real Business Cycles},
+  journal = jpe,
+  year = {1983},
+  volume = {91},
+  pages = {39-69},
+  number = {1},
+  month = feb
+}
+
+@UNPUBLISHED{Lucas-93,
+  author = {Lucas, Jr., Robert E.},
+  title = {On the welfare cost of Inflation},
+  note = {University of Chicago},
+  month = jul,
+  year = {1993}
+}
+
+@ARTICLE{Lucas-88,
+  author = {Lucas, Jr., Robert E.},
+  title = {On the mechanics of economic development},
+  journal = jmoe,
+  year = {1988},
+  volume = {22},
+  pages = {3--42}
+}
+
+@BOOK{Lucas-87,
+  title = {Models of business cycles},
+  publisher = {Basil Blackwell},
+  year = {1987},
+  author = {Lucas, Jr., Robert E.},
+  series = {Yrj{\"o} Jahnsson Lectures}
+}
+
+@ARTICLE{Lucas-82,
+  author = {Lucas, Jr., Robert E.},
+  title = {Interest rates and currency prices in a two-currency world},
+  journal = jmoe,
+  year = {1982},
+  volume = {10},
+  pages = {335--360}
+}
+
+@BOOK{Lucas-81,
+  title = {Studies in business cycle theory},
+  publisher = mitp,
+  year = {1981},
+  author = {Lucas, Jr., Robert E.}
+}
+
+@ARTICLE{Lucas-80-currency,
+  author = {Lucas, Jr., Robert E.},
+  title = {Equilibrium in a pure currency economy},
+  journal = {Economic Inquiry},
+  year = {1980},
+  volume = {18},
+  pages = {203--220}
+}
+
+@ARTICLE{Lucas-80-methods,
+  author = {Lucas, Jr., Robert E.},
+  title = {Methods and problems in business cycle theory},
+  journal = jmcb,
+  year = {1980},
+  volume = {12},
+  pages = {696--715},
+  number = {4, Part 2},
+  month = nov
+}
+
+@ARTICLE{Lucas-78,
+  author = {Lucas, Jr., Robert E.},
+  title = {Asset prices in an exchange economy},
+  journal = eco,
+  year = {1978},
+  volume = {46},
+  pages = {1429-1445},
+  number = {6},
+  month = dec
+}
+
+@ARTICLE{Lucas-77,
+  author = {Lucas, Jr., Robert E.},
+  title = {Understanding business cycles},
+  journal = cr,
+  year = {1977},
+  pages = {7--29}
+}
+
+@ARTICLE{Lucas-76,
+  author = {Lucas, Jr., Robert E.},
+  title = {Econometric policy evaluation: \uppercase{A} critique},
+  journal = cr,
+  year = {1976},
+  volume = {1},
+  pages = {19--46}
+}
+
+@ARTICLE{Lucas-75,
+  author = {Lucas, Jr., Robert E.},
+  title = {An equilibrium model of the business cycle},
+  journal = jpe,
+  year = {1975},
+  volume = {83},
+  pages = {1113--1144}
+}
+
+@ARTICLE{Lucas-72,
+  author = {Lucas, Jr., Robert E.},
+  title = {Expectations and the neutrality of money},
+  journal = jet,
+  year = {1972},
+  volume = {4},
+  pages = {103-124}
+}
+
+@ARTICLE{Lucas-Prescott-74,
+  author = {Robert E. {Lucas, Jr.} and Edward C. Prescott},
+  title = {Equlibrium search and unemployment},
+  journal = jet,
+  year = {1974},
+  volume = {7},
+  pages = {188--209},
+  month = feb
+}
+
+@ARTICLE{Lucas-Prescott-71,
+  author = {Robert E. {Lucas, Jr.} and Edward C. Prescott},
+  title = {Investment under uncertainty},
+  journal = eco,
+  year = {1971},
+  volume = {39},
+  pages = {659--681}
+}
+
+@BOOK{Lucas-Sargent-81,
+  title = {Rational expectations and econometric practice},
+  publisher = {Allen \& Unwin},
+  year = {1981},
+  author = {Robert E. {Lucas, Jr.} and Thomas J. Sargent}
+}
+
+@ARTICLE{Lucas-Sargent-79,
+  author = {Robert E. {Lucas, Jr.} and Thomas J. Sargent},
+  title = {After \uppercase{K}eynesian Macroeconomics},
+  journal = mnqr,
+  year = {1979},
+  volume = {3},
+  pages = {1--16},
+  month = spr
+}
+
+@ARTICLE{Lucas-Stokey-87,
+  author = {Robert E. {Lucas, Jr.} and Nancy Stokey},
+  title = {Money and interest in a cash-in-advance economy},
+  journal = eco,
+  year = {1987},
+  volume = {55},
+  pages = {491--514}
+}
+
+@ARTICLE{Lucas-Stokey-83,
+  author = {Robert E. {Lucas, Jr.} and Nancy Stokey},
+  title = {Optimal fiscal and monetary policy in an economy without capital},
+  journal = jmoe,
+  year = {1983},
+  volume = {12},
+  pages = {55--94}
+}
+
+@TECHREPORT{Lucke-94,
+  author = {Bernd Lucke},
+  title = {Productivity Shocks in a Sectoral Real Business Cycle Model for \uppercase{W}est
+	\uppercase{G}ermany},
+  institution = {Free University of Berlin, Department of Economics},
+  year = {1994},
+  type = dp,
+  number = {08/94},
+  month = apr
+}
+
+@UNPUBLISHED{Lundvik-93,
+  author = {Petter Lundvik},
+  title = {Foreign demand and domestic business cycles: \uppercase{S}weden 1871-1988},
+  note = {Institute for International Economic Studies. Presented at a conference
+	in August 1993 in Bergen, Norway},
+  year = {1993}
+}
+
+@ARTICLE{Mankiw-89,
+  author = {N. Gregory Mankiw},
+  title = {Real Business Cycles: \uppercase{A} new Keynesian Perspective},
+  journal = jep,
+  year = {1989},
+  volume = {3},
+  pages = {79-90},
+  number = {3},
+  month = sum
+}
+
+@ARTICLE{Manuelli-Sargent-88,
+  author = {Rodolfo Manuelli and Thomas J. Sargent},
+  title = {Models of Business Cycles: \uppercase{A} Review Essay},
+  journal = jmoe,
+  year = {1988},
+  volume = {22},
+  pages = {523--542}
+}
+
+@ARTICLE{Manuelli-86,
+  author = {Rodolfo E. Manuelli},
+  title = {Modern business cycle analysis: \uppercase{A} guide to the \uppercase{P}rescott-\uppercase{S}ummers
+	debate},
+  journal = mnqr,
+  year = {1986},
+  volume = {10},
+  pages = {3-8},
+  number = {4},
+  month = {Fall}
+}
+
+@INCOLLECTION{McCallum-89,
+  author = {Bennett T. Mc\uppercase{C}allum},
+  title = {Real Business Cycle Models},
+  booktitle = {Modern business cycle theory},
+  publisher = hup,
+  year = {1989},
+  editor = {Robert J. Barro},
+  chapter = {1}
+}
+
+@ARTICLE{McCombie-Dixon-91,
+  author = {J. S. L. McCombie and R. Dixon},
+  title = {Estimating technical change in aggregate production functions: \uppercase{A}
+	critique},
+  journal = {International Review of Applied Economics},
+  year = {1991},
+  volume = {5},
+  pages = {24-46},
+  number = {1},
+  month = jan
+}
+
+@ARTICLE{mcgrattan2006real,
+  author = {Ellen R. McGrattan},
+  title = {Real Business Cycles},
+  year = {2006}
+}
+
+@ARTICLE{McGrattan-96,
+  author = {Ellen R. McGrattan},
+  title = {Solving the stochastic growth model with a finite element method},
+  journal = jedc,
+  year = {1996},
+  volume = {20},
+  pages = {19--42},
+  number = {1--3},
+  month = jan
+}
+
+@ARTICLE{McGrattan-94-linear,
+  author = {Ellen R. McGrattan},
+  title = {A note on computing competitive equilibria in linear models},
+  journal = jedc,
+  year = {1994},
+  volume = {18},
+  pages = {149--160}
+}
+
+@ARTICLE{McGrattan-94-rbc,
+  author = {Ellen R. McGrattan},
+  title = {A progress report on business cycle models},
+  journal = mnqr,
+  year = {1994},
+  volume = {18},
+  pages = {2--16},
+  number = {4},
+  month = fal
+}
+
+@ARTICLE{McGrattan-94-tax,
+  author = {Ellen R. McGrattan},
+  title = {The macroeconomic effects of distortionary taxation},
+  journal = jmoe,
+  year = {1994},
+  volume = {33},
+  pages = {573--601},
+  number = {3},
+  month = jun
+}
+
+@ARTICLE{McGrattan-90,
+  author = {Ellen R. McGrattan},
+  title = {Solving the stochastic growth model by linear quadratic approximation},
+  journal = jbes,
+  year = {1990},
+  volume = {8},
+  pages = {41--44},
+  number = {1},
+  month = jan
+}
+
+@PHDTHESIS{McGrattan-89,
+  author = {Ellen R. McGrattan},
+  title = {Computation and application of equlibrium models with distortionary
+	taxes},
+  school = {Stanford University},
+  year = {1989}
+}
+
+@TECHREPORT{McGrattan-Rogerson-Wright-95,
+  author = {Ellen R. McGrattan and Richard Rogerson and Randall Wright},
+  title = {An equilibrium model of the business cycle with household production
+	and fiscal policy},
+  institution = mnrd,
+  year = {1995},
+  type = sr,
+  number = {191},
+  month = may
+}
+
+@TECHREPORT{McGrattan-Rogerson-Wright-93,
+  author = {Ellen R. McGrattan and Richard Rogerson and Randall Wright},
+  title = {Household production and taxation in the stochastic growth model},
+  institution = mnrd,
+  year = {1993},
+  type = sr,
+  number = {166},
+  month = dec
+}
+
+@ARTICLE{Mendoza-95,
+  author = {Enrique G. Mendoza},
+  title = {The Terms of Trade, The Real Interest Rate, and Economic Fluctuations},
+  journal = ier,
+  year = {1995},
+  volume = {36},
+  pages = {101--137}
+}
+
+@TECHREPORT{Mendoza-92,
+  author = {Enrique G. Mendoza},
+  title = {The Terms of Trade and Economic Fluctuations},
+  institution = {International Monetary Fund, Research Department},
+  year = {1992},
+  type = wp,
+  number = {92/88},
+  month = nov
+}
+
+@ARTICLE{Mendoza-91,
+  author = {Enrique G. Mendoza},
+  title = {Real business cycles in a small open economy},
+  journal = aer,
+  year = {1991},
+  volume = {81},
+  pages = {797-818},
+  number = {4},
+  month = sep
+}
+
+@ARTICLE{Merz-96,
+  author = {Monika Merz},
+  title = {Search in the labor market and the real business cycle},
+  journal = jmoe,
+  year = {1996},
+  volume = {36},
+  pages = {269--300},
+  number = {2},
+  month = feb
+}
+
+@ARTICLE{michaud,
+  author = {Amanda M Michaud},
+  title = {Lecture Notes \#9 Variations on Standard RBC Model},
+  journal = {ECON 4741H - Quantitative Analysis of the Macroeconomy},
+  year = {2011},
+  month = spring,
+  timestamp = {2012.03.29}
+}
+
+@BOOK{Miller-Upton-86,
+  title = {Macroeconomics: \uppercase{A N}eoclassical introduction},
+  publisher = ucp,
+  year = {1986},
+  author = {Merton H. Miller and Charles W. Upton},
+  edition = {2nd}
+}
+
+@ARTICLE{Miller-Roberds-91,
+  author = {Preston J. Miller and William T. Roberds},
+  title = {The quantitative significance of the \uppercase{L}ucas critique},
+  journal = jbes,
+  year = {1991},
+  number = {4},
+  month = oct
+}
+
+@TECHREPORT{Miller-Todd-92,
+  author = {Preston J. Miller and Richard M. Todd},
+  title = {Real effects of monetary policy in a world economy},
+  institution = mnrd,
+  year = {1992},
+  type = sr,
+  number = {154},
+  month = apr
+}
+
+@TECHREPORT{Miron-90,
+  author = {Jeffrey A. Miron},
+  title = {The economics of the seasonal cycles},
+  institution = nber,
+  year = {1990},
+  type = wp,
+  number = {3522},
+  month = nov
+}
+
+@UNPUBLISHED{Mortensen-92,
+  author = {Dale T. Mortensen},
+  title = {The cyclical behavior of job and worker flows},
+  note = {Northwestern University},
+  year = {1992}
+}
+
+@ARTICLE{Mortensen-92-esp,
+  author = {Dale T. Mortensen},
+  title = {Equilibrio de b\'usqueda y ciclos econ\'omicos reales},
+  journal = {Cuadernos Econ\'omicos},
+  year = {1992},
+  volume = {51},
+  pages = {151--171}
+}
+
+@TECHREPORT{Mortensen-91,
+  author = {Dale T. Mortensen},
+  title = {Equilibrium unemployment cycles},
+  institution = {The Center for Mathematical Studies in Economics and Management Science,
+	Northwestern University},
+  year = {1991},
+  type = dp,
+  number = {939},
+  month = may
+}
+
+@TECHREPORT{Mortensen-90,
+  author = {Dale T. Mortensen},
+  title = {Search equilibrium and business cycles},
+  institution = {Northwestern University},
+  year = {1990},
+  type = wp
+}
+
+@ARTICLE{Mulligan-93,
+  author = {Robert F. Mulligan},
+  title = {Testing Real and Monetary Business Cycle Models with Endogenous Technology},
+  journal = {AES Best Papers Proceedings},
+  year = {1993},
+  volume = {3},
+  pages = {86--90}
+}
+
+@ARTICLE{Mullineux-Dickinson-92,
+  author = {Andy W. Mullineux and David G. Dickinson},
+  title = {Equilibrium Business Cycles: \uppercase{T}heory and Evidence},
+  journal = {Journal of Economic Surveys},
+  year = {1992},
+  volume = {6},
+  pages = {321--358},
+  number = {4}
+}
+
+@ARTICLE{Muth-61,
+  author = {John F. Muth},
+  title = {Rational expectations and the theory of price movements},
+  journal = eco,
+  year = {1961},
+  volume = {29},
+  pages = {315--335}
+}
+
+@ARTICLE{Naish-93,
+  author = {Howard F. Naish},
+  title = {Real Business Cycles in a Keynesian Macro Model},
+  journal = {Oxford Economic Papers},
+  year = {1993},
+  volume = {45},
+  pages = {618--638}
+}
+
+@ARTICLE{Nelson-Plosser-82,
+  author = {Charles R. Nelson and Charles I. Plosser},
+  title = {Trends and random walks in macroeconomic time series: \uppercase{S}ome
+	evidence and implications},
+  journal = jmoe,
+  year = {1982},
+  volume = {10},
+  pages = {139-162}
+}
+
+@ARTICLE{Neusser-91,
+  author = {Klaus Neusser},
+  title = {Testing the Long-run Implications of the Neoclassical Growth Model},
+  journal = jmoe,
+  year = {1991},
+  volume = {27},
+  pages = {3--37}
+}
+
+@MISC{niemann2011neoclassical,
+  author = {Stefan Niemann},
+  title = {Lecture I: Neoclassical Growth and Real Business Cycle Theory},
+  year = {2011},
+  journal = {Class Notes for EC904: Macroeconomics},
+  owner = {Administrator},
+  timestamp = {2012.03.19}
+}
+
+@ARTICLE{Ohkusa-93,
+  author = {Yasushi Ohkusa},
+  title = {Money creation system in the real business cycle theory},
+  journal = el,
+  year = {1993},
+  volume = {42},
+  pages = {367--371},
+  number = {4}
+}
+
+@UNPUBLISHED{Ohkusa-91,
+  author = {Yasushi Ohkusa},
+  title = {Formation of Human Capital, Hierarchy, and Labor Hoarding in \uppercase{RBC}
+	Model},
+  note = {Institute of Social and Economic Research, Osaka University},
+  month = dec,
+  year = {1991}
+}
+
+@ARTICLE{Osano-Inoue-91,
+  author = {Hiroshi Osano and Tohru Inoue},
+  title = {Testing between Competing Models of Real Business Cycles},
+  journal = ier,
+  year = {1991},
+  volume = {32},
+  pages = {669--688}
+}
+
+@UNPUBLISHED{Pallage-Zimmermann-chomage,
+  author = {St\'ephane Pallage and Christian Zimmermann},
+  title = {Violence and the optimality of unemployment insurance},
+  note = crefe,
+  month = jun,
+  year = {1996}
+}
+
+@ARTICLE{Paquet-95,
+  author = {Alain Paquet},
+  title = {D\'epenses publiques et taxation proportionnelle dans les mod\`eles
+	du cycle r\'eel},
+  journal = {Actualit\'e \'economique: revue d'analyse \'economique},
+  year = {1995},
+  volume = {71},
+  pages = {122--162},
+  number = {2},
+  month = jun
+}
+
+@UNPUBLISHED{Paquet-Robidoux-95,
+  author = {Alain Paquet and Beno\^{\i}t Robidoux},
+  title = {Issues on the measurement of the \uppercase{S}olow residual and the
+	testing of its exogeneity: a tale of two countries},
+  note = crefe,
+  month = may,
+  year = {1995}
+}
+
+@MISC{parente2008introduction,
+  author = {Stephen L. Parente and Edward C. Prescott},
+  title = {Introduction to Quantitative Macroeconomic Theory},
+  year = {2008},
+  owner = {Administrator},
+  timestamp = {2012.03.19}
+}
+
+@BOOK{Pareto,
+  title = {Cours d'\'economie politique},
+  publisher = {Rouge, Lausanne},
+  year = {1896-1897},
+  author = {Vilfredo Pareto}
+}
+
+@UNPUBLISHED{Perli-96,
+  author = {Roberto Perli},
+  title = {Increasing returns, home production and the persistence of business
+	cycles},
+  note = {University of Pennsylvania},
+  month = mar,
+  year = {1996}
+}
+
+@UNPUBLISHED{Perli-95,
+  author = {Roberto Perli},
+  title = {Indeterminacy, home production, and the business cycle: a calibrated
+	analysis},
+  note = {University of Pennsylvania},
+  month = nov,
+  year = {1995}
+}
+
+@UNPUBLISHED{Perli-Sakellaris-96,
+  author = {Roberto Perli and Plutarchos Sakellaris},
+  title = {Human capital and business cycle persistence},
+  note = {University of Pennsylvania},
+  month = jan,
+  year = {1996}
+}
+
+@UNPUBLISHED{Perri-Heathcote-95,
+  author = {Fabrizio Perri and John Heathcote},
+  title = {Financial autarky and international business cycles},
+  note = {University of Pennsylvania},
+  year = {1995}
+}
+
+@ARTICLE{Phaneuf-95,
+  author = {Louis Phaneuf},
+  title = {Symposium sur les mod\`eles du cycle \'economique: \uppercase{I}introduction},
+  journal = {L'Actualit\'e \'Economique},
+  year = {1995},
+  volume = {71},
+  pages = {119-121},
+  number = {2},
+  month = jun
+}
+
+@ARTICLE{Phaneuf-94,
+  author = {Louis Phaneuf},
+  title = {March\'e du travail et cycle \'economique: de la r\'ealit\'e aux
+	mod\`eles},
+  journal = {Interface},
+  year = {1994},
+  volume = {15},
+  pages = {42--50},
+  number = {3},
+  month = {mai-juin}
+}
+
+@ARTICLE{Phaneuf-92,
+  author = {Louis Phaneuf},
+  title = {Contrats de salaire, anticipations d'\'equilibre et persistance du
+	ch\^omage},
+  journal = {Revue \'Economique},
+  year = {1992},
+  volume = {43},
+  pages = {445--458},
+  number = {3},
+  month = may
+}
+
+@TECHREPORT{Phaneuf-91,
+  author = {Louis Phaneuf},
+  title = {Wage rigidity, real shocks and output persistence},
+  institution = cerpe,
+  year = {1991},
+  type = cdr,
+  number = {74},
+  month = oct
+}
+
+@TECHREPORT{Cagan-91,
+  author = {Philip, Cagan},
+  title = {Price Movements as Evidence on the Traditional Versus New View of
+	Business Fluctuations},
+  institution = {Columbia University},
+  year = {1991},
+  type = dp,
+  number = {511},
+  month = jan
+}
+
+@INCOLLECTION{Plosser-90,
+  author = {Charles I. Plosser},
+  title = {Money and Business Cycles: \uppercase{A} Real Business Cycle Interpretation},
+  booktitle = {Monetary policy on the 75th anniversary of the \uppercase{F}ederal
+	\uppercase{R}eserve system},
+  publisher = {Kluwer Academic Publishers},
+  year = {1990},
+  editor = {Michael T. Belongia},
+  chapter = {5}
+}
+
+@ARTICLE{Plosser-91,
+  author = {Charles I. Plosser},
+  title = {Comments},
+  journal = eer,
+  year = {1991},
+  volume = {35},
+  pages = {961-966},
+  number = {4}
+}
+
+@ARTICLE{Plosser-89,
+  author = {Charles I. Plosser},
+  title = {Understanding Real Business Cycles},
+  journal = jep,
+  year = {1989},
+  volume = {3},
+  pages = {51-77},
+  number = {3}
+}
+
+@ARTICLE{Portier-95,
+  author = {Franck Portier},
+  title = {Le r\^ole des variations de taux de marge dans les fluctuations macro\'economiques
+	conjoncturelles},
+  journal = {L'Actualit\'e \'Economique},
+  year = {1995},
+  volume = {71},
+  pages = {218--249},
+  number = {2},
+  month = jun
+}
+
+@PHDTHESIS{Prasad-92,
+  author = {Eswar S. Prasad},
+  title = {Employment, Wage, and Productivity Dynamics in an Equilibrium Business
+	Cycle Model with Heterogeneous Labor},
+  school = {University of Chicago},
+  year = {1992}
+}
+
+@ARTICLE{Prescott-86-b,
+  author = {Edward C. Precott},
+  title = {Response to a Skeptic},
+  journal = mnqr,
+  year = {1986},
+  volume = {10},
+  pages = {28-33},
+  number = {4},
+  month = {Fall}
+}
+
+@ARTICLE{Prescott-91,
+  author = {Edward C. Prescott},
+  title = {Real business cycle theory: \uppercase{W}hat have we learned?},
+  journal = {Revista de Analisis Economico},
+  year = {1991},
+  volume = {6},
+  pages = {2--19},
+  number = {2},
+  month = nov
+}
+
+@ARTICLE{Prescott-88,
+  author = {Edward C. Prescott},
+  title = {\uppercase{R}obert \uppercase{M. S}olow's neoclasical growth model:
+	\uppercase{A}n influencial contribution to economics},
+  journal = sje,
+  year = {1988},
+  volume = {90},
+  number = {1}
+}
+
+@ARTICLE{Prescott-86,
+  author = {Edward C. Prescott},
+  title = {Theory ahead of Business-Cycle Measurement},
+  journal = cr,
+  year = {1986},
+  volume = {25},
+  pages = {11-44},
+  month = aut
+}
+
+@TECHREPORT{Prescott-83,
+  author = {Edward C. Prescott},
+  title = {"Can the cycle be reconciled with a consistent theory of expectations"
+	or a progress report on business cycle theory},
+  institution = mnrd,
+  year = {1983},
+  type = wp,
+  number = {239D},
+  month = jun
+}
+
+@ARTICLE{Prescott-Mehra-80,
+  author = {Edward C. Prescott and Rajnish Mehra},
+  title = {Recursive competitive equilibrium: \uppercase{T}he case of homogeneous
+	households},
+  journal = eco,
+  year = {1980},
+  volume = {48},
+  pages = {1365--1379}
+}
+
+@ARTICLE{Prescott-Townsend-84,
+  author = {Edward C. Prescott and Robert M. Townsend},
+  title = {General Competitive Analysis in an Economy with Private Information},
+  journal = ier,
+  year = {1984},
+  volume = {25},
+  pages = {1-20},
+  number = {1},
+  month = feb
+}
+
+@TECHREPORT{Presley-Sessions-93,
+  author = {John R. Presley and John G. Sessions},
+  title = {Real Business Cycles: \uppercase{S}ectoral versus Aggregate Shocks
+	and the Elasticity of Demand for Income in Terms of Work Effort},
+  institution = {Department of Economics, Loughborough University of Technology},
+  year = {1993},
+  type = {Economic Research Paper},
+  number = {93/3},
+  month = feb
+}
+
+@ARTICLE{Rios-Rull-92-esp,
+  author = {Jos\'e V\'{\i}ctor R\'{\i}os-Rull},
+  title = {Comportamiento de los ciclos econ\'omicos en econom\'{\i}as de ciclo
+	vital con mercados incompletos},
+  journal = {Cuadernos Econ\'omicos},
+  year = {1992},
+  volume = {51},
+  pages = {173--195}
+}
+
+@ARTICLE{rabitsch,
+  author = {Katrin Rabitsch},
+  title = {Some Notes on Log-linearization},
+  year = {2008},
+  month = oct,
+  timestamp = {2012.03.28}
+}
+
+@ARTICLE{Ramey-92,
+  author = {Valerie A. Ramey},
+  title = {The source of fluctuations in money: \uppercase{E}vidence from trade
+	credit},
+  journal = jmoe,
+  year = {1992},
+  volume = {30},
+  pages = {171-194},
+  number = {2},
+  month = nov
+}
+
+@ARTICLE{Ravn-96,
+  author = {Morten O. Ravn},
+  title = {Permanent and temporary shocks, and the \uppercase{UK} business cycle},
+  journal = {Journal of Applied Econometrics},
+  year = {forthcoming}
+}
+
+@UNPUBLISHED{Ravn-93,
+  author = {Morten Overgaard Ravn},
+  title = {International Business cycles: \uppercase{H}ow much can standard
+	theory account for?},
+  note = {Paper prepared for {\em Quantitative Aggregate Economics}, Bergen},
+  month = aug,
+  year = {1993}
+}
+
+@TECHREPORT{Ravn-92-open,
+  author = {Morten Overgaard Ravn},
+  title = {Business cycle in the \uppercase{U.K.}: \uppercase{A} small open
+	economy in an interdependent world},
+  institution = {{\O}konomisk Institut{,} Aarhus Universitet},
+  year = {1992},
+  type = {Memo},
+  number = {1992-12}
+}
+
+@UNPUBLISHED{Ravn-92-solow,
+  author = {Morten Overgaard Ravn},
+  title = {Testing Exogeneity of the \uppercase{S}olow Residuals: \uppercase{E}mpirical
+	Evidence for three \uppercase{E}uropean Countries},
+  note = {Institute of Economics, University of Aarhus},
+  year = {1992}
+}
+
+@ARTICLE{Ravn-Sola-95,
+  author = {Morten Overgaard Ravn and Martin Sola},
+  title = {Stylized Facts and Regime Changes: \uppercase{A}re Prices Procyclical?},
+  journal = jmoe,
+  year = {1995},
+  volume = {36},
+  pages = {497--526},
+  number = {3}
+}
+
+@ARTICLE{rebelo2005real,
+  author = {Rebelo, S.},
+  title = {Real business cycle models: past, present and future},
+  journal = {The Scandinavian Journal of Economics},
+  year = {2005},
+  volume = {107},
+  pages = {217--238},
+  number = {2},
+  publisher = {Wiley Online Library}
+}
+
+@UNPUBLISHED{Rebelo-Rouwenhorst-88,
+  author = {Sergio Rebelo and K. Geert Rouwenhorst},
+  title = {Linear quadratic approximations versus state space methods: \uppercase{A}
+	numerical evaluation},
+  note = {University of Rochester},
+  year = {1988}
+}
+
+@UNPUBLISHED{Reynolds-93,
+  author = {Patricia A. Reynolds},
+  title = {International comovements in aggregate productivity: \uppercase{A}n
+	empirical analysis},
+  note = {School of Business Administration, University of Southern California},
+  month = jul,
+  year = {1993}
+}
+
+@UNPUBLISHED{Reynolds-92,
+  author = {Patricia A. Reynolds},
+  title = {International comovements in production and consumption: \uppercase{T}heory
+	and evidence},
+  note = {School of Business Administration, University of Southern California},
+  month = nov,
+  year = {1992}
+}
+
+@ARTICLE{Ricketts-McCurdy-95,
+  author = {Nicholas Ricketts and Thomas H. McCurdy},
+  title = {An international economy with country-specific money and productivity
+	growth processes},
+  journal = cje,
+  year = {1995},
+  volume = {28},
+  pages = {S141--S162},
+  number = {Special Issue},
+  month = nov
+}
+
+@TECHREPORT{Riezman-Whiteman-90,
+  author = {Raymond G. Rietzman and Charles H. Whiteman},
+  title = {Worldwide Persistence, Business Cycles, and Economic Growth},
+  institution = {California Institute of Technology},
+  year = {1990},
+  type = {Social Science Working Paper},
+  number = {719},
+  month = feb
+}
+
+@ARTICLE{Ritter-95,
+  author = {Joseph A. Ritter},
+  title = {An Outsider's Guide to Real Business Cycle Modeling},
+  journal = {Federal Reserve Bank of St. Louis Review},
+  year = {1995},
+  pages = {49--60},
+  month = {March/April}
+}
+
+@ARTICLE{robertson1926banking,
+  author = {Dennis H. Robertson},
+  title = {Banking policy and the price level: an essay in the theory of the
+	trade cycle},
+  year = {1926},
+  publisher = {PS King and son, LTD., London}
+}
+
+@ARTICLE{Rogerson-88,
+  author = {Richard Rogerson},
+  title = {Indivisible Labor, Lotteries and Equilibrium},
+  journal = jmoe,
+  year = {1988},
+  volume = {21},
+  pages = {3-16},
+  number = {1}
+}
+
+@ARTICLE{Rogerson-Rupert-93,
+  author = {Richard Rogerson and Peter Rupert},
+  title = {On Testing the Intertemporal Substitution Theory of Labor Supply},
+  journal = jedc,
+  year = {1993},
+  volume = {17},
+  pages = {37--50}
+}
+
+@ARTICLE{Rogerson-Rupert-91,
+  author = {Richard Rogerson and Peter Rupert},
+  title = {New estimates of intertemporal substitution: \uppercase{T}he effect
+	of corner solutions for year-round workers},
+  journal = jmoe,
+  year = {1991},
+  volume = {27},
+  pages = {255-269}
+}
+
+@INCOLLECTION{Romer-89,
+  author = {Paul M. Romer},
+  title = {Capital accumulation in the theory of long-run growth},
+  booktitle = {Modern business cycle theory},
+  publisher = hup,
+  year = {1989},
+  editor = {Robert J. Barro},
+  chapter = {2}
+}
+
+@ARTICLE{Rotemberg-Woodford-96,
+  author = {Julio Rotemberg and Michael Woodford},
+  title = {Real-\uppercase{B}usiness-\uppercase{C}ycle models and the forecastable
+	movements in output, hours and consumption},
+  journal = aer,
+  year = {1996},
+  volume = {86},
+  pages = {71--89},
+  number = {1},
+  month = mar
+}
+
+@TECHREPORT{Rotemberg-Woodford-94,
+  author = {Julio J. Rotemberg and Michael Woodford},
+  title = {Is the business cycle a necessary consequence of stochastic growth?},
+  institution = {MIT},
+  year = {1994},
+  type = wp,
+  month = feb
+}
+
+@ARTICLE{Rotemberg-Woodford-92,
+  author = {Julio J. Rotemberg and Michael Woodford},
+  title = {Oligopolistic Pricing and the effects of aggregate demand on economic
+	activity},
+  journal = jpe,
+  year = {1992},
+  volume = {100},
+  pages = {1153-1207},
+  number = {6},
+  month = dec
+}
+
+@ARTICLE{Rouwenhorst-91,
+  author = {K. Geert Rouwenhorst},
+  title = {Time to build and aggregate fluctuations: A reconsideration},
+  journal = jmoe,
+  year = {1991},
+  volume = {27},
+  pages = {241-254}
+}
+
+@TECHREPORT{Rupert-Rogerson-Wright-94,
+  author = {Peter Rupert and Richard Rogerson and Randall Wright},
+  title = {Estimating substitution elasticities in household production models},
+  institution = mnrd,
+  year = {1994},
+  type = sr,
+  number = {186},
+  month = dec
+}
+
+@ARTICLE{Rush-90,
+  author = {Mark Rush},
+  title = {A Primer on Real Business Cycles or the \uppercase{ABC}s of \uppercase{RBC}s},
+  journal = {Business Economics},
+  year = {1990},
+  volume = {25},
+  pages = {14--22}
+}
+
+@ARTICLE{Rios-Rull-94-compl,
+  author = {Jos{\'e} V{\'{\i}}ctor R{\'{\i}}os-Rull},
+  title = {On the quatitative importance of market completeness},
+  journal = jmoe,
+  year = {1994},
+  volume = {34},
+  pages = {463--496},
+  number = {3},
+  month = dec
+}
+
+@UNPUBLISHED{Rios-Rull-94-life,
+  author = {Jos{\'e} V{\'{\i}}ctor R{\'{\i}}os-Rull},
+  title = {Life Cycle Economies and Aggregate Fluctuations},
+  note = {University of Pennsylvania},
+  year = {1994}
+}
+
+@ARTICLE{Rios-Rull-93-home,
+  author = {Jos{\'e} V{\'{\i}}ctor R{\'{\i}}os-Rull},
+  title = {Working in the Market, Working at Home and the Acquisition of Skills:
+	\uppercase{A} General Equilibrium Approach},
+  journal = aer,
+  year = {1993},
+  volume = {83},
+  pages = {893-907},
+  number = {4},
+  month = sep
+}
+
+@UNPUBLISHED{Rios-Rull-92-baby,
+  author = {Jos{\'e} V{\'{\i}}ctor R{\'{\i}}os-Rull},
+  title = {Population Changes and Capital Accumulation: The Aging of the Baby
+	Boom},
+  note = gsia,
+  month = apr,
+  year = {1992}
+}
+
+@ARTICLE{Salyer-96,
+  author = {Kevin D. Salyer},
+  title = {Interpreting a stochastic monetary growth model as a modified social
+	planner's problem},
+  journal = jedc,
+  year = {1996},
+  volume = {20},
+  pages = {681--689},
+  number = {4},
+  month = apr
+}
+
+@BOOK{Sargent-87,
+  title = {Dynamic macroeconomic theory},
+  publisher = hup,
+  year = {1987},
+  author = {Thomas J. Sargent}
+}
+
+@TECHREPORT{Sargent-82,
+  author = {Thomas J. Sargent},
+  title = {Beyond demand and supply curves in macroeconomics},
+  institution = mnrd,
+  year = {1982},
+  type = sr,
+  number = {77},
+  month = feb
+}
+
+@ARTICLE{Schlagenhauf-Wrase-95,
+  author = {Don E. Schlagenhauf and Jeffrey M. Wrase},
+  title = {Liquidity and real activity in a simple open-economy model},
+  journal = jmoe,
+  year = {1995},
+  volume = {35},
+  pages = {431--461},
+  number = {3},
+  month = aug
+}
+
+@TECHREPORT{Schlagenhauf-Wrase-92-Kmob,
+  author = {Don E. Schlagenhauf and Jeffrey M. Wrase},
+  title = {A monetary, open-economy model with capital mobility},
+  institution = iem,
+  year = {1992},
+  type = dp,
+  number = {67}
+}
+
+@TECHREPORT{Schlagenhauf-Wrase-92-three,
+  author = {Don E. Schlagenhauf and Jeffrey M. Wrase},
+  title = {Liquidity and real activity in three monetary models},
+  institution = iem,
+  year = {1992},
+  type = dp,
+  number = {68},
+  month = jul
+}
+
+@TECHREPORT{Schlitzer-93,
+  author = {Giuseppe Schlitzer},
+  title = {Business Cycles in \uppercase{I}taly: \uppercase{A} Retrospective
+	Investigation},
+  institution = {Banca d'Italia},
+  year = {1993},
+  type = {Temi di discussione del Servizio Studi},
+  number = {211},
+  month = nov
+}
+
+@TECHREPORT{Schmitt-Grohe-95,
+  author = {Stephanie Schmitt-Groh\'e},
+  title = {The international transmission of economic fluctuations: effects
+	of \uppercase{U.S.} business cycles on the \uppercase{C}anadian economy},
+  institution = {Federal Reserve Board},
+  year = {1995},
+  type = {Finance and Economics Discussion Series},
+  number = {95-6},
+  month = jan
+}
+
+@ARTICLE{Simkins-94,
+  author = {Scott P. Simkins},
+  title = {Do real business cycle models really exhibit business cycle behavior?},
+  journal = jmoe,
+  year = {1994},
+  volume = {33},
+  pages = {381--404},
+  number = {2},
+  month = apr
+}
+
+@PHDTHESIS{Simkins-88,
+  author = {Scott P. Simkins},
+  title = {Interpreting economic time series using the methods of \uppercase{B}urns
+	and \uppercase{M}itchell},
+  school = {University of Iowa},
+  year = {1988}
+}
+
+@ARTICLE{sims2002solving,
+  author = {Christopher A. Sims},
+  title = {Solving linear rational expectations models},
+  journal = {Computational Economics},
+  year = {2002},
+  volume = {20},
+  pages = {1--20},
+  number = {1},
+  publisher = {Springer}
+}
+
+@ARTICLE{Sims-90,
+  author = {Christopher A. Sims},
+  title = {Solving the stochastic growth model by backsolving with a particular
+	nonlinear form for the decision rule},
+  journal = jbes,
+  year = {1990},
+  volume = {8},
+  pages = {45--47},
+  number = {1},
+  month = jan
+}
+
+@TECHREPORT{Sims-89-backwards,
+  author = {Christopher A. Sims},
+  title = {Solving nonlinear stochastic optimization and equilibrium problems
+	backwards},
+  institution = iem,
+  year = {1989},
+  type = dp,
+  number = {15},
+  month = may
+}
+
+@TECHREPORT{Sims-89-trends,
+  author = {Christopher A. Sims},
+  title = {Modeling Trends},
+  institution = iem,
+  year = {1989},
+  type = dp,
+  number = {22},
+  month = dec
+}
+
+@ARTICLE{Sinai-92,
+  author = {Allen Sinai},
+  title = {Financial and Real Business Cycles},
+  journal = {Eastern Economic Journal},
+  year = {1992},
+  volume = {18},
+  pages = {1--54}
+}
+
+@ARTICLE{Singleton-88,
+  author = {Kenneth J. Singleton},
+  title = {Econometric issues in the analysis of equilibrium business cycle
+	models},
+  journal = jmoe,
+  year = {1988},
+  volume = {21},
+  pages = {361-386},
+  number = {2/3},
+  month = mar # {/} # may
+}
+
+@ARTICLE{Smeets-92,
+  author = {Heinz-Dieter Smeets},
+  title = {"Stylized Facts" zum \uppercase{K}onjunkturverlauf in der \uppercase{B}undesrepublik
+	\uppercase{D}eutschland},
+  journal = {Jahrb\"ucher f\"ur National\"okonomie und Statistik},
+  year = {1992},
+  volume = {210},
+  pages = {512--532}
+}
+
+@ARTICLE{Smith-92,
+  author = {R. Todd Smith},
+  title = {The Cyclical Behavior of Prices},
+  journal = jmcb,
+  year = {1992},
+  volume = {24},
+  pages = {413--430}
+}
+
+@UNPUBLISHED{Soderlind-93,
+  author = {Paul Soderlind},
+  title = {Cyclical properties of a real business cycle model},
+  note = {Manuscript, Princeton University},
+  year = {1993}
+}
+
+@ARTICLE{Solon-Barsky-Parker-94,
+  author = {Gary Solon and Robert Barski and Jonathan A. Parker},
+  title = {Measuring the cyclicality of real wages: how important is composition
+	bias?},
+  journal = qje,
+  year = {1994},
+  volume = {109},
+  pages = {1--25},
+  number = {1},
+  month = feb
+}
+
+@ARTICLE{Solow-88,
+  author = {Robert M. Solow},
+  title = {Growth theory and after},
+  journal = aer,
+  year = {88},
+  volume = {78},
+  pages = {307--317},
+  number = {3},
+  month = jun
+}
+
+@BOOK{Solow-70,
+  title = {Growth Theory, an Exposition},
+  publisher = {Oxford University Press},
+  year = {1970},
+  author = {Robert M. Solow}
+}
+
+@ARTICLE{Solow-57,
+  author = {Robert M. Solow},
+  title = {Technical change and the aggregate production function},
+  journal = res,
+  year = {1957},
+  volume = {39},
+  pages = {312--320},
+  number = {3},
+  month = aug
+}
+
+@ARTICLE{Solow-56,
+  author = {Robert M. Solow},
+  title = {A contribution to the theory of growth},
+  journal = qje,
+  year = {1956},
+  volume = {70},
+  pages = {65--94},
+  number = {1},
+  month = feb
+}
+
+@ARTICLE{Stadler-94,
+  author = {George W. Stadler},
+  title = {Real Business Cycles},
+  journal = {Journal of Economic Literature},
+  year = {1994},
+  volume = {32},
+  pages = {1750--1783}
+}
+
+@ARTICLE{stadler1994real,
+  author = {George W. Stadler},
+  title = {Real Business Cycle Theory: A Survey},
+  journal = {Journal of Economic Literature},
+  year = {1994},
+  volume = {32},
+  pages = {1750--1783},
+  number = {4},
+  publisher = {JSTOR}
+}
+
+@ARTICLE{Stadler-90,
+  author = {George W. Stadler},
+  title = {Business Cycle Models with Endogenous Technology},
+  journal = aer,
+  year = {1990},
+  volume = {80},
+  pages = {763-778},
+  number = {4},
+  month = sep
+}
+
+@ARTICLE{Stadler-86,
+  author = {George W. Stadler},
+  title = {Real versus Monetary Business Cycle Theory and the Statistical Characteristics
+	of Output Fluctuations},
+  journal = el,
+  year = {1986},
+  volume = {22},
+  pages = {51--54}
+}
+
+@ARTICLE{Stockman-90,
+  author = {Alan C. Stockman},
+  title = {International Transmission and Real Business Cycle Models},
+  journal = aerp,
+  year = {1990},
+  volume = {80},
+  pages = {134-138},
+  number = {2},
+  month = may
+}
+
+@ARTICLE{Stockman-88-rbc,
+  author = {Alan C. Stockman},
+  title = {Real business cycle theory: a guide, en evaluation, and new directions},
+  journal = {Federal Reserve Bank of Richmond Economic Review},
+  year = {1988},
+  volume = {24},
+  pages = {24--47},
+  number = {4}
+}
+
+@ARTICLE{Stockman-88-sectoral,
+  author = {Alan C. Stockman},
+  title = {Sectoral and National Aggregate Disturbances to Industrial Output
+	in seven \uppercase{E}uropean Countries},
+  journal = jmoe,
+  year = {1988},
+  volume = {21},
+  pages = {387--409}
+}
+
+@ARTICLE{Stockman-Tesar-95,
+  author = {Alan C. Stockman and Linda L. Tesar},
+  title = {Tastes and technology in a Two-Country Model of the Business Cycle:
+	\uppercase{E}xplaining International Comovements},
+  journal = aer,
+  year = {1995},
+  volume = {85},
+  pages = {168--185},
+  number = {1},
+  month = mar
+}
+
+@UNPUBLISHED{Stokey-94,
+  author = {Nancy L. Stokey},
+  title = {A note on dynamic programming with homogeneous functions},
+  note = {University of Chicago},
+  month = dec,
+  year = {1994}
+}
+
+@BOOK{Stokey-Lucas-89,
+  title = {Recursive methods in economic dynamics},
+  publisher = hup,
+  year = {1989},
+  author = {Nancy L. Stokey and Lucas, Jr., Robert E.}
+}
+
+@UNPUBLISHED{Storesletten-92,
+  author = {Kjetil Storesletten},
+  title = {Residential investment over the business cycle},
+  note = gsia,
+  year = {1992}
+}
+
+@ARTICLE{Summers-91,
+  author = {Lawrence H. Summers},
+  title = {The Scientific Illusion in Empirical Macroeconomics},
+  journal = sje,
+  year = {1991},
+  volume = {93},
+  pages = {129--148}
+}
+
+@ARTICLE{Summers-86,
+  author = {Lawrence H. Summers},
+  title = {Some skeptical observations on real business cycle theory},
+  journal = mnqr,
+  year = {1986},
+  volume = {10},
+  pages = {23-27},
+  number = {4},
+  month = {Fall}
+}
+
+@ARTICLE{Swan-56,
+  author = {Trevor W. Swan},
+  title = {Economic growth and capital accumulation},
+  journal = {Economic Record},
+  year = {1956},
+  volume = {32},
+  pages = {334--361}
+}
+
+@ARTICLE{Tauchen-90,
+  author = {George Tauchen},
+  title = {Solving the stochastic growth model by using quadrature methods and
+	value-function iterations},
+  journal = jbes,
+  year = {1990},
+  volume = {8},
+  pages = {49--51},
+  number = {1},
+  month = jan
+}
+
+@ARTICLE{Taylor-Uhlig-90,
+  author = {John B. Taylor and H. Uhlig},
+  title = {Solving Nonlinear Stochastic growth models: \uppercase{A} comparison
+	of alternative solution methods},
+  journal = jbes,
+  year = {1990},
+  volume = {8},
+  pages = {1--17},
+  month = jan
+}
+
+@ARTICLE{Tesar-93,
+  author = {Linda L. Tesar},
+  title = {International Risk-Sharing and Non-Traded Goods},
+  journal = jie,
+  year = {1993},
+  volume = {35},
+  pages = {69--89}
+}
+
+@ARTICLE{Tesar-91,
+  author = {Linda L. Tesar},
+  title = {Savings, investment and international capital flows},
+  journal = jie,
+  year = {1991},
+  volume = {31},
+  pages = {55-78}
+}
+
+@UNPUBLISHED{Trick-Zin-93,
+  author = {Michael A. Trick and Stanley E. Zin},
+  title = {A linear programming approach to solving stochastic dynamic programs},
+  note = gsia,
+  month = aug,
+  year = {1993}
+}
+
+@UNPUBLISHED{Ubide-94,
+  author = {Angel J. Ubide},
+  title = {Household production and international comovements},
+  note = {European University Institute},
+  month = mar,
+  year = {1994}
+}
+
+@ARTICLE{uhlig1999toolkit,
+  author = {Uhlig, Harald},
+  title = {A Toolkit for Analysing Nonlinear Dynamic Stochastic Models Easily},
+  journal = {Computational Methods for the Study of Dynamic Economies},
+  year = {1999},
+  publisher = {Oxford University Press}
+}
+
+@UNPUBLISHED{Uhlig-Xu-96,
+  author = {Harald Uhlig and Yexiao Xu},
+  title = {Effort and the cycle: cyclical implications of efficiency wages},
+  year = {1996}
+}
+
+@UNPUBLISHED{Uhlig-Xu-95,
+  author = {Harald Uhlig and Yexiao Xu},
+  title = {Effort and the cycle: \uppercase{W}hat is the story?},
+  month = jun,
+  year = {1995}
+}
+
+@ARTICLE{Vollmer-94,
+  author = {Uwe Vollmer},
+  title = {Theorien der "Real Business Cycles"},
+  journal = {Wirtschaftswissenschaftliches Studium},
+  year = {1994},
+  pages = {75--79}
+}
+
+@BOOK{Walras,
+  title = {\'El\'ement d'\'economie politique pure},
+  publisher = {Corboz, Lausanne},
+  year = {1874-1877},
+  author = {L\'eon Walras}
+}
+
+@ARTICLE{Watson-93,
+  author = {Mark W. Watson},
+  title = {Measures of fit for calibrated models},
+  journal = jpe,
+  year = {1993},
+  volume = {101},
+  pages = {1011--1041},
+  number = {6},
+  month = dec
+}
+
+@UNPUBLISHED{Woodford-86,
+  author = {Michael Woodford},
+  title = {Stationary sunspot equilibria: \uppercase{T}he case of small fluctuations
+	around a deterministic steady state},
+  note = {Manuscript, University of Chicago},
+  year = {1986}
+}
+
+@ARTICLE{Wright-95,
+  author = {Randall Wright},
+  title = {\uppercase{C}ommentary of \uppercase{M}eltzer's "Information, Sticky
+	Prices and Macroeconomic Foundations"},
+  journal = {Federal Reserve bank of St. Louis Review},
+  year = {1995},
+  volume = {77},
+  number = {3},
+  month = may
+}
+
+@ARTICLE{Wright-91,
+  author = {Randall Wright},
+  title = {The Labor Market Implications of Unemployment Insurance and Short-Time
+	Compensation},
+  journal = mnqr,
+  year = {1991},
+  pages = {11--19},
+  month = sum
+}
+
+@UNPUBLISHED{Zimmermann-forrbc,
+  author = {Christian Zimmermann},
+  title = {Forecasting with real business cycle models},
+  note = crefe,
+  month = apr,
+  year = {1996}
+}
+
+@TECHREPORT{Zimmermann-rbcbib,
+  author = {Christian Zimmermann},
+  title = {A real business cycle bibliography},
+  institution = crefe,
+  year = {1996},
+  type = wp,
+  number = {43},
+  month = jul
+}
+
+@UNPUBLISHED{Zimmermann-swisstax,
+  author = {Christian Zimmermann},
+  title = {Delayed income tax and the business cycle},
+  note = crefe,
+  month = may,
+  year = {1996}
+}
+
+@TECHREPORT{Zimmermann-hetrbc,
+  author = {Christian Zimmermann},
+  title = {International Real Business Cycles among Heterogeneous Countries},
+  institution = crefe,
+  year = {1995},
+  type = wp,
+  number = {38},
+  month = may
+}
+
+@TECHREPORT{Zimmermann-intstat,
+  author = {Christian Zimmermann},
+  title = {International trade over the business cycle: \uppercase{S}tylized
+	facts and remaining puzzles},
+  institution = crefe,
+  year = {1995},
+  type = wp,
+  number = {37},
+  month = mar
+}
+
+@TECHREPORT{Zimmermann-exrrbc,
+  author = {Christian Zimmermann},
+  title = {International business cycles and exchange rates},
+  institution = crefe,
+  year = {1994},
+  type = wp,
+  number = {33},
+  month = dec
+}
+
+@PHDTHESIS{Zimmermann-phd,
+  author = {Christian Zimmermann},
+  title = {Real Business Cycles in Open Economies},
+  school = gsia,
+  year = {1994},
+  month = sep
+}
+
+@TECHREPORT{Zimmermann-volatile,
+  author = {Christian Zimmermann},
+  title = {Technology innovations and the Volatility of output: \uppercase{A}n
+	international perspective},
+  institution = crefe,
+  year = {1994},
+  type = wp,
+  number = {34},
+  month = dec
+}
+
+@BOOK{Barro-89,
+  title = {Modern Business Cycle Theory},
+  publisher = hup,
+  year = {1989},
+  editor = {Robert J. Barro}
+}
+
+@PROCEEDINGS{Boldrin-Hansen-92-esp,
+  title = {Los mercados de trabajo y el ciclo economico},
+  year = {1992},
+  editor = {Michele Boldrin and Gary D. Hansen},
+  volume = {51},
+  series = {Cuadernos Econ\'omicos},
+  publisher = {Informaci\'on comercial espa\~.{n}ola, Secretar\'{\i}a de Estado
+	de Comercio}
+}
+
+@BOOK{Cooley-95,
+  title = {Frontiers of business cycle research},
+  publisher = {Princeton University Press},
+  year = {1995},
+  editor = {Thomas F. Cooley},
+  booktitle = {Frontiers of business cycle research}
+}
+
+@BOOK{Kydland-95-elgar,
+  title = {Business cycle theory},
+  publisher = {Edward Elgar},
+  year = {1995},
+  editor = {Finn E. Kydland},
+  number = {58},
+  series = {The International Library of Critical Writings in Economics},
+  month = oct
+}
+
+@BOOK{Miller-94,
+  title = {The rational expectations revolution: \uppercase{R}eadings from the
+	front line},
+  publisher = mitp,
+  year = {1994},
+  editor = {Preston J. Miller}
+}
+
+@PROCEEDINGS{Thygesen-Velupillai-Zambelli-91,
+  title = {Business cycles: \uppercase{T}heories, evidence and analysis},
+  year = {1991},
+  editor = {Niels Thygesen and Kumaraswamy Velupillai and Stefano Zambelli},
+  publisher = {New York University Press},
+  note = {Proceedings of a conference hold in June 1989 in Copenhagen},
+  organization = {International Economic Association},
+  booktitle = {Business cycles: \uppercase{T}heories, evidence and analysis}
+}
+

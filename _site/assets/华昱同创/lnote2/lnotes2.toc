@@ -1,0 +1,40 @@
+\gdef \the@ipfilectr {@-1}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-2}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-3}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-4}
+\contentsline {chapter}{评论}{ix}{chapter*.5}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-5}
+\contentsline {chapter}{再版序}{x}{chapter*.6}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-6}
+\contentsline {chapter}{原版序}{xii}{chapter*.7}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-7}
+\contentsline {chapter}{致谢}{xiv}{chapter*.8}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-8}
+\contentsline {chapter}{\numberline {1}简介}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}历史回顾}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}页面描述语言}{2}{subsection.1.1.1}
+\contentsline {subsubsection}{PostScript}{2}{subsection.1.1.1}
+\contentsline {subsubsection}{PDF}{3}{subsection.1.1.1}
+\contentsline {subsubsection}{其他页面描述语言}{4}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}标记语言}{4}{subsection.1.1.2}
+\contentsline {subsubsection}{troff系列}{4}{subsection.1.1.2}
+\contentsline {subsubsection}{SGML系列}{5}{subsection.1.1.2}
+\contentsline {subsubsection}{Scribe}{6}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor 1000 家族}{7}{subsection.1.1.3}
+\contentsline {subsubsection}{引擎}{7}{subsection.1.1.3}
+\contentsline {subsubsection}{格式}{8}{subsection.1.1.3}
+\contentsline {subsubsection}{宏包}{9}{subsection.1.1.3}
+\contentsline {subsubsection}{驱动}{9}{subsection.1.1.3}
+\contentsline {subsubsection}{革命}{10}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}小结}{11}{subsection.1.1.4}
+\contentsline {section}{\numberline {1.2}优点缺点}{11}{section.1.2}
+\contentsline {section}{\numberline {1.3}软件准备}{12}{section.1.3}
+\contentsline {section}{\numberline {1.4}学习方法}{13}{section.1.4}
+\gdef \the@ipfilectr {}

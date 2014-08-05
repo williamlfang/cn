@@ -68,6 +68,7 @@ typeof(diamonds)
 
 df <- diamonds
 ```
+
 我们以钻石的重量（carat）与其相应的价格作为分析入手，自觉立马会告诉我们，一颗同等品质的钻石，其重量越大，则相应的价格就越高，换句话说，价格与重量应该是一个递增函数的关系。
 ```{r}
   qplot(x = carat, y = price, data = df)

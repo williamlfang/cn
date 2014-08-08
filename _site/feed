@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-08-05T14:38:49+08:00</lastBuildDate>
-        <pubDate>2014-08-05T14:38:49+08:00</pubDate>
+        <lastBuildDate>2014-08-08T22:32:24+08:00</lastBuildDate>
+        <pubDate>2014-08-08T22:32:24+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -285,6 +285,13 @@ qplot(x, y, data = df3, geom=c(&quot;point&quot;,&quot;line&quot;))
 
 &lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-132.png&quot; alt=&quot;plot of chunk unnamed-chunk-13&quot; /&gt; 
 &lt;code&gt;geom = &quot;line&quot;&lt;/code&gt; 与 &lt;code&gt;geom = &quot;path&quot;&lt;/code&gt; 的差别在于前者使用了时间序列数据是按照一定的观测值顺序排列的，而后者则仅仅是按照数据的呈现方式出现。这个需要我们反思在七十年代的时候美国经济学术界内轰轰烈烈的激战是否存在「Philips Curve」，即政府是否存在可以协调经济通胀率与失业率的良方。原先的数据只是按照数据简单的排序，并没有考虑到收集数据内在的时间先后顺序，从而得出通胀率与失业率可替代的结论。而后来这个经过 Friedman 等人的卓越工作，才揭示了原来政府的这套政策是行不通的，原因在于人们是具有理性预期的，如果真的按照政府的经济政策来实施，则会发生「替换性选择」，最终导致政策无效。这个就是典型的使用数据制作「path」图形的案例。}&lt;/p&gt;
+
+&lt;p&gt;当然，我么也可以使用 &lt;code&gt;facets&lt;/code&gt; 来对不同数据子集分别画图，得到不同的图形对比&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x = price, data = df, facets = cut~., geom = &quot;density&quot;, color = color)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-14.png&quot; alt=&quot;plot of chunk unnamed-chunk-14&quot; /&gt; &lt;/p&gt;
 
 <img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
                 <link>http://williamlfang.github.com/cn/2014/08/04/ggplot2-ru-men-zhi-qplot/</link>

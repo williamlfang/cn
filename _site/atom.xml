@@ -4,7 +4,7 @@
  <title>方莲 | William</title>
  <link href="http://williamlfang.github.com/cn/" rel="self"/>
  <link href="http://williamlfang.github.com/cn"/>
- <updated>2014-08-05T14:04:20+08:00</updated>
+ <updated>2014-08-05T14:38:49+08:00</updated>
  <id>http://williamlfang.github.com/cn</id>
  <author>
    <name>william</name>
@@ -197,9 +197,12 @@ typeof(diamonds)
 
 ## [1] &quot;list&quot;
 
-df &amp;lt;- diamonds 我们以钻石的重量（carat）与其相应的价格作为分析入手，自觉立马会告诉我们，一颗同等品质的钻石，其重量越大，则相应的价格就越高，换句话说，价格与重量应该是一个递增函数的关系。
+df &amp;lt;- diamonds
+&lt;/code&gt;&lt;/pre&gt;
 
-  qplot(x = carat, y = price, data = df)
+&lt;p&gt;我们以钻石的重量（carat）与其相应的价格作为分析入手，自觉立马会告诉我们，一颗同等品质的钻石，其重量越大，则相应的价格就越高，换句话说，价格与重量应该是一个递增函数的关系。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  qplot(x = carat, y = price, data = df)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-3.png&quot; alt=&quot;plot of chunk unnamed-chunk-3&quot; /&gt; 

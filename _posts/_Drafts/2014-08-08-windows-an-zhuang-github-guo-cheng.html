@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>安装 msysgit 客户端</title>
+
+
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<!--
+---
+layout:   post
+title:    "Windows安装Github过程"
+category:  
+tags:     
+    - 
+    - 
+description: 
+published: false
+status:    process
+---
+-->
+
+<h2>安装 msysgit 客户端</h2>
+
+<ul>
+<li>首先是安装 Windows 下的操作界面 <a href="http://msysgit.github.io/"><code>msysgit</code></a></li>
+<li>装完msysgit后右键鼠标会多出一些选项来，在本地仓库里右键选择Git Init Here，会多出来一个.git文件夹，这就表示本地git创建成功。右键Git Bash进入git命令行，为了把本地的仓库传到github，还需要配置ssh key。 </li>
+</ul>
+
+<h2>配置 <code>git</code></h2>
+
+<ul>
+<li>首先在本地创建ssh key
+$ssh-keygen -t rsa -C &ldquo;<a href="mailto:william.lian.fang@gmail.com">william.lian.fang@gmail.com</a>&rdquo;</li>
+<li>生成的 SSH keys 默认的位于 <code>C:\Users\Administrator\.ssh</code>，里面有个文件 <code>id_rsa.pub</code>，将其打开，复制里面的内容。</li>
+<li>登入 github 主页，在  <code>Accounting Setting</code> 里面添加 SSH，即 <code>Add SSH key</code>，内容就是复制刚才得到的那些字符。<code>title</code> 可以自行输入。</li>
+<li>下面我们还需要提供一些 <code>user.name</code> 和 <code>email</code>，因为 <code>github</code> 需要记录每一次的验证。
+
+<ul>
+<li>git config &ndash;global user.name &ldquo;williamlfang&rdquo;</li>
+<li>git config &ndash;global user.email &ldquo;<a href="mailto:william.lian.fang@gmail.com">william.lian.fang@gmail.com</a>&rdquo;</li>
+</ul></li>
+</ul>
+
+<h2>复制到本地文件</h2>
+
+<p>在需要安装的文件夹下面右击鼠标，打开 <code>Git Bash</code>，在里面输入</p>
+
+<pre><code>git clone git@github.com:williamlfang/cn.git cn
+</code></pre>
+
+</body>
+
+</html>

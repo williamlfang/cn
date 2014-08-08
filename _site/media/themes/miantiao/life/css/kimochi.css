@@ -193,17 +193,10 @@ option{cursor:not-allowed;color:#999;border-color:#DDD;background-color:#f9f9f9}
 
 
 pre{white-space:pre-wrap;word-break:break-all;word-wrap:break-word;display:block;font-family:Monaco,Menlo,Consolas,"Courier New",monospace}
-
 code{font-style:normal;font-family:Monaco,Menlo,Consolas,"Courier New",monospace;
-	border:0.5px solid #DDD;background-color:#f7f7f9;
-	/*
-	padding:3px 6px;
-	*/
-	font-size:14px;
-	color:#FA0303;
-	display:inline-block;*display:inline;*zoom:1;
+	border:0.5px solid #DDD;background-color:#f7f7f9;padding:3px 6px;font-size:13px;
+	color:#000;display:inline-block;*display:inline;*zoom:1;
 	border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;-o-border-radius:4px}
-
 code.code-block{display:block;padding:12px;line-height:16px}
 a{color:#ad82da;text-decoration:none}
 a:hover{color:#444;text-decoration:underline}

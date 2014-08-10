@@ -1,0 +1,21 @@
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            R for cats
+tagline:          'and cat lovers'
+description:      'R for cats'
+url:              http://rforcats.net/
+
+author:
+  name:           'Scott Chamberlain'
+  url:            https://twitter.com/recology_
+
+# paginate:         5
+
+github:
+  repo:           https://github.com/sckott/rforcats

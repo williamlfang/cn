@@ -1,0 +1,22 @@
+输入 `git push origin gh-pages` 后显示错误：
+
+Administrator@USER-20140707JD /D/cn (gh-pages)
+$ git push origin gh-pages
+To git@github.com:williamlfang/cn.git
+ ! [rejected]        gh-pages -> gh-pages (fetch first)
+error: failed to push some refs to 'git@github.com:williamlfang/cn.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushin
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+[解决方法](http://stackoverflow.com/questions/1713137/how-to-merge-remote-changes-at-github)：
+
+输入 
+
+	git push origin +some_branch
+
+然后再输入
+
+	git push origin gh-pages

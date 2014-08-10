@@ -42,7 +42,7 @@ status:    process
    
 - 官方要求 R 2.15.0 以上的环境。
 
-     不过大概现在没有人会停留在 2 时代了，目前 CRAN 提供下载是已经 R 3.1.0 了。本人目前使用没有任何压力。所以建议大家可以升级的就动动手吧，表示一下对 R Core 团队辛苦劳作的支持喽。R 的安装我以前在博客有介绍，大家可以去博客里面看看。
+    不过大概现在没有人会停留在 2 时代了，目前 CRAN 提供下载是已经 R 3.1.0 了。本人目前使用没有任何压力。所以建议大家可以升级的就动动手吧，表示一下对 R Core 团队辛苦劳作的支持喽。R 的安装我以前在博客有介绍，大家可以去博客里面看看。
    
 - 由于安装的借口插件需要写入**注册表**，因此需要系统管理员权限。所以请重新启动切换到管理员 Adm 。
 
@@ -51,7 +51,6 @@ status:    process
 下面开始介绍如何在系统里面安装 WindR 软件包。
 
 - 打开 Wind 客户端
-
 <!--
    [![打开 Wind 客户端](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01,jpg)](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01,jpg)
 
@@ -60,117 +59,142 @@ status:    process
    [![修复插件](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img02,jpg)](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img02,jpg)
 
    [![修复插件2](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img03,jpg)](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img03,jpg)
- 
+ -->
 - 根据提示，按任意键完成安装过程。这样，完整的 `WindR` 扩展包便成功在 R 中安装。接下来便是如何使用插件来辅佐研究。
--->
 
 ## WindR 使用教程
-
 ### 加载包
-与 R 中的其他扩展包一样，使用 `WindR` 前也需要预先加载。使用如下命令
-
-    library(WindR)
+与 R 中的其他扩展包一样，使用 WindR 前也需要预先加载。使用如下命令
+```{r}
+library(WindR)
+```
 
 经过扩展包的加载，我们便可以开始使用 `WindR` 里面的命令了。
 
 ### 启动 `WindR`
-加载 `WindR` 后，在真正开始操作之前，我们需要使用命令登入 Wind 客户端并以命令的形式激活插件。命令如下：
+加载 WindR 后，在真正开始操作之前，我们需要使用命令登入 Wind 客户端并以命令的形式激活插件。命令如下：
+```{r}
+ w.start(showmenu = FALSE, waitTime = 60);   ## 缺省设置为「显示导航界面」,命令超时时间为 300 秒
+```
 
-     w.start(showmenu = FALSE, waitTime = 60);   ## 缺省设置为「显示导航界面」,命令超时时间为 300 秒
+不过我一般选择在启动前预先加载常用包。这个在系统的 etc\Rprofile.site 中设置。通常，我个人的加载包如下
+```{r eval =FALSE}
 
-不过我一般选择在启动前预先加载常用包。这个在系统的 `etc\Rprofile.site` 中设置。通常，我个人的加载包如下
+options("width"=160)                # wide display with multiple monitors
+options("digits.secs"=3)            # show sub-second time stamps
 
-    options("width"=160)                # wide display with multiple monitors
-    options("digits.secs"=3)            # show sub-second time stamps
-    
-    setHook(packageEvent("grDevices", "onLoad"),
-        function(...) grDevices::X11.options(width=8, height=8, 
-                                             xpos=0, pointsize=10, 
-                                             #type="nbcairo"))  # Cairo device
-                                             #type="cairo"))    # other Cairo dev
-                                             type="xlib"))      # old default                                           
-    options(prompt="R> ", digits=4, show.signif.stars=FALSE)
-    options("pdfviewer"="okular")         # on Linux, use okular as the pdf viewer
-    
-    .First <- function() {
-    library(graphics)
-    options("repos" = c(CRAN = "http://mirrors.softliste.de/cran/", CRANextra="http://www.stats.ox.ac.uk/pub/RWin"))
-    options("device" = "quartz") 
-    library(zoo)
-    library(xts)
-    library(TTR)
-    library(quantmod)  
-    library(ggplot2) 
-    library(WindR)
-    w.start()
-    }
-    
-    .Last <- function() {
-    if (!any(commandArgs()=='--no-readline') && interactive()){
-    timestamp(,prefix=paste("##------ [",getwd(),"] ",sep=""))
-    try(savehistory("~/.Rhistory"))
-    }}
-    last <- function (x, n=1, ...) tail(x, n=n, ...)
-  
+setHook(packageEvent("grDevices", "onLoad"),
+    function(...) grDevices::X11.options(width=8, height=8, 
+                                         xpos=0, pointsize=10, 
+                                         #type="nbcairo"))  # Cairo device
+                                         #type="cairo"))    # other Cairo dev
+                                         type="xlib"))      # old default                                           
+options(prompt="R> ", digits=4, show.signif.stars=FALSE)
+options("pdfviewer"="okular")         # on Linux, use okular as the pdf viewer
+
+.First <- function() {
+library(graphics)
+options("repos" = c(CRAN = "http://mirrors.softliste.de/cran/", CRANextra="http://www.stats.ox.ac.uk/pub/RWin"))
+options("device" = "quartz") 
+library(zoo)
+library(xts)
+library(TTR)
+library(quantmod)  
+library(ggplot2) 
+library(WindR)
+w.start()
+}
+
+.Last <- function() {
+if (!any(commandArgs()=='--no-readline') && interactive()){
+timestamp(,prefix=paste("##------ [",getwd(),"] ",sep=""))
+try(savehistory("~/.Rhistory"))
+}}
+last <- function (x, n=1, ...) tail(x, n=n, ...)
+```
+
 ### WindR 操作命令规范
-#### 任何的命令都以 `w.` 开始
-`WindR` 为了对 `R` 命令做出统一的规范，特别适用了在各个命令语句前面添加 `w.` 以示区别于普通的`R`命令格式。因此，我们开始调用导航栏时，可以使用命令
+任何的命令都以 `w.` 开始
 
-    w.menu()
+`WindR` 为了对 `R` 命令做出统一的规范，特别适用了在各个命令语句前面添加 `w.` 以示区别于普通的R命令格式。因此，我们开始调用导航栏时，可以使用命令
+```{r}
+w.menu() # 首次使用显示导航界面
+## NULL
+w.menu() # 第二次关系到导航界面
+## NULL
+w.menu('wsd') # 显示 w.wsd() 导航 
+## NULL
+```
 
 #### 命令严格区分大小写
+
 我们知道，`R` 作为一门编程语言，是严格区别大小写的，比如
 ```{r}
 X <- c(1,2,3)   ## 大写的 `X`
 x <- seq(3,5)   ## 小写的 `x`
 (X == x)        ## 判断二者是否相等
 ```
-因此，必然的，扩展包`WindR` 也同样需要**严格**区分大小写命令。例如，`beginTime` 不能写成 `begintime` 或者 `BeginTime`。这些需要我们在往后的使用中多加注意，不要把大小写不同的命令代码搞混淆了。
+因此，必然的，扩展包 `WindR` 也同样需要严格区分大小写命令。例如，`beginTime` 不能写成 `begintime` 或者 `BeginTime`。这些需要我们在往后的使用中多加注意，不要把大小写不同的命令代码搞混淆了。
 
 #### 引号内输入不区分大小写
-以上我们分析了在命令语句中 `WindR` 继承了 `R` 编程语言严格区分大小写的规定。可是，现在 `WindR` 又更加具有灵活性，提出了允许在引号内部是可以允许使用大小写混合输出的，不再做严格区分。比如，
 
-    w.wsd('090007.IB','close',Sys.Date()-5,Sys.Date(),'Priceadj=F;tradingcalendar=NIB')
-    
-等同于命令
-
-    w.wsd('090007.ib','CLOSE',Sys.Date()-5,Sys.Date(),'Priceadj=f;tradingcalendar=nib')
-
-#### 支持数组形式的输入格式
-所谓数组形式，即包含多个参数的向量。`WindR` 是允许我们使用更加高效的方法来输出多个参数变量的。比如，为了输出
+以上我们分析了在命令语句中 `WindR` 继承了 `R` 编程语言严格区分大小写的规定。可是，现在 WindR 又更加具有灵活性，提出了允许在引号内部是可以允许使用大小写混合输出的，不再做严格区分。比如，
 ```{r}
-stock01 <- w.wss("600000,sh, 600005.sh, 600004.sh", "roe_avg, roa", "rptDate = 20121231")
+w.wsd('090007.IB','close',Sys.Date()-5,Sys.Date(),'Priceadj=F;tradingcalendar=NIB')
+```
+等同于命令
+```{r}
+w.wsd('090007.ib','CLOSE',Sys.Date()-5,Sys.Date(),'Priceadj=f;tradingcalendar=nib')
 
-code <- c('600000,sh', '600005.sh', '600004.sh')
-field <- c('rog_avg', 'roa')
-stock02 <- w.wss(code, field, "rptDate = 20121231")
 ```
 
+#### 支持数组形式的输入格式
+
+所谓数组形式，即包含多个参数的向量。`WindR` 是允许我们使用更加高效的方法来输出多个参数变量的。比如，为了输出
+```{r}
+stock01 <- w.wss("600000,sh, 600005.sh, 600004.sh", "roe_avg, roa", "rptDate = 20101231")
+
+code <- c('600000,sh', '600005.sh', '600004.sh')
+field <- c('roe_avg', 'roa')
+stock02 <- w.wss(code, field, "rptDate = 20101231")
+```
+
+
+
 ### 获得相关帮助
-- 通常我们在使用 `R` 遇到问题，首先应该想到的是伴随其安装而预先配置的**使用手册**。该手册通常包括了作者能够想到的所有问题的解决方法，依然足够我们日常的使用了。
-- 在经过加载包 `library(WindR)` 后，我们可以使用内置的帮助命令 `help()` 来查找相关资讯。例如
+通常我们在使用 `R` 遇到问题，首先应该想到的是伴随其安装而预先配置的使用手册。该手册通常包括了作者能够想到的所有问题的解决方法，依然足够我们日常的使用了。
+
+在经过加载包 `library(WindR)` 后，我们可以使用内置的帮助命令 `help()` 来查找相关资讯。例如
 ```{r}
 ## library(WindR)
 help(WindR)
 
 help(w.wsd)
 ```
-### `WindR` 各个命令使用说明
+
+### WindR 各个命令使用说明
 下面，我们分别从各个命令不同的语法结构与分析功能逐一介绍其功能、用法、特征以及可供金融数据分析使用命令。
 
 #### `w.isconnected()` 判断客户端是否已经成功登入
-由于我们使用 `WindR` 时需要有客户端的授权支持。因此，我们才需要一个命令查看当前操作是否已经通过了授权认证，以确定 `WindR` 是否登陆成功。
+
+由于我们使用 WindR 时需要有客户端的授权支持。因此，我们才需要一个命令查看当前操作是否已经通过了授权认证，以确定 WindR 是否登陆成功。
 ```{r}
 ## library(WindR)
 w.isconnected()
+## [1] TRUE
 ```
-输出结果为 `TRUE` 表面当前已经成功登入 Wind 客户端，可以使用 `WindR` 命令获得相应的数据查看权限。
+输出结果为 TRUE 表面当前已经成功登入 Wind 客户端，可以使用 WindR 命令获得相应的数据查看权限。
 
-    
+#### `w.asDateTime()` 转换日期格式与特殊处理
 
+从用户手册中可以发现，`WindR 接口函数中的时间指标不是标准的通用格式，而是采用「以距离某个时间点的天数形式输出的」，从而是一个浮点数。因此，我们需要特殊的日期格式处理命令，即 `.asDateTime()`。该命令的目的在于把 WindR 中的浮点数日期数据转换为 R 的语言时间格式。
+```{r}
+df <- w.wss("600000.sh, 000002.sz", "last_trade_day, pre_close")
+df
 
-
-
+df2 <- w.asDateTime(df$Data[,2], asdate = TRUE)
+df2
+```
 
 
 

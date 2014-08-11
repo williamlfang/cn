@@ -1,0 +1,1269 @@
+
+<!DOCTYPE html>
+<!--
+-->
+<html lang="zh-CN"/>
+<head>
+
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+	<meta name="author" content="william" />
+	<meta name="generator" content="Jekyll" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<meta name="keywords" content="Ito股票价格" />
+	<meta name="description" content="庖丁解牛之 Ito 公式" />
+
+	<meta charset="UTF-8"/>
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+
+	<title> 方 莲 | William</title>
+
+<!--
+	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+-->
+
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="William ATOM Feed" />
+	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/" /> -->
+	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/" />
+	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
+
+	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
+	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
+	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
+	<script>hljs.initHighlightingOnLoad();</script>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true,
+                extensions: ["AMSmath.js"]
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 90      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+
+<style>
+@charset "utf-8";
+
+
+/* ========================================= 字体颜色 ================================================*/
+/* Head color
+a:not(.btn) {
+  color: #00699E;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  transition: 300ms;
+}
+*/
+a:hover:not(.btn),
+a:active:not(.btn) {
+  color: #9E0000;
+  text-decoration: none;
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+
+/* ========================================= 字体颜色 ================================================*/
+
+
+
+/* = 动画 Animations
+----------------------------------------------- */
+
+@-webkit-keyframes title-in {
+  0% {
+    -webkit-transform: translateY(-50px);
+  }
+  80% { 
+    -webkit-transform: translateY(-5px);
+  }
+  90% { 
+    -webkit-transform: translateY(5px);
+  }
+  100% { 
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes description-in {
+  0% {
+    -webkit-transform: translateY(90px);
+  }
+  80% { 
+    -webkit-transform: translateY(5px);
+  }
+  90% { 
+    -webkit-transform: translateY(-5px);
+  }
+  100% { 
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes profile-img-hover {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  23% { 
+    -webkit-transform: rotate(18deg);
+  }
+  25% { 
+    -webkit-transform: rotate(20deg);
+  }
+  50% { 
+    -webkit-transform: rotate(0);
+  }
+  73% { 
+    -webkit-transform: rotate(-18deg);
+  }
+  75% { 
+    -webkit-transform: rotate(-20deg);
+  }
+  100% { 
+    -webkit-transform: rotate(0);
+  }
+}
+
+@-webkit-keyframes profile-img-active {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% { 
+    -webkit-transform: rotate(365deg);
+  }
+}
+
+@-webkit-keyframes profile-img-loading {
+  0% {
+    -webkit-filter: blur(5px);
+  }
+  100% { 
+    -webkit-filter: blur(1px);
+  }
+}
+
+@-webkit-keyframes spinner-in {
+  0% {
+    -webkit-filter: blur(5px);
+    -webkit-transform: translateY(60px);
+  }
+  100% { 
+    -webkit-filter: none;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes panel-in {
+  0% {
+    -webkit-filter: grayscale(0.8) blur(5px);
+    -webkit-transform: translateY(80px);
+  }
+  50% {
+    -webkit-filter: grayscale(0.3) blur(3px);
+    -webkit-transform: translateY(60px);
+  }
+  100% { 
+    -webkit-filter: none;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes map-in {
+  0% {
+    -webkit-filter: grayscale(0.8) blur(5px);
+  }
+  50% {
+    -webkit-filter: grayscale(0.3) blur(3px);
+  }
+  100% { 
+    -webkit-filter: none;
+  }
+}
+
+@-webkit-keyframes map-in {
+  0% {
+    -webkit-filter: grayscale(0.8) blur(5px);
+  }
+  100% { 
+    -webkit-filter: none;
+  }
+}
+
+@-webkit-keyframes sns-icon-hover {
+  0% {
+    -webkit-transform: scale(1.1) rotate(3deg) translateX(-2px);
+  }
+  100% { 
+    -webkit-transform: scale(1.1) rotate(-3deg) translateX(2px);
+  }
+}
+
+
+
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+
+.sns-icon {
+  position: relative;
+  border-radius: 13px;
+  margin: 0 30px 10px;        /*    margin: 0 30px 60px;  */
+  width: 40px;
+  float: left;
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+  
+  -webkit-box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  -moz-box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+ 
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+ 
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  
+  -webkit-filter: blur(0) grayscale(0.2);
+  -webkit-transform: translateZ(0);
+}
+.sns-icon:hover {
+  -webkit-filter: none;
+  -webkit-animation: sns-icon-hover 100ms linear .8s infinite alternate;
+}
+.sns-icon:before {
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 50%;
+  top: 0;
+  left: 0;
+ 
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+ 
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,.1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(100%,rgba(255,255,255,.1)));
+  background: linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,.1) 100%);
+}
+.sns-icon:hover:before {
+  height: 0;
+  
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+  
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,.1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.3)), color-stop(100%,rgba(255,255,255,.1)));
+  background: linear-gradient(top, rgba(255,255,255,0.3) 0%,rgba(255,255,255,.1) 100%);}
+
+.sns-icon:after {
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 30px;
+  bottom: -31px;
+  left: 0;
+ 
+  -webkit-border-top-left-radius: 13px;
+  -webkit-border-top-right-radius: 13px;
+  -moz-border-radius-topleft: 13px;
+  -moz-border-radius-topright: 13px;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+ 
+  background: -moz-linear-gradient(top, rgba(230,230,230,.3) 0%, rgba(230,230,230,0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(230,230,230,.3)), color-stop(100%,rgba(230,230,230,0)));
+  background: linear-gradient(top, rgba(230,230,230,.3) 0%,rgba(230,230,230,0) 100%);
+}
+.sns-icon img {
+  -webkit-box-reflect: below 5px -webkit-gradient(linear, left top, left bottom, color-stop(30%,rgba(255, 255, 255, 0.0)), color-stop(80%,rgba(255, 255, 255, 0.1)), color-stop(100%,rgba(255, 255, 255, .3)));
+}
+.sns-fadeout {
+  opacity: 0.5;
+  -webkit-filter: blur(5px) grayscale(0.6);
+}
+
+/* --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+</style>
+  <!-- -------------------------------------------------------------------------------  -->
+
+  <style type="text/css">
+  /* Project: CV template;
+ *Author: Richard Nyasha Kaseke;
+ *Published on: http: //www.square.co.zw */
+.main {
+  margin: 0 auto;
+  max-width: 900px;        /* ============ main width ===============*/
+  width: 100%;
+  padding: 20px;
+}
+
+header {
+  border-bottom: 0px solid #f1f1f1;     /* ============ 6 ===============*/              
+  background: #222222 url("http://williamlfang.qiniudn.com/cv/img/blurry.jpg") center top no-repeat;
+  color: white;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 80%;              /* 100%; */
+  background-position: center;
+  margin: 0 auto;
+  min-height: 150px;
+  width: 100%;
+}
+header section {
+  float: none;
+  display: block;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+header h1 {
+  font-size: 45px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 0;
+}
+header span {
+  font-size: 25px;
+  margin-top: 20px;
+  display: block;
+  text-transform: lowercase;
+  /*
+  font-family: "Dancing Script", cursive;
+  */
+  font-family: "KaiTi", cursive;
+}
+
+section {
+  float: left;
+  max-width: 700px;
+  width: 100%;          /* section width 70%*/
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+
+article {
+  margin-bottom: 40px;
+}
+article h1 {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.contact {
+  margin: 10px 0 20px 0;
+}
+.contact a {
+  color: white;
+  font-family: "Nunito", serif;
+  margin: 0 15px 0 0;
+  padding: 0 0 0 20px;
+}
+.contact .link {
+  background: url("http://williamlfang.qiniudn.com/cv/img/globe.png") no-repeat;
+}
+.contact .mail {
+  background: url("http://williamlfang.qiniudn.com/cv/img/mail.png") no-repeat;
+}
+.contact .phone {
+  margin: 0;
+  background: url("http://williamlfang.qiniudn.com/cv/img/phone.png") no-repeat;
+}
+
+.contact .sns {
+  margin: 0;
+}
+
+
+.pic {
+  float: right;
+  margin: -70px 0 0 0;
+}
+
+#module {
+  width: 100%;
+}
+
+.time {
+  width: 20%;
+  display: inline;
+  float: left;
+  text-align: right;
+  width: 70px;
+  margin-right: 20px;
+  font-size: 15px;                              /* -------------   time font size --------------------*/
+  font-weight: bold;
+}
+
+.timeline {
+  width: 80%;
+  display: inline-block;
+}
+.timeline .element {
+  margin: 0;
+  padding: 0 0 10px 20px;
+  border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   */
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+}
+/*
+.timeline .element h3 {
+  display: inline-block;
+}
+*/
+.timeline .element:hover {
+  border-left: 4px solid #c2d9a1;
+  cursor: pointer;
+}
+.timeline .element:hover {
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+}
+.timeline .element::before {
+  content: " ";
+  color: white;
+  background: white;
+  display: inline-block;
+  margin-left: -29px;
+  position: absolute;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 12px;
+  width: 12px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+}
+.timeline .element ul {
+  list-style-type: square;
+  padding-left: 15px;
+  margin: 0;
+}
+
+.level {
+  height: 4px;
+  background: #b7e5e2;
+  margin: 4px 0;
+}
+.level span {
+  display: block;
+  height: 100%;
+  background: #4ec5e0;
+  overflow: hidden;
+}
+
+blockquote {
+  margin: 0;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+blockquote:before {
+  color: #cccccc;
+  content: open-quote;
+  font-size: 40px;
+  line-height: 0.1;
+  margin-right: 10px;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto 9;
+}
+
+@media only screen and (max-width: 50em) {
+  section {
+    margin: 0 auto;
+    float: none;
+    width: 100%;
+    display: block;
+  }
+
+  .pic {
+    float: none;
+    display: block;
+  }
+
+  aside {
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    display: block;
+  }
+  aside article {
+    width: 33%;
+    padding: 0 10px;
+    display: inline-block;
+    float: left;
+  }
+}
+@media only screen and (max-width: 40em) {
+  header h1 {
+    font-size: 30px;
+  }
+
+  aside article {
+    width: 100%;
+    display: block;
+    float: left;
+  }
+
+  .timeline {
+    width: 65%;
+  }
+
+  .pic {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+</style>
+  <link href='http://fonts.googleapis.com/css?family=Nunito|Dancing+Script|Quattrocento+Sans' rel='stylesheet' type='text/css'>
+
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+
+<!--=================================================================== -->
+</head>
+
+
+<body>
+
+  <header>
+    <section class="main">
+      <h1>方  莲<span>厦门大学王亚南经济研究院</span></h1>
+      <div class="contact">
+        <a href="http://williamlfang.github.com" class="link">Homepage</a>
+        <a href="mailto:william.lian.fang@gmail.com" class="mail">Gmail Me</a>
+        <a href="tel:+86 15060782961" class="phone">+86 150-6078-2961</a>
+      </div>
+<!--
+      <div class="contact">
+        <a href="https://www.facebook.com/profile.php?id=100006649868022"><div id="icon-facebook" class="sns-icon" title="Facebook"><img src="http://williamlfang.qiniudn.com/cv/img/facebooksns_icon_10.png"></div></a>
+        <a href="gmail" target="_blank"><div id="icon-gmail" class="sns-icon" data-toggle="tooltip" title="Google"><img src="http://williamlfang.qiniudn.com/cv/img/google+sns_icon_14.png"></div></a>
+        <a href="http://weibo.com/u/2270629193"><div id="icon-sinaweibo" class="sns-icon" data-toggle="tooltip" title="新浪微博"><img src="http://williamlfang.qiniudn.com/cv/img/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9Asns_icon_1.png"></div></a>
+        <a ><div id="icon-qq" class="sns-icon" data-toggle="tooltip" title="QQ: 夏石"><img src="http://williamlfang.qiniudn.com/cv/img/QQ%E5%A5%BD%E5%8F%8Bsns_icon_24.png"></div></a>
+        <a href=" "><div id="icon-wechat" class="sns-icon" data-toggle="tooltip" title="微信: william_fang"><img src="http://williamlfang.qiniudn.com/cv/img/%E5%BE%AE%E4%BF%A1sns_icon_22.png"></div></a>
+      </div>
+-->
+    </section>
+  </header>
+
+
+	<div id="main" class="w-100p font-gray-dark">
+		<div class="nav nav-large nav-orange">
+			<div class="menu cleared">
+			<a title="首页" class="nav-item" href="http://williamlfang.github.com/cn/">首页</a>
+				<div class="nav-has-menu">
+					<a class="nav-item" href="http://williamlfang.github.com/cn/archives.html">归档</a>
+						<div class="nav-menu">
+							
+							<a title="Time" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Time">Time</a>
+							
+							<a title="Love" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Love">Love</a>
+							
+							<a title="Campus" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Campus">Campus</a>
+							
+							<a title="Personal" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Personal">Personal</a>
+							
+							<a title="Life" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Life">Life</a>
+							
+							<a title="assets" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#assets">assets</a>
+							
+							<a title="rforcats-gh-pages" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#rforcats-gh-pages">rforcats-gh-pages</a>
+							
+							<a title="Tech" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Tech">Tech</a>
+							
+							<a title="Programming" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Programming">Programming</a>
+							
+							<a title="经济分析" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#经济分析">经济分析</a>
+							
+							<a title="个人" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#个人">个人</a>
+							
+							<a title="金融数学" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#金融数学">金融数学</a>
+							
+							<a title="金融" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#金融">金融</a>
+							
+							<a title="Finance" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Finance">Finance</a>
+							
+							<a title="工作" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#工作">工作</a>
+							
+							<a title="R" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#R">R</a>
+							
+						</div>
+				</div>
+			<a title="邻居" class="nav-item" href="http://williamlfang.github.com/cn/links.html">链接</a>
+			<a title="关于" class="nav-item" href="http://williamlfang.github.com/cn/about.html">关于</a>
+			<a title="留言" class="nav-item" href="http://williamlfang.github.com/cn/guestbook.html">留言</a>
+				<div class="search right h-1">
+					<form method="get" id="searchform" action="http://williamlfang.github.com/cn/search.html">
+					<input type="text" name="q" id="search" size="13" value="" placeholder="你在找什么呢？" x-webkit-speech />
+					</form>
+				</div>
+			</div>
+		</div>
+
+	<div id="articles">
+		
+
+<div class="post mt-2">
+
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/">
+		<span class="year">2014</span>
+		<span class="day">16</span>
+		<span class="month">March</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2014/03/16/pao-ding-jie-niu-zhi--ito--gong-shi/" title="庖丁解牛之 Ito 公式">庖丁解牛之 Ito 公式</a></h3>
+		<div class="content lh-150p font-16 pd-1 mg-2 radius-8">
+		<p>假设股票价格的变化服从以下运动方程（随机微分方程，SDE）：
+$$
+\begin{align}
+ d S_t = \mu S_t dt + \sigma S_t dW_t,
+\end{align}
+$$
+其中 $dW_t$ 是一个（连续的）<strong>Brownian motion</strong>，$W_t \sim \mathcal{N} (0, t)$。等价的，我们可以得到股票价格变化率：
+$$
+\begin{align}
+ d \ln S_t = \frac{ d S_t }{ S_t } = \mu dt + \sigma dW_t.
+\end{align}
+$$</p>
+
+<p>下面我们来推导股票价格 $S_t$ 的动态方程，这主要是使用著名的 <strong>Ito 公式</strong>。过于理论的东西我在这里不推导了，主要是利用一个简单的例子来说明如何使用 <strong>Ito 公式</strong> 解 <strong>SDE</strong> 类问题。</p>
+
+<!-- more -->
+
+<h2 id="ito-">Ito 公式求解</h2>
+
+<p>首先，令 $Y_t = ln S_t$，由简单的偏微分求导得到
+$$
+\begin{align}
+\frac{ \partial Y }{ \partial t} &amp;= 0  <br />
+\frac{ \partial Y }{ \partial S} &amp;= \frac{ 1 }{ S }  <br />
+\frac{ \partial^2 Y }{ \partial S^2} &amp;= - \frac{ 1 }{ S^2 }  <br />
+\end{align}
+$$
+则根据 <strong>Ito 公式</strong>，我们可以推出以下方程
+$$
+\begin{align}
+ d \ln S_t = d Y_t 
+  &amp;= \frac{ \partial Y }{ \partial t} dt + \frac{ \partial Y }{ \partial S} dS_t + \frac{1}{2} \frac{ \partial^2 Y }{ \partial S^2} dS_t dS_t \nonumber<br />
+  &amp;= 0 · dt + \frac{ 1 }{ S_t } dS_t - \frac{1}{2} · \frac{ 1 }{ S_t^2 } dS_t dS_t \nonumber<br />
+  &amp;=  \frac{ 1 }{ S_t } · S_t · (\mu dt + \sigma dW_t) - \frac{1}{2} · \frac{ 1 }{ S_t^2 } · \sigma^2 S_t^2 dt
+ \nonumber<br />
+  &amp;= (\mu - \frac{1}{2} \sigma^2) dt + \sigma dW_t. <br />
+\end{align}
+$$
+两边求积分，得到如下式子
+$$
+\begin{align}
+ \int<em>{0}^{t} d \ln S_u = \int</em>{0}^{t} d Y_u 
+    &amp;= \int<em>{0}^{t}  (\mu - \frac{1}{2} \sigma^2) du + \int</em>{0}^{t}  \sigma dW_u <br />
+\Rightarrow \ln S_t - \ln S_0 = Y_t - Y_0 &amp;= (\mu - \frac{1}{2} \sigma^2) t + \int<em>{0}^{t}  \sigma dW_u.
+\end{align}
+$$
+我们知道，<strong>Brownian Motion</strong> 表示在一定时间段内随机游走走过的路径，并且如果我们假定在初始阶段为 $W(0)=0$，那么，上面等式的最后一项是
+$$
+\begin{align}
+\int</em>{0}^{t}  \sigma dW_u &amp;= \sigma (W_t - W_0 ) = \sigma W_t.
+\end{align}
+$$</p>
+
+<p>因此，我们有
+$$
+\begin{align}
+ \ln S_t - \ln S_0 = Y_t - Y_0 &amp;= (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t \nonumber<br />
+  \Rightarrow Y_t &amp;= Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t \nonumber<br />
+ \Rightarrow S_t &amp;= S_0 · \exp{  (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t  }.
+\end{align}
+$$</p>
+
+<h2 id="section">几何布朗运动</h2>
+
+<p>我们知道，对于任何一个正态分布做线性转换后依然服从正态分布。由于布朗运动 $W_t \sim \mathcal{N} (0, t)$，则
+$$
+\begin{align}
+  Y_t &amp;= Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t \nonumber<br />
+\Rightarrow E[Y_t|Y_0] &amp;= E[ Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \sigma W_t] \nonumber<br />
+                       &amp;= Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \underbrace{E[\sigma W_t]}_{0} = Y_0 + (\mu - \frac{1}{2} \sigma^2) t <br />
+\Rightarrow Var[Y_t|Y_0] &amp;= Var [\sigma W_t] = \sigma^2 Var(Wt) = \sigma^2 ·t \nonumber<br />
+\Rightarrow Y_t &amp;\sim \mathcal{N}(  Y_0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) \label{gbm_norm}
+\end{align} 
+$$</p>
+
+<p>那么，$\ln S_t = Y_t$ 则服从 <strong>正态分布</strong>，则 $S_t = e^{Y_t}$服从 <em>log-normal disctribution</em>，即 $\ln S_t \sim \mathcal{N} (E[S_t], Var[S_t])$.</p>
+
+<p>下面我们来推导 $S_t$ 的分布特征。</p>
+
+<h3 id="moment-generation-function">Moment Generation Function</h3>
+
+<p>我们知道，对于对任何一个随机变量建模，往往需要假设该变量服从某一类随机过程，而这个随机过程由分布函数（distribution function）给定。可是，有些时候，我们并不一定需要知道整个分布函数的具体形式，而只是关注该随机变量的几个「统计特征」，如一阶矩、二阶矩等。下面要介绍的「矩条件生成函数」就针对这种情况提出的。随机变量的矩条件可以在 <strong>Moment Generation Function</strong> (MGF) 十分方便的推导出来。比如，对于正态分布，我们只需要知道一阶矩和二阶矩条件就可以对变量做统计推断（method of moment, MM，还有更一般的 GMM）。</p>
+
+<p>对于一个<strong>可测空间</strong> $(\Omega, \mathcal{F}, P)$，随机变量 $X \in \sigma(\mathcal{F})$ 的 MGF 定义为
+$$
+\begin{align}
+ M<em>{X}(\tau) &amp;= E[ e^{x\tau}] = \int</em>{\Omega} e^{x(\omega)\tau} dP(\omega)
+\end{align}
+$$
+其任一 $m-$ 阶的矩公式可以对 $\tau$ 在 $\tau = 0$ 处求 $m$ 次导数得到
+$$
+\begin{align}
+  \frac{\partial M<em>{X}(\tau)}{\partial \tau}|</em>{\tau = 0} 
+  &amp;=   \frac{\partial}{\partial \tau} E[ e^{x\tau}] |<em>{\tau = 0}<br />
+  =  E[ x · e^{x\tau}] |</em>{\tau = 0}    \nonumber<br />
+  &amp;= E[x] <br />
+   \frac{\partial ^2 M<em>{X}(\tau)}{\partial \tau ^2 }|</em>{\tau = 0} 
+ &amp;= E[x^2] <br />
+ \frac{\partial ^m M<em>{X}(\tau)}{\partial \tau ^m }|</em>{\tau = 0} 
+ &amp;= E[x^m]
+\end{align}
+$$
+特别的，对于一个正态分布，$X \sim \mathcal{N}(\mu, \sigma^2)$，有
+$$
+\begin{align}
+  M_{X}(\tau) &amp;= E[ e^{x\tau}] = \exp{ \mu \tau + \frac{1}{2} \sigma^2 \tau^2 }
+\end{align} <br />
+$$</p>
+
+<h3 id="section-1">期望与方差</h3>
+
+<p>这个特征对于求一个「对数正态分布」十分有用。由$\eqref{gbm_norm}$
+$$
+\begin{align}
+  Y_t &amp;\sim \mathcal{N}(  Y_0 + (\mu - \frac{1}{2} \sigma^2) t, \sigma^2 t  ) 
+\end{align}
+$$
+则其 MGF 为
+$$
+\begin{align}
+ M_{Y}(\tau) &amp;= E[e^{y\tau}] = \exp{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 },
+\end{align}
+$$
+其中，$\tilde{\mu} = Y_0 + (\mu - \frac{1}{2} \sigma^2) t$，$\tilde{\sigma}^2= \sigma ^2 t$ .</p>
+
+<p>因此，我们可以得到如下公式
+$$
+ \begin{align}
+  E[S^{\tau}] &amp;=  E[e^{y\tau}]  = \exp{ \tilde{\mu} \tau + \frac{1}{2} \tilde{\sigma}^2 \tau^2 }
+ \end{align}
+$$</p>
+
+<p>即，期望可以表示为
+$$
+ \begin{align}
+  E[S_t] &amp;=  E[e^{y\tau}]|_{\tau = 1}  = \exp{ \tilde{\mu}  + \frac{1}{2} \tilde{\sigma}^2  }  \nonumber<br />
+        &amp;= \exp{ Y_0 + (\mu - \frac{1}{2} \sigma^2) t + \frac{1}{2} \sigma^2 t  } \nonumber<br />
+        &amp;= S_0 · e^{\mu t } <br />
+\end{align}
+$$</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+ \begin{align}
+  E[S^2] &= E[e^{y\tau}]|_{\tau = 2}  = \exp\{ 2 \tilde{\mu}  + 2 \tilde{\sigma}^2  \} \nonumber\\
+  &= \exp\{ 2 [Y_0 + (\mu - \frac{1}{2} \sigma^2) t ] + 2 \sigma^2 t \}   \nonumber\\
+  &= S_0^2 · \exp\{ 2 \mu t + \sigma^2 t\}
+ \end{align}
+ %]]></script>
+
+<p>因此，$S_t$ 的方差可以表示为
+$$
+ \begin{align}
+  Var[S_t] 
+  &amp;=   E[S^2] -  ( E[S] )^2 \nonumber<br />
+  &amp;= S_0^2 · \exp{ 2 \mu t + \sigma^2 t} - S_0^2 · \exp{ 2 \mu t } \nonumber<br />
+  &amp;= S_0^2 · e^{ 2 \mu t } · (e^{ \sigma^2 t - 1 })
+ \end{align}
+$$</p>
+
+<h2 id="o-u-process">O-U Process</h2>
+
+<p>其实，我们同样可是使用这种方法来解一类更加广义的随机过程——O-U过程。这个过程为
+$$
+ \begin{align}
+  d X(t) &amp;=  - \kappa (X(t) - \theta) d t + \sigma dW(t). \label{ou}
+ \end{align}
+$$
+在式子$\eqref{ou}$中，我们注意到参数 $(\kappa, \theta, \sigma)$ 决定了整个随机过程的特征：</p>
+
+<ul>
+  <li>$\kappa$：是随机过程的「变化率」，即控制了整个随机过程向长期均值回归的快慢程度;</li>
+  <li>$\theta$：代表了随机过程的「长期均值水平」，O-U 过程最显著的特征是其具有了「均值回复」，即在变化率 $\kappa$ 的控制下变量趋于稳定的状态。这个在利率期限结构建模中经常使用，如最早的 Vasicek 利率模型就是一个典型的 O-U 过程。</li>
+  <li>$\sigma$：表示随机过程的「瞬时方差」。</li>
+</ul>
+
+<p>下面我们来求解显示解。</p>
+
+<p>首先对方程$\eqref{ou}$在区域 $[0, t]$ 进行积分得到
+$$
+  \begin{align}
+   \int<em>{0}^{t} d X(u) &amp;= -\int</em>{0}^{t} \kappa X(u) du + \int<em>{0}^{t}  \kappa \theta du +  \int</em>{0}^{t}  \sigma  dW(u),
+  \end{align}
+$$
+然后两边同时乘以 $e^{\kappa u}$ 得到
+$$
+\begin{align}
+    \int<em>{0}^{t} e^{\kappa u} d X(u) &amp;= -\int</em>{0}^{t} \kappa X(u) e^{\kappa u} du + \int<em>{0}^{t}  \kappa \theta e^{\kappa u} du +  \int</em>{0}^{t} \sigma  e^{\kappa u} dW(u). \label{ou-int}
+\end{align}
+$$
+我们分开求解等式两边。</p>
+
+<ul>
+  <li>
+    <p>先是对左边进行<strong>分步积分</strong>得到
+$$
+ \begin{align}
+ LHS &amp;= e^{\kappa u} X(u) |<em>{u=0}^{t} - \int</em>{0}^{t} \kappa X(u) e^{\kappa u} du \nonumber <br />
+ &amp;= e^{\kappa t } X(t) - X(0) - \int_{0}^{t} \kappa X(u) e^{\kappa u} du . \label{lhs}
+ \end{align}
+$$</p>
+  </li>
+  <li>
+    <p>同样的，我们也可以求出右边式子
+$$
+ \begin{align}
+ RHS &amp;= - \int<em>{0}^{t} \kappa X(u) e^{\kappa u} du + \int</em>{0}^{t} \theta de^{\kappa u} + \int<em>{0}^{t}  \sigma  e^{\kappa u} dW(u) \nonumber<br />
+ &amp;= - \int</em>{0}^{t} \kappa X(u) e^{\kappa u} du + \theta (e^{\kappa t} - 1) + \int_{0}^{t}  \sigma  e^{\kappa u} dW(u)  \label{rhs}
+ \end{align}
+$$</p>
+  </li>
+  <li>
+    <p>对比$\eqref{lhs}$与$\eqref{rhs}$，
+$$
+ \begin{align}
+ e^{\kappa t } X(t) - X(0) - \int<em>{0}^{t} \kappa X(u) e^{\kappa u} du
+ &amp;= 
+ -\int</em>{0}^{t} \kappa X(u) e^{\kappa u} du + \theta (e^{\kappa t} - 1) + \int<em>{0}^{t}  \sigma  e^{\kappa u} dW(u)  \nonumber <br />
+ e^{\kappa t } X(t) - X(0)
+ &amp;= 
+ \theta (e^{\kappa t} - 1) + \int</em>{0}^{t}  \sigma  e^{\kappa u} dW(u)   \nonumber <br />
+\Rightarrow 
+  X(t)  &amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int_{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u)  \label{oup} <br />
+ \end{align}
+$$</p>
+  </li>
+</ul>
+
+<h3 id="section-2">期望</h3>
+<p>由$\eqref{oup}$得到
+$$
+ \begin{align}
+  X(t)  &amp;= e^{-\kappa t} (X(0)-\theta) + \theta + \int<em>{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) . \nonumber
+ \end{align}
+$$
+则其期望可以表示为
+$$
+ \begin{align}
+   E[X(t)|X(0)] &amp;= E[ e^{-\kappa t} (X(0)-\theta) + \theta + \int</em>{0}^{t}  \sigma  e^{-\kappa (t-u)} dW(u) ] \nonumber <br />
+   &amp;= e^{-\kappa t} (X(0)-\theta) + \theta. \label{exp}
+ \end{align}
+$$
+最后一项由 $W_t \sim \mathcal{N} (0, t)$ 得到。</p>
+
+<p>利用$\eqref{exp}$，我们可以求出 O-U 过程在长期的一个均值回复项，即
+$$
+ \begin{align}
+   \lim_{t \rightarrow + \infty } e^{-\kappa t} (X(0)-\theta) + \theta = \theta.
+ \end{align}
+$$</p>
+
+<h3 id="section-3">协方差</h3>
+
+<p>任一区间内 $[s,t]$ 协方差可以由以下求出。
+$$
+ \begin{align}
+   cov(X_s, X_t) 
+   &amp;= E[ (X_s-E[X_s])·(X_t-E[X_t])] \nonumber<br />
+   &amp;= \sigma^2 E\bigg[ 
+        \int<em>{0}^{s}    e^{-\kappa (s-u)} dW(u) ·
+         \int</em>{0}^{t}   e^{-\kappa (t-v)} dW(v)
+            \bigg] \label{cov}
+ \end{align}
+$$</p>
+
+<p>这里我们需要使用到两个基本的概念</p>
+
+<ul>
+  <li>
+    <p>布朗运动的「独立增量」(indepdent increasement)，即任何一个布朗运动在不同期间内的增量是相互独立的，即对于区间 $[0,t], 0 \leq t_0 \leq t_1 \leq \cdots \leq t_n \leq t$, $W(t_1)-W(t_0)$, $W(t_2)-W(t_1)$,$\cdots$, $W(t_n)-W(t_{n-1})$ 是相互独立的增量过程。</p>
+  </li>
+  <li>
+    <p><strong>Ito Isometry</strong> 性质：即对于一个布朗运动的独立增量，$dW_t$，有关其多项式有如下性质
+$$
+ \begin{align}
+ E\bigg[ \bigg( \int<em>{0}^{t} F(u) dW(u) \bigg)^2\bigg]
+ &amp;= \int</em>{0}^{t} E \big[ F^2(u) \big] du
+ \end{align}
+$$</p>
+  </li>
+</ul>
+
+<p>利用这两个性质，对于$\eqref{cov}$，如果 $s \geq t$ (反之，$s \leq t$，则令二者调换，即 $t=\min{s,t}$)，我们有
+$$
+ \begin{align}
+   cov(X_s, X_t)
+   &amp;=  \sigma^2
+   E\bigg[ 
+        \bigg( \int<em>{0}^{t}  e^{-\kappa (s-u)} dW(u)  + \int</em>{t}^{s}   e^{-\kappa (s-u)} dW(u)
+        \bigg)
+        ·
+         \int<em>{0}^{t}  e^{-\kappa (t-v)} dW(v)
+            \bigg] <br />
+    &amp;=  \sigma^2
+    E\bigg[ 
+          \int</em>{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int<em>{0}^{t}  e^{-\kappa (t-v)} dW(v) 
+           \nonumber <br />
+        &amp; \qquad + \int</em>{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int<em>{0}^{t}  e^{-\kappa (t-v)} dW(v)
+            \bigg] <br />
+     &amp;=  \sigma^2 \Bigg{
+     E\bigg[ 
+          \int</em>{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int<em>{0}^{t}  e^{-\kappa (t-v)} dW(v) 
+          \bigg] 
+          \nonumber <br />
+    &amp; \qquad +  E\bigg[ 
+          \int</em>{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int_{0}^{t}  e^{-\kappa (t-v)} dW(v)
+          \bigg]<br />
+    \Bigg}，    \label{cov1}   <br />
+ \end{align}
+$$</p>
+
+<ul>
+  <li>
+    <p>对于第一项我们需要使用 <strong>Ito Isometry</strong> 性质,
+$$
+ \begin{align}
+ E\bigg[ 
+        \int<em>{0}^{t}  e^{-\kappa (s-u)} dW(u)  · \int</em>{0}^{t}  e^{-\kappa (t-v)} dW(v) 
+        \bigg]
+  &amp;=
+  E\bigg[ 
+        \int_{0}^{t}  e^{-\kappa (s-u)} · e^{-\kappa (t-u)}  du 
+        \bigg] <br />
+ \end{align}
+$$</p>
+  </li>
+  <li>
+    <p>而第二向可以由布朗运动的独立增量性质消除，
+$$
+ \begin{align}
+ &amp; E\bigg[ 
+        \int<em>{t}^{s}   e^{-\kappa (s-u)} dW(u) · \int</em>{0}^{t}  e^{-\kappa (t-v)} dW(v)
+        \bigg] &amp; \nonumber <br />
+  =&amp; E\bigg[ 
+        \int<em>{t}^{s}   e^{-\kappa (s-u)} dW(u) 
+        \bigg] 
+        ·
+     E\bigg[ 
+       \int</em>{0}^{t}  e^{-\kappa (t-v)} dW(v)
+        \bigg] 
+  = 0 
+ \end{align}
+$$
+因此，方程$\eqref{cov1}$变为
+$$
+ \begin{align}
+ cov(X_s, X_t)
+ &amp;= \sigma^2 \Bigg{
+   E\bigg[ 
+        \int<em>{0}^{t}  e^{-\kappa (s-u)} · e^{-\kappa (t-u)}  du 
+        \bigg]
+   \Bigg}   \label{cov2} <br />
+&amp;= \sigma^2 \Bigg{
+    e^{-\kappa (s+t)}
+    E\bigg[ 
+        \int</em>{0}^{t}  e^{2\kappa u}  du 
+        \bigg]
+ \Bigg}<br />
+  = \sigma^2 ·
+    e^{-\kappa (s+t)}
+    ·
+    \frac{1}{2\kappa}
+    ·  e^{2\kappa u}\bigg|_{u=0}^{t} <br />
+  &amp;= \frac{\sigma^2}{2\kappa} e^{-\kappa (s+t)} · \Bigg( e^{2\kappa t} -1 \Bigg).
+ \end{align}
+$$
+也就是说，对于任何一个协方差，我们都有
+$$
+ \begin{align}
+ cov(X_s, X_t) 
+ &amp;= \frac{\sigma^2}{2\kappa} e^{-\kappa (s+t)} · \Bigg( e^{2\kappa · \min{s,t} } -1 \Bigg).
+ \end{align}
+$$</p>
+  </li>
+</ul>
+
+<h3 id="section-4">方差</h3>
+
+<p>方差也就是0阶协方差，
+$$
+ \begin{align}
+   Var(X_t)
+   &amp;= cov(X_t, X_t)
+   = \frac{\sigma^2}{2\kappa} e^{-\kappa (t+t)} · \Bigg( e^{2\kappa · \min{t,t} } -1 \Bigg) \nonumber<br />
+   &amp;= \frac{\sigma^2}{2\kappa} \Bigg( 1 - e^{ -2\kappa t } \Bigg) 
+ \end{align}
+$$</p>
+
+
+		<div class="post-end mt-1"><span><i></i>16 March 2014</span></div>
+		</div>
+	</div>
+
+	
+	<div class="tags pl-2 pr-2 mb-2 left">
+		<span class="tag">标签：
+		
+		<a class="button button-small button-orange" href="/tags.html#Ito" title="Ito">Ito</a>
+		
+		<a class="button button-small button-orange" href="/tags.html#股票" title="股票">股票</a>
+		
+		<a class="button button-small button-orange" href="/tags.html#价格" title="价格">价格</a>
+		
+		</span>
+	</div>
+	
+
+	
+	<div class="categories pl-2 pr-2 mb-2 right">
+		<span class="categorie">分类：
+		
+		<a class="button button-small button-orange" href="http://williamlfang.github.com/cn/archives.html#金融数学" title="金融数学">金融数学</a>
+		
+		</span>
+	</div>
+	
+
+	
+	<div class="cleared mt-2 pl-2 pr-2">
+		
+		<a class="button button-orange left" href="http://williamlfang.github.com/cn/2014/03/14/bu-gan-xin-de-zhe-bei-zi/" rel="prev" title="落得白发苍茫">←不甘心的这辈子</a>
+		
+		
+		<a class="button button-orange right" href="http://williamlfang.github.com/cn/2014/03/17/luo-de-bai-fa-cang-mang/" rel="next" title="落得白发苍茫">落得白发苍茫→</a>
+		
+	</div>
+
+	
+	<span id="btn_page_prev"><a href="http://williamlfang.github.com/cn/2014/03/14/bu-gan-xin-de-zhe-bei-zi/" rel="prev" title="Previous">
+	<span id="fanye" style="display: none;">
+		‹--
+	</span></a></span>
+	
+
+	
+	<span id="btn_page_next"><a href="http://williamlfang.github.com/cn/2014/03/17/luo-de-bai-fa-cang-mang/" rel="next" title="Next">
+	<span id="fanye" style="display: none;">
+		--›
+	</span></a></span>
+	
+	
+
+	<div id="hm_t_18226" class="radius-8 baidu"></div>
+
+	
+<!--=========================================================================-->
+		<div class="friends">
+			<div class="friends_info"><a id="friends" href="#" rel="nofollow"><span>Contents</span></a></div>
+			<div id="friends_list" class="friends_list">
+				<script>
+// https://github.com/ghiculescu/jekyll-table-of-contents
+$(document).ready(function() {
+  var no_back_to_top_links = false
+
+  var headers = $('h1, h2, h3, h4, h5, h6').filter(function() {return this.id}), // get all headers with an ID
+      output = $('.toc');
+  if (!headers.length || headers.length < 3 || !output.length)
+    return;
+
+  var get_level = function(ele) { return parseInt(ele.nodeName.replace("H", ""), 10) }
+  var highest_level = headers.map(function(_, ele) { return get_level(ele) }).get().sort()[0]
+  // var return_to_top = '<i class="icon-arrow-up back-to-top"> ^ </i>'
+  var return_to_top = ''
+
+  var level = get_level(headers[0]), this_level, html = "<i></i> <ol>";
+  headers.on('click', function() {
+    if (!no_back_to_top_links) window.location.hash = this.id
+  }).addClass('clickable-header').each(function(_, header) {
+    this_level = get_level(header);
+    if (!no_back_to_top_links && this_level === highest_level) {
+      $(header).addClass('top-level-header').after(return_to_top)
+    }
+    if (this_level === level) // same level as before; same indenting
+      html += "<li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level < level) // higher level than before; end parent ol
+      html += "</li></ol></li><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level > level) // lower level than before; expand the previous to contain a ol
+      html += "<ol><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    level = this_level; // update for the next one
+  });
+  html += "</ol>";
+  if (!no_back_to_top_links) {
+    $(document).on('click', '.back-to-top', function() {
+      $(window).scrollTop(0)
+      window.location.hash = ''
+    })
+  }
+  output.hide().html(html).show('slow');
+});
+</script>
+<div class="toc"></div>
+ 
+				<br />
+			</div>
+			<a href="#" id="gc_close" rel="nofollow">X</a>
+		</div>
+<!--=========================================================================-->
+
+</div>
+	<div class="clear"></div>
+</div>
+
+
+
+		
+		</div>
+
+
+		
+
+	<!--
+		
+	-->
+
+	</div>
+
+	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
+		<div id="about" class="align-center">&copy; 2013-2014 Powered By Jekyll, Designed By <a href="http://williamlfang.github.io/">William Fang</a>.
+		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
+		<div class="radar"></div>
+		</div>
+	</div>
+<link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hibikai"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<script src="http://cdn.staticfile.org/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://cdn.staticfile.org/jqueryui/1.10.2/css/smoothness/jquery-ui-1.10.2.custom.min.css" type="text/css" media="all" />
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+</body>
+</html>
+

@@ -1,0 +1,17 @@
+% !Mode:: "TeX:UTF-8"
+
+<<myknitr, child='../../../set/rknitr.Rnw', eval=TRUE>>=
+options(replace.assign = TRUE)
+render_listings()
+@
+
+\chapter{my}
+
+this is just a test
+<<>>=
+x = rnorm(10000)
+plot.ts(x)
+
+barplot(x)
+
+@

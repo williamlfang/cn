@@ -4,7 +4,7 @@
  <title>方莲 | William</title>
  <link href="http://williamlfang.github.com/cn/" rel="self"/>
  <link href="http://williamlfang.github.com/cn"/>
- <updated>2014-08-11T12:25:07+08:00</updated>
+ <updated>2014-08-11T12:38:05+08:00</updated>
  <id>http://williamlfang.github.com/cn</id>
  <author>
    <name>william</name>
@@ -17,9 +17,9 @@
    <link href="http://williamlfang.github.com/cn/2014/08/11/jun-gong-ban-kuai-zheng-li/"/>
    <updated>2014-08-11T00:00:00+08:00</updated>
    <id>http://williamlfang.github.com/cn/2014/08/11/jun-gong-ban-kuai-zheng-li</id>
-   <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;主要参考&lt;a href=&quot;http://xueqiu.com/8394881843/30619814&quot;&gt;军工集团整理&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+   <content type="html">&lt;h5 id=&quot;httpxueqiucom839488184330619814&quot;&gt;&amp;gt; 主要参考&lt;a href=&quot;http://xueqiu.com/8394881843/30619814&quot;&gt;军工集团整理&lt;/a&gt;&lt;/h5&gt;
+
+&lt;!-- more --&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;中国兵器工业集团&lt;/h2&gt;
 
@@ -121,6 +121,200 @@
   &lt;li&gt;中核太白 &lt;/li&gt;
   &lt;li&gt;中核国际&lt;/li&gt;
 &lt;/ul&gt;
+<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
+ </entry>
+ 
+ <entry>
+   <title>ggplot2入门之qplot</title>
+   <link href="http://williamlfang.github.com/cn/2014/08/04/ggplot2-ru-men-zhi-qplot/"/>
+   <updated>2014-08-04T00:00:00+08:00</updated>
+   <id>http://williamlfang.github.com/cn/2014/08/04/ggplot2-ru-men-zhi-qplot</id>
+   <content type="html">&lt;p&gt;据说 &lt;code&gt;R&lt;/code&gt; 中那些优秀的扩展包（packages）都可以独立成一个新的统计软件，成为独霸一方的「草莽大王」，都值得我们为此「大书特书」一番。比如，时下我们会深入介绍的这款专门由于制作漂亮而不失矜持、俏丽而不失内涵、简单而不失充实的扩展包 – &lt;code&gt;ggplot2&lt;/code&gt;。然而，如果你只是把我们今天的主角简单的看作是一款为数据画图的工具的话，那么这就有失偏颇了。乍一看，似乎我们传统的思维是把数据的可（zuo）视（tu）化（xing）仅仅作为统计分析的一个附属品，权做为说明而做的图形展现。这就好比是一场豪华婚礼中只能配得的「伴娘」，虽然自身也是穿衣戴宝的，却始终不能为大家器重。不知大家有没有想过，如果我们可以同时把数据的统计分析结果与数据直观特征图形结合在一起，通过这两者的交互印证，使得分析的结果更加具有说服力。说的更加直白一些，往往有些数据的特征是无法使用自然或者数理语言简明扼要的说清楚的，这时候就需要图形化的展示来提供更加充足的信息。也就是说，利用对数据制作「量体裁衣」的可视化展现，可以为我们的提供更加全面的信息，也在一定程度上为后期的数据统计分析提供直观的印象。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;数据可视化的基本思想&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ggplot2&lt;/code&gt; 能够使用简单的语法将数据的属性特征以图形可视化的形式展示出来，丰富了我们对数据的直观影响。不过，需要注意的，&lt;code&gt;ggplot2&lt;/code&gt; 只是提供了一套静态的图形输出，尤其是适合与 PDF 格式的文件。但在现在互联网与移动屏的可视化时代，难免显得有点力不从心，无法满足我们对交互式图形的诉求。因此， Rstudio 公司后来在 Xie Yihui 同学的领导下，开发了适合与显示器屏幕的动态交互式图形输出包—— &lt;code&gt;Shiny&lt;/code&gt;，以满足互联网移动屏幕的新要求。这个我们在今后介绍如何使用 \R 开发网页时再具体介绍。&lt;/p&gt;
+
+&lt;p&gt;因此，Hadley 一上来就开宗明义的「提醒」大家不要仅仅把  &lt;code&gt;ggplot2&lt;/code&gt; 当作是一个绘图工具而已：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; `ggplot2` is a `R` package for producing statistical, or data, graphics, **but it is unlike most other graphics packages because it has a deep underlying grammer**.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里所说的图形的「语法」（grammer），最早由 Wilkinson 提出，大体的思想是把一个数据图形看作由描述数据不同特征的属性所构成的套装，通过对不同组件的选择，来达到想要（甚至是想不到）的套装效果。这其中，不同的属性组件包括了：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;数据：通常要求数据结构是 &lt;code&gt;data.frame&lt;/code&gt;。所谓的「裸数据」，就是未经任何修改的原始数据。&lt;/li&gt;
+  &lt;li&gt;几何对象：&lt;code&gt;geom&lt;/code&gt; , 希望以直观的几何图形来显示数据特征，如点、线条等。&lt;/li&gt;
+  &lt;li&gt;统计转换：&lt;code&gt;stat&lt;/code&gt;,以数据统计分析的结果展示在图形中，这比传统的将统计输出单独展现具有更加直观的认识。&lt;/li&gt;
+  &lt;li&gt;scales：&lt;/li&gt;
+  &lt;li&gt;坐标系统：&lt;code&gt;coord&lt;/code&gt;, 描述了如何将数据通过多维图形展现出来。&lt;/li&gt;
+  &lt;li&gt;分页展示：&lt;code&gt;facet&lt;/code&gt;,  就是把不同组别的数据通过分页的形式表示出来，这相当于做了一次 subsetting 的分组。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;用法说明&lt;/h2&gt;
+
+&lt;p&gt;下面，我们来具体看看如何使用 &lt;code&gt;qplot&lt;/code&gt; 绘制精美的数据可视化图形。
+&lt;code&gt;qplot&lt;/code&gt; 的基本用法和 &lt;code&gt;plot&lt;/code&gt; 大体类似。主要的参数输入有：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;数据：主要是使用 $x$ 和 $y$ 作为两个坐标轴，并且指定数据框类数据 \rcode{data}；&lt;/li&gt;
+  &lt;li&gt;图形修饰：这个主要是通过 \rcode{aesthetics} 参数来完成，包括了
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;color&lt;/code&gt;：使用不同的颜色来区分数据&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;size&lt;/code&gt;：利用形状来区分数据&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;fill&lt;/code&gt;：主要是在进行 &lt;code&gt;histogram&lt;/code&gt; 和 &lt;code&gt;density&lt;/code&gt; 的时候用于填充不同的数据，使得各种数据的比例更加直观明显。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;几何形状方面：利用 &lt;code&gt;geom&lt;/code&gt; 来控制输出的图形几何形状，包括了
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;geom = &quot;point&quot;&lt;/code&gt;：作为默认设置，以点的形式画图；&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;geom = &quot;line&quot;&lt;/code&gt;：以线条的样子输出，通常适用于&lt;strong&gt;时间序列数据&lt;/strong&gt;；&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;geom = &quot;smooth&quot;&lt;/code&gt;：使用统计拟合输出；
+ &amp;gt; &lt;code&gt;geom = &quot;path&quot;&lt;/code&gt;：与时间序列类似，但是按照数据的先后顺序输出；
+ &amp;gt; &lt;code&gt;geom = &quot;boxplot&quot;&lt;/code&gt;：输出传统统计学角度的「箱叶图」，以五个&lt;strong&gt;quantile&lt;/strong&gt; 作标记；
+ &amp;gt; &lt;code&gt;geom = &quot;jitter&quot;&lt;/code&gt;：类似于「箱叶图」，但是更加突出数据的分散描述，可以使用 &lt;code&gt;alpha = I ()&lt;/code&gt; 来控制分散的透明程度；
+ &amp;gt; &lt;code&gt;geom = &quot;histogram&quot;&lt;/code&gt;：柱状图，可以使用参数 &lt;code&gt;binwidth&lt;/code&gt; 来控制间隔大小；
+ &amp;gt; &lt;code&gt;geom = &quot;density&quot;&lt;/code&gt;：概率分布图；&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;我们可以通过使用 &lt;code&gt;help(qplot)&lt;/code&gt; 命令来查看其基本的函数结构：&lt;/p&gt;
+
+    &lt;p&gt;qplot(x, y = NULL, …, data, facets = NULL, margins = FALSE,
+    geom = “auto”, stat = list(NULL), position = list(NULL), xlim = c(NA,
+    NA), ylim = c(NA, NA), log = “”, main = NULL,
+    xlab = deparse(substitute(x)), ylab = deparse(substitute(y)), asp = NA)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;通过使用几个简单的例子，我们想要看看具体是如何操作的。使用的数据是由自带的钻石品质的数据框。 该数据库一共包含了 $10$ 个变量的数据，共计 $53,940$ 次观测值。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;str(diamonds)
+
+## 'data.frame':	53940 obs. of  10 variables:
+##  $ carat  : num  0.23 0.21 0.23 0.29 0.31 0.24 0.24 0.26 0.22 0.23 ...
+##  $ cut    : Ord.factor w/ 5 levels &quot;Fair&quot;&amp;lt;&quot;Good&quot;&amp;lt;..: 5 4 2 4 2 3 3 3 1 3 ...
+##  $ color  : Ord.factor w/ 7 levels &quot;D&quot;&amp;lt;&quot;E&quot;&amp;lt;&quot;F&quot;&amp;lt;&quot;G&quot;&amp;lt;..: 2 2 2 6 7 7 6 5 2 5 ...
+##  $ clarity: Ord.factor w/ 8 levels &quot;I1&quot;&amp;lt;&quot;SI2&quot;&amp;lt;&quot;SI1&quot;&amp;lt;..: 2 3 5 4 2 6 7 3 4 5 ...
+##  $ depth  : num  61.5 59.8 56.9 62.4 63.3 62.8 62.3 61.9 65.1 59.4 ...
+##  $ table  : num  55 61 65 58 58 57 57 55 61 61 ...
+##  $ price  : int  326 326 327 334 335 336 336 337 337 338 ...
+##  $ x      : num  3.95 3.89 4.05 4.2 4.34 3.94 3.95 4.07 3.87 4 ...
+##  $ y      : num  3.98 3.84 4.07 4.23 4.35 3.96 3.98 4.11 3.78 4.05 ...
+##  $ z      : num  2.43 2.31 2.31 2.63 2.75 2.48 2.47 2.53 2.49 2.39 ...
+
+head(diamonds)
+
+##   carat       cut color clarity depth table price    x    y    z
+## 1  0.23     Ideal     E     SI2  61.5    55   326 3.95 3.98 2.43
+## 2  0.21   Premium     E     SI1  59.8    61   326 3.89 3.84 2.31
+## 3  0.23      Good     E     VS1  56.9    65   327 4.05 4.07 2.31
+## 4  0.29   Premium     I     VS2  62.4    58   334 4.20 4.23 2.63
+## 5  0.31      Good     J     SI2  63.3    58   335 4.34 4.35 2.75
+## 6  0.24 Very Good     J    VVS2  62.8    57   336 3.94 3.96 2.48
+
+typeof(diamonds)
+
+## [1] &quot;list&quot;
+
+df &amp;lt;- diamonds
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我们以钻石的重量（carat）与其相应的价格作为分析入手，自觉立马会告诉我们，一颗同等品质的钻石，其重量越大，则相应的价格就越高，换句话说，价格与重量应该是一个递增函数的关系。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  qplot(x = carat, y = price, data = df)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-3.png&quot; alt=&quot;plot of chunk unnamed-chunk-3&quot; /&gt; &lt;img src=&quot;/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-3.png&quot; alt=&quot;plot of chunk unnamed-chunk-3&quot; /&gt; 
+可以看出，钻石的价格与其重量呈现指数型递增关系的。因此，我们可以对其做一个对数变换，希望得到一个线性的函数关系。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  qplot(x = log(carat), y = log(price), data = df)  ## qplot() 支持对变量函数的输入
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-4.png&quot; alt=&quot;plot of chunk unnamed-chunk-4&quot; /&gt; &lt;img src=&quot;/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-4.png&quot; alt=&quot;plot of chunk unnamed-chunk-4&quot; /&gt; 
+果不其然，这是一个非常完美的线性关系。不过我们也需要警惕图形的「过分拟合」。这是后话，以后有机会再探讨 &lt;/p&gt;
+
+&lt;p&gt;此外，我们可以使用 &lt;code&gt;color&lt;/code&gt; 参数来控制第三个变量（一般是分类变量）来查看钻石的颜色是否也会影响其价格。具体的命令如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  qplot(x = carat, y = price, data = df, color = color)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-5.png&quot; alt=&quot;plot of chunk unnamed-chunk-5&quot; /&gt; &lt;img src=&quot;/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-5.png&quot; alt=&quot;plot of chunk unnamed-chunk-5&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;同样的，使用 &lt;code&gt;shape&lt;/code&gt; 来查看形状效果&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  qplot(x = carat, y = price, data = df, shape = cut, color = color)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-6.png&quot; alt=&quot;plot of chunk unnamed-chunk-6&quot; /&gt; &lt;img src=&quot;/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-6.png&quot; alt=&quot;plot of chunk unnamed-chunk-6&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;以上我们介绍了如何控制「修饰」成分命令下面，我们来查看一下如何控制图形输出的「几何」形状。这个主要是通过 &lt;code&gt;geom&lt;/code&gt; 来实现的。&lt;/p&gt;
+
+&lt;p&gt;使用 &lt;code&gt;smooth&lt;/code&gt; 制作拟合。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x = carat, y = price, data = df, geom = c(&quot;point&quot;, &quot;smooth&quot;), color = color)
+
+## geom_smooth: method=&quot;auto&quot; and size of largest group is &amp;gt;=1000, so using gam with formula: y ~ s(x, bs = &quot;cs&quot;). Use 'method = x' to change the smoothing method.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-7.png&quot; alt=&quot;plot of chunk unnamed-chunk-7&quot; /&gt; &lt;img src=&quot;/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-7.png&quot; alt=&quot;plot of chunk unnamed-chunk-7&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;这个是「箱叶图」&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x = color, y = price, data = df, geom = &quot;boxplot&quot;, color = color)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-8.png&quot; alt=&quot;plot of chunk unnamed-chunk-8&quot; /&gt; &lt;img src=&quot;/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-8.png&quot; alt=&quot;plot of chunk unnamed-chunk-8&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;再来一个&lt;code&gt;jitter&lt;/code&gt;，同时我们使用参数 &lt;code&gt;alpha = I()&lt;/code&gt; 来控制渐变的效果。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x = color, y = price, data = df, geom = &quot;jitter&quot;, alpha = I(1/5))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-9.png&quot; alt=&quot;plot of chunk unnamed-chunk-9&quot; /&gt; &lt;img src=&quot;/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-9.png&quot; alt=&quot;plot of chunk unnamed-chunk-9&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;或者我们想要一个柱状图，则可以使用命令&lt;code&gt;histogram&lt;/code&gt;， 同时使用参数 &lt;code&gt;binwidth&lt;/code&gt; 来控制间距，使用 &lt;code&gt;fill&lt;/code&gt; 来填。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x = carat, data = df, geom = &quot;histogram&quot;, binwidth = .05, fill = color)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-10.png&quot; alt=&quot;plot of chunk unnamed-chunk-10&quot; /&gt; &lt;img src=&quot;/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-10.png&quot; alt=&quot;plot of chunk unnamed-chunk-10&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;或者来一个概率分布图，使用 &lt;code&gt;geom = &quot;density&quot;&lt;/code&gt; 来实现&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x = price, data = df, geom = &quot;density&quot;, color = color)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-11.png&quot; alt=&quot;plot of chunk unnamed-chunk-11&quot; /&gt; &lt;img src=&quot;/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-11.png&quot; alt=&quot;plot of chunk unnamed-chunk-11&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;在实证金融数据分析中，我们经常会遇到形形色色的时间序列数据，对于时间序列数据，我们可以使用 &lt;code&gt;geom = &quot;line&quot;&lt;/code&gt; 或者 &lt;code&gt;geom = &quot;path&quot;&lt;/code&gt; 来表明数据随时间变化的特征。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;df2 &amp;lt;- data.frame(x = seq(1, 100), y = rnorm(100))
+qplot(x, y, data = df2, geom=c(&quot;point&quot;,&quot;line&quot;), col = &quot;red&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-12.png&quot; alt=&quot;plot of chunk unnamed-chunk-12&quot; /&gt; &lt;img src=&quot;/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-12.png&quot; alt=&quot;plot of chunk unnamed-chunk-12&quot; /&gt; &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;df3 &amp;lt;- data.frame(x = rnorm(1000), y = rnorm(1000))
+qplot(x, y, data = df3, geom=c(&quot;point&quot;,&quot;line&quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-131.png&quot; alt=&quot;plot of chunk unnamed-chunk-13&quot; /&gt; &lt;img src=&quot;/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-131.png&quot; alt=&quot;plot of chunk unnamed-chunk-13&quot; /&gt; &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x, y, data = df3, geom=c(&quot;point&quot;,&quot;path&quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-132.png&quot; alt=&quot;plot of chunk unnamed-chunk-13&quot; /&gt; &lt;img src=&quot;/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-132.png&quot; alt=&quot;plot of chunk unnamed-chunk-13&quot; /&gt; 
+&lt;code&gt;geom = &quot;line&quot;&lt;/code&gt; 与 &lt;code&gt;geom = &quot;path&quot;&lt;/code&gt; 的差别在于前者使用了时间序列数据是按照一定的观测值顺序排列的，而后者则仅仅是按照数据的呈现方式出现。这个需要我们反思在七十年代的时候美国经济学术界内轰轰烈烈的激战是否存在「Philips Curve」，即政府是否存在可以协调经济通胀率与失业率的良方。原先的数据只是按照数据简单的排序，并没有考虑到收集数据内在的时间先后顺序，从而得出通胀率与失业率可替代的结论。而后来这个经过 Friedman 等人的卓越工作，才揭示了原来政府的这套政策是行不通的，原因在于人们是具有理性预期的，如果真的按照政府的经济政策来实施，则会发生「替换性选择」，最终导致政策无效。这个就是典型的使用数据制作「path」图形的案例。}&lt;/p&gt;
+
+&lt;p&gt;当然，我么也可以使用 &lt;code&gt;facets&lt;/code&gt; 来对不同数据子集分别画图，得到不同的图形对比&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qplot(x = price, data = df, facets = cut~., geom = &quot;density&quot;, color = color)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-14.png&quot; alt=&quot;plot of chunk unnamed-chunk-14&quot; /&gt; &lt;img src=&quot;/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-14.png&quot; alt=&quot;plot of chunk unnamed-chunk-14&quot; /&gt; &lt;/p&gt;
+
 <img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
  </entry>
  
@@ -1103,48 +1297,6 @@ $$&lt;/p&gt;
 &lt;p&gt;我的朋友，他还有很多事情没有完成的，却真的不能完成了。&lt;/p&gt;
 
 &lt;p&gt;我这不甘心的一辈子，已经在过去结束了。&lt;/p&gt;
-
-<img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
- </entry>
- 
- <entry>
-   <title>诸多事情</title>
-   <link href="http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing/"/>
-   <updated>2014-02-12T00:00:00+08:00</updated>
-   <id>http://williamlfang.github.com/cn/2014/02/12/zhu-duo-shi-qing</id>
-   <content type="html">&lt;p&gt;想着有一段时间没有码字了，指尖竟然有些生疏。其实每次打开笔记本，总是想着要有千言万语诉说，那种浓厚的情绪像是一次乘坐列车的远行去拜见一位老友，漫长的路途上早就打好了腹稿构造了完整的画面，可是真正见面了，我们却什么也不说，只是静静的凝望彼此，一言不发。我是有着千般感情万种思绪，却像是失去了老友多年消息总是联系不上了，我愈要赴会，却不知该买到何站的列车。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;此情可待成追忆，只是当时已惘然。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;一场团圆的春节&lt;/h2&gt;
-
-&lt;p&gt;这个春节过得平淡，安静的出奇。本来嘛，厦门就是一个旅游的城市，人来人往，车水马龙，热闹喧嚣，浮华尘世，这个本该就是这座城市的标志。可是真正到了春节，却也少了人，不见了往日的喧嚣。这座城市一下子变得可爱，如含蓄的姑娘，像待放的花苞，羞羞答答的。大抵是政府的规定只为贪图省事（baoli zhifa），我们的城市在春节期间竟然不允许燃放烟花。只是冷冷清清的城市，在这个孤孤单单的季节里，多少显得有点委屈。&lt;/p&gt;
-
-&lt;p&gt;不过几日的天气倒是也好。阳光灿烂如孩童的笑脸天真无瑕，暖心的却不热烈，滑落在皮肤生怕破碎。有一天猪头提议全家动身前去东坪山晒太阳，只为了这一刻的阳光弥足珍贵。是啊，往前每每在老家过年，春节这几天几乎都是阴雨连天，难得的出现这么晴朗的天气。南方的小渔村更添了几分冷意，空气了充斥了水气的冰冻，像是凝结的薄幕。更有那些象征喜庆的鞭炮在燃放过后四处挥舞的烟雾，掺杂在冰晶的半空，久久不散，犹如仙境。一个人常年在外旅居，此刻见了这般景象，竟有一些感伤，仿佛这是一股催泪剂，流浪的酸楚与归家的喜悦一齐涌上眼角，润湿了眼眶。&lt;/p&gt;
-
-&lt;p&gt;今天春节并没有回老家过春节。年前和猪头商量了一下，决定邀请家中两位老人来厦团聚。一来是我们也没有那么多时间，本来她的假期就少得可怜，这来来回回的在路上费的时间多，也够折腾人（航班经常改道，火车时而晚点），小咪豆也不大适合舟车劳顿，怕了出了漏子；二来，我们也想让老人家出来走走，毕竟厦门这个春节的天气真的是好的惹人疼爱，招人喜欢，而且在这边我们两个都比较熟悉，平时出来旅游吃饭都挺方便的。于是乎，我们家今年便最终在厦门团聚了。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;一次未行的聚会&lt;/h2&gt;
-
-&lt;p&gt;掐指一算，现在离初中毕业已经十年了。十年可算是一个大时期，我从一个毛头小伙子到一个丈夫与一个孩子的父亲。走过的这十年，一直都坎坎坷坷，曲曲折折。人生本当如此，历经风雨，奋斗不止，在晚年回首方有可念之处。可是这十年来，我总是那么的羡慕当初的那个纯真的孩子，一脸惘然的朝向未知的旅途，却也满心的勇气。&lt;/p&gt;
-
-&lt;p&gt;初中的校园坐落在一个海滩湾处。小，而且年代久远，当时又正值人口峰值，我们的学校里竟然漫漫的都是人。这业已脱离了我对学校的概念，原先的小学人少，地大，小伙伴们总是有各种玩趣之地可去。可是现在，我只能在教室里待着，不能出去，稍不小心，便有人在走廊里撞到了。在这个拥挤甚至可以说是臃肿的校园里，我却感到无尽的孤单。人与人的会面，往往加深了心与心的分裂。愈多的人，愈感孤单。这种在人多之处说体会到的孤单，长年累月的陪伴着我，阴魂不散，挥之不去。&lt;/p&gt;
-
-&lt;p&gt;初中唯一让我着迷的事情，是数学课本里那些由符号与方程编写而成的美丽世界。它们像极了天际线在昏黄夜晚的轮廓，淡淡的泛着氤氲。很多时候，我愿凝视这个虚无缥缈却深埋心底的幻城，痴痴的美梦着，想要得到那个神秘的答案。&lt;/p&gt;
-
-&lt;p&gt;无数的小时里，我把自己深埋在那些符号里，不吭一声。我的这种孤傲与孤单，将周边的同学都隔离起来了，不再联系。其实，我只是不说一句话；其实，我只是一直都孤单着。&lt;/p&gt;
-
-&lt;p&gt;很多的年头里，我不曾与我的那些小伙伴们联络。&lt;/p&gt;
-
-&lt;p&gt;今年突然听娜姐给我电话（我也不知她何来家里的号码），说是春节会有同学聚会，毕竟许多人已经不见整十年，希望此次可以相聚会面。可是，这次命运又在捉弄玩笑，今年正值全家都齐来厦门团聚，并没有计划会老家。而家中尚有小咪豆需要照顾，故而此次聚会也无奈不能成行。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;一个未果的问题&lt;/h2&gt;
-
-&lt;p&gt;有一个悬而未解的问题，未果，不便诉说。&lt;/p&gt;
 
 <img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></content>
  </entry>

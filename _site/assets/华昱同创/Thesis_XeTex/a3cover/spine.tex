@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[paperwidth=22cm,paperheight=29.7cm,
+  left=0cm, right=0cm]{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{zhspacing}
+\usepackage{zhfont}
+% for chinese font:
+\newfontfamily\zhpunctfont[RawFeature={vertical:+vert:+vhal}]{Adobe Song Std}
+\setzhmainfont[RawFeature={vertical:}]{Adobe Song Std}
+
+\newcommand\underlinewidth[2][50pt]{\underline{\parbox[t]{#1}{\centering#2}}}
+% read common commands
+\input{../config/headcommon}
+
+\pagestyle{empty}
+
+\begin{document}
+\input{../author}
+\zhspacing
+\haltskipscheme
+
+\flushright
+\xiaowu
+\vfill
+\makeatletter
+\rotatebox{-90}{\XMUT@value@title}
+
+\vfill
+\rotatebox{-90}{\XMUT@value@author}
+
+\vfill
+\rotatebox{-90}{指导教师}
+
+\vspace{1em}
+\rotatebox{-90}{\XMUT@value@advisor}
+
+\vfill
+\rotatebox{-90}{\XMUT@value@school}
+\makeatother
+
+\vfill
+\end{document}
+

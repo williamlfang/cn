@@ -1,0 +1,904 @@
+
+<!DOCTYPE html>
+<!--
+-->
+<html lang="zh-CN"/>
+<head>
+
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+	<meta name="author" content="william" />
+	<meta name="generator" content="Jekyll" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<meta name="keywords" content="采访" />
+	<meta name="description" content="曾厝垵后厝85号的大男孩" />
+
+	<meta charset="UTF-8"/>
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+
+	<title> 方 莲 | William</title>
+
+<!--
+	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+-->
+
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="William ATOM Feed" />
+	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/2013/07/14/to-be-a-man/" /> -->
+	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/2013/07/14/to-be-a-man/" />
+	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
+
+	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
+	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
+	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
+	<script>hljs.initHighlightingOnLoad();</script>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true,
+                extensions: ["AMSmath.js"]
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 90      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+
+<style>
+@charset "utf-8";
+
+
+/* ========================================= 字体颜色 ================================================*/
+/* Head color
+a:not(.btn) {
+  color: #00699E;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  transition: 300ms;
+}
+*/
+a:hover:not(.btn),
+a:active:not(.btn) {
+  color: #9E0000;
+  text-decoration: none;
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+
+/* ========================================= 字体颜色 ================================================*/
+
+
+
+/* = 动画 Animations
+----------------------------------------------- */
+
+@-webkit-keyframes title-in {
+  0% {
+    -webkit-transform: translateY(-50px);
+  }
+  80% { 
+    -webkit-transform: translateY(-5px);
+  }
+  90% { 
+    -webkit-transform: translateY(5px);
+  }
+  100% { 
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes description-in {
+  0% {
+    -webkit-transform: translateY(90px);
+  }
+  80% { 
+    -webkit-transform: translateY(5px);
+  }
+  90% { 
+    -webkit-transform: translateY(-5px);
+  }
+  100% { 
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes profile-img-hover {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  23% { 
+    -webkit-transform: rotate(18deg);
+  }
+  25% { 
+    -webkit-transform: rotate(20deg);
+  }
+  50% { 
+    -webkit-transform: rotate(0);
+  }
+  73% { 
+    -webkit-transform: rotate(-18deg);
+  }
+  75% { 
+    -webkit-transform: rotate(-20deg);
+  }
+  100% { 
+    -webkit-transform: rotate(0);
+  }
+}
+
+@-webkit-keyframes profile-img-active {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% { 
+    -webkit-transform: rotate(365deg);
+  }
+}
+
+@-webkit-keyframes profile-img-loading {
+  0% {
+    -webkit-filter: blur(5px);
+  }
+  100% { 
+    -webkit-filter: blur(1px);
+  }
+}
+
+@-webkit-keyframes spinner-in {
+  0% {
+    -webkit-filter: blur(5px);
+    -webkit-transform: translateY(60px);
+  }
+  100% { 
+    -webkit-filter: none;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes panel-in {
+  0% {
+    -webkit-filter: grayscale(0.8) blur(5px);
+    -webkit-transform: translateY(80px);
+  }
+  50% {
+    -webkit-filter: grayscale(0.3) blur(3px);
+    -webkit-transform: translateY(60px);
+  }
+  100% { 
+    -webkit-filter: none;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes map-in {
+  0% {
+    -webkit-filter: grayscale(0.8) blur(5px);
+  }
+  50% {
+    -webkit-filter: grayscale(0.3) blur(3px);
+  }
+  100% { 
+    -webkit-filter: none;
+  }
+}
+
+@-webkit-keyframes map-in {
+  0% {
+    -webkit-filter: grayscale(0.8) blur(5px);
+  }
+  100% { 
+    -webkit-filter: none;
+  }
+}
+
+@-webkit-keyframes sns-icon-hover {
+  0% {
+    -webkit-transform: scale(1.1) rotate(3deg) translateX(-2px);
+  }
+  100% { 
+    -webkit-transform: scale(1.1) rotate(-3deg) translateX(2px);
+  }
+}
+
+
+
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+
+.sns-icon {
+  position: relative;
+  border-radius: 13px;
+  margin: 0 30px 10px;        /*    margin: 0 30px 60px;  */
+  width: 40px;
+  float: left;
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+  
+  -webkit-box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  -moz-box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+ 
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+ 
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  
+  -webkit-filter: blur(0) grayscale(0.2);
+  -webkit-transform: translateZ(0);
+}
+.sns-icon:hover {
+  -webkit-filter: none;
+  -webkit-animation: sns-icon-hover 100ms linear .8s infinite alternate;
+}
+.sns-icon:before {
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 50%;
+  top: 0;
+  left: 0;
+ 
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+ 
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,.1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(100%,rgba(255,255,255,.1)));
+  background: linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,.1) 100%);
+}
+.sns-icon:hover:before {
+  height: 0;
+  
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+  
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,.1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.3)), color-stop(100%,rgba(255,255,255,.1)));
+  background: linear-gradient(top, rgba(255,255,255,0.3) 0%,rgba(255,255,255,.1) 100%);}
+
+.sns-icon:after {
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 30px;
+  bottom: -31px;
+  left: 0;
+ 
+  -webkit-border-top-left-radius: 13px;
+  -webkit-border-top-right-radius: 13px;
+  -moz-border-radius-topleft: 13px;
+  -moz-border-radius-topright: 13px;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+ 
+  background: -moz-linear-gradient(top, rgba(230,230,230,.3) 0%, rgba(230,230,230,0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(230,230,230,.3)), color-stop(100%,rgba(230,230,230,0)));
+  background: linear-gradient(top, rgba(230,230,230,.3) 0%,rgba(230,230,230,0) 100%);
+}
+.sns-icon img {
+  -webkit-box-reflect: below 5px -webkit-gradient(linear, left top, left bottom, color-stop(30%,rgba(255, 255, 255, 0.0)), color-stop(80%,rgba(255, 255, 255, 0.1)), color-stop(100%,rgba(255, 255, 255, .3)));
+}
+.sns-fadeout {
+  opacity: 0.5;
+  -webkit-filter: blur(5px) grayscale(0.6);
+}
+
+/* --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+</style>
+  <!-- -------------------------------------------------------------------------------  -->
+
+  <style type="text/css">
+  /* Project: CV template;
+ *Author: Richard Nyasha Kaseke;
+ *Published on: http: //www.square.co.zw */
+.main {
+  margin: 0 auto;
+  max-width: 900px;        /* ============ main width ===============*/
+  width: 100%;
+  padding: 20px;
+}
+
+header {
+  border-bottom: 0px solid #f1f1f1;     /* ============ 6 ===============*/              
+  background: #222222 url("http://williamlfang.qiniudn.com/cv/img/blurry.jpg") center top no-repeat;
+  color: white;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 80%;              /* 100%; */
+  background-position: center;
+  margin: 0 auto;
+  min-height: 150px;
+  width: 100%;
+}
+header section {
+  float: none;
+  display: block;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+header h1 {
+  font-size: 45px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 0;
+}
+header span {
+  font-size: 25px;
+  margin-top: 20px;
+  display: block;
+  text-transform: lowercase;
+  /*
+  font-family: "Dancing Script", cursive;
+  */
+  font-family: "KaiTi", cursive;
+}
+
+section {
+  float: left;
+  max-width: 700px;
+  width: 100%;          /* section width 70%*/
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+
+article {
+  margin-bottom: 40px;
+}
+article h1 {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.contact {
+  margin: 10px 0 20px 0;
+}
+.contact a {
+  color: white;
+  font-family: "Nunito", serif;
+  margin: 0 15px 0 0;
+  padding: 0 0 0 20px;
+}
+.contact .link {
+  background: url("http://williamlfang.qiniudn.com/cv/img/globe.png") no-repeat;
+}
+.contact .mail {
+  background: url("http://williamlfang.qiniudn.com/cv/img/mail.png") no-repeat;
+}
+.contact .phone {
+  margin: 0;
+  background: url("http://williamlfang.qiniudn.com/cv/img/phone.png") no-repeat;
+}
+
+.contact .sns {
+  margin: 0;
+}
+
+
+.pic {
+  float: right;
+  margin: -70px 0 0 0;
+}
+
+#module {
+  width: 100%;
+}
+
+.time {
+  width: 20%;
+  display: inline;
+  float: left;
+  text-align: right;
+  width: 70px;
+  margin-right: 20px;
+  font-size: 15px;                              /* -------------   time font size --------------------*/
+  font-weight: bold;
+}
+
+.timeline {
+  width: 80%;
+  display: inline-block;
+}
+.timeline .element {
+  margin: 0;
+  padding: 0 0 10px 20px;
+  border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   */
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+}
+/*
+.timeline .element h3 {
+  display: inline-block;
+}
+*/
+.timeline .element:hover {
+  border-left: 4px solid #c2d9a1;
+  cursor: pointer;
+}
+.timeline .element:hover {
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+}
+.timeline .element::before {
+  content: " ";
+  color: white;
+  background: white;
+  display: inline-block;
+  margin-left: -29px;
+  position: absolute;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 12px;
+  width: 12px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+}
+.timeline .element ul {
+  list-style-type: square;
+  padding-left: 15px;
+  margin: 0;
+}
+
+.level {
+  height: 4px;
+  background: #b7e5e2;
+  margin: 4px 0;
+}
+.level span {
+  display: block;
+  height: 100%;
+  background: #4ec5e0;
+  overflow: hidden;
+}
+
+blockquote {
+  margin: 0;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+blockquote:before {
+  color: #cccccc;
+  content: open-quote;
+  font-size: 40px;
+  line-height: 0.1;
+  margin-right: 10px;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto 9;
+}
+
+@media only screen and (max-width: 50em) {
+  section {
+    margin: 0 auto;
+    float: none;
+    width: 100%;
+    display: block;
+  }
+
+  .pic {
+    float: none;
+    display: block;
+  }
+
+  aside {
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    display: block;
+  }
+  aside article {
+    width: 33%;
+    padding: 0 10px;
+    display: inline-block;
+    float: left;
+  }
+}
+@media only screen and (max-width: 40em) {
+  header h1 {
+    font-size: 30px;
+  }
+
+  aside article {
+    width: 100%;
+    display: block;
+    float: left;
+  }
+
+  .timeline {
+    width: 65%;
+  }
+
+  .pic {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+</style>
+  <link href='http://fonts.googleapis.com/css?family=Nunito|Dancing+Script|Quattrocento+Sans' rel='stylesheet' type='text/css'>
+
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+
+<!--=================================================================== -->
+</head>
+
+
+<body>
+
+  <header>
+    <section class="main">
+      <h1>方  莲<span>厦门大学王亚南经济研究院</span></h1>
+      <div class="contact">
+        <a href="http://williamlfang.github.com" class="link">Homepage</a>
+        <a href="mailto:william.lian.fang@gmail.com" class="mail">Gmail Me</a>
+        <a href="tel:+86 15060782961" class="phone">+86 150-6078-2961</a>
+      </div>
+<!--
+      <div class="contact">
+        <a href="https://www.facebook.com/profile.php?id=100006649868022"><div id="icon-facebook" class="sns-icon" title="Facebook"><img src="http://williamlfang.qiniudn.com/cv/img/facebooksns_icon_10.png"></div></a>
+        <a href="gmail" target="_blank"><div id="icon-gmail" class="sns-icon" data-toggle="tooltip" title="Google"><img src="http://williamlfang.qiniudn.com/cv/img/google+sns_icon_14.png"></div></a>
+        <a href="http://weibo.com/u/2270629193"><div id="icon-sinaweibo" class="sns-icon" data-toggle="tooltip" title="新浪微博"><img src="http://williamlfang.qiniudn.com/cv/img/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9Asns_icon_1.png"></div></a>
+        <a ><div id="icon-qq" class="sns-icon" data-toggle="tooltip" title="QQ: 夏石"><img src="http://williamlfang.qiniudn.com/cv/img/QQ%E5%A5%BD%E5%8F%8Bsns_icon_24.png"></div></a>
+        <a href=" "><div id="icon-wechat" class="sns-icon" data-toggle="tooltip" title="微信: william_fang"><img src="http://williamlfang.qiniudn.com/cv/img/%E5%BE%AE%E4%BF%A1sns_icon_22.png"></div></a>
+      </div>
+-->
+    </section>
+  </header>
+
+
+	<div id="main" class="w-100p font-gray-dark">
+		<div class="nav nav-large nav-orange">
+			<div class="menu cleared">
+			<a title="首页" class="nav-item" href="http://williamlfang.github.com/cn/">首页</a>
+				<div class="nav-has-menu">
+					<a class="nav-item" href="http://williamlfang.github.com/cn/archives.html">归档</a>
+						<div class="nav-menu">
+							
+							<a title="Time" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Time">Time</a>
+							
+							<a title="Love" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Love">Love</a>
+							
+							<a title="Campus" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Campus">Campus</a>
+							
+							<a title="Personal" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Personal">Personal</a>
+							
+							<a title="Life" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Life">Life</a>
+							
+							<a title="assets" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#assets">assets</a>
+							
+							<a title="rforcats-gh-pages" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#rforcats-gh-pages">rforcats-gh-pages</a>
+							
+							<a title="Tech" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Tech">Tech</a>
+							
+							<a title="Programming" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Programming">Programming</a>
+							
+							<a title="经济分析" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#经济分析">经济分析</a>
+							
+							<a title="个人" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#个人">个人</a>
+							
+							<a title="金融数学" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#金融数学">金融数学</a>
+							
+							<a title="金融" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#金融">金融</a>
+							
+							<a title="Finance" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Finance">Finance</a>
+							
+							<a title="工作" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#工作">工作</a>
+							
+							<a title="R" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#R">R</a>
+							
+						</div>
+				</div>
+			<a title="邻居" class="nav-item" href="http://williamlfang.github.com/cn/links.html">链接</a>
+			<a title="关于" class="nav-item" href="http://williamlfang.github.com/cn/about.html">关于</a>
+			<a title="留言" class="nav-item" href="http://williamlfang.github.com/cn/guestbook.html">留言</a>
+				<div class="search right h-1">
+					<form method="get" id="searchform" action="http://williamlfang.github.com/cn/search.html">
+					<input type="text" name="q" id="search" size="13" value="" placeholder="你在找什么呢？" x-webkit-speech />
+					</form>
+				</div>
+			</div>
+		</div>
+
+	<div id="articles">
+		
+
+<div class="post mt-2">
+
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2013/07/14/to-be-a-man/">
+		<span class="year">2013</span>
+		<span class="day">14</span>
+		<span class="month">July</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2013/07/14/to-be-a-man/" title="曾厝垵后厝85号的大男孩">曾厝垵后厝85号的大男孩</a></h3>
+		<div class="content lh-150p font-16 pd-1 mg-2 radius-8">
+		<blockquote>
+  <p>熟悉方莲的人，都知道他是一个可爱的多面体。他是老师眼中的好学生，是妻子眼中永远温暖的好老公，更是新任奶爸。现在他是曾厝垵后厝85号，厦门【咪豆+】体验式家庭住宿的大掌柜，能上能下，上管经营财务，下至通厕所、修水管，可谓十八般武艺样样精通。</p>
+</blockquote>
+
+<!-- more -->
+
+<h2 id="section">【毕业“敢”想】</h2>
+
+<p>方莲说，作为一个老研究生，他很想与大家分享自己的毕业感想，他真的很敢想。</p>
+
+<p>首先，他看重研究生的批判思考能力。无论是厦门大学研究生新生，或是正在读研的老生，无论是外校考进来的还是本校本科进入研究生阶段学习的，他都希望学弟妹们努力提高自身的批判性思考能力。毫不夸张的说，无论你学习什么专业，批判性思考都将是你在大学学习中最重要的科目之一。你的课外作业的品质，你在职业生涯中的努力，你对家庭生活的贡献，你对个人事物的处理—所有这些都取决于你解决问题和所作出决定的能力。</p>
+
+<p>其次，他强调一种实用的技能，即信息搜索能力。话说在这个大数据时代，面对信息过载，若是能高速有效的检索到自己所需的讯息，这简直太棒了。他偏爱谷歌搜索，通过信息检索掌握了LATEX软件。提起这件事，他显得很得意，眼睛里突闪着亮光，嘴角挂着些坏笑。也许正因为如此，他总是能了解很多事情，并对其中一些事情知道的更多一些。</p>
+
+<p>最后，他说要有一种胸襟，能够独立，能够兼容并包。在他看来，这种胸襟既是做学术对真理的坚持，更是做人的基本守则。他倾心中庸，认为这是他的为人处事之道。这也许应验了《中庸》里的预示：“民之为人也，择乎中庸，得一善，则拳拳服膺弗失之矣。”</p>
+
+<h2 id="section-1">【用“心”生活】</h2>
+
+<p>2011年5月，在面朝大海，春暖花开的季节里，他成为了世界上最幸福的人，能够和自己的美丽新娘从相知到相守。那年，他在读研究生二年级，笑起来还有一些腼腆。</p>
+
+<p>他的新家落户在曾厝垵后厝85号。那里曾是一个很淳朴的小渔村，往前临海，珍珠湾的美就在脚底，背面靠山，长满了海对岸的乡愁。这是一个安静的村子。他曾对妻子说，想留在一个自在没有边界的岛屿，没有方向却始终绕着你的圆心转圈圈。然后，他们便义无反顾的来了厦门。因为，这里就是海。 </p>
+
+<p>在他看来，学习与生活是平衡的，不是非此即彼，不是你我对立。只顾学习就永远读不懂生活；不懂生活就更谈不上能学习。因为生活本身也是一种能力，一种学习的能力。</p>
+
+<p>他心里有只鸢，还有条鱼，鸢飞戾天，鱼跃于渊，要飞要游，他总是有自己的打算。他说，目标可大可远，但是不要太过狭隘、太过局限。于是有了曾厝垵后厝85号，他想为妻子和女儿找个有阳台的家。于是，也坚定了去北美继续读博深造的想法，他想给自己找个有价值的存活方式。这是最原始的动力。</p>
+
+<p>好了，他快毕业。可以飞了，用他喜欢的方式飞。可以游了，在他喜欢的地方游。也许在曾厝垵后厝，也许在北美，只愿成全这个让人暖暖的大男孩。</p>
+
+		<div class="post-end mt-1"><span><i></i>14 July 2013</span></div>
+		</div>
+	</div>
+
+	
+	<div class="tags pl-2 pr-2 mb-2 left">
+		<span class="tag">标签：
+		
+		<a class="button button-small button-orange" href="/tags.html#采访" title="采访">采访</a>
+		
+		</span>
+	</div>
+	
+
+	
+	<div class="categories pl-2 pr-2 mb-2 right">
+		<span class="categorie">分类：
+		
+		<a class="button button-small button-orange" href="http://williamlfang.github.com/cn/archives.html#Campus" title="Campus">Campus</a>
+		
+		</span>
+	</div>
+	
+
+	
+	<div class="cleared mt-2 pl-2 pr-2">
+		
+		<a class="button button-orange left" href="http://williamlfang.github.com/cn/2012/07/02/loving/" rel="prev" title="生病了">←我们都是一群被文字宠坏的小孩</a>
+		
+		
+		<a class="button button-orange right" href="http://williamlfang.github.com/cn/2013/07/17/sicked/" rel="next" title="生病了">生病了→</a>
+		
+	</div>
+
+	
+	<span id="btn_page_prev"><a href="http://williamlfang.github.com/cn/2012/07/02/loving/" rel="prev" title="Previous">
+	<span id="fanye" style="display: none;">
+		‹--
+	</span></a></span>
+	
+
+	
+	<span id="btn_page_next"><a href="http://williamlfang.github.com/cn/2013/07/17/sicked/" rel="next" title="Next">
+	<span id="fanye" style="display: none;">
+		--›
+	</span></a></span>
+	
+	
+
+	<div id="hm_t_18226" class="radius-8 baidu"></div>
+
+	
+<!--=========================================================================-->
+		<div class="friends">
+			<div class="friends_info"><a id="friends" href="#" rel="nofollow"><span>Contents</span></a></div>
+			<div id="friends_list" class="friends_list">
+				<script>
+// https://github.com/ghiculescu/jekyll-table-of-contents
+$(document).ready(function() {
+  var no_back_to_top_links = false
+
+  var headers = $('h1, h2, h3, h4, h5, h6').filter(function() {return this.id}), // get all headers with an ID
+      output = $('.toc');
+  if (!headers.length || headers.length < 3 || !output.length)
+    return;
+
+  var get_level = function(ele) { return parseInt(ele.nodeName.replace("H", ""), 10) }
+  var highest_level = headers.map(function(_, ele) { return get_level(ele) }).get().sort()[0]
+  // var return_to_top = '<i class="icon-arrow-up back-to-top"> ^ </i>'
+  var return_to_top = ''
+
+  var level = get_level(headers[0]), this_level, html = "<i></i> <ol>";
+  headers.on('click', function() {
+    if (!no_back_to_top_links) window.location.hash = this.id
+  }).addClass('clickable-header').each(function(_, header) {
+    this_level = get_level(header);
+    if (!no_back_to_top_links && this_level === highest_level) {
+      $(header).addClass('top-level-header').after(return_to_top)
+    }
+    if (this_level === level) // same level as before; same indenting
+      html += "<li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level < level) // higher level than before; end parent ol
+      html += "</li></ol></li><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level > level) // lower level than before; expand the previous to contain a ol
+      html += "<ol><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    level = this_level; // update for the next one
+  });
+  html += "</ol>";
+  if (!no_back_to_top_links) {
+    $(document).on('click', '.back-to-top', function() {
+      $(window).scrollTop(0)
+      window.location.hash = ''
+    })
+  }
+  output.hide().html(html).show('slow');
+});
+</script>
+<div class="toc"></div>
+ 
+				<br />
+			</div>
+			<a href="#" id="gc_close" rel="nofollow">X</a>
+		</div>
+<!--=========================================================================-->
+
+</div>
+	<div class="clear"></div>
+</div>
+
+
+
+		
+		</div>
+
+
+		
+
+	<!--
+		
+	-->
+
+	</div>
+
+	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
+		<div id="about" class="align-center">&copy; 2013-2014 Powered By Jekyll, Designed By <a href="http://williamlfang.github.io/">William Fang</a>.
+		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
+		<div class="radar"></div>
+		</div>
+	</div>
+<link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hibikai"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<script src="http://cdn.staticfile.org/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://cdn.staticfile.org/jqueryui/1.10.2/css/smoothness/jquery-ui-1.10.2.custom.min.css" type="text/css" media="all" />
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+</body>
+</html>
+

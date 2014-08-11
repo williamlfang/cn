@@ -1,0 +1,32 @@
+\documentclass[a4paper,10pt,twoside]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{set/math_article}
+\usepackage{set/note}
+\usepackage{set/mymdframed}
+\usepackage{set/zhfontcfg_article}
+
+
+\usepackage[font=small,format=plain,labelfont=bf,up,textfont=normal,singlelinecheck=false,flushleft]{caption}
+\setlength{\captionmargin}{10pt}
+ \makeatletter
+    \renewcommand{\thefigure}{\ifnum \c@section>\z@ \thesection-\fi \@arabic\c@figure}
+    \renewcommand{\thetable}{\ifnum \c@section>\z@ \thesection-\fi \@arabic\c@table}
+    \makeatother
+
+
+%<NEW:COMMAND>=================================================================
+\newcommand{\fts}{Financial Time Series}
+\newcommand{\ftsa}{Financial Time Series Analysis}
+\newcommand{\R}{\textbf{R~}}
+\newcommand{\rcode}[1]{\texttt{#1}}
+%>NEW:COMMAND<=================================================================
+%<BEGIN:DOCUMENT>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+
+
+
+
+
+

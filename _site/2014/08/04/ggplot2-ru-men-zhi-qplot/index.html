@@ -1,0 +1,1067 @@
+
+<!DOCTYPE html>
+<!--
+-->
+<html lang="zh-CN"/>
+<head>
+
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+	<meta name="author" content="william" />
+	<meta name="generator" content="Jekyll" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<meta name="keywords" content="Rggplot2qplot" />
+	<meta name="description" content="ggplot2入门之qplot" />
+
+	<meta charset="UTF-8"/>
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+
+	<title> 方 莲 | William</title>
+
+<!--
+	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+-->
+
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="William ATOM Feed" />
+	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/2014/08/04/ggplot2-ru-men-zhi-qplot/" /> -->
+	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/2014/08/04/ggplot2-ru-men-zhi-qplot/" />
+	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
+
+	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
+	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
+	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
+	<script>hljs.initHighlightingOnLoad();</script>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true,
+                extensions: ["AMSmath.js"]
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 90      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+
+<style>
+@charset "utf-8";
+
+
+/* ========================================= 字体颜色 ================================================*/
+/* Head color
+a:not(.btn) {
+  color: #00699E;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  transition: 300ms;
+}
+*/
+a:hover:not(.btn),
+a:active:not(.btn) {
+  color: #9E0000;
+  text-decoration: none;
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+
+/* ========================================= 字体颜色 ================================================*/
+
+
+
+/* = 动画 Animations
+----------------------------------------------- */
+
+@-webkit-keyframes title-in {
+  0% {
+    -webkit-transform: translateY(-50px);
+  }
+  80% { 
+    -webkit-transform: translateY(-5px);
+  }
+  90% { 
+    -webkit-transform: translateY(5px);
+  }
+  100% { 
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes description-in {
+  0% {
+    -webkit-transform: translateY(90px);
+  }
+  80% { 
+    -webkit-transform: translateY(5px);
+  }
+  90% { 
+    -webkit-transform: translateY(-5px);
+  }
+  100% { 
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes profile-img-hover {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  23% { 
+    -webkit-transform: rotate(18deg);
+  }
+  25% { 
+    -webkit-transform: rotate(20deg);
+  }
+  50% { 
+    -webkit-transform: rotate(0);
+  }
+  73% { 
+    -webkit-transform: rotate(-18deg);
+  }
+  75% { 
+    -webkit-transform: rotate(-20deg);
+  }
+  100% { 
+    -webkit-transform: rotate(0);
+  }
+}
+
+@-webkit-keyframes profile-img-active {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% { 
+    -webkit-transform: rotate(365deg);
+  }
+}
+
+@-webkit-keyframes profile-img-loading {
+  0% {
+    -webkit-filter: blur(5px);
+  }
+  100% { 
+    -webkit-filter: blur(1px);
+  }
+}
+
+@-webkit-keyframes spinner-in {
+  0% {
+    -webkit-filter: blur(5px);
+    -webkit-transform: translateY(60px);
+  }
+  100% { 
+    -webkit-filter: none;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes panel-in {
+  0% {
+    -webkit-filter: grayscale(0.8) blur(5px);
+    -webkit-transform: translateY(80px);
+  }
+  50% {
+    -webkit-filter: grayscale(0.3) blur(3px);
+    -webkit-transform: translateY(60px);
+  }
+  100% { 
+    -webkit-filter: none;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes map-in {
+  0% {
+    -webkit-filter: grayscale(0.8) blur(5px);
+  }
+  50% {
+    -webkit-filter: grayscale(0.3) blur(3px);
+  }
+  100% { 
+    -webkit-filter: none;
+  }
+}
+
+@-webkit-keyframes map-in {
+  0% {
+    -webkit-filter: grayscale(0.8) blur(5px);
+  }
+  100% { 
+    -webkit-filter: none;
+  }
+}
+
+@-webkit-keyframes sns-icon-hover {
+  0% {
+    -webkit-transform: scale(1.1) rotate(3deg) translateX(-2px);
+  }
+  100% { 
+    -webkit-transform: scale(1.1) rotate(-3deg) translateX(2px);
+  }
+}
+
+
+
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+
+.sns-icon {
+  position: relative;
+  border-radius: 13px;
+  margin: 0 30px 10px;        /*    margin: 0 30px 60px;  */
+  width: 40px;
+  float: left;
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+  
+  -webkit-box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  -moz-box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+ 
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+ 
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  
+  -webkit-filter: blur(0) grayscale(0.2);
+  -webkit-transform: translateZ(0);
+}
+.sns-icon:hover {
+  -webkit-filter: none;
+  -webkit-animation: sns-icon-hover 100ms linear .8s infinite alternate;
+}
+.sns-icon:before {
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 50%;
+  top: 0;
+  left: 0;
+ 
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+ 
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,.1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(100%,rgba(255,255,255,.1)));
+  background: linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,.1) 100%);
+}
+.sns-icon:hover:before {
+  height: 0;
+  
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+  
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,.1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.3)), color-stop(100%,rgba(255,255,255,.1)));
+  background: linear-gradient(top, rgba(255,255,255,0.3) 0%,rgba(255,255,255,.1) 100%);}
+
+.sns-icon:after {
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 30px;
+  bottom: -31px;
+  left: 0;
+ 
+  -webkit-border-top-left-radius: 13px;
+  -webkit-border-top-right-radius: 13px;
+  -moz-border-radius-topleft: 13px;
+  -moz-border-radius-topright: 13px;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+ 
+  background: -moz-linear-gradient(top, rgba(230,230,230,.3) 0%, rgba(230,230,230,0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(230,230,230,.3)), color-stop(100%,rgba(230,230,230,0)));
+  background: linear-gradient(top, rgba(230,230,230,.3) 0%,rgba(230,230,230,0) 100%);
+}
+.sns-icon img {
+  -webkit-box-reflect: below 5px -webkit-gradient(linear, left top, left bottom, color-stop(30%,rgba(255, 255, 255, 0.0)), color-stop(80%,rgba(255, 255, 255, 0.1)), color-stop(100%,rgba(255, 255, 255, .3)));
+}
+.sns-fadeout {
+  opacity: 0.5;
+  -webkit-filter: blur(5px) grayscale(0.6);
+}
+
+/* --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+</style>
+  <!-- -------------------------------------------------------------------------------  -->
+
+  <style type="text/css">
+  /* Project: CV template;
+ *Author: Richard Nyasha Kaseke;
+ *Published on: http: //www.square.co.zw */
+.main {
+  margin: 0 auto;
+  max-width: 900px;        /* ============ main width ===============*/
+  width: 100%;
+  padding: 20px;
+}
+
+header {
+  border-bottom: 0px solid #f1f1f1;     /* ============ 6 ===============*/              
+  background: #222222 url("http://williamlfang.qiniudn.com/cv/img/blurry.jpg") center top no-repeat;
+  color: white;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 80%;              /* 100%; */
+  background-position: center;
+  margin: 0 auto;
+  min-height: 150px;
+  width: 100%;
+}
+header section {
+  float: none;
+  display: block;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+header h1 {
+  font-size: 45px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 0;
+}
+header span {
+  font-size: 25px;
+  margin-top: 20px;
+  display: block;
+  text-transform: lowercase;
+  /*
+  font-family: "Dancing Script", cursive;
+  */
+  font-family: "KaiTi", cursive;
+}
+
+section {
+  float: left;
+  max-width: 700px;
+  width: 100%;          /* section width 70%*/
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+
+article {
+  margin-bottom: 40px;
+}
+article h1 {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.contact {
+  margin: 10px 0 20px 0;
+}
+.contact a {
+  color: white;
+  font-family: "Nunito", serif;
+  margin: 0 15px 0 0;
+  padding: 0 0 0 20px;
+}
+.contact .link {
+  background: url("http://williamlfang.qiniudn.com/cv/img/globe.png") no-repeat;
+}
+.contact .mail {
+  background: url("http://williamlfang.qiniudn.com/cv/img/mail.png") no-repeat;
+}
+.contact .phone {
+  margin: 0;
+  background: url("http://williamlfang.qiniudn.com/cv/img/phone.png") no-repeat;
+}
+
+.contact .sns {
+  margin: 0;
+}
+
+
+.pic {
+  float: right;
+  margin: -70px 0 0 0;
+}
+
+#module {
+  width: 100%;
+}
+
+.time {
+  width: 20%;
+  display: inline;
+  float: left;
+  text-align: right;
+  width: 70px;
+  margin-right: 20px;
+  font-size: 15px;                              /* -------------   time font size --------------------*/
+  font-weight: bold;
+}
+
+.timeline {
+  width: 80%;
+  display: inline-block;
+}
+.timeline .element {
+  margin: 0;
+  padding: 0 0 10px 20px;
+  border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   */
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+}
+/*
+.timeline .element h3 {
+  display: inline-block;
+}
+*/
+.timeline .element:hover {
+  border-left: 4px solid #c2d9a1;
+  cursor: pointer;
+}
+.timeline .element:hover {
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+}
+.timeline .element::before {
+  content: " ";
+  color: white;
+  background: white;
+  display: inline-block;
+  margin-left: -29px;
+  position: absolute;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 12px;
+  width: 12px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+}
+.timeline .element ul {
+  list-style-type: square;
+  padding-left: 15px;
+  margin: 0;
+}
+
+.level {
+  height: 4px;
+  background: #b7e5e2;
+  margin: 4px 0;
+}
+.level span {
+  display: block;
+  height: 100%;
+  background: #4ec5e0;
+  overflow: hidden;
+}
+
+blockquote {
+  margin: 0;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+blockquote:before {
+  color: #cccccc;
+  content: open-quote;
+  font-size: 40px;
+  line-height: 0.1;
+  margin-right: 10px;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto 9;
+}
+
+@media only screen and (max-width: 50em) {
+  section {
+    margin: 0 auto;
+    float: none;
+    width: 100%;
+    display: block;
+  }
+
+  .pic {
+    float: none;
+    display: block;
+  }
+
+  aside {
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    display: block;
+  }
+  aside article {
+    width: 33%;
+    padding: 0 10px;
+    display: inline-block;
+    float: left;
+  }
+}
+@media only screen and (max-width: 40em) {
+  header h1 {
+    font-size: 30px;
+  }
+
+  aside article {
+    width: 100%;
+    display: block;
+    float: left;
+  }
+
+  .timeline {
+    width: 65%;
+  }
+
+  .pic {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+</style>
+  <link href='http://fonts.googleapis.com/css?family=Nunito|Dancing+Script|Quattrocento+Sans' rel='stylesheet' type='text/css'>
+
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+
+<!--=================================================================== -->
+</head>
+
+
+<body>
+
+  <header>
+    <section class="main">
+      <h1>方  莲<span>厦门大学王亚南经济研究院</span></h1>
+      <div class="contact">
+        <a href="http://williamlfang.github.com" class="link">Homepage</a>
+        <a href="mailto:william.lian.fang@gmail.com" class="mail">Gmail Me</a>
+        <a href="tel:+86 15060782961" class="phone">+86 150-6078-2961</a>
+      </div>
+<!--
+      <div class="contact">
+        <a href="https://www.facebook.com/profile.php?id=100006649868022"><div id="icon-facebook" class="sns-icon" title="Facebook"><img src="http://williamlfang.qiniudn.com/cv/img/facebooksns_icon_10.png"></div></a>
+        <a href="gmail" target="_blank"><div id="icon-gmail" class="sns-icon" data-toggle="tooltip" title="Google"><img src="http://williamlfang.qiniudn.com/cv/img/google+sns_icon_14.png"></div></a>
+        <a href="http://weibo.com/u/2270629193"><div id="icon-sinaweibo" class="sns-icon" data-toggle="tooltip" title="新浪微博"><img src="http://williamlfang.qiniudn.com/cv/img/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9Asns_icon_1.png"></div></a>
+        <a ><div id="icon-qq" class="sns-icon" data-toggle="tooltip" title="QQ: 夏石"><img src="http://williamlfang.qiniudn.com/cv/img/QQ%E5%A5%BD%E5%8F%8Bsns_icon_24.png"></div></a>
+        <a href=" "><div id="icon-wechat" class="sns-icon" data-toggle="tooltip" title="微信: william_fang"><img src="http://williamlfang.qiniudn.com/cv/img/%E5%BE%AE%E4%BF%A1sns_icon_22.png"></div></a>
+      </div>
+-->
+    </section>
+  </header>
+
+
+	<div id="main" class="w-100p font-gray-dark">
+		<div class="nav nav-large nav-orange">
+			<div class="menu cleared">
+			<a title="首页" class="nav-item" href="http://williamlfang.github.com/cn/">首页</a>
+				<div class="nav-has-menu">
+					<a class="nav-item" href="http://williamlfang.github.com/cn/archives.html">归档</a>
+						<div class="nav-menu">
+							
+							<a title="Time" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Time">Time</a>
+							
+							<a title="Love" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Love">Love</a>
+							
+							<a title="Campus" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Campus">Campus</a>
+							
+							<a title="Personal" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Personal">Personal</a>
+							
+							<a title="Life" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Life">Life</a>
+							
+							<a title="assets" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#assets">assets</a>
+							
+							<a title="rforcats-gh-pages" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#rforcats-gh-pages">rforcats-gh-pages</a>
+							
+							<a title="Tech" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Tech">Tech</a>
+							
+							<a title="Programming" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Programming">Programming</a>
+							
+							<a title="经济分析" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#经济分析">经济分析</a>
+							
+							<a title="个人" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#个人">个人</a>
+							
+							<a title="金融数学" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#金融数学">金融数学</a>
+							
+							<a title="金融" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#金融">金融</a>
+							
+							<a title="Finance" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Finance">Finance</a>
+							
+							<a title="工作" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#工作">工作</a>
+							
+							<a title="R" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#R">R</a>
+							
+						</div>
+				</div>
+			<a title="邻居" class="nav-item" href="http://williamlfang.github.com/cn/links.html">链接</a>
+			<a title="关于" class="nav-item" href="http://williamlfang.github.com/cn/about.html">关于</a>
+			<a title="留言" class="nav-item" href="http://williamlfang.github.com/cn/guestbook.html">留言</a>
+				<div class="search right h-1">
+					<form method="get" id="searchform" action="http://williamlfang.github.com/cn/search.html">
+					<input type="text" name="q" id="search" size="13" value="" placeholder="你在找什么呢？" x-webkit-speech />
+					</form>
+				</div>
+			</div>
+		</div>
+
+	<div id="articles">
+		
+
+<div class="post mt-2">
+
+	<div class="info box">
+		<a class="date" href="http://williamlfang.github.com/cn/2014/08/04/ggplot2-ru-men-zhi-qplot/">
+		<span class="year">2014</span>
+		<span class="day">04</span>
+		<span class="month">August</span>
+		<span class="circle"></span>
+		</a>
+	</div>
+
+	<div class="article">
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2014/08/04/ggplot2-ru-men-zhi-qplot/" title="ggplot2入门之qplot">ggplot2入门之qplot</a></h3>
+		<div class="content lh-150p font-16 pd-1 mg-2 radius-8">
+		<p>据说 <code>R</code> 中那些优秀的扩展包（packages）都可以独立成一个新的统计软件，成为独霸一方的「草莽大王」，都值得我们为此「大书特书」一番。比如，时下我们会深入介绍的这款专门由于制作漂亮而不失矜持、俏丽而不失内涵、简单而不失充实的扩展包 – <code>ggplot2</code>。然而，如果你只是把我们今天的主角简单的看作是一款为数据画图的工具的话，那么这就有失偏颇了。乍一看，似乎我们传统的思维是把数据的可（zuo）视（tu）化（xing）仅仅作为统计分析的一个附属品，权做为说明而做的图形展现。这就好比是一场豪华婚礼中只能配得的「伴娘」，虽然自身也是穿衣戴宝的，却始终不能为大家器重。不知大家有没有想过，如果我们可以同时把数据的统计分析结果与数据直观特征图形结合在一起，通过这两者的交互印证，使得分析的结果更加具有说服力。说的更加直白一些，往往有些数据的特征是无法使用自然或者数理语言简明扼要的说清楚的，这时候就需要图形化的展示来提供更加充足的信息。也就是说，利用对数据制作「量体裁衣」的可视化展现，可以为我们的提供更加全面的信息，也在一定程度上为后期的数据统计分析提供直观的印象。</p>
+
+<!-- more -->
+
+<h2 id="section">数据可视化的基本思想</h2>
+
+<p><code>ggplot2</code> 能够使用简单的语法将数据的属性特征以图形可视化的形式展示出来，丰富了我们对数据的直观影响。不过，需要注意的，<code>ggplot2</code> 只是提供了一套静态的图形输出，尤其是适合与 PDF 格式的文件。但在现在互联网与移动屏的可视化时代，难免显得有点力不从心，无法满足我们对交互式图形的诉求。因此， Rstudio 公司后来在 Xie Yihui 同学的领导下，开发了适合与显示器屏幕的动态交互式图形输出包—— <code>Shiny</code>，以满足互联网移动屏幕的新要求。这个我们在今后介绍如何使用 \R 开发网页时再具体介绍。</p>
+
+<p>因此，Hadley 一上来就开宗明义的「提醒」大家不要仅仅把  <code>ggplot2</code> 当作是一个绘图工具而已：</p>
+
+<pre><code> `ggplot2` is a `R` package for producing statistical, or data, graphics, **but it is unlike most other graphics packages because it has a deep underlying grammer**.
+</code></pre>
+
+<p>这里所说的图形的「语法」（grammer），最早由 Wilkinson 提出，大体的思想是把一个数据图形看作由描述数据不同特征的属性所构成的套装，通过对不同组件的选择，来达到想要（甚至是想不到）的套装效果。这其中，不同的属性组件包括了：</p>
+
+<ul>
+  <li>数据：通常要求数据结构是 <code>data.frame</code>。所谓的「裸数据」，就是未经任何修改的原始数据。</li>
+  <li>几何对象：<code>geom</code> , 希望以直观的几何图形来显示数据特征，如点、线条等。</li>
+  <li>统计转换：<code>stat</code>,以数据统计分析的结果展示在图形中，这比传统的将统计输出单独展现具有更加直观的认识。</li>
+  <li>scales：</li>
+  <li>坐标系统：<code>coord</code>, 描述了如何将数据通过多维图形展现出来。</li>
+  <li>分页展示：<code>facet</code>,  就是把不同组别的数据通过分页的形式表示出来，这相当于做了一次 subsetting 的分组。</li>
+</ul>
+
+<h2 id="section-1">用法说明</h2>
+
+<p>下面，我们来具体看看如何使用 <code>qplot</code> 绘制精美的数据可视化图形。
+<code>qplot</code> 的基本用法和 <code>plot</code> 大体类似。主要的参数输入有：</p>
+
+<ul>
+  <li>数据：主要是使用 $x$ 和 $y$ 作为两个坐标轴，并且指定数据框类数据 \rcode{data}；</li>
+  <li>图形修饰：这个主要是通过 \rcode{aesthetics} 参数来完成，包括了
+    <ul>
+      <li><code>color</code>：使用不同的颜色来区分数据</li>
+      <li><code>size</code>：利用形状来区分数据</li>
+      <li><code>fill</code>：主要是在进行 <code>histogram</code> 和 <code>density</code> 的时候用于填充不同的数据，使得各种数据的比例更加直观明显。</li>
+    </ul>
+  </li>
+  <li>几何形状方面：利用 <code>geom</code> 来控制输出的图形几何形状，包括了
+    <ul>
+      <li><code>geom = "point"</code>：作为默认设置，以点的形式画图；</li>
+      <li><code>geom = "line"</code>：以线条的样子输出，通常适用于<strong>时间序列数据</strong>；</li>
+      <li><code>geom = "smooth"</code>：使用统计拟合输出；
+ &gt; <code>geom = "path"</code>：与时间序列类似，但是按照数据的先后顺序输出；
+ &gt; <code>geom = "boxplot"</code>：输出传统统计学角度的「箱叶图」，以五个<strong>quantile</strong> 作标记；
+ &gt; <code>geom = "jitter"</code>：类似于「箱叶图」，但是更加突出数据的分散描述，可以使用 <code>alpha = I ()</code> 来控制分散的透明程度；
+ &gt; <code>geom = "histogram"</code>：柱状图，可以使用参数 <code>binwidth</code> 来控制间隔大小；
+ &gt; <code>geom = "density"</code>：概率分布图；</li>
+    </ul>
+
+    <p>我们可以通过使用 <code>help(qplot)</code> 命令来查看其基本的函数结构：</p>
+
+    <p>qplot(x, y = NULL, …, data, facets = NULL, margins = FALSE,
+    geom = “auto”, stat = list(NULL), position = list(NULL), xlim = c(NA,
+    NA), ylim = c(NA, NA), log = “”, main = NULL,
+    xlab = deparse(substitute(x)), ylab = deparse(substitute(y)), asp = NA)</p>
+  </li>
+</ul>
+
+<p>通过使用几个简单的例子，我们想要看看具体是如何操作的。使用的数据是由自带的钻石品质的数据框。 该数据库一共包含了 $10$ 个变量的数据，共计 $53,940$ 次观测值。</p>
+
+<pre><code>str(diamonds)
+
+## 'data.frame':	53940 obs. of  10 variables:
+##  $ carat  : num  0.23 0.21 0.23 0.29 0.31 0.24 0.24 0.26 0.22 0.23 ...
+##  $ cut    : Ord.factor w/ 5 levels "Fair"&lt;"Good"&lt;..: 5 4 2 4 2 3 3 3 1 3 ...
+##  $ color  : Ord.factor w/ 7 levels "D"&lt;"E"&lt;"F"&lt;"G"&lt;..: 2 2 2 6 7 7 6 5 2 5 ...
+##  $ clarity: Ord.factor w/ 8 levels "I1"&lt;"SI2"&lt;"SI1"&lt;..: 2 3 5 4 2 6 7 3 4 5 ...
+##  $ depth  : num  61.5 59.8 56.9 62.4 63.3 62.8 62.3 61.9 65.1 59.4 ...
+##  $ table  : num  55 61 65 58 58 57 57 55 61 61 ...
+##  $ price  : int  326 326 327 334 335 336 336 337 337 338 ...
+##  $ x      : num  3.95 3.89 4.05 4.2 4.34 3.94 3.95 4.07 3.87 4 ...
+##  $ y      : num  3.98 3.84 4.07 4.23 4.35 3.96 3.98 4.11 3.78 4.05 ...
+##  $ z      : num  2.43 2.31 2.31 2.63 2.75 2.48 2.47 2.53 2.49 2.39 ...
+
+head(diamonds)
+
+##   carat       cut color clarity depth table price    x    y    z
+## 1  0.23     Ideal     E     SI2  61.5    55   326 3.95 3.98 2.43
+## 2  0.21   Premium     E     SI1  59.8    61   326 3.89 3.84 2.31
+## 3  0.23      Good     E     VS1  56.9    65   327 4.05 4.07 2.31
+## 4  0.29   Premium     I     VS2  62.4    58   334 4.20 4.23 2.63
+## 5  0.31      Good     J     SI2  63.3    58   335 4.34 4.35 2.75
+## 6  0.24 Very Good     J    VVS2  62.8    57   336 3.94 3.96 2.48
+
+typeof(diamonds)
+
+## [1] "list"
+
+df &lt;- diamonds
+</code></pre>
+
+<p>我们以钻石的重量（carat）与其相应的价格作为分析入手，自觉立马会告诉我们，一颗同等品质的钻石，其重量越大，则相应的价格就越高，换句话说，价格与重量应该是一个递增函数的关系。</p>
+
+<pre><code>  qplot(x = carat, y = price, data = df)
+</code></pre>
+
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3" /> 
+可以看出，钻石的价格与其重量呈现指数型递增关系的。因此，我们可以对其做一个对数变换，希望得到一个线性的函数关系。</p>
+
+<pre><code>  qplot(x = log(carat), y = log(price), data = df)  ## qplot() 支持对变量函数的输入
+</code></pre>
+
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-4.png" alt="plot of chunk unnamed-chunk-4" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-4.png" alt="plot of chunk unnamed-chunk-4" /> 
+果不其然，这是一个非常完美的线性关系。不过我们也需要警惕图形的「过分拟合」。这是后话，以后有机会再探讨 </p>
+
+<p>此外，我们可以使用 <code>color</code> 参数来控制第三个变量（一般是分类变量）来查看钻石的颜色是否也会影响其价格。具体的命令如下</p>
+
+<pre><code>  qplot(x = carat, y = price, data = df, color = color)
+</code></pre>
+
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5" /> </p>
+
+<p>同样的，使用 <code>shape</code> 来查看形状效果</p>
+
+<pre><code>  qplot(x = carat, y = price, data = df, shape = cut, color = color)
+</code></pre>
+
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6" /> </p>
+
+<p>以上我们介绍了如何控制「修饰」成分命令下面，我们来查看一下如何控制图形输出的「几何」形状。这个主要是通过 <code>geom</code> 来实现的。</p>
+
+<p>使用 <code>smooth</code> 制作拟合。</p>
+
+<pre><code>qplot(x = carat, y = price, data = df, geom = c("point", "smooth"), color = color)
+
+## geom_smooth: method="auto" and size of largest group is &gt;=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
+</code></pre>
+
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7" /> </p>
+
+<p>这个是「箱叶图」</p>
+
+<pre><code>qplot(x = color, y = price, data = df, geom = "boxplot", color = color)
+</code></pre>
+
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-8.png" alt="plot of chunk unnamed-chunk-8" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-8.png" alt="plot of chunk unnamed-chunk-8" /> </p>
+
+<p>再来一个<code>jitter</code>，同时我们使用参数 <code>alpha = I()</code> 来控制渐变的效果。</p>
+
+<pre><code>qplot(x = color, y = price, data = df, geom = "jitter", alpha = I(1/5))
+</code></pre>
+
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-9.png" alt="plot of chunk unnamed-chunk-9" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-9.png" alt="plot of chunk unnamed-chunk-9" /> </p>
+
+<p>或者我们想要一个柱状图，则可以使用命令<code>histogram</code>， 同时使用参数 <code>binwidth</code> 来控制间距，使用 <code>fill</code> 来填。</p>
+
+<pre><code>qplot(x = carat, data = df, geom = "histogram", binwidth = .05, fill = color)
+</code></pre>
+
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-10.png" alt="plot of chunk unnamed-chunk-10" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-10.png" alt="plot of chunk unnamed-chunk-10" /> </p>
+
+<p>或者来一个概率分布图，使用 <code>geom = "density"</code> 来实现</p>
+
+<pre><code>qplot(x = price, data = df, geom = "density", color = color)
+</code></pre>
+
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-11.png" alt="plot of chunk unnamed-chunk-11" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-11.png" alt="plot of chunk unnamed-chunk-11" /> </p>
+
+<p>在实证金融数据分析中，我们经常会遇到形形色色的时间序列数据，对于时间序列数据，我们可以使用 <code>geom = "line"</code> 或者 <code>geom = "path"</code> 来表明数据随时间变化的特征。</p>
+
+<pre><code>df2 &lt;- data.frame(x = seq(1, 100), y = rnorm(100))
+qplot(x, y, data = df2, geom=c("point","line"), col = "red")
+</code></pre>
+
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-12.png" alt="plot of chunk unnamed-chunk-12" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-12.png" alt="plot of chunk unnamed-chunk-12" /> </p>
+
+<pre><code>df3 &lt;- data.frame(x = rnorm(1000), y = rnorm(1000))
+qplot(x, y, data = df3, geom=c("point","line"))
+</code></pre>
+
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-131.png" alt="plot of chunk unnamed-chunk-13" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-131.png" alt="plot of chunk unnamed-chunk-13" /> </p>
+
+<pre><code>qplot(x, y, data = df3, geom=c("point","path"))
+</code></pre>
+
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-132.png" alt="plot of chunk unnamed-chunk-13" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-132.png" alt="plot of chunk unnamed-chunk-13" /> 
+<code>geom = "line"</code> 与 <code>geom = "path"</code> 的差别在于前者使用了时间序列数据是按照一定的观测值顺序排列的，而后者则仅仅是按照数据的呈现方式出现。这个需要我们反思在七十年代的时候美国经济学术界内轰轰烈烈的激战是否存在「Philips Curve」，即政府是否存在可以协调经济通胀率与失业率的良方。原先的数据只是按照数据简单的排序，并没有考虑到收集数据内在的时间先后顺序，从而得出通胀率与失业率可替代的结论。而后来这个经过 Friedman 等人的卓越工作，才揭示了原来政府的这套政策是行不通的，原因在于人们是具有理性预期的，如果真的按照政府的经济政策来实施，则会发生「替换性选择」，最终导致政策无效。这个就是典型的使用数据制作「path」图形的案例。}</p>
+
+<p>当然，我么也可以使用 <code>facets</code> 来对不同数据子集分别画图，得到不同的图形对比</p>
+
+<pre><code>qplot(x = price, data = df, facets = cut~., geom = "density", color = color)
+</code></pre>
+
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-14.png" alt="plot of chunk unnamed-chunk-14" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-14.png" alt="plot of chunk unnamed-chunk-14" /> </p>
+
+
+		<div class="post-end mt-1"><span><i></i>04 August 2014</span></div>
+		</div>
+	</div>
+
+	
+	<div class="tags pl-2 pr-2 mb-2 left">
+		<span class="tag">标签：
+		
+		<a class="button button-small button-orange" href="/tags.html#R" title="R">R</a>
+		
+		<a class="button button-small button-orange" href="/tags.html#ggplot2" title="ggplot2">ggplot2</a>
+		
+		<a class="button button-small button-orange" href="/tags.html#qplot" title="qplot">qplot</a>
+		
+		</span>
+	</div>
+	
+
+	
+	<div class="categories pl-2 pr-2 mb-2 right">
+		<span class="categorie">分类：
+		
+		<a class="button button-small button-orange" href="http://williamlfang.github.com/cn/archives.html#R" title="R">R</a>
+		
+		</span>
+	</div>
+	
+
+	
+	<div class="cleared mt-2 pl-2 pr-2">
+		
+		<a class="button button-orange left" href="http://williamlfang.github.com/cn/2014/07/09/shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/" rel="prev" title="军工版块整理">←使用Quantmod下载沪深股票数据及分析</a>
+		
+		
+		<a class="button button-orange right" href="http://williamlfang.github.com/cn/2014/08/11/jun-gong-ban-kuai-zheng-li/" rel="next" title="军工版块整理">军工版块整理→</a>
+		
+	</div>
+
+	
+	<span id="btn_page_prev"><a href="http://williamlfang.github.com/cn/2014/07/09/shi-yong-quantmod-xia-zai-hu-shen-gu-piao-shu-ju-ji-fen-xi/" rel="prev" title="Previous">
+	<span id="fanye" style="display: none;">
+		‹--
+	</span></a></span>
+	
+
+	
+	<span id="btn_page_next"><a href="http://williamlfang.github.com/cn/2014/08/11/jun-gong-ban-kuai-zheng-li/" rel="next" title="Next">
+	<span id="fanye" style="display: none;">
+		--›
+	</span></a></span>
+	
+	
+
+	<div id="hm_t_18226" class="radius-8 baidu"></div>
+
+	
+<!--=========================================================================-->
+		<div class="friends">
+			<div class="friends_info"><a id="friends" href="#" rel="nofollow"><span>Contents</span></a></div>
+			<div id="friends_list" class="friends_list">
+				<script>
+// https://github.com/ghiculescu/jekyll-table-of-contents
+$(document).ready(function() {
+  var no_back_to_top_links = false
+
+  var headers = $('h1, h2, h3, h4, h5, h6').filter(function() {return this.id}), // get all headers with an ID
+      output = $('.toc');
+  if (!headers.length || headers.length < 3 || !output.length)
+    return;
+
+  var get_level = function(ele) { return parseInt(ele.nodeName.replace("H", ""), 10) }
+  var highest_level = headers.map(function(_, ele) { return get_level(ele) }).get().sort()[0]
+  // var return_to_top = '<i class="icon-arrow-up back-to-top"> ^ </i>'
+  var return_to_top = ''
+
+  var level = get_level(headers[0]), this_level, html = "<i></i> <ol>";
+  headers.on('click', function() {
+    if (!no_back_to_top_links) window.location.hash = this.id
+  }).addClass('clickable-header').each(function(_, header) {
+    this_level = get_level(header);
+    if (!no_back_to_top_links && this_level === highest_level) {
+      $(header).addClass('top-level-header').after(return_to_top)
+    }
+    if (this_level === level) // same level as before; same indenting
+      html += "<li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level < level) // higher level than before; end parent ol
+      html += "</li></ol></li><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    else if (this_level > level) // lower level than before; expand the previous to contain a ol
+      html += "<ol><li><a href='#" + header.id + "'>" + header.innerHTML + "</a>";
+    level = this_level; // update for the next one
+  });
+  html += "</ol>";
+  if (!no_back_to_top_links) {
+    $(document).on('click', '.back-to-top', function() {
+      $(window).scrollTop(0)
+      window.location.hash = ''
+    })
+  }
+  output.hide().html(html).show('slow');
+});
+</script>
+<div class="toc"></div>
+ 
+				<br />
+			</div>
+			<a href="#" id="gc_close" rel="nofollow">X</a>
+		</div>
+<!--=========================================================================-->
+
+</div>
+	<div class="clear"></div>
+</div>
+
+
+
+		
+		</div>
+
+
+		
+
+	<!--
+		
+	-->
+
+	</div>
+
+	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
+		<div id="about" class="align-center">&copy; 2013-2014 Powered By Jekyll, Designed By <a href="http://williamlfang.github.io/">William Fang</a>.
+		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
+		<div class="radar"></div>
+		</div>
+	</div>
+<link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hibikai"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<script src="http://cdn.staticfile.org/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://cdn.staticfile.org/jqueryui/1.10.2/css/smoothness/jquery-ui-1.10.2.custom.min.css" type="text/css" media="all" />
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+</body>
+</html>
+

@@ -9,8 +9,10 @@ description:
 published: false
 status:    process
 ---
- 
-> 主要参考[军工集团整理](http://xueqiu.com/8394881843/30619814)
+
+##### > 主要参考[军工集团整理](http://xueqiu.com/8394881843/30619814)
+
+<!-- more -->
 
 ## 中国兵器工业集团
 

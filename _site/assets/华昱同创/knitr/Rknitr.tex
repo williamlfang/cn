@@ -1,0 +1,70 @@
+%<knitr: GLOBAL SETTING>========================================================
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(xtable)
+library(stargazer)
+## GLOBAL setting
+#-----------------------------------------------------------------------------------
+## knitr configuration: http://yihui.name/knitr/options#chunk_options
+#-----------------------------------------------------------------------------------
+opts_chunk$set(fig.path = 'figure/listings-'
+               ,fig.width=6, fig.height=3       # Figure size:
+               ,fig.keep="high", fig.show="hold"
+               ,fig.align="center"
+               ,prompt=FALSE     # show the prompts
+               ,comment="##R>"   # turn off commenting of ouput:"NA"
+               ,warning = FALSE  # No warnings will not be shown in the output.
+               ,message = FALSE  # No message will not be shown in the output.
+               ,size = 'footnotesize'   # font size for R chunk code
+               ,cache = TRUE
+)    
+opts_chunk$set(tidy=TRUE)              ## tidy=TRUE
+opts_chunk$set(out.lines=4)
+opts_chunk$set(out.truncate=80)
+#opts_chunk$set(results='asis')          ## results = 'asis'
+##
+knit_hooks$set(inline = function(x) {
+   if (is.numeric(x)) return(knitr:::format_sci(x, 'latex'))
+   x = as.character(x)
+   h = knitr:::hilight_source(x, 'latex', list(prompt=FALSE, size='scriptsize', highlight=FALSE))
+   h = gsub("([_#$%&])", "\\\\\\1", h)
+   h = gsub('(["\'])', '\\1{}', h)
+   gsub('^\\\\begin\\{alltt\\}\\s*|\\\\end\\{alltt\\}\\s*$', '', h)}
+               )
+
+# margin for all figures mar = c(3.1, 4.1, 1.1, 1.1)
+## tune details of base graphics (http://yihui.name/knitr/hooks)
+knit_hooks$set(small.mar=function(before, options, envir){
+if (before && options$fig.show!='none') par(mar=c(3.1,4.1,1.1,1.1)
+                                            ,cex.lab=.95,cex.axis=.9
+                                            ,mgp=c(2,.7,0),tcl=-.3)
+})
+
+opts_chunk$set(small.mar=TRUE)          
+#-----------------------------------------------------------------------------------
+## R configuration
+#-----------------------------------------------------------------------------------
+options(width = 80, scipen = 6, digits = 3)
+options(replace.assign = TRUE)
+pdf.options(pointsize = 8)    # smaller pointsize for recording plots
+#> tidy
+tidy.opts=list(keep.blank.line=FALSE, width.cutoff=50)
+
+## library to be used
+library(ggplot2)
+theme_set(theme_gray(base_size = 8))     ## font size
+
+library("AER")
+
+library("fBasics")
+#-----------------------------------------------------------------------------------
+#>THEME
+#-----------------------------------------------------------------------------------
+@
+<<autumn-theme, cache=FALSE, echo=FALSE>>=
+thm <- knit_theme$get("autumn")  ## bright, autumn
+knit_theme$set(thm)
+#<THEME
+#render_listings()
+@
+%>knitr: GLOBAL SETTING<========================================================

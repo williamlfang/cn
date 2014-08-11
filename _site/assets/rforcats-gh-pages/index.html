@@ -1,0 +1,1341 @@
+
+<!DOCTYPE html>
+<!--
+-->
+<html lang="zh-CN"/>
+<head>
+
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+	<meta name="author" content="william" />
+	<meta name="generator" content="Jekyll" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+	<meta name="description" content="Home" />
+
+	<meta charset="UTF-8"/>
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+
+	<title> 方 莲 | William</title>
+
+<!--
+	<meta name="keywords" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+	<meta name="description" content="宏观经济，利率理论，金融理论与资产定价，统计与计量经济学，R语言，新型经济与互联网" />
+-->
+
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="/media/themes/miantiao/life/css/style.css" media="all"/>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="William ATOM Feed" />
+	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/assets/rforcats-gh-pages/index.html" /> -->
+	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/assets/rforcats-gh-pages/index.html" />
+	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
+
+	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
+	<script type="text/javascript" src="/media/js/highlight.pack.js"></script> 
+	<link rel="stylesheet" href="/media/css/code-styles/tomorrow-night-bright.css" media="all"/>
+	<script>hljs.initHighlightingOnLoad();</script>
+<!--=================================================================== -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<!-- RFE: for easier MathJax install https://github.com/mathjax/MathJax/issues/339 -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'] // removed 'code' entry
+    },
+    /*   方程编号 */
+    TeX: {
+            equationNumbers: {
+                autoNumber: ["AMS"],
+                useLabelIds: true,
+                extensions: ["AMSmath.js"]
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            scale: 90      /* 数学字体大小*/
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        }
+        /*   方程编号 */
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'></script>
+<!-- CDN upload request sent in private mail to generated-toc author -->
+<script type='text/javascript' src='http://www.kryogenix.org/code/browser/generated-toc/generated_toc.js'></script>
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+
+<style>
+@charset "utf-8";
+
+
+/* ========================================= 字体颜色 ================================================*/
+/* Head color
+a:not(.btn) {
+  color: #00699E;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  transition: 300ms;
+}
+*/
+a:hover:not(.btn),
+a:active:not(.btn) {
+  color: #9E0000;
+  text-decoration: none;
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+
+/* ========================================= 字体颜色 ================================================*/
+
+
+
+/* = 动画 Animations
+----------------------------------------------- */
+
+@-webkit-keyframes title-in {
+  0% {
+    -webkit-transform: translateY(-50px);
+  }
+  80% { 
+    -webkit-transform: translateY(-5px);
+  }
+  90% { 
+    -webkit-transform: translateY(5px);
+  }
+  100% { 
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes description-in {
+  0% {
+    -webkit-transform: translateY(90px);
+  }
+  80% { 
+    -webkit-transform: translateY(5px);
+  }
+  90% { 
+    -webkit-transform: translateY(-5px);
+  }
+  100% { 
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes profile-img-hover {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  23% { 
+    -webkit-transform: rotate(18deg);
+  }
+  25% { 
+    -webkit-transform: rotate(20deg);
+  }
+  50% { 
+    -webkit-transform: rotate(0);
+  }
+  73% { 
+    -webkit-transform: rotate(-18deg);
+  }
+  75% { 
+    -webkit-transform: rotate(-20deg);
+  }
+  100% { 
+    -webkit-transform: rotate(0);
+  }
+}
+
+@-webkit-keyframes profile-img-active {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% { 
+    -webkit-transform: rotate(365deg);
+  }
+}
+
+@-webkit-keyframes profile-img-loading {
+  0% {
+    -webkit-filter: blur(5px);
+  }
+  100% { 
+    -webkit-filter: blur(1px);
+  }
+}
+
+@-webkit-keyframes spinner-in {
+  0% {
+    -webkit-filter: blur(5px);
+    -webkit-transform: translateY(60px);
+  }
+  100% { 
+    -webkit-filter: none;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes panel-in {
+  0% {
+    -webkit-filter: grayscale(0.8) blur(5px);
+    -webkit-transform: translateY(80px);
+  }
+  50% {
+    -webkit-filter: grayscale(0.3) blur(3px);
+    -webkit-transform: translateY(60px);
+  }
+  100% { 
+    -webkit-filter: none;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes map-in {
+  0% {
+    -webkit-filter: grayscale(0.8) blur(5px);
+  }
+  50% {
+    -webkit-filter: grayscale(0.3) blur(3px);
+  }
+  100% { 
+    -webkit-filter: none;
+  }
+}
+
+@-webkit-keyframes map-in {
+  0% {
+    -webkit-filter: grayscale(0.8) blur(5px);
+  }
+  100% { 
+    -webkit-filter: none;
+  }
+}
+
+@-webkit-keyframes sns-icon-hover {
+  0% {
+    -webkit-transform: scale(1.1) rotate(3deg) translateX(-2px);
+  }
+  100% { 
+    -webkit-transform: scale(1.1) rotate(-3deg) translateX(2px);
+  }
+}
+
+
+
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+
+.sns-icon {
+  position: relative;
+  border-radius: 13px;
+  margin: 0 30px 10px;        /*    margin: 0 30px 60px;  */
+  width: 40px;
+  float: left;
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+/*===========================================================================================*/
+  
+  -webkit-box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  -moz-box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 2px 8px 1.5px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+ 
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+ 
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  
+  -webkit-filter: blur(0) grayscale(0.2);
+  -webkit-transform: translateZ(0);
+}
+.sns-icon:hover {
+  -webkit-filter: none;
+  -webkit-animation: sns-icon-hover 100ms linear .8s infinite alternate;
+}
+.sns-icon:before {
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 50%;
+  top: 0;
+  left: 0;
+ 
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+ 
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,.1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(100%,rgba(255,255,255,.1)));
+  background: linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,.1) 100%);
+}
+.sns-icon:hover:before {
+  height: 0;
+  
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+  
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,.1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.3)), color-stop(100%,rgba(255,255,255,.1)));
+  background: linear-gradient(top, rgba(255,255,255,0.3) 0%,rgba(255,255,255,.1) 100%);}
+
+.sns-icon:after {
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 30px;
+  bottom: -31px;
+  left: 0;
+ 
+  -webkit-border-top-left-radius: 13px;
+  -webkit-border-top-right-radius: 13px;
+  -moz-border-radius-topleft: 13px;
+  -moz-border-radius-topright: 13px;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+ 
+  background: -moz-linear-gradient(top, rgba(230,230,230,.3) 0%, rgba(230,230,230,0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(230,230,230,.3)), color-stop(100%,rgba(230,230,230,0)));
+  background: linear-gradient(top, rgba(230,230,230,.3) 0%,rgba(230,230,230,0) 100%);
+}
+.sns-icon img {
+  -webkit-box-reflect: below 5px -webkit-gradient(linear, left top, left bottom, color-stop(30%,rgba(255, 255, 255, 0.0)), color-stop(80%,rgba(255, 255, 255, 0.1)), color-stop(100%,rgba(255, 255, 255, .3)));
+}
+.sns-fadeout {
+  opacity: 0.5;
+  -webkit-filter: blur(5px) grayscale(0.6);
+}
+
+/* --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+</style>
+  <!-- -------------------------------------------------------------------------------  -->
+
+  <style type="text/css">
+  /* Project: CV template;
+ *Author: Richard Nyasha Kaseke;
+ *Published on: http: //www.square.co.zw */
+.main {
+  margin: 0 auto;
+  max-width: 900px;        /* ============ main width ===============*/
+  width: 100%;
+  padding: 20px;
+}
+
+header {
+  border-bottom: 0px solid #f1f1f1;     /* ============ 6 ===============*/              
+  background: #222222 url("http://williamlfang.qiniudn.com/cv/img/blurry.jpg") center top no-repeat;
+  color: white;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 9px 1px rgba(0, 0, 0, 0.4);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 80%;              /* 100%; */
+  background-position: center;
+  margin: 0 auto;
+  min-height: 150px;
+  width: 100%;
+}
+header section {
+  float: none;
+  display: block;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+header h1 {
+  font-size: 45px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 0;
+}
+header span {
+  font-size: 25px;
+  margin-top: 20px;
+  display: block;
+  text-transform: lowercase;
+  /*
+  font-family: "Dancing Script", cursive;
+  */
+  font-family: "KaiTi", cursive;
+}
+
+section {
+  float: left;
+  max-width: 700px;
+  width: 100%;          /* section width 70%*/
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+
+article {
+  margin-bottom: 40px;
+}
+article h1 {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.contact {
+  margin: 10px 0 20px 0;
+}
+.contact a {
+  color: white;
+  font-family: "Nunito", serif;
+  margin: 0 15px 0 0;
+  padding: 0 0 0 20px;
+}
+.contact .link {
+  background: url("http://williamlfang.qiniudn.com/cv/img/globe.png") no-repeat;
+}
+.contact .mail {
+  background: url("http://williamlfang.qiniudn.com/cv/img/mail.png") no-repeat;
+}
+.contact .phone {
+  margin: 0;
+  background: url("http://williamlfang.qiniudn.com/cv/img/phone.png") no-repeat;
+}
+
+.contact .sns {
+  margin: 0;
+}
+
+
+.pic {
+  float: right;
+  margin: -70px 0 0 0;
+}
+
+#module {
+  width: 100%;
+}
+
+.time {
+  width: 20%;
+  display: inline;
+  float: left;
+  text-align: right;
+  width: 70px;
+  margin-right: 20px;
+  font-size: 15px;                              /* -------------   time font size --------------------*/
+  font-weight: bold;
+}
+
+.timeline {
+  width: 80%;
+  display: inline-block;
+}
+.timeline .element {
+  margin: 0;
+  padding: 0 0 10px 20px;
+  border-left: 4px solid #4ec5e0;             /* 时间轴的宽度， 颜色: border-left: 4px solid #f1f1f1;   */
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+}
+/*
+.timeline .element h3 {
+  display: inline-block;
+}
+*/
+.timeline .element:hover {
+  border-left: 4px solid #c2d9a1;
+  cursor: pointer;
+}
+.timeline .element:hover {
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+}
+.timeline .element::before {
+  content: " ";
+  color: white;
+  background: white;
+  display: inline-block;
+  margin-left: -29px;
+  position: absolute;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 12px;
+  width: 12px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+}
+.timeline .element ul {
+  list-style-type: square;
+  padding-left: 15px;
+  margin: 0;
+}
+
+.level {
+  height: 4px;
+  background: #b7e5e2;
+  margin: 4px 0;
+}
+.level span {
+  display: block;
+  height: 100%;
+  background: #4ec5e0;
+  overflow: hidden;
+}
+
+blockquote {
+  margin: 0;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+blockquote:before {
+  color: #cccccc;
+  content: open-quote;
+  font-size: 40px;
+  line-height: 0.1;
+  margin-right: 10px;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto 9;
+}
+
+@media only screen and (max-width: 50em) {
+  section {
+    margin: 0 auto;
+    float: none;
+    width: 100%;
+    display: block;
+  }
+
+  .pic {
+    float: none;
+    display: block;
+  }
+
+  aside {
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    display: block;
+  }
+  aside article {
+    width: 33%;
+    padding: 0 10px;
+    display: inline-block;
+    float: left;
+  }
+}
+@media only screen and (max-width: 40em) {
+  header h1 {
+    font-size: 30px;
+  }
+
+  aside article {
+    width: 100%;
+    display: block;
+    float: left;
+  }
+
+  .timeline {
+    width: 65%;
+  }
+
+  .pic {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+</style>
+  <link href='http://fonts.googleapis.com/css?family=Nunito|Dancing+Script|Quattrocento+Sans' rel='stylesheet' type='text/css'>
+
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+<!--=================================================================== -->
+
+<!--=================================================================== -->
+</head>
+
+
+<body>
+
+  <header>
+    <section class="main">
+      <h1>方  莲<span>厦门大学王亚南经济研究院</span></h1>
+      <div class="contact">
+        <a href="http://williamlfang.github.com" class="link">Homepage</a>
+        <a href="mailto:william.lian.fang@gmail.com" class="mail">Gmail Me</a>
+        <a href="tel:+86 15060782961" class="phone">+86 150-6078-2961</a>
+      </div>
+<!--
+      <div class="contact">
+        <a href="https://www.facebook.com/profile.php?id=100006649868022"><div id="icon-facebook" class="sns-icon" title="Facebook"><img src="http://williamlfang.qiniudn.com/cv/img/facebooksns_icon_10.png"></div></a>
+        <a href="gmail" target="_blank"><div id="icon-gmail" class="sns-icon" data-toggle="tooltip" title="Google"><img src="http://williamlfang.qiniudn.com/cv/img/google+sns_icon_14.png"></div></a>
+        <a href="http://weibo.com/u/2270629193"><div id="icon-sinaweibo" class="sns-icon" data-toggle="tooltip" title="新浪微博"><img src="http://williamlfang.qiniudn.com/cv/img/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9Asns_icon_1.png"></div></a>
+        <a ><div id="icon-qq" class="sns-icon" data-toggle="tooltip" title="QQ: 夏石"><img src="http://williamlfang.qiniudn.com/cv/img/QQ%E5%A5%BD%E5%8F%8Bsns_icon_24.png"></div></a>
+        <a href=" "><div id="icon-wechat" class="sns-icon" data-toggle="tooltip" title="微信: william_fang"><img src="http://williamlfang.qiniudn.com/cv/img/%E5%BE%AE%E4%BF%A1sns_icon_22.png"></div></a>
+      </div>
+-->
+    </section>
+  </header>
+
+
+	<div id="main" class="w-100p font-gray-dark">
+		<div class="nav nav-large nav-orange">
+			<div class="menu cleared">
+			<a title="首页" class="nav-item" href="http://williamlfang.github.com/cn/">首页</a>
+				<div class="nav-has-menu">
+					<a class="nav-item" href="http://williamlfang.github.com/cn/archives.html">归档</a>
+						<div class="nav-menu">
+							
+							<a title="Time" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Time">Time</a>
+							
+							<a title="Love" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Love">Love</a>
+							
+							<a title="Campus" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Campus">Campus</a>
+							
+							<a title="Personal" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Personal">Personal</a>
+							
+							<a title="Life" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Life">Life</a>
+							
+							<a title="assets" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#assets">assets</a>
+							
+							<a title="rforcats-gh-pages" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#rforcats-gh-pages">rforcats-gh-pages</a>
+							
+							<a title="Tech" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Tech">Tech</a>
+							
+							<a title="Programming" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Programming">Programming</a>
+							
+							<a title="经济分析" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#经济分析">经济分析</a>
+							
+							<a title="个人" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#个人">个人</a>
+							
+							<a title="金融数学" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#金融数学">金融数学</a>
+							
+							<a title="金融" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#金融">金融</a>
+							
+							<a title="Finance" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#Finance">Finance</a>
+							
+							<a title="工作" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#工作">工作</a>
+							
+							<a title="R" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#R">R</a>
+							
+							<a title="股票" class="nav-menu-item" href="http://williamlfang.github.com/cn/archives.html#股票">股票</a>
+							
+						</div>
+				</div>
+			<a title="邻居" class="nav-item" href="http://williamlfang.github.com/cn/links.html">链接</a>
+			<a title="关于" class="nav-item" href="http://williamlfang.github.com/cn/about.html">关于</a>
+			<a title="留言" class="nav-item" href="http://williamlfang.github.com/cn/guestbook.html">留言</a>
+				<div class="search right h-1">
+					<form method="get" id="searchform" action="http://williamlfang.github.com/cn/search.html">
+					<input type="text" name="q" id="search" size="13" value="" placeholder="你在找什么呢？" x-webkit-speech />
+					</form>
+				</div>
+			</div>
+		</div>
+
+	<div id="articles">
+		<h2 id="an-intro-to-r-for-new-programmers">An intro to R for new programmers</h2>
+
+<p>This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any language for that matter, you won’t be tainted by other programming languages with different ways of doing things. This is good - we can teach you the R way of doing things.</p>
+
+<p><img src="/assets/img/programmer.png" width="300" /></p>
+
+<h2 id="jsforcats">jsforcats?</h2>
+
+<p>Yep, this is a total rip off of <a href="http://jsforcats.com">JSforcats.com</a> - hopefully Max doesn’t mind.</p>
+
+<h2 id="list-of-things">List of things</h2>
+
+<ul>
+  <li><a href="#rconsole">Using the R console - let’s dig our claws in</a></li>
+  <li><a href="#vectors">vectors - the basic R data structure</a></li>
+  <li><a href="#dataframes">data frames - weird but familiar</a></li>
+  <li><a href="#lists">lists</a></li>
+  <li><a href="#indexing">indexing</a></li>
+  <li><a href="#functions">functions</a></li>
+  <li><a href="#packages">Using packages</a></li>
+  <li><a href="#nonos">No no’s for cats using R</a></li>
+  <li><a href="#dodos">Do do’s for cats - or things to do</a></li>
+  <li><a href="#data">Open data from the web! Cat’s love open data</a></li>
+  <li><a href="#reading">Reading</a></li>
+  <li><a href="#makeitbetter">Does this site suck?</a></li>
+</ul>
+
+<h2 id="a-hrefrconsole-namerconsolea-r-console"><a href="#rconsole" name="rconsole"></a>#&lt;/a&gt; R console</h2>
+
+<p>Writing code is fun. Since you’re a cat, not having opposable thumbs may be a bit of an issue, but surely you’re clever enough to find a way around that.</p>
+
+<p>So open up R, and you’ll see something like this:</p>
+
+<p><img src="/assets/img/console.png" width="550" border="1" /></p>
+
+<p>You can do math:</p>
+
+<p><code>r
+1 + 1
+## [1] 2
+</code></p>
+
+<p>Type a set of letters together (also known as a <em>word</em>) within quotes and the console will print it back to you</p>
+
+<p><code>r
+"Hello Mr Tickles"
+## [1] "Hello Mr Tickles"
+</code></p>
+
+<p>Another thing you’ll want to do as a cat using R is assign things to a name so that you can use it later. This is as if you were a chipmunk and you buried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).</p>
+
+<p>Assign the number 5 to the name <code>mynumber</code></p>
+
+<p><code>r
+mynumber &lt;- 5
+</code></p>
+
+<p>Later you can use <code>mynumber</code>, like adding it to another number</p>
+
+<p><code>r
+mynumber + 1
+## [1] 6
+</code></p>
+
+<p>Sweet!</p>
+
+<h2 id="a-hrefvectors-namevectorsa-vectors"><a href="#vectors" name="vectors"></a>#&lt;/a&gt; Vectors</h2>
+
+<p>Vectors are one of the simplest and common objects in R. Think of a vector like a cat’s tail.  Some are short. Some are long. But they are are pretty much the same width - that is, they can only contain a single data type. So a vector can only have all <code>numeric</code>, all <code>character</code>, all <code>factor</code>, etc.</p>
+
+<p>But wait, how do we make a vector? The easiest way is to use a function called <code>c</code>. So <code>c(5,6,7)</code> will create a vector of numbers 5, 6, and 7. Let’s try to put a <code>character</code> and a <code>numeric</code> together.</p>
+
+<p><code>r
+c("hello", 5)
+## [1] "hello" "5"
+</code></p>
+
+<p>Notice how the output of the above converted the 5 to a character type with quotes around the <code>5</code> to make it <code>"5"</code>, i.e., or an object of type <em>character</em>.
+But we can happily make a vector of the same type of information, like</p>
+
+<p><code>r
+c(5, 8, 200, 1, 1.5, 0.9)
+## [1]   5.0   8.0 200.0   1.0   1.5   0.9
+</code></p>
+
+<p>Vectors are handy because they can be combined to make other R objects, such as lists (see <a href="#lists">lists</a> below), and <a href="#dataframes">data frames</a>.</p>
+
+<p>In addition, you can do something to each part of the vector. Let’s say you have a vector of three types of dog:</p>
+
+<p><code>r
+dogs &lt;- c('dalmatians','retrievers','poodles')
+</code></p>
+
+<p>You can add something to each of them like</p>
+
+<p><code>r
+paste(dogs, "are silly")
+## [1] "dalmatians are silly" "retrievers are silly" "poodles are silly"
+</code></p>
+
+<h2 id="a-hrefdataframes-namedataframesa-data-frames"><a href="#dataframes" name="dataframes"></a>#&lt;/a&gt; Data frames</h2>
+
+<p>A <code>data.frame</code> is one of the most commonly used objects in R. Just think of a <code>data.frame</code> like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the <code>data.frame</code> in R is that it can handle multiple types of data - that is, each column can have a different type. Like in the below table the first column is of <code>numeric</code> type, the second a <code>factor</code>, and the third <code>character</code>.</p>
+
+<p><code>r
+df &lt;- data.frame(hey=c(5,6,7),
+           there=as.factor(c("a","b","c")),
+           fella=c("blue","brown","green"))
+</code></p>
+
+<p><code>r
+df
+##   hey there fella
+## 1   5     a  blue
+## 2   6     b brown
+## 3   7     c green
+</code></p>
+
+<p>Notice that the first <em>column</em> of numbers are actually row names, and are not part of the <code>data.frame</code> <em>per se</em>, though are part of the <em>metadata</em> for the <code>data.frame</code>.</p>
+
+<p>We can quickly get a sense for the type of data in the <code>df</code> object by using the function <code>str</code>, which gives information on the types of data in each column.</p>
+
+<p><code>r
+str(df)
+## 'data.frame':	3 obs. of  3 variables:
+##  $ hey  : num  5 6 7
+##  $ there: Factor w/ 3 levels "a","b","c": 1 2 3
+##  $ fella: Factor w/ 3 levels "blue","brown",..: 1 2 3
+</code></p>
+
+<p><strong>Matrices</strong></p>
+
+<p>Think of a matrix in R like a <code>data.frame</code> with all the same type of data, only numeric, only character, etc. A matrix is technically a special case of a <a href="link">two-dimensional array</a>.  </p>
+
+<p>We’ll not dig into these further since I’m guessing since you’re a cat, you’ll be more of a <code>data.frame</code> kind of animal.</p>
+
+<p>If someone wants to write more about matrices, <a href="/Contribute">do so</a>.</p>
+
+<h2 id="a-hreflists-namelistsa-lists"><a href="#lists" name="lists"></a>#&lt;/a&gt; Lists</h2>
+
+<p>Lists are sorta crazy. They are kinda like vectors, but not. Using our cat tail analogy again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only <code>character</code> for example), lists can hold for example, a <code>data.frame</code> and a <code>numeric</code>, or a <code>data.frame</code> and another <code>list</code>!  The way we make a list is via the function <code>list</code></p>
+
+<p><code>r
+list(1, "a")
+</code></p>
+
+<p><code>
+## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] "a"
+</code></p>
+
+<p>A nested list</p>
+
+<p><code>r
+mylist &lt;- list(1, list("a","b","c"))
+mylist
+## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [[2]][[1]]
+## [1] "a"
+## 
+## [[2]][[2]]
+## [1] "b"
+## 
+## [[2]][[3]]
+## [1] "c"
+</code></p>
+
+<p>Just like vectors, you can do operations on each element of the list. However, since lists can be nested you have to worry about what level of nesting you want to manipulate.</p>
+
+<p>For example, if we take the <code>mylist</code> list from above, the following</p>
+
+<p><code>r
+length(mylist[1])
+## [1] 1
+length(mylist[2])
+## [1] 1
+</code></p>
+
+<p>Gives a length of 1 for each element of the list. But wait, aren’t there three things in the second slot of the list (“a”,”b”,”c”)?  Indeed there are</p>
+
+<p><code>r
+length(mylist[2][[1]])
+## [1] 3
+</code></p>
+
+<h2 id="a-hrefindexing-nameindexinga-indexing"><a href="#indexing" name="indexing"></a>#&lt;/a&gt; Indexing</h2>
+
+<p>Okay, so let’s say you have made a <code>vector</code>, <code>list</code>, or <code>data.frame</code>. How do you get to the things in them? Its slightly different for each one.</p>
+
+<p>There is a general way to index objects in R that can be used across <code>vectors</code>, <code>lists</code>, and <code>data.frame</code>.  That is the square bracket: <code>[]</code>.  For some objects you can index by the sequence number (e.g., <code>5</code>) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., <code>kitty</code>).</p>
+
+<p><strong>vectors</strong></p>
+
+<p>Vectors only have one dimension, as we said above. So with <code>[]</code> there is only one number to give here. For example, let’s say we have the vector</p>
+
+<p><code>r
+bb &lt;- c(5,6,7)
+</code></p>
+
+<p>We can index to each of those 3 numbers by the sequence of it’s place in the vector. Get the 6 by doing</p>
+
+<p><code>r
+bb[2]
+## [1] 6
+</code></p>
+
+<p>You can also have a named vector. What’s that?  A named vector is like <code>bb</code> above, but each of the three elements has a name.</p>
+
+<p><code>r
+bb &lt;- c(5,6,7)
+names(bb) &lt;- c('hey','hello','wadup')
+bb
+##   hey hello wadup 
+##     5     6     7
+names(bb)
+## [1] "hey"   "hello" "wadup"
+</code></p>
+
+<p>With a named vector we can get to each element in the vector using it’s name with a single set, or double set of brackets to get the value, or the value and name, respectively.</p>
+
+<p><code>r
+bb['hello']
+## hello 
+##     6
+</code></p>
+
+<p><code>r
+bb[['hello']]
+## [1] 6
+</code></p>
+
+<p>Fun.</p>
+
+<p><strong>lists</strong></p>
+
+<p>Indexing on lists is similar to vectors. A huge difference though is that lists can be nested. So there could be infinite things within each slot of a list.</p>
+
+<p>For example, let’s say we have the nested list from above <code>mylist</code></p>
+
+<p><code>r
+mylist &lt;- list(foo=1, bar=list("a","b","c"))
+</code></p>
+
+<p>We can index to the first item in the list, including it’s name, by</p>
+
+<p><code>r
+mylist[1]
+## $foo
+## [1] 1
+</code></p>
+
+<p>Or equivalently</p>
+
+<p><code>r
+mylist['foo']
+## $foo
+## [1] 1
+</code></p>
+
+<p>And get just the value by using two <code>[</code></p>
+
+<p><code>r
+mylist[[1]]
+## [1] 1
+</code></p>
+
+<p>Or equivalently</p>
+
+<p><code>r
+mylist[['foo']]
+## [1] 1
+</code></p>
+
+<p>And get the second item in <code>mylist</code> by</p>
+
+<p><code>r
+mylist[2] # or mylist['bar']
+## $bar
+## $bar[[1]]
+## [1] "a"
+## 
+## $bar[[2]]
+## [1] "b"
+## 
+## $bar[[3]]
+## [1] "c"
+</code></p>
+
+<p><code>r
+mylist[[2]] # or mylist[['bar']]
+## [[1]]
+## [1] "a"
+## 
+## [[2]]
+## [1] "b"
+## 
+## [[3]]
+## [1] "c"
+</code></p>
+
+<p>And get to the individual elements within <code>bar</code> by</p>
+
+<p><code>r
+mylist[[2]][1]
+## [[1]]
+## [1] "a"
+</code></p>
+
+<p>And so on to get to what you need.</p>
+
+<p>There are a number of convenience functions to make working with lists easier, but you can learn about those later.</p>
+
+<p><strong>data.frame and matrix</strong></p>
+
+<p>Indexing on a <code>data.frame</code> and <code>matrix</code> is similar. Both have two things to index on: rows and columns. Within <code>[,]</code>, the part before the comma is for rows, and the part after the comma for columns. So if you have a data frame <code>iris</code> in R,</p>
+
+<p><code>r
+head(iris)
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+</code></p>
+
+<p>you can index to the third row and second column by doing</p>
+
+<p><code>r
+iris[3,2]
+## [1] 3.2
+</code></p>
+
+<p>You can also use names to index if you have named rows or columns. For example,</p>
+
+<p><code>r
+iris[2,"Species"]
+## [1] setosa
+## Levels: setosa versicolor virginica
+</code></p>
+
+<p>You can also use the <code>$</code> symbol to index to a column, like</p>
+
+<p><code>r
+mtcars$mpg
+##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
+## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
+## [29] 15.8 19.7 15.0 21.4
+</code></p>
+
+<h2 id="a-hreffunctions-namefunctionsa-functions"><a href="#functions" name="functions"></a>#&lt;/a&gt; Functions</h2>
+
+<p>Cats are the type of feline to love functions. Functions make your life easier by allowing you to generalize many lines of code, and avoiding repeating yourself. Functions make your work tidier - just like cats like it.</p>
+
+<p>Functions are written like this</p>
+
+<p><code>r
+foo &lt;- function(){
+  writeLines("I hate dogs")
+}
+</code></p>
+
+<p>After defining this function we can then call it later like this</p>
+
+<p><code>r
+foo()
+</code></p>
+
+<p><code>
+## I strongly dislike dogs
+</code></p>
+
+<p>Yay! Dumb dogs.</p>
+
+<p>The <code>foo</code> function was pretty simple. We can also pass in parameters to the function.</p>
+
+<p><code>r
+foo &lt;- function(mess){
+  writeLines(mess)
+}
+</code></p>
+
+<p><code>r
+foo("I strongly dislike dogs")
+## I strongly dislike dogs
+</code></p>
+
+<p>And set parameters to default values.</p>
+
+<p><code>r
+foo &lt;- function(mess = "I strongly dislike dogs"){
+  writeLines(mess)
+}
+</code></p>
+
+<p><code>r
+foo()
+## I strongly dislike dogs
+foo("Well, I dislike most dogs, but I like the one in my house")
+## Well, I dislike most dogs, but I like the one in my house
+</code></p>
+
+<p>Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general. For more justification for this google the <em>DRY principle</em>.</p>
+
+<h2 id="a-hrefpackages-namepackagesa-using-packages"><a href="#packages" name="packages"></a>#&lt;/a&gt; Using packages</h2>
+
+<p>A lot of the functionality in R is in extensions to the language, called packages. Since you’re a cat, you can think of packages like boxes that you put a bunch of code in. Since you are putting code in this box you probably don’t want to sit in it :). These boxes generally hold a similar set of functions (see <a href="#functions">functions</a> above). A package allows you and others to</p>
+
+<ul>
+  <li>Easily install and load the code</li>
+  <li>Incorporate documentation</li>
+  <li>Lessen conflicts with functions in other packages (don’t worry about why for now, but if you want to know <a href="http://adv-r.had.co.nz/Namespaces.html">go here</a>)</li>
+</ul>
+
+<p>Most people that make R packages share them on a site on the interwebs called CRAN (don’t worry about what it stands for) here <a href="http://cran.r-project.org/">CRAN</a>.</p>
+
+<p>The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer, whether Linux, Windows, or OSX.</p>
+
+<p>Installation is super easy. Do <code>install.packages("package_name")</code>, where <code>package_name</code> is the name of the package you want to install. Remember that the package name is case sensitive! Or if you’re using RStudio you can go to the <em>Packages</em> pane.</p>
+
+<p>Once the package is installed you have to load the package in to your R session. That’s easy too! Do <code>library('package_name')</code>, or if you’re in RStudio go to the <em>Packages</em> pane.</p>
+
+<p><em>Note: Package creation is out of scope for this site, but Hadley has made it much easier with <a href="https://github/com/hadley/devtools">devtools</a>.</em></p>
+
+<h2 id="a-hrefnonos-namenonosa-no-nos-for-cats-using-r"><a href="#nonos" name="nonos"></a>#&lt;/a&gt; No no’s for cats using R</h2>
+
+<p>There are a few R gotchas to avoid cat friends.</p>
+
+<ul>
+  <li><code>attach()</code>: Don’t use it. Just don’t.</li>
+  <li>When doing <code>library()</code> or <code>require()</code> use the package name in quotes as package name without quotes is sugar, but can cause problems.</li>
+  <li>Make sure to keep your claws trimmed so they don’t get stuck in spaces between the keys.</li>
+</ul>
+
+<h2 id="a-hrefdodos-namedodosa-do-dos-for-cats-using-r"><a href="#dodos" name="dodos"></a>#&lt;/a&gt; Do do’s for cats using R</h2>
+
+<ul>
+  <li>Do combine code and text with <code>Markdown</code> or <code>LaTeX</code> to have reproducible documents, using <code>knitr</code>.</li>
+  <li>When googling for R help, use <code>cran</code>, not <code>r</code></li>
+  <li>When asking questions on Twitter/Appdotnet/G+/etc. use <code>#rstats</code></li>
+  <li>Do ask lots of questions on StackOverflow (use the <code>[r]</code> tag), Twitter (does this need saying), etc. But make sure to do your research before asking, and <a href="http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example">include a reproducible example</a>!</li>
+  <li><code>.rda</code>, <code>.rds</code>, <code>.RData</code> compressed files are useful, but for reproducibility purposes, use non-R specific file formats like <code>.csv</code>, <code>.xml</code>, <code>.json</code>, etc.</li>
+</ul>
+
+<h2 id="a-hrefdata-namedataa-data-from-the-web"><a href="#data" name="data"></a>#&lt;/a&gt; Data from the web</h2>
+
+<p>This is sort of an advanced R topic, but hey, how else do we get cute cat pictures? That’s the point of the internet after all - to serve cat pictures.</p>
+
+<p>Install <code>cowsay</code></p>
+
+<p><code>r
+install.packages("devtools")
+library("devtools")
+install_github("sckott/cowsay")
+</code></p>
+
+<p>Now let’s get a cat fact!</p>
+
+<p><code>r
+library("cowsay")
+say("catfact", "cat")
+</code></p>
+
+<p><code>
+## 
+## 
+##  ----- 
+##  The average lifespan of an outdoor-only cat is about 3 to 5 years while an indoor-only cat can live 16 years or much longer. 
+##  ------ 
+##     \   
+##      \
+##                \`*-.
+##                  )  _`-.
+##                 .  : `. .
+##                 : _   '  
+##                 ; *` _.   `*-._
+##                 `-.-'          `-.
+##                   ;       `       `.
+##                   :.       .       \
+##                   .\  .   :   .-'   .
+##                   '  `+.;  ;  '      :
+##                   :  '  |    ;       ;-.
+##                   ; '   : :`-:     _.`* ;
+##                .*' /  .*' ; .*`- +'  `*'
+##                `*-*   `*-*  `*-*'
+## 
+</code>
+A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The <code>say</code> function looks like sorta like this:</p>
+
+<p><code>coffee
+say &lt;- function(what, by, type){
+  &lt;== some ascii art ==&gt;
+  url &lt;- "http://catfacts-api.appspot.com/api/facts?number=1"
+  what &lt;- fromJSON(url)$facts
+  message(sprintf(by, what))
+}
+</code></p>
+
+<p>The first line is a bunch of ascii characters to make a cat. The second line defines the url for the cat facts API. The third line retrieves one cat fact from the cat facts API. And the fourth line prints the messages with a cat.</p>
+
+<blockquote>
+  <p>But what is an API? I’m a cat, I only drink water or milk (preferably milk) - but at least I’ve heard of an IPA. What the rat’s ass (yum) is an API.</p>
+</blockquote>
+
+<p>Okay, here goes. An API stands for Application Programming Interface. It’s just a set of instructions for two computers to talk to each other. It’s sorta like if you run into another cat and if you both knew beforehand a lot about each other, you would have a sense for how to behave - if you don’t know each other, then best of luck to you Mr. Tickles.</p>
+
+<p><strong>Another example</strong></p>
+
+<p>Above, we learned about writing functions. Let’s create a function to generate a markdown image link for a cute cat in various sizes (by pixels) from the website <a href="http://placekitten.com/">placekitten.com</a>. This is a awesome, but simple web service. You just use ask for the image size by adding two numbers at the end. For example, <code>http://placekitten.com/g/300/300</code> gives an image that is 300 by 300 pixels.</p>
+
+<p><code>r
+getcutecat &lt;- function(x){
+  writeLines(
+    sprintf("![](http://placekitten.com/g/%s/%s)", x, x)
+  )
+}
+</code></p>
+
+<p>300 pixels</p>
+
+<p><code>r
+getcutecat(300)
+## ![](http://placekitten.com/g/300/300)
+</code></p>
+
+<p><img src="http://placekitten.com/g/300/300" alt="some kittens" /></p>
+
+<p>400 pixels</p>
+
+<p><code>r
+getcutecat(400)
+## ![](http://placekitten.com/g/400/400)
+</code></p>
+
+<p><img src="http://placekitten.com/g/400/400" alt="some kittens" /></p>
+
+<h2 id="a-hrefdoge-namedogea-hey-r-is-not-just-for-cats---dogs"><a href="#doge" name="doge"></a>#&lt;/a&gt; <strong><em>Hey! R is not just for cats!</em></strong> - dogs</h2>
+
+<p>R and web APIs are open to all sorts of animals.  For instance, the <a href="http://dogr.io">dogr.io</a> service will create a “doge” style meme for you when provided with text.  Let’s write another function to call this API:</p>
+
+<p><code>r
+getdoge &lt;- function(x){
+  x = paste(x, collapse="/")
+  writeLines(
+    sprintf("![](http://dogr.io/%s.png)", x)
+  )
+}
+</code></p>
+
+<p><code>r
+getdoge(c("wow", "suchhostility", "bemoreinclusive"))
+## ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)
+</code></p>
+
+<p><img src="http://dogr.io/wow/suchhostility/bemoreinclusive.png" width="400" /></p>
+
+<p><strong><em>Now, back to your regular, cat-dominated tutorial.</em></strong></p>
+
+<h2 id="a-hrefreading-namereadinga-reading"><a href="#reading" name="reading"></a>#&lt;/a&gt; Reading</h2>
+
+<p>After this basic intro you’ll want to head over to:</p>
+
+<ul>
+  <li>What do you think should go here? say so <a href="https://github.com/sckott/rforcats/issues">here</a></li>
+</ul>
+
+<p>And for even more advanced R:</p>
+
+<ul>
+  <li><a href="http://adv-r.had.co.nz/">Advanced R, by Hadley Wickham</a></li>
+</ul>
+
+<h2 id="a-hrefmakeitbetter-namemakeitbettera-make-it-better"><a href="#makeitbetter" name="makeitbetter"></a>#&lt;/a&gt; Make it better</h2>
+
+<p>Contribute by following <a href="/Contribute">these instructions</a>.</p>
+
+<h2 id="a-hrefcatslover-namecatslovera-cats-love-r"><a href="#catslover" name="catslover"></a>#&lt;/a&gt; Cat’s love R</h2>
+
+<p><img src="/assets/img/leo_giffed.gif" width="300" /></p>
+
+<h2 id="a-hreflicense-namelicensea-license"><a href="#license" name="license"></a>#&lt;/a&gt; License</h2>
+
+
+		
+		</div>
+
+
+		
+
+	<!--
+		
+	-->
+
+	</div>
+
+	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
+		<div id="about" class="align-center">&copy; 2013-2014 Powered By Jekyll, Designed By <a href="http://williamlfang.github.io/">William Fang</a>.
+		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
+		<div class="radar"></div>
+		</div>
+	</div>
+<link rel="stylesheet" href="/media/themes/miantiao/life/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="/media/themes/miantiao/life/js/common.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hibikai"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<script src="http://cdn.staticfile.org/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://cdn.staticfile.org/jqueryui/1.10.2/css/smoothness/jquery-ui-1.10.2.custom.min.css" type="text/css" media="all" />
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+</body>
+</html>
+

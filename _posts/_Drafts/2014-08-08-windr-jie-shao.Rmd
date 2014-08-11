@@ -1,4 +1,4 @@
-<!--
+
 ---
 layout:   post
 title:    "WindR介绍"
@@ -12,7 +12,7 @@ description:
 published: false
 status:    process
 ---
--->
+
 
 时下金融界正在热火朝天地讨论如何应对「金融大数据」对股市研究的影响。我的个人看法是：
 

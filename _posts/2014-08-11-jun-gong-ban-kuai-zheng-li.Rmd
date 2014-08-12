@@ -3,26 +3,14 @@ layout:   post
 title:    "军工版块整理"
 category:  金融
 tags:     
-- 军工
-- 股票
+ - 军工
+ - 股票
 description: 
 published: false
 status:    process
 ---
-## 中国兵器工业集团
-中国兵器工业集团中国兵器工业集团
-中国兵器工业集团
-中国兵器工业集团
 
-> 主要参考[军工集团整理](http://xueqiu.com/8394881843/30619814)
-
-
-```r
-x = rnorm(1000)
-plot(x)
-```
-
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1.png) 
+##### > 主要参考[军工集团整理](http://xueqiu.com/8394881843/30619814)
 
 <!-- more -->
 

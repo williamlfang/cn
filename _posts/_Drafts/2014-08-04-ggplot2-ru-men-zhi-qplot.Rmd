@@ -76,7 +76,7 @@ df <- diamonds
 可以看出，钻石的价格与其重量呈现指数型递增关系的。因此，我们可以对其做一个对数变换，希望得到一个线性的函数关系。
 
 ```{r}
-  qplot(x = log(carat), y = log(price), data = df)  ## qplot() 支持对变量函数的输入
+qplot(x = log(carat), y = log(price), data = df)  ## qplot() 支持对变量函数的输入
 ```
 果不其然，这是一个非常完美的线性关系。不过我们也需要警惕图形的「过分拟合」。这是后话，以后有机会再探讨 
 

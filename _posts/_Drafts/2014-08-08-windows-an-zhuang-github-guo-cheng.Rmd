@@ -1,4 +1,4 @@
-<!--
+
 ---
 layout:   post
 title:    "Windows安装Github过程"
@@ -10,7 +10,7 @@ description:
 published: false
 status:    process
 ---
--->
+
 
 ## 安装 msysgit 客户端
 - 首先是安装 Windows 下的操作界面 [`msysgit`](http://msysgit.github.io/)

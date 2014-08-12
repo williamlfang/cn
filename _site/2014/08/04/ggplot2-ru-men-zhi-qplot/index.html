@@ -819,13 +819,13 @@ df &lt;- diamonds
 <pre><code>  qplot(x = carat, y = price, data = df)
 </code></pre>
 
-<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3" /> 
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3" /> 
 可以看出，钻石的价格与其重量呈现指数型递增关系的。因此，我们可以对其做一个对数变换，希望得到一个线性的函数关系。</p>
 
 <pre><code>  qplot(x = log(carat), y = log(price), data = df)  ## qplot() 支持对变量函数的输入
 </code></pre>
 
-<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-4.png" alt="plot of chunk unnamed-chunk-4" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-4.png" alt="plot of chunk unnamed-chunk-4" /> 
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-4.png" alt="plot of chunk unnamed-chunk-4" /> 
 果不其然，这是一个非常完美的线性关系。不过我们也需要警惕图形的「过分拟合」。这是后话，以后有机会再探讨 </p>
 
 <p>此外，我们可以使用 <code>color</code> 参数来控制第三个变量（一般是分类变量）来查看钻石的颜色是否也会影响其价格。具体的命令如下</p>
@@ -833,14 +833,14 @@ df &lt;- diamonds
 <pre><code>  qplot(x = carat, y = price, data = df, color = color)
 </code></pre>
 
-<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5" /> </p>
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5" /> </p>
 
 <p>同样的，使用 <code>shape</code> 来查看形状效果</p>
 
 <pre><code>  qplot(x = carat, y = price, data = df, shape = cut, color = color)
 </code></pre>
 
-<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6" /> </p>
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6" /> </p>
 
 <p>以上我们介绍了如何控制「修饰」成分命令下面，我们来查看一下如何控制图形输出的「几何」形状。这个主要是通过 <code>geom</code> 来实现的。</p>
 
@@ -851,35 +851,35 @@ df &lt;- diamonds
 ## geom_smooth: method="auto" and size of largest group is &gt;=1000, so using gam with formula: y ~ s(x, bs = "cs"). Use 'method = x' to change the smoothing method.
 </code></pre>
 
-<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7" /> </p>
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7" /> </p>
 
 <p>这个是「箱叶图」</p>
 
 <pre><code>qplot(x = color, y = price, data = df, geom = "boxplot", color = color)
 </code></pre>
 
-<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-8.png" alt="plot of chunk unnamed-chunk-8" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-8.png" alt="plot of chunk unnamed-chunk-8" /> </p>
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-8.png" alt="plot of chunk unnamed-chunk-8" /> </p>
 
 <p>再来一个<code>jitter</code>，同时我们使用参数 <code>alpha = I()</code> 来控制渐变的效果。</p>
 
 <pre><code>qplot(x = color, y = price, data = df, geom = "jitter", alpha = I(1/5))
 </code></pre>
 
-<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-9.png" alt="plot of chunk unnamed-chunk-9" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-9.png" alt="plot of chunk unnamed-chunk-9" /> </p>
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-9.png" alt="plot of chunk unnamed-chunk-9" /> </p>
 
 <p>或者我们想要一个柱状图，则可以使用命令<code>histogram</code>， 同时使用参数 <code>binwidth</code> 来控制间距，使用 <code>fill</code> 来填。</p>
 
 <pre><code>qplot(x = carat, data = df, geom = "histogram", binwidth = .05, fill = color)
 </code></pre>
 
-<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-10.png" alt="plot of chunk unnamed-chunk-10" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-10.png" alt="plot of chunk unnamed-chunk-10" /> </p>
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-10.png" alt="plot of chunk unnamed-chunk-10" /> </p>
 
 <p>或者来一个概率分布图，使用 <code>geom = "density"</code> 来实现</p>
 
 <pre><code>qplot(x = price, data = df, geom = "density", color = color)
 </code></pre>
 
-<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-11.png" alt="plot of chunk unnamed-chunk-11" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-11.png" alt="plot of chunk unnamed-chunk-11" /> </p>
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-11.png" alt="plot of chunk unnamed-chunk-11" /> </p>
 
 <p>在实证金融数据分析中，我们经常会遇到形形色色的时间序列数据，对于时间序列数据，我们可以使用 <code>geom = "line"</code> 或者 <code>geom = "path"</code> 来表明数据随时间变化的特征。</p>
 
@@ -887,18 +887,18 @@ df &lt;- diamonds
 qplot(x, y, data = df2, geom=c("point","line"), col = "red")
 </code></pre>
 
-<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-12.png" alt="plot of chunk unnamed-chunk-12" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-12.png" alt="plot of chunk unnamed-chunk-12" /> </p>
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-12.png" alt="plot of chunk unnamed-chunk-12" /> </p>
 
 <pre><code>df3 &lt;- data.frame(x = rnorm(1000), y = rnorm(1000))
 qplot(x, y, data = df3, geom=c("point","line"))
 </code></pre>
 
-<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-131.png" alt="plot of chunk unnamed-chunk-13" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-131.png" alt="plot of chunk unnamed-chunk-13" /> </p>
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-131.png" alt="plot of chunk unnamed-chunk-13" /> </p>
 
 <pre><code>qplot(x, y, data = df3, geom=c("point","path"))
 </code></pre>
 
-<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-132.png" alt="plot of chunk unnamed-chunk-13" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-132.png" alt="plot of chunk unnamed-chunk-13" /> 
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-132.png" alt="plot of chunk unnamed-chunk-13" /> 
 <code>geom = "line"</code> 与 <code>geom = "path"</code> 的差别在于前者使用了时间序列数据是按照一定的观测值顺序排列的，而后者则仅仅是按照数据的呈现方式出现。这个需要我们反思在七十年代的时候美国经济学术界内轰轰烈烈的激战是否存在「Philips Curve」，即政府是否存在可以协调经济通胀率与失业率的良方。原先的数据只是按照数据简单的排序，并没有考虑到收集数据内在的时间先后顺序，从而得出通胀率与失业率可替代的结论。而后来这个经过 Friedman 等人的卓越工作，才揭示了原来政府的这套政策是行不通的，原因在于人们是具有理性预期的，如果真的按照政府的经济政策来实施，则会发生「替换性选择」，最终导致政策无效。这个就是典型的使用数据制作「path」图形的案例。}</p>
 
 <p>当然，我么也可以使用 <code>facets</code> 来对不同数据子集分别画图，得到不同的图形对比</p>
@@ -906,7 +906,7 @@ qplot(x, y, data = df3, geom=c("point","line"))
 <pre><code>qplot(x = price, data = df, facets = cut~., geom = "density", color = color)
 </code></pre>
 
-<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-14.png" alt="plot of chunk unnamed-chunk-14" /> <img src="/cn/assets/images/r-figures/2014-08-11-jun-gong-ban-kuai-zheng-li/unnamed-chunk-14.png" alt="plot of chunk unnamed-chunk-14" /> </p>
+<p><img src="/cn/assets/images/r-figures/2014-08-04-ggplot2-ru-men-zhi-qplot/unnamed-chunk-14.png" alt="plot of chunk unnamed-chunk-14" /> </p>
 
 
 		<div class="post-end mt-1"><span><i></i>04 August 2014</span></div>

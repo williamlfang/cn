@@ -1,0 +1,329 @@
+%----------------------------------------------------------------------------------------
+%	THEOREM STYLES
+%----------------------------------------------------------------------------------------
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm} % For including math equations, theorems, symbols, etc
+\usepackage{bm}
+\usepackage{cases}
+\usepackage{cancel}
+
+\newcommand{\intoo}[2]{\mathopen{]}#1\,;#2\mathclose{[}}
+\newcommand{\ud}{\mathop{\mathrm{{}d}}\mathopen{}}
+\newcommand{\intff}[2]{\mathopen{[}#1\,;#2\mathclose{]}}
+\newtheorem{notation}{Notation}[section]%[chapter]
+
+\usepackage{nicefrac}      % nicefrac
+\allowdisplaybreaks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% MATH  %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\Ex}{E}
+\DeclareMathOperator*{\Cov}{Cov}
+\DeclareMathOperator*{\Var}{Var}
+\DeclareMathOperator*{\Res}{Res}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% dedicated to boxed/framed environements %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{myorangenumbox}% % Theorem style name
+{0pt}% Space above
+{0pt}% Space below
+{\normalfont}% % Body font
+{}% Indent amount
+{\small\bf\sffamily\color{myorange}}% % Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily\color{myorange}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---\nobreakspace#3.}} % Optional theorem note
+\renewcommand{\qedsymbol}{$\blacksquare$}% Optional qed square
+
+\newtheoremstyle{blacknumex}% Theorem style name
+{5pt}% Space above
+{5pt}% Space below
+{\normalfont}% Body font
+{} % Indent amount
+{\small\bf\sffamily}% Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily{\tiny\ensuremath{\blacksquare}}\nobreakspace\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries---\nobreakspace#3.}}% Optional theorem note
+
+\newtheoremstyle{blacknumbox} % Theorem style name
+{0pt}% Space above
+{0pt}% Space below
+{\normalfont}% Body font
+{}% Indent amount
+{\small\bf\sffamily}% Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries---\nobreakspace#3.}}% Optional theorem note
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% dedicated to non-boxed/non-framed environements %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{myorangenum}% % Theorem style name
+{5pt}% Space above
+{5pt}% Space below
+{\normalfont}% % Body font
+{}% Indent amount
+{\small\bf\sffamily\color{myorange}}% % Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily\color{myorange}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---\nobreakspace#3.}} % Optional theorem note
+\renewcommand{\qedsymbol}{$\blacksquare$}% Optional qed square
+\makeatother
+
+% Defines the theorem text style for each type of theorem to one of the three styles above
+\renewcommand{\theequation}{\arabic{equation}}
+\numberwithin{equation}{section}
+%------------------罗马数字---------------------%
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+%               
+\newcounter{dummy} 
+%\numberwithin{dummy}{section}
+\theoremstyle{myorangenumbox}
+\newtheorem{theoremeT}[dummy]{Theorem}
+\newtheorem{problem}{Problem}[section]%[chapter]
+\newtheorem{exerciseT}{Exercise}[subsection]%[chapter]
+\theoremstyle{blacknumex}
+\newtheorem{exampleT}{Example}[section]%[chapter]
+\theoremstyle{blacknumbox}
+\newtheorem{vocabulary}{Vocabulary}[section]%[chapter]
+\newtheorem{definitionT}{Definition}[subsection]%[chapter]
+\newtheorem{corollaryT}[dummy]{Corollary}
+\theoremstyle{myorangenum}
+\newtheorem{proposition}[dummy]{Proposition}
+
+%----------------------------------------------------------------------------------------
+%	DEFINITION OF COLORED BOXES
+%----------------------------------------------------------------------------------------
+
+\RequirePackage{mdframed} % Required for creating the theorem, definition, exercise and corollary boxes
+
+% Theorem box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+backgroundcolor=black!5,
+linecolor=myorange,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+innerbottommargin=5pt]{tBox}
+
+% Exercise box	  
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+backgroundcolor=myorange!10,
+linecolor=myorange,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+innerbottommargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt]{eBox}	
+
+% Definition box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+linecolor=myorange,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=0pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt,
+innerbottommargin=0pt]{dBox}	
+
+% Corollary box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+linecolor=gray,
+backgroundcolor=black!5,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt,
+innerbottommargin=5pt]{cBox}				  
+		  
+
+% Creates an environment for each type of theorem and assigns it a theorem text style from the "Theorem Styles" section above and a colored box from above
+%\newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
+%\newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{myorange}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}				  
+%\newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
+%\newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}		
+%\newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}	
+
+%----------------------------------------------------------------------------------------
+%	REMARK ENVIRONMENT
+%----------------------------------------------------------------------------------------
+
+\newenvironment{remark}{\par\vskip10pt\small % Vertical white space above the remark and smaller font size
+\begin{list}{}{
+\leftmargin=35pt % Indentation on the left
+\rightmargin=25pt}\item\ignorespaces % Indentation on the right
+\makebox[-2.5pt]{\begin{tikzpicture}[overlay]
+\node[draw=myorange!60,line width=1pt,circle,fill=myorange!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt)
+%{\textcolor{myorange}{R}};\end{tikzpicture}} % Orange R in a circle
+{\textcolor{myorange}{\kai 注}};\end{tikzpicture}} % Orange 注 in a circle
+\advance\baselineskip -1pt}{\end{list}\vskip5pt} % Tighter line spacing and white space after remark
+
+%----------------------------------------------------------------------------------------
+
+%% 定理\引理\定义样式设置
+\RequirePackage{environ}
+\RequirePackage{tikz}
+\usetikzlibrary{shapes,decorations}
+
+\definecolor{bule}{RGB}{18,29,57}
+\definecolor{bablue}{RGB}{248,248,248}
+
+%define the style of tikz newthemsty
+\tikzstyle{newthemsty} 
+          =[draw=main, fill=blue!10,very thick,rectangle,
+           rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{newthemstytitle}
+          =[fill=main, text=blue!10]
+
+\tikzstyle{newdefinitionsty} 
+          =[draw=seco, fill=yellow!20,very thick,rectangle,
+           rounded corners, inner sep=10pt, inner ysep=20pt,
+           text=black,fill opacity=0.9]
+\tikzstyle{newdefinitionstytitle} 
+         =[fill=seco, text=white]
+         
+\tikzstyle{newpropositionsty} 
+          =[draw=thid, fill=bablue,very thick,rectangle,
+           rounded corners, inner sep=10pt, inner ysep=20pt,
+           text=black,fill opacity=0.9]
+\tikzstyle{newpropositionstytitle} 
+         =[fill=thid, text=white]
+
+%%define the "newthem" environment
+\newcounter{Newthem}[chapter]
+\renewcommand{\theNewthem}{\thechapter.\arabic{Newthem}}
+\NewEnviron{newthem}[1][{}]{%
+\begin{figure}[!htb]
+\noindent\centering
+\begin{tikzpicture}
+\node[newthemsty] (box){
+     \begin{minipage}{0.93\columnwidth}
+        \sffamily\BODY
+     \end{minipage}};
+\node[newthemstytitle,right=10pt] at (box.north west){
+     \bf\textsf{Theorem \stepcounter{Newthem}\theNewthem\; #1}};
+\node[newthemstytitle, rounded corners] at (box.east) {$\clubsuit$};
+\end{tikzpicture}
+\end{figure}}
+
+%%define the "newlemma" environment
+\newcounter{Newlemma}[chapter]
+\renewcommand{\theNewlemma}{\thechapter.\arabic{Newlemma}}
+\NewEnviron{newlemma}[1][{}]{%
+\begin{figure}[!htb]
+\noindent\centering
+\begin{tikzpicture}
+\node[newthemsty] (box){
+     \begin{minipage}{0.93\columnwidth}
+        \sffamily\BODY
+     \end{minipage}};
+\node[newthemstytitle,right=10pt] at (box.north west){
+     \bf\textsf{Lemma \stepcounter{Newlemma}\theNewlemma\; #1}};
+\node[newthemstytitle, rounded corners] at (box.east) {$\clubsuit$};
+\end{tikzpicture}
+\end{figure}}
+
+%%define the "newcorol" environment
+\newcounter{Newcorol}[chapter]
+\renewcommand{\theNewcorol}{\thechapter.\arabic{Newcorol}}
+\NewEnviron{newcorol}[1][{}]{%
+\begin{figure}[!htb]
+\noindent\centering
+\begin{tikzpicture}
+\node[newthemsty] (box){
+     \begin{minipage}{0.93\columnwidth}
+        \sffamily\BODY
+     \end{minipage}};
+\node[newthemstytitle,right=10pt] at (box.north west){
+     \bf\textsf{Corollary \stepcounter{Newcorol}\theNewcorol\; #1}};
+\node[newthemstytitle, rounded corners] at (box.east) {$\clubsuit$};
+\end{tikzpicture}
+\end{figure}}
+
+%% define the "proposition" environment
+\newcounter{Newprop}[chapter]
+\renewcommand{\theNewprop}{\thechapter.\arabic{Newprop}}
+\NewEnviron{newprop}[1][{}]{%
+\begin{figure}[!htb]\noindent\centering
+\begin{tikzpicture}
+\node[newpropositionsty] (box){
+     \begin{minipage}{0.93\columnwidth}
+        \sffamily\BODY
+     \end{minipage}};
+\node[newpropositionstytitle,right=10pt] at (box.north west){
+     \bf\textsf{Proposition \stepcounter{Newprop}\theNewprop\; #1}};
+\node[newpropositionstytitle, rounded corners] at (box.east) {$\spadesuit$};
+\end{tikzpicture}
+\end{figure}}
+
+
+%%define the "newdef" environment
+\newcounter{Newdefinition}[chapter]
+\renewcommand{\theNewdefinition}{\thechapter.\arabic{Newdefinition}}
+\NewEnviron{newdef}[1][{}]{%
+\begin{figure}[!htb]\noindent\centering
+\begin{tikzpicture}
+\node [newdefinitionsty] (dbox){\begin{minipage}{0.93\textwidth}\itshape\BODY\end{minipage}};
+\node[newdefinitionstytitle, right=10pt] at (dbox.north west) {\bf\textsf{Definition \stepcounter{Newdefinition}\theNewdefinition\; #1}};
+\node[newdefinitionstytitle, rounded corners] at (dbox.east) {$\heartsuit$};
+\end{tikzpicture}
+\end{figure}}
+
+
+%% Example with counter
+\newcounter{Newexam}[chapter]
+\renewcommand{\theNewexam}{\thechapter.\arabic{Newexam}}
+\newenvironment{eg}{\par\noindent\textbf{Example\,\stepcounter{Newexam}\theNewexam: }\color{black!90}}{\par}
+
+%% Exercise with counter
+\newcounter{Newexer}[chapter]
+\renewcommand{\theNewexer}{\thechapter.\arabic{Newexer}}
+\newenvironment{exercise}{\par\noindent{\makebox[0pt][r]{\color{main}\ding{50}\;\;}}\textbf{Exercise\,\stepcounter{Newexer}\theNewexer: }}{\par}
+
+%%define the note and newproof environment
+\RequirePackage{pifont,manfnt}
+\newenvironment{note}{\par\itshape\CJKfamily{note}\gara\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}\textdbend\quad}\textbf{Note:}}}{\par}
+
+%\newenvironment{remark}{\par\itshape\CJKfamily{note}\gara\noindent{\makebox[0pt][r]{\color{red!90}\ding{96}\quad}\textbf{Remarks:}}}{\par}
+
+\newenvironment{assumption}{\par\noindent\textbf{Assumptions: }\color{black!90}}{\par}
+
+\newenvironment{conclusion}{\par\noindent\textbf{Conclusions: }}{\par}
+
+\newenvironment{property}{\par\noindent\textbf{Properties: }}{\par}
+
+\newenvironment{newproof}{\par\noindent{\makebox[0pt][r]{\color{main}\ding{43}\;\;}\textbf{Proof:}}\color{black!90}\small}{\hfill$\Box$\quad\par}
+
+\newenvironment{solution}{\par\noindent{\makebox[0pt][r]{\color{main}\ding{46}\;\;}\textbf{Solution:}}\small}{\hfill$\Box$\quad\par}
+
+\newenvironment{custom}[1]{\par\noindent{\makebox[0pt][r]{\color{main}\ding{34}\;\;}\textbf{#1:}}\small}{\par}

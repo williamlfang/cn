@@ -12,8 +12,11 @@
 #' @param recursive should rmd files in subdirectories be processed.
 #' @return nothing.
 #' @author Jason Bryer <jason@bryer.org>
+#convertRMarkdown <- function(dir=getwd(), images.dir=dir, images.url='/cn/assets/images/',
+#							 out_ext='.markdown', in_ext='.rmd', recursive=FALSE) {
+
 convertRMarkdown <- function(dir=getwd(), images.dir=dir, images.url='/cn/assets/images/',
-							 out_ext='.markdown', in_ext='.rmd', recursive=FALSE) {
+							 out_ext='.md', in_ext='.rmd', recursive=FALSE) {	
 	require(knitr, quietly=TRUE, warn.conflicts=FALSE)
 	files <- list.files(path=dir, pattern=in_ext, ignore.case=TRUE, recursive=recursive)
 	for(f in files) {
@@ -37,7 +40,7 @@ convertRMarkdown <- function(dir=getwd(), images.dir=dir, images.url='/cn/assets
 					content[publishedLine] <- 'published: true'
 					outFile <- paste(substr(f, 1, (nchar(f)-(nchar(in_ext)))), out_ext, sep='')
 					render_markdown(strict=TRUE)
-					opts_knit$set(out.format='markdown')
+					opts_knit$set(out.format='md')
 					opts_knit$set(base.dir=images.dir)
 					opts_knit$set(base.url=images.url)
 					######################################################################

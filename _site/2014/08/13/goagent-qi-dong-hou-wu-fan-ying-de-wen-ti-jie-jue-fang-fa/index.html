@@ -11,8 +11,8 @@
 	<meta name="author" content="william" />
 	<meta name="generator" content="Jekyll" />
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-	<meta name="keywords" content="时间" />
-	<meta name="description" content="毕业啦" />
+	<meta name="keywords" content="Goagent翻墙" />
+	<meta name="description" content="GoAgent启动后无反应的问题解决方法" />
 
 	<meta charset="UTF-8"/>
 	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
@@ -32,8 +32,8 @@
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
 	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="William ATOM Feed" />
-	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/2010/05/26/graduation/" /> -->
-	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/2010/05/26/graduation/" />
+	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/2014/08/13/goagent-qi-dong-hou-wu-fan-ying-de-wen-ti-jie-jue-fang-fa/" /> -->
+	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/2014/08/13/goagent-qi-dong-hou-wu-fan-ying-de-wen-ti-jie-jue-fang-fa/" />
 	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
 
 	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
@@ -713,22 +713,43 @@ img {
 <div class="post mt-2">
 
 	<div class="info box">
-		<a class="date" href="http://williamlfang.github.com/cn/2010/05/26/graduation/">
-		<span class="year">2010</span>
-		<span class="day">26</span>
-		<span class="month">May</span>
+		<a class="date" href="http://williamlfang.github.com/cn/2014/08/13/goagent-qi-dong-hou-wu-fan-ying-de-wen-ti-jie-jue-fang-fa/">
+		<span class="year">2014</span>
+		<span class="day">13</span>
+		<span class="month">August</span>
 		<span class="circle"></span>
 		</a>
 	</div>
 
 	<div class="article">
-		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2010/05/26/graduation/" title="毕业啦">毕业啦</a></h3>
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2014/08/13/goagent-qi-dong-hou-wu-fan-ying-de-wen-ti-jie-jue-fang-fa/" title="GoAgent启动后无反应的问题解决方法">GoAgent启动后无反应的问题解决方法</a></h3>
 		<div class="content lh-150p font-16 pd-1 mg-2 radius-8">
-		<p>就像突然被人推了一下，还没来得及缓过紧张的情绪，还在迷恋校园浪漫的风景，却已经走在了大学时光的将至未至的尾巴。回首那些时光，从一个盛夏起点出发，前进，前进，一直奔跑着前进，在季节的幽谷里低吟，在青春的岁月里高歌，在人生的象牙塔沉思。有着这样的一段时光，漂泊在知识浩瀚的汪洋，穿梭于历史沧桑的街坊，一路沥风淋雨、披荆斩棘，却也满程暗香浮动、岁月如歌，然后在春夏秋冬的跑道上循环往复故地重游，一圈一圈不知疲倦的把青春的光年写在岁月的年轮里，把那些属于青春的激情岁月写在大地的沟壑里。</p>
+		<p>我一直都在使用 Google 开发的一款翻墙插件上网。这个「神器」在我的博客里面也有<a href="http://williamlfang.github.io/cn/2014/01/05/goagent/">介绍</a>。科学上网，远离 GFW。</p>
 
-<p>多年回味，多少欣慰。</p>
+<p>不过十分蹊跷的是，这几天使用 <code>Goagent</code> 的时候出现了不明的原因。情况是这样的：</p>
 
-		<div class="post-end mt-1"><span><i></i>26 May 2010</span></div>
+<blockquote>
+  <p>正常启动 <code>goagent-gtk.py</code> 后可以现实界面，没有报错的情况。可是也没有出现 <code>log</code> 上传信息的提示。然后使用 <code>Chrome</code> 登入，已经无法翻墙了。</p>
+</blockquote>
+
+<!-- more -->
+
+<p>无法翻墙对我来说就像关进了一个思想的囚牢，难以自由。现在连基本的 <code>Google</code> 网站都无法登入，使用 <code>Baidu</code> 来搜索，根本就没有任何的记录。</p>
+
+<p>我首先想到的是必须要通过 <code>Google</code> 来寻求帮助。我在 <code>Linux</code> 的主机下有安装了 <code>VirtualBox</code>，里面的 <code>Chrome</code> 是可以正常访问 <code>Google</code> 的。联想到我以前是通过修改 <code>hosts</code> 进行简单的翻墙，因此首先复制一份 <code>Windows</code> 里面的 <code>hosts</code>到 <code>Linux</code> 在 <code>ets\hosts</code>。这样是基本可以访问 <code>Google</code> 了。</p>
+
+<p>通过 Google 搜索以下问题，立马就有类似的<a href="https://code.google.com/p/goagent/issues/detail?id=11826">情况出现</a>了</p>
+
+<blockquote>
+  <p>goagent  启动后 没反应</p>
+</blockquote>
+
+<p>找到上面的提示，说是可能跟某个插件有冲突。同时，下面的评论里面也有提到说可能会跟优酷的一款去广告插件冲突。突然想到前几天有通过 Chrome Store 安装了一个取出优酷视频广告的插件，然后接下来的几天都无法使用 <code>Goagent</code> 了。果断去去把这个插件删除了。接下来重启 <code>goagent-gtk.py</code>，立马就满血了。好开心，有可以翻墙了。</p>
+
+<p>兹作记录。</p>
+
+
+		<div class="post-end mt-1"><span><i></i>13 August 2014</span></div>
 		</div>
 	</div>
 
@@ -736,7 +757,9 @@ img {
 	<div class="tags pl-2 pr-2 mb-2 left">
 		<span class="tag">标签：
 		
-		<a class="button button-small button-orange" href="/tags.html#时间" title="时间">时间</a>
+		<a class="button button-small button-orange" href="/tags.html#Goagent" title="Goagent">Goagent</a>
+		
+		<a class="button button-small button-orange" href="/tags.html#翻墙" title="翻墙">翻墙</a>
 		
 		</span>
 	</div>
@@ -746,7 +769,7 @@ img {
 	<div class="categories pl-2 pr-2 mb-2 right">
 		<span class="categorie">分类：
 		
-		<a class="button button-small button-orange" href="http://williamlfang.github.com/cn/archives.html#Personal" title="Personal">Personal</a>
+		<a class="button button-small button-orange" href="http://williamlfang.github.com/cn/archives.html#Google" title="Google">Google</a>
 		
 		</span>
 	</div>
@@ -755,25 +778,18 @@ img {
 	
 	<div class="cleared mt-2 pl-2 pr-2">
 		
-		<a class="button button-orange left" href="http://williamlfang.github.com/cn/2010/05/21/missing/" rel="prev" title="存在的空虚">←我怀念的</a>
+		<a class="button button-orange left" href="http://williamlfang.github.com/cn/2014/08/11/jun-gong-ban-kuai-zheng-li/" rel="prev" title="">←军工版块整理</a>
 		
-		
-		<a class="button button-orange right" href="http://williamlfang.github.com/cn/2010/06/25/nothing-meaningful/" rel="next" title="存在的空虚">存在的空虚→</a>
 		
 	</div>
 
 	
-	<span id="btn_page_prev"><a href="http://williamlfang.github.com/cn/2010/05/21/missing/" rel="prev" title="Previous">
+	<span id="btn_page_prev"><a href="http://williamlfang.github.com/cn/2014/08/11/jun-gong-ban-kuai-zheng-li/" rel="prev" title="Previous">
 	<span id="fanye" style="display: none;">
 		‹--
 	</span></a></span>
 	
 
-	
-	<span id="btn_page_next"><a href="http://williamlfang.github.com/cn/2010/06/25/nothing-meaningful/" rel="next" title="Next">
-	<span id="fanye" style="display: none;">
-		--›
-	</span></a></span>
 	
 	
 

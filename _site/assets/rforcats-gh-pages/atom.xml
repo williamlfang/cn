@@ -4,13 +4,45 @@
  <title>方莲 | William</title>
  <link href="http://williamlfang.github.com/cn/atom.xml" rel="self"/>
  <link href="http://williamlfang.github.com/cn/"/>
- <updated>2014-08-12T11:24:07+08:00</updated>
+ <updated>2014-08-13T12:01:31+08:00</updated>
  <id>http://williamlfang.github.com/cn</id>
  <author>
    <name>william</name>
    <email>william.lian.fang@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>GoAgent启动后无反应的问题解决方法</title>
+   <link href="http://williamlfang.github.com/cn/2014/08/13/goagent-qi-dong-hou-wu-fan-ying-de-wen-ti-jie-jue-fang-fa/"/>
+   <updated>2014-08-13T00:00:00+08:00</updated>
+   <id>http://williamlfang.github.com/cn/2014/08/13/goagent-qi-dong-hou-wu-fan-ying-de-wen-ti-jie-jue-fang-fa</id>
+   <content type="html">&lt;p&gt;我一直都在使用 Google 开发的一款翻墙插件上网。这个「神器」在我的博客里面也有&lt;a href=&quot;http://williamlfang.github.io/cn/2014/01/05/goagent/&quot;&gt;介绍&lt;/a&gt;。科学上网，远离 GFW。&lt;/p&gt;
+
+&lt;p&gt;不过十分蹊跷的是，这几天使用 &lt;code&gt;Goagent&lt;/code&gt; 的时候出现了不明的原因。情况是这样的：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;正常启动 &lt;code&gt;goagent-gtk.py&lt;/code&gt; 后可以现实界面，没有报错的情况。可是也没有出现 &lt;code&gt;log&lt;/code&gt; 上传信息的提示。然后使用 &lt;code&gt;Chrome&lt;/code&gt; 登入，已经无法翻墙了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;无法翻墙对我来说就像关进了一个思想的囚牢，难以自由。现在连基本的 &lt;code&gt;Google&lt;/code&gt; 网站都无法登入，使用 &lt;code&gt;Baidu&lt;/code&gt; 来搜索，根本就没有任何的记录。&lt;/p&gt;
+
+&lt;p&gt;我首先想到的是必须要通过 &lt;code&gt;Google&lt;/code&gt; 来寻求帮助。我在 &lt;code&gt;Linux&lt;/code&gt; 的主机下有安装了 &lt;code&gt;VirtualBox&lt;/code&gt;，里面的 &lt;code&gt;Chrome&lt;/code&gt; 是可以正常访问 &lt;code&gt;Google&lt;/code&gt; 的。联想到我以前是通过修改 &lt;code&gt;hosts&lt;/code&gt; 进行简单的翻墙，因此首先复制一份 &lt;code&gt;Windows&lt;/code&gt; 里面的 &lt;code&gt;hosts&lt;/code&gt;到 &lt;code&gt;Linux&lt;/code&gt; 在 &lt;code&gt;ets\hosts&lt;/code&gt;。这样是基本可以访问 &lt;code&gt;Google&lt;/code&gt; 了。&lt;/p&gt;
+
+&lt;p&gt;通过 Google 搜索以下问题，立马就有类似的&lt;a href=&quot;https://code.google.com/p/goagent/issues/detail?id=11826&quot;&gt;情况出现&lt;/a&gt;了&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;goagent  启动后 没反应&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;找到上面的提示，说是可能跟某个插件有冲突。同时，下面的评论里面也有提到说可能会跟优酷的一款去广告插件冲突。突然想到前几天有通过 Chrome Store 安装了一个取出优酷视频广告的插件，然后接下来的几天都无法使用 &lt;code&gt;Goagent&lt;/code&gt; 了。果断去去把这个插件删除了。接下来重启 &lt;code&gt;goagent-gtk.py&lt;/code&gt;，立马就满血了。好开心，有可以翻墙了。&lt;/p&gt;
+
+&lt;p&gt;兹作记录。&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>军工版块整理</title>
@@ -2427,6 +2459,11 @@ plot(density(x))
 &lt;h3 id=&quot;section-1&quot;&gt;64位操作系统不能运行&lt;/h3&gt;
 &lt;p&gt;这个问题主要是由于原先只是在32位系统运行的 &lt;code&gt;wineQQ&lt;/code&gt; 需要安装配件。如下：&lt;/p&gt;
 
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; sudo apt-get install libc6-i386 
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; sudo apt-get install ia32-libs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 </content>
  </entry>
  
@@ -2448,6 +2485,10 @@ plot(density(x))
     &lt;p&gt;Suppose you have created a relative path containing folder as &lt;code&gt;assets/images/btt.png&lt;/code&gt;, all you need to do is to add the additional prelix &lt;code&gt;/cn&lt;/code&gt; alongsie the relative file path &lt;code&gt;assets/images/btt.png&lt;/code&gt;. See below as as example: &lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;!&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;bottom&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;/cn/assets/images/btt.png&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;which gives
 &lt;img src=&quot;/cn/assets/images/btt.png&quot; alt=&quot;bottom&quot; /&gt;&lt;/p&gt;

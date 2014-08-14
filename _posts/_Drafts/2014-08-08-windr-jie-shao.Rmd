@@ -1,13 +1,12 @@
-
 ---
 layout:   post
 title:    "WindR介绍"
 category: [金融 R]
 tags:     
-	- 金融
-	- Wind
-  - 数据
-  - 股票
+	  -  金融
+	  -  Wind
+    -  数据
+    -  股票
 description: 
 published: false
 status:    process

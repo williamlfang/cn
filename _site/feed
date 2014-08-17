@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-08-13T18:49:24+08:00</lastBuildDate>
-        <pubDate>2014-08-13T18:49:24+08:00</pubDate>
+        <lastBuildDate>2014-08-14T16:48:41+08:00</lastBuildDate>
+        <pubDate>2014-08-14T16:48:41+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -2488,11 +2488,6 @@ plot(density(x))
 &lt;h3 id=&quot;section-1&quot;&gt;64位操作系统不能运行&lt;/h3&gt;
 &lt;p&gt;这个问题主要是由于原先只是在32位系统运行的 &lt;code&gt;wineQQ&lt;/code&gt; 需要安装配件。如下：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; sudo apt-get install libc6-i386 
-&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; sudo apt-get install ia32-libs
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
 <img src="http://img.tongji.linezing.com/3379661/tongji.gif" border="0" /></description>
                 <link>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/</link>
                 <guid>http://williamlfang.github.com/cn/2014/01/18/qq-for-linux/</guid>
@@ -2516,10 +2511,6 @@ plot(density(x))
     &lt;p&gt;Suppose you have created a relative path containing folder as &lt;code&gt;assets/images/btt.png&lt;/code&gt;, all you need to do is to add the additional prelix &lt;code&gt;/cn&lt;/code&gt; alongsie the relative file path &lt;code&gt;assets/images/btt.png&lt;/code&gt;. See below as as example: &lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;!&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;bottom&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;/cn/assets/images/btt.png&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;p&gt;which gives
 &lt;img src=&quot;/cn/assets/images/btt.png&quot; alt=&quot;bottom&quot; /&gt;&lt;/p&gt;

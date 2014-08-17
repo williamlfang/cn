@@ -70,6 +70,7 @@ Matlab 程序设计。
 下面开始介绍如何在系统里面安装 WindR 软件包。
 
 - 打开 Wind 客户端
+
 <!--
    [![打开 Wind 客户端](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01.jpg)](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01.jpg)
 
@@ -98,7 +99,7 @@ library(WindR)
  w.start(showmenu = FALSE, waitTime = 60);   ## 缺省设置为「显示导航界面」,命令超时时间为 300 秒
 ```
 
-```
+```r
 ## $ErrorCode
 ## [1] 0
 ## 

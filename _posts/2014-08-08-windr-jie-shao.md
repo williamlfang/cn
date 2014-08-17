@@ -45,6 +45,7 @@ output:
 Matlab 程序设计。
 
 ## 如何安装
+
 ### 系统要求
 
 目前，由于 Wind 客户端只能在 Windows 系统下运行，因而其提供的所有软件接口都要求必须是安装在 Windows 操作系统环境下。目前我的绝大部分工作都是在 Linux Ming Qiana 操作系统下完成，所以无奈的我只好在原本就只
@@ -70,13 +71,13 @@ Matlab 程序设计。
 
 - 打开 Wind 客户端
 <!--
-   [![打开 Wind 客户端](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01,jpg)](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01,jpg)
+   [![打开 Wind 客户端](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01,jpg)](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01.jpg)
 
 - 在客户端左上角点击 `文件`，出现下拉框，选择 `修复插件` - 选择 `修复R插件`，得到下面的操作界面。
 
-   [![修复插件](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img02,jpg)](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img02,jpg)
+   [![修复插件](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img02.jpg)](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img02,jpg)
 
-   [![修复插件2](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img03,jpg)](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img03,jpg)
+   [![修复插件2](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img03.jpg)](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img03,jpg)
  -->
 - 根据提示，按任意键完成安装过程。这样，完整的 `WindR` 扩展包便成功在 R 中安装。接下来便是如何使用插件来辅佐研究。
 

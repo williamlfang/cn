@@ -11,8 +11,8 @@
 	<meta name="author" content="william" />
 	<meta name="generator" content="Jekyll" />
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-	<meta name="keywords" content="" />
-	<meta name="description" content="我希望好好的" />
+	<meta name="keywords" content="金融Wind数据股票" />
+	<meta name="description" content="WindR介绍" />
 
 	<meta charset="UTF-8"/>
 	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
@@ -32,8 +32,8 @@
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link href="http://williamlfang.github.io/cn/feed/" type="application/rss+xml" rel="alternate" title="William RSS Feed" />
 	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="William ATOM Feed" />
-	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/2007/05/25/healthy/" /> -->
-	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/2007/05/25/healthy/" />
+	<!-- <link rel="canonical" href="http://williamlfang.github.com/cn/2014/08/08/windr-jie-shao/" /> -->
+	<link rel="canonical" href="http://williamlfang.github.io/cn/search.html/2014/08/08/windr-jie-shao/" />
 	<script type="text/javascript" src="/media/themes/miantiao/life/js/jquery.min.js"></script>
 
 	<!--  <script type="text/javascript" src="/media/js/highlight.pack.js"></script>  -->
@@ -715,40 +715,330 @@ img {
 <div class="post mt-2">
 
 	<div class="info box">
-		<a class="date" href="http://williamlfang.github.com/cn/2007/05/25/healthy/">
-		<span class="year">2007</span>
-		<span class="day">25</span>
-		<span class="month">May</span>
+		<a class="date" href="http://williamlfang.github.com/cn/2014/08/08/windr-jie-shao/">
+		<span class="year">2014</span>
+		<span class="day">08</span>
+		<span class="month">August</span>
 		<span class="circle"></span>
 		</a>
 	</div>
 
 	<div class="article">
-		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2007/05/25/healthy/" title="我希望好好的">我希望好好的</a></h3>
+		<h3><a class="title font-orange mb-2" href="http://williamlfang.github.com/cn/2014/08/08/windr-jie-shao/" title="WindR介绍">WindR介绍</a></h3>
 		<div class="content lh-150p font-16 pd-1 mg-2 radius-8">
-		<p>想        <br />
-从明天起，做个好孩子        <br />
-准时地起床        <br />
-简单而幸福地吃着早餐        <br />
-课上认真有听话        <br />
-偶尔回微微笑，扬起的嘴角荡漾樱花的涟漪        <br />
-健康绝不让身边的人担心忧虑        <br />
-一脸夏至灿烂的阳光        <br />
-安静地写着作业，密密麻麻地散满了落寞        <br />
-然后在睡觉前纯洁地双手合十，虔诚地祝愿        <br />
-每个人快乐        <br />
-每一天简单        <br />
-每一面美丽        <br />
-每一片阳光都是灿烂的若莲花绽放        <br />
-每一个孩子天真无邪        <br /></p>
+		<p>时下金融界正在热火朝天地讨论如何应对「金融大数据」对股市研究的影响。我的个人看法是：</p>
 
-		<div class="post-end mt-1"><span><i></i>25 May 2007</span></div>
+<pre><code>有总比没有好。
+</code></pre>
+
+<p>如果换做几年前，我们去研究沪深市场，查看个股行情，唯一能得到的数据是由各个券商预装的交易软件。这些往往只能得到一个大体的、模糊的、有限制使用权限的金融数据，大抵上只能得到股市的基本行情变动，无法确切的得
+到每只股票的具体交易记录更何谈再深入的进行统计模型与数据挖掘。因此，在那个时代，谁能够得到更新的、更全的、更具有实质内容的金融数据，那就将得到一个统计研究的制高点。如果我们去翻看前几年的金融期刊，也会发
+现一些规律，即往往那些也已发表的文章，仅仅是因为其得到的数据较于他人更具有「故事性」，而非其用作数据分析的统计或计量方法有多好（甚至可称「低级趣味」）。因此，大家都击破脑门去花钱找数据，也是情理所在。</p>
+
+<p>那么，现在已然进入了一个金融数据大暴发的新时期，互联网的高速发展与深入推进提供了社交媒介在我们日常生活与工作当中的主角地位，而这里移动设备每时每刻都在记录着任何可供追踪记录的「信息」。现在，所谓「信息」
+的概念，已经不仅仅是停留在传统理念下的生产与消费记录，如投入产出表，而是扩大性的囊括了与个体活动有关的交易、社交、活动、娱乐、观点等综合数据。这些数据一方面具有「大」与「多」的特征，通常移动设备每天得到
+的数据是以 TB 来衡量的，另一方面还具有「细」与「密」的个体性特征，往往可以追踪记录任何一个通过互联网发生活动的个体每日的活动情况。现在，这些数据可以供我们进行传统统计由于数据维度灾难而无法完成的分析，提
+供了一个全新的视角。</p>
+
+<!-- more -->
+
+<h2 id="windr-"><strong>WindR</strong> 初识</h2>
+<p>说到金融数据，我们不得不提 <strong>Wind</strong>。作为目前国内首屈一指的金融讯息提供商，Wind 在金融界的地位无可替代，其提供的全方位、多领域、高质量的经济与金融数据强有力的支持了我们对金融市场的研究分析。我个人目前的
+工作基本上就是依赖 Wind 的数据输出与图形可视化来实现的。因此，当我听说 Wind 现在也提供了 <strong>R</strong> 的 API 借口时，本人竟然感到无比的激动，这种激动就像麦兜在听到华仔唱歌时那个无以抑制的想要「尿尿」的感觉。现
+在，我可以通过 <strong>WindR</strong> 插件，直接读取 Wind 里面的金融数据，接下来便可以利用 R 强大的统计分析与数据可视化功能了。</p>
+
+<blockquote>
+  <p>这里多唠叨几句。其实 Wind 在几年前就已经开始尝试提供多种数据处理软件的接口了。例如，在 2012 年的时候推出的 Excel 接口，可以方便我们在 Excel 里面直接导出想要的数据，其中包括了个股的基本面时间序列数据、
+日间与日内高频行情数据、历史快照与实时截面数据、日内分钟更新数据、上市公司财务报表等。同时，考虑到 Matlab 在金融建模领域的重要性，Wind 还推出了 Matlab 的接口，利用 Excel 通道来获得相关数据，并且辅之以 
+Matlab 程序设计。</p>
+</blockquote>
+
+<h2 id="section">如何安装</h2>
+<p>### 系统要求</p>
+
+<p>目前，由于 Wind 客户端只能在 Windows 系统下运行，因而其提供的所有软件接口都要求必须是安装在 Windows 操作系统环境下。目前我的绝大部分工作都是在 Linux Ming Qiana 操作系统下完成，所以无奈的我只好在原本就只
+有 120G 大小的 SSD 硬盘中「忍辱割地」建立一个 Virtuabox 虚拟机，里面运行 Win7 系统。这个大小设定为 30G （只好这样子了）。</p>
+
+<p>这里总结了一下需要的配置：</p>
+
+<ul>
+  <li>
+    <p>Windows 系统，同时支持 32 位 和 64 位。</p>
+
+    <p>目前我使用的是 Win7 64位的操作系统，Linux 主机内存为 4G + 1G，因而给虚拟机划分了大概有 2.5G 的内存（Linux 主机也是 64 位的，不过基本不怎么「吃」内存）。磁盘空间为 30G 固定大小，设置固定大小可以提供
+运行速度。</p>
+  </li>
+  <li>
+    <p>官方要求 R 2.15.0 以上的环境。</p>
+
+    <p>不过大概现在没有人会停留在 2 时代了，目前 CRAN 提供下载是已经 R 3.1.0 了。本人目前使用没有任何压力。所以建议大家可以升级的就动动手吧，表示一下对 R Core 团队辛苦劳作的支持喽。R 的安装我以前在博客有介
+绍，大家可以去博客里面看看。</p>
+  </li>
+  <li>
+    <p>由于安装的借口插件需要写入<strong>注册表</strong>，因此需要系统管理员权限。所以请重新启动切换到管理员 Adm 。</p>
+  </li>
+</ul>
+
+<h3 id="section-1">安装过程</h3>
+
+<p>下面开始介绍如何在系统里面安装 WindR 软件包。</p>
+
+<ul>
+  <li>
+    <p>打开 Wind 客户端
+&lt;!–
+ <a href="/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01,jpg"><img src="/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01,jpg" alt="打开 Wind 客户端" /></a></p>
+  </li>
+  <li>
+    <p>在客户端左上角点击 <code>文件</code>，出现下拉框，选择 <code>修复插件</code> - 选择 <code>修复R插件</code>，得到下面的操作界面。</p>
+
+    <p><a href="/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img02,jpg"><img src="/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img02,jpg" alt="修复插件" /></a></p>
+
+    <p><a href="/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img03,jpg"><img src="/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img03,jpg" alt="修复插件2" /></a>
+ –&gt;</p>
+  </li>
+  <li>
+    <p>根据提示，按任意键完成安装过程。这样，完整的 <code>WindR</code> 扩展包便成功在 R 中安装。接下来便是如何使用插件来辅佐研究。</p>
+  </li>
+</ul>
+
+<h2 id="windr--1">WindR 使用教程</h2>
+<p>### 加载包
+与 R 中的其他扩展包一样，使用 WindR 前也需要预先加载。使用如下命令</p>
+
+<p><code>r
+library(WindR)
+</code></p>
+
+<p>经过扩展包的加载，我们便可以开始使用 <code>WindR</code> 里面的命令了。</p>
+
+<h3 id="windr">启动 <code>WindR</code></h3>
+<p>加载 WindR 后，在真正开始操作之前，我们需要使用命令登入 Wind 客户端并以命令的形式激活插件。命令如下：</p>
+
+<p><code>r
+ w.start(showmenu = FALSE, waitTime = 60);   ## 缺省设置为「显示导航界面」,命令超时时间为 300 秒
+</code></p>
+
+<p><code>
+## $ErrorCode
+## [1] 0
+## 
+## $ErrorMsg
+## [1] "Already conntected!"
+</code></p>
+
+<p>不过我一般选择在启动前预先加载常用包。这个在系统的 etc\Rprofile.site 中设置。通常，我个人的加载包如下</p>
+
+<p>```r
+options(“width”=160)                # wide display with multiple monitors
+options(“digits.secs”=3)            # show sub-second time stamps</p>
+
+<p>setHook(packageEvent(“grDevices”, “onLoad”),
+    function(…) grDevices::X11.options(width=8, height=8, 
+                                         xpos=0, pointsize=10, 
+                                         #type=”nbcairo”))  # Cairo device
+                                         #type=”cairo”))    # other Cairo dev
+                                         type=”xlib”))      # old default                                         <br />
+options(prompt=”R&gt; “, digits=4, show.signif.stars=FALSE)
+options(“pdfviewer”=”okular”)         # on Linux, use okular as the pdf viewer</p>
+
+<p>.First &lt;- function() {
+library(graphics)
+options(“repos” = c(CRAN = “http://mirrors.softliste.de/cran/”, CRANextra=”http://www.stats.ox.ac.uk/pub/RWin”))
+options(“device” = “quartz”) 
+library(zoo)
+library(xts)
+library(TTR)
+library(quantmod)<br />
+library(ggplot2) 
+library(WindR)
+w.start()
+}</p>
+
+<p>.Last &lt;- function() {
+if (!any(commandArgs()==’–no-readline’) &amp;&amp; interactive()){
+timestamp(,prefix=paste(“##—— [“,getwd(),”] “,sep=””))
+try(savehistory(“~/.Rhistory”))
+}}
+last &lt;- function (x, n=1, …) tail(x, n=n, …)
+```</p>
+
+<h3 id="windr--2">WindR 操作命令规范</h3>
+<p>任何的命令都以 <code>w.</code> 开始</p>
+
+<p><code>WindR</code> 为了对 <code>R</code> 命令做出统一的规范，特别适用了在各个命令语句前面添加 <code>w.</code> 以示区别于普通的R命令格式。因此，我们开始调用导航栏时，可以使用命令</p>
+
+<p><code>r
+w.menu() # 首次使用显示导航界面
+</code></p>
+
+<p><code>
+## NULL
+</code></p>
+
+<p><code>r
+w.menu() # 第二次关系到导航界面
+</code></p>
+
+<p><code>
+## NULL
+</code></p>
+
+<p><code>r
+w.menu('wsd') # 显示 w.wsd() 导航 
+</code></p>
+
+<p><code>
+## NULL
+</code></p>
+
+<h4 id="section-2">命令严格区分大小写</h4>
+
+<p>我们知道，<code>R</code> 作为一门编程语言，是严格区别大小写的，比如</p>
+
+<p><code>r
+X &lt;- c(1,2,3)   ## 大写的 `X`
+x &lt;- seq(3,5)   ## 小写的 `x`
+(X == x)        ## 判断二者是否相等
+</code></p>
+
+<p><code>
+## [1] FALSE FALSE FALSE
+</code>
+因此，必然的，扩展包 <code>WindR</code> 也同样需要严格区分大小写命令。例如，<code>beginTime</code> 不能写成 <code>begintime</code> 或者 <code>BeginTime</code>。这些需要我们在往后的使用中多加注意，不要把大小写不同的命令代码搞混淆了。</p>
+
+<h4 id="section-3">引号内输入不区分大小写</h4>
+
+<p>以上我们分析了在命令语句中 <code>WindR</code> 继承了 <code>R</code> 编程语言严格区分大小写的规定。可是，现在 WindR 又更加具有灵活性，提出了允许在引号内部是可以允许使用大小写混合输出的，不再做严格区分。比如，</p>
+
+<p><code>r
+w.wsd('090007.IB','close',Sys.Date()-5,Sys.Date(),'Priceadj=F;tradingcalendar=NIB')
+</code></p>
+
+<p><code>
+## $ErrorCode
+## [1] 0
+## 
+## $Data
+##      DATETIME CLOSE
+## X1 2014-08-12 3.968
+## X2 2014-08-13 3.960
+## X3 2014-08-14 3.930
+## X4 2014-08-15 3.950
+## 
+## $Code
+## [1] "090007.IB"
+</code>
+等同于命令</p>
+
+<p><code>r
+w.wsd('090007.ib','CLOSE',Sys.Date()-5,Sys.Date(),'Priceadj=f;tradingcalendar=nib')
+</code></p>
+
+<p><code>
+## $ErrorCode
+## [1] 0
+## 
+## $Data
+##      DATETIME CLOSE
+## X1 2014-08-12 3.968
+## X2 2014-08-13 3.960
+## X3 2014-08-14 3.930
+## X4 2014-08-15 3.950
+## 
+## $Code
+## [1] "090007.IB"
+</code></p>
+
+<h4 id="section-4">支持数组形式的输入格式</h4>
+
+<p>所谓数组形式，即包含多个参数的向量。<code>WindR</code> 是允许我们使用更加高效的方法来输出多个参数变量的。比如，为了输出</p>
+
+<p>```r
+stock01 &lt;- w.wss(“600000,sh, 600005.sh, 600004.sh”, “roe_avg, roa”, “rptDate = 20101231”)</p>
+
+<p>code &lt;- c(‘600000,sh’, ‘600005.sh’, ‘600004.sh’)
+field &lt;- c(‘roe_avg’, ‘roa’)
+stock02 &lt;- w.wss(code, field, “rptDate = 20101231”)
+```</p>
+
+<h3 id="section-5">获得相关帮助</h3>
+<p>通常我们在使用 <code>R</code> 遇到问题，首先应该想到的是伴随其安装而预先配置的使用手册。该手册通常包括了作者能够想到的所有问题的解决方法，依然足够我们日常的使用了。</p>
+
+<p>在经过加载包 <code>library(WindR)</code> 后，我们可以使用内置的帮助命令 <code>help()</code> 来查找相关资讯。例如</p>
+
+<p>```r
+## library(WindR)
+help(WindR)</p>
+
+<p>help(w.wsd)
+```</p>
+
+<h3 id="windr--3">WindR 各个命令使用说明[待续]</h3>
+<p>下面，我们分别从各个命令不同的语法结构与分析功能逐一介绍其功能、用法、特征以及可供金融数据分析使用命令。</p>
+
+<h4 id="wisconnected-"><code>w.isconnected()</code> 判断客户端是否已经成功登入</h4>
+
+<p>由于我们使用 WindR 时需要有客户端的授权支持。因此，我们才需要一个命令查看当前操作是否已经通过了授权认证，以确定 WindR 是否登陆成功。</p>
+
+<p><code>r
+## library(WindR)
+w.isconnected()
+</code></p>
+
+<p><code>r
+## [1] TRUE
+</code>
+输出结果为 TRUE 表面当前已经成功登入 Wind 客户端，可以使用 WindR 命令获得相应的数据查看权限。</p>
+
+<h4 id="wasdatetime-"><code>w.asDateTime()</code> 转换日期格式与特殊处理</h4>
+
+<p>从用户手册中可以发现，<code>WindR 接口函数中的时间指标不是标准的通用格式，而是采用「以距离某个时间点的天数形式输出的」，从而是一个浮点数。因此，我们需要特殊的日期格式处理命令，即 </code>.asDateTime()`。该命令的目
+的在于把 WindR 中的浮点数日期数据转换为 R 的语言时间格式。</p>
+
+<p><code>r
+df &lt;- w.wss("600000.sh, 000002.sz", "last_trade_day, pre_close")
+df
+</code></p>
+
+<p><code>
+## $ErrorCode
+## [1] 0
+## 
+## $Data
+##        CODE LAST_TRADE_DAY PRE_CLOSE
+## 1 600000.SH          41866      9.60
+## 2 000002.SZ          41866      9.36
+## 
+## $Time
+## [1] "2014-08-17 09:31:42.005 CST"
+</code></p>
+
+<p><code>r
+df2 &lt;- w.asDateTime(df$Data[,2], asdate = TRUE)
+df2
+</code></p>
+
+<p><code>
+## [1] "2014-08-15" "2014-08-15"
+</code></p>
+
+
+		<div class="post-end mt-1"><span><i></i>08 August 2014</span></div>
 		</div>
 	</div>
 
 	
 	<div class="tags pl-2 pr-2 mb-2 left">
 		<span class="tag">标签：
+		
+		<a class="button button-small button-orange" href="/tags.html#金融" title="金融">金融</a>
+		
+		<a class="button button-small button-orange" href="/tags.html#Wind" title="Wind">Wind</a>
+		
+		<a class="button button-small button-orange" href="/tags.html#数据" title="数据">数据</a>
+		
+		<a class="button button-small button-orange" href="/tags.html#股票" title="股票">股票</a>
 		
 		</span>
 	</div>
@@ -758,7 +1048,7 @@ img {
 	<div class="categories pl-2 pr-2 mb-2 right">
 		<span class="categorie">分类：
 		
-		<a class="button button-small button-orange" href="http://williamlfang.github.com/cn/archives.html#Time" title="Time">Time</a>
+		<a class="button button-small button-orange" href="http://williamlfang.github.com/cn/archives.html#金融 R" title="金融 R">金融 R</a>
 		
 		</span>
 	</div>
@@ -767,22 +1057,22 @@ img {
 	
 	<div class="cleared mt-2 pl-2 pr-2">
 		
-		<a class="button button-orange left" href="http://williamlfang.github.com/cn/2007/05/19/losing-my-dear-time/" rel="prev" title="大学一年祭">←流年逝</a>
+		<a class="button button-orange left" href="http://williamlfang.github.com/cn/2014/08/04/ggplot2-ru-men-zhi-qplot/" rel="prev" title="WindR介绍">←ggplot2入门之qplot</a>
 		
 		
-		<a class="button button-orange right" href="http://williamlfang.github.com/cn/2007/07/24/first-year-at-uni/" rel="next" title="大学一年祭">大学一年祭→</a>
+		<a class="button button-orange right" href="http://williamlfang.github.com/cn/2014/08/08/windr-jie-shao/" rel="next" title="WindR介绍">WindR介绍→</a>
 		
 	</div>
 
 	
-	<span id="btn_page_prev"><a href="http://williamlfang.github.com/cn/2007/05/19/losing-my-dear-time/" rel="prev" title="Previous">
+	<span id="btn_page_prev"><a href="http://williamlfang.github.com/cn/2014/08/04/ggplot2-ru-men-zhi-qplot/" rel="prev" title="Previous">
 	<span id="fanye" style="display: none;">
 		‹--
 	</span></a></span>
 	
 
 	
-	<span id="btn_page_next"><a href="http://williamlfang.github.com/cn/2007/07/24/first-year-at-uni/" rel="next" title="Next">
+	<span id="btn_page_next"><a href="http://williamlfang.github.com/cn/2014/08/08/windr-jie-shao/" rel="next" title="Next">
 	<span id="fanye" style="display: none;">
 		--›
 	</span></a></span>

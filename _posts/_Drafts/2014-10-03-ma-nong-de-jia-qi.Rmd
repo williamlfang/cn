@@ -320,6 +320,9 @@ is.character(FL)
 
 [![latex-markdown1](/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig06.jpg)](/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig06.jpg)
 
+[![latex-markdown1](/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig08.jpg)](/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig08.jpg)
+
+[![latex-markdown1](/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig09.jpg)](/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig09.jpg)
 
 ## 成果展示
 

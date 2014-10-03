@@ -4,7 +4,7 @@
  <title>方莲 | William</title>
  <link href="http://williamlfang.github.com/cn/atom.xml" rel="self"/>
  <link href="http://williamlfang.github.com/cn/"/>
- <updated>2014-08-17T09:45:41+08:00</updated>
+ <updated>2014-10-04T00:03:01+08:00</updated>
  <id>http://williamlfang.github.com/cn</id>
  <author>
    <name>william</name>
@@ -189,7 +189,8 @@ Matlab 程序设计。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;如何安装&lt;/h2&gt;
-&lt;p&gt;### 系统要求&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;系统要求&lt;/h3&gt;
 
 &lt;p&gt;目前，由于 Wind 客户端只能在 Windows 系统下运行，因而其提供的所有软件接口都要求必须是安装在 Windows 操作系统环境下。目前我的绝大部分工作都是在 Linux Ming Qiana 操作系统下完成，所以无奈的我只好在原本就只
 有 120G 大小的 SSD 硬盘中「忍辱割地」建立一个 Virtuabox 虚拟机，里面运行 Win7 系统。这个大小设定为 30G （只好这样子了）。&lt;/p&gt;
@@ -214,27 +215,25 @@ Matlab 程序设计。&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;安装过程&lt;/h3&gt;
+&lt;h3 id=&quot;section-2&quot;&gt;安装过程&lt;/h3&gt;
 
 &lt;p&gt;下面开始介绍如何在系统里面安装 WindR 软件包。&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;打开 Wind 客户端
-&amp;lt;!–
- &lt;a href=&quot;/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01,jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01,jpg&quot; alt=&quot;打开 Wind 客户端&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在客户端左上角点击 &lt;code&gt;文件&lt;/code&gt;，出现下拉框，选择 &lt;code&gt;修复插件&lt;/code&gt; - 选择 &lt;code&gt;修复R插件&lt;/code&gt;，得到下面的操作界面。&lt;/p&gt;
+  &lt;li&gt;打开 Wind 客户端&lt;/li&gt;
+&lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img02,jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img02,jpg&quot; alt=&quot;修复插件&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!--
+   [![打开 Wind 客户端](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01.jpg)](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img01.jpg)
 
-    &lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img03,jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img03,jpg&quot; alt=&quot;修复插件2&quot; /&gt;&lt;/a&gt;
- –&amp;gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;根据提示，按任意键完成安装过程。这样，完整的 &lt;code&gt;WindR&lt;/code&gt; 扩展包便成功在 R 中安装。接下来便是如何使用插件来辅佐研究。&lt;/p&gt;
-  &lt;/li&gt;
+- 在客户端左上角点击 `文件`，出现下拉框，选择 `修复插件` - 选择 `修复R插件`，得到下面的操作界面。
+
+   [![修复插件](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img02.jpg)](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img02.jpg)
+
+   [![修复插件2](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img03.jpg)](/cn/assets/images/r-figures/2014-08-08-windr-jie-shao/img03.jpg)
+ --&gt;
+&lt;ul&gt;
+  &lt;li&gt;根据提示，按任意键完成安装过程。这样，完整的 &lt;code&gt;WindR&lt;/code&gt; 扩展包便成功在 R 中安装。接下来便是如何使用插件来辅佐研究。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;windr--1&quot;&gt;WindR 使用教程&lt;/h2&gt;
@@ -254,7 +253,7 @@ library(WindR)
  w.start(showmenu = FALSE, waitTime = 60);   ## 缺省设置为「显示导航界面」,命令超时时间为 300 秒
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
+&lt;p&gt;&lt;code&gt;r
 ## $ErrorCode
 ## [1] 0
 ## 
@@ -327,7 +326,7 @@ w.menu('wsd') # 显示 w.wsd() 导航
 ## NULL
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;section-2&quot;&gt;命令严格区分大小写&lt;/h4&gt;
+&lt;h4 id=&quot;section-3&quot;&gt;命令严格区分大小写&lt;/h4&gt;
 
 &lt;p&gt;我们知道，&lt;code&gt;R&lt;/code&gt; 作为一门编程语言，是严格区别大小写的，比如&lt;/p&gt;
 
@@ -342,7 +341,7 @@ x &amp;lt;- seq(3,5)   ## 小写的 `x`
 &lt;/code&gt;
 因此，必然的，扩展包 &lt;code&gt;WindR&lt;/code&gt; 也同样需要严格区分大小写命令。例如，&lt;code&gt;beginTime&lt;/code&gt; 不能写成 &lt;code&gt;begintime&lt;/code&gt; 或者 &lt;code&gt;BeginTime&lt;/code&gt;。这些需要我们在往后的使用中多加注意，不要把大小写不同的命令代码搞混淆了。&lt;/p&gt;
 
-&lt;h4 id=&quot;section-3&quot;&gt;引号内输入不区分大小写&lt;/h4&gt;
+&lt;h4 id=&quot;section-4&quot;&gt;引号内输入不区分大小写&lt;/h4&gt;
 
 &lt;p&gt;以上我们分析了在命令语句中 &lt;code&gt;WindR&lt;/code&gt; 继承了 &lt;code&gt;R&lt;/code&gt; 编程语言严格区分大小写的规定。可是，现在 WindR 又更加具有灵活性，提出了允许在引号内部是可以允许使用大小写混合输出的，不再做严格区分。比如，&lt;/p&gt;
 
@@ -385,7 +384,7 @@ w.wsd('090007.ib','CLOSE',Sys.Date()-5,Sys.Date(),'Priceadj=f;tradingcalendar=ni
 ## [1] &quot;090007.IB&quot;
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;section-4&quot;&gt;支持数组形式的输入格式&lt;/h4&gt;
+&lt;h4 id=&quot;section-5&quot;&gt;支持数组形式的输入格式&lt;/h4&gt;
 
 &lt;p&gt;所谓数组形式，即包含多个参数的向量。&lt;code&gt;WindR&lt;/code&gt; 是允许我们使用更加高效的方法来输出多个参数变量的。比如，为了输出&lt;/p&gt;
 
@@ -397,7 +396,7 @@ field &amp;lt;- c(‘roe_avg’, ‘roa’)
 stock02 &amp;lt;- w.wss(code, field, “rptDate = 20101231”)
 ```&lt;/p&gt;
 
-&lt;h3 id=&quot;section-5&quot;&gt;获得相关帮助&lt;/h3&gt;
+&lt;h3 id=&quot;section-6&quot;&gt;获得相关帮助&lt;/h3&gt;
 &lt;p&gt;通常我们在使用 &lt;code&gt;R&lt;/code&gt; 遇到问题，首先应该想到的是伴随其安装而预先配置的使用手册。该手册通常包括了作者能够想到的所有问题的解决方法，依然足够我们日常的使用了。&lt;/p&gt;
 
 &lt;p&gt;在经过加载包 &lt;code&gt;library(WindR)&lt;/code&gt; 后，我们可以使用内置的帮助命令 &lt;code&gt;help()&lt;/code&gt; 来查找相关资讯。例如&lt;/p&gt;

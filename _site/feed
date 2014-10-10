@@ -4,8 +4,8 @@
         <title>方莲 | William</title>
         <description>方莲 | William - william</description>
         <link>http://williamlfang.github.com/cn</link>
-        <lastBuildDate>2014-10-04T00:05:32+08:00</lastBuildDate>
-        <pubDate>2014-10-04T00:05:32+08:00</pubDate>
+        <lastBuildDate>2014-10-04T00:31:48+08:00</lastBuildDate>
+        <pubDate>2014-10-04T00:31:48+08:00</pubDate>
         <ttl>60</ttl>
 　     　<copyright>版权所有</copyright>
 　　     <language>zh-cn</language>
@@ -15,16 +15,16 @@
         <item>
                 <title>码农的假期</title>
                 <description>&lt;h2 id=&quot;section&quot;&gt;又一个「劫日」&lt;/h2&gt;
-&lt;p&gt;我历来对假期没有特别的概念。以前读书的时候，基本上是天天在图书馆泡着，要么是在发呆要么是在准备发呆的状态中。一方面是自己的借口，不大好东，喜欢宅，也不怎么喜欢出去游山玩水之类的，毕竟读书时候生活费总共就没几个子；另一方面，总是感觉有许多的东西要在假期这段时间好好弥补一下，刚好趁着假期有充分完整的时间可以利用。总而言之，以前自己特么像个书呆子。所以至今开始工作后，我也没觉得假期是多么一个「神圣不可剥夺」的权利。&lt;/p&gt;
+&lt;p&gt;我历来对假期没有特别的概念。以前读书的时候，基本上是天天在图书馆泡着，要么是在发呆要么是在准备发呆的状态中。一方面是自己的借口，不大好动，喜欢宅，也不怎么喜欢出去游山玩水之类的，毕竟读书时候生活费总共就没几个子；另一方面，总是感觉有许多的东西要在假期这段时间好好弥补一下，刚好趁着假期有充分完整的时间可以利用。总而言之，以前自己特么像个书呆子。所以至今开始工作后，我也没觉得假期是多么一个「神圣不可剥夺」的权利。&lt;/p&gt;
 
-&lt;p&gt;家里老婆和孩子去顺德母校参加活动，家里只有留自己一个人在耗着。一边感慨厦门一到假期就人满为患，先前读书的时候也是因为假期学校被游客「占领」，食堂没个吃饭的位，溜圈没个歇脚的地，甚至有一段时间厦大的图书馆都开始「有一大波僵尸在靠近」。印象中固执的认为假期就如同我的死期似的，整个人没法子活了。所以老婆一说我可以趁这个时间出去走走的想法时，我连忙表示「誓死反对」。也罢，以前读书时候留下的老毛病，那也就重拾书本，开始书呆子的「宅期」了。&lt;/p&gt;
+&lt;p&gt;家里老婆和孩子去顺德母校参加活动，家里只有留自己一个人在耗着。一边感慨厦门一到假期就人满为患，先前读书的时候也是因为假期学校被游客「占领」，食堂没个吃饭的位，溜圈没个歇脚的地，甚至有一段时间厦大的图书馆都开始警报说「有一大波僵尸在靠近」。印象中我曾经固执的认为假期就如同我的死期似的，整个人没法子活了。所以老婆一说我可以趁这个时间出去走走的想法时，我连忙表示「誓死反对」。也罢，以前读书时候留下的老毛病，那也就重拾书本，开始书呆子的「宅期」了。&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;码农在行动&lt;/h2&gt;
 &lt;p&gt;突然想起放假前有同事给我下了个命令，要用 R 来写一个小小的程序，帮其减少体力活。我本来想说的是，我又不是个专业码农，干嘛有事没事非得都往这边推呢。不过，至少是半个码农的我，平日里最看不得那些愚蠢的、浪费大量时间和精力去做一个重复的体力活了。比如我这个同事，她需要每天统计部门推荐的股票，然后在收盘时间登记相应的收盘信息，计算每支股票的收益情况，并最终汇总。其实我一开始看到这个「又脏又累」的苦逼活时，表示了强烈的鄙视感与完全没有和谐美的道义谴责。这些活一来是高度重复、机械的，没有必要每天花那么多的时间去重复消耗时间；二来，其实可以在事前先花一点时间好好设计一套程序，让代码自动运行给给出想要的结果，而且还能保证不出差错（她每天都担心是不是计算结果有误，结果在 Excel 运行结束后又得使用计算器再次验证结果）。当时有跟她商量过是不是可以考虑使用代码来实现。可是她嫌麻烦，又怕事，也不懂编程，觉得没有必要。在说完她的 N 个理由后，我那仅存的一丁点的码农精神彻底无语。也就罢了，自己还有一堆的事情要去完成。&lt;/p&gt;
 
-&lt;p&gt;这几天正值假期空闲，又想起这件事情。手痒痒的，便自觉不自觉的拿起键盘，开始稀里哗啦的敲击。一下是事后的备忘录，以防这位同事日后问起程序的任何问题，我好歹还能把这篇博客拿出来。&lt;/p&gt;
+&lt;p&gt;这几天正值假期空闲，又想起这件事情。手痒痒的，便自觉不自觉的拿起键盘，开始稀里哗啦的敲击。以下是事后的备忘录，以防这位同事日后问起程序的任何问题，我好歹还能把这篇博客拿出来。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2&quot;&gt;基本思路&lt;/h2&gt;
 &lt;p&gt;其实整个程序的思路应该是很明朗的：使用股票代码作为参数输入，经过函数转换，得到想要的结果。具体点，就是个股的收益率计算，比赛排名与得分，总体的平均收益率。另外最好能够添加个股的基本情况介绍，如主营业务，当日行情，累计收益率等。&lt;/p&gt;
@@ -68,7 +68,7 @@ is.character(FL)
 &lt;p&gt;首先遇到的难题就是使用哪个数据库来获取股票信息。其实，现在网上有很多的免费数据可以提供了股票 &lt;code&gt;OHLC&lt;/code&gt; 以及成交量的信息。但是信息不够齐全，要求我们在不同的数据库来回折腾。所幸，公司给我们配置了万得数据库。目前这个数据库自带的提供了 &lt;code&gt;R&lt;/code&gt; 软件包，同时还提供了一系列的接口可以获取信息。这些信息囊括了股票行情、三大报表、公司基本情况等，算是做的不错的。因此，我觉得使用软件包 &lt;code&gt;WindR&lt;/code&gt; 来解决数据的问题。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;注意：由于我实在 &lt;code&gt;Linux&lt;/code&gt; 上面写博客，而现在万得只能运行在 &lt;code&gt;Windows&lt;/code&gt; 系统下面。因此具体的代码运行结果也就无法实时展示。我尽量把在 &lt;code&gt;Windows&lt;/code&gt; 系统下运行的结果转移过来。&lt;/p&gt;
+  &lt;p&gt;注意：由于我是在 &lt;code&gt;Linux&lt;/code&gt; 上面写博客，而现在万得只能运行在 &lt;code&gt;Windows&lt;/code&gt; 系统下面。因此具体的代码运行结果也就无法实时展示。我尽量把在 &lt;code&gt;Windows&lt;/code&gt; 系统下运行的结果转移过来。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;下面代码是启动宏包：&lt;/p&gt;
@@ -264,14 +264,16 @@ for(i in 1:5){
 
 &lt;p&gt;以上我们得到了一个初步的结果。如何把我们实现的结果输入到合适的文本，这是一个一直困扰我的问题。&lt;/p&gt;
 
-&lt;p&gt;本人倾向于使用网页 （Html5 + css3），一来简单大方，可以使用 &lt;code&gt;markdown&lt;/code&gt; 语法输入，二者通用性极强，基本上任何一台笔记本和手持移动设备都可以查看。可是我所在的公司似乎对这个先进性极强的新鲜事物抱着莫须有的排斥。也罢，道不同不相为谋。他们更习惯习惯 MS 那套极其低效率与奇丑无比的 Office 套装。后来我能想到的唯一解就是放弃使用 Html， 改走 PDF 路线。也就是，PDF 也可以佯装 Word 的模样，既不灭了自己的志气，还涨了他人的威风，可谓一举两得。&lt;/p&gt;
+&lt;p&gt;本人倾向于使用网页 （Html5 + css3），一来简单大方，可以使用 &lt;code&gt;markdown&lt;/code&gt; 语法输入，二者通用性极强，基本上任何一台笔记本和手持移动设备都可以查看。可是我所在的公司似乎对这个先进性极强的新鲜事物抱着莫须有的排斥。也罢，道不同不相为谋。&lt;/p&gt;
+
+&lt;p&gt;他们更习惯习惯 MS 那套极其低效率与奇丑无比的 Office 套装。后来我能想到的唯一解就是放弃使用 Html， 改走 PDF 路线。也就是，PDF 也可以佯装 Word 的模样，既不灭了自己的志气，还涨了他人的威风，可谓一举两得。&lt;/p&gt;
 
 &lt;h3 id=&quot;latex&quot;&gt;LaTeX&lt;/h3&gt;
 &lt;p&gt;以前读书的时候，把老师折磨的不行了，非得使用 &lt;code&gt;Beamer&lt;/code&gt; 来制作 slide。幸好，也因此有缘结识 &lt;code&gt;LaTeX&lt;/code&gt; 这个神一样的文档处理系统。她特别擅长与制作科学类的文档，同时也由于其具有良好的可控性，比较适合制作严格版面设计的文稿，这些文档具有高度的可重复利用价值，因此国际上几乎所有的期刊都要求作者提供 &lt;code&gt;.tex&lt;/code&gt; 格式的论文稿件。&lt;/p&gt;
 
 &lt;p&gt;我一个初步的想法是使用 &lt;code&gt;LaTeX&lt;/code&gt; 内在的编辑系统来生成 PDF 文件，通过设计一个文件模板使得这个文件具有可重复利用，以后每次要生成报告，就只需要输入股票代码就可以了，其他的版面控制全部交由模板来处理。&lt;/p&gt;
 
-&lt;p&gt;可是真正的使用 &lt;code&gt;LaTeX&lt;/code&gt; 还是挺麻烦的，以前为了写一个助教课件，都得整整在图书馆泡着。满屏幕的代码，而且毫不注意，缺少个 &lt;code&gt;}&lt;/code&gt; 啥的就彻底崩溃了，还得一个个检查看在哪一行出错。当年就是这样被虐千百遍才慢慢开始对其有了些许的驾驭能力。如今我已不入江湖，此般神功怕是荒废了时日，功力减退，深感「廉颇老矣」、屠龙不宜。&lt;/p&gt;
+&lt;p&gt;可是真正的使用 &lt;code&gt;LaTeX&lt;/code&gt; 还是挺麻烦的，以前为了写一个助教课件，都得整整在图书馆泡着。满屏幕的代码，而且稍不注意，缺少个 &lt;code&gt;}&lt;/code&gt; 啥的就彻底崩溃了，还得一个个检查看在哪一行出错。当年就是这样被虐千百遍才慢慢开始对其有了些许的驾驭能力。如今我已不入江湖，此般神功怕是荒废了时日，功力减退，深感「廉颇老矣」、屠龙不宜。&lt;/p&gt;
 
 &lt;h3 id=&quot;markdown&quot;&gt;markdown&lt;/h3&gt;
 &lt;p&gt;可是我这个人又喜欢「偷懒」，如果一件事情可以通过代码来事先，而不是机械的体力劳动，那么我会欣然去设计这样的程序的。作为半个码农的孩子又暴露了。&lt;/p&gt;
@@ -285,13 +287,13 @@ for(i in 1:5){
 &lt;h3 id=&quot;latex--markdown&quot;&gt;LaTeX + markdown&lt;/h3&gt;
 &lt;p&gt;冥冥之中必要答案！&lt;/p&gt;
 
-&lt;p&gt;以前陈海强老师给我们上时间序列课程的时候，使用 &lt;code&gt;R&lt;/code&gt; 作为程序语言。可是陈老师似乎不怎么谈「用户体验」的高深问题，本来 &lt;code&gt;R&lt;/code&gt; 自带的 GUI 就很丑，他还当着全班同学「群众贼亮的眼睛」、通过投影仪无极限的放大给大家看。但是我就很无言了。&lt;/p&gt;
+&lt;p&gt;以前陈海强老师给我们上时间序列课程的时候，使用 &lt;code&gt;R&lt;/code&gt; 作为程序语言。可是陈老师似乎不怎么谈「用户体验」的高深问题，本来 &lt;code&gt;R&lt;/code&gt; 自带的 GUI 就很丑，他还当着全班同学「群众贼亮的眼睛」、通过投影仪无极限的放大给大家看。当时我就很无言了。&lt;/p&gt;
 
 &lt;p&gt;后来有个叫做 &lt;code&gt;Rstudio&lt;/code&gt; 的公司（神公司=大神+神器，以后有时间再详细讨论）开发了一款极其强调用户体用的 GUI，从知道的那一瞬间，我深深的「着迷」了。直到现在，还是一个在使用。&lt;/p&gt;
 
-&lt;p&gt;方为引子。下面进入整体。&lt;/p&gt;
+&lt;p&gt;方为引子。下面进入正题。&lt;/p&gt;
 
-&lt;p&gt;刚才有提到我一直在使用 &lt;code&gt;Rstudio&lt;/code&gt;。可是这有一个毛病，一旦用习惯了，不怎么去更新。以至于 &lt;code&gt;Rstudio&lt;/code&gt; 后来增添了许多新功能，我也没来得及尝试。现在，&lt;code&gt;Rstudio&lt;/code&gt; 已经高度融合了 &lt;code&gt;knitr&lt;/code&gt; 与 &lt;code&gt;markdown&lt;/code&gt; 的特征，通过软件包 &lt;code&gt;rmarkdown&lt;/code&gt; 实现  &lt;code&gt;LaTeX&lt;/code&gt; 与 &lt;code&gt;markdown&lt;/code&gt; 的完美结合。整体的思路是：&lt;/p&gt;
+&lt;p&gt;刚才有提到我一直在使用 &lt;code&gt;Rstudio&lt;/code&gt;。可是这有一个问题，一旦用习惯了某款极其好用的软件，便不舍得去改变，也不怎么去更新。以至于 &lt;code&gt;Rstudio&lt;/code&gt; 后来增添了许多新功能，我也没来得及尝试。现在，&lt;code&gt;Rstudio&lt;/code&gt; 已经高度融合了 &lt;code&gt;knitr&lt;/code&gt; 与 &lt;code&gt;markdown&lt;/code&gt; 的特征，通过软件包 &lt;code&gt;rmarkdown&lt;/code&gt; 实现  &lt;code&gt;LaTeX&lt;/code&gt; 与 &lt;code&gt;markdown&lt;/code&gt; 的完美结合。整体的思路是：&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;首先建议一个 &lt;code&gt;.Rmd&lt;/code&gt; 的文件，里面可以使用 &lt;code&gt;markdown&lt;/code&gt;，同时配合 &lt;code&gt;R&lt;/code&gt; 代码实现文学编程（literate programming）。&lt;/li&gt;
@@ -322,7 +324,7 @@ pagecolor: aliceblue
 ---
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;模板：&lt;/p&gt;
+&lt;p&gt;模板（可以点击查看大图）：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig01.jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig01.jpg&quot; alt=&quot;latex-markdown1&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -332,9 +334,13 @@ pagecolor: aliceblue
 
 &lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig04.jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig04.jpg&quot; alt=&quot;latex-markdown1&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig06.jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig05.jpg&quot; alt=&quot;latex-markdown1&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig05.jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig05.jpg&quot; alt=&quot;latex-markdown1&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig06.jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig06.jpg&quot; alt=&quot;latex-markdown1&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig08.jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig08.jpg&quot; alt=&quot;latex-markdown1&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig09.jpg&quot;&gt;&lt;img src=&quot;/cn/assets/images/r-figures/2014-10-03-ma-nong-de-jia-qi/fig09.jpg&quot; alt=&quot;latex-markdown1&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-12&quot;&gt;成果展示&lt;/h2&gt;
 
